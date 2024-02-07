@@ -1,0 +1,121 @@
+<scroll-view class="sv_list" scroll-x="true" scroll-y="true" style="height:88%">
+
+<!------------------------->
+<!---------下方按钮--------->
+<!------------------------->
+<view style="display: flex;">
+  <view class="lables_head" style="font-size: calc(40vmin / 7.5)">客户名称</view>
+  <input bindinput="onInput" bindtap="header_xiala" data-column="khmc" class="input_text_head" value="{{khmc}}" type="text" name="khmc" disabled="disabled"></input>
+</view>
+
+<view style="display: flex;">
+  <view class="lables_head" style="font-size: calc(40vmin / 7.5)">下单日期</view>
+  <picker class="pick" mode="date" value="{{date}}" data-column_name="xdrq" bindchange="choiceDate" style="width: 50%; margin: auto;">
+    <input bindinput="onInput" data-column="xdrq" class="input_text_head" value="{{xdrq}}" type="date" name="xdrq" disabled="disabled" style="width: 100%;"></input>
+  </picker>
+</view>
+
+<view style="display: flex;">
+  <view class="lables_head" style="font-size: calc(40vmin / 7.5)">单据编号</view>
+  <input bindinput="onInput" data-column="djbh" class="input_text_head" value="{{header_list.djbh}}" type="text" name="djbh" disabled="disabled"></input>
+
+</view>
+
+<view style="display: flex;">
+  <view class="lables_head" style="font-size: calc(40vmin / 7.5)">送货地址</view>
+  <input bindinput="onInput" data-column="shouhuo" class="input_text_head" value="{{shouhuo}}" type="text" name="shouhuo"></input>
+</view>
+
+<view style="display: flex;">
+  <view class="lables_head" style="font-size: calc(40vmin / 7.5)">联系电话</view>
+  <input bindinput="onInput" data-column="lxdh" class="input_text_head" value="{{lxdh}}" type="text" name="lxdh"></input>
+</view>
+
+<view style="display: flex;">
+  <view class="lables_head" style="font-size: calc(40vmin / 7.5)">送货方式</view>
+  <input bindinput="onInput" bindtap="header_xiala" data-column="shfs" class="input_text_head" value="{{shfs}}" type="text" name="shfs" disabled="disabled"></input>
+</view>
+
+<view style="display: flex;">
+  <view class="lables_head" style="font-size: calc(40vmin / 7.5)">安装地址</view>
+  <input bindinput="onInput" data-column="azdz" class="input_text_head" value="{{azdz}}" type="text" name="azdz"></input> 
+</view>
+
+<view style="display: flex;">
+  <view class="lables_head" style="font-size: calc(40vmin / 7.5)">订单编号</view>
+  <input bindinput="onInput" data-column="ddh" class="input_text_head" value="{{ddh}}" type="text" name="ddh" style="margin-bottom: calc(10vmin / 7.5);"></input>
+</view>
+
+<view style="display: flex;">
+  <view class="lables_head" style="font-size: calc(40vmin / 7.5)">录 入 员</view>
+  <input bindinput="onInput" data-column="luruyuan" class="input_text_head" value="{{luruyuan}}" type="text" name="luruyuan" style="margin-bottom: calc(10vmin / 7.5);"></input>
+</view>
+
+
+<scroll-view class="sv_list" scroll-x="true" scroll-y="true" style="min-height:40%">
+  <view class="table">
+    <view class='table_header'>
+      <block class="title" wx:for="{{title}}">
+        <view class="title_text" style="width:{{item.width2}};{{item.text==''?'position:sticky;left:0;z-index:5':''}}">{{item.text}}</view>
+      </block> 
+    </view>
+    <block class="list_row" wx:for="{{list}}" wx:for-item="list_item" wx:for-index="i" wx:key="id">
+      <view class="table_main">
+        <view wx:for="{{title}}" wx:for-item="item" wx:key="item" class="list_view" style="width:{{item.width2}}" data-index="{{i}}" data-column="{{item.columnName}}" data-value="{{list_item[item.columnName]}}" data-input_type="{{item.type}}" data-isupd="{{item.isupd}}" bindtap="clickView1" bindlongpress="tab_del">
+          <view class="list_text">{{item.columnName == 'rownum' ? i+1 : list_item[item.columnName]}}</view>
+        </view>
+      </view>
+    </block>
+  </view>
+</scroll-view>
+
+
+
+
+
+<!------------------------->
+<!---------下方按钮--------->
+<!------------------------->
+<view class="bottom_view4">
+  <view class="sum_money">
+    <view class="money_title" style="font-size: calc(40vmin / 7.5)">总金额</view>
+    <input bindinput="onInput" data-column="sum_money" class="input_text_head" value="{{sum_money}}" type="text" name="sum_money" disabled="disabled"></input>
+  </view>
+</view>
+</scroll-view>
+<view class="bottom_view1">
+  <button class="bt_bottom" bindtap="selCD">添加一行</button>
+  <button class="bt_bottom" bindtap="intowin_Show">插入一行</button>
+  <button class="bt_bottom" bindtap="add1">保存</button>
+</view>
+<!------------------------->
+<!---------修改弹窗--------->
+<!------------------------->
+<van-popup bind:click-overlay="qxShow" show="{{ xgShow }}" position="bottom" custom-style="height: 35%;">
+  <view class="lables">{{update_name[this_column]}}</view>
+    <input class="input_text_form" bindtap="sel_xiala" type="{{this_type}}" bindinput="onInput" value="{{this_value}}" data-column="this_value" name="this_value" disabled="{{xiala_panduan==0?false:true}}"></input>
+  <view class="bottom_view" style="height:10%">
+    <button class="bt_bottom" hover-class="bt_bottom_hover" bindtap="qxShow">取消</button>
+    <!-- <button class="bt_bottom" hover-class="bt_bottom_hover" bindtap="del1">删除</button> -->
+    <button class="bt_bottom" hover-class="bt_bottom_hover" bindtap="upd2">确定</button>
+  </view>
+</van-popup>
+
+<!--表单下拉选择-->
+<van-action-sheet show="{{xlShow}}" actions="{{list_xiala}}" close-on-click-overlay bind:close="select1" bind:select="select1" />
+
+<!--表单下拉选择-->
+<van-action-sheet show="{{xlShow2}}" actions="{{list_xiala}}" close-on-click-overlay bind:close="select2" bind:select="select2" />
+
+<!------------------------->
+<!---------插行弹窗--------->
+<!------------------------->
+<van-popup bind:click-overlay="qxShow" show="{{ intoShow }}" position="bottom" custom-style="height: 25%;" >
+    <view class="lables">请输入要插入的行数</view>
+    <input bindinput="onInput" data-column="rowcount" class="input_text_form"  value="{{rowcount}}" type="text" name="rowcount"></input>
+    
+  <view class="bottom_view" style="height:10%">
+    <button class="bt_bottom" hover-class="bt_bottom_hover" bindtap="qxShow">取消</button>
+    <button class="bt_bottom" hover-class="bt_bottom_hover" bindtap="intoCD">确认</button>
+  </view>
+</van-popup>
