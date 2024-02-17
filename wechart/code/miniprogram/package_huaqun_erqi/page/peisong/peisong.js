@@ -559,9 +559,9 @@ Page({
                   title: '保存图片',
                 })
                 list[0].id = res.result.recordset[0].id
-                // var sql = "update erqi_peisongdan set customer_need_img1='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-01.jpg',peihuo_img1='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-04.jpg',peihuo_img2='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-05.jpg',peihuo_img3='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-06.jpg',peihuo_img4='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-07.jpg',peihuo_img5='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-08.jpg',peisong_img1='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-09.jpg',peisong_img2='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-10.jpg',peisong_img3='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-11.jpg',kucun_img1='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-12.jpg',kucun_img2='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-13.jpg',kucun_img3='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-14.jpg' where id=" + list[0].id
+                // var sql = "update erqi_peisongdan set customer_need_img1='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-01.jpg',peihuo_img1='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-04.jpg',peihuo_img2='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-05.jpg',peihuo_img3='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-06.jpg',peihuo_img4='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-07.jpg',peihuo_img5='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-08.jpg',peisong_img1='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-09.jpg',peisong_img2='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-10.jpg',peisong_img3='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-11.jpg',kucun_img1='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-12.jpg',kucun_img2='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-13.jpg',kucun_img3='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-14.jpg' where id=" + list[0].id
 
-                var sql = "update erqi_peisongdan set customer_need_img1='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-01.jpg',customer_need_img2='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-02.jpg',customer_need_img3='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-03.jpg',customer_need_img4='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-04.jpg',customer_need_img5='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-05.jpg',customer_need_img6='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-06.jpg',customer_need_img7='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-07.jpg',customer_need_img8='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-08.jpg',peihuo_img1='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-09.jpg',peihuo_img2='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-10.jpg',peihuo_img3='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-11.jpg',peihuo_img4='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-12.jpg',peihuo_img5='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-13.jpg',peihuo_img6='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-14.jpg',peihuo_img7='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-15.jpg',peihuo_img8='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-16.jpg',peisong_img1='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-17.jpg',peisong_img2='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-18.jpg',peisong_img3='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-19.jpg',peisong_img4='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-20.jpg',peisong_img5='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-21.jpg',peisong_img6='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-22.jpg',peisong_img7='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-23.jpg',peisong_img8='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-24.jpg',kucun_img1='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-25.jpg',kucun_img2='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-26.jpg',kucun_img3='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-27.jpg',kucun_img4='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-28.jpg',kucun_img5='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-29.jpg',kucun_img6='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-30.jpg',kucun_img7='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-31.jpg',kucun_img8='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-32.jpg',wenjian_img1='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-33.jpg',wenjian_img2='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-34.jpg',wenjian_img3='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-35.jpg',wenjian_img4='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-36.jpg',wenjian_img5='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-37.jpg',wenjian_img6='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-38.jpg',wenjian_img7='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-39.jpg',wenjian_img8='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-40.jpg' where id = " + list[0].id
+                var sql = "update erqi_peisongdan set customer_need_img1='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-01.jpg',customer_need_img2='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-02.jpg',customer_need_img3='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-03.jpg',customer_need_img4='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-04.jpg',customer_need_img5='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-05.jpg',customer_need_img6='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-06.jpg',customer_need_img7='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-07.jpg',customer_need_img8='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-08.jpg',peihuo_img1='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-09.jpg',peihuo_img2='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-10.jpg',peihuo_img3='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-11.jpg',peihuo_img4='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-12.jpg',peihuo_img5='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-13.jpg',peihuo_img6='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-14.jpg',peihuo_img7='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-15.jpg',peihuo_img8='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-16.jpg',peisong_img1='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-17.jpg',peisong_img2='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-18.jpg',peisong_img3='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-19.jpg',peisong_img4='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-20.jpg',peisong_img5='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-21.jpg',peisong_img6='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-22.jpg',peisong_img7='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-23.jpg',peisong_img8='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-24.jpg',kucun_img1='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-25.jpg',kucun_img2='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-26.jpg',kucun_img3='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-27.jpg',kucun_img4='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-28.jpg',kucun_img5='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-29.jpg',kucun_img6='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-30.jpg',kucun_img7='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-31.jpg',kucun_img8='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-32.jpg',wenjian_img1='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-33.jpg',wenjian_img2='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-34.jpg',wenjian_img3='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-35.jpg',wenjian_img4='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-36.jpg',wenjian_img5='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-37.jpg',wenjian_img6='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-38.jpg',wenjian_img7='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-39.jpg',wenjian_img8='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-40.jpg' where id = " + list[0].id
                 console.log(sql)
                 if(list[0].customer_need_img1.indexOf("base64") != -1){
                   var fsm = wx.getFileSystemManager();
@@ -570,7 +570,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://yhocn.cn:9087/file/upload',
+                    url: 'http://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -598,7 +598,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://yhocn.cn:9087/file/upload',
+                    url: 'http://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -626,7 +626,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://yhocn.cn:9087/file/upload',
+                    url: 'http://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -654,7 +654,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://yhocn.cn:9087/file/upload',
+                    url: 'http://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -682,7 +682,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://yhocn.cn:9087/file/upload',
+                    url: 'http://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -710,7 +710,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://yhocn.cn:9087/file/upload',
+                    url: 'http://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -738,7 +738,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://yhocn.cn:9087/file/upload',
+                    url: 'http://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -766,7 +766,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://yhocn.cn:9087/file/upload',
+                    url: 'http://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -794,7 +794,7 @@ Page({
                 //   fsm.writeFileSync(fileName, buffer, 'binary');
                 //   console.log(fileName);
                 //    wx.uploadFile({
-                //     url: 'http://yhocn.cn:9087/file/upload',
+                //     url: 'http://huaqunwechar.com:9087/file/upload',
                 //     header: { "Content-Type": "multipart/form-data" },
                 //     filePath: fileName,
                 //     name: 'file',
@@ -822,7 +822,7 @@ Page({
                 //   fsm.writeFileSync(fileName, buffer, 'binary');
                 //   console.log(fileName);
                 //    wx.uploadFile({
-                //     url: 'http://yhocn.cn:9087/file/upload',
+                //     url: 'http://huaqunwechar.com:9087/file/upload',
                 //     header: { "Content-Type": "multipart/form-data" },
                 //     filePath: fileName,
                 //     name: 'file',
@@ -850,7 +850,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://yhocn.cn:9087/file/upload',
+                    url: 'http://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -878,7 +878,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://yhocn.cn:9087/file/upload',
+                    url: 'http://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -906,7 +906,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://yhocn.cn:9087/file/upload',
+                    url: 'http://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -934,7 +934,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://yhocn.cn:9087/file/upload',
+                    url: 'http://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -962,7 +962,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://yhocn.cn:9087/file/upload',
+                    url: 'http://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -990,7 +990,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://yhocn.cn:9087/file/upload',
+                    url: 'http://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -1018,7 +1018,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://yhocn.cn:9087/file/upload',
+                    url: 'http://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -1046,7 +1046,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://yhocn.cn:9087/file/upload',
+                    url: 'http://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -1074,7 +1074,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://yhocn.cn:9087/file/upload',
+                    url: 'http://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -1102,7 +1102,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://yhocn.cn:9087/file/upload',
+                    url: 'http://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -1130,7 +1130,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://yhocn.cn:9087/file/upload',
+                    url: 'http://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -1158,7 +1158,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://yhocn.cn:9087/file/upload',
+                    url: 'http://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -1186,7 +1186,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://yhocn.cn:9087/file/upload',
+                    url: 'http://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -1214,7 +1214,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://yhocn.cn:9087/file/upload',
+                    url: 'http://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -1242,7 +1242,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://yhocn.cn:9087/file/upload',
+                    url: 'http://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -1270,7 +1270,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://yhocn.cn:9087/file/upload',
+                    url: 'http://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -1298,7 +1298,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://yhocn.cn:9087/file/upload',
+                    url: 'http://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -1326,7 +1326,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://yhocn.cn:9087/file/upload',
+                    url: 'http://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -1354,7 +1354,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://yhocn.cn:9087/file/upload',
+                    url: 'http://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -1382,7 +1382,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://yhocn.cn:9087/file/upload',
+                    url: 'http://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -1410,7 +1410,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://yhocn.cn:9087/file/upload',
+                    url: 'http://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -1438,7 +1438,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://yhocn.cn:9087/file/upload',
+                    url: 'http://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -1466,7 +1466,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://yhocn.cn:9087/file/upload',
+                    url: 'http://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -1494,7 +1494,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://yhocn.cn:9087/file/upload',
+                    url: 'http://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -1522,7 +1522,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://yhocn.cn:9087/file/upload',
+                    url: 'http://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -1550,7 +1550,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://yhocn.cn:9087/file/upload',
+                    url: 'http://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -1578,7 +1578,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://yhocn.cn:9087/file/upload',
+                    url: 'http://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -1606,7 +1606,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://yhocn.cn:9087/file/upload',
+                    url: 'http://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -1634,7 +1634,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://yhocn.cn:9087/file/upload',
+                    url: 'http://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -1662,7 +1662,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://yhocn.cn:9087/file/upload',
+                    url: 'http://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -1690,7 +1690,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://yhocn.cn:9087/file/upload',
+                    url: 'http://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -1718,7 +1718,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://yhocn.cn:9087/file/upload',
+                    url: 'http://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -1745,6 +1745,7 @@ Page({
                     query: sql
                   },
                   success: res => {
+                    console.log(res)
                     _this.setData({
                       baocun: '已保存'
                     })
@@ -1805,7 +1806,7 @@ Page({
                 wx.showLoading({
                   title: '保存图片',
                 })
-                var sql = "update erqi_peisongdan set customer_need_img1='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-01.jpg',customer_need_img2='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-02.jpg',customer_need_img3='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-03.jpg',customer_need_img4='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-04.jpg',customer_need_img5='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-05.jpg',customer_need_img6='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-06.jpg',customer_need_img7='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-07.jpg',customer_need_img8='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-08.jpg',peihuo_img1='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-09.jpg',peihuo_img2='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-10.jpg',peihuo_img3='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-11.jpg',peihuo_img4='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-12.jpg',peihuo_img5='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-13.jpg',peihuo_img6='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-14.jpg',peihuo_img7='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-15.jpg',peihuo_img8='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-16.jpg',peisong_img1='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-17.jpg',peisong_img2='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-18.jpg',peisong_img3='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-19.jpg',peisong_img4='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-20.jpg',peisong_img5='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-21.jpg',peisong_img6='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-22.jpg',peisong_img7='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-23.jpg',peisong_img8='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-24.jpg',kucun_img1='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-25.jpg',kucun_img2='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-26.jpg',kucun_img3='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-27.jpg',kucun_img4='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-28.jpg',kucun_img5='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-29.jpg',kucun_img6='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-30.jpg',kucun_img7='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-31.jpg',kucun_img8='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-32.jpg',wenjian_img1='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-33.jpg',wenjian_img2='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-34.jpg',wenjian_img3='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-35.jpg',wenjian_img4='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-36.jpg',wenjian_img5='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-37.jpg',wenjian_img6='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-38.jpg',wenjian_img7='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-39.jpg',wenjian_img8='http://yhocn.cn:9088/huaqun_erqi/" + list[0].order_number + "-40.jpg' where id = " + list[0].id
+                var sql = "update erqi_peisongdan set customer_need_img1='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-01.jpg',customer_need_img2='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-02.jpg',customer_need_img3='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-03.jpg',customer_need_img4='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-04.jpg',customer_need_img5='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-05.jpg',customer_need_img6='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-06.jpg',customer_need_img7='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-07.jpg',customer_need_img8='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-08.jpg',peihuo_img1='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-09.jpg',peihuo_img2='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-10.jpg',peihuo_img3='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-11.jpg',peihuo_img4='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-12.jpg',peihuo_img5='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-13.jpg',peihuo_img6='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-14.jpg',peihuo_img7='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-15.jpg',peihuo_img8='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-16.jpg',peisong_img1='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-17.jpg',peisong_img2='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-18.jpg',peisong_img3='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-19.jpg',peisong_img4='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-20.jpg',peisong_img5='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-21.jpg',peisong_img6='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-22.jpg',peisong_img7='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-23.jpg',peisong_img8='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-24.jpg',kucun_img1='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-25.jpg',kucun_img2='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-26.jpg',kucun_img3='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-27.jpg',kucun_img4='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-28.jpg',kucun_img5='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-29.jpg',kucun_img6='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-30.jpg',kucun_img7='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-31.jpg',kucun_img8='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-32.jpg',wenjian_img1='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-33.jpg',wenjian_img2='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-34.jpg',wenjian_img3='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-35.jpg',wenjian_img4='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-36.jpg',wenjian_img5='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-37.jpg',wenjian_img6='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-38.jpg',wenjian_img7='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-39.jpg',wenjian_img8='http://huaqunwechar.com:9088/huaqun_erqi/" + list[0].order_number + "-40.jpg' where id = " + list[0].id
                 console.log(sql)
                 if(list[0].customer_need_img1.indexOf("base64") != -1){
                   var fsm = wx.getFileSystemManager();
@@ -1814,7 +1815,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://yhocn.cn:9087/file/upload',
+                    url: 'http://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -1842,7 +1843,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://yhocn.cn:9087/file/upload',
+                    url: 'http://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -1870,7 +1871,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://yhocn.cn:9087/file/upload',
+                    url: 'http://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -1898,7 +1899,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://yhocn.cn:9087/file/upload',
+                    url: 'http://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -1926,7 +1927,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://yhocn.cn:9087/file/upload',
+                    url: 'http://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -1954,7 +1955,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://yhocn.cn:9087/file/upload',
+                    url: 'http://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -1982,7 +1983,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://yhocn.cn:9087/file/upload',
+                    url: 'http://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -2010,7 +2011,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://yhocn.cn:9087/file/upload',
+                    url: 'http://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -2038,7 +2039,7 @@ Page({
                 //   fsm.writeFileSync(fileName, buffer, 'binary');
                 //   console.log(fileName);
                 //    wx.uploadFile({
-                //     url: 'http://yhocn.cn:9087/file/upload',
+                //     url: 'http://huaqunwechar.com:9087/file/upload',
                 //     header: { "Content-Type": "multipart/form-data" },
                 //     filePath: fileName,
                 //     name: 'file',
@@ -2066,7 +2067,7 @@ Page({
                 //   fsm.writeFileSync(fileName, buffer, 'binary');
                 //   console.log(fileName);
                 //    wx.uploadFile({
-                //     url: 'http://yhocn.cn:9087/file/upload',
+                //     url: 'http://huaqunwechar.com:9087/file/upload',
                 //     header: { "Content-Type": "multipart/form-data" },
                 //     filePath: fileName,
                 //     name: 'file',
@@ -2094,7 +2095,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://yhocn.cn:9087/file/upload',
+                    url: 'http://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -2122,7 +2123,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://yhocn.cn:9087/file/upload',
+                    url: 'http://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -2150,7 +2151,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://yhocn.cn:9087/file/upload',
+                    url: 'http://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -2178,7 +2179,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://yhocn.cn:9087/file/upload',
+                    url: 'http://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -2206,7 +2207,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://yhocn.cn:9087/file/upload',
+                    url: 'http://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -2234,7 +2235,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://yhocn.cn:9087/file/upload',
+                    url: 'http://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -2262,7 +2263,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://yhocn.cn:9087/file/upload',
+                    url: 'http://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -2290,7 +2291,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://yhocn.cn:9087/file/upload',
+                    url: 'http://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -2318,7 +2319,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://yhocn.cn:9087/file/upload',
+                    url: 'http://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -2346,7 +2347,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://yhocn.cn:9087/file/upload',
+                    url: 'http://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -2374,7 +2375,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://yhocn.cn:9087/file/upload',
+                    url: 'http://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -2402,7 +2403,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://yhocn.cn:9087/file/upload',
+                    url: 'http://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -2430,7 +2431,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://yhocn.cn:9087/file/upload',
+                    url: 'http://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -2458,7 +2459,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://yhocn.cn:9087/file/upload',
+                    url: 'http://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -2486,7 +2487,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://yhocn.cn:9087/file/upload',
+                    url: 'http://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -2514,7 +2515,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://yhocn.cn:9087/file/upload',
+                    url: 'http://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -2542,7 +2543,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://yhocn.cn:9087/file/upload',
+                    url: 'http://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -2570,7 +2571,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://yhocn.cn:9087/file/upload',
+                    url: 'http://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -2598,7 +2599,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://yhocn.cn:9087/file/upload',
+                    url: 'http://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -2626,7 +2627,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://yhocn.cn:9087/file/upload',
+                    url: 'http://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -2654,7 +2655,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://yhocn.cn:9087/file/upload',
+                    url: 'http://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -2682,7 +2683,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://yhocn.cn:9087/file/upload',
+                    url: 'http://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -2710,7 +2711,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://yhocn.cn:9087/file/upload',
+                    url: 'http://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -2738,7 +2739,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://yhocn.cn:9087/file/upload',
+                    url: 'http://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -2766,7 +2767,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://yhocn.cn:9087/file/upload',
+                    url: 'http://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -2794,7 +2795,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://yhocn.cn:9087/file/upload',
+                    url: 'http://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -2822,7 +2823,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://yhocn.cn:9087/file/upload',
+                    url: 'http://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -2850,7 +2851,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://yhocn.cn:9087/file/upload',
+                    url: 'http://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -2878,7 +2879,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://yhocn.cn:9087/file/upload',
+                    url: 'http://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -2906,7 +2907,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://yhocn.cn:9087/file/upload',
+                    url: 'http://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -2934,7 +2935,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://yhocn.cn:9087/file/upload',
+                    url: 'http://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -2962,7 +2963,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://yhocn.cn:9087/file/upload',
+                    url: 'http://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -3741,7 +3742,7 @@ Page({
       fsm.writeFileSync(fileName, buffer, 'binary');
       console.log(fileName);
        wx.uploadFile({
-        url: 'http://yhocn.cn:9087/file/upload',
+        url: 'http://huaqunwechar.com:9087/file/upload',
         header: { "Content-Type": "multipart/form-data" },
         filePath: fileName,
         name: 'file',
@@ -3771,7 +3772,7 @@ Page({
   //     fsm.writeFileSync(fileName, buffer, 'binary');
   //     console.log(fileName);
   //      wx.uploadFile({
-  //       url: 'http://yhocn.cn:9087/file/upload',
+  //       url: 'http://huaqunwechar.com:9087/file/upload',
   //       header: { "Content-Type": "multipart/form-data" },
   //       filePath: fileName,
   //       name: 'file',
@@ -3801,7 +3802,7 @@ Page({
   //     fsm.writeFileSync(fileName, buffer, 'binary');
   //     console.log(fileName);
   //      wx.uploadFile({
-  //       url: 'http://yhocn.cn:9087/file/upload',
+  //       url: 'http://huaqunwechar.com:9087/file/upload',
   //       header: { "Content-Type": "multipart/form-data" },
   //       filePath: fileName,
   //       name: 'file',
@@ -3831,7 +3832,7 @@ Page({
       fsm.writeFileSync(fileName, buffer, 'binary');
       console.log(fileName);
        wx.uploadFile({
-        url: 'http://yhocn.cn:9087/file/upload',
+        url: 'http://huaqunwechar.com:9087/file/upload',
         header: { "Content-Type": "multipart/form-data" },
         filePath: fileName,
         name: 'file',
@@ -3861,7 +3862,7 @@ Page({
       fsm.writeFileSync(fileName, buffer, 'binary');
       console.log(fileName);
        wx.uploadFile({
-        url: 'http://yhocn.cn:9087/file/upload',
+        url: 'http://huaqunwechar.com:9087/file/upload',
         header: { "Content-Type": "multipart/form-data" },
         filePath: fileName,
         name: 'file',
@@ -3891,7 +3892,7 @@ Page({
       fsm.writeFileSync(fileName, buffer, 'binary');
       console.log(fileName);
        wx.uploadFile({
-        url: 'http://yhocn.cn:9087/file/upload',
+        url: 'http://huaqunwechar.com:9087/file/upload',
         header: { "Content-Type": "multipart/form-data" },
         filePath: fileName,
         name: 'file',
@@ -3921,7 +3922,7 @@ Page({
       fsm.writeFileSync(fileName, buffer, 'binary');
       console.log(fileName);
        wx.uploadFile({
-        url: 'http://yhocn.cn:9087/file/upload',
+        url: 'http://huaqunwechar.com:9087/file/upload',
         header: { "Content-Type": "multipart/form-data" },
         filePath: fileName,
         name: 'file',
@@ -3951,7 +3952,7 @@ Page({
       fsm.writeFileSync(fileName, buffer, 'binary');
       console.log(fileName);
        wx.uploadFile({
-        url: 'http://yhocn.cn:9087/file/upload',
+        url: 'http://huaqunwechar.com:9087/file/upload',
         header: { "Content-Type": "multipart/form-data" },
         filePath: fileName,
         name: 'file',
@@ -3981,7 +3982,7 @@ Page({
       fsm.writeFileSync(fileName, buffer, 'binary');
       console.log(fileName);
        wx.uploadFile({
-        url: 'http://yhocn.cn:9087/file/upload',
+        url: 'http://huaqunwechar.com:9087/file/upload',
         header: { "Content-Type": "multipart/form-data" },
         filePath: fileName,
         name: 'file',
@@ -4011,7 +4012,7 @@ Page({
       fsm.writeFileSync(fileName, buffer, 'binary');
       console.log(fileName);
        wx.uploadFile({
-        url: 'http://yhocn.cn:9087/file/upload',
+        url: 'http://huaqunwechar.com:9087/file/upload',
         header: { "Content-Type": "multipart/form-data" },
         filePath: fileName,
         name: 'file',
@@ -4041,7 +4042,7 @@ Page({
       fsm.writeFileSync(fileName, buffer, 'binary');
       console.log(fileName);
        wx.uploadFile({
-        url: 'http://yhocn.cn:9087/file/upload',
+        url: 'http://huaqunwechar.com:9087/file/upload',
         header: { "Content-Type": "multipart/form-data" },
         filePath: fileName,
         name: 'file',
@@ -4071,7 +4072,7 @@ Page({
       fsm.writeFileSync(fileName, buffer, 'binary');
       console.log(fileName);
        wx.uploadFile({
-        url: 'http://yhocn.cn:9087/file/upload',
+        url: 'http://huaqunwechar.com:9087/file/upload',
         header: { "Content-Type": "multipart/form-data" },
         filePath: fileName,
         name: 'file',
@@ -4101,7 +4102,7 @@ Page({
       fsm.writeFileSync(fileName, buffer, 'binary');
       console.log(fileName);
        wx.uploadFile({
-        url: 'http://yhocn.cn:9087/file/upload',
+        url: 'http://huaqunwechar.com:9087/file/upload',
         header: { "Content-Type": "multipart/form-data" },
         filePath: fileName,
         name: 'file',
@@ -4131,7 +4132,7 @@ Page({
       fsm.writeFileSync(fileName, buffer, 'binary');
       console.log(fileName);
        wx.uploadFile({
-        url: 'http://yhocn.cn:9087/file/upload',
+        url: 'http://huaqunwechar.com:9087/file/upload',
         header: { "Content-Type": "multipart/form-data" },
         filePath: fileName,
         name: 'file',

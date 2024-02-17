@@ -2,7 +2,7 @@
 const chooseLocation = requirePlugin('chooseLocation');
 var QQMapWX = require("../utils/qqmap-wx-jssdk");
 var qqmapsdk = new QQMapWX({
-  key: 'KKRBZ-TBCW3-TXD37-OWJED-QYFPF-VYFCL'
+  key: 'ZW7BZ-CIRCW-U2PRM-YKHTK-HL2AV-HCF7U'
 });
 Page({
 
@@ -311,8 +311,8 @@ Page({
             _this.setData({
               id: _this.data.list[e.currentTarget.dataset.index].id,
             })
-            const key = 'SEUBZ-4CGL4-YC3UO-FW2T5-W5DVT-QVFJJ'; //使用在腾讯位置服务申请的key
-            const referer = '进销存云合'; //调用插件的app的名称
+            const key = 'ZW7BZ-CIRCW-U2PRM-YKHTK-HL2AV-HCF7U'; //使用在腾讯位置服务申请的key
+            const referer = '顺天龙五金'; //调用插件的app的名称
             const location = JSON.stringify({
               latitude: _this.data.latitude,
               longitude: _this.data.longitude

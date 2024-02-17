@@ -1,6 +1,6 @@
 var QQMapWX = require("../utils/qqmap-wx-jssdk");
 var qqmapsdk = new QQMapWX({
-  key: 'KKRBZ-TBCW3-TXD37-OWJED-QYFPF-VYFCL'
+  key: 'ZW7BZ-CIRCW-U2PRM-YKHTK-HL2AV-HCF7U'
 });
 Page({
 

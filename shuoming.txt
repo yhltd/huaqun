@@ -1,0 +1,2 @@
+wechart是微信小程序代码
+wechart_file_up_down是服务器上传图片接口

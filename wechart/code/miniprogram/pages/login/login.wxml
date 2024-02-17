@@ -2,7 +2,7 @@
   <!-- <image class="top-bgimage" src="../../images/bgimage.jpg"></image> -->
   <view class="container">
     <view class="userinfo">
-      <image class="userinfo-avatar" src="cloud://cloud1-7gqvlqet251ed5f7.636c-cloud1-7gqvlqet251ed5f7-1324190726/images/login.png" background-size="cover"></image>
+      <image class="userinfo-avatar" src="cloud://cloud1-7gqvlqet251ed5f7.636c-cloud1-7gqvlqet251ed5f7-1324190726/images/login.png" background-size="cover" mode="aspectFill"></image>
       <text class="userinfo-nickname">请登录</text>
     </view>
   </view>

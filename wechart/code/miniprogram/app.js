@@ -10,7 +10,7 @@ App({
     } else {
       wx.cloud.init({
         env:'my-env-id',
-        env:'yhltd-hsxl2',
+        env:'cloud1-7gqvlqet251ed5f7',
         traceUser: true,
       })
     }

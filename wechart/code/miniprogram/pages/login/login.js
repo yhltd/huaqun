@@ -17,7 +17,6 @@ var login = function(that,info) {
       lock : false
     })
   }
-    console.log(system)
     var sql = "select * from userInfo where username ='" + info.inputName + "' and password = '" + info.inputPwd + "'"
     wx.cloud.callFunction({
       name: 'sqlserver_huaqun',
