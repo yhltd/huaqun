@@ -44,6 +44,7 @@
   </view>
   <view class="bottom_view" style="height:10%;margin-top: 8%;">
     <button class="bt_bottom" hover-class="bt_bottom_hover" bindtap="click_04">推迟处理</button>
+    <button class="bt_bottom" hover-class="bt_bottom_hover" bindtap="click_06">正在加工</button>
     <button class="bt_bottom" hover-class="bt_bottom_hover" bindtap="click_05">完成</button>
   </view>
 </van-popup>

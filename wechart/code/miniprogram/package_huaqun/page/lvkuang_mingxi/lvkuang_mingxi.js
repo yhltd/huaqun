@@ -228,7 +228,7 @@ Page({
         isupd: true
       },
     ],
-    wancheng_list: ['未审验', '已审验','优先处理','推迟处理','完成'],
+    wancheng_list: ['未审验', '已审验','优先处理','推迟处理','正在加工','完成'],
     wancheng: '',
     order_number: '',
     start_date: '',
@@ -766,6 +766,39 @@ Page({
   click_05: function () {
     var _this = this
     var sql = "update lvkuang_xiadan set " + _this.data.this_column + "='完成',shendan=convert(date,GETDATE()) where order_number='" + _this.data.order_number + "'"
+    
+    wx.cloud.callFunction({
+      name: 'sqlserver_huaqun',
+      data: {
+        query: sql
+      },
+      success: res => {
+        wx.showToast({
+          title: '完成！',
+          icon: 'none',
+          duration: 3000
+        })
+        var e = ['','', '1900-01-01', '2100-12-31', '', '']
+        _this.tableShow(e)
+        _this.qxShow()
+      },
+      err: res => {
+        console.log("错误!")
+      },
+      fail: res => {
+        wx.showToast({
+          title: '请求失败！',
+          icon: 'none',
+          duration: 3000
+        })
+        console.log("请求失败！")
+      }
+    })
+  },
+
+  click_06: function () {
+    var _this = this
+    var sql = "update lvkuang_xiadan set " + _this.data.this_column + "='正在加工' where order_number='" + _this.data.order_number + "'"
     
     wx.cloud.callFunction({
       name: 'sqlserver_huaqun',

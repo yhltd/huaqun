@@ -685,6 +685,39 @@ Page({
     })
   },
 
+  click_06: function () {
+    var _this = this
+    var sql = "update lightbelt set " + _this.data.this_column + "='正在加工' where djbh='" + _this.data.order_number + "'"
+    
+    wx.cloud.callFunction({
+      name: 'sqlserver_huaqun',
+      data: {
+        query: sql
+      },
+      success: res => {
+        wx.showToast({
+          title: '完成！',
+          icon: 'none',
+          duration: 3000
+        })
+        var e = ['','', '1900-01-01', '2100-12-31','']
+        _this.tableShow(e)
+        _this.qxShow()
+      },
+      err: res => {
+        console.log("错误!")
+      },
+      fail: res => {
+        wx.showToast({
+          title: '请求失败！',
+          icon: 'none',
+          duration: 3000
+        })
+        console.log("请求失败！")
+      }
+    })
+  },
+
   del1: function (e) {
     var _this = this
     var djbh = _this.data.list[e.currentTarget.dataset.index].djbh
