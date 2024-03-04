@@ -11,7 +11,7 @@
         <view wx:for="{{title}}" 
               wx:for-item="item" 
               wx:key="item" 
-              class="{{list[i].wancheng=='已审验'?'list_view1':list[i].wancheng=='优先处理'?'list_view2':list[i].wancheng=='推迟处理'?'list_view3':list[i].wancheng=='完成'?'list_view4':'list_view'}}" 
+              class="{{list[i].wancheng=='已审验'?'list_view1':list[i].wancheng=='优先处理'?'list_view2':list[i].wancheng=='加工完成'?'list_view3':list[i].wancheng=='完成'?'list_view4':list[i].wancheng=='正在加工'?'list_view5':'list_view'}}" 
               style="width:{{item.width}}" data-index="{{i}}" 
               data-column="{{item.columnName}}" 
               data-value="{{list_item[item.columnName]}}" 
@@ -68,7 +68,7 @@
     <button class="bt_bottom" hover-class="bt_bottom_hover" bindtap="click_03">优先处理</button>
   </view>
   <view class="bottom_view" style="height:10%;margin-top: 8%;">
-    <button class="bt_bottom" hover-class="bt_bottom_hover" bindtap="click_04">推迟处理</button>
+    <button class="bt_bottom" hover-class="bt_bottom_hover" bindtap="click_04">加工完成</button>
     <button class="bt_bottom" hover-class="bt_bottom_hover" bindtap="click_06">正在加工</button>
     <button class="bt_bottom" hover-class="bt_bottom_hover" bindtap="click_05">完成</button>
   </view>

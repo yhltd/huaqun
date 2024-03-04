@@ -1534,7 +1534,7 @@ Page({
     }
     this.setData({
       buffSize: list,
-      oneTimeData: 190,
+      oneTimeData: 20,
       printNum: numList,
       printerNum: numList[0]
     })

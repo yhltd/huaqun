@@ -108,8 +108,62 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-
+    var _this = this
+   wx.getSetting({  
+     success: function(res) {  
+       console.log(res)
+       if (!res.authSetting['scope.userLocation']) {  
+         // 2. 用户未授权，请求授权  
+         wx.authorize({  
+           scope: 'scope.userLocation',  
+           success: function () {  
+             // 3. 用户已授权，获取位置信息  
+             wx.showToast({
+               title: '已获取位置授权',
+               icon: 'none'
+             })
+           },  
+           fail: function () {  
+             // 用户拒绝授权  
+             wx.showModal({  
+               title: '警告',  
+               content: '您拒绝了授权，无法获取位置信息',  
+               showCancel: true,  
+               confirmText: '重新获取',  
+               cancelText: '取消',
+               success (res) {  
+                 if (res.confirm) {  
+                   _this.openConfirm()
+                   // 用户点击确定，可以做一些操作，例如跳转页面  
+                 }  
+               }  
+             })  
+           }  
+         })  
+       } 
+     }  
+   })
   },
+ 
+  openConfirm: function () {
+   wx.showModal({
+       content: '检测到您没打开此小程序的定位权限，是否去设置打开？',
+       confirmText: "确认",
+       cancelText: "取消",
+       success: function (res) {
+           console.log(res);
+           //点击“确认”时打开设置页面
+           if (res.confirm) {
+               console.log('用户点击确认')
+               wx.openSetting({
+                   success: (res) => {}
+               })
+           } else {
+               console.log('用户点击取消')
+           }
+       }
+   });
+ },
 
   /**
    * 生命周期函数--监听页面隐藏
