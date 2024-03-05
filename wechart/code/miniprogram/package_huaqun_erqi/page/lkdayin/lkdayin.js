@@ -390,13 +390,13 @@ Page({
   labelTest() { //标签测试
     var that = this;
     var _this = this;
-    if (!_this.data.isConn) {
-      wx.showToast({
-        title: '蓝牙未连接',
-        icon: 'none'
-      })
-      return;
-    }
+    // if (!_this.data.isConn) {
+    //   wx.showToast({
+    //     title: '蓝牙未连接',
+    //     icon: 'none'
+    //   })
+    //   return;
+    // }
     var canvasWidth = that.data.canvasWidth
     var canvasHeight = that.data.canvasHeight    
     var list = _this.data.list
@@ -413,7 +413,7 @@ Page({
         command.setSize(100,80)//设置标签大小，单位mm.具体参数请用尺子量一下
         command.setGap(2)//设置两个标签之间的间隙，单位mm.具体参数请用尺子量一下
         command.setCls()
-        var height = 10
+        var height = 40
         command.setText(380, height, "TSS24.BF2", 0, 3, 3, "天龙五金铝框")//绘制文字
         height = height + 80
         if(dayin_peizhi.P1 == '是'){
@@ -886,7 +886,7 @@ Page({
     }
     this.setData({
       buffSize: list,
-      oneTimeData: 190,
+      oneTimeData: 100,
       printNum: numList,
       printerNum: numList[0]
     })

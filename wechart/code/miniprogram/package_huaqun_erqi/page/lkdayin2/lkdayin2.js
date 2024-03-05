@@ -538,13 +538,13 @@ Page({
   labelTest: function () { //标签测试
     var that = this;
     var _this = this;
-    if (!_this.data.isConn) {
-      wx.showToast({
-        title: '蓝牙未连接',
-        icon: 'none'
-      })
-      return;
-    }
+    // if (!_this.data.isConn) {
+    //   wx.showToast({
+    //     title: '蓝牙未连接',
+    //     icon: 'none'
+    //   })
+    //   return;
+    // }
     var canvasWidth = that.data.canvasWidth
     var canvasHeight = that.data.canvasHeight    
     var list = _this.data.list
@@ -563,7 +563,7 @@ Page({
         command.setCls()//清除缓冲区
         var panduan = false
         var height = 0
-        height = height + 10
+        height = height + 40
         command.setText(380, height, "TSS24.BF2", 0, 3, 3, "天龙五金铝框")//绘制文字
         
         height = height + 80
@@ -573,8 +573,8 @@ Page({
 
         height = height + 60
         panduan = false
-        if(height % 770 == 0 || height % 920 == 0){
-          height = 20
+        if(height % 800 == 0 || height % 960 == 0){
+          height = 40
           command.setPagePrint()//执行打印指令
           command_arr.push(command)
           command = tsc.jpPrinter.createNew()
@@ -588,8 +588,8 @@ Page({
 
         height = height + 60
         panduan = false
-        if(height % 770 == 0 || height % 920 == 0){
-          height = 20
+        if(height % 800 == 0 || height % 960 == 0){
+          height = 40
           command.setPagePrint()//执行打印指令
           command_arr.push(command)
           command = tsc.jpPrinter.createNew()
@@ -605,8 +605,8 @@ Page({
 
         height = height + 60
         panduan = false
-        if(height % 770 == 0 || height % 920 == 0){
-          height = 20
+        if(height % 800 == 0 || height % 960 == 0){
+          height = 40
           command.setPagePrint()//执行打印指令
           command_arr.push(command)
           command = tsc.jpPrinter.createNew()
@@ -622,8 +622,8 @@ Page({
 
         height = height + 60
         panduan = false
-        if(height % 770 == 0 || height % 920 == 0){
-          height = 20
+        if(height % 800 == 0 || height % 960 == 0){
+          height = 40
           command.setPagePrint()//执行打印指令
           command_arr.push(command)
           command = tsc.jpPrinter.createNew()
@@ -638,8 +638,8 @@ Page({
 
         height = height + 60
         panduan = false
-        if(height % 770 == 0 || height % 920 == 0){
-          height = 20
+        if(height % 800 == 0 || height % 960 == 0){
+          height = 40
           command.setPagePrint()//执行打印指令
           command_arr.push(command)
           command = tsc.jpPrinter.createNew()
@@ -656,8 +656,8 @@ Page({
 
         height = height + 80
         panduan = false
-        if(height % 770 == 0 || height % 920 == 0){
-          height = 20
+        if(height % 800 == 0 || height % 960 == 0){
+          height = 40
           command.setPagePrint()//执行打印指令
           command_arr.push(command)
           command = tsc.jpPrinter.createNew()
@@ -675,8 +675,8 @@ Page({
 
         height = height + 60
         panduan = false
-        if(height % 770 == 0 || height % 920 == 0){
-          height = 20
+        if(height % 800 == 0 || height % 960 == 0){
+          height = 40
           command.setPagePrint()//执行打印指令
           command_arr.push(command)
           command = tsc.jpPrinter.createNew()
@@ -687,15 +687,15 @@ Page({
           panduan = true
         }
         command.setText(30, height, "TSS24.BF2", 0, 2, 2, "开门方向数量")
-        command.setText(370, height, "TSS24.BF2", 0, 2, 2, list[i].jiaoliankong_fangxiang_left)
+        command.setText(452, height, "TSS24.BF2", 0, 2, 2, list[i].jiaoliankong_fangxiang_left)
         command.setText(574, height, "TSS24.BF2", 0, 2, 2, "")
-        command.setText(778, height, "TSS24.BF2", 0, 2, 2, list[i].jiaoliankong_fangxiang_right)
+        command.setText(860, height, "TSS24.BF2", 0, 2, 2, list[i].jiaoliankong_fangxiang_right)
         command.setText(982, height, "TSS24.BF2", 0, 2, 2, "")
 
         height = height + 60
         panduan = false
-        if(height % 770 == 0 || height % 920 == 0){
-          height = 20
+        if(height % 800 == 0 || height % 960 == 0){
+          height = 40
           command.setPagePrint()//执行打印指令
           command_arr.push(command)
           command = tsc.jpPrinter.createNew()
@@ -706,15 +706,15 @@ Page({
           panduan = true
         }
         command.setText(30, height, "TSS24.BF2", 0, 2, 2, "有拉手数量(个)")
-        command.setText(370, height, "TSS24.BF2", 0, 2, 2, list[i].lashou_shuliang_right)
+        command.setText(452, height, "TSS24.BF2", 0, 2, 2, list[i].lashou_shuliang_right)
         command.setText(574, height, "TSS24.BF2", 0, 2, 2, "")
-        command.setText(778, height, "TSS24.BF2", 0, 2, 2, list[i].lashou_shuliang_left)
+        command.setText(860, height, "TSS24.BF2", 0, 2, 2, list[i].lashou_shuliang_left)
         command.setText(982, height, "TSS24.BF2", 0, 2, 2, "")
 
         height = height + 60
         panduan = false
-        if(height % 770 == 0 || height % 920 == 0){
-          height = 20
+        if(height % 800 == 0 || height % 960 == 0){
+          height = 40
           command.setPagePrint()//执行打印指令
           command_arr.push(command)
           command = tsc.jpPrinter.createNew()
@@ -732,8 +732,8 @@ Page({
 
         height = height + 60
         panduan = false
-        if(height % 770 == 0 || height % 920 == 0){
-          height = 20
+        if(height % 800 == 0 || height % 960 == 0){
+          height = 40
           command.setPagePrint()//执行打印指令
           command_arr.push(command)
           command = tsc.jpPrinter.createNew()
@@ -744,15 +744,16 @@ Page({
           panduan = true
         }
         command.setText(30, height, "TSS24.BF2", 0, 2, 2, "拉手位")
-        command.setText(370, height, "TSS24.BF2", 0, 2, 2, list[i].lashouwei_select_left)
+        command.setText(430, height, "TSS24.BF2", 0, 2, 2, list[i].lashouwei_select_left)
         command.setText(574, height, "TSS24.BF2", 0, 2, 2, list[i].lashouwei_insert_left)
-        command.setText(778, height, "TSS24.BF2", 0, 2, 2, list[i].lashouwei_select_right)
+        command.setText(838, height, "TSS24.BF2", 0, 2, 2, list[i].lashouwei_select_right)
         command.setText(982, height, "TSS24.BF2", 0, 2, 2, list[i].lashouwei_insert_right)
 
         height = height + 60
         panduan = false
-        if(height % 770 == 0 || height % 920 == 0){
-          height = 20
+        console.log(height)
+        if(height % 800 == 0 || height % 960 == 0){
+          height = 40
           command.setPagePrint()//执行打印指令
           command_arr.push(command)
           command = tsc.jpPrinter.createNew()
@@ -770,8 +771,8 @@ Page({
 
         height = height + 60
         panduan = false
-        if(height % 770 == 0 || height % 920 == 0){
-          height = 20
+        if(height % 800 == 0 || height % 960 == 0){
+          height = 40
           command.setPagePrint()//执行打印指令
           command_arr.push(command)
           command = tsc.jpPrinter.createNew()
@@ -789,8 +790,8 @@ Page({
 
         height = height + 60
         panduan = false
-        if(height % 770 == 0 || height % 920 == 0){
-          height = 20
+        if(height % 800 == 0 || height % 960 == 0){
+          height = 40
           command.setPagePrint()//执行打印指令
           command_arr.push(command)
           command = tsc.jpPrinter.createNew()
@@ -808,8 +809,8 @@ Page({
 
         height = height + 60
         panduan = false
-        if(height % 770 == 0 || height % 920 == 0){
-          height = 20
+        if(height % 800 == 0 || height % 960 == 0){
+          height = 40
           command.setPagePrint()//执行打印指令
           command_arr.push(command)
           command = tsc.jpPrinter.createNew()
@@ -827,8 +828,8 @@ Page({
 
         height = height + 60
         panduan = false
-        if(height % 770 == 0 || height % 920 == 0){
-          height = 20
+        if(height % 800 == 0 || height % 960 == 0){
+          height = 40
           command.setPagePrint()//执行打印指令
           command_arr.push(command)
           command = tsc.jpPrinter.createNew()
@@ -846,8 +847,8 @@ Page({
 
         height = height + 60
         panduan = false
-        if(height % 770 == 0 || height % 920 == 0){
-          height = 20
+        if(height % 800 == 0 || height % 960 == 0){
+          height = 40
           command.setPagePrint()//执行打印指令
           command_arr.push(command)
           command = tsc.jpPrinter.createNew()
@@ -865,8 +866,8 @@ Page({
 
         height = height + 60
         panduan = false
-        if(height % 770 == 0 || height % 920 == 0){
-          height = 20
+        if(height % 800 == 0 || height % 960 == 0){
+          height = 40
           command.setPagePrint()//执行打印指令
           command_arr.push(command)
           command = tsc.jpPrinter.createNew()
@@ -884,8 +885,8 @@ Page({
 
         height = height + 60
         panduan = false
-        if(height % 770 == 0 || height % 920 == 0){
-          height = 20
+        if(height % 800 == 0 || height % 960 == 0){
+          height = 40
           command.setPagePrint()//执行打印指令
           command_arr.push(command)
           command = tsc.jpPrinter.createNew()
@@ -903,8 +904,8 @@ Page({
 
         height = height + 60
         panduan = false
-        if(height % 770 == 0 || height % 920 == 0){
-          height = 20
+        if(height % 800 == 0 || height % 960 == 0){
+          height = 40
           command.setPagePrint()//执行打印指令
           command_arr.push(command)
           command = tsc.jpPrinter.createNew()
@@ -922,8 +923,8 @@ Page({
 
         height = height + 60
         panduan = false
-        if(height % 770 == 0 || height % 920 == 0){
-          height = 20
+        if(height % 800 == 0 || height % 960 == 0){
+          height = 40
           command.setPagePrint()//执行打印指令
           command_arr.push(command)
           command = tsc.jpPrinter.createNew()
@@ -1534,7 +1535,7 @@ Page({
     }
     this.setData({
       buffSize: list,
-      oneTimeData: 20,
+      oneTimeData: 100,
       printNum: numList,
       printerNum: numList[0]
     })

@@ -14,6 +14,7 @@ Page({
   xlShow: false,
   rqxzShow2: false,
   data: {
+    this_random : getRandomIntInclusive(0,1000),
     quyu:'',
     kongjian: 3,
     minDate: new Date(2000, 1, 1).getTime(),
@@ -208,6 +209,9 @@ Page({
    */
   onLoad(options) {
     var _this = this
+    _this.setData({
+      this_random:getRandomIntInclusive(0,1000)
+    })
     console.log(options)
     console.log(options.order_number)
     var userInfo = JSON.parse(options.userInfo)
@@ -365,6 +369,49 @@ Page({
         },
         success: res => {
           var list = res.result.recordset
+          var this_random = _this.data.this_random
+          for(var i=0; i<list.length; i++){
+            list[i].customer_need_img1query = '?query=' + this_random
+            list[i].customer_need_img2query = '?query=' + this_random
+            list[i].customer_need_img3query = '?query=' + this_random
+            list[i].customer_need_img4query = '?query=' + this_random
+            list[i].customer_need_img5query = '?query=' + this_random
+            list[i].customer_need_img6query = '?query=' + this_random
+            list[i].customer_need_img7query = '?query=' + this_random
+            list[i].customer_need_img8query = '?query=' + this_random
+            list[i].wenjian_img1query = '?query=' + this_random
+            list[i].wenjian_img2query = '?query=' + this_random
+            list[i].wenjian_img3query = '?query=' + this_random
+            list[i].wenjian_img4query = '?query=' + this_random
+            list[i].wenjian_img5query = '?query=' + this_random
+            list[i].wenjian_img6query = '?query=' + this_random
+            list[i].wenjian_img7query = '?query=' + this_random
+            list[i].wenjian_img8query = '?query=' + this_random
+            list[i].peihuo_img1query = '?query=' + this_random
+            list[i].peihuo_img2query = '?query=' + this_random
+            list[i].peihuo_img3query = '?query=' + this_random
+            list[i].peihuo_img4query = '?query=' + this_random
+            list[i].peihuo_img5query = '?query=' + this_random
+            list[i].peihuo_img6query = '?query=' + this_random
+            list[i].peihuo_img7query = '?query=' + this_random
+            list[i].peihuo_img8query = '?query=' + this_random
+            list[i].peisong_img1query = '?query=' + this_random
+            list[i].peisong_img2query = '?query=' + this_random
+            list[i].peisong_img3query = '?query=' + this_random
+            list[i].peisong_img4query = '?query=' + this_random
+            list[i].peisong_img5query = '?query=' + this_random
+            list[i].peisong_img6query = '?query=' + this_random
+            list[i].peisong_img7query = '?query=' + this_random
+            list[i].peisong_img8query = '?query=' + this_random
+            list[i].kucun_img1query = '?query=' + this_random
+            list[i].kucun_img2query = '?query=' + this_random
+            list[i].kucun_img3query = '?query=' + this_random
+            list[i].kucun_img4query = '?query=' + this_random
+            list[i].kucun_img5query = '?query=' + this_random
+            list[i].kucun_img6query = '?query=' + this_random
+            list[i].kucun_img7query = '?query=' + this_random
+            list[i].kucun_img8query = '?query=' + this_random
+          }
           console.log(list)
           _this.setData({
             list
@@ -390,63 +437,78 @@ Page({
   },
 
   wenjian_img_error:function(e){
-    console.log('触发')
-    console.log(e.currentTarget.dataset.display)
-    var display = e.currentTarget.dataset.display
-    var _this = this
-    _this.setData({
-      wenjian_img_height:_this.data.wenjian_img_height - 350,
-      [display]:false
-    })
-    console.log(_this.data.wenjian_img_height)
+    console.log(e)
+    if(e.detail.errMsg.indexOf("404 (Not Found)") != -1 && e.currentTarget.dataset.value != '' && e.currentTarget.dataset.value.indexOf("base64") == -1){
+      console.log('触发')
+      console.log(e.currentTarget.dataset.display)
+      var display = e.currentTarget.dataset.display
+      var _this = this
+      _this.setData({
+        wenjian_img_height:_this.data.wenjian_img_height - 350,
+        [display]:false
+      })
+      console.log(_this.data.wenjian_img_height)
+    }
   },
 
   customer_need_img_error:function(e){
-    console.log('触发')
-    console.log(e.currentTarget.dataset.display)
-    var display = e.currentTarget.dataset.display
-    var _this = this
-    _this.setData({
-      customer_need_img_height:_this.data.customer_need_img_height - 350,
-      [display]:false
-    })
-    console.log(_this.data.customer_need_img_height)
+    console.log(e)
+      if(e.detail.errMsg.indexOf("404 (Not Found)") != -1 && e.currentTarget.dataset.value != '' && e.currentTarget.dataset.value.indexOf("base64") == -1){
+      console.log('触发')
+      console.log(e.currentTarget.dataset.display)
+      var display = e.currentTarget.dataset.display
+      var _this = this
+      _this.setData({
+        customer_need_img_height:_this.data.customer_need_img_height - 350,
+        [display]:false
+      })
+      console.log(_this.data.customer_need_img_height)
+    }
   },
 
   peihuo_img_error:function(e){
-    console.log('触发')
-    console.log(e.currentTarget.dataset.display)
-    var display = e.currentTarget.dataset.display
-    var _this = this
-    _this.setData({
-      peihuo_img_height:_this.data.peihuo_img_height - 350,
-      [display]:false
-    })
-    console.log(_this.data.peihuo_img_height)
+    console.log(e)
+    if(e.detail.errMsg.indexOf("404 (Not Found)") != -1 && e.currentTarget.dataset.value != '' && e.currentTarget.dataset.value.indexOf("base64") == -1){
+      console.log('触发')
+      console.log(e.currentTarget.dataset.display)
+      var display = e.currentTarget.dataset.display
+      var _this = this
+      _this.setData({
+        peihuo_img_height:_this.data.peihuo_img_height - 350,
+        [display]:false
+      })
+      console.log(_this.data.peihuo_img_height)
+    }
   },
 
   peisong_img_error:function(e){
-    console.log('触发')
-    console.log(e.currentTarget.dataset.display)
-    var display = e.currentTarget.dataset.display
-    var _this = this
-    _this.setData({
-      peisong_img_height:_this.data.peisong_img_height - 350,
-      [display]:false
-    })
-    console.log(_this.data.peisong_img_height)
+    console.log(e)
+    if(e.detail.errMsg.indexOf("404 (Not Found)") != -1 && e.currentTarget.dataset.value != '' && e.currentTarget.dataset.value.indexOf("base64") == -1){
+      console.log('触发')
+      console.log(e.currentTarget.dataset.display)
+      var display = e.currentTarget.dataset.display
+      var _this = this
+      _this.setData({
+        peisong_img_height:_this.data.peisong_img_height - 350,
+        [display]:false
+      })
+      console.log(_this.data.peisong_img_height)
+    }
   },
 
   kucun_img_error:function(e){
-    console.log('触发')
-    console.log(e.currentTarget.dataset.display)
-    var display = e.currentTarget.dataset.display
-    var _this = this
-    _this.setData({
-      kucun_img_height:_this.data.kucun_img_height - 350,
-      [display]:false
-    })
-    console.log(_this.data.kucun_img_height)
+    console.log(e)
+    if(e.detail.errMsg.indexOf("404 (Not Found)") != -1 && e.currentTarget.dataset.value != '' && e.currentTarget.dataset.value.indexOf("base64") == -1){
+      console.log('触发')
+      console.log(e.currentTarget.dataset.display)
+      var display = e.currentTarget.dataset.display
+      var _this = this
+      _this.setData({
+        kucun_img_height:_this.data.kucun_img_height - 350,
+        [display]:false
+      })
+      console.log(_this.data.kucun_img_height)
+    }
   },
 
   sel_xiala: function (e) {
@@ -570,7 +632,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://huaqunwechar.com:9087/file/upload',
+                    url: 'https://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -598,7 +660,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://huaqunwechar.com:9087/file/upload',
+                    url: 'https://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -626,7 +688,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://huaqunwechar.com:9087/file/upload',
+                    url: 'https://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -654,7 +716,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://huaqunwechar.com:9087/file/upload',
+                    url: 'https://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -682,7 +744,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://huaqunwechar.com:9087/file/upload',
+                    url: 'https://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -710,7 +772,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://huaqunwechar.com:9087/file/upload',
+                    url: 'https://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -738,7 +800,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://huaqunwechar.com:9087/file/upload',
+                    url: 'https://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -766,7 +828,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://huaqunwechar.com:9087/file/upload',
+                    url: 'https://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -794,7 +856,7 @@ Page({
                 //   fsm.writeFileSync(fileName, buffer, 'binary');
                 //   console.log(fileName);
                 //    wx.uploadFile({
-                //     url: 'http://huaqunwechar.com:9087/file/upload',
+                //     url: 'https://huaqunwechar.com:9087/file/upload',
                 //     header: { "Content-Type": "multipart/form-data" },
                 //     filePath: fileName,
                 //     name: 'file',
@@ -822,7 +884,7 @@ Page({
                 //   fsm.writeFileSync(fileName, buffer, 'binary');
                 //   console.log(fileName);
                 //    wx.uploadFile({
-                //     url: 'http://huaqunwechar.com:9087/file/upload',
+                //     url: 'https://huaqunwechar.com:9087/file/upload',
                 //     header: { "Content-Type": "multipart/form-data" },
                 //     filePath: fileName,
                 //     name: 'file',
@@ -850,7 +912,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://huaqunwechar.com:9087/file/upload',
+                    url: 'https://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -878,7 +940,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://huaqunwechar.com:9087/file/upload',
+                    url: 'https://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -906,7 +968,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://huaqunwechar.com:9087/file/upload',
+                    url: 'https://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -934,7 +996,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://huaqunwechar.com:9087/file/upload',
+                    url: 'https://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -962,7 +1024,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://huaqunwechar.com:9087/file/upload',
+                    url: 'https://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -990,7 +1052,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://huaqunwechar.com:9087/file/upload',
+                    url: 'https://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -1018,7 +1080,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://huaqunwechar.com:9087/file/upload',
+                    url: 'https://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -1046,7 +1108,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://huaqunwechar.com:9087/file/upload',
+                    url: 'https://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -1074,7 +1136,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://huaqunwechar.com:9087/file/upload',
+                    url: 'https://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -1102,7 +1164,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://huaqunwechar.com:9087/file/upload',
+                    url: 'https://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -1130,7 +1192,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://huaqunwechar.com:9087/file/upload',
+                    url: 'https://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -1158,7 +1220,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://huaqunwechar.com:9087/file/upload',
+                    url: 'https://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -1186,7 +1248,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://huaqunwechar.com:9087/file/upload',
+                    url: 'https://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -1214,7 +1276,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://huaqunwechar.com:9087/file/upload',
+                    url: 'https://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -1242,7 +1304,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://huaqunwechar.com:9087/file/upload',
+                    url: 'https://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -1270,7 +1332,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://huaqunwechar.com:9087/file/upload',
+                    url: 'https://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -1298,7 +1360,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://huaqunwechar.com:9087/file/upload',
+                    url: 'https://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -1326,7 +1388,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://huaqunwechar.com:9087/file/upload',
+                    url: 'https://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -1354,7 +1416,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://huaqunwechar.com:9087/file/upload',
+                    url: 'https://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -1382,7 +1444,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://huaqunwechar.com:9087/file/upload',
+                    url: 'https://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -1410,7 +1472,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://huaqunwechar.com:9087/file/upload',
+                    url: 'https://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -1438,7 +1500,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://huaqunwechar.com:9087/file/upload',
+                    url: 'https://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -1466,7 +1528,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://huaqunwechar.com:9087/file/upload',
+                    url: 'https://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -1494,7 +1556,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://huaqunwechar.com:9087/file/upload',
+                    url: 'https://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -1522,7 +1584,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://huaqunwechar.com:9087/file/upload',
+                    url: 'https://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -1550,7 +1612,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://huaqunwechar.com:9087/file/upload',
+                    url: 'https://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -1578,7 +1640,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://huaqunwechar.com:9087/file/upload',
+                    url: 'https://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -1606,7 +1668,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://huaqunwechar.com:9087/file/upload',
+                    url: 'https://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -1634,7 +1696,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://huaqunwechar.com:9087/file/upload',
+                    url: 'https://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -1662,7 +1724,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://huaqunwechar.com:9087/file/upload',
+                    url: 'https://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -1690,7 +1752,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://huaqunwechar.com:9087/file/upload',
+                    url: 'https://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -1718,7 +1780,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://huaqunwechar.com:9087/file/upload',
+                    url: 'https://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -1815,7 +1877,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://huaqunwechar.com:9087/file/upload',
+                    url: 'https://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -1843,8 +1905,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://huaqunwechar.com:9087/file/upload',
-                    header: { "Content-Type": "multipart/form-data" },
+                    url: 'https://huaqunwechar.com:9087/file/upload',
                     filePath: fileName,
                     name: 'file',
                     formData:{
@@ -1871,7 +1932,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://huaqunwechar.com:9087/file/upload',
+                    url: 'https://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -1899,7 +1960,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://huaqunwechar.com:9087/file/upload',
+                    url: 'https://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -1927,7 +1988,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://huaqunwechar.com:9087/file/upload',
+                    url: 'https://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -1955,7 +2016,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://huaqunwechar.com:9087/file/upload',
+                    url: 'https://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -1983,7 +2044,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://huaqunwechar.com:9087/file/upload',
+                    url: 'https://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -2011,7 +2072,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://huaqunwechar.com:9087/file/upload',
+                    url: 'https://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -2039,7 +2100,7 @@ Page({
                 //   fsm.writeFileSync(fileName, buffer, 'binary');
                 //   console.log(fileName);
                 //    wx.uploadFile({
-                //     url: 'http://huaqunwechar.com:9087/file/upload',
+                //     url: 'https://huaqunwechar.com:9087/file/upload',
                 //     header: { "Content-Type": "multipart/form-data" },
                 //     filePath: fileName,
                 //     name: 'file',
@@ -2067,7 +2128,7 @@ Page({
                 //   fsm.writeFileSync(fileName, buffer, 'binary');
                 //   console.log(fileName);
                 //    wx.uploadFile({
-                //     url: 'http://huaqunwechar.com:9087/file/upload',
+                //     url: 'https://huaqunwechar.com:9087/file/upload',
                 //     header: { "Content-Type": "multipart/form-data" },
                 //     filePath: fileName,
                 //     name: 'file',
@@ -2095,7 +2156,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://huaqunwechar.com:9087/file/upload',
+                    url: 'https://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -2123,7 +2184,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://huaqunwechar.com:9087/file/upload',
+                    url: 'https://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -2151,7 +2212,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://huaqunwechar.com:9087/file/upload',
+                    url: 'https://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -2179,7 +2240,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://huaqunwechar.com:9087/file/upload',
+                    url: 'https://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -2207,7 +2268,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://huaqunwechar.com:9087/file/upload',
+                    url: 'https://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -2235,7 +2296,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://huaqunwechar.com:9087/file/upload',
+                    url: 'https://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -2263,7 +2324,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://huaqunwechar.com:9087/file/upload',
+                    url: 'https://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -2291,7 +2352,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://huaqunwechar.com:9087/file/upload',
+                    url: 'https://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -2319,7 +2380,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://huaqunwechar.com:9087/file/upload',
+                    url: 'https://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -2347,7 +2408,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://huaqunwechar.com:9087/file/upload',
+                    url: 'https://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -2375,7 +2436,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://huaqunwechar.com:9087/file/upload',
+                    url: 'https://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -2403,7 +2464,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://huaqunwechar.com:9087/file/upload',
+                    url: 'https://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -2431,7 +2492,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://huaqunwechar.com:9087/file/upload',
+                    url: 'https://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -2459,7 +2520,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://huaqunwechar.com:9087/file/upload',
+                    url: 'https://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -2487,7 +2548,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://huaqunwechar.com:9087/file/upload',
+                    url: 'https://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -2515,7 +2576,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://huaqunwechar.com:9087/file/upload',
+                    url: 'https://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -2543,7 +2604,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://huaqunwechar.com:9087/file/upload',
+                    url: 'https://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -2571,7 +2632,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://huaqunwechar.com:9087/file/upload',
+                    url: 'https://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -2599,7 +2660,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://huaqunwechar.com:9087/file/upload',
+                    url: 'https://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -2627,7 +2688,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://huaqunwechar.com:9087/file/upload',
+                    url: 'https://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -2655,7 +2716,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://huaqunwechar.com:9087/file/upload',
+                    url: 'https://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -2683,7 +2744,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://huaqunwechar.com:9087/file/upload',
+                    url: 'https://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -2711,7 +2772,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://huaqunwechar.com:9087/file/upload',
+                    url: 'https://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -2739,7 +2800,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://huaqunwechar.com:9087/file/upload',
+                    url: 'https://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -2767,7 +2828,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://huaqunwechar.com:9087/file/upload',
+                    url: 'https://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -2795,7 +2856,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://huaqunwechar.com:9087/file/upload',
+                    url: 'https://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -2823,7 +2884,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://huaqunwechar.com:9087/file/upload',
+                    url: 'https://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -2851,7 +2912,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://huaqunwechar.com:9087/file/upload',
+                    url: 'https://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -2879,7 +2940,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://huaqunwechar.com:9087/file/upload',
+                    url: 'https://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -2907,7 +2968,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://huaqunwechar.com:9087/file/upload',
+                    url: 'https://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -2935,7 +2996,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://huaqunwechar.com:9087/file/upload',
+                    url: 'https://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -2963,7 +3024,7 @@ Page({
                   fsm.writeFileSync(fileName, buffer, 'binary');
                   console.log(fileName);
                    wx.uploadFile({
-                    url: 'http://huaqunwechar.com:9087/file/upload',
+                    url: 'https://huaqunwechar.com:9087/file/upload',
                     header: { "Content-Type": "multipart/form-data" },
                     filePath: fileName,
                     name: 'file',
@@ -3113,7 +3174,7 @@ Page({
     var url = _this.data.this_value;   // base64
     if(url.indexOf("http") != -1){
       wx.downloadFile({
-        url: url, //仅为示例，并非真实的资源
+        url: url.replace("http:","https:").replace(":9088",":9100"), //仅为示例，并非真实的资源
         success (res) {
           // 只要服务器有响应数据，就会把响应内容写入文件并进入 success 回调，业务需要自行判断是否下载到了想要的内容
           if (res.statusCode === 200) {
@@ -3179,6 +3240,7 @@ Page({
                 list[0][_this.data.this_column] = 'data:image/png;base64,' + res.data
                 list[0][_this.data.this_column + "_renyuan"] = _this.data.userInfo.name
                 list[0][_this.data.this_column + "_riqi"] = getNowDate1()
+                list[0][_this.data.this_column + "query"] = ''
                 _this.setData({
                   list
                 })
@@ -3380,6 +3442,7 @@ Page({
                 list[0][column_name] = 'data:image/png;base64,' + res.data
                 list[0][column_name + "_renyuan"] = _this.data.userInfo.name
                 list[0][column_name + "_riqi"] = getNowDate1()
+                list[0][column_name + "query"] = ''
                 _this.setData({
                   list,
                   [column + index + "_display"]:true,
@@ -3742,7 +3805,7 @@ Page({
       fsm.writeFileSync(fileName, buffer, 'binary');
       console.log(fileName);
        wx.uploadFile({
-        url: 'http://huaqunwechar.com:9087/file/upload',
+        url: 'https://huaqunwechar.com:9087/file/upload',
         header: { "Content-Type": "multipart/form-data" },
         filePath: fileName,
         name: 'file',
@@ -3772,7 +3835,7 @@ Page({
   //     fsm.writeFileSync(fileName, buffer, 'binary');
   //     console.log(fileName);
   //      wx.uploadFile({
-  //       url: 'http://huaqunwechar.com:9087/file/upload',
+  //       url: 'https://huaqunwechar.com:9087/file/upload',
   //       header: { "Content-Type": "multipart/form-data" },
   //       filePath: fileName,
   //       name: 'file',
@@ -3802,7 +3865,7 @@ Page({
   //     fsm.writeFileSync(fileName, buffer, 'binary');
   //     console.log(fileName);
   //      wx.uploadFile({
-  //       url: 'http://huaqunwechar.com:9087/file/upload',
+  //       url: 'https://huaqunwechar.com:9087/file/upload',
   //       header: { "Content-Type": "multipart/form-data" },
   //       filePath: fileName,
   //       name: 'file',
@@ -3832,7 +3895,7 @@ Page({
       fsm.writeFileSync(fileName, buffer, 'binary');
       console.log(fileName);
        wx.uploadFile({
-        url: 'http://huaqunwechar.com:9087/file/upload',
+        url: 'https://huaqunwechar.com:9087/file/upload',
         header: { "Content-Type": "multipart/form-data" },
         filePath: fileName,
         name: 'file',
@@ -3862,7 +3925,7 @@ Page({
       fsm.writeFileSync(fileName, buffer, 'binary');
       console.log(fileName);
        wx.uploadFile({
-        url: 'http://huaqunwechar.com:9087/file/upload',
+        url: 'https://huaqunwechar.com:9087/file/upload',
         header: { "Content-Type": "multipart/form-data" },
         filePath: fileName,
         name: 'file',
@@ -3892,7 +3955,7 @@ Page({
       fsm.writeFileSync(fileName, buffer, 'binary');
       console.log(fileName);
        wx.uploadFile({
-        url: 'http://huaqunwechar.com:9087/file/upload',
+        url: 'https://huaqunwechar.com:9087/file/upload',
         header: { "Content-Type": "multipart/form-data" },
         filePath: fileName,
         name: 'file',
@@ -3922,7 +3985,7 @@ Page({
       fsm.writeFileSync(fileName, buffer, 'binary');
       console.log(fileName);
        wx.uploadFile({
-        url: 'http://huaqunwechar.com:9087/file/upload',
+        url: 'https://huaqunwechar.com:9087/file/upload',
         header: { "Content-Type": "multipart/form-data" },
         filePath: fileName,
         name: 'file',
@@ -3952,7 +4015,7 @@ Page({
       fsm.writeFileSync(fileName, buffer, 'binary');
       console.log(fileName);
        wx.uploadFile({
-        url: 'http://huaqunwechar.com:9087/file/upload',
+        url: 'https://huaqunwechar.com:9087/file/upload',
         header: { "Content-Type": "multipart/form-data" },
         filePath: fileName,
         name: 'file',
@@ -3982,7 +4045,7 @@ Page({
       fsm.writeFileSync(fileName, buffer, 'binary');
       console.log(fileName);
        wx.uploadFile({
-        url: 'http://huaqunwechar.com:9087/file/upload',
+        url: 'https://huaqunwechar.com:9087/file/upload',
         header: { "Content-Type": "multipart/form-data" },
         filePath: fileName,
         name: 'file',
@@ -4012,7 +4075,7 @@ Page({
       fsm.writeFileSync(fileName, buffer, 'binary');
       console.log(fileName);
        wx.uploadFile({
-        url: 'http://huaqunwechar.com:9087/file/upload',
+        url: 'https://huaqunwechar.com:9087/file/upload',
         header: { "Content-Type": "multipart/form-data" },
         filePath: fileName,
         name: 'file',
@@ -4042,7 +4105,7 @@ Page({
       fsm.writeFileSync(fileName, buffer, 'binary');
       console.log(fileName);
        wx.uploadFile({
-        url: 'http://huaqunwechar.com:9087/file/upload',
+        url: 'https://huaqunwechar.com:9087/file/upload',
         header: { "Content-Type": "multipart/form-data" },
         filePath: fileName,
         name: 'file',
@@ -4072,7 +4135,7 @@ Page({
       fsm.writeFileSync(fileName, buffer, 'binary');
       console.log(fileName);
        wx.uploadFile({
-        url: 'http://huaqunwechar.com:9087/file/upload',
+        url: 'https://huaqunwechar.com:9087/file/upload',
         header: { "Content-Type": "multipart/form-data" },
         filePath: fileName,
         name: 'file',
@@ -4102,7 +4165,7 @@ Page({
       fsm.writeFileSync(fileName, buffer, 'binary');
       console.log(fileName);
        wx.uploadFile({
-        url: 'http://huaqunwechar.com:9087/file/upload',
+        url: 'https://huaqunwechar.com:9087/file/upload',
         header: { "Content-Type": "multipart/form-data" },
         filePath: fileName,
         name: 'file',
@@ -4132,7 +4195,7 @@ Page({
       fsm.writeFileSync(fileName, buffer, 'binary');
       console.log(fileName);
        wx.uploadFile({
-        url: 'http://huaqunwechar.com:9087/file/upload',
+        url: 'https://huaqunwechar.com:9087/file/upload',
         header: { "Content-Type": "multipart/form-data" },
         filePath: fileName,
         name: 'file',
@@ -4178,7 +4241,7 @@ Page({
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload() {
+  onUnload:function(){
 
   },
 
@@ -4339,5 +4402,11 @@ function getBianHao() {
   var currentdate = year + month + day + hour + minutes + seconds
   return currentdate;
  }
+
+ function getRandomIntInclusive(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
  

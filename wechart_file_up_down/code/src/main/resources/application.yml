@@ -1,6 +1,11 @@
 server:
   port: 9087
-  max-http-header-size: 100000
+  max-http-header-size: 102400000
+  ssl:
+    enabled: true #启用SSL
+    key-store: classpath:huaqunwechar.com.jks #文件位置
+    key-store-password: 71lglihwg800h #密钥存储密码（即生成时要求输入两遍的那个的密钥库口令）
+    key-store-type: JKS
 web:
   upload-path: D:/profile
 spring:

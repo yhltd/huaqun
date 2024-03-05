@@ -853,7 +853,7 @@ Page({
     console.log(list[0])
     this.setData({
       buffSize: list,
-      oneTimeData: 190,
+      oneTimeData: 100,
       printNum: numList,
       printerNum: numList[0]
     })
