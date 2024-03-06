@@ -186,11 +186,11 @@ Page({
     var _this = this
     var sql = ''
     if(_this.data.userInfo.power == '管理员'){
-      sql = "select *,case when shengchan = '正在加工' then 1 when shengchan = '配送少数' then 2 when shengchan = '加工完成' then 3 end as paixu from (select id,'' as dd,customer_name,insert_date,boli.order_number,pinyin,gongyingshang,boli_yanse,boli_shenjiagong,num,height,width,shengchan,beizhu,shendan,shuoming1,shuoming2 ,'' as type from boli_xiadan as boli left join (select customer_name,order_number,shendan,insert_date,guanlian,wancheng from lvkuang_xiadan ) as lvkuang on boli.guanlian = lvkuang.guanlian where (lvkuang.wancheng != '' and lvkuang.wancheng != '未审验' and lvkuang.wancheng != '推迟处理') and pinyin like '%" + e[0] + "%' and isnull(shengchan,'') like '%" + e[1]+"%' and insert_date >= '"+ e[2] +"' and insert_date <= '"+ e[3] +"') as dan order by paixu,order_number"
+      sql = "select *,case when shengchan = '正在加工' then 1 when shengchan = '配送少数' then 2 when shengchan = '加工完成' then 3 when shengchan = '完成' then 4 end as paixu from (select id,'' as dd,customer_name,insert_date,boli.order_number,pinyin,gongyingshang,boli_yanse,boli_shenjiagong,num,height,width,shengchan,beizhu,shendan,shuoming1,shuoming2 ,'' as type from boli_xiadan as boli left join (select customer_name,order_number,shendan,insert_date,guanlian,wancheng from lvkuang_xiadan ) as lvkuang on boli.guanlian = lvkuang.guanlian where (lvkuang.wancheng != '' and lvkuang.wancheng != '未审验' and lvkuang.wancheng != '推迟处理') and pinyin like '%" + e[0] + "%' and isnull(shengchan,'') like '%" + e[1]+"%' and insert_date >= '"+ e[2] +"' and insert_date <= '"+ e[3] +"') as dan order by paixu,order_number"
     }else if(_this.data.userInfo.power=='玻璃厂'){
-      sql = "select *,case when shengchan = '正在加工' then 1 when shengchan = '配送少数' then 2 when shengchan = '加工完成' then 3 end as paixu from(select id,'' as dd,customer_name,insert_date,boli.order_number,pinyin,gongyingshang,boli_yanse,boli_shenjiagong,num,height,width,shengchan,beizhu,shendan,shuoming1,shuoming2 ,'' as type from boli_xiadan as boli left join (select customer_name,order_number,shendan,insert_date,guanlian,wancheng from lvkuang_xiadan ) as lvkuang on boli.guanlian = lvkuang.guanlian where (lvkuang.wancheng != '' and lvkuang.wancheng != '未审验' and lvkuang.wancheng != '推迟处理') and  gongyingshang = '" + _this.data.userInfo.name + "' and pinyin like '%" + e[0] + "%' and isnull(shengchan,'') like '%" + e[1] + "%' and gongyingshang = '" + _this.data.userInfo.name + "' and insert_date >= '"+ e[2] +"' and insert_date <= '"+ e[3] +"') as dan order by paixu,order_number"
+      sql = "select *,case when shengchan = '正在加工' then 1 when shengchan = '配送少数' then 2 when shengchan = '加工完成' then 3 when shengchan = '完成' then 4 end as paixu from(select id,'' as dd,customer_name,insert_date,boli.order_number,pinyin,gongyingshang,boli_yanse,boli_shenjiagong,num,height,width,shengchan,beizhu,shendan,shuoming1,shuoming2 ,'' as type from boli_xiadan as boli left join (select customer_name,order_number,shendan,insert_date,guanlian,wancheng from lvkuang_xiadan ) as lvkuang on boli.guanlian = lvkuang.guanlian where (lvkuang.wancheng != '' and lvkuang.wancheng != '未审验' and lvkuang.wancheng != '推迟处理') and  gongyingshang = '" + _this.data.userInfo.name + "' and pinyin like '%" + e[0] + "%' and isnull(shengchan,'') like '%" + e[1] + "%' and gongyingshang = '" + _this.data.userInfo.name + "' and insert_date >= '"+ e[2] +"' and insert_date <= '"+ e[3] +"') as dan order by paixu,order_number"
     }else{
-      sql = "select *,case when shengchan = '正在加工' then 1 when shengchan = '配送少数' then 2 when shengchan = '加工完成' then 3 end as paixu from(select id,'' as dd,customer_name,insert_date,boli.order_number,pinyin,gongyingshang,boli_yanse,boli_shenjiagong,num,height,width,shengchan,beizhu,shendan,shuoming1,shuoming2 ,'' as type from boli_xiadan as boli left join (select customer_name,order_number,shendan,insert_date,guanlian,wancheng from lvkuang_xiadan ) as lvkuang on boli.guanlian = lvkuang.guanlian where (lvkuang.wancheng != '' and lvkuang.wancheng != '未审验' and lvkuang.wancheng != '推迟处理') and  pinyin like '%" + e[0] + "%' and isnull(shengchan,'') like '%" + e[1] + "%' and insert_date >= '"+ e[2] +"' and insert_date <= '"+ e[3] +"') as dan order by paixu,order_number"
+      sql = "select *,case when shengchan = '正在加工' then 1 when shengchan = '配送少数' then 2 when shengchan = '加工完成' then 3 when shengchan = '完成' then 4 end as paixu from(select id,'' as dd,customer_name,insert_date,boli.order_number,pinyin,gongyingshang,boli_yanse,boli_shenjiagong,num,height,width,shengchan,beizhu,shendan,shuoming1,shuoming2 ,'' as type from boli_xiadan as boli left join (select customer_name,order_number,shendan,insert_date,guanlian,wancheng from lvkuang_xiadan ) as lvkuang on boli.guanlian = lvkuang.guanlian where (lvkuang.wancheng != '' and lvkuang.wancheng != '未审验' and lvkuang.wancheng != '推迟处理') and  pinyin like '%" + e[0] + "%' and isnull(shengchan,'') like '%" + e[1] + "%' and insert_date >= '"+ e[2] +"' and insert_date <= '"+ e[3] +"') as dan order by paixu,order_number"
     }
     console.log(sql)
     wx.cloud.callFunction({
@@ -263,6 +263,7 @@ Page({
         yes_click: '加工完成',
         yes_click2: '配送少数',
         no_click: '正在加工',
+        over_click: '完成',
       })
     }else if(column == "beizhu"){
       if(_this.data.userInfo.power == '管理员' || _this.data.userInfo.power == '玻璃厂'){
@@ -368,6 +369,39 @@ Page({
   no_click:function(){
     var _this = this
     var sql = "update boli_xiadan set " + _this.data.this_column + "='" + _this.data.no_click + "' where id="+ _this.data.id
+    console.log(sql)
+    wx.cloud.callFunction({
+      name: 'sqlserver_huaqun',
+      data: {
+        query: sql
+      },
+      success: res => {
+        wx.showToast({
+          title: '完成！',
+          icon: 'none',
+          duration: 3000
+        })
+        var e = ['','','1900-01-01', '2100-12-31']
+        _this.tableShow(e)
+        _this.qxShow()
+      },
+      err: res => {
+        console.log("错误!")
+      },
+      fail: res => {
+        wx.showToast({
+          title: '请求失败！',
+          icon: 'none',
+          duration: 3000
+        })
+        console.log("请求失败！")
+      }
+    })
+  },
+
+  over_click:function(){
+    var _this = this
+    var sql = "update boli_xiadan set " + _this.data.this_column + "='" + _this.data.over_click + "' where id="+ _this.data.id
     console.log(sql)
     wx.cloud.callFunction({
       name: 'sqlserver_huaqun',
