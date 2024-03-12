@@ -167,7 +167,7 @@ button{
   height: 70rpx;
   justify-content: center;
   align-items: center;
-  background-color: #432ebb;
+  background-color: #7a85c2;
   color: black;
   border-right: 1rpx solid #F0F0F0;
   border-bottom: 1rpx solid #F0F0F0;

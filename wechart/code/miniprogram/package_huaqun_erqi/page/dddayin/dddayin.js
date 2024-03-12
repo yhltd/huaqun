@@ -401,26 +401,26 @@ Page({
     command.setSize(100, 80)//设置标签大小，单位mm.具体参数请用尺子量一下
     command.setGap(2)//设置两个标签之间的间隙，单位mm.具体参数请用尺子量一下
     command.setCls()
-    command.setText(280, 10, "TSS24.BF2", 0, 3, 3, "天龙五金灯控系统")//绘制文字
+    command.setText(280, 50, "TSS24.BF2", 0, 3, 3, "天龙五金灯控系统")//绘制文字
     if(dayin_peizhi.P1 == '是'){
-      command.setText(30, 90, "TSS24.BF2", 0, 2, 2, '客户：' + order1.khmc)//绘制文字
+      command.setText(30, 130, "TSS24.BF2", 0, 2, 2, '客户：' + order1.khmc)//绘制文字
     }
 
     if(dayin_peizhi.P2 == '是'){
-      command.setText(420, 90, "TSS24.BF2", 0, 2, 2, '日期：' + order1.xdrq)//绘制文字
+      command.setText(420, 130, "TSS24.BF2", 0, 2, 2, '日期：' + order1.xdrq)//绘制文字
     }
 
     if(dayin_peizhi.P3 == '是'){
-      command.setText(870, 90, "TSS24.BF2", 0, 2, 2, order1.djbh)//绘制文字
+      command.setText(870, 130, "TSS24.BF2", 0, 2, 2, order1.djbh)//绘制文字
     }
 
     if(dayin_peizhi.P4 == '是'){
-      command.setText(30,150, "TSS24.BF2", 0, 2, 2, '安装地址：' + order1.azdz)//绘制文字
+      command.setText(30,190, "TSS24.BF2", 0, 2, 2, '安装地址：' + order1.azdz)//绘制文字
     }
 
-    command.setText(870, 150, "TSS24.BF2", 0, 2, 2, order1.ddh)//绘制文字
+    command.setText(870, 190, "TSS24.BF2", 0, 2, 2, order1.ddh)//绘制文字
 
-    var this_height = 210
+    var this_height = 250
     var this_column = 1
     var lvxingcai =""
     var panduan = false
@@ -430,8 +430,8 @@ Page({
         command.setText(30,this_height, "TSS24.BF2", 0, 2, 2, order2[i].gh)//绘制文字
         this_height = this_height + 60
         panduan = false
-        if(this_height % 930 == 0 || this_height % 920 == 0){
-          this_height = 20
+        if(this_height % 850 == 0 || this_height % 830 == 0){
+          this_height = 50
           command.setPagePrint()//执行打印指令
           command_arr.push(command)
           command = tsc.jpPrinter.createNew()
@@ -448,8 +448,8 @@ Page({
         command.setText(30,this_height, "TSS24.BF2", 0, 2, 2, lvxingcai)//绘制文字
         this_height = this_height + 60
         panduan = false
-        if(this_height % 930 == 0 || this_height % 920 == 0){
-          this_height = 20
+        if(this_height % 850 == 0 || this_height % 830 == 0){
+          this_height = 50
           command.setPagePrint()//执行打印指令
           command_arr.push(command)
           command = tsc.jpPrinter.createNew()
@@ -470,8 +470,8 @@ Page({
           this_column = 1
           this_height = this_height + 60
           panduan = false
-          if(this_height % 930 == 0 || this_height % 920 == 0){
-            this_height = 20
+          if(this_height % 850 == 0 || this_height % 830 == 0){
+            this_height = 50
             command.setPagePrint()//执行打印指令
             command_arr.push(command)
             command = tsc.jpPrinter.createNew()
