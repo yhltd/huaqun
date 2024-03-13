@@ -546,27 +546,27 @@ Page({
     console.log(index)
     console.log(column)
     if (column == "kailiao" || column == "shunxu" || column == "zuzhuang" || column == "baozhuang") {
-      if (_this.data.userInfo.power == '管理员' || _this.data.userInfo.power == '操作员') {
-        if(_this.data.userInfo.power == '操作员' && _this.data.list[e.currentTarget.dataset.index].wancheng == '完成'){
-          wx.showToast({
-            title: '此单已完成，不允许修改！',
-            icon: 'none'
-          })
-          return;
-        }
-        _this.setData({
-          order_number: _this.data.list[e.currentTarget.dataset.index].order_number,
-          this_column: column,
-          this_value:_this.data.list[e.currentTarget.dataset.index][column],
-          xgShow2: true,
-        })
-      } else {
+
+      if(_this.data.userInfo.power == '操作员' && _this.data.list[e.currentTarget.dataset.index].wancheng == '完成'){
         wx.showToast({
-          title: '无修改权限！',
+          title: '此单已完成，不允许修改！',
+          icon: 'none'
+        })
+        return;
+      }else if(_this.data.userInfo.power == '客户' && _this.data.list[e.currentTarget.dataset.index].wancheng != '未审验'){
+        wx.showToast({
+          title: '此单已审验，不允许修改！',
           icon: 'none'
         })
         return;
       }
+      _this.setData({
+        order_number: _this.data.list[e.currentTarget.dataset.index].order_number,
+        this_column: column,
+        this_value:_this.data.list[e.currentTarget.dataset.index][column],
+        xgShow2: true,
+      })
+      
     } else if (column == "wancheng") {
       if (_this.data.userInfo.power == '管理员' || _this.data.userInfo.power == '操作员') {
         

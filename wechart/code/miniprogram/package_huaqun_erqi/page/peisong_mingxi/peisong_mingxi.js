@@ -260,6 +260,21 @@ Page({
     var _this = this
     var order_number = _this.data.order_number
     console.log(order_number)
+
+    if((_this.data.userInfo.power == '管理员' || _this.data.userInfo.power == '操作员') && _this.data.wancheng == '完成'){
+      wx.showToast({
+        title: '已完成订单不允许修改！',
+        icon: 'none'
+      })
+      return;
+    }else if(_this.data.userInfo.power == '客户' && _this.data.wancheng != '' && _this.data.wancheng != null){
+      wx.showToast({
+        title: '已有配送状态，不允许修改！',
+        icon: 'none'
+      })
+      return;
+    }
+
     wx.navigateTo({
       url: "../peisong/peisong?userInfo=" + JSON.stringify(_this.data.userInfo) + "&order_number=" + order_number
     })
@@ -426,13 +441,28 @@ Page({
 
   upd1:function(){
     var _this = this
-    if(_this.data.userInfo.power != '管理员' && _this.data.userInfo.power != '操作员'){
+    // if(_this.data.userInfo.power != '管理员' && _this.data.userInfo.power != '操作员'){
+    //   wx.showToast({
+    //     title: '非操作员不允许修改！',
+    //     icon: 'none'
+    //   })
+    //   return;
+    // }
+
+    if((_this.data.userInfo.power == '管理员' || _this.data.userInfo.power == '操作员') && _this.data.wancheng == '完成'){
       wx.showToast({
-        title: '非操作员不允许修改！',
+        title: '已完成订单不允许修改！',
+        icon: 'none'
+      })
+      return;
+    }else if(_this.data.userInfo.power == '客户' && _this.data.wancheng != '' && _this.data.wancheng != null){
+      wx.showToast({
+        title: '已有配送状态，不允许修改！',
         icon: 'none'
       })
       return;
     }
+
     wx.cloud.callFunction({
       name: 'sqlserver_huaqun',
       data: {

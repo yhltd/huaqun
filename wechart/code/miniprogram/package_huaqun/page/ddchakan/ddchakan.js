@@ -387,27 +387,27 @@ Page({
     console.log(index)
     console.log(column)
     if(column == 'jgczy'){
-      if (_this.data.userInfo.power == '管理员' || _this.data.userInfo.power == '操作员') {
-        if( _this.data.list[e.currentTarget.dataset.index].wancheng == '完成'){
-          wx.showToast({
-            title: '此单已完成，不允许修改！',
-            icon: 'none'
-          })
-          return;
-        }
-        _this.setData({
-          order_number: _this.data.list[e.currentTarget.dataset.index].djbh,
-          this_column: column,
-          this_value:_this.data.list[e.currentTarget.dataset.index].jgczy,
-          xgShow2: true,
-        })
-      } else {
+      if( _this.data.userInfo.power == '操作员' && _this.data.list[e.currentTarget.dataset.index].wancheng == '完成'){
         wx.showToast({
-          title: '无修改加工操作员权限！',
+          title: '此单已完成，不允许修改！',
           icon: 'none'
         })
         return;
       }
+      if( _this.data.userInfo.power == '客户' && _this.data.list[e.currentTarget.dataset.index].wancheng != '未审验'){
+        wx.showToast({
+          title: '此单已审验，不允许修改！',
+          icon: 'none'
+        })
+        return;
+      }
+      _this.setData({
+        order_number: _this.data.list[e.currentTarget.dataset.index].djbh,
+        this_column: column,
+        this_value:_this.data.list[e.currentTarget.dataset.index].jgczy,
+        xgShow2: true,
+      })
+      
     }
     else if (column == "wancheng") {
       if (_this.data.userInfo.power == '管理员' || _this.data.userInfo.power == '操作员') {
@@ -427,51 +427,40 @@ Page({
         no_click: '未完成',
       })
     }else if (column == "khmc") {
-      if(_this.data.userInfo.power == '管理员'){
-        wx.showModal({
-          title: '提示',
-          content: '确认修改此条订单的明细信息？',
-          success(res) {
-            if (res.confirm) {
-              wx.navigateTo({
-                url: "../ddxiadan/ddxiadan?djbh=" + JSON.stringify(order_number) + "&userInfo=" + JSON.stringify(_this.data.userInfo)
-              })
-            } else if (res.cancel) {
-              wx.showToast({
-                title: '已取消！',
-                icon: 'none'
-              })
-              return;
-            }
-          }
+
+      if( _this.data.userInfo.power == '操作员' && _this.data.list[e.currentTarget.dataset.index].wancheng == '完成'){
+        wx.showToast({
+          title: '此单已完成，不允许修改！',
+          icon: 'none'
         })
-      }else if(_this.data.userInfo.power == '客户'){
-        if(_this.data.list[e.currentTarget.dataset.index].hd == '通过'){
-          wx.showToast({
-            title: '审核已通过订单不允许修改！',
-            icon: 'none'
-          })
-          return;
-        }else{
-          wx.showModal({
-            title: '提示',
-            content: '确认修改此条订单的明细信息？',
-            success(res) {
-              if (res.confirm) {
-                wx.navigateTo({
-                  url: "../ddxiadan/ddxiadan?djbh=" + JSON.stringify(order_number) + "&userInfo=" + JSON.stringify(_this.data.userInfo)
-                })
-              } else if (res.cancel) {
-                wx.showToast({
-                  title: '已取消！',
-                  icon: 'none'
-                })
-                return;
-              }
-            }
-          })
-        }
+        return;
       }
+      if( _this.data.userInfo.power == '客户' && _this.data.list[e.currentTarget.dataset.index].wancheng != '未审验'){
+        wx.showToast({
+          title: '此单已审验，不允许修改！',
+          icon: 'none'
+        })
+        return;
+      }
+
+      wx.showModal({
+        title: '提示',
+        content: '确认修改此条订单的明细信息？',
+        success(res) {
+          if (res.confirm) {
+            wx.navigateTo({
+              url: "../ddxiadan/ddxiadan?djbh=" + JSON.stringify(order_number) + "&userInfo=" + JSON.stringify(_this.data.userInfo)
+            })
+          } else if (res.cancel) {
+            wx.showToast({
+              title: '已取消！',
+              icon: 'none'
+            })
+            return;
+          }
+        }
+      })
+
     }else {
       wx.showModal({
         title: '提示',
