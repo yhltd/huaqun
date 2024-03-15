@@ -567,16 +567,28 @@ Page({
         xgShow2: true,
       })
       
-    } else if (column == "wancheng") {
-      if (_this.data.userInfo.power == '管理员' || _this.data.userInfo.power == '操作员') {
-        
-      } else {
-        wx.showToast({
-          title: '无完成订单权限！',
-          icon: 'none'
-        })
-        return;
-      }
+    } else if (column == 'wancheng') {
+      // if (_this.data.userInfo.power == '操作员') {
+        if (_this.data.userInfo.power == '操作员' && _this.data.list[e.currentTarget.dataset.index].wancheng == '完成') {
+          wx.showToast({
+            title: '无修改订单状态权限！',
+            icon: 'none'
+          })
+          return;
+        } else if (_this.data.userInfo.power == '客户') {
+            wx.showToast({
+              title: '无修改订单状态权限！',
+              icon: 'none'
+            })
+            return;
+        }
+      // } else {
+      //   wx.showToast({
+      //     title: '无完成订单权限！',
+      //     icon: 'none'
+      //   })
+      //   return;
+      // }
       _this.setData({
         order_number: _this.data.list[index].order_number,
         this_column: column,
@@ -585,9 +597,9 @@ Page({
         no_click: '未完成',
       })
     }else if(column == "customer_name"){
-      if(_this.data.userInfo.power != '管理员' && _this.data.list[index].wancheng != "未审验"){
+      if(_this.data.userInfo.power != '管理员' && _this.data.list[index].wancheng == "完成"){
         wx.showToast({
-          title: '只允许修改未审验订单！',
+          title: '已完成订单不允许修改！',
           icon: 'none'
         })
         return;

@@ -261,22 +261,23 @@ Page({
     var order_number = _this.data.order_number
     console.log(order_number)
 
-    if((_this.data.userInfo.power == '管理员' || _this.data.userInfo.power == '操作员') && _this.data.wancheng == '完成'){
-      wx.showToast({
-        title: '已完成订单不允许修改！',
-        icon: 'none'
-      })
-      return;
-    }else if(_this.data.userInfo.power == '客户' && _this.data.wancheng != '' && _this.data.wancheng != null){
-      wx.showToast({
-        title: '已有配送状态，不允许修改！',
-        icon: 'none'
-      })
-      return;
-    }
+    // if(_this.data.userInfo.power == '操作员' || _this.data.wanchengzhuangtai == '完成'){
+    //   wx.showToast({
+    //     title: '已完成订单不允许修改！',
+    //     icon: 'none'
+    //   })
+    //   return;
+    // }
+    // else if(_this.data.userInfo.power == '客户' && _this.data.wancheng != '' && _this.data.wancheng != null){
+    //   wx.showToast({
+    //     title: '已有配送状态，不允许修改！',
+    //     icon: 'none'
+    //   })
+    //   return;
+    // }
 
     wx.navigateTo({
-      url: "../peisong/peisong?userInfo=" + JSON.stringify(_this.data.userInfo) + "&order_number=" + order_number
+      url: "../peisong/peisong?userInfo=" + JSON.stringify(_this.data.userInfo) + "&order_number=" + order_number + "&wancheng=" + _this.data.wanchengzhuangtai
     })
   },
 
@@ -386,15 +387,44 @@ Page({
 
   clickView:function(e){
     var _this = this
-    _this.setData({
-      id: _this.data.list[e.currentTarget.dataset.index].id,
-      order_number: _this.data.list[e.currentTarget.dataset.index].order_number,
-      wancheng: _this.data.list[e.currentTarget.dataset.index].wancheng, 
-      quyu: _this.data.list[e.currentTarget.dataset.index].quyu,
-      kucun: _this.data.list[e.currentTarget.dataset.index].kucun,
-      songhuoyuan: _this.data.list[e.currentTarget.dataset.index].songhuoyuan,
-      xgShow:true,
-    })
+    if (_this.data.userInfo.power == '客户'){
+
+      wx.showModal({
+        title: '提示',
+        content: '确认查看配送单明细信息？',
+        success(res) {
+          if (res.confirm) {
+            _this.setData({
+              id: _this.data.list[e.currentTarget.dataset.index].id,
+              order_number: _this.data.list[e.currentTarget.dataset.index].order_number,
+              wanchengzhuangtai: _this.data.list[e.currentTarget.dataset.index].wancheng, 
+              wancheng: _this.data.list[e.currentTarget.dataset.index].wancheng, 
+              quyu: _this.data.list[e.currentTarget.dataset.index].quyu,
+              kucun: _this.data.list[e.currentTarget.dataset.index].kucun,
+              songhuoyuan: _this.data.list[e.currentTarget.dataset.index].songhuoyuan,
+            })
+            _this.goto()
+          } else if (res.cancel) {
+            wx.showToast({
+              title: '已取消！',
+              icon: 'none'
+            })
+            return;
+          }
+        }
+      })
+    } else {
+      _this.setData({
+        id: _this.data.list[e.currentTarget.dataset.index].id,
+        order_number: _this.data.list[e.currentTarget.dataset.index].order_number,
+        wanchengzhuangtai: _this.data.list[e.currentTarget.dataset.index].wancheng, 
+        wancheng: _this.data.list[e.currentTarget.dataset.index].wancheng, 
+        quyu: _this.data.list[e.currentTarget.dataset.index].quyu,
+        kucun: _this.data.list[e.currentTarget.dataset.index].kucun,
+        songhuoyuan: _this.data.list[e.currentTarget.dataset.index].songhuoyuan,
+        xgShow:true,
+      })
+    }
   },
 
   print: function(){
@@ -448,14 +478,13 @@ Page({
     //   })
     //   return;
     // }
-
-    if((_this.data.userInfo.power == '管理员' || _this.data.userInfo.power == '操作员') && _this.data.wancheng == '完成'){
+    if(_this.data.userInfo.power == '操作员' && _this.data.wanchengzhuangtai == '完成'){
       wx.showToast({
         title: '已完成订单不允许修改！',
         icon: 'none'
       })
       return;
-    }else if(_this.data.userInfo.power == '客户' && _this.data.wancheng != '' && _this.data.wancheng != null){
+    }else if(_this.data.userInfo.power == '客户' && _this.data.wanchengzhuangtai != '' && _this.data.wanchengzhuangtai != null){
       wx.showToast({
         title: '已有配送状态，不允许修改！',
         icon: 'none'
@@ -472,6 +501,7 @@ Page({
         console.log(res)
         _this.setData({
             id:'',
+            wanchengzhuangtai: '',
             wancheng: '', 
             quyu: '',
             kucun: '',
@@ -530,6 +560,7 @@ Page({
       success: res => {
         _this.setData({
           id:'',
+          wanchengzhuangtai: '',
           wancheng: '', 
           quyu: '',
           kucun: '',
@@ -628,6 +659,7 @@ Page({
       start_date:"",
       stop_date:"",
       customer_name:'',
+      wanchengzhuangtai: '',
       wancheng:'',
       quyu:'',
       anzhuang_address:'',

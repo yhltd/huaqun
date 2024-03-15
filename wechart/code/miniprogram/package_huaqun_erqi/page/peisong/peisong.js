@@ -214,6 +214,7 @@ Page({
     })
     console.log(options)
     console.log(options.order_number)
+    var wancheng = options.wancheng
     var userInfo = JSON.parse(options.userInfo)
     var onload_panduan = ""
     if(options.order_number == undefined){
@@ -223,7 +224,8 @@ Page({
     }
     _this.setData({
       userInfo,
-      onload_panduan
+      onload_panduan,
+      wancheng
     })
 
     // var sql = "select isnull(company,'') as name from erqi_userInfo where isnull(company,'') != '' group by company"
@@ -581,7 +583,20 @@ Page({
         title: '未填写客户名称！',
         icon: 'none'
       })
-         return list[0].customer_name_riqi;
+         return;
+    }
+    if(_this.data.wancheng != "" && _this.data.wancheng != undefined && _this.data.userInfo.power == '客户'){
+      wx.showToast({
+        title: '已有配送状态不允许修改！',
+        icon: 'none'
+      })
+         return;
+    }else if(_this.data.userInfo.power == '操作员' && _this.data.wancheng == '完成'){
+      wx.showToast({
+          title: '已完成订单不允许修改！',
+          icon: 'none'
+        })
+        return;
     }
     console.log(list)
     // if (list[0].songhuo_danhao == ""){
@@ -3565,6 +3580,7 @@ Page({
     _this.setData({
       list:[
         {
+          wancheng: '',
           order_number: '',
           insert_date: '',
           customer_name: '',

@@ -408,17 +408,27 @@ Page({
         xgShow2: true,
       })
       
-    }
-    else if (column == "wancheng") {
-      if (_this.data.userInfo.power == '管理员' || _this.data.userInfo.power == '操作员') {
-        
-      } else {
+    } else if (column == 'wancheng') {
+      if (_this.data.userInfo.power == '操作员' && _this.data.list[e.currentTarget.dataset.index].wancheng == '完成') {
+        wx.showToast({
+          title: '无修改订单状态权限！',
+          icon: 'none'
+        })
+        return;
+      } else if (_this.data.userInfo.power == '客户') {
         wx.showToast({
           title: '无修改订单状态权限！',
           icon: 'none'
         })
         return;
       }
+      // else {
+      //   wx.showToast({
+      //     title: '无修改订单状态权限！',
+      //     icon: 'none'
+      //   })
+      //   return;
+      // }
       _this.setData({
         order_number: _this.data.list[e.currentTarget.dataset.index].djbh,
         this_column: column,
