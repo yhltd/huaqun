@@ -188,7 +188,7 @@ Page({
       }
     })
 
-    var e = ['1900-01-01','2100-12-31','','','','','','','']
+    var e = ['1900-01-01','2100-12-31','','','','','','','','']
     _this.tableShow(e)
   },
 
@@ -283,19 +283,19 @@ Page({
 
   tableShow: function (e) {
     var _this = this
-    var sql = "select id,songhuoyuan,money,shoukuan,insert_date,customer_name,wancheng,quyu,anzhuang_address,customer_order,songhuo_danhao,order_number,case isnull(wancheng,'') when '优先处理' then 1 when '' then 2 when '配货作业中' then 3 when '配货完成' then 4 when '未完成-配错货' then 5 when '未完成-缺货' then 6 when '完成' then 7  end as shunxu,case when kucun != '' then kucun when kucun_text != '' then '安排处理' else '' end as kucun,customer_need_text from erqi_peisongdan where insert_date >= '" + e[0] + "' and insert_date <= '" + e[1] + "' and customer_name like '%" + e[2] + "%' and anzhuang_address like '%" + e[3] + "%' and customer_order like '%" + e[4] + "%' and songhuo_danhao like '%" + e[5] + "%' and order_number like '%" + e[6] + "%' "
+    var sql = "select id,songhuoyuan,money,shoukuan,insert_date,customer_name,wancheng,quyu,anzhuang_address,customer_order,songhuo_danhao,order_number,case isnull(wancheng,'') when '优先处理' then 1 when '' then 2 when '配货作业中' then 3 when '配货完成' then 4 when '未完成-配错货' then 5 when '未完成-缺货' then 6 when '完成' then 7  end as shunxu,case when kucun != '' then kucun when kucun_text != '' then '安排处理' else '' end as kucun,customer_need_text from erqi_peisongdan where insert_date >= '" + e[0] + "' and insert_date <= '" + e[1] + "' and customer_name like '%" + e[2] + "%' and quyu like '%" + e[4] + "%' and anzhuang_address like '%" + e[5] + "%' and customer_order like '%" + e[6] + "%' and songhuo_danhao like '%" + e[7] + "%' and order_number like '%" + e[8] + "%' "
     // var sql = "select id,insert_date,customer_name,wancheng,quyu,anzhuang_address,customer_order,songhuo_danhao,order_number,case isnull(wancheng,'') when '优先处理' then 1 when '' then 2 when '配货作业中' then 3 when '配货完成' then 4 when '未完成-配错货' then 5 when '未完成-缺货' then 6 when '完成' then 7  end as shunxu "
     
-    if(e[7] != ''){
-      sql = sql + " and wancheng ='" + e[7] + "'"
+    if(e[3] != ''){
+      sql = sql + " and wancheng ='" + e[3] + "'"
     }
-    if(e[8] != ''){
-      sql = sql + " and case when kucun != '' then kucun when kucun_text != '' then '安排处理' else '' end as kucun = '" + e[8] + "'"
+    if(e[9] != ''){
+      sql = sql + " and case when kucun != '' then kucun when kucun_text != '' then '安排处理' else '' end = '" + e[9] + "'"
     }
     if(_this.data.userInfo.power == '客户'){
       sql = sql + " and customer_name ='" + _this.data.userInfo.company + "'"
     }
-    sql = sql + " order by shunxu,id " 
+    sql = sql + " order by shunxu,insert_date desc,order_number desc" 
     console.log(sql)
     wx.cloud.callFunction({
       name: 'sqlserver_huaqun',
@@ -509,7 +509,7 @@ Page({
             order_number: '',
         })
         _this.qxShow()
-        var e = ['1900-01-01','2100-12-31','','','','','','','']
+        var e = ['1900-01-01','2100-12-31','','','','','','','','']
          _this.tableShow(e)
 
         wx.showToast({
@@ -567,7 +567,7 @@ Page({
           order_number: '',
       })
         _this.qxShow()
-        var e = ['1900-01-01','2100-12-31','','','','','','','']
+        var e = ['1900-01-01','2100-12-31','','','','','','','','']
         _this.tableShow(e)
         wx.showToast({
           title: '删除成功！',

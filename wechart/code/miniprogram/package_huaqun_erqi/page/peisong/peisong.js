@@ -445,10 +445,12 @@ Page({
       console.log(e.currentTarget.dataset.display)
       var display = e.currentTarget.dataset.display
       var _this = this
-      _this.setData({
-        wenjian_img_height:_this.data.wenjian_img_height - 350,
-        [display]:false
-      })
+      if(_this.data[display] != false){
+        _this.setData({
+          wenjian_img_height:_this.data.wenjian_img_height - 350,
+          [display]:false
+        })
+      }
       console.log(_this.data.wenjian_img_height)
     }
   },
@@ -460,10 +462,12 @@ Page({
       console.log(e.currentTarget.dataset.display)
       var display = e.currentTarget.dataset.display
       var _this = this
-      _this.setData({
-        customer_need_img_height:_this.data.customer_need_img_height - 350,
-        [display]:false
-      })
+      if(_this.data[display] != false){
+        _this.setData({
+          customer_need_img_height:_this.data.customer_need_img_height - 350,
+          [display]:false
+        })
+      }
       console.log(_this.data.customer_need_img_height)
     }
   },
@@ -475,10 +479,12 @@ Page({
       console.log(e.currentTarget.dataset.display)
       var display = e.currentTarget.dataset.display
       var _this = this
-      _this.setData({
-        peihuo_img_height:_this.data.peihuo_img_height - 350,
-        [display]:false
-      })
+      if(_this.data[display] != false){
+        _this.setData({
+          peihuo_img_height:_this.data.peihuo_img_height - 350,
+          [display]:false
+        })
+      }
       console.log(_this.data.peihuo_img_height)
     }
   },
@@ -490,10 +496,12 @@ Page({
       console.log(e.currentTarget.dataset.display)
       var display = e.currentTarget.dataset.display
       var _this = this
-      _this.setData({
-        peisong_img_height:_this.data.peisong_img_height - 350,
-        [display]:false
-      })
+      if(_this.data[display] != false){
+        _this.setData({
+          peisong_img_height:_this.data.peisong_img_height - 350,
+          [display]:false
+        })
+      }
       console.log(_this.data.peisong_img_height)
     }
   },
@@ -505,10 +513,12 @@ Page({
       console.log(e.currentTarget.dataset.display)
       var display = e.currentTarget.dataset.display
       var _this = this
-      _this.setData({
-        kucun_img_height:_this.data.kucun_img_height - 350,
-        [display]:false
-      })
+      if(_this.data[display] != false){
+        _this.setData({
+          kucun_img_height:_this.data.kucun_img_height - 350,
+          [display]:false
+        })
+      }
       console.log(_this.data.kucun_img_height)
     }
   },
@@ -3141,23 +3151,15 @@ Page({
     console.log(e.currentTarget.dataset.column)
     console.log(e.currentTarget.dataset.value)
     var column = e.currentTarget.dataset.column
-    var list = _this.data.list
-    if(list[0].wancheng == '完成'){
-      wx.showToast({
-        title: '已完成订单不允许编辑！',
-        icon: 'none'
-      })
-      return;
-    }
 
     if(column == 'customer_need_img1' || column == 'customer_need_img2' || column == 'customer_need_img3' || column == 'customer_need_img4' || column == 'customer_need_img5' ||column == 'customer_need_img6' || column == 'customer_need_img7' || column == 'customer_need_img8'){
-      if(_this.data.list[0].wancheng == '完成' && _this.data.userInfo.power != '管理员'){
-        wx.showToast({
-          title: '已完成订单不允许编辑！',
-          icon: 'none'
-        })
-        return;
-      }
+      // if(_this.data.list[0].wancheng == '完成' && _this.data.userInfo.power != '管理员'){
+      //   wx.showToast({
+      //     title: '已完成订单不允许编辑！',
+      //     icon: 'none'
+      //   })
+      //   return;
+      // }
     }else if(column == 'songhuo_danhao' || column == 'peihuo_img1' || column == 'peihuo_img2' || column == 'peihuo_img3' || column == 'peihuo_img4' || column == 'peihuo_img5' || column == 'peisong_img1' || column == 'peisong_img2' || column == 'peisong_img3' || column == 'wancheng' || column == 'beizhu'){
       if(_this.data.userInfo.power == '客户'){
         wx.showToast({
@@ -3167,13 +3169,13 @@ Page({
         return;
       }
     }else if(column != 'wenjian_img1' || column != 'wenjian_img2' || column != 'wenjian_img3' || column != 'wenjian_img4' || column != 'wenjian_img5' ||column != 'wenjian_img6' || column != 'wenjian_img7' || column != 'wenjian_img8'){
-      if(list[0].wancheng == '完成'){
-        wx.showToast({
-          title: '已完成订单不允许编辑！',
-          icon: 'none'
-        })
-        return;
-      }
+      // if(list[0].wancheng == '完成'){
+      //   wx.showToast({
+      //     title: '已完成订单不允许编辑！',
+      //     icon: 'none'
+      //   })
+      //   return;
+      // }
     }
     console.log(e.currentTarget.dataset.column)
     console.log(_this.data.list[0][e.currentTarget.dataset.column]) 
@@ -3223,6 +3225,14 @@ Page({
 
   imgload: function(e){
     var _this = this
+    var list = _this.data.list
+    if(list[0].wancheng == '完成'){
+      wx.showToast({
+        title: '已完成订单不允许编辑！',
+        icon: 'none'
+      })
+      return;
+    }
     wx.chooseMedia({
       count: 1,
       mediaType: ['image'],
@@ -3274,6 +3284,14 @@ Page({
 
   imgadd: function(e){
     var _this = this
+    var list = _this.data.list
+    if(list[0].wancheng == '完成'){
+      wx.showToast({
+        title: '已完成订单不允许编辑！',
+        icon: 'none'
+      })
+      return;
+    }
     var column = _this.data.this_column.substring(0,_this.data.this_column.length-1)
     console.log(column)
     var index = 1
