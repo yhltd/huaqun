@@ -3547,14 +3547,14 @@ Page({
         },
         err: res => {
           wx.showToast({
-            title: '读取下拉列表错误！',
+            title: '读取下拉列表错误3550！' + res,
             icon: 'none'
           })
           console.log("错误!")
         },
         fail: res => {
           wx.showToast({
-            title: '请求失败！',
+            title: '请求失败3557！' + res,
             icon: 'none'
           })
           console.log("请求失败！")
@@ -3588,14 +3588,14 @@ Page({
         },
         err: res => {
           wx.showToast({
-            title: '读取单据错误！',
+            title: '读取单据错误3591！' + res,
             icon: 'none'
           })
           console.log("错误!")
         },
         fail: res => {
           wx.showToast({
-            title: '请求失败！',
+            title: '请求失败3598！' + res,
             icon: 'none'
           })
           console.log("请求失败！")
@@ -3628,14 +3628,14 @@ Page({
       },
       err: res => {
         wx.showToast({
-          title: '读取下拉列表错误！',
+          title: '读取下拉列表错误3631！' + res,
           icon: 'none'
         })
         console.log("错误!")
       },
       fail: res => {
         wx.showToast({
-          title: '请求失败！',
+          title: '请求失败3638！' + res,
           icon: 'none'
         })
         console.log("请求失败！")
@@ -3838,14 +3838,14 @@ Page({
       },
       err: res => {
         wx.showToast({
-          title: '读取下拉列表错误！',
+          title: '读取下拉列表错误3841！' + res,
           icon: 'none'
         })
         console.log("错误!")
       },
       fail: res => {
         wx.showToast({
-          title: '请求失败！',
+          title: '请求失败3848！' + res,
           icon: 'none'
         })
         console.log("请求失败！")
@@ -4476,12 +4476,16 @@ Page({
           },
           err: res => {
             wx.hideLoading()
+            wx.showToast({
+              title: '错误4480！' + res,
+              icon: 'none'
+            })
             console.log("错误!")
           },
           fail: res => {
             wx.hideLoading()
             wx.showToast({
-              title: '请求失败！',
+              title: '请求失败4488！' + res,
               icon: 'none'
             })
             console.log("请求失败！")
@@ -4491,12 +4495,16 @@ Page({
       },
       err: res => {
         wx.hideLoading()
+        wx.showToast({
+          title: '错误4499！' + res,
+          icon: 'none'
+        })
         console.log("错误!")
       },
       fail: res => {
         wx.hideLoading()
         wx.showToast({
-          title: '请求失败！',
+          title: '请求失败4507！' + res,
           icon: 'none'
         })
         console.log("请求失败！")

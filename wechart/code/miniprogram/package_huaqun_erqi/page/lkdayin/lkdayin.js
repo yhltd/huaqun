@@ -259,7 +259,7 @@ Page({
         if (res.errCode != undefined) {
           if (res.errCode == 10001) {
             wx.showToast({
-              title: '本机蓝牙未打开',
+              title: '本机蓝牙未打开262' + res,
               duration: 2000,
               icon: 'none'
             })
@@ -268,7 +268,7 @@ Page({
         if (res.state != undefined) {
           if (res.state == 4) {
             wx.showToast({
-              title: '本机蓝牙未打开',
+              title: '本机蓝牙未打开271',
               duration: 2000,
               icon: 'none'
             })
@@ -314,7 +314,7 @@ Page({
           }, 500)
         }
         wx.showToast({
-          title: errMsgs[res.errCode],
+          title: errMsgs[317 + res.errCode],
           icon: "none",
           duration: 2000
         })

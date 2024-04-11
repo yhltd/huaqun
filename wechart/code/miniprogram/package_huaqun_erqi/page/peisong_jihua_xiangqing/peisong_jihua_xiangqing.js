@@ -70,9 +70,17 @@ Page({
         })
       },
       err: res => {
+        wx.showToast({
+          title: '错误74！' + res,
+          icon: 'none'
+        })
         console.log("错误!")
       },
       fail: res => {
+        wx.showToast({
+          title: '请求失败81！' + res,
+          icon: 'none'
+        })
         console.log("请求失败！")
       }
     })
@@ -93,9 +101,17 @@ Page({
         }
       },
       err: res => {
+        wx.showToast({
+          title: '错误105！' + res,
+          icon: 'none'
+        })
         console.log("错误!")
       },
       fail: res => {
+        wx.showToast({
+          title: '请求失败112！' + res,
+          icon: 'none'
+        })
         console.log("请求失败！")
       }
     })
@@ -163,9 +179,17 @@ Page({
         })
       },
       err: res => {
+        wx.showToast({
+          title: '错误183！' + res,
+          icon: 'none'
+        })
         console.log("错误!")
       },
       fail: res => {
+        wx.showToast({
+          title: '请求失败190！' + res,
+          icon: 'none'
+        })
         console.log("请求失败！")
       }
     })
@@ -189,9 +213,17 @@ Page({
               console.log(res)
             },
             err: res => {
+              wx.showToast({
+                title: '错误217！' + res,
+                icon: 'none'
+              })
               console.log("错误!")
             },
             fail: res => {
+              wx.showToast({
+                title: '请求失败224！' + res,
+                icon: 'none'
+              })
               console.log("请求失败！")
             }
           })
@@ -310,9 +342,17 @@ Page({
               }
             },
             err: res => {
+              wx.showToast({
+                title: '错误346！' + res,
+                icon: 'none'
+              })
               console.log("错误!")
             },
             fail: res => {
+              wx.showToast({
+                title: '请求失败353！' + res,
+                icon: 'none'
+              })
               console.log("请求失败！")
             }
           })
@@ -438,9 +478,17 @@ Page({
               console.log(res)
             },
             err: res => {
+              wx.showToast({
+                title: '错误482！' + res,
+                icon: 'none'
+              })
               console.log("错误!")
             },
             fail: res => {
+              wx.showToast({
+                title: '请求失败489！' + res,
+                icon: 'none'
+              })
               console.log("请求失败！")
             }
           })
@@ -498,9 +546,17 @@ Page({
         })
       },
       fail: function (error) {
+        wx.showToast({
+          title: '错误550！' + error,
+          icon: 'none'
+        })
         console.error(error);
       },
       complete: function (res) {
+        wx.showToast({
+          title: '错误557！' + res,
+          icon: 'none'
+        })
         console.log(res);
       }
     });
@@ -551,9 +607,17 @@ Page({
           })
         },
         err: res => {
+          wx.showToast({
+            title: '错误611！' + res,
+            icon: 'none'
+          })
           console.log("错误!")
         },
         fail: res => {
+          wx.showToast({
+            title: '请求失败618！' + res,
+            icon: 'none'
+          })
           console.log("请求失败！")
         }
       })

@@ -168,11 +168,16 @@ Page({
         })
       },
       err: res => {
+        wx.showToast({
+          title: '错误172！' + res,
+          icon: 'none',
+          duration: 3000
+        })
         console.log("错误!")
       },
       fail: res => {
         wx.showToast({
-          title: '请求失败！',
+          title: '请求失败180！' + res,
           icon: 'none',
           duration: 3000
         })
@@ -274,11 +279,16 @@ Page({
         console.log(list)
       },
       err: res => {
+        wx.showToast({
+          title: '错误283！' + res,
+          icon: 'none',
+          duration: 3000
+        })
         console.log("错误!")
       },
       fail: res => {
         wx.showToast({
-          title: '请求失败！',
+          title: '请求失败291！' + res,
           icon: 'none',
           duration: 3000
         })
@@ -441,11 +451,15 @@ Page({
           })
         },
         err: res => {
+          wx.showToast({
+            title: '错误455！' + res,
+            icon: 'none'
+          })
           console.log("错误!")
         },
         fail: res => {
           wx.showToast({
-            title: '请求失败！',
+            title: '请求失败462！' + res,
             icon: 'none'
           })
           console.log("请求失败！")
@@ -496,11 +510,15 @@ Page({
         })
       },
       err: res => {
+        wx.showToast({
+          title: '错误514！' + res,
+          icon: 'none'
+        })
         console.log("错误!")
       },
       fail: res => {
         wx.showToast({
-          title: '请求失败！',
+          title: '请求失败521！' + res,
           icon: 'none'
         })
         console.log("请求失败！")
@@ -541,11 +559,15 @@ Page({
           })
         },
         err: res => {
+          wx.showToast({
+            title: '错误563！' + res,
+            icon: 'none'
+          })
           console.log("错误!")
         },
         fail: res => {
           wx.showToast({
-            title: '请求失败！',
+            title: '请求失败570！' + res,
             icon: 'none'
           })
           console.log("请求失败！")
@@ -609,9 +631,17 @@ Page({
           _this.tableShow(e)
         },
         err: res => {
+          wx.showToast({
+            title: '错误635！' + res,
+            icon: 'none'
+          })
           console.log("错误!")
         },
         fail: res => {
+          wx.showToast({
+            title: '请求失败642！' + res,
+            icon: 'none'
+          })
           console.log("请求失败！")
         }
       })

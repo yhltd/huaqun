@@ -36,11 +36,16 @@ Page({
         })
       },
       err: res => {
+        wx.showToast({
+          title: '错误40！' + res,
+          icon: 'none',
+          duration: 3000
+        })
         console.log("错误!")
       },
       fail: res => {
         wx.showToast({
-          title: '请求失败！',
+          title: '请求失败48！' + res,
           icon: 'none',
           duration: 3000
         })
@@ -75,11 +80,15 @@ Page({
         _this.tableShow()
       },
       err: res => {
+        wx.showToast({
+          title: '错误84！' + res,
+          icon: 'none'
+        })
         console.log("错误!")
       },
       fail: res => {
         wx.showToast({
-          title: '请求失败！',
+          title: '请求失败91！' + res,
           icon: 'none'
         })
         console.log("请求失败！")

@@ -58,11 +58,16 @@ Page({
         console.log(list)
       },
       err: res => {
+        wx.showToast({
+          title: '错误62！' + res,
+          icon: 'none',
+          duration: 3000
+        })
         console.log("错误!")
       },
       fail: res => {
         wx.showToast({
-          title: '请求失败！',
+          title: '请求失败70！' + res,
           icon: 'none',
           duration: 3000
         })
@@ -121,11 +126,15 @@ Page({
               })
             },
             err: res => {
+              wx.showToast({
+                title: '错误130！' + res,
+                icon: 'none'
+              })
               console.log("错误!")
             },
             fail: res => {
               wx.showToast({
-                title: '请求失败！',
+                title: '请求失败137！' + res,
                 icon: 'none'
               })
               console.log("请求失败！")
@@ -168,11 +177,15 @@ Page({
         })
       },
       err: res => {
+        wx.showToast({
+          title: '错误181！' + res,
+          icon: 'none'
+        })
         console.log("错误!")
       },
       fail: res => {
         wx.showToast({
-          title: '请求失败！',
+          title: '请求失败188！' + res,
           icon: 'none'
         })
         console.log("请求失败！")
@@ -207,11 +220,15 @@ Page({
               })
             },
             err: res => {
+              wx.showToast({
+                title: '错误224！' + res,
+                icon: 'none'
+              })
               console.log("错误!")
             },
             fail: res => {
               wx.showToast({
-                title: '请求失败！',
+                title: '请求失败231！' + res,
                 icon: 'none'
               })
               console.log("请求失败！")

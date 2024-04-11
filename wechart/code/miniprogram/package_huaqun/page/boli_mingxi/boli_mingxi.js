@@ -167,11 +167,16 @@ Page({
         })
       },
       err: res => {
+        wx.showToast({
+          title: '错误171！' + res,
+          icon: 'none',
+          duration: 3000
+        })
         console.log("错误!")
       },
       fail: res => {
         wx.showToast({
-          title: '请求失败！',
+          title: '请求失败179！' + res,
           icon: 'none',
           duration: 3000
         })
@@ -207,11 +212,16 @@ Page({
         })
       },
       err: res => {
+        wx.showToast({
+          title: '错误216！' + res,
+          icon: 'none',
+          duration: 3000
+        })
         console.log("错误!")
       },
       fail: res => {
         wx.showToast({
-          title: '请求失败！',
+          title: '请求失败224！' + res,
           icon: 'none',
           duration: 3000
         })
@@ -320,11 +330,16 @@ Page({
         _this.qxShow()
       },
       err: res => {
+        wx.showToast({
+          title: '错误334！' + res,
+          icon: 'none',
+          duration: 3000
+        })
         console.log("错误!")
       },
       fail: res => {
         wx.showToast({
-          title: '请求失败！',
+          title: '请求失败342！' + res,
           icon: 'none',
           duration: 3000
         })
@@ -353,15 +368,20 @@ Page({
         _this.qxShow()
       },
       err: res => {
+        wx.showToast({
+          title: '错误372！' + res,
+          icon: 'none',
+          duration: 3000
+        })
         console.log("错误!")
       },
       fail: res => {
         wx.showToast({
-          title: '请求失败！',
+          title: '请求失败380！' + res,
           icon: 'none',
           duration: 3000
         })
-        console.log("请求失败！")
+        console.log("请求失败!")
       }
     })
   },
@@ -386,11 +406,16 @@ Page({
         _this.qxShow()
       },
       err: res => {
+        wx.showToast({
+          title: '错误410！' + res,
+          icon: 'none',
+          duration: 3000
+        })
         console.log("错误!")
       },
       fail: res => {
         wx.showToast({
-          title: '请求失败！',
+          title: '请求失败418！' + res,
           icon: 'none',
           duration: 3000
         })
@@ -419,11 +444,16 @@ Page({
         _this.qxShow()
       },
       err: res => {
+        wx.showToast({
+          title: '错误448！' + res,
+          icon: 'none',
+          duration: 3000
+        })
         console.log("错误!")
       },
       fail: res => {
         wx.showToast({
-          title: '请求失败！',
+          title: '请求失败456！' + res,
           icon: 'none',
           duration: 3000
         })
@@ -509,11 +539,16 @@ Page({
         _this.qxShow()
       },
       err: res => {
+        wx.showToast({
+          title: '错误543！' + res,
+          icon: 'none',
+          duration: 3000
+        })
         console.log("错误!")
       },
       fail: res => {
         wx.showToast({
-          title: '请求失败！',
+          title: '请求失败551！' + res,
           icon: 'none',
           duration: 3000
         })

@@ -175,7 +175,7 @@ Page({
         if (res.errCode != undefined) {
           if (res.errCode == 10001) {
             wx.showToast({
-              title: '本机蓝牙未打开',
+              title: '本机蓝牙未打开178' + res,
               duration: 2000,
               icon: 'none'
             })
@@ -184,7 +184,7 @@ Page({
         if (res.state != undefined) {
           if (res.state == 4) {
             wx.showToast({
-              title: '本机蓝牙未打开',
+              title: '本机蓝牙未打开187',
               duration: 2000,
               icon: 'none'
             })
@@ -223,6 +223,11 @@ Page({
         })
       },
       fail: res => {
+        wx.showToast({
+          title: '请求失败227' + res,
+          duration: 2000,
+          icon: 'none'
+        })
         console.log(res)
         if (res.errCode == -1) {
           setTimeout(function () {
@@ -230,7 +235,7 @@ Page({
           }, 500)
         }
         wx.showToast({
-          title: errMsgs[res.errCode],
+          title: errMsgs[238 + res.errCode],
           icon: "none",
           duration: 2000
         })

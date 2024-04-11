@@ -243,15 +243,16 @@ Page({
         })
       },
       err: res => {
+
         wx.showToast({
-          title: '读取下拉列表错误！',
+          title: '读取下拉列表错误248！' + res,
           icon: 'none'
         })
         console.log("错误!")
       },
       fail: res => {
         wx.showToast({
-          title: '请求失败！',
+          title: '请求失败255！' + res,
           icon: 'none'
         })
         console.log("请求失败！")
@@ -349,14 +350,14 @@ Page({
         },
         err: res => {
           wx.showToast({
-            title: '读取下拉列表错误！',
+            title: '读取下拉列表错误353！' + res,
             icon: 'none'
           })
           console.log("错误!")
         },
         fail: res => {
           wx.showToast({
-            title: '请求失败！',
+            title: '请求失败360！' + res,
             icon: 'none'
           })
           console.log("请求失败！")
@@ -421,7 +422,7 @@ Page({
         },
         err: res => {
           wx.showToast({
-            title: '读取下拉列表错误！',
+            title: '读取下拉列表错误425！' + res,
             icon: 'none'
           })
           console.log("错误!")
@@ -429,7 +430,7 @@ Page({
         fail: res => {
           console.log(res)
           wx.showToast({
-            title: '请求失败！',
+            title: '请求失败433！' + res,
             icon: 'none'
           })
           console.log("请求失败！")
@@ -616,8 +617,12 @@ Page({
     //   })
     //      return list[0].customer_name_riqi;
     // } 
-
-    var sql = "select * from erqi_peisongdan where songhuo_danhao = '" + list[0].songhuo_danhao + "'"
+    var sql = ""
+    if(list[0].songhuo_danhao == ''){
+      sql = "select * from erqi_peisongdan where songhuo_danhao = '空'"
+    }else{
+      sql = "select * from erqi_peisongdan where songhuo_danhao = '" + list[0].songhuo_danhao + "'"
+    }
     console.log(sql)
     wx.cloud.callFunction({
         name: 'sqlserver_huaqun',
@@ -1844,7 +1849,7 @@ Page({
                   },
                   err: res => {
                     wx.showToast({
-                      title: '保存错误！',
+                      title: '保存错误！1842' + res,
                       icon: 'none'
                     })
                     console.log("错误!")
@@ -1852,7 +1857,7 @@ Page({
                   fail: res => {
                     console.log(res)
                     wx.showToast({
-                      title: '请求失败！',
+                      title: '请求失败1850！' + res,
                       icon: 'none'
                     })
                     console.log("请求失败！")
@@ -1863,9 +1868,10 @@ Page({
                 console.log(sql)
               },
               err: res => {
+                console.log(res)
                 wx.hideLoading()
                 wx.showToast({
-                  title: '错误！',
+                  title: '保存信息错误1864！' + res,
                   icon: 'none'
                 })
                 console.log("错误!")
@@ -1873,7 +1879,7 @@ Page({
               fail: res => {
                 wx.hideLoading()
                 wx.showToast({
-                  title: '请求失败！',
+                  title: '请求失败1872！' + res,
                   icon: 'none'
                 })
                 console.log("请求失败！")
@@ -3087,7 +3093,7 @@ Page({
                   },
                   err: res => {
                     wx.showToast({
-                      title: '保存错误！',
+                      title: '保存错误3086！' + res,
                       icon: 'none'
                     })
                     console.log("错误!")
@@ -3095,7 +3101,7 @@ Page({
                   fail: res => {
                     console.log(res)
                     wx.showToast({
-                      title: '请求失败！',
+                      title: '请求失败3094！' + res,
                       icon: 'none'
                     })
                     console.log("请求失败！")
@@ -3105,7 +3111,7 @@ Page({
               err: res => {
                 wx.hideLoading()
                 wx.showToast({
-                  title: '错误！',
+                  title: '错误3104！' + res,
                   icon: 'none'
                 })
                 console.log("错误!")
@@ -3113,7 +3119,7 @@ Page({
               fail: res => {
                 wx.hideLoading()
                 wx.showToast({
-                  title: '请求失败！',
+                  title: '请求失败3112！' + res,
                   icon: 'none'
                 })
                 console.log("请求失败！")
@@ -3130,14 +3136,15 @@ Page({
         },
         err: res => {
           wx.showToast({
-            title: '错误！',
+            title: '错误3129！' + res,
             icon: 'none'
           })
           console.log("错误!")
         },
         fail: res => {
+          console.log(res)
           wx.showToast({
-            title: '错误！',
+            title: '错误3137！' + res,
             icon: 'none'
           })
           console.log("错误!")
@@ -3206,7 +3213,7 @@ Page({
               },
               fail: function(err) {
                 wx.showToast({
-                  title: '保存失败',
+                  title: '保存失败3214' + err,
                   icon: 'none'
                 })
                 console.log('保存失败', err);
@@ -3802,14 +3809,14 @@ Page({
       },
       err: res => {
         wx.showToast({
-          title: '读取下拉列表错误！',
+          title: '读取下拉列表错误3794！' + res,
           icon: 'none'
         })
         console.log("错误!")
       },
       fail: res => {
         wx.showToast({
-          title: '请求失败！',
+          title: '请求失败3801！' + res,
           icon: 'none'
         })
         console.log("请求失败！")

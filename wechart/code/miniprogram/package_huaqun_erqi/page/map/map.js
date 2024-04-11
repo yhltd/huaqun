@@ -61,14 +61,14 @@ Page({
       },
       err: res => {
         wx.showToast({
-          title: '读取下拉列表错误！',
+          title: '读取下拉列表错误64！' + res,
           icon: 'none'
         })
         console.log("错误!")
       },
       fail: res => {
         wx.showToast({
-          title: '请求失败！',
+          title: '请求失败71！' + res,
           icon: 'none'
         })
         console.log("请求失败！")
@@ -252,14 +252,14 @@ Page({
       },
       err: res => {
         wx.showToast({
-          title: '读取下拉列表错误！',
+          title: '读取下拉列表错误255！' + res,
           icon: 'none'
         })
         console.log("错误!")
       },
       fail: res => {
         wx.showToast({
-          title: '请求失败！',
+          title: '请求失败262！' + res,
           icon: 'none'
         })
         console.log("请求失败！")
@@ -355,9 +355,17 @@ Page({
         })
       },
       fail: function (error) {
+        wx.showToast({
+          title: '错误359！' + error,
+          icon: 'none'
+        })
         console.error(error);
       },
       complete: function (res) {
+        wx.showToast({
+          title: '错误366！' + res,
+          icon: 'none'
+        })
         console.log(res);
       }
     });

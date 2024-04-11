@@ -257,11 +257,16 @@ Page({
         })
       },
       err: res => {
+        wx.showToast({
+          title: '错误261！' + res,
+          icon: 'none',
+          duration: 3000
+        })
         console.log("错误!")
       },
       fail: res => {
         wx.showToast({
-          title: '请求失败！',
+          title: '请求失败269！' + res,
           icon: 'none',
           duration: 3000
         })
@@ -302,11 +307,16 @@ Page({
         console.log(list)
       },
       err: res => {
+        wx.showToast({
+          title: '错误311！' + res,
+          icon: 'none',
+          duration: 3000
+        })
         console.log("错误!")
       },
       fail: res => {
         wx.showToast({
-          title: '请求失败！',
+          title: '请求失败319！' + res,
           icon: 'none',
           duration: 3000
         })
@@ -344,11 +354,16 @@ Page({
         _this.qxShow()
       },
       err: res => {
+        wx.showToast({
+          title: '错误358！' + res,
+          icon: 'none',
+          duration: 3000
+        })
         console.log("错误!")
       },
       fail: res => {
         wx.showToast({
-          title: '请求失败！',
+          title: '请求失败366！' + res,
           icon: 'none',
           duration: 3000
         })
@@ -539,11 +554,16 @@ Page({
         _this.qxShow()
       },
       err: res => {
+        wx.showToast({
+          title: '错误558！' + res,
+          icon: 'none',
+          duration: 3000
+        })
         console.log("错误!")
       },
       fail: res => {
         wx.showToast({
-          title: '请求失败！',
+          title: '请求失败566！' + res,
           icon: 'none',
           duration: 3000
         })
@@ -572,11 +592,16 @@ Page({
         _this.qxShow()
       },
       err: res => {
+        wx.showToast({
+          title: '错误596！' + res,
+          icon: 'none',
+          duration: 3000
+        })
         console.log("错误!")
       },
       fail: res => {
         wx.showToast({
-          title: '请求失败！',
+          title: '请求失败604！' + res,
           icon: 'none',
           duration: 3000
         })
@@ -605,11 +630,16 @@ Page({
         _this.qxShow()
       },
       err: res => {
+        wx.showToast({
+          title: '错误634！' + res,
+          icon: 'none',
+          duration: 3000
+        })
         console.log("错误!")
       },
       fail: res => {
         wx.showToast({
-          title: '请求失败！',
+          title: '请求失败642！' + res,
           icon: 'none',
           duration: 3000
         })
@@ -638,11 +668,16 @@ Page({
         _this.qxShow()
       },
       err: res => {
+        wx.showToast({
+          title: '错误672！' + res,
+          icon: 'none',
+          duration: 3000
+        })
         console.log("错误!")
       },
       fail: res => {
         wx.showToast({
-          title: '请求失败！',
+          title: '请求失败680！' + res,
           icon: 'none',
           duration: 3000
         })
@@ -671,11 +706,16 @@ Page({
         _this.qxShow()
       },
       err: res => {
+        wx.showToast({
+          title: '错误710！' + res,
+          icon: 'none',
+          duration: 3000
+        })
         console.log("错误!")
       },
       fail: res => {
         wx.showToast({
-          title: '请求失败！',
+          title: '请求失败718！' + res,
           icon: 'none',
           duration: 3000
         })
@@ -704,11 +744,16 @@ Page({
         _this.qxShow()
       },
       err: res => {
+        wx.showToast({
+          title: '错误748！' + res,
+          icon: 'none',
+          duration: 3000
+        })
         console.log("错误!")
       },
       fail: res => {
         wx.showToast({
-          title: '请求失败！',
+          title: '请求失败756！' + res,
           icon: 'none',
           duration: 3000
         })
@@ -749,11 +794,15 @@ Page({
               })
             },
             err: res => {
+              wx.showToast({
+                title: '错误798！' + res,
+                icon: 'none'
+              })
               console.log("错误!")
             },
             fail: res => {
               wx.showToast({
-                title: '请求失败！',
+                title: '请求失败805！' + res,
                 icon: 'none'
               })
               console.log("请求失败！")
