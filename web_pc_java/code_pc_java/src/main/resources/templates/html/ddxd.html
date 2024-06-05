@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>灯带下单明细</title>
+    <link rel="shortcut icon" href="#"/>
+
+    <script type="text/javascript" src="../js/Jquery.js"></script>
+    <script type="text/javascript" src="../js/jquerysession.js"></script>
+
+    <link rel="stylesheet" href="../bootstrap-4.5.0-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../bootstrap-4.5.0-dist/icons/bootstrap-icons.css">
+    <script type="text/javascript" src="../bootstrap-4.5.0-dist/js/bootstrap.min.js"></script>
+
+    <!--bootstrap-table-->
+    <link rel="stylesheet" href="../bootstrap-4.5.0-dist/css/bootstrap-table.css">
+    <script type="text/javascript" src="../bootstrap-4.5.0-dist/js/bootstrap-table.js"></script>
+    <script type="text/javascript" src="../bootstrap-4.5.0-dist/js/bootstrap-table-zh-CN.min.js"></script>
+    <script type="text/javascript" src="../bootstrap-4.5.0-dist/js/colResizable-1.6.js"></script>
+    <script type="text/javascript" src="../bootstrap-4.5.0-dist/js/bootstrap-table-resizable.js"></script>
+
+    <link rel="stylesheet" href="../css/sweetalert.css">
+    <script type="text/javascript" src="../js/sweetalert-dev.js"></script>
+
+    <link rel="stylesheet" href="../css/main.css">
+    <script type="text/javascript" src="../js/main.js"></script>
+    <script type="text/javascript" src="../js/ddxd.js"></script>
+</head>
+
+<body class="pt-2">
+<div class="top-toolbar row">
+    <div class="col-md-3 mb-2">
+        <input id="khmc" type="text" class="form-control" placeholder="客户名称" autocomplete="off">
+    </div>
+    <div class="col-md-3 mb-2">
+        <input id="ddh" type="text" class="form-control" placeholder="订单号" autocomplete="off">
+    </div>
+    <div class="col-md-2 mb-2">
+        <button id="select-btn" class="btn btn-primary">
+            <i class="bi bi-search icon"></i>
+            查询
+        </button>
+    </div>
+</div>
+<div id="table-toolbar">
+    <div class="btn-group" role="group">
+        <button id="refresh-btn" class="btn btn-primary">
+            <i class="bi bi-arrow-clockwise icon"></i>
+            刷新
+        </button>
+        <button id="add-btn" class="btn btn-primary">
+            <i class="bi bi-plus-square icon"></i>
+            新增
+        </button>
+        <button id="update-btn" class="btn btn-primary">
+            <i class="bi bi-pencil-square icon"></i>
+            修改
+        </button>
+        <button id="delete-btn" class="btn btn-primary">
+            <i class="bi bi-trash icon"></i>
+            删除
+        </button>
+        <button id="export-btn" class="btn btn-primary" onClick ="toExcel()">
+            <i class="bi bi-file-earmark-spreadsheet"></i>
+            导出Excel
+        </button>
+        <a class="btn btn-primary" style="color: white;padding-top: 8px">当前页：灯带下单明细</a>
+    </div>
+</div>
+
+<div class="table-div border-top">
+    <table id="ddxdTable"></table>
+</div>
+
+<div id="add-modal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title">录入</div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <form id="add-form" class="needs-validation">
+                    <div class="form-group">
+                        <label for="add-khmc">客户名称</label>
+                        <select id="add-khmc" name="khmc" class="form-control"><option>--请选择--</option></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-xdrq">下单日期</label>
+                        <input id="add-xdrq" name="xdrq" type="date" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入下单日期！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-djbh">单据编号</label>
+                        <input id="add-djbh" name="djbh" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入单据编号！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-shouhuo">送货地址</label>
+                        <input id="add-shouhuo" name="shouhuo" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入送货地址！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-lxdh">联系电话</label>
+                        <input id="add-lxdh" name="lxdh" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入联系电话！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-shfs">送货方式</label>
+                        <select id="add-shfs" name="shfs" class="form-control"><option>--请选择--</option></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-azdz">安装地址</label>
+                        <input id="add-azdz" name="azdz" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入安装地址！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-ddh">订单编号</label>
+                        <input id="add-ddh" name="ddh" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入订单编号！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-luruyuan">录入员</label>
+                        <input id="add-luruyuan" name="luruyuan" type="text" class="form-control" autocomplete="off">
+<!--                        <div class="invalid-feedback">-->
+<!--                            请输入录入员！-->
+<!--                        </div>-->
+                    </div>
+                    <div class="form-group">
+                        <label for="add-fj">项目类别</label>
+                        <select id="add-fj" name="fj" class="form-control" autocomplete="off" data-required="1" onchange="fjxl(this.value)">
+                            <option>--请选择--</option>
+                            <option value="fjgh">房间柜号</option>
+                            <option value="lxc">铝型材</option>
+                            <option value="dy">电源</option>
+                            <option value="kg">开关</option>
+                            <option value="pj">配件</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-gh">项目名称</label>
+                        <select id="add-gh" name="gh" class="form-control"><option>--请选择--</option></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-lcys">铝材颜色</label>
+                        <select id="add-lcys" name="lcys" class="form-control"><option>--请选择--</option></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-ddcd">灯带长度mm</label>
+                        <input id="add-ddcd" name="ddcd" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入灯带长度mm！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-sl">数量(支)</label>
+                        <input id="add-sl" name="sl" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入数量(支)！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-cxdk">出线端口左出线</label>
+                        <input id="add-cxdk" name="cxdk" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入出线端口左出线！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-cxdkRight">出线端口右出线</label>
+                        <input id="add-cxdkRight" name="cxdkRight" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入出线端口右出线！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-gy">光源</label>
+                        <input id="add-gy" name="gy" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入光源！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-gl">功率W</label>
+                        <input id="add-gl" name="gl" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入功率W！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-bz">备注</label>
+                        <input id="add-bz" name="bz" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入备注！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-dj">单价</label>
+                        <input id="add-dj" name="dj" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入单价！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-je">金额</label>
+                        <input id="add-je" name="je" type="text" class="form-control" autocomplete="off">
+<!--                        <div class="invalid-feedback">-->
+<!--                            请输入金额！-->
+<!--                        </div>-->
+                    </div>
+                    <div class="form-group">
+                        <label for="add-chicun">开料尺寸</label>
+                        <input id="add-chicun" name="chicun" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入开料尺寸！
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="border-top" style="padding: 15px;">
+                <button id="add-submit-btn" type="button" class="btn btn-primary">
+                    <i class="bi bi-arrow-bar-up icon"></i>
+                    提交
+                </button>
+                <button id="add-close-btn" type="button" class="btn btn-primary left-margin">
+                    <i class="bi bi-x-circle icon"></i>
+                    关闭
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="update-modal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title">编辑</div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="update-form" class="needs-validation">
+                    <div class="form-group">
+                        <input id="id" name="id" type="hidden">
+                    </div>
+                    <div class="form-group">
+                        <label for="update-khmc">客户名称</label>
+                        <select id="update-khmc" name="khmc" class="form-control"><option></option></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-xdrq">下单日期</label>
+                        <input id="update-xdrq" name="xdrq" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入下单日期！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-djbh">单据编号</label>
+                        <input id="update-djbh" name="djbh" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入单据编号！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-shouhuo">送货地址</label>
+                        <input id="update-shouhuo" name="shouhuo" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入送货地址！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-lxdh">联系电话</label>
+                        <input id="update-lxdh" name="lxdh" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入联系电话！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-shfs">送货方式</label>
+                        <select id="update-shfs" name="shfs" class="form-control"><option></option></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-azdz">安装地址</label>
+                        <input id="update-azdz" name="azdz" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入安装地址！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-ddh">订单编号</label>
+                        <input id="update-ddh" name="ddh" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入订单编号！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-luruyuan">录入员</label>
+                        <input id="update-luruyuan" name="luruyuan" type="text" class="form-control" autocomplete="off">
+<!--                        <div class="invalid-feedback">-->
+<!--                            请输入录入员！-->
+<!--                        </div>-->
+                    </div>
+                    <div class="form-group">
+                        <label for="update-fj">项目类别</label>
+                        <select id="update-fj" name="fj" class="form-control">
+                            <option value="fjgh">房间柜号</option>
+                            <option value="lxc">铝型材</option>
+                            <option value="dy">电源</option>
+                            <option value="kg">开关</option>
+                            <option value="pj">配件</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-gh">项目名称</label>
+                        <select id="update-gh" name="gh" class="form-control"><option></option></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-lcys">铝材颜色</label>
+                        <select id="update-lcys" name="lcys" class="form-control"><option></option></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-ddcd">灯带长度mm</label>
+                        <input id="update-ddcd" name="ddcd" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入灯带长度mm！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-sl">数量(支)</label>
+                        <input id="update-sl" name="sl" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入数量(支)！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-cxdk">出线端口左出线</label>
+                        <input id="update-cxdk" name="cxdk" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入出线端口左出线！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-cxdkRight">出线端口右出线</label>
+                        <input id="update-cxdkRight" name="cxdkRight" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入出线端口右出线！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-gy">光源</label>
+                        <input id="update-gy" name="gy" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入光源！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-gl">功率W</label>
+                        <input id="update-gl" name="gl" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入功率W！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-bz">备注</label>
+                        <input id="update-bz" name="bz" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入备注！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-dj">单价</label>
+                        <input id="update-dj" name="dj" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入单价！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-je">金额</label>
+                        <input id="update-je" name="je" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入金额！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-chicun">开料尺寸</label>
+                        <input id="update-chicun" name="chicun" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入开料尺寸！
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="border-top" style="padding: 15px;">
+                <button id="update-submit-btn" type="button" class="btn btn-primary">
+                    <i class="bi bi-arrow-bar-up icon"></i>
+                    提交
+                </button>
+                <button id="update-close-btn" type="button" class="btn btn-primary left-margin">
+                    <i class="bi bi-x-circle icon"></i>
+                    关闭
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="delete-modal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title">提示</div>
+            </div>
+            <div id="delete-modal-body" class="modal-body">
+                确定删除吗？
+            </div>
+            <div class="border-top" style="padding: 15px;">
+                <button id="delete-submit-btn" type="button" class="btn btn-primary">
+                    <i class="bi bi-arrow-bar-up icon"></i>
+                    确定
+                </button>
+                <button id="delete-close-btn" type="button" class="btn btn-primary left-margin">
+                    <i class="bi bi-x-circle icon"></i>
+                    取消
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

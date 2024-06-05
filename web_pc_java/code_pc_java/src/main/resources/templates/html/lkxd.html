@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>铝框下单</title>
+    <link rel="shortcut icon" href="#"/>
+
+    <script type="text/javascript" src="../js/Jquery.js"></script>
+    <script type="text/javascript" src="../js/jquerysession.js"></script>
+
+    <link rel="stylesheet" href="../bootstrap-4.5.0-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../bootstrap-4.5.0-dist/icons/bootstrap-icons.css">
+    <script type="text/javascript" src="../bootstrap-4.5.0-dist/js/bootstrap.min.js"></script>
+
+    <!--bootstrap-table-->
+    <link rel="stylesheet" href="../bootstrap-4.5.0-dist/css/bootstrap-table.css">
+    <script type="text/javascript" src="../bootstrap-4.5.0-dist/js/bootstrap-table.js"></script>
+    <script type="text/javascript" src="../bootstrap-4.5.0-dist/js/bootstrap-table-zh-CN.min.js"></script>
+    <script type="text/javascript" src="../bootstrap-4.5.0-dist/js/colResizable-1.6.js"></script>
+    <script type="text/javascript" src="../bootstrap-4.5.0-dist/js/bootstrap-table-resizable.js"></script>
+
+    <link rel="stylesheet" href="../css/sweetalert.css">
+    <script type="text/javascript" src="../js/sweetalert-dev.js"></script>
+
+    <link rel="stylesheet" href="../css/main.css">
+    <script type="text/javascript" src="../js/main.js"></script>
+    <script type="text/javascript" src="../js/lkxd.js"></script>
+</head>
+
+<body class="pt-2">
+<div class="top-toolbar row">
+    <div class="col-md-3 mb-2">
+        <input id="customernumber" type="text" class="form-control" placeholder="订单号" autocomplete="off">
+    </div>
+    <div class="col-md-3 mb-2">
+        <input id="customername" type="text" class="form-control" placeholder="客户名称" autocomplete="off">
+    </div>
+    <div class="col-md-3 mb-2">
+        <input id="installaddress" type="text" class="form-control" placeholder="安装地址" autocomplete="off">
+    </div>
+    <div class="col-md-2 mb-2">
+        <button id="select-btn" class="btn btn-primary">
+            <i class="bi bi-search icon"></i>
+            查询
+        </button>
+    </div>
+</div>
+<div id="table-toolbar">
+    <div class="btn-group" role="group">
+        <button id="refresh-btn" class="btn btn-primary">
+            <i class="bi bi-arrow-clockwise icon"></i>
+            刷新
+        </button>
+        <button id="add-btn" class="btn btn-primary">
+            <i class="bi bi-plus-square icon"></i>
+            新增
+        </button>
+        <button id="update-btn" class="btn btn-primary">
+            <i class="bi bi-pencil-square icon"></i>
+            修改
+        </button>
+        <button id="delete-btn" class="btn btn-primary">
+            <i class="bi bi-trash icon"></i>
+            删除
+        </button>
+        <button id="export-btn" class="btn btn-primary" onClick ="toExcel()">
+            <i class="bi bi-file-earmark-spreadsheet"></i>
+            导出Excel
+        </button>
+        <a class="btn btn-primary" style="color: white;padding-top: 8px">当前页：铝框下单</a>
+    </div>
+</div>
+
+<div class="table-div border-top">
+    <table id="lkxdTable"></table>
+</div>
+
+<div id="add-modal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title">录入</div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <form id="add-form" class="needs-validation">
+                    <div class="form-group">
+                        <label for="add-customerName">客户名称</label>
+                        <select id="add-customerName" name="customerName" class="form-control"><option>--请选择--</option></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-insertDate">下单日期</label>
+                        <input id="add-insertDate" name="insertDate" type="date" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入下单日期！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-orderNumber">单据编号</label>
+                        <input id="add-orderNumber" name="orderNumber" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入单据编号！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-pinyin">简码</label>
+                        <input id="add-pinyin" name="pinyin" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入简码！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-shippingAddress">送货地址</label>
+                        <input id="add-shippingAddress" name="shippingAddress" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入送货地址！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-phone">联系电话</label>
+                        <input id="add-phone" name="phone" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入联系电话！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-shippingType">送货方式</label>
+                        <select id="add-shippingType" name="shippingType" class="form-control"><option>--请选择--</option></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-installAddress">安装地址</label>
+                        <input id="add-installAddress" name="installAddress" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入安装地址！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-customerNameRenyuan">录入员</label>
+                        <input id="add-customerNameRenyuan" name="customerNameRenyuan" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入录入员！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-customerNumber">订单号</label>
+                        <input id="add-customerNumber" name="customerNumber" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入订单号！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-height">高</label>
+                        <input id="add-height" name="height" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入高！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-width">宽</label>
+                        <input id="add-width" name="width" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入宽！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-num">下单数量</label>
+                        <input id="add-num" name="num" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入下单数量！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-lvxingcai">铝型材</label>
+                        <select id="add-lvxingcai" name="lvxingcai" class="form-control"><option>--请选择--</option></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-lvcaiYanse">铝材颜色</label>
+                        <select id="add-lvcaiYanse" name="lvcaiYanse" class="form-control"><option>--请选择--</option></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-boliShenjiagong">玻璃深加工</label>
+                        <select id="add-boliShenjiagong" name="boliShenjiagong" class="form-control"><option>--请选择--</option></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-boliYanse">玻璃颜色</label>
+                        <select id="add-boliYanse" name="boliYanse" class="form-control"><option>--请选择--</option></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-lashouXinghao">拉手型号</label>
+                        <select id="add-lashouXinghao" name="lashouXinghao" class="form-control"><option>--请选择--</option></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-jiaoliankongFangxiangLeft">铰链孔左开门</label>
+                        <input id="add-jiaoliankongFangxiangLeft" name="jiaoliankongFangxiangLeft" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入铰链孔左开门！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-jiaoliankongFangxiangRight">铰链孔右开门</label>
+                        <input id="add-jiaoliankongFangxiangRight" name="jiaoliankongFangxiangRight" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入铰链孔右开门！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-lashouShuliangLeft">有拉手数量(个)左</label>
+                        <input id="add-lashouShuliangLeft" name="lashouShuliangLeft" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入有拉手数量(个)左！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-lashouShuliangRight">有拉手数量(个)右</label>
+                        <input id="add-lashouShuliangRight" name="lashouShuliangRight" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入有拉手数量(个)右！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-lashouweiSelectLeft">左拉手位从下向上</label>
+                        <input id="add-lashouweiSelectLeft" name="lashouweiSelectLeft" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入左拉手位从下向上！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-lashouweiInsertLeft">左拉手位从右向左</label>
+                        <input id="add-lashouweiInsertLeft" name="lashouweiInsertLeft" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入左拉手位从右向左！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-lashouweiSelectRight">右拉手位从下向上</label>
+                        <input id="add-lashouweiSelectRight" name="lashouweiSelectRight" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入右拉手位从下向上！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-lashouweiInsertRight">右拉手位从左向右</label>
+                        <input id="add-lashouweiInsertRight" name="lashouweiInsertRight" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入右拉手位从左向右！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-zhuangsuoshuliangInsertLeft1">左装锁数量</label>
+                        <input id="add-zhuangsuoshuliangInsertLeft1" name="zhuangsuoshuliangInsertLeft1" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入左装锁数量！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-zhuangsuoshuliangInsertRight1">右装锁数量</label>
+                        <input id="add-zhuangsuoshuliangInsertRight1" name="zhuangsuoshuliangInsertRight1" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入右装锁数量！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-zhuangsuofangweiInsertLeft1">左锁孔位从下向上</label>
+                        <input id="add-zhuangsuofangweiInsertLeft1" name="zhuangsuofangweiInsertLeft1" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入左锁孔位从下向上！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-zhuangsuofangweiInsertLeft2">左锁孔位从右向左</label>
+                        <input id="add-zhuangsuofangweiInsertLeft2" name="zhuangsuofangweiInsertLeft2" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入左锁孔位从右向左！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-zhuangsuofangweiInsertRight1">右锁孔位从下向上</label>
+                        <input id="add-zhuangsuofangweiInsertRight1" name="zhuangsuofangweiInsertRight1" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入右锁孔位从下向上！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-zhuangsuofangweiInsertRight2">右锁孔位从左向右</label>
+                        <input id="add-zhuangsuofangweiInsertRight2" name="zhuangsuofangweiInsertRight2" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入右锁孔位从左向右！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-kaijiaolian">开铰链孔</label>
+                        <select id="add-kaijiaolian" name="kaijiaolian" class="form-control"><option>--请选择--</option></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-jiaolian1SelectLeft">左铰链孔位1</label>
+                        <select id="add-jiaolian1SelectLeft" name="jiaolian1SelectLeft" class="form-control"><option>--请选择--</option></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-jiaolian1InsertLeft">左铰链孔位1数量</label>
+                        <input id="add-jiaolian1InsertLeft" name="jiaolian1InsertLeft" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入左铰链孔位1数量！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-jiaolian1SelectRight">右铰链孔位1</label>
+                        <input id="add-jiaolian1SelectRight" name="jiaolian1SelectRight" type="text" class="form-control" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <label for="add-jiaolian1InsertRight">右铰链孔位1数量</label>
+                        <input id="add-jiaolian1InsertRight" name="jiaolian1InsertRight" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入右铰链孔位1数量！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-jiaolian2SelectLeft">左铰链孔位2</label>
+                        <select id="add-jiaolian2SelectLeft" name="jiaolian2SelectLeft" class="form-control"><option>--请选择--</option></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-jiaolian2InsertLeft">左铰链孔位2数量</label>
+                        <input id="add-jiaolian2InsertLeft" name="jiaolian2InsertLeft" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入左铰链孔位2数量！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-jiaolian2SelectRight">右铰链孔位2</label>
+                        <input id="add-jiaolian2SelectRight" name="jiaolian2SelectRight" type="text" class="form-control" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <label for="add-jiaolian2InsertRight">右铰链孔位2数量</label>
+                        <input id="add-jiaolian2InsertRight" name="jiaolian2InsertRight" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入右铰链孔位2数量！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-jiaolian3SelectLeft" id="l3sl">左铰链孔位3</label>
+                        <select id="add-jiaolian3SelectLeft" name="jiaolian3SelectLeft" class="form-control"><option>--请选择--</option></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-jiaolian3InsertLeft" id="l3il">左铰链孔位3数量</label>
+                        <input id="add-jiaolian3InsertLeft" name="jiaolian3InsertLeft" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入左铰链孔位3数量！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-jiaolian3SelectRight" id="l3sr">右铰链孔位3</label>
+                        <input id="add-jiaolian3SelectRight" name="jiaolian3SelectRight" type="text" class="form-control" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <label for="add-jiaolian3InsertRight" id="l3ir">右铰链孔位3数量</label>
+                        <input id="add-jiaolian3InsertRight" name="jiaolian3InsertRight" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入右铰链孔位3数量！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-jiaolian4SelectLeft" id="l4sl">左铰链孔位4</label>
+                        <select id="add-jiaolian4SelectLeft" name="jiaolian4SelectLeft" class="form-control"><option>--请选择--</option></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-jiaolian4InsertLeft" id="l4il">左铰链孔位4数量</label>
+                        <input id="add-jiaolian4InsertLeft" name="jiaolian4InsertLeft" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入左铰链孔位4数量！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-jiaolian4SelectRight" id="l4sr">右铰链孔位4</label>
+                        <input id="add-jiaolian4SelectRight" name="jiaolian4SelectRight" type="text" class="form-control" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <label for="add-jiaolian4InsertRight" id="l4ir">右铰链孔位4数量</label>
+                        <input id="add-jiaolian4InsertRight" name="jiaolian4InsertRight" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入右铰链孔位4数量！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-jiaolian5SelectLeft" id="l5sl">左铰链孔位5</label>
+                        <select id="add-jiaolian5SelectLeft" name="jiaolian5SelectLeft" class="form-control"><option>--请选择--</option></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-jiaolian5InsertLeft" id="l5il">左铰链孔位5数量</label>
+                        <input id="add-jiaolian5InsertLeft" name="jiaolian5InsertLeft" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入左铰链孔位5数量！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-jiaolian5SelectRight" id="l5sr">右铰链孔位5</label>
+                        <input id="add-jiaolian5SelectRight" name="jiaolian5SelectRight" type="text" class="form-control" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <label for="add-jiaolian5InsertRight" id="l5ir">右铰链孔位5数量</label>
+                        <input id="add-jiaolian5InsertRight" name="jiaolian5InsertRight" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入右铰链孔位5数量！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-jiaolian6SelectLeft" id="l6sl">左铰链孔位6</label>
+                        <select id="add-jiaolian6SelectLeft" name="jiaolian6SelectLeft" class="form-control"><option>--请选择--</option></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-jiaolian6InsertLeft" id="l6il">左铰链孔位6数量</label>
+                        <input id="add-jiaolian6InsertLeft" name="jiaolian6InsertLeft" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入左铰链孔位6数量！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-jiaolian6SelectRight" id="l6sr">右铰链孔位6</label>
+                        <input id="add-jiaolian6SelectRight" name="jiaolian6SelectRight" type="text" class="form-control" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <label for="add-jiaolian6InsertRight" id="l6ir">右铰链孔位6数量</label>
+                        <input id="add-jiaolian6InsertRight" name="jiaolian6InsertRight" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入右铰链孔位6数量！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-fujianSelect1">附件配置1</label>
+                        <select id="add-fujianSelect1" name="fujianSelect1" class="form-control"><option>--请选择--</option></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-fujianSelect2">附件配置2</label>
+                        <select id="add-fujianSelect2" name="fujianSelect2" class="form-control"><option>--请选择--</option></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-fujianSelect3">附件配置3</label>
+                        <select id="add-fujianSelect3" name="fujianSelect3" class="form-control"><option>--请选择--</option></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-fujianSelect4">附件配置4</label>
+                        <select id="add-fujianSelect4" name="fujianSelect4" class="form-control"><option>--请选择--</option></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-pinpaiSelect1">铰链品牌1</label>
+                        <select id="add-pinpaiSelect1" name="pinpaiSelect1" class="form-control"><option>--请选择--</option></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-pinpaiSelect2">铰链品牌2</label>
+                        <select id="add-pinpaiSelect2" name="pinpaiSelect2" class="form-control"><option>--请选择--</option></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-pinpaiSelect3">铰链品牌3</label>
+                        <select id="add-pinpaiSelect3" name="pinpaiSelect3" class="form-control"><option>--请选择--</option></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-pinpaiSelect4">铰链品牌4</label>
+                        <select id="add-pinpaiSelect4" name="pinpaiSelect4" class="form-control"><option>--请选择--</option></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-fujianShuliang1">数量1</label>
+                        <input id="add-fujianShuliang1" name="fujianShuliang1" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入数量1！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-fujianShuliang2">数量2</label>
+                        <input id="add-fujianShuliang2" name="fujianShuliang2" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入数量2！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-fujianShuliang3">数量3</label>
+                        <input id="add-fujianShuliang3" name="fujianShuliang3" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入数量3！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-fujianShuliang4">数量4</label>
+                        <input id="add-fujianShuliang4" name="fujianShuliang4" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入数量4！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-sumShuliang1">数量(平方)</label>
+                        <input id="add-sumShuliang1" name="sumShuliang1" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入数量(平方)！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-danjia1">单价(平方)</label>
+                        <input id="add-danjia1" name="danjia1" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入单价(平方)！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-sumJine1">金额(平方)</label>
+                        <input id="add-sumJine1" name="sumJine1" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入金额(平方)！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-sumShuliang2">数量(周长)</label>
+                        <input id="add-sumShuliang2" name="sumShuliang2" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入金额(平方)！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-danjia2">单价(周长)</label>
+                        <input id="add-danjia2" name="danjia2" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入单价(周长)！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-sumJine2">金额(周长)</label>
+                        <input id="add-sumJine2" name="sumJine2" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入金额(周长)！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-wancheng">完成</label>
+                        <select id="add-wancheng" name="wancheng" class="form-control" autocomplete="off" data-required="1">
+                            <option>未审验</option>
+                            <option>已审验</option>
+                            <option>优先处理</option>
+                            <option>加工完成</option>
+                            <option>正在加工</option>
+                            <option>完成</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-qita">其他(项目说明)</label>
+                        <input id="add-qita" name="qita" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入其他(项目说明)！
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="border-top" style="padding: 15px;">
+                <button id="add-submit-btn" type="button" class="btn btn-primary">
+                    <i class="bi bi-arrow-bar-up icon"></i>
+                    提交
+                </button>
+                <button id="add-close-btn" type="button" class="btn btn-primary left-margin">
+                    <i class="bi bi-x-circle icon"></i>
+                    关闭
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="update-modal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title">编辑</div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="update-form" class="needs-validation">
+                    <div class="form-group">
+                        <input id="id" name="id" type="hidden">
+                    </div>
+                    <div class="form-group">
+                        <label for="update-customer_name">客户名称</label>
+                        <select id="update-customer_name" name="customer_name" class="form-control"><option></option></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-insert_date">下单日期</label>
+                        <input id="update-insert_date" name="insert_date" type="date" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入下单日期！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-order_number">单据编号</label>
+                        <input id="update-order_number" name="order_number" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入单据编号！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-pinyin">简码</label>
+                        <input id="update-pinyin" name="pinyin" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入简码！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-shipping_address">送货地址</label>
+                        <input id="update-shipping_address" name="shipping_address" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入送货地址！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-phone">联系电话</label>
+                        <input id="update-phone" name="phone" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入联系电话！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-shipping_type">送货方式</label>
+                        <select id="update-shipping_type" name="shipping_type" class="form-control"><option></option></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-install_address">安装地址</label>
+                        <input id="update-install_address" name="install_address" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入安装地址！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-customer_name_renyuan">录入员</label>
+                        <input id="update-customer_name_renyuan" name="customer_name_renyuan" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入录入员！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-customer_number">订单号</label>
+                        <input id="update-customer_number" name="customer_number" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入订单号！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-height">高</label>
+                        <input id="update-height" name="height" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入高！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-width">宽</label>
+                        <input id="update-width" name="width" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入宽！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-num">下单数量</label>
+                        <input id="update-num" name="num" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入下单数量！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-lvxingcai">铝型材</label>
+                        <select id="update-lvxingcai" name="lvxingcai" class="form-control"><option></option></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-lvcai_yanse">铝材颜色</label>
+                        <select id="update-lvcai_yanse" name="lvcai_yanse" class="form-control"><option></option></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-boli_shenjiagong">玻璃深加工</label>
+                        <select id="update-boli_shenjiagong" name="boli_shenjiagong" class="form-control"><option></option></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-boli_yanse">玻璃颜色</label>
+                        <select id="update-boli_yanse" name="boli_yanse" class="form-control"><option></option></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-lashou_xinghao">拉手型号</label>
+                        <select id="update-lashou_xinghao" name="lashou_xinghao" class="form-control"><option></option></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-jiaoliankong_fangxiang_left">铰链孔左开门</label>
+                        <input id="update-jiaoliankong_fangxiang_left" name="jiaoliankong_fangxiang_left" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入铰链孔左开门！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-jiaoliankong_fangxiang_right">铰链孔右开门</label>
+                        <input id="update-jiaoliankong_fangxiang_right" name="jiaoliankong_fangxiang_right" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入拉手型号！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-lashou_shuliang_left">有拉手数量(个)左</label>
+                        <input id="update-lashou_shuliang_left" name="lashou_shuliang_left" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入有拉手数量(个)左！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-lashou_shuliang_right">有拉手数量(个)右</label>
+                        <input id="update-lashou_shuliang_right" name="lashou_shuliang_right" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入有拉手数量(个)右！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-lashouwei_select_left">左拉手位从下向上</label>
+                        <input id="update-lashouwei_select_left" name="lashouwei_select_left" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入左拉手位从下向上！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-lashouwei_insert_left">左拉手位从右向左</label>
+                        <input id="update-lashouwei_insert_left" name="lashouwei_insert_left" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入左拉手位从右向左！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-lashouwei_select_right">右拉手位从下向上</label>
+                        <input id="update-lashouwei_select_right" name="lashouwei_select_right" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入右拉手位从下向上！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-lashouwei_insert_right">右拉手位从左向右</label>
+                        <input id="update-lashouwei_insert_right" name="lashouwei_insert_right" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入右拉手位从左向右！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-zhuangsuoshuliang_insert_left1">左装锁数量</label>
+                        <input id="update-zhuangsuoshuliang_insert_left1" name="zhuangsuoshuliang_insert_left1" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入左装锁数量！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-zhuangsuoshuliang_insert_right1">右装锁数量</label>
+                        <input id="update-zhuangsuoshuliang_insert_right1" name="zhuangsuoshuliang_insert_right1" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入右装锁数量！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-zhuangsuofangwei_insert_left1">左锁孔位从下向上</label>
+                        <input id="update-zhuangsuofangwei_insert_left1" name="zhuangsuofangwei_insert_left1" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入左锁孔位从下向上！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-zhuangsuofangwei_insert_left2">左锁孔位从右向左</label>
+                        <input id="update-zhuangsuofangwei_insert_left2" name="zhuangsuofangwei_insert_left2" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入左锁孔位从右向左！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-zhuangsuofangwei_insert_right1">右锁孔位从下向上</label>
+                        <input id="update-zhuangsuofangwei_insert_right1" name="zhuangsuofangwei_insert_right1" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入右锁孔位从下向上！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-zhuangsuofangwei_insert_right2">右锁孔位从左向右</label>
+                        <input id="update-zhuangsuofangwei_insert_right2" name="zhuangsuofangwei_insert_right2" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入右锁孔位从左向右！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-kaijiaolian">开铰链孔</label>
+                        <select id="update-kaijiaolian" name="kaijiaolian" class="form-control"><option>--请选择--</option></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-jiaolian1_select_left">左铰链孔位1</label>
+                        <select id="update-jiaolian1_select_left" name="jiaolian1_select_left" class="form-control"><option></option></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-jiaolian1_insert_left">左铰链孔位1数量</label>
+                        <input id="update-jiaolian1_insert_left" name="jiaolian1_insert_left" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入左铰链孔位1数量！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-jiaolian1_select_right">右铰链孔位1</label>
+                        <input id="update-jiaolian1_select_right" name="jiaolian1_select_right" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入右铰链孔位1！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-jiaolian1_insert_right">右铰链孔位1数量</label>
+                        <input id="update-jiaolian1_insert_right" name="jiaolian1_insert_right" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入右铰链孔位1数量！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-jiaolian2_select_left">左铰链孔位2</label>
+                        <select id="update-jiaolian2_select_left" name="jiaolian2_select_left" class="form-control"><option></option></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-jiaolian2_insert_left">左铰链孔位2数量</label>
+                        <input id="update-jiaolian2_insert_left" name="jiaolian2_insert_left" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入左铰链孔位2数量！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-jiaolian2_select_right">右铰链孔位2</label>
+                        <input id="update-jiaolian2_select_right" name="jiaolian2_select_right" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入右铰链孔位2！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-jiaolian2_insert_right">右铰链孔位2数量</label>
+                        <input id="update-jiaolian2_insert_right" name="jiaolian2_insert_right" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入右铰链孔位2数量！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-jiaolian3_select_left" id="ujl3sl">左铰链孔位3</label>
+                        <select id="update-jiaolian3_select_left" name="jiaolian3_select_left" class="form-control"><option></option></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-jiaolian3_insert_left" id="ujl3il">左铰链孔位3数量</label>
+                        <input id="update-jiaolian3_insert_left" name="jiaolian3_insert_left" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入左铰链孔位3数量！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-jiaolian3_select_right" id="ujl3sr">右铰链孔位3</label>
+                        <input id="update-jiaolian3_select_right" name="jiaolian3_select_right" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入右铰链孔位3！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-jiaolian3_insert_right" id="ujl3ir">右铰链孔位3数量</label>
+                        <input id="update-jiaolian3_insert_right" name="jiaolian3_insert_right" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入右铰链孔位3数量！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-jiaolian4_select_left" id="ujl4sl">左铰链孔位4</label>
+                        <select id="update-jiaolian4_select_left" name="jiaolian4_select_left" class="form-control"><option></option></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-jiaolian4_insert_left" id="ujl4il">左铰链孔位4数量</label>
+                        <input id="update-jiaolian4_insert_left" name="jiaolian4_insert_left" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入左铰链孔位4数量！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-jiaolian4_select_right" id="ujl4sr">右铰链孔位4</label>
+                        <input id="update-jiaolian4_select_right" name="jiaolian4_select_right" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入右铰链孔位4！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-jiaolian4_insert_right" id="ujl4ir">右铰链孔位4数量</label>
+                        <input id="update-jiaolian4_insert_right" name="jiaolian4_insert_right" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入右铰链孔位4数量！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-jiaolian5_select_left" id="ujl5sl">左铰链孔位5</label>
+                        <select id="update-jiaolian5_select_left" name="jiaolian5_select_left" class="form-control"><option></option></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-jiaolian5_insert_left" id="ujl5il">左铰链孔位5数量</label>
+                        <input id="update-jiaolian5_insert_left" name="jiaolian5_insert_left" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入左铰链孔位5数量！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-jiaolian5_select_right" id="ujl5sr">右铰链孔位5</label>
+                        <input id="update-jiaolian5_select_right" name="jiaolian5_select_right" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入右铰链孔位5！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-jiaolian5_insert_right" id="ujlir">右铰链孔位5数量</label>
+                        <input id="update-jiaolian5_insert_right" name="jiaolian5_insert_right" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入右铰链孔位5数量！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-jiaolian6_select_left" id="ujl6sl">左铰链孔位6</label>
+                        <select id="update-jiaolian6_select_left" name="jiaolian6_select_left" class="form-control"><option></option></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-jiaolian6_insert_left" id="ujl6il">左铰链孔位6数量</label>
+                        <input id="update-jiaolian6_insert_left" name="jiaolian6_insert_left" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入左铰链孔位6数量！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-jiaolian6_select_right" id="ujl6sr">右铰链孔位6</label>
+                        <input id="update-jiaolian6_select_right" name="jiaolian6_select_right" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入右铰链孔位6！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-jiaolian6_insert_right" id="ujl6ir">右铰链孔位6数量</label>
+                        <input id="update-jiaolian6_insert_right" name="jiaolian6_insert_right" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入右铰链孔位6数量！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-fujian_select1">附件配置1</label>
+                        <select id="update-fujian_select1" name="fujian_select1" class="form-control"><option></option></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-fujian_select2">附件配置2</label>
+                        <select id="update-fujian_select2" name="fujian_select2" class="form-control"><option></option></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-fujian_select3">附件配置3</label>
+                        <select id="update-fujian_select3" name="fujian_select3" class="form-control"><option></option></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-fujian_select4">附件配置4</label>
+                        <select id="update-fujian_select4" name="fujian_select4" class="form-control"><option></option></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-pinpai_select1">铰链品牌1</label>
+                        <select id="update-pinpai_select1" name="pinpai_select1" class="form-control"><option></option></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-pinpai_select2">铰链品牌2</label>
+                        <select id="update-pinpai_select2" name="pinpai_select2" class="form-control"><option></option></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-pinpai_select3">铰链品牌3</label>
+                        <select id="update-pinpai_select3" name="pinpai_select3" class="form-control"><option></option></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-pinpai_select4">铰链品牌4</label>
+                        <select id="update-pinpai_select4" name="pinpai_select4" class="form-control"><option></option></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-fujian_shuliang1">数量1</label>
+                        <input id="update-fujian_shuliang1" name="fujian_shuliang1" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入数量1！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-fujian_shuliang2">数量2</label>
+                        <input id="update-fujian_shuliang2" name="fujian_shuliang2" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入数量2！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-fujian_shuliang3">数量3</label>
+                        <input id="update-fujian_shuliang3" name="fujian_shuliang3" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入数量3！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-fujian_shuliang4">数量4</label>
+                        <input id="update-fujian_shuliang4" name="fujian_shuliang4" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入数量4！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-sum_shuliang1">数量(平方)</label>
+                        <input id="update-sum_shuliang1" name="sum_shuliang1" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入数量(平方)！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-danjia1">单价(平方)</label>
+                        <input id="update-danjia1" name="danjia1" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入单价(平方)！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-sum_jine1">金额(平方)</label>
+                        <input id="update-sum_jine1" name="sum_jine1" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入金额(平方)！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-sum_shuliang2">数量(周长)</label>
+                        <input id="update-sum_shuliang2" name="sum_shuliang2" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入金额(平方)！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-danjia2">单价(周长)</label>
+                        <input id="update-danjia2" name="danjia2" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入单价(周长)！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-sum_jine2">金额(周长)</label>
+                        <input id="update-sum_jine2" name="sum_jine2" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入金额(周长)！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-wancheng">完成</label>
+                        <select id="update-wancheng" name="wancheng" class="form-control" autocomplete="off" data-required="1">
+                            <option>未审验</option>
+                            <option>已审验</option>
+                            <option>优先处理</option>
+                            <option>加工完成</option>
+                            <option>正在加工</option>
+                            <option>完成</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-qita">其他(项目说明)</label>
+                        <input id="update-qita" name="qita" type="text" class="form-control" autocomplete="off">
+                        <div class="invalid-feedback">
+                            请输入其他(项目说明)！
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="border-top" style="padding: 15px;">
+                <button id="update-submit-btn" type="button" class="btn btn-primary">
+                    <i class="bi bi-arrow-bar-up icon"></i>
+                    提交
+                </button>
+                <button id="update-close-btn" type="button" class="btn btn-primary left-margin">
+                    <i class="bi bi-x-circle icon"></i>
+                    关闭
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="delete-modal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title">提示</div>
+            </div>
+            <div id="delete-modal-body" class="modal-body">
+                确定删除吗？
+            </div>
+            <div class="border-top" style="padding: 15px;">
+                <button id="delete-submit-btn" type="button" class="btn btn-primary">
+                    <i class="bi bi-arrow-bar-up icon"></i>
+                    确定
+                </button>
+                <button id="delete-close-btn" type="button" class="btn btn-primary left-margin">
+                    <i class="bi bi-x-circle icon"></i>
+                    取消
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

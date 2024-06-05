@@ -1,0 +1,36 @@
+package com.example.demo.service.impl;
+
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.example.demo.entity.UserInfo;
+import com.example.demo.entity.blxd;
+import com.example.demo.entity.ddxd;
+import com.example.demo.mapper.BlxdMapper;
+import com.example.demo.service.BlxdService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+public class BlxdImpl extends ServiceImpl<BlxdMapper, blxd> implements BlxdService {
+    @Autowired
+    BlxdMapper blxdMapper;
+
+    @Override
+    public List<blxd> getList() { return blxdMapper.getList(); }
+
+    @Override
+    public List<blxd> getListByBoli() { return blxdMapper.getListByBoli(); }
+
+    @Override
+    public List<blxd> getQita() { return blxdMapper.getQita(); }
+
+    @Override
+    public List<blxd> queryList(String pinyin, String shengchan) {
+        return blxdMapper.queryList(pinyin, shengchan);
+    }
+
+    @Override
+    public boolean update(blxd blxd) { return updateById(blxd);}
+
+}

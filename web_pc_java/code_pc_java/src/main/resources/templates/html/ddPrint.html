@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>灯带打印</title>
+    <link rel="shortcut icon" href="#"/>
+
+    <script type="text/javascript" src="../js/Jquery.js"></script>
+    <script type="text/javascript" src="../js/jquerysession.js"></script>
+
+    <link rel="stylesheet" href="../bootstrap-4.5.0-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../bootstrap-4.5.0-dist/icons/bootstrap-icons.css">
+    <script type="text/javascript" src="../bootstrap-4.5.0-dist/js/bootstrap.min.js"></script>
+
+    <!--bootstrap-table-->
+    <link rel="stylesheet" href="../bootstrap-4.5.0-dist/css/bootstrap-table.css">
+    <script type="text/javascript" src="../bootstrap-4.5.0-dist/js/bootstrap-table.js"></script>
+    <script type="text/javascript" src="../bootstrap-4.5.0-dist/js/bootstrap-table-zh-CN.min.js"></script>
+    <script type="text/javascript" src="../bootstrap-4.5.0-dist/js/colResizable-1.6.js"></script>
+    <script type="text/javascript" src="../bootstrap-4.5.0-dist/js/bootstrap-table-resizable.js"></script>
+
+    <link rel="stylesheet" href="../css/sweetalert.css">
+    <script type="text/javascript" src="../js/sweetalert-dev.js"></script>
+
+    <link rel="stylesheet" href="../css/main.css">
+    <script type="text/javascript" src="../js/main.js"></script>
+    <script type="text/javascript" src="../js/ddPrint.js"></script>
+</head>
+
+<body class="pt-2">
+
+<div id="table-toolbar">
+    <div class="btn-group" role="group">
+        <button id="select-btn" class="btn btn-primary">
+            <i class="bi bi-arrow-clockwise icon"></i>
+            选择数据
+        </button>
+        <button id="print-btn" class="btn btn-primary">
+            <i class="bi bi-plus-square icon"></i>
+            打印
+        </button>
+        <button id="clear-btn" class="btn btn-primary">
+            <i class="bi bi-plus-square icon"></i>
+            清空
+        </button>
+        <a class="btn btn-primary" style="color: white;padding-top: 8px">当前页：灯带打印</a>
+    </div>
+</div>
+
+<div class="table-div border-top" style="width: 200%" id="div">
+    <div class="row">
+        <div class="col-xs-16">
+            <div class="col-xs-16">
+                <table class="table table-bordered" style="margin-top: 2%">
+                    <tbody>
+                        <tr>
+                            <td style="width: 100px">天龙五金灯控系统</td>
+                        </tr>
+                        <tr>
+                            <td colspan="1">客户:</td>
+                            <td colspan="1" id="td8"></td>
+                            <td colspan="3">日期</td>
+                            <td colspan="5" id="td9"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">发货单位：</td>
+                            <td id="fahuo_xiala" colspan="14"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">发货地址：</td>
+                            <td colspan="4" id="td1"></td>
+                            <td colspan="2">发货联系人：</td>
+                            <td colspan="3" id="td2"></td>
+                            <td colspan="2">电话：</td>
+                            <td colspan="3" id="td3"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">收货单位：</td>
+                            <td id="shouhuo_xiala" colspan="14"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--    选择窗体-->
+<div id="dd-modal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title">选择数据</div>
+            </div>
+            <div class="modal-body">
+                <table id="show-dd-table"></table>
+            </div>
+            <div class="border-top" style="padding: 15px;">
+                <button id="dd-submit-btn" type="button" class="btn btn-primary">
+                    <i class="bi bi-arrow-bar-up icon"></i>
+                    确定
+                </button>
+                <button id="dd-close-btn" type="button" class="btn btn-primary left-margin">
+                    <i class="bi bi-x-circle icon"></i>
+                    关闭
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

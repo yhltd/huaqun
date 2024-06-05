@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>玻璃下单</title>
+    <link rel="shortcut icon" href="#"/>
+
+    <script type="text/javascript" src="../js/Jquery.js"></script>
+    <script type="text/javascript" src="../js/jquerysession.js"></script>
+
+    <link rel="stylesheet" href="../bootstrap-4.5.0-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../bootstrap-4.5.0-dist/icons/bootstrap-icons.css">
+    <script type="text/javascript" src="../bootstrap-4.5.0-dist/js/bootstrap.min.js"></script>
+
+    <!--bootstrap-table-->
+    <link rel="stylesheet" href="../bootstrap-4.5.0-dist/css/bootstrap-table.css">
+    <script type="text/javascript" src="../bootstrap-4.5.0-dist/js/bootstrap-table.js"></script>
+    <script type="text/javascript" src="../bootstrap-4.5.0-dist/js/bootstrap-table-zh-CN.min.js"></script>
+    <script type="text/javascript" src="../bootstrap-4.5.0-dist/js/colResizable-1.6.js"></script>
+    <script type="text/javascript" src="../bootstrap-4.5.0-dist/js/bootstrap-table-resizable.js"></script>
+
+    <link rel="stylesheet" href="../css/sweetalert.css">
+    <script type="text/javascript" src="../js/sweetalert-dev.js"></script>
+
+    <link rel="stylesheet" href="../css/main.css">
+    <script type="text/javascript" src="../js/main.js"></script>
+    <script type="text/javascript" src="../js/blxd.js"></script>
+</head>
+
+<body class="pt-2">
+<div class="top-toolbar row">
+    <div class="col-md-3 mb-2">
+        <input id="pinyin" type="text" class="form-control" placeholder="简码" autocomplete="off">
+    </div>
+    <div class="col-md-3 mb-2">
+        <input id="shengchan" type="text" class="form-control" placeholder="生产状态" autocomplete="off">
+    </div>
+    <div class="col-md-2 mb-2">
+        <button id="select-btn" class="btn btn-primary">
+            <i class="bi bi-search icon"></i>
+            查询
+        </button>
+    </div>
+</div>
+<div id="table-toolbar">
+    <div class="btn-group" role="group">
+        <button id="refresh-btn" class="btn btn-primary">
+            <i class="bi bi-arrow-clockwise icon"></i>
+            刷新
+        </button>
+        <button id="update-btn" class="btn btn-primary">
+            <i class="bi bi-pencil-square icon"></i>
+            修改
+        </button>
+        <button id="export-btn" class="btn btn-primary" onClick ="toExcel()">
+            <i class="bi bi-file-earmark-spreadsheet"></i>
+            导出Excel
+        </button>
+        <a class="btn btn-primary" style="color: white;padding-top: 8px">当前页：玻璃下单</a>
+    </div>
+</div>
+
+<div class="table-div border-top">
+    <table id="blxdTable"></table>
+</div>
+
+<div id="update-modal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title">编辑</div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="update-form" class="needs-validation">
+                    <div class="form-group">
+                        <input id="id" name="id" type="hidden">
+                    </div>
+<!--                    <div class="form-group">-->
+<!--                        <label for="update-insertDate">下单日期</label>-->
+<!--                        <input id="update-insertDate" name="insertDate" type="date" class="form-control" autocomplete="off">-->
+<!--                        <div class="invalid-feedback">-->
+<!--                            请输入下单日期！-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="form-group">-->
+<!--                        <label for="update-orderNumber">单据编号</label>-->
+<!--                        <input id="update-orderNumber" name="orderNumber" type="text" class="form-control" autocomplete="off">-->
+<!--                        <div class="invalid-feedback">-->
+<!--                            请输入单据编号！-->
+<!--                        </div>-->
+<!--                    </div>-->
+                    <div class="form-group">
+                        <label for="update-shengchan">生产状态</label>
+                        <select id="update-shengchan" name="shengchan" class="form-control"
+                                autocomplete="off" data-required="1">
+                            <option>加工完成</option>
+                            <option>配送少数</option>
+                            <option>正在加工</option>
+                            <option>完成</option>
+                        </select>
+                    </div>
+<!--                    <div class="form-group">-->
+<!--                        <label for="update-gongyingshang">所属供应商</label>-->
+<!--                        <input id="update-gongyingshang" name="gongyingshang" type="text" class="form-control" autocomplete="off">-->
+<!--                        <div class="invalid-feedback">-->
+<!--                            请输入所属供应商！-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="form-group">-->
+<!--                        <label for="update-boliYanse">玻璃颜色</label>-->
+<!--                        <input id="update-boliYanse" name="boliYanse" type="text" class="form-control" autocomplete="off">-->
+<!--                        <div class="invalid-feedback">-->
+<!--                            请输入玻璃颜色！-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="form-group">-->
+<!--                        <label for="update-boliShenjiagong">玻璃深加工</label>-->
+<!--                        <input id="update-boliShenjiagong" name="boliShenjiagong" type="text" class="form-control" autocomplete="off">-->
+<!--                        <div class="invalid-feedback">-->
+<!--                            请输入玻璃深加工！-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="form-group">-->
+<!--                        <label for="update-num">数量</label>-->
+<!--                        <input id="update-num" name="num" type="text" class="form-control" autocomplete="off">-->
+<!--                        <div class="invalid-feedback">-->
+<!--                            请输入数量！-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="form-group">-->
+<!--                        <label for="update-shuoming1">开拉手孔数量</label>-->
+<!--                        <input id="update-shuoming1" name="shuoming1" type="text" class="form-control" autocomplete="off">-->
+<!--                        <div class="invalid-feedback">-->
+<!--                            请输入开拉手孔数量！-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="form-group">-->
+<!--                        <label for="update-shuoming2">开锁孔数量</label>-->
+<!--                        <input id="update-shuoming2" name="shuoming2" type="text" class="form-control" autocomplete="off">-->
+<!--                        <div class="invalid-feedback">-->
+<!--                            请输入开锁孔数量！-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="form-group">-->
+<!--                        <label for="update-beizhu">开特殊孔数量</label>-->
+<!--                        <input id="update-beizhu" name="beizhu" type="text" class="form-control" autocomplete="off">-->
+<!--                        <div class="invalid-feedback">-->
+<!--                            请输入开特殊孔数量！-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="form-group">-->
+<!--                        <label for="update-height">高度</label>-->
+<!--                        <input id="update-height" name="height" type="text" class="form-control" autocomplete="off">-->
+<!--                        <div class="invalid-feedback">-->
+<!--                            请输入高度！-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="form-group">-->
+<!--                        <label for="update-width">宽度</label>-->
+<!--                        <input id="update-width" name="width" type="text" class="form-control" autocomplete="off">-->
+<!--                        <div class="invalid-feedback">-->
+<!--                            请输入宽度！-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="form-group">-->
+<!--                        <label for="update-pinyin">简码</label>-->
+<!--                        <input id="update-pinyin" name="pinyin" type="text" class="form-control" autocomplete="off">-->
+<!--                        <div class="invalid-feedback">-->
+<!--                            请输入简码！-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="form-group">-->
+<!--                        <label for="update-shendan">完成时间</label>-->
+<!--                        <input id="update-shendan" name="shendan" type="date" class="form-control" autocomplete="off">-->
+<!--                        <div class="invalid-feedback">-->
+<!--                            请输入完成时间！-->
+<!--                        </div>-->
+<!--                    </div>-->
+                </form>
+            </div>
+            <div class="border-top" style="padding: 15px;">
+                <button id="update-submit-btn" type="button" class="btn btn-primary">
+                    <i class="bi bi-arrow-bar-up icon"></i>
+                    提交
+                </button>
+                <button id="update-close-btn" type="button" class="btn btn-primary left-margin">
+                    <i class="bi bi-x-circle icon"></i>
+                    关闭
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
