@@ -182,7 +182,7 @@ $(function () {
     $('#print-btn').click(function () {
         $('table').width(this_kuan)
         $('.table-div').width(this_kuan)
-        var newstr = window.document.getElementById("table").innerHTML;
+        var newstr = window.document.getElementById("div").innerHTML;
         var oldstr = window.document.body.innerHTML;
         document.body.innerHTML = newstr;
         window.print();

@@ -35,4 +35,9 @@ public class DdxdImpl extends ServiceImpl<DdxdMapper, ddxd> implements DdxdServi
         return save(ddxd) ? ddxd : null;
     }
 
+    @Override
+    public List<ddxd> getListByKhmc(String khmc,String xdrq,String djbh) {
+        return ddxdMapper.getListByKhmc(khmc,xdrq,djbh);
+    }
+
 }

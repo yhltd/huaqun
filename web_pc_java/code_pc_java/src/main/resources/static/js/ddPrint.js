@@ -15,13 +15,16 @@ $(function () {
     $('#print-btn').click(function () {
         $('table').width(this_kuan)
         $('.table-div').width(this_kuan)
-        var newstr = window.document.getElementById("div").innerHTML;
-        var oldstr = window.document.body.innerHTML;
-        document.body.innerHTML = newstr;
+        $('#select-btn').hide();
+        $('#print-btn').hide();
+        $('#dqy').hide();
+        // var newstr = window.document.getElementById("div").innerHTML;
+        // var oldstr = window.document.body.innerHTML;
+        // document.body.innerHTML = newstr;
         window.print();
-        document.body.innerHTML = oldstr;
-        window.location.reload();
-        return false;
+        // document.body.innerHTML = oldstr;
+        // window.location.reload();
+        // return false;
     });
 
     //选择数据
@@ -56,33 +59,37 @@ $(function () {
                     $("[name='printData']").remove();
                     var tr = "";
                     for (var i = 0; i < res.data.length; i++) {
-                        var idd="idd"+i;
-                        var idd1="idd1"+i;
-                        var idd2="idd2"+i;
-                        var idd3="idd3"+i;
-                        var idd4="idd4"+i;
-                        var idd5="idd5"+i;
-                        var idd6="idd6"+i;
-                        var idd7="idd7"+i;
-                        var idd8="idd8"+i;
-                        var idd9="idd9"+i;
-                        var j = i + 1;
-                        tr = "<tr name='printData'>" +
-                            "<td><input onchange=\"javascript:inputChange('" + idd + "')\" type='text' id='idd" + i + "'  class='form-control' style='height:25px;border: none' value='"+ p_kehu +"' /></td>" +
-                            "<td><input onchange=\"javascript:inputChange('" + idd1 + "')\" type='text' id='idd1" + i + "'  class='form-control' style='height:25px;border: none' value='"+ p_riqi +"' /></td>" +
-                            "<td><input onchange=\"javascript:inputChange('" + idd2 + "')\" type='text' id='idd2" + i + "'  class='form-control' style='height:25px;border: none' value='"+ p_danhao +"' /></td>" +
-                            "<td><input onchange=\"javascript:inputChange('" + idd3 + "')\" type='text' id='idd3" + i + "'  class='form-control' style='height:25px;border: none' value='"+ p_azdz +"' /></td>" +
-                            "<td><input onchange=\"javascript:inputChange('" + idd4 + "')\" type='text' id='idd4" + i + "'  class='form-control' style='height:25px;border: none' value='"+ p_shdz +"'/></td>" +
-                            "<td><input onchange=\"javascript:inputChange('" + idd5 + "')\" type='text' id='idd5" + i + "'   class='form-control' style='height:25px;border: none' value='"+ p_xmmc +"'/></td>" +
-                            "<td><input onchange=\"javascript:inputChange('" + idd6 + "')\" type='text' id='idd6" + i + "'   class='form-control' style='height:25px;border: none' value='"+ p_lcys +"'/></td>" +
-                            "<td><input onchange=\"javascript:inputChange('" + idd7 + "')\" type='text' id='idd6" + i + "'   class='form-control' style='height:25px;border: none' value='"+ p_gy +"'/></td>" +
-                            "<td><input onchange=\"javascript:inputChange('" + idd8 + "')\" type='text' id='idd6" + i + "'   class='form-control' style='height:25px;border: none' value='"+ p_ddcd +"'/></td>" +
-                            "<td><input onchange=\"javascript:inputChange('" + idd9 + "')\" type='text' id='idd6" + i + "'   class='form-control' style='height:25px;border: none' value='"+ p_sl +"'/></td>" +
+                        tr1 = "<tr style='display:inline;font-size: 10px;border: none' name='printData'>" +
+                            "<td style='margin-left:-9px;display:inline;border: none;font-size: 10px'>" + res.data[i].khmc + "</td>" +
                         "</tr>";
-                        $('#dd-modal').modal('hide');
+                        tr2 = "<tr style='display:inline;font-size: 10px;border: none' name='printData'>" +
+                            "<td style='margin-left:-5px;display:inline;border: none;font-size: 10px'>" + res.data[i].xdrq + "</td>" +
+                        "</tr>";
+                        tr3 = "<tr style='display:inline;font-size: 10px;border: none' name='printData'>" +
+                            "<td style='margin-left:-10px;display:inline;border: none;font-size: 10px'>" + res.data[i].djbh + "</td>" +
+                        "</tr>";
+                        tr4 = "<tr style='display:inline;font-size: 10px;border: none' name='printData'>" +
+                            "<td style='display:inline;border: none;font-size: 10px;padding-left:0px;padding-right:0px'>" + res.data[i].azdz + "</td>" +
+                        "</tr>";
+                        tr5 = "<tr style='display:inline;font-size: 10px;border: none' name='printData'>" +
+                            "<td style='display:inline;border: none;padding-left:0px;padding-right:0px'>" + res.data[i].ddh + "</td>" +
+                        "</tr>";
+                        tr6 = "<tr style='font-size: 10px;margin-left:3px;border: none' name='printData'>" +
+                            "<td colspan='2' style='margin-left:3px;border: none;font-size: 10px'>" + res.data[i].fj + "</td>" +
+                            "<td colspan='1' style='margin-left:3px;border: none;font-size: 10px'>" + res.data[i].lcys + "</td>" +
+                            "<td colspan='1' style='margin-left:3px;border: none;font-size: 10px'>" + res.data[i].gy + "</td>" +
+                            "<td colspan='1' style='margin-left:3px;border: none;font-size: 10px'>" + res.data[i].ddcd + "</td>" +
+                            "<td colspan='1' style='margin-left:3px;border: none;font-size: 10px'>" + res.data[i].sl + "</td>" +
+                        "</tr>";
+                        $("#data6").append(tr6);
                     }
-                    $('table').width(this_kuan * 2)
-                    $('.table-div').width(this_kuan * 2)
+                    $("#data1").append(tr1);
+                    $("#data2").append(tr2);
+                    $("#data3").append(tr3);
+                    $("#data4").append(tr4);
+                    $("#data5").append(tr5);
+
+                    $('#dd-modal').modal('hide');
                 }
             })
         }
@@ -102,19 +109,18 @@ function setTable(data) {
     $('#show-dd-table').bootstrapTable({
         data: data,
         sortStable: true,
-        classes: 'table table-hover text-nowrap table table-bordered',
+        classes: 'table table-hover',
         idField: 'id',
         pagination: true,
-        pageSize: 15,//单页记录数
-        clickToSelect: true,
+        search: true,
+        searchAlign: 'left',
+        clickToSelect: false,
         locale: 'zh-CN',
-        toolbar: '#table-toolbar',
-        toolbarAlign: 'left',
-        // theadClasses: "thead-light",//这里设置表头样式
-        style:'table-layout:fixed',
-
+        singleSelect: true,
         columns: [
             {
+                checkbox: true
+            }, {
                 field: '',
                 title: '序号',
                 align: 'center',
@@ -254,15 +260,33 @@ function setTable(data) {
                 align: 'center',
                 sortable: true,
                 width: 100,
-            }
+            },
         ],
-        onClickRow: function (row, el) {
-            let isSelect = $(el).hasClass('selected')
-            if (isSelect) {
-                $(el).removeClass('selected')
-            } else {
-                $(el).addClass('selected')
+        // onClickRow: function (row, el) {
+        //     let isSelect = $(el).hasClass('selected')
+        //     if (isSelect) {
+        //         $(el).removeClass('selected')
+        //     } else {
+        //         $(el).addClass('selected')
+        //     }
+        // }
+    })
+}
+
+function getData(tableEl) {
+    let result = [];
+    let tableData = $(tableEl).bootstrapTable('getData');
+    $(tableEl + ' tr').each(function (i, tr) {
+        let index = $(tr).data('index');
+        if (index != undefined) {
+            if ($(tr).hasClass('selected')) {
+                result.push({
+                    khmc: tableData[index].khmc,
+                    xdrq: tableData[index].xdrq,
+                    djbh: tableData[index].djbh,
+                })
             }
         }
-    })
+    });
+    return result;
 }

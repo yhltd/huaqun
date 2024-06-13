@@ -28,8 +28,14 @@
     <script type="text/javascript" src="../js/ddPrint.js"></script>
 </head>
 
-<body class="pt-2">
+<style>
+    @page  {
+        width: 58mm;
+        height: 210mm;
+    }
+</style>
 
+<body class="pt-2">
 <div id="table-toolbar">
     <div class="btn-group" role="group">
         <button id="select-btn" class="btn btn-primary">
@@ -40,46 +46,38 @@
             <i class="bi bi-plus-square icon"></i>
             打印
         </button>
-        <button id="clear-btn" class="btn btn-primary">
-            <i class="bi bi-plus-square icon"></i>
-            清空
-        </button>
-        <a class="btn btn-primary" style="color: white;padding-top: 8px">当前页：灯带打印</a>
+        <a id="dqy" class="btn btn-primary" style="color: white;padding-top: 8px">当前页：灯带打印</a>
     </div>
 </div>
 
-<div class="table-div border-top" style="width: 200%" id="div">
-    <div class="row">
-        <div class="col-xs-16">
-            <div class="col-xs-16">
-                <table class="table table-bordered" style="margin-top: 2%">
-                    <tbody>
-                        <tr>
-                            <td style="width: 100px">天龙五金灯控系统</td>
-                        </tr>
-                        <tr>
-                            <td colspan="1">客户:</td>
-                            <td colspan="1" id="td8"></td>
-                            <td colspan="3">日期</td>
-                            <td colspan="5" id="td9"></td>
-                        </tr>
-                        <tr>
-                            <td colspan="2">发货单位：</td>
-                            <td id="fahuo_xiala" colspan="14"></td>
-                        </tr>
-                        <tr>
-                            <td colspan="2">发货地址：</td>
-                            <td colspan="4" id="td1"></td>
-                            <td colspan="2">发货联系人：</td>
-                            <td colspan="3" id="td2"></td>
-                            <td colspan="2">电话：</td>
-                            <td colspan="3" id="td3"></td>
-                        </tr>
-                        <tr>
-                            <td colspan="2">收货单位：</td>
-                            <td id="shouhuo_xiala" colspan="14"></td>
-                        </tr>
-                    </tbody>
+<!--<div class="table-div border-top" style="width: 580px;border: none" id="div">-->
+<div class="table-div border-top" style="width: 280px;border: none" id="div">
+    <div class="row" style="border: none">
+        <div style="border: none">
+            <div style="border: none">
+<!--                <table class="table" style="width: 480px;border: none">-->
+                <table class="table" style="width: 280px;border: none">
+<!--                    <thead>-->
+                    <div style="font-size: 10px;border: none;text-align: center;width: 280px">天龙五金灯控系统</div>
+                    <tr style="font-size: 10px;border: none">
+                        <th style="width: 9mm;border: none;margin-left:3px;padding-right:0px">客户</th>
+                        <td style="width: 23mm;border: none;padding-left:3px;padding-right:0px" id="data1"></td>
+<!--                        <th style="margin-left:-10px;width: 6mm;border: none;padding-left:0px;padding-right:0px">日期</th>-->
+                        <th style="margin-left:-15px;width: 6mm;border: none;padding-left:0px;padding-right:0px">日期</th>
+                        <td style="width: 23mm;border-width:0px;border: none;margin-left:0px;margin-right:0px;padding-right:0px;padding-left:0px" id="data2"></td>
+<!--                        <th colspan="1">单据编号</th>-->
+                        <td style="width: 40mm;border: none;border-width:0px;text-align: left;padding-left: 0px;padding-right:0px" id="data3"></td>
+
+                    </tr>
+<!--                    <tbody id="data1"></tbody>-->
+                    <tr style="font-size: 10px;border: none">
+                        <th colspan="2" style="width:25mm;border: none;margin-left:3px">安装地址</th>
+                        <td colspan="2" id="data4" style="width:20mm;border: none;padding-left:0px;padding-right:0px"></td>
+                        <td colspan="2" id="data5" style="width:50mm;border: none;padding-left:0px;padding-right:0px"></td>
+                    </tr>
+                    </thead>
+<!--                    <tbody id="data2"></tbody>-->
+                    <tbody id="data6" style="margin-left:3px;font-size: 10px;border: none"></tbody>
                 </table>
             </div>
         </div>

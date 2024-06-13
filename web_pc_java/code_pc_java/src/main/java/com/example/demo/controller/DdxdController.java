@@ -154,7 +154,11 @@ public class DdxdController {
     public ResultInfo print(@RequestBody HashMap map, HttpSession session, HttpServletResponse response) {
         try {
             GsonUtil gsonUtil = new GsonUtil(GsonUtil.toJson(map));
+            List<ddxd> nlist = GsonUtil.toList(gsonUtil.get("list"), ddxd.class);
             List<ddxd> list=new ArrayList<>();
+            if(nlist != null){
+                list= ddxdService.getListByKhmc(nlist.get(0).getKhmc(),nlist.get(0).getXdrq(),nlist.get(0).getDjbh());
+            }
             return ResultInfo.success("成功！",list);
         } catch (Exception e) {
             e.printStackTrace();

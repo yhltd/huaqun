@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>铝框打印1</title>
+    <link rel="shortcut icon" href="#"/>
+
+    <script type="text/javascript" src="../js/Jquery.js"></script>
+    <script type="text/javascript" src="../js/jquerysession.js"></script>
+
+    <link rel="stylesheet" href="../bootstrap-4.5.0-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../bootstrap-4.5.0-dist/icons/bootstrap-icons.css">
+    <script type="text/javascript" src="../bootstrap-4.5.0-dist/js/bootstrap.min.js"></script>
+
+    <!--bootstrap-table-->
+    <link rel="stylesheet" href="../bootstrap-4.5.0-dist/css/bootstrap-table.css">
+    <script type="text/javascript" src="../bootstrap-4.5.0-dist/js/bootstrap-table.js"></script>
+    <script type="text/javascript" src="../bootstrap-4.5.0-dist/js/bootstrap-table-zh-CN.min.js"></script>
+    <script type="text/javascript" src="../bootstrap-4.5.0-dist/js/colResizable-1.6.js"></script>
+    <script type="text/javascript" src="../bootstrap-4.5.0-dist/js/bootstrap-table-resizable.js"></script>
+
+    <link rel="stylesheet" href="../css/sweetalert.css">
+    <script type="text/javascript" src="../js/sweetalert-dev.js"></script>
+
+    <link rel="stylesheet" href="../css/main.css">
+    <script type="text/javascript" src="../js/main.js"></script>
+    <script type="text/javascript" src="../js/lkPrint.js"></script>
+</head>
+
+<style>
+    @page  {
+        size: 100mm 80mm;
+    }
+</style>
+
+<body class="pt-2">
+<div id="table-toolbar">
+    <div class="btn-group" role="group">
+        <button id="select-btn" class="btn btn-primary">
+            <i class="bi bi-arrow-clockwise icon"></i>
+            选择数据
+        </button>
+        <button id="print-btn" class="btn btn-primary">
+            <i class="bi bi-plus-square icon"></i>
+            打印
+        </button>
+        <a class="btn btn-primary" style="color: white;padding-top: 8px">当前页：铝框打印1</a>
+    </div>
+</div>
+
+<div class="table-div border-top" style="width: 1100px" id="div">
+    <div class="row">
+        <div class="col-xs-11">
+            <div class="col-xs-11">
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th colspan="1">客户</th>
+                        <th colspan="1">日期</th>
+                        <th colspan="1">订单号</th>
+                        <th colspan="1">单据编号</th>
+                        <th colspan="1">铝型材</th>
+                        <th colspan="1">铝材颜色</th>
+                        <th colspan="1">拉手型号</th>
+                    </tr>
+                    </thead>
+                    <tbody id="data"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--    选择窗体-->
+<div id="dd-modal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title">选择数据</div>
+            </div>
+            <div class="modal-body">
+                <table id="show-dd-table"></table>
+            </div>
+            <div class="border-top" style="padding: 15px;">
+                <button id="dd-submit-btn" type="button" class="btn btn-primary">
+                    <i class="bi bi-arrow-bar-up icon"></i>
+                    确定
+                </button>
+                <button id="dd-close-btn" type="button" class="btn btn-primary left-margin">
+                    <i class="bi bi-x-circle icon"></i>
+                    关闭
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

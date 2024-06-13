@@ -38,4 +38,6 @@ public interface DdxdService extends IService<ddxd> {
      */
     ddxd add(ddxd ddxd);
 
+    List<ddxd> getListByKhmc(String khmc,String xdrq,String djbh);
+
 }
