@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -138,6 +140,28 @@ public class LkxdController {
             log.error("删除失败：{}", e.getMessage());
             log.error("参数：{}", idList);
             return ResultInfo.error("删除失败");
+        }
+    }
+
+    /**
+     * 打印
+     *
+     * @return ResultInfo
+     */
+    @RequestMapping("/print")
+    public ResultInfo print(@RequestBody HashMap map, HttpSession session, HttpServletResponse response) {
+        try {
+            GsonUtil gsonUtil = new GsonUtil(GsonUtil.toJson(map));
+            List<lkxd> nlist = GsonUtil.toList(gsonUtil.get("list"), lkxd.class);
+            List<lkxd> list=new ArrayList<>();
+            if(nlist != null){
+                list= lkxdService.getListByKhmc(nlist.get(0).getCustomerName(),nlist.get(0).getInsertDate(),nlist.get(0).getOrderNumber());
+            }
+            return ResultInfo.success("成功！",list);
+        } catch (Exception e) {
+            e.printStackTrace();
+            log.error("失败：{}", e.getMessage());
+            return ResultInfo.error("失败！");
         }
     }
 

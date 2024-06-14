@@ -28,6 +28,46 @@ function getList() {
 $(function () {
     getList();
     initFileInput("fileInput1");
+    initFileInput("fileInput2");
+    initFileInput("fileInput3");
+    initFileInput("fileInput4");
+    initFileInput("fileInput5");
+    initFileInput("fileInput6");
+    initFileInput("fileInput7");
+    initFileInput("fileInput8");
+    initFileInput("fileInput9");
+    initFileInput("fileInput10");
+    initFileInput("fileInput11");
+    initFileInput("fileInput12");
+    initFileInput("fileInput13");
+    initFileInput("fileInput14");
+    initFileInput("fileInput15");
+    initFileInput("fileInput16");
+    initFileInput("fileInput17");
+    initFileInput("fileInput18");
+    initFileInput("fileInput19");
+    initFileInput("fileInput20");
+    initFileInput("fileInput21");
+    initFileInput("fileInput22");
+    initFileInput("fileInput23");
+    initFileInput("fileInput24");
+    initFileInput("fileInput25");
+    initFileInput("fileInput26");
+    initFileInput("fileInput27");
+    initFileInput("fileInput28");
+    initFileInput("fileInput29");
+    initFileInput("fileInput30");
+    initFileInput("fileInput31");
+    initFileInput("fileInput32");
+    initFileInput("fileInput33");
+    initFileInput("fileInput34");
+    initFileInput("fileInput35");
+    initFileInput("fileInput36");
+    initFileInput("fileInput37");
+    initFileInput("fileInput38");
+    initFileInput("fileInput39");
+    initFileInput("fileInput40");
+    initFileInput("fileInput41");
 
     $('#select-btn').click(function () {
         var orderNumber = $('#orderNumber').val();
@@ -59,27 +99,6 @@ $(function () {
         getList();
     });
 
-    // $("#addimg-btn").click(function () {
-    //     $('#add-modal').modal('show');
-    //     let params = formToJson("#add-form");
-    //     $ajax({
-    //         type: 'post',
-    //         url: '/psd/uploadFile',
-    //         data: JSON.stringify({
-    //             addInfo: params
-    //         }),
-    //         dataType: 'json',
-    //         contentType: 'application/json;charset=utf-8'
-    //     }, false, '', function (res) {
-    //         if (res.code == 200) {
-    //             swal("", res.msg, "success");
-    //             $('#add-form')[0].reset();
-    //             getList();
-    //             $('#add-close-btn').click();
-    //         }
-    //     })
-    // });
-
     //点击新增按钮显示弹窗
     $("#add-btn").click(function () {
         $('#add-modal').modal('show');
@@ -90,169 +109,8 @@ $(function () {
         $('#add-modal').modal('hide');
     });
 
-    $("#addimg-btn").click(function () {
-        // var fileInput = document.getElementById('add-customerNeedImg1');
-        // var file = fileInput.files[0];
-        //
-        // var formData = new FormData();
-        // formData.append('file', file);
-        // $.ajax({
-        //     url: 'https://huaqunwechar.com:9087/file/upload',  // 上传文件的服务器端处理脚本
-        //     type: 'POST',
-            // header: { "Content-Type": "multipart/form-data" },
-            // filePath: 'E:\\yho173_20240516\\工作\\万年县入木电子\\缓存文件夹\\测试公司名称1.jpg',
-            // async: true,
-            // data:{
-                // name:'ceshi.jpg',
-                // path:'/huaqun_erqi/',
-                // kongjian: 8,
-            // },
-            // contentType: false,
-            // processData: false,
-        //     success: function(response) {
-        //         console.log('文件上传成功！');
-        //     },
-        //     error: function() {
-        //         // console.log(error);
-        //         console.log('文件上传失败！');
-        //     }
-        // });
-
-
-    // var save_list = this.Product
-
-    // for(var i=0; i<save_list.body.length; i++){
-    //     if(save_list.body[i].imgFileName != undefined && save_list.body[i].imgFileName != null && save_list.body[i].imgFileName != ""){
-    //         save_list = "http://yhocn.cn:9088/ruilida/" + "ceshi20240607.jpg"
-    //         console.log(1);
-    //         var formData = new FormData();
-    //         formData.append("file","E:\\yho173_20240516\\工作\\万年县入木电子\\缓存文件夹\\测试公司名称1.jpg")
-    //         let url = "http://yhocn.cn:8102/file/upload"
-    //         console.log(2);
-    //         this.axios.post(url,formData).then(res => {
-    //             console.log(res.msg)
-    //         }).catch(() => {
-    //             MessageUtil.error("网络异常");
-    //         })
-        // }
-    // }
-
-        // $.ajax({
-        //     url: '/psd/mainUpload',  // 上传文件的服务器端处理脚本
-        //     type: 'POST',
-        //     // header: { "Content-Type": "multipart/form-data" },
-        //     filePath: 'E:\\yho173_20240516\\工作\\万年县入木电子\\缓存文件夹\\测试公司名称1.jpg',
-        //     async: false,
-        //     // data:{
-        //     // name:'ceshi.jpg',
-        //     // path:'/huaqun_erqi/',
-        //     // kongjian: 8,
-        //     // },
-        //     contentType: false,
-        //     processData: false,
-        //         success: function(response) {
-        //             console.log('文件上传成功！');
-        //         },
-        //         error: function() {
-        //             // console.log(error);
-        //             console.log('文件上传失败！');
-        //         }
-        //     });
-
-});
     //新增弹窗里点击提交按钮
     $("#add-submit-btn").click(function () {
-
-        // var fileInput = document.getElementById('add-customerNeedImg1');
-        // var file = fileInput.files[0];
-        //
-        // var formData = new FormData();
-        // formData.append('file', file);
-        // $.ajax({
-        //     url: 'https://huaqunwechar.com:9087/file/upload',  // 上传文件的服务器端处理脚本
-        //     type: 'POST',
-        //     path:'/huaqun_erqi/',
-        //     data: formData,
-        //     contentType: false,
-        //     processData: false,
-        //     success: function(response) {
-        //         console.log('文件上传成功！');
-        //     },
-        //     error: function() {
-        //         console.log('文件上传失败！');
-        //     }
-        // });
-
-        // const uploadInput = document.getElementById('add-customerNeedImg1');
-        //
-        // uploadInput.addEventListener('change', function(event) {
-        //     const file = event.target.files[0];
-        //     // 执行上传操作
-        //     uploadImage(file);
-        // });
-        // function uploadImage(file) {
-        //     const formData = new FormData();
-        //     formData.append('image', file);
-        //     // 执行上传操作
-        //     sendFormData(formData);
-        // }
-        // function sendFormData(formData) {
-        //     const xhr = new XMLHttpRequest();
-        //     xhr.open('POST', 'https://huaqunwechar.com:9087/file/upload', true);
-        //     xhr.onreadystatechange = function() {
-        //         if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-        //             // 上传成功处理逻辑
-        //             console.log('上传成功');
-        //         }
-        //     };
-        //     xhr.send(formData);
-        // }
-
-        // var save_list = this.image
-        //
-        // for(var i=0; i<save_list.length; i++){
-        //     if(save_list.body[i].image !== undefined && save_list.body[i].image != null && save_list.body[i].image != ""){
-        //         save_list.body[i].image = "http://huaqunwechar.com:9088/huaqun_erqi/" + save_list.body[i].image
-        //         var formData = new FormData();
-        //         formData.append("file",save_list.body[i].image)
-        //         let url = "https://huaqunwechar.com:9087/file/upload"
-        //         this.axios.post(url,formData).then(res => {
-        //             console.log(res.msg)
-        //         }).catch(() => {
-        //             MessageUtil.error("网络异常");
-        //         })
-        //     }
-        // }
-
-        // var formData = new FormData();
-        // var file1 = document.getElementById("add-customerNeedImg1").files;
-        // if (file1.length > 0) {
-        //     formData.append("file1", file1[0]);
-        // } else {
-        //     formData.append("file1", null);
-        // }
-        // $ajax({
-        //     type: 'post',
-        //     url: 'https://huaqunwechar.com:9087/file/upload',
-        //     data: formData,
-        //     async: true,
-        //     path:'/huaqun_erqi/',
-        //     cache: false,//不设置缓存
-        //     processData: false,  // 不处理数据
-        //     contentType: false // 不设置内容类型
-        // }, false, '', function (res) {
-        //     if (res.code == 200) {
-        //         alert(res.msg);
-        //         location.reload();
-        //     } else {
-        //         alert(res.msg);
-        //         formData = new FormData();
-        //     }
-        // })
-
-
-
-
 
         let params = formToJson("#add-form");
         if (checkForm('#add-form')) {
@@ -260,7 +118,8 @@ $(function () {
                 type: 'post',
                 url: '/psd/add',
                 data: JSON.stringify({
-                    addInfo: params
+                    addInfo: params,
+                    customerNeedImg1:"123"
                 }),
                 dataType: 'json',
                 contentType: 'application/json;charset=utf-8'
@@ -463,24 +322,10 @@ $(function () {
     })
 
     function initFileInput(ctrlName){
-        // var file = document.getElementById("fileInput1").files;
-        // var formData2 = new FormData();
-        // var formData3 = new FormData();
-        // var formData4 = new FormData();
-        // var formData = new FormData();
-        // var formData1 = new FormData();
-        // formData2.append("header",{ "Content-Type": "multipart/form-data" })
-        // formData1.append("file",file[0])
-        // formData3.append("filePath","PS20240612001-01.jpg")
-        // formData4.append("name","file")
-        // formData.append("name","PS20240612001-01.jpg")
-        // formData.append("path","/huaqun_erqi/")
-        // formData.append("kongjian",3)
         var control = $('#' + ctrlName);
         control.fileinput({
             language:'zh',
-            uploadUrl:"https://huaqunwechar.com:9087/file/upload",
-            // uploadUrl:"http://yhocn.cn:8102/file/upload",
+            uploadUrl:"https://huaqunwechar.com:9076/file/upload",
             allowedFileExtensions: ['jpg','gif','png'],
             uploadAsync: false,
             showUpload: true,
@@ -495,47 +340,16 @@ $(function () {
             layoutTelates :{
 
             },
-
             uploadExtraData:function (){
-            var file = document.getElementById("fileInput1").files;
-            var name = "PS20240612001-01.jpg"
-            var path = "/huaqun_erqi/"
-            var kongjian = document.getElementById("fileInput1").size;
-            var formData = {
-                file:file,
-                name:name,
-                path:path,
-                kongjian:kongjian,
-            };
-            return formData;
-
-                // var formData = {
-                //     // header: { "Content-Type": "multipart/form-data" },
-                //     // filePath: "PS20240612001-01.jpg",
-                //     // name: "file",
-                //     kongjian: 3,
-                //     path: "/huaqun_erqi/",
-                //     name: "PS20240612001-01.jpg",
-                // }
-                // return formData;
-                // return header = { "Content-Type": "multipart/form-data" }
-                // return filePath = "PS20240612001-01.jpg"
-                // return name = "file"
-                // return {
-                    // header: { "Content-Type": "multipart/form-data" },
-                    // filePath: "PS20240612001-01.jpg",
-                    // name: "file",
-                //     kongjian: 3,
-                //     path: "/huaqun_erqi/",
-                //     name: "PS20240612001-01.jpg",
-                // }
-
-                // var formData = new FormData();
-                // formData.append("name","cs-01.jpg")
-                // formData.append("path","/huaqun_erqi/")
-                // formData.append("kongjian",3)
-                // return formData;
-
+                // var file = document.getElementById("fileInput1").files;
+                var name = "01.jpg"
+                var path = "/huaqun_erqi/"
+                var formData = {
+                    // file:file,
+                    name:name,
+                    path:path,
+                };
+                return formData;
             }
         }).on("filebatchuploadsuccess",function(event,data,previewId,index){
             console.log('正在上传');
@@ -631,15 +445,6 @@ function setTable(data) {
                 align: 'center',
                 sortable: true,
                 width: 130,
-                // formatter: function (value, row, index) {
-                //     if (value != null && value != "") {
-                //         var a = value.split("/");
-                //         a = "/" + a[a.length - 1];
-                //         return '<a href="' + a + '" style="display:block" target="_blank"><img src="' + a + '" style="width: 50px;"></a> <button onclick="javascript:fileUp(' + row.id + ',' + '\'customerNeedImg1\'' + ')" class="btn btn-small btn-primary">上传</button> <button onclick="javascript:fileDel(' + row.id + ',' + '\'customerNeedImg1\'' + ')" class="btn btn-small btn-primary">删除</button>'
-                //     } else {
-                //         return '<button onclick="javascript:fileUp(' + row.id + ',' + '\'file1\'' + ')" class="btn btn-small btn-primary">上传</button> </a>'
-                //     }
-                // }
             }, {
                 field: 'customerNeedImg2',
                 title: '客户需求(图片)',
@@ -1264,162 +1069,3 @@ function setTable(data) {
         }
     })
 }
-
-// $('#add-customerNeedImg1').on('change',function(){
-//     if(this.files.length <= 0) {
-//         return false;
-//     }
-//     var pic1 = this.files[0];
-//     var formData = new FormData();
-//     formData.append('pic1',pic1);
-//     $.ajax({
-//         // url:'/category/addSecondCategoryPic',
-//         url:'/psd/add',
-//         type:'post',
-//         data:formData,
-//         cache:false,
-//         procssData:false,
-//         contentType:false,
-//         success:function(data){
-//             console.log(data);
-//             $('.head-img').attr('src',data.picAddr);
-//         }
-//     })
-// })
-
-// var imgdata = ""
-// function selectImge(obj) {
-//
-//     var f = $(obj).val();
-//     if (f == null || f == undefined || f == '') {
-//         document.getElemtById('image').src = "";
-//         $("#image").show();
-//         return false;
-//     }
-//     if (!/\.(?:png|jpg|bmp|gif|PNG|JPG|BMP|GIF) $/.test(f)) {
-//         alert("类型必须是图片(.png|jpg|bmp|gif|PNG|JPG|BMP|GIF)");
-//         $(obj).val('');
-//         return false;
-//     }
-//
-//     imgdate = new FormData();
-//     $.each($(obj)[0].files,function(i,file){
-//         imgdata.append('file',file);
-//     });
-//     if(!file.files || file.files[0]) {
-//         return;
-//     }
-//     var reader = new FileReader();
-//     read.onload = function(evt) {
-//         $("#image").show();
-//         docuemnt.getElementById('image').src = evt.target.result;
-//         uploadfile = evt.target.result;
-//     }
-//     reader.readAsDataURL(file,files[0]);
-// }
-// var imageurl = "";
-// function importWeldingMachine() {
-//     var file = $("#file").val();
-//     $.ajax({
-//         typr:"post",
-//         async:false,
-//         url:"https://apis.map.qq.com",
-//         data:imgdata,
-//         cache:false,
-//         contentType:false,
-//         processData:false,
-//         dataType :"json",
-//         success:function(result) {
-//             result = JSON.parse(result);
-//             if(result){
-//                 if(!result.success){
-//                     imageurl = "";
-//                     $.message.show({title:'Error',msg:result.errorMsg});
-//                 } else {
-//                     imageurl = result.imgurl;
-//                 }
-//             }
-//         },
-//         error:function(errorMsg) {
-//             alert("数据请求失败")
-//         }
-//     })
-// }
-
-// const fileInput = document.getElementById('add-customerNeedImg1');
-// const xhr = new XMLHttpRequest();
-// const formData = new FormData();
-// xhr.open('post','/upload-image');
-// formData.append('image',fileInput.files[0]);
-// xhr.onreadystatechang = function() {
-//     if (xhr.readyState === 4 && xhr.status === 200) {
-//         console.log(xhr.responseText);
-//         alert('上传成功!');
-//     }
-// };
-// xhr.send(formData);
-
-// function fileUp(id, column) {
-//     fileId = id;
-//     fileColumn = column;
-//     $('#file').trigger('click');
-// }
-
-// function fileUp(id) {
-//     var file = document.getElementById("file" + id).files;
-//     if (file == null || file.length == 0) {
-//         return;
-//     }
-//     if (file[0].type.split("/")[0] == "image") {
-//         var reader = new FileReader();
-//         reader.readAsDataURL(file[0]);
-//         reader.onload = function (e) {
-//             $('#img' + id).attr("src", this.result);
-//         }
-//     }
-// }
-
-
-// document.getElementById('fileUploadForm').addEventListener('submit', function(event) {
-//     event.preventDefault(); // 阻止表单默认提交行为
-//
-//     var formData = new FormData();
-//     formData.append('file', document.getElementById('fileInput').files[0]);
-//
-//     fetch('https://huaqunwechar.com:9087/file/upload', {
-//         method: 'POST',
-//         body: formData,
-//         // name: 'file',
-//         // path: '/huaqun_erqi/'
-//     })
-//         .then(response => response.json())
-//         .then(data => console.log(data))
-//         .catch(error => console.error(error));
-// });
-
-
-//     import axios from 'axios'
-//
-//     export default {
-//     data() {
-//     return {
-//     file: null
-// }
-// },
-//     methods: {
-//     onFileSelected(event) {
-//     this.file = event.target.files[0]
-// },
-//     uploadFile() {
-//     if (!this.file) {
-//     return
-// }
-//     let formData = new FormData()
-//     formData.append('file', this.file)
-//     axios.post('http://yhocn.cn:8102/file/upload', formData).then(response => {
-//     console.log(response.data)
-// })
-// }
-// }
-// }
-

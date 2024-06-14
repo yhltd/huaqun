@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>铝框打印2</title>
+    <link rel="shortcut icon" href="#"/>
+
+    <script type="text/javascript" src="../js/Jquery.js"></script>
+    <script type="text/javascript" src="../js/jquerysession.js"></script>
+
+    <link rel="stylesheet" href="../bootstrap-4.5.0-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../bootstrap-4.5.0-dist/icons/bootstrap-icons.css">
+    <script type="text/javascript" src="../bootstrap-4.5.0-dist/js/bootstrap.min.js"></script>
+
+    <!--bootstrap-table-->
+    <link rel="stylesheet" href="../bootstrap-4.5.0-dist/css/bootstrap-table.css">
+    <script type="text/javascript" src="../bootstrap-4.5.0-dist/js/bootstrap-table.js"></script>
+    <script type="text/javascript" src="../bootstrap-4.5.0-dist/js/bootstrap-table-zh-CN.min.js"></script>
+    <script type="text/javascript" src="../bootstrap-4.5.0-dist/js/colResizable-1.6.js"></script>
+    <script type="text/javascript" src="../bootstrap-4.5.0-dist/js/bootstrap-table-resizable.js"></script>
+
+    <link rel="stylesheet" href="../css/sweetalert.css">
+    <script type="text/javascript" src="../js/sweetalert-dev.js"></script>
+
+    <link rel="stylesheet" href="../css/main.css">
+    <script type="text/javascript" src="../js/main.js"></script>
+    <script type="text/javascript" src="../js/lkPrint2.js"></script>
+</head>
+
+<style>
+    td{
+        vertical-align: middle !important;
+    }
+    @page  {
+        width: 100mm;
+    }
+</style>
+
+<body class="pt-2">
+<div id="table-toolbar">
+    <div class="btn-group" role="group">
+        <button id="select-btn" class="btn btn-primary">
+            <i class="bi bi-arrow-clockwise icon"></i>
+            选择数据
+        </button>
+        <button id="print-btn" class="btn btn-primary">
+            <i class="bi bi-plus-square icon"></i>
+            打印
+        </button>
+        <a id="dqy" class="btn btn-primary" style="color: white;padding-top: 8px">当前页：铝框打印2</a>
+    </div>
+</div>
+
+<div class="table-div border-top" style="width: 400px;border: none" id="div">
+    <div class="col-md-5">
+        <table class="table" style="width: 400px;border: none">
+            <div style="font-size: 10px;border: none;text-align: center">天龙五金铝框</div>
+            <tr style="border: none">
+                <th style="font-size: 10px;width: 9mm;border: none">客户</th>
+                <td style="font-size: 10px;width: 23mm;border: none" id="data1"></td>
+                <th style="font-size: 10px;width: 6mm;border: none">日期</th>
+                <td style="font-size: 10px;width: 23mm;border: none;" id="data2"></td>
+                <td style="font-size: 10px;width: 30mm;border: none;text-align: left" id="data3"></td>
+            </tr>
+            <tr style="border: none">
+                <th colspan="2" style="font-size: 10px;width:25mm;border: none">安装地址</th>
+                <td colspan="2" id="data4" style="font-size: 10px;width:20mm;border: none"></td>
+            </tr>
+            <tr style="border: none">
+                <td colspan="3" id="data5" style="font-size: 10px;width:20mm;border: none"></td>
+                <td colspan="1" id="data6" style="font-size: 10px;width:20mm;border: none"></td>
+            </tr>
+            <tbody id="data7" style="border: none">
+
+            <tr style="border: none">
+                <td colspan="2" style="font-size: 10px;border: none">铰链孔方向</td>
+                <td colspan="2" style="font-size: 10px;border: none">左开门</td>
+                <td colspan="1" style="font-size: 10px;border: none">右开门</td>
+            </tr>
+            <tr style="border: none">
+                <td colspan="2" style="font-size: 10px;width: 9mm;border: none;">开门方向数量</td>
+                <td colspan="2" style="font-size: 10px;width: 23mm;border: none" id="data8"></td>
+                <td colspan="1" style="font-size: 10px;width: 23mm;border: none" id="data9"></td>
+            </tr>
+            <tr style="border: none">
+                <td colspan="2" style="font-size: 10px;width: 9mm;border: none;">有拉手数量(个)</td>
+                <td colspan="2" style="font-size: 10px;width: 23mm;border: none" id="data10"></td>
+                <td colspan="1" style="font-size: 10px;width: 23mm;border: none" id="data11"></td>
+            </tr>
+            <tr style="border: none">
+                <td colspan="1" style="font-size: 10px;border: none;">拉手位方向</td>
+                <td colspan="1" style="font-size: 10px;border: none;">从下向上</td>
+                <td colspan="1" style="font-size: 10px;border: none;">从右向左</td>
+                <td colspan="1" style="font-size: 10px;border: none;">从下向上</td>
+                <td colspan="1" style="font-size: 10px;border: none;">从左向右</td>
+            </tr>
+            <tr style="border: none;margin-left: 20px">
+                <td style="font-size: 10px;width: 9mm;border: none;">拉手位</td>
+                <td style="font-size: 10px;width: 12mm;border: none" id="data12"></td>
+                <td style="font-size: 10px;width: 12mm;border: none" id="data13"></td>
+                <td style="font-size: 10px;width: 12mm;border: none" id="data14"></td>
+                <td style="font-size: 10px;width: 12mm;border: none" id="data15"></td>
+            </tr>
+            <tr style="border: none">
+                <td style="font-size: 10px;width: 9mm;border: none;">装锁数量</td>
+                <td style="font-size: 10px;width: 12mm;border: none" id="data16"></td>
+                <td style="font-size: 10px;width: 12mm;border: none" id="data17"></td>
+            </tr>
+            <tr style="border: none">
+                <td style="font-size: 10px;width: 9mm;border: none;">锁孔位方向</td>
+                <td style="font-size: 10px;width: 9mm;border: none;">从下向上</td>
+                <td style="font-size: 10px;width: 9mm;border: none;">从右向左</td>
+                <td style="font-size: 10px;width: 9mm;border: none;">从下向上</td>
+                <td style="font-size: 10px;width: 9mm;border: none;">从左向右</td>
+            </tr>
+            <tr style="border: none">
+                <td style="font-size: 10px;width: 9mm;border: none;">锁孔位</td>
+                <td style="font-size: 10px;width: 12mm;border: none" id="data18"></td>
+                <td style="font-size: 10px;width: 12mm;border: none" id="data19"></td>
+                <td style="font-size: 10px;width: 12mm;border: none" id="data20"></td>
+                <td style="font-size: 10px;width: 12mm;border: none" id="data21"></td>
+            </tr>
+            <tr style="border: none">
+                <td style="font-size: 10px;width: 9mm;border: none;">开铰链孔</td>
+                <td style="font-size: 10px;width: 12mm;border: none" id="data22"></td>
+            </tr>
+            <tr style="border: none">
+                <td style="font-size: 10px;width: 9mm;border: none;">铰链孔位1</td>
+                <td style="font-size: 10px;width: 12mm;border: none" id="data23"></td>
+                <td style="font-size: 10px;width: 12mm;border: none" id="data24"></td>
+                <td style="font-size: 10px;width: 12mm;border: none" id="data25"></td>
+                <td style="font-size: 10px;width: 12mm;border: none" id="data26"></td>
+            </tr>
+            <tr style="border: none">
+                <td style="font-size: 10px;width: 9mm;border: none;">铰链孔位2</td>
+                <td style="font-size: 10px;width: 12mm;border: none" id="data27"></td>
+                <td style="font-size: 10px;width: 12mm;border: none" id="data28"></td>
+                <td style="font-size: 10px;width: 12mm;border: none" id="data29"></td>
+                <td style="font-size: 10px;width: 12mm;border: none" id="data30"></td>
+            </tr>
+            <tr style="border: none">
+                <td style="font-size: 10px;width: 9mm;border: none;">铰链孔位3</td>
+                <td style="font-size: 10px;width: 12mm;border: none" id="data31"></td>
+                <td style="font-size: 10px;width: 12mm;border: none" id="data32"></td>
+                <td style="font-size: 10px;width: 12mm;border: none" id="data33"></td>
+                <td style="font-size: 10px;width: 12mm;border: none" id="data34"></td>
+            </tr>
+            <tr style="border: none">
+                <td style="font-size: 10px;width: 9mm;border: none;">铰链孔位4</td>
+                <td style="font-size: 10px;width: 12mm;border: none" id="data35"></td>
+                <td style="font-size: 10px;width: 12mm;border: none" id="data36"></td>
+                <td style="font-size: 10px;width: 12mm;border: none" id="data37"></td>
+                <td style="font-size: 10px;width: 12mm;border: none" id="data38"></td>
+            </tr>
+            <tr style="border: none">
+                <td style="font-size: 10px;width: 9mm;border: none;">铰链孔位5</td>
+                <td style="font-size: 10px;width: 12mm;border: none" id="data39"></td>
+                <td style="font-size: 10px;width: 12mm;border: none" id="data40"></td>
+                <td style="font-size: 10px;width: 12mm;border: none" id="data41"></td>
+                <td style="font-size: 10px;width: 12mm;border: none" id="data42"></td>
+            </tr>
+            <tr style="border: none">
+                <td style="font-size: 10px;width: 9mm;border: none;">铰链孔位6</td>
+                <td style="font-size: 10px;width: 12mm;border: none" id="data43"></td>
+                <td style="font-size: 10px;width: 12mm;border: none" id="data44"></td>
+                <td style="font-size: 10px;width: 12mm;border: none" id="data45"></td>
+                <td style="font-size: 10px;width: 12mm;border: none" id="data46"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!--    选择窗体-->
+<div id="lkp2-modal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title">选择数据</div>
+            </div>
+            <div class="modal-body">
+                <table id="show-lkp2-table"></table>
+            </div>
+            <div class="border-top" style="padding: 15px;">
+                <button id="lkp2-submit-btn" type="button" class="btn btn-primary">
+                    <i class="bi bi-arrow-bar-up icon"></i>
+                    确定
+                </button>
+                <button id="lkp2-close-btn" type="button" class="btn btn-primary left-margin">
+                    <i class="bi bi-x-circle icon"></i>
+                    关闭
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

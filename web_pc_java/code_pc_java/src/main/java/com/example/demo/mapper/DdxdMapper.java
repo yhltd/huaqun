@@ -30,5 +30,4 @@ public interface DdxdMapper extends BaseMapper<ddxd> {
     @Select("select * from lightbelt where khmc=#{khmc} and xdrq=#{xdrq} and djbh=#{djbh}")
     List<ddxd> getListByKhmc(String khmc,String xdrq,String djbh);
 
-
 }

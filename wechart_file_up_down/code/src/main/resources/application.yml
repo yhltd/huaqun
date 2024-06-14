@@ -1,5 +1,5 @@
 server:
-  port: 9087
+  port: 9076
   max-http-header-size: 102400000
   ssl:
     enabled: true #启用SSL

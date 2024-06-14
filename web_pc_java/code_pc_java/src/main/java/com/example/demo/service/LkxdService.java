@@ -38,4 +38,6 @@ public interface LkxdService extends IService<lkxd> {
      */
     lkxd add(lkxd lkxd);
 
+    List<lkxd> getListByKhmc(String customerName,String insertDate,String orderNumber);
+
 }

@@ -31,13 +31,29 @@ import java.util.List;
 @RequestMapping("/file")
 public class DriverController {
 
+    @GetMapping()
+    public ResultInfo upload(){
+        System.out.println("1111111111");
+        return null;
+    }
+
+    @RequestMapping("/qq")
+    public ResultInfo upload1(){
+        System.out.println("111111110011");
+        return null;
+    }
+
     /**
      * 上传
      *
      * @return ResultInfo
      */
-    @RequestMapping("/upload")
-    public ResultInfo upload(HttpServletRequest request, @RequestParam("file") MultipartFile file) throws IOException {
+//    @RequestMapping("/upload")
+    @PostMapping("/upload")
+//    @CrossOrigin
+    public ResultInfo upload(HttpServletRequest request, MultipartFile file) throws IOException {
+//        System.out.println("-------" + file);
+//        System.out.println("/////////////////" + request);
         //获取原始名称
         long kongjian = Long.parseLong(request.getParameter("kongjian"));
         String thisPath = request.getParameter("path");

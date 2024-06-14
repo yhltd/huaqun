@@ -38,4 +38,9 @@ public class LkxdImpl extends ServiceImpl<LkxdMapper, lkxd> implements LkxdServi
         return save(lkxd) ? lkxd : null;
     }
 
+    @Override
+    public List<lkxd> getListByKhmc(String customerName,String insertDate,String orderNumber) {
+        return lkxdMapper.getListByKhmc(customerName,insertDate,orderNumber);
+    }
+
 }
