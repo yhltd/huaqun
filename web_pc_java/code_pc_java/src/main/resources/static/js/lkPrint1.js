@@ -46,9 +46,15 @@ $(function () {
                 contentType: 'application/json;charset=utf-8'
             }, false, '', function (res) {
                 if (res.code == 200) {
+                    var sl = 0;
+                    for (var i = 0; i < res.data.length;i++){
+                        if (res.data[i].lvxingcai == "" && res.data[i].lvcaiYanse == "" && res.data[i].lashouXinghao == "") {
+                            sl++;
+                        }
+                    }
                     $("[name='printData']").remove();
                     var tr = "";
-                    for (var i = 0; i < res.data.length; i++) {
+                    for (var i = 0; i < res.data.length - sl; i++) {
                         tr1 = "<tr style='display:inline;font-size: 10px;border: none' name='printData'>" +
                             "<td style='margin-left:-9px;display:inline;border: none;font-size: 10px'>" + res.data[i].customerName + "</td>" +
                         "</tr>";

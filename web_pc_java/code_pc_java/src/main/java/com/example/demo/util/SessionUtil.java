@@ -70,4 +70,10 @@ public class SessionUtil {
         session.removeAttribute(key);
     }
 
+    public static List<UserInfo> getCompany(HttpSession session){
+        return StringUtils.cast(session.getAttribute("company"));
+    }
+
+    public static void setCompany(HttpSession session, List<UserInfo> company) {
+    }
 }

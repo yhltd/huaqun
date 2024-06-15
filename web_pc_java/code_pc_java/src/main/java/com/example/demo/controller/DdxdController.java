@@ -36,11 +36,18 @@ public class DdxdController {
      * @return ResultInfo
      */
     @RequestMapping("/getList")
-    public ResultInfo getList(HttpSession session) {
+    public ResultInfo getList(HttpSession session,String khmc) {
         UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
+//        UserInfo userInfo1 = GsonUtil.toEntity(SessionUtil.getCompany(session).toString(), UserInfo.class);
         try {
-            List<ddxd> getList = ddxdService.getList();
-            return ResultInfo.success("获取成功", getList);
+//            if(userInfo.getPower().equals("客户")){
+//                userInfo1.setCompany(khmc);
+//                List<ddxd> getListByKeHu = ddxdService.getListByKeHu(khmc);
+//                return ResultInfo.success("获取成功", getListByKeHu);
+//            }else{
+                List<ddxd> getList = ddxdService.getList();
+                return ResultInfo.success("获取成功", getList);
+//            }
         } catch (Exception e) {
             e.printStackTrace();
             log.error("获取失败：{}", e.getMessage());

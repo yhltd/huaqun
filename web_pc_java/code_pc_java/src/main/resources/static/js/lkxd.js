@@ -8,11 +8,45 @@ function getKhmc() {
         if (res.code == 200) {
             for (var i = 0; i < res.data.length; i++) {
                 $("#add-customerName").append("<option>" + res.data[i].company + "</option>");
-                $("#update-customer_name").append("<option>" + res.data[i].company + "</option>");
+                $("#update-customerName").append("<option>" + res.data[i].company + "</option>");
             }
         }
     })
 }
+
+$(document).ready(function () {
+    $('#add-customerName').on('change', function () {
+        var customerName = document.getElementById("add-customerName").value;
+        $ajax({
+            type: 'post',
+            url: '/lkxd/queryPinYin',
+            data: {
+                customerName: customerName,
+            }
+        },false,'',function(res){
+            if(res.code == 200){
+                document.getElementById("add-pinyin").value = res.data[0].pinyin
+            }
+        })
+    })
+});
+
+$(document).ready(function () {
+    $('#update-customer_name').on('change', function () {
+        var customerName = document.getElementById("update-customer_name").value;
+        $ajax({
+            type: 'post',
+            url: '/lkxd/queryPinYin',
+            data: {
+                customerName: customerName,
+            }
+        },false,'',function(res){
+            if(res.code == 200){
+                document.getElementById("update-pinyin").value = res.data[0].pinyin
+            }
+        })
+    })
+});
 
 function getShfs() {
     $ajax({
@@ -22,7 +56,7 @@ function getShfs() {
         if (res.code == 200) {
             for (var i = 0; i < res.data.length; i++) {
                 $("#add-shippingType").append("<option>" + res.data[i].shfs + "</option>");
-                $("#update-shipping_type").append("<option>" + res.data[i].shfs + "</option>");
+                $("#update-shippingType").append("<option>" + res.data[i].shfs + "</option>");
             }
         }
     })
@@ -50,7 +84,7 @@ function getLvcaiYanse() {
         if (res.code == 200) {
             for (var i = 0; i < res.data.length; i++) {
                 $("#add-lvcaiYanse").append("<option>" + res.data[i].lcysLk + "</option>");
-                $("#update-lvcai_yanse").append("<option>" + res.data[i].lcysLk + "</option>");
+                $("#update-lvcaiYanse").append("<option>" + res.data[i].lcysLk + "</option>");
             }
         }
     })
@@ -64,7 +98,7 @@ function getBlsjg() {
         if (res.code == 200) {
             for (var i = 0; i < res.data.length; i++) {
                 $("#add-boliShenjiagong").append("<option>" + res.data[i].blsjg + "</option>");
-                $("#update-boli_shenjiagong").append("<option>" + res.data[i].blsjg + "</option>");
+                $("#update-boliShenjiagong").append("<option>" + res.data[i].blsjg + "</option>");
             }
         }
     })
@@ -78,7 +112,7 @@ function getBlys() {
         if (res.code == 200) {
             for (var i = 0; i < res.data.length; i++) {
                 $("#add-boliYanse").append("<option>" + res.data[i].blys + "</option>");
-                $("#update-boli_yanse").append("<option>" + res.data[i].blys + "</option>");
+                $("#update-boliYanse").append("<option>" + res.data[i].blys + "</option>");
             }
         }
     })
@@ -92,7 +126,7 @@ function getLsxh() {
         if (res.code == 200) {
             for (var i = 0; i < res.data.length; i++) {
                 $("#add-lashouXinghao").append("<option>" + res.data[i].lsxh + "</option>");
-                $("#update-lashou_xinghao").append("<option>" + res.data[i].lsxh + "</option>");
+                $("#update-lashouXinghao").append("<option>" + res.data[i].lsxh + "</option>");
             }
         }
     })
@@ -126,12 +160,12 @@ function getJlkw() {
                 $("#add-jiaolian5SelectLeft").append("<option>" + res.data[i].jlkw + "</option>");
                 $("#add-jiaolian6SelectLeft").append("<option>" + res.data[i].jlkw + "</option>");
 
-                $("#update-jiaolian1_select_left").append("<option>" + res.data[i].jlkw + "</option>");
-                $("#update-jiaolian2_select_left").append("<option>" + res.data[i].jlkw + "</option>");
-                $("#update-jiaolian3_select_left").append("<option>" + res.data[i].jlkw + "</option>");
-                $("#update-jiaolian4_select_left").append("<option>" + res.data[i].jlkw + "</option>");
-                $("#update-jiaolian5_select_left").append("<option>" + res.data[i].jlkw + "</option>");
-                $("#update-jiaolian6_select_left").append("<option>" + res.data[i].jlkw + "</option>");
+                $("#update-jiaolian1SelectLeft").append("<option>" + res.data[i].jlkw + "</option>");
+                $("#update-jiaolian2SelectLeft").append("<option>" + res.data[i].jlkw + "</option>");
+                $("#update-jiaolian3SelectLeft").append("<option>" + res.data[i].jlkw + "</option>");
+                $("#update-jiaolian4SelectLeft").append("<option>" + res.data[i].jlkw + "</option>");
+                $("#update-jiaolian5SelectLeft").append("<option>" + res.data[i].jlkw + "</option>");
+                $("#update-jiaolian6SelectLeft").append("<option>" + res.data[i].jlkw + "</option>");
             }
         }
     })
@@ -149,10 +183,10 @@ function getFjpz() {
                 $("#add-fujianSelect3").append("<option>" + res.data[i].fjpz + "</option>");
                 $("#add-fujianSelect4").append("<option>" + res.data[i].fjpz + "</option>");
 
-                $("#update-fujian_select1").append("<option>" + res.data[i].fjpz + "</option>");
-                $("#update-fujian_select2").append("<option>" + res.data[i].fjpz + "</option>");
-                $("#update-fujian_select3").append("<option>" + res.data[i].fjpz + "</option>");
-                $("#update-fujian_select4").append("<option>" + res.data[i].fjpz + "</option>");
+                $("#update-fujianSelect1").append("<option>" + res.data[i].fjpz + "</option>");
+                $("#update-fujianSelect2").append("<option>" + res.data[i].fjpz + "</option>");
+                $("#update-fujianSelect3").append("<option>" + res.data[i].fjpz + "</option>");
+                $("#update-fujianSelect4").append("<option>" + res.data[i].fjpz + "</option>");
             }
         }
     })
@@ -170,238 +204,252 @@ function getJlpp() {
                 $("#add-pinpaiSelect3").append("<option>" + res.data[i].jlpp + "</option>");
                 $("#add-pinpaiSelect4").append("<option>" + res.data[i].jlpp + "</option>");
 
-                $("#update-pinpai_select1").append("<option>" + res.data[i].jlpp + "</option>");
-                $("#update-pinpai_select2").append("<option>" + res.data[i].jlpp + "</option>");
-                $("#update-pinpai_select3").append("<option>" + res.data[i].jlpp + "</option>");
-                $("#update-pinpai_select4").append("<option>" + res.data[i].jlpp + "</option>");
+                $("#update-pinpaiSelect1").append("<option>" + res.data[i].jlpp + "</option>");
+                $("#update-pinpaiSelect2").append("<option>" + res.data[i].jlpp + "</option>");
+                $("#update-pinpaiSelect3").append("<option>" + res.data[i].jlpp + "</option>");
+                $("#update-pinpaiSelect4").append("<option>" + res.data[i].jlpp + "</option>");
             }
         }
     })
 }
 
-function getAddKk() {
-    var kjlk = document.getElementById('add-kaijiaolian').value;
-    if (kjlk == '开二孔') {
-        document.getElementById("add-jiaolian3SelectLeft").remove();
-        document.getElementById("add-jiaolian3InsertLeft").remove();
-        document.getElementById("add-jiaolian3SelectRight").remove();
-        document.getElementById("add-jiaolian3InsertRight").remove();
+$(document).ready(function(){
+    $('#add-kaijiaolian').on('change',function(){
+    // var kjlk = document.getElementById('add-kaijiaolian').value;
+    var selectedValue = $(this).val();
+        if (selectedValue == '开二孔') {
+            $("#add-jiaolian3SelectLeft").remove();
+            $("#add-jiaolian3InsertLeft").remove();
+            $("#add-jiaolian3SelectRight").remove();
+            $("#add-jiaolian3InsertRight").remove();
 
-        document.getElementById("add-jiaolian4SelectLeft").remove();
-        document.getElementById("add-jiaolian4InsertLeft").remove();
-        document.getElementById("add-jiaolian4SelectRight").remove();
-        document.getElementById("add-jiaolian4InsertRight").remove();
+            $("#add-jiaolian4SelectLeft").remove();
+            $("#add-jiaolian4InsertLeft").remove();
+            $("#add-jiaolian4SelectRight").remove();
+            $("#add-jiaolian4InsertRight").remove();
 
-        document.getElementById("add-jiaolian5SelectLeft").remove();
-        document.getElementById("add-jiaolian5InsertLeft").remove();
-        document.getElementById("add-jiaolian5SelectRight").remove();
-        document.getElementById("add-jiaolian5InsertRight").remove();
+            $("#add-jiaolian5SelectLeft").remove();
+            $("#add-jiaolian5InsertLeft").remove();
+            $("#add-jiaolian5SelectRight").remove();
+            $("#add-jiaolian5InsertRight").remove();
 
-        document.getElementById("add-jiaolian6SelectLeft").remove();
-        document.getElementById("add-jiaolian6InsertLeft").remove();
-        document.getElementById("add-jiaolian6SelectRight").remove();
-        document.getElementById("add-jiaolian6InsertRight").remove();
+            $("#add-jiaolian6SelectLeft").remove();
+            $("#add-jiaolian6InsertLeft").remove();
+            $("#add-jiaolian6SelectRight").remove();
+            $("#add-jiaolian6InsertRight").remove();
 
-        document.getElementById("l3sl").remove();
-        document.getElementById("l3il").remove();
-        document.getElementById("l3sr").remove();
-        document.getElementById("l3ir").remove();
+            $("#l3sl").remove();
+            $("#l3il").remove();
+            $("#l3sr").remove();
+            $("#l3ir").remove();
 
-        document.getElementById("l4sl").remove();
-        document.getElementById("l4il").remove();
-        document.getElementById("l4sr").remove();
-        document.getElementById("l4ir").remove();
+            $("#l4sl").remove();
+            $("#l4il").remove();
+            $("#l4sr").remove();
+            $("#l4ir").remove();
 
-        document.getElementById("l5sl").remove();
-        document.getElementById("l5il").remove();
-        document.getElementById("l5sr").remove();
-        document.getElementById("l5ir").remove();
+            $("#l5sl").remove();
+            $("#l5il").remove();
+            $("#l5sr").remove();
+            $("#l5ir").remove();
 
-        document.getElementById("l6sl").remove();
-        document.getElementById("l6il").remove();
-        document.getElementById("l6sr").remove();
-        document.getElementById("l6ir").remove();
-    }
-    if (kjlk == '开三孔') {
-        document.getElementById("add-jiaolian4SelectLeft").remove();
-        document.getElementById("add-jiaolian4InsertLeft").remove();
-        document.getElementById("add-jiaolian4SelectRight").remove();
-        document.getElementById("add-jiaolian4InsertRight").remove();
+            $("#l6sl").remove();
+            $("#l6il").remove();
+            $("#l6sr").remove();
+            $("#l6ir").remove();
+        }
+        if (selectedValue == '开三孔') {
+            $("#add-jiaolian4SelectLeft").remove();
+            $("#add-jiaolian4InsertLeft").remove();
+            $("#add-jiaolian4SelectRight").remove();
+            $("#add-jiaolian4InsertRight").remove();
 
-        document.getElementById("add-jiaolian5SelectLeft").remove();
-        document.getElementById("add-jiaolian5InsertLeft").remove();
-        document.getElementById("add-jiaolian5SelectRight").remove();
-        document.getElementById("add-jiaolian5InsertRight").remove();
+            $("#add-jiaolian5SelectLeft").remove();
+            $("#add-jiaolian5InsertLeft").remove();
+            $("#add-jiaolian5SelectRight").remove();
+            $("#add-jiaolian5InsertRight").remove();
 
-        document.getElementById("add-jiaolian6SelectLeft").remove();
-        document.getElementById("add-jiaolian6InsertLeft").remove();
-        document.getElementById("add-jiaolian6SelectRight").remove();
-        document.getElementById("add-jiaolian6InsertRight").remove();
+            $("#add-jiaolian6SelectLeft").remove();
+            $("#add-jiaolian6InsertLeft").remove();
+            $("#add-jiaolian6SelectRight").remove();
+            $("#add-jiaolian6InsertRight").remove();
 
-        document.getElementById("l4sl").remove();
-        document.getElementById("l4il").remove();
-        document.getElementById("l4sr").remove();
-        document.getElementById("l4ir").remove();
+            $("#l4sl").remove();
+            $("#l4il").remove();
+            $("#l4sr").remove();
+            $("#l4ir").delete();
 
-        document.getElementById("l5sl").remove();
-        document.getElementById("l5il").remove();
-        document.getElementById("l5sr").remove();
-        document.getElementById("l5ir").remove();
+            $("#l5sl").remove();
+            $("#l5il").remove();
+            $("#l5sr").remove();
+            $("#l5ir").remove();
 
-        document.getElementById("l6sl").remove();
-        document.getElementById("l6il").remove();
-        document.getElementById("l6sr").remove();
-        document.getElementById("l6ir").remove();
-    }
-    if (kjlk == '开四孔') {
-        document.getElementById("add-jiaolian5SelectLeft").remove();
-        document.getElementById("add-jiaolian5InsertLeft").remove();
-        document.getElementById("add-jiaolian5SelectRight").remove();
-        document.getElementById("add-jiaolian5InsertRight").remove();
+            $("#l6sl").remove();
+            $("#l6il").remove();
+            $("#l6sr").remove();
+            $("#l6ir").remove();
+        }
+        if (selectedValue == '开四孔') {
+            $("#add-jiaolian5SelectLeft").remove();
+            $("#add-jiaolian5InsertLeft").remove();
+            $("#add-jiaolian5SelectRight").remove();
+            $("#add-jiaolian5InsertRight").remove();
 
-        document.getElementById("add-jiaolian6SelectLeft").remove();
-        document.getElementById("add-jiaolian6InsertLeft").remove();
-        document.getElementById("add-jiaolian6SelectRight").remove();
-        document.getElementById("add-jiaolian6InsertRight").remove();
+            $("#add-jiaolian6SelectLeft").remove();
+            $("#add-jiaolian6InsertLeft").remove();
+            $("#add-jiaolian6SelectRight").remove();
+            $("#add-jiaolian6InsertRight").remove();
 
-        document.getElementById("l5sl").remove();
-        document.getElementById("l5il").remove();
-        document.getElementById("l5sr").remove();
-        document.getElementById("l5ir").remove();
+            $("#l5sl").remove();
+            $("#l5il").remove();
+            $("#l5sr").remove();
+            $("#l5ir").remove();
 
-        document.getElementById("l6sl").remove();
-        document.getElementById("l6il").remove();
-        document.getElementById("l6sr").remove();
-        document.getElementById("l6ir").remove();
-    }
-    if (kjlk == '开五孔') {
-        document.getElementById("add-jiaolian6SelectLeft").remove();
-        document.getElementById("add-jiaolian6InsertLeft").remove();
-        document.getElementById("add-jiaolian6SelectRight").remove();
-        document.getElementById("add-jiaolian6InsertRight").remove();
+            $("#l6sl").remove();
+            $("#l6il").remove();
+            $("#l6sr").remove();
+            $("#l6ir").remove();
+        }
+        if (selectedValue == '开五孔') {
+            $("#add-jiaolian6SelectLeft").remove();
+            $("#add-jiaolian6InsertLeft").remove();
+            $("#add-jiaolian6SelectRight").remove();
+            $("#add-jiaolian6InsertRight").remove();
 
-        document.getElementById("l6sl").remove();
-        document.getElementById("l6il").remove();
-        document.getElementById("l6sr").remove();
-        document.getElementById("l6ir").remove();
-    }
-}
+            $("#l6sl").remove();
+            $("#l6il").remove();
+            $("#l6sr").remove();
+            $("#l6ir").remove();
+        }
+    })
+})
 
-// function getUpdKk() {
-//     var kjlk = document.getElementById('update-kaijiaolian').value;
-//     if (kjlk == '开二孔') {
-//         document.getElementById("update-jiaolian3_select_left").remove();
-//         document.getElementById("update-jiaolian3_Insert_Left").remove();
-//         document.getElementById("update-jiaolian3_Select_Right").remove();
-//         document.getElementById("update-jiaolian3_Insert_Right").remove();
-//
-//         document.getElementById("update-jiaolian4_Select_Left").remove();
-//         document.getElementById("update-jiaolian4_Insert_Left").remove();
-//         document.getElementById("update-jiaolian4_Select_Right").remove();
-//         document.getElementById("update-jiaolian4_Insert_Right").remove();
-//
-//         document.getElementById("update-jiaolian5_Select_Left").remove();
-//         document.getElementById("update-jiaolian5_Insert_Left").remove();
-//         document.getElementById("update-jiaolian5_Select_Right").remove();
-//         document.getElementById("update-jiaolian5_Insert_Right").remove();
-//
-//         document.getElementById("update-jiaolian6_Select_Left").remove();
-//         document.getElementById("update-jiaolian6_Insert_Left").remove();
-//         document.getElementById("update-jiaolian6_Select_Right").remove();
-//         document.getElementById("update-jiaolian6_Insert_Right").remove();
-//
-//         document.getElementById("ul3sl").remove();
-//         document.getElementById("ul3il").remove();
-//         document.getElementById("ul3sr").remove();
-//         document.getElementById("ul3ir").remove();
-//
-//         document.getElementById("ul4sl").remove();
-//         document.getElementById("ul4il").remove();
-//         document.getElementById("ul4sr").remove();
-//         document.getElementById("ul4ir").remove();
-//
-//         document.getElementById("ul5sl").remove();
-//         document.getElementById("ul5il").remove();
-//         document.getElementById("ul5sr").remove();
-//         document.getElementById("ul5ir").remove();
-//
-//         document.getElementById("ul6sl").remove();
-//         document.getElementById("ul6il").remove();
-//         document.getElementById("ul6sr").remove();
-//         document.getElementById("ul6ir").remove();
-//     }
-//     if (kjlk == '开三孔') {
-//         document.getElementById("update-jiaolian4_Select_Left").remove();
-//         document.getElementById("update-jiaolian4_Insert_Left").remove();
-//         document.getElementById("update-jiaolian4_Select_Right").remove();
-//         document.getElementById("update-jiaolian4_Insert_Right").remove();
-//
-//         document.getElementById("update-jiaolian5_Select_Left").remove();
-//         document.getElementById("update-jiaolian5_Insert_Left").remove();
-//         document.getElementById("update-jiaolian5_Select_Right").remove();
-//         document.getElementById("update-jiaolian5_Insert_Right").remove();
-//
-//         document.getElementById("update-jiaolian6_Select_Left").remove();
-//         document.getElementById("update-jiaolian6_Insert_Left").remove();
-//         document.getElementById("update-jiaolian6_Select_Right").remove();
-//         document.getElementById("update-jiaolian6_Insert_Right").remove();
-//
-//         document.getElementById("ul4sl").remove();
-//         document.getElementById("ul4il").remove();
-//         document.getElementById("ul4sr").remove();
-//         document.getElementById("ul4ir").remove();
-//
-//         document.getElementById("ul5sl").remove();
-//         document.getElementById("ul5il").remove();
-//         document.getElementById("ul5sr").remove();
-//         document.getElementById("ul5ir").remove();
-//
-//         document.getElementById("ul6sl").remove();
-//         document.getElementById("ul6il").remove();
-//         document.getElementById("ul6sr").remove();
-//         document.getElementById("ul6ir").remove();
-//     }
-//     if (kjlk == '开四孔') {
-//         document.getElementById("update-jiaolian5_Select_Left").remove();
-//         document.getElementById("update-jiaolian5_Insert_Left").remove();
-//         document.getElementById("update-jiaolian5_Select_Right").remove();
-//         document.getElementById("update-jiaolian5_Insert_Right").remove();
-//
-//         document.getElementById("update-jiaolian6_Select_Left").remove();
-//         document.getElementById("update-jiaolian6_Insert_Left").remove();
-//         document.getElementById("update-jiaolian6_Select_Right").remove();
-//         document.getElementById("update-jiaolian6_Insert_Right").remove();
-//
-//         document.getElementById("ul5sl").remove();
-//         document.getElementById("ul5il").remove();
-//         document.getElementById("ul5sr").remove();
-//         document.getElementById("ul5ir").remove();
-//
-//         document.getElementById("ul6sl").remove();
-//         document.getElementById("ul6il").remove();
-//         document.getElementById("ul6sr").remove();
-//         document.getElementById("ul6ir").remove();
-//     }
-//     if (kjlk == '开五孔') {
-//         document.getElementById("update-jiaolian6_Select_Left").remove();
-//         document.getElementById("update-jiaolian6_Insert_Left").remove();
-//         document.getElementById("update-jiaolian6_Select_Right").remove();
-//         document.getElementById("update-jiaolian6_Insert_Right").remove();
-//
-//         document.getElementById("ul6sl").remove();
-//         document.getElementById("ul6il").remove();
-//         document.getElementById("ul6sr").remove();
-//         document.getElementById("ul6ir").remove();
-//     }
-// }
+$(document).ready(function(){
+    $('#update-kaijiaolian').on('change',function(){
+        // var kjlk = document.getElementById('add-kaijiaolian').value;
+        var selectedValue = $(this).val();
+        if (selectedValue == '开二孔') {
+            $("#update-jiaolian3SelectLeft").remove();
+            $("#update-jiaolian3InsertLeft").remove();
+            $("#update-jiaolian3SelectRight").remove();
+            $("#update-jiaolian3InsertRight").remove();
+
+            $("#update-jiaolian4SelectLeft").remove();
+            $("#update-jiaolian4InsertLeft").remove();
+            $("#update-jiaolian4SelectRight").remove();
+            $("#update-jiaolian4InsertRight").remove();
+
+            $("#update-jiaolian5SelectLeft").remove();
+            $("#update-jiaolian5InsertLeft").remove();
+            $("#update-jiaolian5SelectRight").remove();
+            $("#update-jiaolian5InsertRight").remove();
+
+            $("#update-jiaolian6SelectLeft").remove();
+            $("#update-jiaolian6InsertLeft").remove();
+            $("#update-jiaolian6SelectRight").remove();
+            $("#update-jiaolian6InsertRight").remove();
+
+            $("#l3sl").remove();
+            $("#l3il").remove();
+            $("#l3sr").remove();
+            $("#l3ir").remove();
+
+            $("#l4sl").remove();
+            $("#l4il").remove();
+            $("#l4sr").remove();
+            $("#l4ir").remove();
+
+            $("#l5sl").remove();
+            $("#l5il").remove();
+            $("#l5sr").remove();
+            $("#l5ir").remove();
+
+            $("#l6sl").remove();
+            $("#l6il").remove();
+            $("#l6sr").remove();
+            $("#l6ir").remove();
+        }
+        if (selectedValue == '开三孔') {
+            $("#update-jiaolian4SelectLeft").remove();
+            $("#update-jiaolian4InsertLeft").remove();
+            $("#update-jiaolian4SelectRight").remove();
+            $("#update-jiaolian4InsertRight").remove();
+
+            $("#update-jiaolian5SelectLeft").remove();
+            $("#update-jiaolian5InsertLeft").remove();
+            $("#update-jiaolian5SelectRight").remove();
+            $("#update-jiaolian5InsertRight").remove();
+
+            $("#update-jiaolian6SelectLeft").remove();
+            $("#update-jiaolian6InsertLeft").remove();
+            $("#update-jiaolian6SelectRight").remove();
+            $("#update-jiaolian6InsertRight").remove();
+
+            $("#ul4sl").remove();
+            $("#ul4il").remove();
+            $("#ul4sr").remove();
+            $("#ul4ir").delete();
+
+            $("#ul5sl").remove();
+            $("#ul5il").remove();
+            $("#ul5sr").remove();
+            $("#ul5ir").remove();
+
+            $("#ul6sl").remove();
+            $("#ul6il").remove();
+            $("#ul6sr").remove();
+            $("#ul6ir").remove();
+        }
+        if (selectedValue == '开四孔') {
+            $("#update-jiaolian5SelectLeft").remove();
+            $("#update-jiaolian5InsertLeft").remove();
+            $("#update-jiaolian5SelectRight").remove();
+            $("#update-jiaolian5InsertRight").remove();
+
+            $("#update-jiaolian6SelectLeft").remove();
+            $("#update-jiaolian6InsertLeft").remove();
+            $("#update-jiaolian6SelectRight").remove();
+            $("#update-jiaolian6InsertRight").remove();
+
+            $("#ul5sl").remove();
+            $("#ul5il").remove();
+            $("#ul5sr").remove();
+            $("#ul5ir").remove();
+
+            $("#ul6sl").remove();
+            $("#ul6il").remove();
+            $("#ul6sr").remove();
+            $("#ul6ir").remove();
+        }
+        if (selectedValue == '开五孔') {
+            $("#update-jiaolian6SelectLeft").remove();
+            $("#update-jiaolian6InsertLeft").remove();
+            $("#update-jiaolian6SelectRight").remove();
+            $("#update-jiaolian6InsertRight").remove();
+
+            $("#ul6sl").remove();
+            $("#ul6il").remove();
+            $("#ul6sr").remove();
+            $("#ul6ir").remove();
+        }
+    })
+})
 
 function getJe() {
     var jl1 = document.getElementById('add-jiaolian1SelectLeft').value;
     var jl2 = document.getElementById('add-jiaolian2SelectLeft').value;
-    var jl3 = document.getElementById('add-jiaolian3SelectLeft').value;
-    var jl4 = document.getElementById('add-jiaolian4SelectLeft').value;
-    var jl5 = document.getElementById('add-jiaolian5SelectLeft').value;
-    var jl6 = document.getElementById('add-jiaolian6SelectLeft').value;
+    if($("#add-jiaolian3SelectLeft").jiaolian3SelectLeft != "" && $("#add-jiaolian3SelectLeft").jiaolian3SelectLeft != undefined) {
+        var jl3 = $("#add-jiaolian3SelectLeft").jiaolian3SelectLeft;
+    }
+    if($("#add-jiaolian4SelectLeft").jiaolian4SelectLeft != "" && $("#add-jiaolian4SelectLeft").jiaolian4SelectLeft != undefined) {
+        var jl4 = $("#add-jiaolian4SelectLeft").jiaolian4SelectLeft;
+    }
+    if($("#add-jiaolian5SelectLeft").jiaolian5SelectLeft != "" && $("#add-jiaolian5SelectLeft").jiaolian5SelectLeft != undefined) {
+        var jl5 = $("#add-jiaolian5SelectLeft").jiaolian5SelectLeft;
+    }
+    if($("#add-jiaolian6SelectLeft").jiaolian6SelectLeft != "" && $("#add-jiaolian6SelectLeft").jiaolian6SelectLeft != undefined) {
+        var jl6 = $("#add-jiaolian6SelectLeft").jiaolian6SelectLeft;
+    }
     var height = parseFloat(document.getElementById('add-height').value);
     if (jl1 == '距中'){
         var jiaolian1Insert = height / 2;
@@ -442,24 +490,24 @@ function getJe() {
 }
 
 function getUpdJe() {
-    var jl1 = document.getElementById('update-jiaolian1_select_left').value;
-    var jl2 = document.getElementById('update-jiaolian2_select_left').value;
-    var jl3 = document.getElementById('update-jiaolian3_select_left').value;
-    var jl4 = document.getElementById('update-jiaolian4_select_left').value;
-    var jl5 = document.getElementById('update-jiaolian5_select_left').value;
-    var jl6 = document.getElementById('update-jiaolian6_select_left').value;
+    var jl1 = document.getElementById('update-jiaolian1SelectLeft').value;
+    var jl2 = document.getElementById('update-jiaolian2SelectLeft').value;
+    var jl3 = document.getElementById('update-jiaolian3SelectLeft').value;
+    var jl4 = document.getElementById('update-jiaolian4SelectLeft').value;
+    var jl5 = document.getElementById('update-jiaolian5SelectLeft').value;
+    var jl6 = document.getElementById('update-jiaolian6SelectLeft').value;
     var height = parseFloat(document.getElementById('add-height').value);
     if (jl1 == '距中'){
         var jiaolian1Insert = height / 2;
-        document.getElementById("update-jiaolian1_select_right").value = jl1
-        document.getElementById("update-jiaolian1_insert_left").value = jiaolian1Insert;
-        document.getElementById("update-jiaolian1_insert_right").value = jiaolian1Insert;
+        document.getElementById("update-jiaolian1SelectRight").value = jl1
+        document.getElementById("update-jiaolian1InsertLeft").value = jiaolian1Insert;
+        document.getElementById("update-jiaolian1InsertRight").value = jiaolian1Insert;
     }
     if (jl2 == '距中') {
         var jiaolian2Insert = height / 2;
-        document.getElementById("update-jiaolian2_select_right").value = jl2
-        document.getElementById("update-jiaolian2_insert_left").value = jiaolian2Insert;
-        document.getElementById("update-jiaolian2_insert_right").value = jiaolian2Insert;
+        document.getElementById("update-jiaolian2SelectRight").value = jl2
+        document.getElementById("update-jiaolian2InsertLeft").value = jiaolian2Insert;
+        document.getElementById("update-jiaolian2InsertRight").value = jiaolian2Insert;
     }
     if (jl3 == '距中') {
         var jiaolian3Insert = height / 2;
@@ -469,21 +517,21 @@ function getUpdJe() {
     }
     if (jl4 == '距中') {
         var jiaolian4Insert = height / 2;
-        document.getElementById("update-jiaolian4_select_right").value = jl4
-        document.getElementById("update-jiaolian4_insert_left").value = jiaolian4Insert;
-        document.getElementById("update-jiaolian4_insert_right").value = jiaolian4Insert;
+        document.getElementById("update-jiaolian4SelectRight").value = jl4
+        document.getElementById("update-jiaolian4InsertLeft").value = jiaolian4Insert;
+        document.getElementById("update-jiaolian4InsertRight").value = jiaolian4Insert;
     }
     if (jl5 == '距中') {
         var jiaolian5Insert = height / 2;
-        document.getElementById("update-jiaolian5_select_right").value = jl5
-        document.getElementById("update-jiaolian5_insert_left").value = jiaolian5Insert;
-        document.getElementById("update-jiaolian5_insert_right").value = jiaolian5Insert;
+        document.getElementById("update-jiaolian5SelectRight").value = jl5
+        document.getElementById("update-jiaolian5InsertLeft").value = jiaolian5Insert;
+        document.getElementById("update-jiaolian5InsertRight").value = jiaolian5Insert;
     }
     if (jl6 == '距中') {
         var jiaolian6Insert = height / 2;
-        document.getElementById("update-jiaolian6_select_right").value = jl6
-        document.getElementById("update-jiaolian6_insert_left").value = jiaolian6Insert;
-        document.getElementById("update-jiaolian6_insert_right").value = jiaolian6Insert;
+        document.getElementById("update-jiaolian6SelectRight").value = jl6
+        document.getElementById("update-jiaolian6InsertLeft").value = jiaolian6Insert;
+        document.getElementById("update-jiaolian6InsertRight").value = jiaolian6Insert;
     }
 }
 
@@ -500,7 +548,7 @@ function getUpdPfsl() {
     var width = parseFloat(document.getElementById('update-width').value);
     var num = parseFloat(document.getElementById('update-num').value);
     var sum_sl = Math.round(height * width / 1000000 * num * 1000) / 1000
-    document.getElementById("update-sum_shuliang1").value = sum_sl
+    document.getElementById("update-sumShuliang1").value = sum_sl
 }
 
 function getPfje() {
@@ -511,10 +559,10 @@ function getPfje() {
 }
 
 function getUpdPfje() {
-    var sum_sl = parseFloat(document.getElementById('update-sum_shuliang1').value);
+    var sum_sl = parseFloat(document.getElementById('update-sumShuliang1').value);
     var pfdj = parseFloat(document.getElementById('update-danjia1').value);
     var sum_je = Math.round(sum_sl * pfdj * 100) / 100
-    document.getElementById("update-sum_jine1").value = sum_je
+    document.getElementById("update-sumJine1").value = sum_je
 }
 
 function getZcsl() {
@@ -530,7 +578,7 @@ function getUpdZcsl() {
     var width = parseFloat(document.getElementById('update-width').value);
     var num = parseFloat(document.getElementById('update-num').value);
     var sum_sl2 = Math.round((height * 1 + width * 1) / 1000 * 2 * num * 1000) / 1000
-    document.getElementById("update-sum_shuliang2").value = sum_sl2
+    document.getElementById("update-sumShuliang2").value = sum_sl2
 }
 
 function getZcje() {
@@ -541,16 +589,16 @@ function getZcje() {
 }
 
 function getUpdZcje() {
-    var sum_sl2 = parseFloat(document.getElementById('update-sum_shuliang2').value);
+    var sum_sl2 = parseFloat(document.getElementById('update-sumShuliang2').value);
     var zcdj2 = parseFloat(document.getElementById('update-danjia2').value);
     var sum_je2 = Math.round(sum_sl2 * zcdj2 * 100) / 100
-    document.getElementById("update-sum_jine2").value = sum_je2
+    document.getElementById("update-sumJine2").value = sum_je2
 }
 
 function getList() {
-    $('#customer_number').val("");
-    $('#customer_name').val("");
-    $('#install_address').val("");
+    $('#customerNumber').val("");
+    $('#customerName').val("");
+    $('#installAddress').val("");
     $ajax({
         type: 'post',
         url: '/lkxd/getList',
@@ -585,16 +633,16 @@ $(function () {
     getJlpp();
 
     $('#select-btn').click(function () {
-        var customer_number = $('#customer_number').val();
-        var customer_name = $('#customer_name').val();
-        var install_address = $('#install_address').val();
+        var customerNumber = $('#customerNumber').val();
+        var customerName = $('#customerName').val();
+        var installAddress = $('#installAddress').val();
         $ajax({
             type: 'post',
             url: '/lkxd/queryList',
             data: {
-                customer_number: customer_number,
-                customer_name: customer_name,
-                install_address: install_address,
+                customerNumber: customerNumber,
+                customerName: customerName,
+                installAddress: installAddress,
             }
         }, true, '', function (res) {
             if (res.code == 200) {
@@ -620,12 +668,13 @@ $(function () {
 
     //新增弹窗里点击提交按钮
     $("#add-submit-btn").click(function () {
-        getAddKk();
+        // getAddKk();
         getJe();
         getPfsl();
         getPfje();
         getZcsl();
         getZcje();
+        getUpdJe()
         let params = formToJson("#add-form");
         if (checkForm('#add-form')) {
             $ajax({
@@ -656,81 +705,81 @@ $(function () {
         }
         $('#update-modal').modal('show');
         setForm(rows[0].data, '#update-form');
-        $('#update-customer_name').val(rows[0].data.customerName);
-        $('#update-insert_date').val(rows[0].data.insertDate);
-        $('#update-order_number').val(rows[0].data.orderNumber);
+        $('#update-customerName').val(rows[0].data.customerName);
+        $('#update-insertDate').val(rows[0].data.insertDate);
+        $('#update-orderNumber').val(rows[0].data.orderNumber);
         $('#update-pinyin').val(rows[0].data.pinyin);
-        $('#update-shipping_address').val(rows[0].data.shippingAddress);
+        $('#update-shippingAddress').val(rows[0].data.shippingAddress);
         $('#update-phone').val(rows[0].data.phone);
-        $('#update-shipping_type').val(rows[0].data.shippingType);
-        $('#update-install_address').val(rows[0].data.installAddress);
-        $('#update-customer_name_renyuan').val(rows[0].data.customerNameRenyuan);
-        $('#update-customer_number').val(rows[0].data.customerNumber);
+        $('#update-shippingType').val(rows[0].data.shippingType);
+        $('#update-installAddress').val(rows[0].data.installAddress);
+        $('#update-customerNameRenyuan').val(rows[0].data.customerNameRenyuan);
+        $('#update-customerNumber').val(rows[0].data.customerNumber);
         $('#update-height').val(rows[0].data.height);
         $('#update-width').val(rows[0].data.width);
         $('#update-num').val(rows[0].data.num);
         $('#update-lvxingcai').val(rows[0].data.lvxingcai);
-        $('#update-lvcai_yanse').val(rows[0].data.lvcaiYanse);
-        $('#update-boli_shenjiagong').val(rows[0].data.boliShenjiagong);
-        $('#update-boli_yanse').val(rows[0].data.boliYanse);
-        $('#update-lashou_xinghao').val(rows[0].data.lashouXinghao);
-        $('#update-jiaoliankong_fangxiang_left').val(rows[0].data.jiaoliankongFangxiangLeft);
-        $('#update-jiaoliankong_fangxiang_right').val(rows[0].data.jiaoliankongFangxiangRight);
-        $('#update-lashou_shuliang_left').val(rows[0].data.lashouShuliangLeft);
-        $('#update-lashou_shuliang_right').val(rows[0].data.lashouShuliangRight);
-        $('#update-lashouwei_select_left').val(rows[0].data.lashouweiSelectLeft);
-        $('#update-lashouwei_insert_left').val(rows[0].data.lashouweiInsertLeft);
-        $('#update-lashouwei_select_right').val(rows[0].data.lashouweiSelectRight);
-        $('#update-lashouwei_insert_right').val(rows[0].data.lashouweiInsertRight);
-        $('#update-zhuangsuoshuliang_insert_left1').val(rows[0].data.zhuangsuoshuliangInsertLeft1);
-        $('#update-zhuangsuoshuliang_insert_right1').val(rows[0].data.zhuangsuoshuliangInsertRight1);
-        $('#update-zhuangsuofangwei_insert_left1').val(rows[0].data.zhuangsuofangweiInsertLeft1);
-        $('#update-zhuangsuofangwei_insert_left2').val(rows[0].data.zhuangsuofangweiInsertLeft2);
-        $('#update-zhuangsuofangwei_insert_right1').val(rows[0].data.zhuangsuofangweiInsertRight1);
-        $('#update-zhuangsuofangwei_insert_right2').val(rows[0].data.zhuangsuofangweiInsertRight2);
+        $('#update-lvcaiYanse').val(rows[0].data.lvcaiYanse);
+        $('#update-boliShenjiagong').val(rows[0].data.boliShenjiagong);
+        $('#update-boliYanse').val(rows[0].data.boliYanse);
+        $('#update-lashouXinghao').val(rows[0].data.lashouXinghao);
+        $('#update-jiaoliankongFangxiangLeft').val(rows[0].data.jiaoliankongFangxiangLeft);
+        $('#update-jiaoliankongFangxiangRight').val(rows[0].data.jiaoliankongFangxiangRight);
+        $('#update-lashouShuliangLeft').val(rows[0].data.lashouShuliangLeft);
+        $('#update-lashouShuliangRight').val(rows[0].data.lashouShuliangRight);
+        $('#update-lashouweiSelectLeft').val(rows[0].data.lashouweiSelectLeft);
+        $('#update-lashouweiInsertLeft').val(rows[0].data.lashouweiInsertLeft);
+        $('#update-lashouweiSelectRight').val(rows[0].data.lashouweiSelectRight);
+        $('#update-lashouweiInsertRight').val(rows[0].data.lashouweiInsertRight);
+        $('#update-zhuangsuoshuliangInsertLeft1').val(rows[0].data.zhuangsuoshuliangInsertLeft1);
+        $('#update-zhuangsuoshuliangInsertRight1').val(rows[0].data.zhuangsuoshuliangInsertRight1);
+        $('#update-zhuangsuofangweiInsertLeft1').val(rows[0].data.zhuangsuofangweiInsertLeft1);
+        $('#update-zhuangsuofangweiInsertLeft2').val(rows[0].data.zhuangsuofangweiInsertLeft2);
+        $('#update-zhuangsuofangweiInsertRight1').val(rows[0].data.zhuangsuofangweiInsertRight1);
+        $('#update-zhuangsuofangweiInsertRight2').val(rows[0].data.zhuangsuofangweiInsertRight2);
         $('#update-kaijiaolian').val(rows[0].data.kaijiaolian);
-        $('#update-jiaolian1_select_left').val(rows[0].data.jiaolian1SelectLeft);
-        $('#update-jiaolian1_insert_left').val(rows[0].data.jiaolian1InsertLeft);
-        $('#update-jiaolian1_select_right').val(rows[0].data.jiaolian1SelectRight);
-        $('#update-jiaolian1_insert_right').val(rows[0].data.jiaolian1InsertRight);
-        $('#update-jiaolian2_select_left').val(rows[0].data.jiaolian2SelectLeft);
-        $('#update-jiaolian2_insert_left').val(rows[0].data.jiaolian2InsertLeft);
-        $('#update-jiaolian2_select_right').val(rows[0].data.jiaolian2SelectRight);
-        $('#update-jiaolian2_insert_right').val(rows[0].data.jiaolian2InsertRight);
-        $('#update-jiaolian3_select_left').val(rows[0].data.jiaolian3SelectLeft);
-        $('#update-jiaolian3_insert_left').val(rows[0].data.jiaolian3InsertLeft);
-        $('#update-jiaolian3_select_right').val(rows[0].data.jiaolian3SelectRight);
-        $('#update-jiaolian3_insert_right').val(rows[0].data.jiaolian3InsertRight);
-        $('#update-jiaolian4_select_left').val(rows[0].data.jiaolian4SelectLeft);
-        $('#update-jiaolian4_insert_left').val(rows[0].data.jiaolian4InsertLeft);
-        $('#update-jiaolian4_select_right').val(rows[0].data.jiaolian4SelectRight);
-        $('#update-jiaolian4_insert_right').val(rows[0].data.jiaolian4InsertRight);
-        $('#update-jiaolian5_select_left').val(rows[0].data.jiaolian5SelectLeft);
-        $('#update-jiaolian5_insert_left').val(rows[0].data.jiaolian5InsertLeft);
-        $('#update-jiaolian5_select_right').val(rows[0].data.jiaolian5SelectRight);
-        $('#update-jiaolian5_insert_right').val(rows[0].data.jiaolian5InsertRight);
-        $('#update-jiaolian6_select_left').val(rows[0].data.jiaolian6SelectLeft);
-        $('#update-jiaolian6_insert_left').val(rows[0].data.jiaolian6InsertLeft);
-        $('#update-jiaolian6_select_right').val(rows[0].data.jiaolian6SelectRight);
-        $('#update-jiaolian6_insert_right').val(rows[0].data.jiaolian6InsertRight);
-        $('#update-fujian_select1').val(rows[0].data.fujianSelect1);
-        $('#update-fujian_select2').val(rows[0].data.fujianSelect2);
-        $('#update-fujian_select3').val(rows[0].data.fujianSelect3);
-        $('#update-fujian_select4').val(rows[0].data.fujianSelect4);
-        $('#update-pinpai_select1').val(rows[0].data.pinpaiSelect1);
-        $('#update-pinpai_select2').val(rows[0].data.pinpaiSelect2);
-        $('#update-pinpai_select3').val(rows[0].data.pinpaiSelect3);
-        $('#update-pinpai_select4').val(rows[0].data.pinpaiSelect4);
-        $('#update-fujian_shuliang1').val(rows[0].data.fujianShuliang1);
-        $('#update-fujian_shuliang2').val(rows[0].data.fujianShuliang2);
-        $('#update-fujian_shuliang3').val(rows[0].data.fujianShuliang3);
-        $('#update-fujian_shuliang4').val(rows[0].data.fujianShuliang4);
-        $('#update-sum_shuliang1').val(rows[0].data.sumShuliang1);
+        $('#update-jiaolian1SelectLeft').val(rows[0].data.jiaolian1SelectLeft);
+        $('#update-jiaolian1InsertLeft').val(rows[0].data.jiaolian1InsertLeft);
+        $('#update-jiaolian1SelectRight').val(rows[0].data.jiaolian1SelectRight);
+        $('#update-jiaolian1InsertRight').val(rows[0].data.jiaolian1InsertRight);
+        $('#update-jiaolian2SelectLeft').val(rows[0].data.jiaolian2SelectLeft);
+        $('#update-jiaolian2InsertLeft').val(rows[0].data.jiaolian2InsertLeft);
+        $('#update-jiaolian2SelectRight').val(rows[0].data.jiaolian2SelectRight);
+        $('#update-jiaolian2InsertRight').val(rows[0].data.jiaolian2InsertRight);
+        $('#update-jiaolian3SelectLeft').val(rows[0].data.jiaolian3SelectLeft);
+        $('#update-jiaolian3InsertLeft').val(rows[0].data.jiaolian3InsertLeft);
+        $('#update-jiaolian3SelectRight').val(rows[0].data.jiaolian3SelectRight);
+        $('#update-jiaolian3InsertRight').val(rows[0].data.jiaolian3InsertRight);
+        $('#update-jiaolian4SelectLeft').val(rows[0].data.jiaolian4SelectLeft);
+        $('#update-jiaolian4InsertLeft').val(rows[0].data.jiaolian4InsertLeft);
+        $('#update-jiaolian4SelectRight').val(rows[0].data.jiaolian4SelectRight);
+        $('#update-jiaolian4InsertRight').val(rows[0].data.jiaolian4InsertRight);
+        $('#update-jiaolian5SelectLeft').val(rows[0].data.jiaolian5SelectLeft);
+        $('#update-jiaolian5InsertLeft').val(rows[0].data.jiaolian5InsertLeft);
+        $('#update-jiaolian5SelectRight').val(rows[0].data.jiaolian5SelectRight);
+        $('#update-jiaolian5InsertRight').val(rows[0].data.jiaolian5InsertRight);
+        $('#update-jiaolian6SelectLeft').val(rows[0].data.jiaolian6SelectLeft);
+        $('#update-jiaolian6InsertLeft').val(rows[0].data.jiaolian6InsertLeft);
+        $('#update-jiaolian6SelectRight').val(rows[0].data.jiaolian6SelectRight);
+        $('#update-jiaolian6InsertRight').val(rows[0].data.jiaolian6InsertRight);
+        $('#update-fujianSelect1').val(rows[0].data.fujianSelect1);
+        $('#update-fujianSelect2').val(rows[0].data.fujianSelect2);
+        $('#update-fujianSelect3').val(rows[0].data.fujianSelect3);
+        $('#update-fujianSelect4').val(rows[0].data.fujianSelect4);
+        $('#update-pinpaiSelect1').val(rows[0].data.pinpaiSelect1);
+        $('#update-pinpaiSelect2').val(rows[0].data.pinpaiSelect2);
+        $('#update-pinpaiSelect3').val(rows[0].data.pinpaiSelect3);
+        $('#update-pinpaiSelect4').val(rows[0].data.pinpaiSelect4);
+        $('#update-fujianShuliang1').val(rows[0].data.fujianShuliang1);
+        $('#update-fujianShuliang2').val(rows[0].data.fujianShuliang2);
+        $('#update-fujianShuliang3').val(rows[0].data.fujianShuliang3);
+        $('#update-fujianShuliang4').val(rows[0].data.fujianShuliang4);
+        $('#update-sumShuliang1').val(rows[0].data.sumShuliang1);
         $('#update-danjia1').val(rows[0].data.danjia1);
-        $('#update-sum_jine1').val(rows[0].data.sumJine1);
-        $('#update-sum_shuliang2').val(rows[0].data.sumShuliang2);
+        $('#update-sumJine1').val(rows[0].data.sumJine1);
+        $('#update-sumShuliang2').val(rows[0].data.sumShuliang2);
         $('#update-danjia2').val(rows[0].data.danjia2);
-        $('#update-sum_jine2').val(rows[0].data.sumJine2);
+        $('#update-sumJine2').val(rows[0].data.sumJine2);
         $('#update-wancheng').val(rows[0].data.wancheng);
         $('#update-qita').val(rows[0].data.qita);
     });

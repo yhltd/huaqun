@@ -1,6 +1,7 @@
 package com.example.demo.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.example.demo.entity.blxd;
 import com.example.demo.entity.ddxd;
 import com.example.demo.mapper.DdxdMapper;
 import com.example.demo.service.DdxdService;
@@ -18,6 +19,9 @@ public class DdxdImpl extends ServiceImpl<DdxdMapper, ddxd> implements DdxdServi
     public List<ddxd> getList() {
         return ddxdMapper.getList();
     }
+
+//    @Override
+//    public List<ddxd> getListByKeHu(String khmc) { return ddxdMapper.getListByKeHu(khmc); }
 
     @Override
     public List<ddxd> queryList(String khmc, String ddh) { return ddxdMapper.queryList(khmc,ddh); }

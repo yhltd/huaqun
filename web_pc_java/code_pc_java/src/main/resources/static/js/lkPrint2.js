@@ -46,20 +46,25 @@ $(function () {
                 contentType: 'application/json;charset=utf-8'
             }, false, '', function (res) {
                 if (res.code == 200) {
-                    $("[name='printData']").remove();
-                    var tr = "";
-                    for (var i = 0; i < res.data.length; i++) {
-                        tr1 =res.data[i].customerName
+                    // $("[name='printData']").remove();
+                    var sl = 0;
+                    for (var i = 0; i < res.data.length;i++){
+                        if (res.data[i].lvxingcai == "" && res.data[i].lvcaiYanse == "" && res.data[i].lashouXinghao == "") {
+                            sl++;
+                        }
+                    }
+                    for (var i = 0; i < res.data.length - sl; i++) {
+                        tr1 = res.data[i].customerName
                         tr2 = res.data[i].insertDate
                         tr3 = res.data[i].customerNumber
                         tr4 = res.data[i].shippingAddress
                         tr5 = res.data[i].orderNumber
-                        tr6 = j+1
-                        tr7 = "<tr style='font-size: 10px;border: none' name='printData'>" +
+                        tr6 = j + 1
+                        tr7 = "<tr>" +
                             "<td colspan='2' style='border: none;font-size: 10px'>" + res.data[i].lvxingcai + "</td>" +
                             "<td colspan='2' style='border: none;font-size: 10px'>" + res.data[i].lvcaiYanse + "</td>" +
                             "<td colspan='2' style='3px;border: none;font-size: 10px'>" + res.data[i].lashouXinghao + "</td>" +
-                        "</tr>";
+                            "</tr>";
                         $("#data7").append(tr7);
                         tr8 = res.data[i].jiaoliankongFangxiangLeft
                         tr9 = res.data[i].jiaoliankongFangxiangRight
@@ -108,7 +113,45 @@ $(function () {
                     $("#data4").append(tr4);
                     $("#data5").append(tr5);
                     $("#data6").append(tr6);
-                    $("#data8").append(tr6);
+                    $("#data8").append(tr8);
+                    $("#data9").append(tr9);
+                    $("#data10").append(tr10);
+                    $("#data11").append(tr11);
+                    $("#data12").append(tr12);
+                    $("#data13").append(tr13);
+                    $("#data14").append(tr14);
+                    $("#data15").append(tr15);
+                    $("#data16").append(tr16);
+                    $("#data17").append(tr17);
+                    $("#data18").append(tr18);
+                    $("#data19").append(tr19);
+                    $("#data20").append(tr20);
+                    $("#data21").append(tr21);
+                    $("#data22").append(tr22);
+                    $("#data23").append(tr23);
+                    $("#data24").append(tr24);
+                    $("#data25").append(tr25);
+                    $("#data26").append(tr26);
+                    $("#data27").append(tr27);
+                    $("#data28").append(tr28);
+                    $("#data29").append(tr29);
+                    $("#data30").append(tr30);
+                    $("#data31").append(tr31);
+                    $("#data32").append(tr32);
+                    $("#data33").append(tr33);
+                    $("#data34").append(tr34);
+                    $("#data35").append(tr35);
+                    $("#data36").append(tr36);
+                    $("#data37").append(tr37);
+                    $("#data38").append(tr38);
+                    $("#data39").append(tr39);
+                    $("#data40").append(tr40);
+                    $("#data41").append(tr41);
+                    $("#data42").append(tr42);
+                    $("#data43").append(tr43);
+                    $("#data44").append(tr44);
+                    $("#data45").append(tr45);
+                    $("#data46").append(tr46);
 
                     $('#lkp2-modal').modal('hide');
                 }

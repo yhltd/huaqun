@@ -111,7 +111,7 @@ $(function () {
 
     //新增弹窗里点击提交按钮
     $("#add-submit-btn").click(function () {
-
+        var orderNumber = $('#add-orderNumber').val();
         let params = formToJson("#add-form");
         if (checkForm('#add-form')) {
             $ajax({
@@ -119,7 +119,7 @@ $(function () {
                 url: '/psd/add',
                 data: JSON.stringify({
                     addInfo: params,
-                    customerNeedImg1:"123"
+                    orderNumber: orderNumber,
                 }),
                 dataType: 'json',
                 contentType: 'application/json;charset=utf-8'
@@ -342,12 +342,14 @@ $(function () {
             },
             uploadExtraData:function (){
                 // var file = document.getElementById("fileInput1").files;
-                var name = "01.jpg"
+                var file = $("#add-orderNumber").orderNumber + "-01.jpg"
                 var path = "/huaqun_erqi/"
+                var kongjian = 3
                 var formData = {
-                    // file:file,
+                    file:file,
                     name:name,
                     path:path,
+                    kongjian:kongjian,
                 };
                 return formData;
             }
@@ -1069,3 +1071,12 @@ function setTable(data) {
         }
     })
 }
+
+// $(document).ready(function(){
+//     $('#add-customerNameRiqi').on('change',function(){
+//         var d1 = $("#add-customerNameRiqi").customerNameRiqi;
+//         var ud1 = d1.split("T")[0];
+//         var format1 = ud1.split("-")[2] + "年" + ud1.split("-")[1] + "月" + ud1.split("-")[2] + "日"
+//         $("add-customerNameRiqi").value = format1
+//     })
+// })

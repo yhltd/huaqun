@@ -52,10 +52,28 @@ public class LkxdController {
      * @return ResultInfo
      */
     @RequestMapping("/queryList")
-    public ResultInfo queryList(String customernumber, String customername,String installaddress, HttpSession session) {
+    public ResultInfo queryList(String customerNumber, String customerName,String installAddress, HttpSession session) {
         UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
         try {
-            List<lkxd> list = lkxdService.queryList(customernumber, customername, installaddress);
+            List<lkxd> list = lkxdService.queryList(customerNumber, customerName, installAddress);
+            return ResultInfo.success("获取成功", list);
+        } catch (Exception e) {
+            e.printStackTrace();
+            log.error("获取失败：{}", e.getMessage());
+            return ResultInfo.error("错误!");
+        }
+    }
+
+    /**
+     * 根据姓名 查简码
+     *
+     * @return ResultInfo
+     */
+    @RequestMapping("/queryPinYin")
+    public ResultInfo queryPinYin(String customerName, HttpSession session) {
+        UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
+        try {
+            List<lkxd> list = lkxdService.queryPinYin(customerName);
             return ResultInfo.success("获取成功", list);
         } catch (Exception e) {
             e.printStackTrace();

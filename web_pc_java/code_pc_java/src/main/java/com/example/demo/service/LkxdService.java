@@ -18,7 +18,12 @@ public interface LkxdService extends IService<lkxd> {
     /**
      * 根据姓名 订单号 安装地址查询
      */
-    List<lkxd> queryList(String customernumber, String customername,String installaddress);
+    List<lkxd> queryList(String customerNumber, String customerName,String installAddress);
+
+    /**
+     * 根据姓名 查简码
+     */
+    List<lkxd> queryPinYin(String customerName);
 
     /**
      * 修改

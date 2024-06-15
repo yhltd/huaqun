@@ -124,7 +124,7 @@ public class lkxd {
     /**
      * 装锁方向（右）
      */
-    private String zhuangsuofangwiangSelectRight;
+    private String zhuangsuofangxiangSelectRight;
     /**
      * 装锁方位（左1）
      */

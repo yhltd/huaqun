@@ -12,11 +12,15 @@ import java.util.List;
 @Repository
 public interface LkxdMapper extends BaseMapper<lkxd> {
 
-    @Select("select * from lvkuang_xiadan")
+    @Select("select * from lvkuang_xiadan order by order_number DESC")
+//    @Select("select customer_name_renyuan,insert_date,customer_name,wancheng,order_number,kailiao,shunxu,zuzhuang,baozhuang,customer_number,install_address,phone,shipping_address,pinyin,shendan,wancheng,shunxu as paixu from lvkuang_xiadan group by customer_name_renyuan,insert_date,customer_name,wancheng,order_number,kailiao,shunxu,zuzhuang,baozhuang,customer_number,install_address,phone,shipping_address,pinyin,shendan order by paixu,order_number desc;select insert_date,order_number,customer_name,num,'' as num,height,width,'正在加工' as jiagong,'' as shendan from lvkuang_xiadan where height != ''")
     List<lkxd> getList();
 
-    @Select("select * from lvkuang_xiadan where customer_number like '%'+#{customernumber}+'%' and customer_name like '%'+#{customername}+'%'  and install_address like '%'+#{installaddress}+'%' ")
-    List<lkxd> queryList(String customernumber, String customername,String installaddress);
+    @Select("select * from lvkuang_xiadan where customer_number like '%'+#{customerNumber}+'%' and customer_name like '%'+#{customerName}+'%'  and install_address like '%'+#{installAddress}+'%' ")
+    List<lkxd> queryList(String customerNumber, String customerName,String installAddress);
+
+    @Select("select pinyin from userInfo where company like '%'+#{customerName}+'%' ")
+    List<lkxd> queryPinYin(String customerName);
 
     @Delete("delete from lvkuang_xiadan where id=#{id}")
     boolean deleteid(int id);

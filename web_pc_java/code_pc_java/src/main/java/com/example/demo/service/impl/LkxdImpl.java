@@ -21,8 +21,13 @@ public class LkxdImpl extends ServiceImpl<LkxdMapper, lkxd> implements LkxdServi
     }
 
     @Override
-    public List<lkxd> queryList(String customer_number, String customer_name,String install_address) {
-        return lkxdMapper.queryList(customer_number, customer_name, install_address);
+    public List<lkxd> queryList(String customerNumber, String customerName,String installAddress) {
+        return lkxdMapper.queryList(customerNumber, customerName, installAddress);
+    }
+
+    @Override
+    public List<lkxd> queryPinYin(String customerName) {
+        return lkxdMapper.queryPinYin(customerName);
     }
 
     @Override

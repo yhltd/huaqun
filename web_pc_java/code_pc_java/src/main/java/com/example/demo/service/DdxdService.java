@@ -1,6 +1,7 @@
 package com.example.demo.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.example.demo.entity.blxd;
 import com.example.demo.entity.ddklcz;
 import com.example.demo.entity.ddxd;
 import org.springframework.stereotype.Service;
@@ -14,6 +15,11 @@ public interface DdxdService extends IService<ddxd> {
      * 查询所有
      */
     List<ddxd> getList();
+
+    /**
+     * 客户查询
+     */
+//    List<ddxd> getListByKeHu(String khmc);
 
     /**
      * 根据客户名称和订单号查询

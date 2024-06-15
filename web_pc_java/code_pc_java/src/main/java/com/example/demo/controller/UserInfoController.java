@@ -34,10 +34,12 @@ public class UserInfoController {
             if (StringUtils.isEmpty(map)) {
                 SessionUtil.remove(session, "token");
                 SessionUtil.remove(session, "power");
+                SessionUtil.remove(session, "company");
                 return ResultInfo.error(-1, "账号密码错误");
             } else {
                 SessionUtil.setToken(session, map.get("token").toString());
                 SessionUtil.setPower(session, (List<UserInfo>) map.get("power"));
+                SessionUtil.setCompany(session, (List<UserInfo>) map.get("company"));
                 return ResultInfo.success("登陆成功");
             }
         } catch (Exception e) {

@@ -36,6 +36,7 @@ public class BlxdController {
         UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
         try {
             if(userInfo.getPower().equals("管理员")){
+
                 List<blxd> getList = blxdService.getList();
                 return ResultInfo.success("获取成功", getList);
             }else if (userInfo.getPower().equals("玻璃厂")){
