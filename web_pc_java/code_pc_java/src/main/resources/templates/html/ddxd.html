@@ -124,6 +124,9 @@
                     <div class="form-group">
                         <label for="add-shfs">送货方式</label>
                         <select id="add-shfs" name="shfs" class="form-control"><option>--请选择--</option></select>
+                        <div class="invalid-feedback">
+                            请选择送货方式！
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="add-azdz">安装地址</label>
@@ -134,17 +137,17 @@
                     </div>
                     <div class="form-group">
                         <label for="add-ddh">订单编号</label>
-                        <input id="add-ddh" name="ddh" type="text" class="form-control" autocomplete="off">
-                        <div class="invalid-feedback">
-                            请输入订单编号！
-                        </div>
+                        <input id="add-ddh" name="ddh" type="text" class="form-control" autocomplete="off" data-required="1">
+<!--                        <div class="invalid-feedback">-->
+<!--                            请输入订单编号！-->
+<!--                        </div>-->
                     </div>
                     <div class="form-group">
                         <label for="add-luruyuan">录入员</label>
                         <input id="add-luruyuan" name="luruyuan" type="text" class="form-control" autocomplete="off">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入录入员！-->
-<!--                        </div>-->
+                        <div class="invalid-feedback">
+                            请输入录入员！
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="add-fj">项目类别</label>
@@ -182,38 +185,38 @@
                     </div>
                     <div class="form-group">
                         <label for="add-cxdk">出线端口左出线</label>
-                        <input id="add-cxdk" name="cxdk" type="text" class="form-control" autocomplete="off">
-                        <div class="invalid-feedback">
-                            请输入出线端口左出线！
-                        </div>
+                        <input id="add-cxdk" name="cxdk" type="text" class="form-control" autocomplete="off" data-required="1">
+<!--                        <div class="invalid-feedback">-->
+<!--                            请输入出线端口左出线！-->
+<!--                        </div>-->
                     </div>
                     <div class="form-group">
                         <label for="add-cxdkRight">出线端口右出线</label>
-                        <input id="add-cxdkRight" name="cxdkRight" type="text" class="form-control" autocomplete="off">
-                        <div class="invalid-feedback">
-                            请输入出线端口右出线！
-                        </div>
+                        <input id="add-cxdkRight" name="cxdkRight" type="text" class="form-control" autocomplete="off" data-required="1">
+<!--                        <div class="invalid-feedback">-->
+<!--                            请输入出线端口右出线！-->
+<!--                        </div>-->
                     </div>
                     <div class="form-group">
                         <label for="add-gy">光源</label>
-                        <input id="add-gy" name="gy" type="text" class="form-control" autocomplete="off">
-                        <div class="invalid-feedback">
-                            请输入光源！
-                        </div>
+                        <input id="add-gy" name="gy" type="text" class="form-control" autocomplete="off" data-required="1">
+<!--                        <div class="invalid-feedback">-->
+<!--                            请输入光源！-->
+<!--                        </div>-->
                     </div>
                     <div class="form-group">
                         <label for="add-gl">功率W</label>
-                        <input id="add-gl" name="gl" type="text" class="form-control" autocomplete="off">
-                        <div class="invalid-feedback">
-                            请输入功率W！
-                        </div>
+                        <input id="add-gl" name="gl" type="text" class="form-control" autocomplete="off" data-required="1">
+<!--                        <div class="invalid-feedback">-->
+<!--                            请输入功率W！-->
+<!--                        </div>-->
                     </div>
                     <div class="form-group">
                         <label for="add-bz">备注</label>
-                        <input id="add-bz" name="bz" type="text" class="form-control" autocomplete="off">
-                        <div class="invalid-feedback">
-                            请输入备注！
-                        </div>
+                        <input id="add-bz" name="bz" type="text" class="form-control" autocomplete="off" data-required="1">
+<!--                        <div class="invalid-feedback">-->
+<!--                            请输入备注！-->
+<!--                        </div>-->
                     </div>
                     <div class="form-group">
                         <label for="add-dj">单价</label>
@@ -224,17 +227,17 @@
                     </div>
                     <div class="form-group">
                         <label for="add-je">金额</label>
-                        <input id="add-je" name="je" type="text" class="form-control" autocomplete="off">
+                        <input id="add-je" name="je" type="text" class="form-control" autocomplete="off" data-required="1">
 <!--                        <div class="invalid-feedback">-->
 <!--                            请输入金额！-->
 <!--                        </div>-->
                     </div>
                     <div class="form-group">
                         <label for="add-chicun">开料尺寸</label>
-                        <input id="add-chicun" name="chicun" type="text" class="form-control" autocomplete="off">
-                        <div class="invalid-feedback">
-                            请输入开料尺寸！
-                        </div>
+                        <input id="add-chicun" name="chicun" type="text" class="form-control" autocomplete="off" data-required="1">
+<!--                        <div class="invalid-feedback">-->
+<!--                            请输入开料尺寸！-->
+<!--                        </div>-->
                     </div>
                 </form>
             </div>
@@ -311,10 +314,10 @@
                     </div>
                     <div class="form-group">
                         <label for="update-ddh">订单编号</label>
-                        <input id="update-ddh" name="ddh" type="text" class="form-control" autocomplete="off">
-                        <div class="invalid-feedback">
-                            请输入订单编号！
-                        </div>
+                        <input id="update-ddh" name="ddh" type="text" class="form-control" autocomplete="off" data-required="1">
+<!--                        <div class="invalid-feedback">-->
+<!--                            请输入订单编号！-->
+<!--                        </div>-->
                     </div>
                     <div class="form-group">
                         <label for="update-luruyuan">录入员</label>
@@ -357,38 +360,38 @@
                     </div>
                     <div class="form-group">
                         <label for="update-cxdk">出线端口左出线</label>
-                        <input id="update-cxdk" name="cxdk" type="text" class="form-control" autocomplete="off">
-                        <div class="invalid-feedback">
-                            请输入出线端口左出线！
-                        </div>
+                        <input id="update-cxdk" name="cxdk" type="text" class="form-control" autocomplete="off" data-required="1">
+<!--                        <div class="invalid-feedback">-->
+<!--                            请输入出线端口左出线！-->
+<!--                        </div>-->
                     </div>
                     <div class="form-group">
                         <label for="update-cxdkRight">出线端口右出线</label>
-                        <input id="update-cxdkRight" name="cxdkRight" type="text" class="form-control" autocomplete="off">
-                        <div class="invalid-feedback">
-                            请输入出线端口右出线！
-                        </div>
+                        <input id="update-cxdkRight" name="cxdkRight" type="text" class="form-control" autocomplete="off" data-required="1">
+<!--                        <div class="invalid-feedback">-->
+<!--                            请输入出线端口右出线！-->
+<!--                        </div>-->
                     </div>
                     <div class="form-group">
                         <label for="update-gy">光源</label>
-                        <input id="update-gy" name="gy" type="text" class="form-control" autocomplete="off">
-                        <div class="invalid-feedback">
-                            请输入光源！
-                        </div>
+                        <input id="update-gy" name="gy" type="text" class="form-control" autocomplete="off" data-required="1">
+<!--                        <div class="invalid-feedback">-->
+<!--                            请输入光源！-->
+<!--                        </div>-->
                     </div>
                     <div class="form-group">
                         <label for="update-gl">功率W</label>
-                        <input id="update-gl" name="gl" type="text" class="form-control" autocomplete="off">
-                        <div class="invalid-feedback">
-                            请输入功率W！
-                        </div>
+                        <input id="update-gl" name="gl" type="text" class="form-control" autocomplete="off" data-required="1">
+<!--                        <div class="invalid-feedback">-->
+<!--                            请输入功率W！-->
+<!--                        </div>-->
                     </div>
                     <div class="form-group">
                         <label for="update-bz">备注</label>
-                        <input id="update-bz" name="bz" type="text" class="form-control" autocomplete="off">
-                        <div class="invalid-feedback">
-                            请输入备注！
-                        </div>
+                        <input id="update-bz" name="bz" type="text" class="form-control" autocomplete="off" data-required="1">
+<!--                        <div class="invalid-feedback">-->
+<!--                            请输入备注！-->
+<!--                        </div>-->
                     </div>
                     <div class="form-group">
                         <label for="update-dj">单价</label>
@@ -399,17 +402,17 @@
                     </div>
                     <div class="form-group">
                         <label for="update-je">金额</label>
-                        <input id="update-je" name="je" type="text" class="form-control" autocomplete="off">
-                        <div class="invalid-feedback">
-                            请输入金额！
-                        </div>
+                        <input id="update-je" name="je" type="text" class="form-control" autocomplete="off" data-required="1">
+<!--                        <div class="invalid-feedback">-->
+<!--                            请输入金额！-->
+<!--                        </div>-->
                     </div>
                     <div class="form-group">
                         <label for="update-chicun">开料尺寸</label>
-                        <input id="update-chicun" name="chicun" type="text" class="form-control" autocomplete="off">
-                        <div class="invalid-feedback">
-                            请输入开料尺寸！
-                        </div>
+                        <input id="update-chicun" name="chicun" type="text" class="form-control" autocomplete="off" data-required="1">
+<!--                        <div class="invalid-feedback">-->
+<!--                            请输入开料尺寸！-->
+<!--                        </div>-->
                     </div>
                 </form>
             </div>
