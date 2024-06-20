@@ -61,10 +61,10 @@ public class DdxdController {
      * @return ResultInfo
      */
     @RequestMapping("/queryList")
-    public ResultInfo queryList(String khmc, String ddh, HttpSession session) {
+    public ResultInfo queryList(String khmc, String ddh,String ksxdrq ,String jsxdrq , String azdz, HttpSession session) {
         UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
         try {
-            List<ddxd> list = ddxdService.queryList(khmc, ddh);
+            List<ddxd> list = ddxdService.queryList(khmc, ddh,ksxdrq ,jsxdrq ,azdz);
             return ResultInfo.success("获取成功", list);
         } catch (Exception e) {
             e.printStackTrace();

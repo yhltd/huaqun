@@ -20,6 +20,7 @@ function getShfs() {
         url: '/xlpz/hqxlShfs',
     }, false, '', function (res) {
         if (res.code == 200) {
+
             for (var i = 0; i < res.data.length; i++) {
                 $("#add-shfs").append("<option>" + res.data[i].shfs + "</option>");
                 $("#update-shfs").append("<option>" + res.data[i].shfs + "</option>");
@@ -98,62 +99,191 @@ function getLcys() {
     })
 }
 
-$(document).ready(function(){
-    $('#add-fj').on('change',function(){
+function hqxlGy() {
+    $ajax({
+        type: 'post',
+        url: '/xlpz/hqxlgy',
+    }, false, '', function (res) {
+        if (res.code == 200) {
+            for (var i = 0; i < res.data.length; i++) {
+                $("#add-gy").append("<option>" + res.data[i].gy + "</option>");
+                $("#update-gy").append("<option>" + res.data[i].gy + "</option>");
+            }
+        }
+    })
+}
+
+function getInputGh() {
+
+    var elementadd = document.getElementById("class-add-gh");
+    elementadd.innerHTML = '';
+    elementadd.innerHTML = "<label for='add-gh'>项目名称</label><input id='add-gh' name='gh' type='text' class='form-control' autocomplete='off' data-required='1'>";
+
+    var elementupdate = document.getElementById("class-update-gh");
+    elementupdate.innerHTML = '';
+    elementupdate.innerHTML = "<label for='update-gh'>项目名称</label><input id='update-gh' name='gh' type='text' class='form-control' autocomplete='off' data-required='1'>";
+
+
+}
+
+function getInputLcys() {
+
+
+    var elementadd = document.getElementById("class-add-lcys");
+    elementadd.innerHTML = '';
+    elementadd.innerHTML = "<label for='add-lcys'>铝材颜色</label><input id='add-lcys' name='lcys' type='text' class='form-control' autocomplete='off' data-required='1'>";
+
+    var elementupdate = document.getElementById("class-update-lcys");
+    elementupdate.innerHTML = '';
+    elementupdate.innerHTML = "<label for='update-lcys'>铝材颜色</label><input id='update-lcys' name='lcys' type='text' class='form-control' autocomplete='off' data-required='1'>";
+
+}
+
+function getInputGy() {
+
+    var elementadd = document.getElementById("class-add-gy");
+    elementadd.innerHTML = '';
+    elementadd.innerHTML = "<label for='add-gy'>光源</label><input id='add-gy' name='gy' type='text' class='form-control' autocomplete='off' data-required='1'>";
+
+    var elementupdate = document.getElementById("class-update-gy");
+    elementupdate.innerHTML = '';
+    elementupdate.innerHTML = "<label for='update-gy'>光源</label><input id='update-gy' name='gy' type='text' class='form-control' autocomplete='off' data-required='1'>";
+
+}
+
+
+function getSelectGh() {
+    var elementadd = document.getElementById("class-add-gh");
+    elementadd.innerHTML = '';
+    elementadd.innerHTML = "<label for='add-gh'>项目名称</label><select id='add-gh' name='gh' class='form-control'><option>--请选择--</option></select>";
+
+    var elementupdate = document.getElementById("class-update-gh");
+    elementupdate.innerHTML = '';
+    elementupdate.innerHTML = "<label for='update-gh'>项目名称</label><select id='update-gh' name='gh' class='form-control'><option>--请选择--</option></select>";
+}
+
+
+function getSelectLcys() {
+    var elementadd = document.getElementById("class-add-lcys");
+    elementadd.innerHTML = '';
+    elementadd.innerHTML = "<label for='add-lcys'>铝材颜色</label><select id='add-lcys' name='lcys' class='form-control'><option>--请选择--</option></select>";
+
+    var elementupdate = document.getElementById("class-update-lcys");
+    elementupdate.innerHTML = '';
+    elementupdate.innerHTML = "<label for='update-lcys'>铝材颜色</label><select id='update-lcys' name='lcys' class='form-control'><option>--请选择--</option></select>";
+}
+
+
+function getSelectGy() {
+    var elementadd = document.getElementById("class-add-gy");
+    elementadd.innerHTML = '';
+    elementadd.innerHTML = "<label for='add-gy'>光源</label><select id='add-gy' name='gy' class='form-control'><option>--请选择--</option></select>";
+
+    var elementupdate = document.getElementById("class-update-gy");
+    elementupdate.innerHTML = '';
+    elementupdate.innerHTML = "<label for='update-gy'>光源</label><select id='update-gy' name='gy' class='form-control'><option>--请选择--</option></select>";
+}
+
+
+$(document).ready(function () {
+    $('#add-fj').on('change', function () {
         var selectedValue = $(this).val();
         var select = document.getElementById('add-gh');
-        if (selectedValue === 'fjgh') {
+        if (selectedValue === '房间柜号') {
             select.innerHTML = '';
-        } else if (selectedValue === 'lxc') {
+            getInputGh()
+            getInputLcys()
+            getInputGy()
+        } else if (selectedValue === '铝型材') {
             select.innerHTML = '';
+            getSelectGh();
+            getSelectLcys();
+            getInputGy();
             getLxc();
             getLcys();
-        } else  if (selectedValue === 'dy') {
+        } else if (selectedValue === '电源') {
             select.innerHTML = '';
+            getSelectGh();
+            getSelectLcys();
+            getSelectGy();
+            hqxlGy();
             getDy();
-        } else  if (selectedValue === 'kg') {
+            getLcys();
+
+        } else if (selectedValue === '开关') {
             select.innerHTML = '';
+            getSelectGh();
+            getSelectLcys();
+            getInputGy();
             getKg();
-        } else  if (selectedValue === 'pj') {
+            getLcys();
+        } else if (selectedValue === '配件') {
             select.innerHTML = '';
+            getSelectGh();
+            getSelectLcys();
+            getInputGy();
             getPj();
+            getLcys();
         }
     })
 })
 
-$(document).ready(function(){
-    $('#update-fj').on('change',function(){
+$(document).ready(function () {
+    $('#update-fj').on('change', function () {
         var selectedValue = $(this).val();
         var select = document.getElementById('update-gh');
-        if (selectedValue === 'fjgh') {
+        if (selectedValue === '房间柜号') {
             select.innerHTML = '';
-        } else if (selectedValue === 'lxc') {
+            getInputGh()
+            getInputLcys()
+            getInputGy()
+        } else if (selectedValue === '铝型材') {
             select.innerHTML = '';
+            getSelectGh();
+            getSelectLcys()
+            getInputGy();
             getLxc();
             getLcys();
-        } else  if (selectedValue === 'dy') {
+        } else if (selectedValue === '电源') {
             select.innerHTML = '';
+            getSelectGh();
+            getSelectLcys();
+            getSelectGy();
             getDy();
-        } else  if (selectedValue === 'kg') {
+            hqxlGy();
+            getLcys();
+
+        } else if (selectedValue === '开关') {
             select.innerHTML = '';
+            getSelectGh();
+            getSelectLcys();
+            getInputGy();
             getKg();
-        } else  if (selectedValue === 'pj') {
+            getLcys();
+        } else if (selectedValue === '配件') {
             select.innerHTML = '';
+            getSelectGh();
+            getSelectLcys();
+            getInputGy();
             getPj();
+            getLcys();
         }
     })
 })
 
-function getJe(){
+function getJe() {
     var ddcd = parseFloat(document.getElementById('add-ddcd').value);
     var sl = parseFloat(document.getElementById('add-sl').value);
-    var je = ddcd *1 /1000 * sl
+    var je = ddcd * 1 / 1000 * sl
     document.getElementById("add-je").value = je;
 }
 
 function getList() {
+    $('#ksxdrq').val("");
+    $('#jsxdrq').val("");
     $('#khmc').val("");
     $('#ddh').val("");
+    $('#azdz').val("");
     $ajax({
         type: 'post',
         url: '/ddxd/getList',
@@ -166,8 +296,8 @@ function getList() {
                 draggingClass: "dragging",
                 resizeMode: 'fit'
             });
-            for (i=0;i<=res.data.id;i++){
-                idd=i;
+            for (i = 0; i <= res.data.id; i++) {
+                idd = i;
             }
         }
     })
@@ -191,46 +321,59 @@ $(function () {
         return false;
     });
 
-    $("#add-djbh").focus(function (){
+    $("#add-djbh").focus(function () {
         const today = new Date();
         const year = today.getFullYear();
         const month = ("0" + (today.getMonth() + 1)).slice(-2);
         const day = ('0' + today.getDate()).slice(-2);
         // const orderNumber = year + month + day + ('000').slice(-3);
-        const bianhao = orderCount.toString().padStart(3,'0');
+        const bianhao = orderCount.toString().padStart(3, '0');
         orderCount += 1;
         $ajax({
             type: 'post',
             url: '/ddxd/getList',
         }, false, '', function (res) {
             if (res.code == 200) {
-                if (res.data.length>0){
-                    var num=res.data[0].djbh;
+                if (res.data.length > 0) {
+                    var num = res.data[0].djbh;
                 }
-                if (res.data.length=0){
+                if (res.data.length = 0) {
                     $("#add-djbh").val("DD")
-                }else{
-                    var len=2;
-                    num=parseInt(num.split("_")[1],10)+1
-                    num=num.toString();
-                    while(num.length<len){
-                        num="0"+num;
+                } else {
+                    var len = 2;
+                    num = parseInt(num.split("_")[1], 10) + 1
+                    num = num.toString();
+                    while (num.length < len) {
+                        num = "0" + num;
                     }
-                    $("#add-supplierCode").val("DD"+num)
+                    $("#add-supplierCode").val("DD" + num)
                 }
             }
         })
     })
 
     $('#select-btn').click(function () {
+        var ksxdrq = $('#ksxdrq').val();
+        var jsxdrq = $('#jsxdrq').val();
         var khmc = $('#khmc').val();
         var ddh = $('#ddh').val();
+        var azdz = $('#azdz').val();
+        console.log(ksxdrq)
+        if (ksxdrq === "") {
+            ksxdrq = "1999-01-01";
+        }
+        if (jsxdrq === "") {
+            jsxdrq = "2030-12-31";
+        }
         $ajax({
             type: 'post',
             url: '/ddxd/queryList',
             data: {
+                ksxdrq: ksxdrq,
+                jsxdrq: jsxdrq,
                 khmc: khmc,
                 ddh: ddh,
+                azdz: azdz
             }
         }, true, '', function (res) {
             if (res.code == 200) {
@@ -247,6 +390,10 @@ $(function () {
     //点击新增按钮显示弹窗
     $("#add-btn").click(function () {
         $('#add-modal').modal('show');
+        getToken()
+        getInputGh()
+        getInputLcys()
+        getInputGy()
     });
 
     //新增弹窗里点击关闭按钮
@@ -395,7 +542,7 @@ function setTable(data) {
         toolbar: '#table-toolbar',
         toolbarAlign: 'left',
         theadClasses: "thead-light",//这里设置表头样式
-        style:'table-layout:fixed',
+        style: 'table-layout:fixed',
         columns: [
             {
                 field: '',
@@ -569,7 +716,7 @@ function toExcel() {
                 var body = {
                     khmc: array[i].khmc,
                     xdrq: array[i].xdrq,
-                    djbh:array[i].djbh,
+                    djbh: array[i].djbh,
                     shouhuo: array[i].shouhuo,
                     lxdh: array[i].lxdh,
                     shfs: array[i].shfs,
@@ -577,7 +724,7 @@ function toExcel() {
                     ddh: array[i].ddh,
                     fj: array[i].fj,
                     gh: array[i].gh,
-                    ddcd:array[i].ddcd,
+                    ddcd: array[i].ddcd,
                     sl: array[i].sl,
                     cxdk: array[i].cxdk,
                     cxdkRight: array[i].cxdkRight,
@@ -585,7 +732,7 @@ function toExcel() {
                     gy: array[i].gy,
                     dy: array[i].dy,
                     kg: array[i].kg,
-                    pj:array[i].pj,
+                    pj: array[i].pj,
                     gl: array[i].gl,
                     bz: array[i].bz,
                     dj: array[i].dj,
@@ -593,7 +740,7 @@ function toExcel() {
                     hd: array[i].hd,
                     shunxu: array[i].shunxu,
                     chicun: array[i].chicun,
-                    summoney:array[i].summoney,
+                    summoney: array[i].summoney,
                     wancheng: array[i].wancheng,
                     jgczy: array[i].jgczy,
                     wcsj: array[i].wcsj,
@@ -603,7 +750,7 @@ function toExcel() {
                 header.push(body)
             }
             console.log(header)
-            title = ['客户名称','下单日期','单据编号', '收货', '联系电话', '送货方式', '安装地址', '订单号','项目类别','项目名称','灯带长度mm','数量(支)','出线端口左','出线端口右','铝材颜色','光源','电源','开关','配件','功率W','备注','单价','付款状态','审单','顺序','尺寸','总金额','完成状态','加工操作员','完成时间','录入员','金额']
+            title = ['客户名称', '下单日期', '单据编号', '收货', '联系电话', '送货方式', '安装地址', '订单号', '项目类别', '项目名称', '灯带长度mm', '数量(支)', '出线端口左', '出线端口右', '铝材颜色', '光源', '电源', '开关', '配件', '功率W', '备注', '单价', '付款状态', '审单', '顺序', '尺寸', '总金额', '完成状态', '加工操作员', '完成时间', '录入员', '金额']
             JSONToExcelConvertor(header, "灯带下单", title)
 
         }
@@ -629,8 +776,7 @@ function JSONToExcelConvertor(JSONData, FileName, title, filter) {
             row += "<th align='center'>" + title[i] + '</th>';
         }
 
-    }
-    else {
+    } else {
         //不使用标题项
         for (var i in arrData[0]) {
             row += "<th align='center'>" + i + '</th>';
@@ -650,8 +796,7 @@ function JSONToExcelConvertor(JSONData, FileName, title, filter) {
                     var value = arrData[i][index] == null ? "" : arrData[i][index];
                     row += '<td>' + value + '</td>';
                 }
-            }
-            else {
+            } else {
                 var value = arrData[i][index] == null ? "" : arrData[i][index];
                 row += "<td align='center'>" + value + "</td>";
             }
@@ -701,4 +846,65 @@ function JSONToExcelConvertor(JSONData, FileName, title, filter) {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+}
+
+function getToken() {
+    $ajax({
+        type: 'post',
+        url: '/user/getToken',
+    }, false, '', function (res) {
+
+        if (res.code == 200) {
+
+            //默认当前日期
+            var date = new Date();
+            var day = ("0" + date.getDate()).slice(-2);
+            var month = ("0" + (date.getMonth() + 1)).slice(-2);
+            //拼接成yyyy-MM-dd的形式
+            var xdrq = date.getFullYear() + "-" + (month) + "-" + (day);
+            var djbh = "";
+            var ksxdrq = date.getFullYear() + "-" + (month) + "-" + (day);
+            var jsxdrq = date.getFullYear() + "-" + (month) + "-" + ("0" + (date.getDate() + 1)).slice(-2);
+            var khmc = "";
+            var ddh = "";
+            var azdz = "";
+            $ajax({
+                type: 'post',
+                url: '/ddxd/queryList',
+                data: {
+                    ksxdrq: ksxdrq,
+                    jsxdrq: jsxdrq,
+                    khmc: khmc,
+                    ddh: ddh,
+                    azdz: azdz
+                },
+                async: false,
+            }, false, '', function (res) {
+                var length;
+
+                length = 0;
+                if (res.data != undefined) {
+                    length = res.data
+                }
+                if (Math.floor((length + 1) / 10) === 0) {
+                    length = "000" + (length + 1);
+                } else if (Math.floor((length + 1) / 100) === 0) {
+                    length = "00" + (length + 1);
+                } else if (Math.floor((length + 1) / 1000) === 0) {
+                    length = "0" + (length + 1);
+                } else if (Math.floor((length + 1) / 10000) === 0) {
+                    length = (length + 1);
+                }
+                console.log(length)
+                djbh = "DD" + date.getFullYear() + (month) + (day) + length;
+                console.log(djbh)
+            })
+            console.log(djbh)
+            setForm(res.data, '#add-form');
+            $('#add-luruyuan').val(res.data.name);
+            $('#add-xdrq').val(xdrq);
+            $('#add-djbh').val(djbh);
+
+        }
+    })
 }

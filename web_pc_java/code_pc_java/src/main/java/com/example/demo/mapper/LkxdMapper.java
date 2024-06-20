@@ -16,8 +16,10 @@ public interface LkxdMapper extends BaseMapper<lkxd> {
 //    @Select("select customer_name_renyuan,insert_date,customer_name,wancheng,order_number,kailiao,shunxu,zuzhuang,baozhuang,customer_number,install_address,phone,shipping_address,pinyin,shendan,wancheng,shunxu as paixu from lvkuang_xiadan group by customer_name_renyuan,insert_date,customer_name,wancheng,order_number,kailiao,shunxu,zuzhuang,baozhuang,customer_number,install_address,phone,shipping_address,pinyin,shendan order by paixu,order_number desc;select insert_date,order_number,customer_name,num,'' as num,height,width,'正在加工' as jiagong,'' as shendan from lvkuang_xiadan where height != ''")
     List<lkxd> getList();
 
-    @Select("select * from lvkuang_xiadan where customer_number like '%'+#{customerNumber}+'%' and customer_name like '%'+#{customerName}+'%'  and install_address like '%'+#{installAddress}+'%' ")
-    List<lkxd> queryList(String customerNumber, String customerName,String installAddress);
+    @Select("select * from lvkuang_xiadan where customer_number like '%'+#{customerNumber}+'%' and customer_name like '%'+#{customerName}+'%'  and install_address like '%'+#{installAddress}+'%' and wancheng like '$'{wancheng}'$' and insertDate >= #{ksinsertDate} and insertDate <= #{jsinsertDate} ")
+    List<lkxd> queryList(String customerNumber, String customerName,String installAddress,String ksinsertDate,
+                         String jsinsertDate,
+                         String wancheng);
 
     @Select("select pinyin from userInfo where company like '%'+#{customerName}+'%' ")
     List<lkxd> queryPinYin(String customerName);

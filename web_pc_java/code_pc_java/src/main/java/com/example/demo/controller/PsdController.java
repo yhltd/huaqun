@@ -50,10 +50,19 @@ public class PsdController {
      * @return ResultInfo
      */
     @RequestMapping("/queryList")
-    public ResultInfo queryList(String orderNumber, String customerName, String songhuoAddress, String anzhuangAddress, String customerOrder, String songhuoDanhao, HttpSession session) {
+    public ResultInfo queryList(String orderNumber, String customerName, String songhuoAddress, String anzhuangAddress,
+                                String customerOrder, String songhuoDanhao,
+                                String ksinsertDate,
+                                String jsinsertDate,
+                                String wancheng,
+                                String kucun,
+                                HttpSession session) {
         UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
         try {
-            List<psd> list = psdService.queryList(orderNumber, customerName, songhuoAddress, anzhuangAddress, customerOrder, songhuoDanhao);
+            List<psd> list = psdService.queryList(orderNumber, customerName, songhuoAddress, anzhuangAddress, customerOrder, songhuoDanhao,ksinsertDate,
+                     jsinsertDate,
+                     wancheng,
+                     kucun);
             return ResultInfo.success("获取成功", list);
         } catch (Exception e) {
             e.printStackTrace();
@@ -99,6 +108,8 @@ public class PsdController {
         }
         try {
             psd psd = GsonUtil.toEntity(gsonUtil.get("addInfo"), psd.class);
+            System.out.println("===============");
+            System.out.println(psd);
             psd.setCustomerNeedImg1("http://yhocn.cn:9076/huaqun_erqi/" + psd.getOrderNumber()+ "-01.jpg");
             psd.setCustomerNeedImg2("http://yhocn.cn:9076/huaqun_erqi/" + psd.getOrderNumber()+ "-02.jpg");
             psd.setCustomerNeedImg3("http://yhocn.cn:9076/huaqun_erqi/" + psd.getOrderNumber()+ "-03.jpg");
@@ -180,6 +191,22 @@ public class PsdController {
             log.error("删除失败：{}", e.getMessage());
             log.error("参数：{}", idList);
             return ResultInfo.error("删除失败");
+        }
+    }
+
+    /**
+     * 根据开始时间和结束时间查询
+     */
+    @RequestMapping("/numberList")
+    public ResultInfo queryList(String ksinsertDate,String jsinsertDate,HttpSession session) {
+        UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
+        try {
+            List<psd> list = psdService.queryList(ksinsertDate ,jsinsertDate);
+            return ResultInfo.success("获取成功", list);
+        } catch (Exception e) {
+            e.printStackTrace();
+            log.error("获取失败：{}", e.getMessage());
+            return ResultInfo.error("错误!");
         }
     }
 

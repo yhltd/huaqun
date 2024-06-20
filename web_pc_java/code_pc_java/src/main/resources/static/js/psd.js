@@ -1,4 +1,5 @@
 var idd;
+
 function getList() {
     $('#orderNumber').val("");
     $('#customerName').val("");
@@ -18,8 +19,8 @@ function getList() {
                 draggingClass: "dragging",
                 resizeMode: 'fit'
             });
-            for (i=0;i<=res.data.id;i++){
-                idd=i;
+            for (i = 0; i <= res.data.id; i++) {
+                idd = i;
             }
         }
     })
@@ -27,6 +28,7 @@ function getList() {
 
 $(function () {
     getList();
+    setTable();
     initFileInput("fileInput1");
     initFileInput("fileInput2");
     initFileInput("fileInput3");
@@ -76,6 +78,16 @@ $(function () {
         var anzhuangAddress = $('#anzhuangAddress').val();
         var customerOrder = $('#customerOrder').val();
         var songhuoDanhao = $('#songhuoDanhao').val();
+        var ksinsertDate = $('#songhuoAddress').val();
+        var jsinsertDate = $('#anzhuangAddress').val();
+        var wancheng = $('#customerOrder').val();
+        var kucun = $('#songhuoDanhao').val();
+        if (ksinsertDate === "") {
+            ksinsertDate = "1999-01-01";
+        }
+        if (jsinsertDate === "") {
+            jsinsertDate = "2030-12-31";
+        }
         $ajax({
             type: 'post',
             url: '/psd/queryList',
@@ -86,6 +98,10 @@ $(function () {
                 anzhuangAddress: anzhuangAddress,
                 customerOrder: customerOrder,
                 songhuoDanhao: songhuoDanhao,
+                ksinsertDate: ksinsertDate,
+                jsinsertDate: jsinsertDate,
+                wancheng: wancheng,
+                kucun: kucun,
             }
         }, true, '', function (res) {
             if (res.code == 200) {
@@ -102,6 +118,7 @@ $(function () {
     //点击新增按钮显示弹窗
     $("#add-btn").click(function () {
         $('#add-modal').modal('show');
+        getNumbern();
     });
 
     //新增弹窗里点击关闭按钮
@@ -113,7 +130,9 @@ $(function () {
     $("#add-submit-btn").click(function () {
         var orderNumber = $('#add-orderNumber').val();
         let params = formToJson("#add-form");
-        if (checkForm('#add-form')) {
+        console.log("params", params)
+        console.log("orderNumber", orderNumber)
+        // if (checkForm('#add-form')) {
             $ajax({
                 type: 'post',
                 url: '/psd/add',
@@ -131,7 +150,7 @@ $(function () {
                     $('#add-close-btn').click();
                 }
             })
-        }
+        // }
     });
 
     //点击修改按钮显示弹窗
@@ -321,12 +340,12 @@ $(function () {
         }
     })
 
-    function initFileInput(ctrlName){
+    function initFileInput(ctrlName) {
         var control = $('#' + ctrlName);
         control.fileinput({
-            language:'zh',
-            uploadUrl:"https://huaqunwechar.com:9076/file/upload",
-            allowedFileExtensions: ['jpg','gif','png'],
+            language: 'zh',
+            uploadUrl: "https://localhost:9076/file/upload",
+            allowedFileExtensions: ['jpg', 'gif', 'png'],
             uploadAsync: false,
             showUpload: true,
             showRemove: true,
@@ -337,31 +356,29 @@ $(function () {
             enctype: 'multipart/form-data',
             validateInialCount: true,
             msgFilesTooMany: "选择上传的文件数量({n}) 超过允许的最大数值{m}!",
-            layoutTelates :{
-
-            },
-            uploadExtraData:function (){
+            layoutTelates: {},
+            uploadExtraData: function () {
                 // var file = document.getElementById("fileInput1").files;
                 var file = $("#add-orderNumber").orderNumber + "-01.jpg"
                 var path = "/huaqun_erqi/"
                 var kongjian = 3
                 var formData = {
-                    file:file,
-                    name:name,
-                    path:path,
-                    kongjian:kongjian,
+                    file: file,
+                    name: name,
+                    path: path,
+                    kongjian: kongjian,
                 };
                 return formData;
             }
-        }).on("filebatchuploadsuccess",function(event,data,previewId,index){
+        }).on("filebatchuploadsuccess", function (event, data, previewId, index) {
             console.log('正在上传');
-        }).on("filebatchuploadsuccess",function(event,data,previewId,index){
-            var form = data.form,files = data.files,extra = data.extra,
-                response = data.response,reader = data.reader;
+        }).on("filebatchuploadsuccess", function (event, data, previewId, index) {
+            var form = data.form, files = data.files, extra = data.extra,
+                response = data.response, reader = data.reader;
             console.log(response);
             console.log(response.status);
-        }).on("filebatchuploaderror",function(event,data,msg){
-            console.log('上传失败!'+ data.status);
+        }).on("filebatchuploaderror", function (event, data, msg) {
+            console.log('上传失败!' + data.status);
         })
     }
 });
@@ -372,6 +389,7 @@ function setTable(data) {
     }
 
     $('#psdTable').bootstrapTable({
+        // url: "http://本机ip:后台端口/Journalism/getList",
         data: data,
         sortStable: true,
         classes: 'table table-hover text-nowrap table table-bordered',
@@ -383,7 +401,7 @@ function setTable(data) {
         toolbar: '#table-toolbar',
         toolbarAlign: 'left',
         theadClasses: "thead-light",//这里设置表头样式
-        style:'table-layout:fixed',
+        style: 'table-layout:fixed',
         columns: [
             {
                 field: '',
@@ -447,6 +465,11 @@ function setTable(data) {
                 align: 'center',
                 sortable: true,
                 width: 130,
+                formatter: function(value,row,index){
+                    console.log("value",value)
+                    console.log("row", row)
+                    return '<img  src="D:/coach/huaqun_erqi/sBzneyCWQuNp83ae17d404efef8092ed6ec3f17517aa.png" class="img-rounded" >';
+                }
             }, {
                 field: 'customerNeedImg2',
                 title: '客户需求(图片)',
@@ -1080,3 +1103,46 @@ function setTable(data) {
 //         $("add-customerNameRiqi").value = format1
 //     })
 // })
+
+function getNumbern() {
+    //默认当前日期
+    var date = new Date();
+    var day = ("0" + date.getDate()).slice(-2);
+    var month = ("0" + (date.getMonth() + 1)).slice(-2);
+    //拼接成yyyy-MM-dd的形式
+    var xdrq = date.getFullYear() + "-" + (month) + "-" + (day);
+    var djbh = "";
+    var ksinsertDate = date.getFullYear() + "-" + (month) + "-" + (day);
+    var jsinsertDate = date.getFullYear() + "-" + (month) + "-" + ("0" + (date.getDate() + 1)).slice(-2);
+    $ajax({
+        type: 'post',
+        url: '/psd/numberList',
+        data: {
+            ksinsertDate: ksinsertDate,
+            jsinsertDate: jsinsertDate,
+        },
+        async: false,
+    }, false, '', function (res) {
+        var length;
+
+        length = 0;
+        if (res.data != undefined) {
+            length = res.data
+        }
+        if (Math.floor((length + 1) / 10) === 0) {
+            length = "000" + (length + 1);
+        } else if (Math.floor((length + 1) / 100) === 0) {
+            length = "00" + (length + 1);
+        } else if (Math.floor((length + 1) / 1000) === 0) {
+            length = "0" + (length + 1);
+        } else if (Math.floor((length + 1) / 10000) === 0) {
+            length = (length + 1);
+        }
+        console.log(length)
+        djbh = "LK" + date.getFullYear() + (month) + (day) + length;
+        console.log(djbh)
+    })
+    console.log(djbh)
+    $('#add-orderNumber').val(djbh);
+    $('#add-insertDate').val(xdrq);
+}

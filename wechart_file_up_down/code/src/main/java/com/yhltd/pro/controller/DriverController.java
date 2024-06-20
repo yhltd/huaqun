@@ -59,7 +59,7 @@ public class DriverController {
         String thisPath = request.getParameter("path");
         String fileName = file.getOriginalFilename();
         //文件保存路径
-        String filePath = "C:/iis_jxc/sharepic_path" + thisPath;
+        String filePath = "D:/coach" + thisPath;
         //文件重命名,防止重复
         filePath = filePath + fileName;
         //文件对象
@@ -69,7 +69,7 @@ public class DriverController {
             dest.getParentFile().mkdir();
         }
         try {
-            Path folder = Paths.get("C:/iis_jxc/sharepic_path" + thisPath);
+            Path folder = Paths.get("D:/coach" + thisPath);
             long size = Files.walk(folder)
                     .filter(path -> path.toFile().isFile())
                     .mapToLong(path -> path.toFile().length())

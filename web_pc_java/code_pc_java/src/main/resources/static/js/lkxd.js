@@ -23,8 +23,8 @@ $(document).ready(function () {
             data: {
                 customerName: customerName,
             }
-        },false,'',function(res){
-            if(res.code == 200){
+        }, false, '', function (res) {
+            if (res.code == 200) {
                 document.getElementById("add-pinyin").value = res.data[0].pinyin
             }
         })
@@ -40,8 +40,8 @@ $(document).ready(function () {
             data: {
                 customerName: customerName,
             }
-        },false,'',function(res){
-            if(res.code == 200){
+        }, false, '', function (res) {
+            if (res.code == 200) {
                 document.getElementById("update-pinyin").value = res.data[0].pinyin
             }
         })
@@ -213,10 +213,10 @@ function getJlpp() {
     })
 }
 
-$(document).ready(function(){
-    $('#add-kaijiaolian').on('change',function(){
-    // var kjlk = document.getElementById('add-kaijiaolian').value;
-    var selectedValue = $(this).val();
+$(document).ready(function () {
+    $('#add-kaijiaolian').on('change', function () {
+        // var kjlk = document.getElementById('add-kaijiaolian').value;
+        var selectedValue = $(this).val();
         if (selectedValue == '开二孔') {
             $("#add-jiaolian3SelectLeft").remove();
             $("#add-jiaolian3InsertLeft").remove();
@@ -324,8 +324,8 @@ $(document).ready(function(){
     })
 })
 
-$(document).ready(function(){
-    $('#update-kaijiaolian').on('change',function(){
+$(document).ready(function () {
+    $('#update-kaijiaolian').on('change', function () {
         // var kjlk = document.getElementById('add-kaijiaolian').value;
         var selectedValue = $(this).val();
         if (selectedValue == '开二孔') {
@@ -438,20 +438,20 @@ $(document).ready(function(){
 function getJe() {
     var jl1 = document.getElementById('add-jiaolian1SelectLeft').value;
     var jl2 = document.getElementById('add-jiaolian2SelectLeft').value;
-    if($("#add-jiaolian3SelectLeft").jiaolian3SelectLeft != "" && $("#add-jiaolian3SelectLeft").jiaolian3SelectLeft != undefined) {
+    if ($("#add-jiaolian3SelectLeft").jiaolian3SelectLeft != "" && $("#add-jiaolian3SelectLeft").jiaolian3SelectLeft != undefined) {
         var jl3 = $("#add-jiaolian3SelectLeft").jiaolian3SelectLeft;
     }
-    if($("#add-jiaolian4SelectLeft").jiaolian4SelectLeft != "" && $("#add-jiaolian4SelectLeft").jiaolian4SelectLeft != undefined) {
+    if ($("#add-jiaolian4SelectLeft").jiaolian4SelectLeft != "" && $("#add-jiaolian4SelectLeft").jiaolian4SelectLeft != undefined) {
         var jl4 = $("#add-jiaolian4SelectLeft").jiaolian4SelectLeft;
     }
-    if($("#add-jiaolian5SelectLeft").jiaolian5SelectLeft != "" && $("#add-jiaolian5SelectLeft").jiaolian5SelectLeft != undefined) {
+    if ($("#add-jiaolian5SelectLeft").jiaolian5SelectLeft != "" && $("#add-jiaolian5SelectLeft").jiaolian5SelectLeft != undefined) {
         var jl5 = $("#add-jiaolian5SelectLeft").jiaolian5SelectLeft;
     }
-    if($("#add-jiaolian6SelectLeft").jiaolian6SelectLeft != "" && $("#add-jiaolian6SelectLeft").jiaolian6SelectLeft != undefined) {
+    if ($("#add-jiaolian6SelectLeft").jiaolian6SelectLeft != "" && $("#add-jiaolian6SelectLeft").jiaolian6SelectLeft != undefined) {
         var jl6 = $("#add-jiaolian6SelectLeft").jiaolian6SelectLeft;
     }
     var height = parseFloat(document.getElementById('add-height').value);
-    if (jl1 == '距中'){
+    if (jl1 == '距中') {
         var jiaolian1Insert = height / 2;
         document.getElementById("add-jiaolian1SelectRight").value = jl1
         document.getElementById("add-jiaolian1InsertLeft").value = jiaolian1Insert;
@@ -497,7 +497,7 @@ function getUpdJe() {
     var jl5 = document.getElementById('update-jiaolian5SelectLeft').value;
     var jl6 = document.getElementById('update-jiaolian6SelectLeft').value;
     var height = parseFloat(document.getElementById('add-height').value);
-    if (jl1 == '距中'){
+    if (jl1 == '距中') {
         var jiaolian1Insert = height / 2;
         document.getElementById("update-jiaolian1SelectRight").value = jl1
         document.getElementById("update-jiaolian1InsertLeft").value = jiaolian1Insert;
@@ -611,8 +611,8 @@ function getList() {
                 draggingClass: "dragging",
                 resizeMode: 'fit'
             });
-            for (i=0;i<=res.data.id;i++){
-                idd=i;
+            for (i = 0; i <= res.data.id; i++) {
+                idd = i;
             }
         }
     })
@@ -636,19 +636,33 @@ $(function () {
         var customerNumber = $('#customerNumber').val();
         var customerName = $('#customerName').val();
         var installAddress = $('#installAddress').val();
+        var ksinsertDate = $('#ksinsertDate').val();
+        var jsinsertDate = $('#jsinsertDate').val();
+        var wancheng = $('#wancheng').val();
+        if (ksinsertDate === "") {
+            ksinsertDate = "1999-01-01";
+        }
+        if (jsinsertDate === "") {
+            jsinsertDate = "2030-12-31";
+        }
         $ajax({
-            type: 'post',
-            url: '/lkxd/queryList',
-            data: {
-                customerNumber: customerNumber,
-                customerName: customerName,
-                installAddress: installAddress,
+                type: 'post',
+                url: '/lkxd/queryList',
+                data: {
+                    customerNumber: customerNumber,
+                    customerName: customerName,
+                    installAddress: installAddress,
+                    ksinsertDate: ksinsertDate,
+                    jsinsertDate: jsinsertDate,
+                    wancheng: wancheng,
+                }
+            },
+            true, '', function (res) {
+                if (res.code == 200) {
+                    setTable(res.data);
+                }
             }
-        }, true, '', function (res) {
-            if (res.code == 200) {
-                setTable(res.data);
-            }
-        })
+        )
     });
 
     //刷新
@@ -659,6 +673,7 @@ $(function () {
     //点击新增按钮显示弹窗
     $("#add-btn").click(function () {
         $('#add-modal').modal('show');
+        getToken();
     });
 
     //新增弹窗里点击关闭按钮
@@ -792,7 +807,7 @@ $(function () {
 
     //修改弹窗里点击提交按钮
     $('#update-submit-btn').click(function () {
-        getUpdKk();
+        // getUpdKk();
         // getUpdJe();
         getUpdPfsl();
         getUpdPfje();
@@ -874,7 +889,7 @@ function setTable(data) {
         toolbar: '#table-toolbar',
         toolbarAlign: 'left',
         theadClasses: "thead-light",//这里设置表头样式
-        style:'table-layout:fixed',
+        style: 'table-layout:fixed',
         columns: [
             {
                 field: '',
@@ -1378,7 +1393,7 @@ function toExcel() {
                 var body = {
                     customerName: array[i].customerName,
                     insertDate: array[i].insertDate,
-                    orderNumber:array[i].orderNumber,
+                    orderNumber: array[i].orderNumber,
                     pinyin: array[i].pinyin,
                     shippingAddress: array[i].shippingAddress,
                     phone: array[i].phone,
@@ -1386,7 +1401,7 @@ function toExcel() {
                     installAddress: array[i].installAddress,
                     customerNumber: array[i].customerNumber,
                     height: array[i].height,
-                    width:array[i].width,
+                    width: array[i].width,
                     lvxingcai: array[i].lvxingcai,
                     num: array[i].num,
                     lvcaiYanse: array[i].lvcaiYanse,
@@ -1394,7 +1409,7 @@ function toExcel() {
                     boliYanse: array[i].boliYanse,
                     lashouXinghao: array[i].lashouXinghao,
                     jiaoliankongFangxiangLeft: array[i].jiaoliankongFangxiangLeft,
-                    jiaoliankongFangxiangRight:array[i].jiaoliankongFangxiangRight,
+                    jiaoliankongFangxiangRight: array[i].jiaoliankongFangxiangRight,
                     lashouShuliangLeft: array[i].lashouShuliangLeft,
                     lashouShuliangRight: array[i].lashouShuliangRight,
                     lashouweiSelectLeft: array[i].lashouweiSelectLeft,
@@ -1402,7 +1417,7 @@ function toExcel() {
                     lashouweiSelectRight: array[i].lashouweiSelectRight,
                     lashouweiInsertRight: array[i].lashouweiInsertRight,
                     zhuangsuoshuliangInsertLeft1: array[i].zhuangsuoshuliangInsertLeft1,
-                    zhuangsuoshuliangInsertRight1:array[i].zhuangsuoshuliangInsertRight1,
+                    zhuangsuoshuliangInsertRight1: array[i].zhuangsuoshuliangInsertRight1,
                     zhuangsuofangwiangSelectRight: array[i].zhuangsuofangwiangSelectRight,
                     zhuangsuofangweiInsertLeft1: array[i].zhuangsuofangweiInsertLeft1,
                     zhuangsuofangweiInsertLeft2: array[i].zhuangsuofangweiInsertLeft2,
@@ -1410,7 +1425,7 @@ function toExcel() {
                     zhuangsuofangweiInsertRight2: array[i].zhuangsuofangweiInsertRight2,
                     kaijiaolian: array[i].kaijiaolian,
                     jiaolian1SelectLeft: array[i].jiaolian1SelectLeft,
-                    jiaolian1InsertLeft:array[i].jiaolian1InsertLeft,
+                    jiaolian1InsertLeft: array[i].jiaolian1InsertLeft,
                     jiaolian1SelectRight: array[i].jiaolian1SelectRight,
                     jiaolian1InsertRight: array[i].jiaolian1InsertRight,
                     jiaolian2SelectLeft: array[i].jiaolian2SelectLeft,
@@ -1418,7 +1433,7 @@ function toExcel() {
                     jiaolian2SelectRight: array[i].jiaolian2SelectRight,
                     jiaolian2InsertRight: array[i].jiaolian2InsertRight,
                     jiaolian3SelectLeft: array[i].jiaolian3SelectLeft,
-                    jiaolian3InsertLeft:array[i].jiaolian3InsertLeft,
+                    jiaolian3InsertLeft: array[i].jiaolian3InsertLeft,
                     jiaolian3SelectRight: array[i].jiaolian3SelectRight,
                     jiaolian3InsertRight: array[i].jiaolian3InsertRight,
                     jiaolian4SelectLeft: array[i].jiaolian4SelectLeft,
@@ -1426,7 +1441,7 @@ function toExcel() {
                     jiaolian4SelectRight: array[i].jiaolian4SelectRight,
                     jiaolian4InsertRight: array[i].jiaolian4InsertRight,
                     jiaolian5SelectLeft: array[i].jiaolian5SelectLeft,
-                    jiaolian5InsertLeft:array[i].jiaolian5InsertLeft,
+                    jiaolian5InsertLeft: array[i].jiaolian5InsertLeft,
                     jiaolian5SelectRight: array[i].jiaolian5SelectRight,
                     jiaolian5InsertRight: array[i].jiaolian5InsertRight,
                     jiaolian6SelectLeft: array[i].jiaolian6SelectLeft,
@@ -1434,14 +1449,14 @@ function toExcel() {
                     jiaolian6SelectRight: array[i].jiaolian6SelectRight,
                     jiaolian6InsertRight: array[i].jiaolian6InsertRight,
                     fujianSelect1: array[i].fujianSelect1,
-                    fujianSelect2:array[i].fujianSelect2,
+                    fujianSelect2: array[i].fujianSelect2,
                     fujianSelect3: array[i].fujianSelect3,
                     fujianSelect4: array[i].fujianSelect4,
                     pinpaiSelect1: array[i].pinpaiSelect1,
                     pinpaiSelect2: array[i].pinpaiSelect2,
                     pinpaiSelect3: array[i].pinpaiSelect3,
                     pinpaiSelect4: array[i].pinpaiSelect4,
-                    fujianShuliang1:array[i].fujianShuliang1,
+                    fujianShuliang1: array[i].fujianShuliang1,
                     fujianShuliang2: array[i].fujianShuliang2,
                     fujianShuliang3: array[i].fujianShuliang3,
                     fujianShuliang4: array[i].fujianShuliang4,
@@ -1451,14 +1466,14 @@ function toExcel() {
                     sumShuliang2: array[i].sumShuliang2,
                     danjia2: array[i].danjia2,
                     sumJine2: array[i].sumJine2,
-                    wancheng:array[i].wancheng,
+                    wancheng: array[i].wancheng,
                     qita: array[i].qita,
                     customerNameRenyuan: array[i].customerNameRenyuan,
                 }
                 header.push(body)
             }
             console.log(header)
-            title = ['客户名称','下单日期','单据编号', '简码', '送货地址', '联系电话', '送货方式', '安装地址','订单号','高','宽','铝型材','下单数量','铝材颜色','玻璃深加工','玻璃颜色','拉手型号','铰链孔方向左','铰链孔方向右','拉手数量左','拉手数量右','左拉手位从上向下','左拉手位从右向左','右拉手位从下向上','右拉手位从左向右','装锁数量(左)','装锁数量(右)','装锁方向(右)','装锁方位(左1)','装锁方位(左2)','装锁方位(右1)','装锁方位(右2)','开铰链孔','左铰链孔从下向上','左铰链孔从右向左','右铰链孔从下向上','右铰链孔从左向右','左铰链孔2从下向上','左铰链孔2从右向左','右铰链孔2从下向上','右铰链孔2从左向右','左铰链孔3从下向上','左铰链孔3从右向左','右铰链孔3从下向上','右铰链孔3从左向右','左铰链孔4从下向上','左铰链孔4从右向左','右铰链孔4从下向上','右铰链孔4从左向右','左铰链孔5从下向上','左铰链孔5从右向左','右铰链孔5从下向上','右铰链孔5从左向右','左铰链孔6从下向上','左铰链孔6从右向左','右铰链孔6从下向上','右铰链孔6从左向右','附件1','附件2','附件3','附件4','品牌1','品牌2','品牌3','品牌4','附件数量1','附件数量2','附件数量3','附件数量4','数量(平方)','单价(平方)','金额(平方)','数量(周长)','单价(周长)','金额(周长)','完成','其他项目(说明)','录入员']
+            title = ['客户名称', '下单日期', '单据编号', '简码', '送货地址', '联系电话', '送货方式', '安装地址', '订单号', '高', '宽', '铝型材', '下单数量', '铝材颜色', '玻璃深加工', '玻璃颜色', '拉手型号', '铰链孔方向左', '铰链孔方向右', '拉手数量左', '拉手数量右', '左拉手位从上向下', '左拉手位从右向左', '右拉手位从下向上', '右拉手位从左向右', '装锁数量(左)', '装锁数量(右)', '装锁方向(右)', '装锁方位(左1)', '装锁方位(左2)', '装锁方位(右1)', '装锁方位(右2)', '开铰链孔', '左铰链孔从下向上', '左铰链孔从右向左', '右铰链孔从下向上', '右铰链孔从左向右', '左铰链孔2从下向上', '左铰链孔2从右向左', '右铰链孔2从下向上', '右铰链孔2从左向右', '左铰链孔3从下向上', '左铰链孔3从右向左', '右铰链孔3从下向上', '右铰链孔3从左向右', '左铰链孔4从下向上', '左铰链孔4从右向左', '右铰链孔4从下向上', '右铰链孔4从左向右', '左铰链孔5从下向上', '左铰链孔5从右向左', '右铰链孔5从下向上', '右铰链孔5从左向右', '左铰链孔6从下向上', '左铰链孔6从右向左', '右铰链孔6从下向上', '右铰链孔6从左向右', '附件1', '附件2', '附件3', '附件4', '品牌1', '品牌2', '品牌3', '品牌4', '附件数量1', '附件数量2', '附件数量3', '附件数量4', '数量(平方)', '单价(平方)', '金额(平方)', '数量(周长)', '单价(周长)', '金额(周长)', '完成', '其他项目(说明)', '录入员']
             JSONToExcelConvertor(header, "铝框下单", title)
 
         }
@@ -1484,8 +1499,7 @@ function JSONToExcelConvertor(JSONData, FileName, title, filter) {
             row += "<th align='center'>" + title[i] + '</th>';
         }
 
-    }
-    else {
+    } else {
         //不使用标题项
         for (var i in arrData[0]) {
             row += "<th align='center'>" + i + '</th>';
@@ -1505,8 +1519,7 @@ function JSONToExcelConvertor(JSONData, FileName, title, filter) {
                     var value = arrData[i][index] == null ? "" : arrData[i][index];
                     row += '<td>' + value + '</td>';
                 }
-            }
-            else {
+            } else {
                 var value = arrData[i][index] == null ? "" : arrData[i][index];
                 row += "<td align='center'>" + value + "</td>";
             }
@@ -1556,4 +1569,68 @@ function JSONToExcelConvertor(JSONData, FileName, title, filter) {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+}
+
+function getToken() {
+    $ajax({
+        type: 'post',
+        url: '/user/getToken',
+    }, false, '', function (res) {
+
+        if (res.code == 200) {
+
+            //默认当前日期
+            var date = new Date();
+            var day = ("0" + date.getDate()).slice(-2);
+            var month = ("0" + (date.getMonth() + 1)).slice(-2);
+            //拼接成yyyy-MM-dd的形式
+            var xdrq = date.getFullYear() + "-" + (month) + "-" + (day);
+            var djbh = "";
+            var ksinsertDate = date.getFullYear() + "-" + (month) + "-" + (day);
+            var jsinsertDate = date.getFullYear() + "-" + (month) + "-" + ("0" + (date.getDate() + 1)).slice(-2);
+            var customerNumber = "";
+            var ddh = "";
+            var customerName = "";
+            var installAddress = "";
+            var wancheng = "";
+            $ajax({
+                type: 'post',
+                url: '/lkxd/queryList',
+                data: {
+                    customerNumber: customerNumber,
+                    customerName: customerName,
+                    installAddress: installAddress,
+                    ksinsertDate: ksinsertDate,
+                    jsinsertDate: jsinsertDate,
+                    wancheng: wancheng,
+                },
+                async: false,
+            }, false, '', function (res) {
+                var length;
+
+                length = 0;
+                if (res.data != undefined) {
+                    length = res.data
+                }
+                if (Math.floor((length + 1) / 10) === 0) {
+                    length = "000" + (length + 1);
+                } else if (Math.floor((length + 1) / 100) === 0) {
+                    length = "00" + (length + 1);
+                } else if (Math.floor((length + 1) / 1000) === 0) {
+                    length = "0" + (length + 1);
+                } else if (Math.floor((length + 1) / 10000) === 0) {
+                    length = (length + 1);
+                }
+                console.log(length)
+                djbh = "LK" + date.getFullYear() + (month) + (day) + length;
+                console.log(djbh)
+            })
+            console.log(djbh)
+            setForm(res.data, '#add-form');
+            $('#add-customerNameRenyuan').val(res.data.name);
+            $('#add-insertDate').val(xdrq);
+            $('#add-orderNumber').val(djbh);
+
+        }
+    })
 }

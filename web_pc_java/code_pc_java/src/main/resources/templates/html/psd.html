@@ -46,7 +46,7 @@
         <input id="customerName" type="text" class="form-control" placeholder="客户名称" autocomplete="off">
     </div>
     <div class="col-md-3 mb-2">
-        <input id="songhuoAddress" type="text" class="form-control" placeholder="送货地址" autocomplete="off">
+        <input id="songhuoAddress" type="text" class="form-control" placeholder="配送区域" autocomplete="off">
     </div>
     <div class="col-md-3 mb-2">
         <input id="anzhuangAddress" type="text" class="form-control" placeholder="安装地址" autocomplete="off">
@@ -56,6 +56,34 @@
     </div>
     <div class="col-md-3 mb-2">
         <input id="songhuoDanhao" type="text" class="form-control" placeholder="送货单号" autocomplete="off">
+    </div>
+    <div class="col-md-3 mb-2">
+        <input id="ksinsertDate" type="da" class="form-control" placeholder="开始时间" autocomplete="off">
+    </div>
+    <div class="col-md-3 mb-2">
+        <input id="jsinsertDate" type="text" class="form-control" placeholder="结束时间" autocomplete="off">
+    </div>
+    <div class="col-md-3 mb-2">
+        <select id="wancheng" name="wancheng" class="form-control" autocomplete="off"
+                data-required="1">
+            <option>--请选择配送情况--</option>
+            <option value="优先处理">优先处理</option>
+            <option value="配货作业中">配货作业中</option>
+            <option value="配货完成">配货完成</option>
+            <option value="正在配送">正在配送</option>
+            <option value="完成">完成</option>
+            <option value="未完成-缺货">未完成-缺货</option>
+            <option value="未完成-配错货">未完成-配错货</option>
+        </select>
+    </div>
+    <div class="col-md-3 mb-2">
+        <select id="kucun" name="kucun" class="form-control" autocomplete="off"
+                data-required="1">
+            <option>--请选择商品库存信息--</option>
+            <option value="安排处理">安排处理</option>
+            <option value="处理当中">处理当中</option>
+            <option value="处理完成">处理完成</option>
+        </select>
     </div>
     <div class="col-md-2 mb-2">
         <button id="select-btn" class="btn btn-primary">
@@ -642,180 +670,180 @@
 <!--                        </div>-->
                     </div>
                     <label for="add-customerNeedImg1">客户需求(图片)</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-customerNeedImg1">
+                    <form th:action="@{https://localhost:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-customerNeedImg1">
                         <input type="file" id="fileInput1" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">
                     </form>
 
-                    <label for="add-customerNeedImg2">客户需求(图片)</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-customerNeedImg2">
-                        <input type="file" id="fileInput2" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">
-                    </form>
+<!--                    <label for="add-customerNeedImg2">客户需求(图片)</label>-->
+<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-customerNeedImg2">-->
+<!--                        <input type="file" id="fileInput2" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">-->
+<!--                    </form>-->
 
-                    <label for="add-customerNeedImg3">客户需求(图片)</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-customerNeedImg3">
-                        <input type="file" id="fileInput3" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">
-                    </form>
+<!--                    <label for="add-customerNeedImg3">客户需求(图片)</label>-->
+<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-customerNeedImg3">-->
+<!--                        <input type="file" id="fileInput3" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">-->
+<!--                    </form>-->
 
-                    <label for="add-customerNeedImg4">客户需求(图片)</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-customerNeedImg4">
-                        <input type="file" id="fileInput4" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">
-                    </form>
+<!--                    <label for="add-customerNeedImg4">客户需求(图片)</label>-->
+<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-customerNeedImg4">-->
+<!--                        <input type="file" id="fileInput4" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">-->
+<!--                    </form>-->
 
-                    <label for="add-customerNeedImg5">客户需求(图片)</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-customerNeedImg5">
-                        <input type="file" id="fileInput5" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">
-                    </form>
+<!--                    <label for="add-customerNeedImg5">客户需求(图片)</label>-->
+<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-customerNeedImg5">-->
+<!--                        <input type="file" id="fileInput5" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">-->
+<!--                    </form>-->
 
-                    <label for="add-customerNeedImg6">客户需求(图片)</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-customerNeedImg6">
-                        <input type="file" id="fileInput6" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">
-                    </form>
+<!--                    <label for="add-customerNeedImg6">客户需求(图片)</label>-->
+<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-customerNeedImg6">-->
+<!--                        <input type="file" id="fileInput6" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">-->
+<!--                    </form>-->
 
-                    <label for="add-customerNeedImg7">客户需求(图片)</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-customerNeedImg7">
-                        <input type="file" id="fileInput7" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">
-                    </form>
+<!--                    <label for="add-customerNeedImg7">客户需求(图片)</label>-->
+<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-customerNeedImg7">-->
+<!--                        <input type="file" id="fileInput7" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">-->
+<!--                    </form>-->
 
-                    <label for="add-customerNeedImg8">客户需求(图片)</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-customerNeedImg8">
-                        <input type="file" id="fileInput8" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">
-                    </form>
-                    <label for="add-customerNeedText2">文件(图片)</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-customerNeedText2">
-                        <input type="file" id="fileInput9" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">
-                    </form>
-                    <label for="add-peihuoImg1">配货图片</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-peihuoImg1">
-                        <input type="file" id="fileInput10" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">
-                    </form>
-                    <label for="add-peihuoImg2">配货图片</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-peihuoImg2">
-                        <input type="file" id="fileInput11" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">
-                    </form>
-                    <label for="add-peihuoImg3">配货图片</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-peihuoImg3">
-                        <input type="file" id="fileInput12" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">
-                    </form>
-                    <label for="add-peihuoImg4">配货图片</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-peihuoImg4">
-                        <input type="file" id="fileInput13" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">
-                    </form>
-                    <label for="add-peihuoImg5">配货图片</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-peihuoImg5">
-                        <input type="file" id="fileInput14" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">
-                    </form>
-                    <label for="add-peihuoImg6">配货图片</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-peihuoImg6">
-                        <input type="file" id="fileInput15" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">
-                    </form>
-                    <label for="add-peihuoImg7">配货图片</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-peihuoImg7">
-                        <input type="file" id="fileInput16" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">
-                    </form>
-                    <label for="add-peihuoImg8">配货图片</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-peihuoImg8">
-                        <input type="file" id="fileInput17" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">
-                    </form>
-                    <label for="add-peisongImg1">配送图片</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-peisongImg1">
-                        <input type="file" id="fileInput18" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">
-                    </form>
-                    <label for="add-peisongImg2">配送图片</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-peisongImg2">
-                        <input type="file" id="fileInput19" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">
-                    </form>
-                    <label for="add-peisongImg3">配送图片</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-peisongImg3">
-                        <input type="file" id="fileInput20" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">
-                    </form>
-                    <label for="add-peisongImg4">配送图片</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-peisongImg4">
-                        <input type="file" id="fileInput21" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">
-                    </form>
+<!--                    <label for="add-customerNeedImg8">客户需求(图片)</label>-->
+<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-customerNeedImg8">-->
+<!--                        <input type="file" id="fileInput8" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">-->
+<!--                    </form>-->
+<!--                    <label for="add-customerNeedText2">文件(图片)</label>-->
+<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-customerNeedText2">-->
+<!--                        <input type="file" id="fileInput9" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">-->
+<!--                    </form>-->
+<!--                    <label for="add-peihuoImg1">配货图片</label>-->
+<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-peihuoImg1">-->
+<!--                        <input type="file" id="fileInput10" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">-->
+<!--                    </form>-->
+<!--                    <label for="add-peihuoImg2">配货图片</label>-->
+<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-peihuoImg2">-->
+<!--                        <input type="file" id="fileInput11" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">-->
+<!--                    </form>-->
+<!--                    <label for="add-peihuoImg3">配货图片</label>-->
+<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-peihuoImg3">-->
+<!--                        <input type="file" id="fileInput12" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">-->
+<!--                    </form>-->
+<!--                    <label for="add-peihuoImg4">配货图片</label>-->
+<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-peihuoImg4">-->
+<!--                        <input type="file" id="fileInput13" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">-->
+<!--                    </form>-->
+<!--                    <label for="add-peihuoImg5">配货图片</label>-->
+<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-peihuoImg5">-->
+<!--                        <input type="file" id="fileInput14" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">-->
+<!--                    </form>-->
+<!--                    <label for="add-peihuoImg6">配货图片</label>-->
+<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-peihuoImg6">-->
+<!--                        <input type="file" id="fileInput15" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">-->
+<!--                    </form>-->
+<!--                    <label for="add-peihuoImg7">配货图片</label>-->
+<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-peihuoImg7">-->
+<!--                        <input type="file" id="fileInput16" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">-->
+<!--                    </form>-->
+<!--                    <label for="add-peihuoImg8">配货图片</label>-->
+<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-peihuoImg8">-->
+<!--                        <input type="file" id="fileInput17" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">-->
+<!--                    </form>-->
+<!--                    <label for="add-peisongImg1">配送图片</label>-->
+<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-peisongImg1">-->
+<!--                        <input type="file" id="fileInput18" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">-->
+<!--                    </form>-->
+<!--                    <label for="add-peisongImg2">配送图片</label>-->
+<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-peisongImg2">-->
+<!--                        <input type="file" id="fileInput19" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">-->
+<!--                    </form>-->
+<!--                    <label for="add-peisongImg3">配送图片</label>-->
+<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-peisongImg3">-->
+<!--                        <input type="file" id="fileInput20" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">-->
+<!--                    </form>-->
+<!--                    <label for="add-peisongImg4">配送图片</label>-->
+<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-peisongImg4">-->
+<!--                        <input type="file" id="fileInput21" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">-->
+<!--                    </form>-->
 
-                    <label for="add-peisongImg5">配送图片</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-peisongImg5">
-                        <input type="file" id="fileInput22" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">
-                    </form>
+<!--                    <label for="add-peisongImg5">配送图片</label>-->
+<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-peisongImg5">-->
+<!--                        <input type="file" id="fileInput22" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">-->
+<!--                    </form>-->
 
-                    <label for="add-peisongImg6">配送图片</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-peisongImg6">
-                        <input type="file" id="fileInput23" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">
-                    </form>
+<!--                    <label for="add-peisongImg6">配送图片</label>-->
+<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-peisongImg6">-->
+<!--                        <input type="file" id="fileInput23" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">-->
+<!--                    </form>-->
 
-                    <label for="add-peisongImg7">配送图片</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-peisongImg7">
-                        <input type="file" id="fileInput24" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">
-                    </form>
+<!--                    <label for="add-peisongImg7">配送图片</label>-->
+<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-peisongImg7">-->
+<!--                        <input type="file" id="fileInput24" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">-->
+<!--                    </form>-->
 
-                    <label for="add-peisongImg8">配送图片</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-peisongImg8">
-                        <input type="file" id="fileInput25" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">
-                    </form>
-                    <label for="add-kucunImg1">商品库存(图片)</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-kucunImg1">
-                        <input type="file" id="fileInput26" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">
-                    </form>
-                    <label for="add-kucunImg2">商品库存(图片)</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-kucunImg2">
-                        <input type="file" id="fileInput27" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">
-                    </form>
-                    <label for="add-kucunImg3">商品库存(图片)</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-kucunImg3">
-                        <input type="file" id="fileInput28" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">
-                    </form>
-                    <label for="add-kucunImg4">商品库存(图片)</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-kucunImg4">
-                        <input type="file" id="fileInput29" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">
-                    </form>
-                    <label for="add-kucunImg5">商品库存(图片)</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-kucunImg5">
-                        <input type="file" id="fileInput30" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">
-                    </form>
-                    <label for="add-kucunImg6">商品库存(图片)</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-kucunImg6">
-                        <input type="file" id="fileInput31" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">
-                    </form>
-                    <label for="add-kucunImg7">商品库存(图片)</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-kucunImg7">
-                        <input type="file" id="fileInput32" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">
-                    </form>
-                    <label for="add-kucunImg8">商品库存(图片)</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-kucunImg8">
-                        <input type="file" id="fileInput33" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">
-                    </form>
-                    <label for="add-wenjianImg1">文件(图片)</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-wenjianImg1">
-                        <input type="file" id="fileInput34" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">
-                    </form>
-                    <label for="add-wenjianImg2">文件(图片)</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-wenjianImg2">
-                        <input type="file" id="fileInput35" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">
-                    </form>
-                    <label for="add-wenjianImg3">文件(图片)</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-wenjianImg3">
-                        <input type="file" id="fileInput36" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">
-                    </form>
-                    <label for="add-wenjianImg4">文件(图片)</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-wenjianImg4">
-                        <input type="file" id="fileInput37" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">
-                    </form>
-                    <label for="add-wenjianImg5">文件(图片)</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-wenjianImg5">
-                        <input type="file" id="fileInput38" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">
-                    </form>
-                    <label for="add-wenjianImg6">文件(图片)</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-wenjianImg6">
-                        <input type="file" id="fileInput39" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">
-                    </form>
-                    <label for="add-wenjianImg7">文件(图片)</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-wenjianImg7">
-                        <input type="file" id="fileInput40" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">
-                    </form>
-                    <label for="add-wenjianImg8">文件(图片)</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-wenjianImg8">
-                        <input type="file" id="fileInput41" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">
-                    </form>
+<!--                    <label for="add-peisongImg8">配送图片</label>-->
+<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-peisongImg8">-->
+<!--                        <input type="file" id="fileInput25" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">-->
+<!--                    </form>-->
+<!--                    <label for="add-kucunImg1">商品库存(图片)</label>-->
+<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-kucunImg1">-->
+<!--                        <input type="file" id="fileInput26" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">-->
+<!--                    </form>-->
+<!--                    <label for="add-kucunImg2">商品库存(图片)</label>-->
+<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-kucunImg2">-->
+<!--                        <input type="file" id="fileInput27" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">-->
+<!--                    </form>-->
+<!--                    <label for="add-kucunImg3">商品库存(图片)</label>-->
+<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-kucunImg3">-->
+<!--                        <input type="file" id="fileInput28" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">-->
+<!--                    </form>-->
+<!--                    <label for="add-kucunImg4">商品库存(图片)</label>-->
+<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-kucunImg4">-->
+<!--                        <input type="file" id="fileInput29" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">-->
+<!--                    </form>-->
+<!--                    <label for="add-kucunImg5">商品库存(图片)</label>-->
+<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-kucunImg5">-->
+<!--                        <input type="file" id="fileInput30" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">-->
+<!--                    </form>-->
+<!--                    <label for="add-kucunImg6">商品库存(图片)</label>-->
+<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-kucunImg6">-->
+<!--                        <input type="file" id="fileInput31" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">-->
+<!--                    </form>-->
+<!--                    <label for="add-kucunImg7">商品库存(图片)</label>-->
+<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-kucunImg7">-->
+<!--                        <input type="file" id="fileInput32" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">-->
+<!--                    </form>-->
+<!--                    <label for="add-kucunImg8">商品库存(图片)</label>-->
+<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-kucunImg8">-->
+<!--                        <input type="file" id="fileInput33" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">-->
+<!--                    </form>-->
+<!--                    <label for="add-wenjianImg1">文件(图片)</label>-->
+<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-wenjianImg1">-->
+<!--                        <input type="file" id="fileInput34" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">-->
+<!--                    </form>-->
+<!--                    <label for="add-wenjianImg2">文件(图片)</label>-->
+<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-wenjianImg2">-->
+<!--                        <input type="file" id="fileInput35" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">-->
+<!--                    </form>-->
+<!--                    <label for="add-wenjianImg3">文件(图片)</label>-->
+<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-wenjianImg3">-->
+<!--                        <input type="file" id="fileInput36" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">-->
+<!--                    </form>-->
+<!--                    <label for="add-wenjianImg4">文件(图片)</label>-->
+<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-wenjianImg4">-->
+<!--                        <input type="file" id="fileInput37" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">-->
+<!--                    </form>-->
+<!--                    <label for="add-wenjianImg5">文件(图片)</label>-->
+<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-wenjianImg5">-->
+<!--                        <input type="file" id="fileInput38" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">-->
+<!--                    </form>-->
+<!--                    <label for="add-wenjianImg6">文件(图片)</label>-->
+<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-wenjianImg6">-->
+<!--                        <input type="file" id="fileInput39" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">-->
+<!--                    </form>-->
+<!--                    <label for="add-wenjianImg7">文件(图片)</label>-->
+<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-wenjianImg7">-->
+<!--                        <input type="file" id="fileInput40" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">-->
+<!--                    </form>-->
+<!--                    <label for="add-wenjianImg8">文件(图片)</label>-->
+<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-wenjianImg8">-->
+<!--                        <input type="file" id="fileInput41" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">-->
+<!--                    </form>-->
                 </form>
             </div>
             <div class="border-top" style="padding: 15px;">

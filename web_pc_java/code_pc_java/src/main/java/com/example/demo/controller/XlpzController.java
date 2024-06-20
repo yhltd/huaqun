@@ -307,5 +307,16 @@ public class XlpzController {
             return ResultInfo.error("错误!");
         }
     }
+    @RequestMapping("/hqxlgy")
+    public ResultInfo hqxlgy() {
+        try {
+            List<xlpz> getList = xlpzService.hqxlgy();
+            return ResultInfo.success("获取成功", getList);
+        } catch (Exception e) {
+            e.printStackTrace();
+            log.error("获取失败：{}", e.getMessage());
+            return ResultInfo.error("错误!");
+        }
+    }
 
 }

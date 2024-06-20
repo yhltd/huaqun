@@ -22,8 +22,8 @@ public interface DdxdMapper extends BaseMapper<ddxd> {
 //    @Select("select distinct ddh,luruyuan,case when isnull(wancheng,'未审验') = '' then '未审验' else isnull(wancheng,'未审验') end as wancheng,xdrq,djbh,shouhuo,lxdh,shfs,azdz,khmc,case when isnull(fkzt,'未付款') = '' then '未付款' else isnull(fkzt,'未付款') end as fkzt,isnull(hd,'')as hd,case case when isnull(wancheng,'未审验') = '' then '未审验' else isnull(wancheng,'未审验') end when '未审验' then '1' when '优先处理' then '2' when '已审验' then '3' when '正在加工' then '4' when '加工完成' then '5' when '完成' then '6' else shunxu end as shunxu,sum_money,jgczy,wcsj from lightbelt where khmc = #{khmc} order by shunxu,djbh DESC")
 //    List<ddxd> getListByKeHu(String khmc);
 
-    @Select("select * from lightbelt where khmc like '%'+#{khmc}+'%' and ddh like '%'+#{ddh}+'%' ")
-    List<ddxd> queryList(String khmc, String ddh);
+    @Select("select * from lightbelt where khmc like '%'+#{khmc}+'%' and ddh like '%'+#{ddh}+'%' and azdz like '%'+#{azdz}+'%' and xdrq >= #{ksxdrq} and xdrq <= #{jsxdrq}")
+    List<ddxd> queryList(String khmc, String ddh,String ksxdrq ,String jsxdrq , String azdz );
 
     @Delete("delete from lightbelt where id=#{id}")
     boolean deleteid(int id);

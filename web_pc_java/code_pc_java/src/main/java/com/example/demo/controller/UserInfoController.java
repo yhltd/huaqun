@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import com.alibaba.fastjson2.JSONObject;
 import com.example.demo.entity.UserInfo;
 import com.example.demo.entity.xlpz;
 import com.example.demo.service.UserInfoService;
@@ -29,6 +30,8 @@ public class UserInfoController {
         try {
             //获取user
             Map<String, Object> map = userInfoService.login(username, password);
+            System.out.println("map");
+            System.out.println(map);
 
             //为Null则查询不到
             if (StringUtils.isEmpty(map)) {
@@ -148,6 +151,7 @@ public class UserInfoController {
     @RequestMapping("/delete")
     public ResultInfo delete(@RequestBody HashMap map,HttpSession session) {
         UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
+        System.out.println(userInfo);
         GsonUtil gsonUtil = new GsonUtil(GsonUtil.toJson(map));
         List<Integer> idList = GsonUtil.toList(gsonUtil.get("idList"), Integer.class);
         if(!userInfo.getPower().equals("管理员")){
@@ -179,4 +183,19 @@ public class UserInfoController {
         }
     }
 
+    @RequestMapping("/getToken")
+    public ResultInfo getToken(HttpSession session) {
+        try {
+            String token = SessionUtil.getToken(session);
+            System.out.println(token);
+            JSONObject tokenJson = JSONObject.parseObject(token);
+
+            return ResultInfo.success("获取成功", tokenJson);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            log.error("获取失败：{}", e.getMessage());
+            return ResultInfo.error("错误!");
+        }
+    }
 }

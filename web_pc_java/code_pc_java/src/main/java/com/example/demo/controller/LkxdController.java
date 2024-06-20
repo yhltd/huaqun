@@ -52,10 +52,12 @@ public class LkxdController {
      * @return ResultInfo
      */
     @RequestMapping("/queryList")
-    public ResultInfo queryList(String customerNumber, String customerName,String installAddress, HttpSession session) {
+    public ResultInfo queryList(String customerNumber, String customerName,String installAddress, String ksinsertDate,
+                                String jsinsertDate,
+                                String wancheng, HttpSession session) {
         UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
         try {
-            List<lkxd> list = lkxdService.queryList(customerNumber, customerName, installAddress);
+            List<lkxd> list = lkxdService.queryList(customerNumber, customerName, installAddress,ksinsertDate,jsinsertDate,wancheng);
             return ResultInfo.success("获取成功", list);
         } catch (Exception e) {
             e.printStackTrace();

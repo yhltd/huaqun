@@ -24,7 +24,7 @@ public class DdxdImpl extends ServiceImpl<DdxdMapper, ddxd> implements DdxdServi
 //    public List<ddxd> getListByKeHu(String khmc) { return ddxdMapper.getListByKeHu(khmc); }
 
     @Override
-    public List<ddxd> queryList(String khmc, String ddh) { return ddxdMapper.queryList(khmc,ddh); }
+    public List<ddxd> queryList(String khmc, String ddh,String ksxdrq ,String jsxdrq ,String azdz ) { return ddxdMapper.queryList(khmc,ddh, ksxdrq , jsxdrq , azdz ); }
 
     @Override
     public boolean update(ddxd ddxd) { return updateById(ddxd); }

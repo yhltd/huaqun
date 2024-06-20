@@ -69,4 +69,6 @@ public interface XlpzMapper extends BaseMapper<xlpz> {
     @Select("select jlpp from dropdowntable")
     List<xlpz> hqxlJlpp();
 
+    @Select("select gy from dropdowntable")
+    List<xlpz> hqxlgy();
 }

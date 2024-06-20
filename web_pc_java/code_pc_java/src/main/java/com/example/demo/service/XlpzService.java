@@ -64,4 +64,6 @@ public interface XlpzService extends IService<xlpz> {
 
     List<xlpz> hqxlJlpp();
 
+    List<xlpz> hqxlgy();
+
 }

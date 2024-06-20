@@ -24,7 +24,7 @@ public interface DdxdService extends IService<ddxd> {
     /**
      * 根据客户名称和订单号查询
      */
-    List<ddxd> queryList(String khmc, String ddh);
+    List<ddxd> queryList(String khmc, String ddh,String ksxdrq ,String jsxdrq,String azdz );
 
     /**
      * 修改
