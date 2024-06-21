@@ -58,10 +58,10 @@
         <input id="songhuoDanhao" type="text" class="form-control" placeholder="送货单号" autocomplete="off">
     </div>
     <div class="col-md-3 mb-2">
-        <input id="ksinsertDate" type="da" class="form-control" placeholder="开始时间" autocomplete="off">
+        <input id="ksinsertDate" type="date" class="form-control" placeholder="开始时间" autocomplete="off">
     </div>
     <div class="col-md-3 mb-2">
-        <input id="jsinsertDate" type="text" class="form-control" placeholder="结束时间" autocomplete="off">
+        <input id="jsinsertDate" type="date" class="form-control" placeholder="结束时间" autocomplete="off">
     </div>
     <div class="col-md-3 mb-2">
         <select id="wancheng" name="wancheng" class="form-control" autocomplete="off"
@@ -129,721 +129,964 @@
             </div>
             <div class="modal-body">
                 <form id="add-form" class="needs-validation" enctype="multipart/form-data" novalidate>
-                    <div class="form-group">
-                        <label for="add-orderNumber">单号</label>
-                        <input id="add-orderNumber" name="orderNumber" type="text" class="form-control" autocomplete="off">
-                        <div class="invalid-feedback">
-                            请输入单号！
+
+                    <div class="row justify-content-evenly">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="add-orderNumber">单号</label>
+                                <input id="add-orderNumber" name="orderNumber" type="text" class="form-control" autocomplete="off">
+                                <div class="invalid-feedback">
+                                    请输入单号！
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="add-insertDate">日期</label>
+                                <input id="add-insertDate" name="insertDate" type="date" class="form-control" autocomplete="off">
+                                <div class="invalid-feedback">
+                                    请输入日期！
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="add-insertDate">日期</label>
-                        <input id="add-insertDate" name="insertDate" type="date" class="form-control" autocomplete="off">
-                        <div class="invalid-feedback">
-                            请输入日期！
+                    <div class="row justify-content-evenly">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="add-customerName">客户名称</label>
+                                <input id="add-customerName" name="customerName" type="text" class="form-control" autocomplete="off">
+                                <div class="invalid-feedback">
+                                    请输入客户名称！
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="add-customerNameRenyuan">录入员</label>
+                                <input id="add-customerNameRenyuan" name="customerNameRenyuan" type="text" class="form-control" autocomplete="off">
+                                <div class="invalid-feedback">
+                                    请输入录入员！
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+
+
+                    <div class="row justify-content-evenly">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="add-customerNameRiqi">完成时间</label>
+                                <input id="add-customerNameRiqi" name="customerNameRiqi" type="datetime-local" step="1" class="form-control" autocomplete="off">
+                                <div class="invalid-feedback">
+                                    请输入完成时间！
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="add-customerNeedText">客户需求(文字)</label>
+                                <input id="add-customerNeedText" name="customerNeedText" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入客户需求(文字)！-->
+                                <!--                        </div>-->
+                            </div>
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="add-customerName">客户名称</label>
-                        <input id="add-customerName" name="customerName" type="text" class="form-control" autocomplete="off">
-                        <div class="invalid-feedback">
-                            请输入客户名称！
+
+                    <div class="row justify-content-evenly">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="add-customerNeedTextRenyuan">录入员</label>
+                                <input id="add-customerNeedTextRenyuan" name="customerNeedTextRenyuan" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入录入员！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="add-customerNeedTextRiqi">完成时间</label>
+                                <input id="add-customerNeedTextRiqi" name="customerNeedTextRiqi" type="datetime-local" step="1" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入完成时间！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="row justify-content-evenly">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="add-customerNeedImg1Renyuan">客户需求图片1录入员</label>
+                                <input id="add-customerNeedImg1Renyuan" name="customerNeedImg1Renyuan" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入录入员！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="add-customerNeedImg1Riqi">完成时间</label>
+                                <input id="add-customerNeedImg1Riqi" name="customerNeedImg1Riqi" type="datetime-local" step="1" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入完成时间！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="row justify-content-evenly">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="add-customerNeedText1">配送文字1</label>
+                                <input id="add-customerNeedText1" name="customerNeedText1" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入配送文字1！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="add-customerNeedText1Renyuan">文件图片1录入员</label>
+                                <input id="add-customerNeedText1Renyuan" name="customerNeedText1Renyuan" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入录入员！-->
+                                <!--                        </div>-->
+                            </div>
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="add-customerNameRenyuan">录入员</label>
-                        <input id="add-customerNameRenyuan" name="customerNameRenyuan" type="text" class="form-control" autocomplete="off">
-                        <div class="invalid-feedback">
-                            请输入录入员！
+
+
+                    <div class="row justify-content-evenly">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="add-customerNeedText1Riqi">完成时间</label>
+                                <input id="add-customerNeedText1Riqi" name="customerNeedText1Riqi" type="datetime-local" step="1" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入完成时间！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="add-customerNeedText2Renyuan">文件图片2录入员</label>
+                                <input id="add-customerNeedText2Renyuan" name="customerNeedText2Renyuan" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入录入员！-->
+                                <!--                        </div>-->
+                            </div>
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="add-customerNameRiqi">完成时间</label>
-                        <input id="add-customerNameRiqi" name="customerNameRiqi" type="datetime-local" step="1" class="form-control" autocomplete="off">
-                        <div class="invalid-feedback">
-                            请输入完成时间！
+
+
+
+                    <div class="row justify-content-evenly">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="add-customerNeedText2Riqi">完成时间</label>
+                                <input id="add-customerNeedText2Riqi" name="customerNeedText2Riqi" type="datetime-local" step="1" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入完成时间！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+                        <div class="col-6">
+
+                            <div class="form-group">
+                                <label for="add-songhuoAddress">送货地址</label>
+                                <input id="add-songhuoAddress" name="songhuoAddress" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入送货地址！-->
+                                <!--                        </div>-->
+                            </div>
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="add-customerNeedText">客户需求(文字)</label>
-                        <input id="add-customerNeedText" name="customerNeedText" type="text" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入客户需求(文字)！-->
-<!--                        </div>-->
+
+
+                    <div class="row justify-content-evenly">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="add-songhuoAddressRenyuan">录入员</label>
+                                <input id="add-songhuoAddressRenyuan" name="songhuoAddressRenyuan" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入录入员！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="add-songhuoAddressRiqi">完成时间</label>
+                                <input id="add-songhuoAddressRiqi" name="songhuoAddressRiqi" type="datetime-local" step="1" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入完成时间！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="add-customerNeedTextRenyuan">录入员</label>
-                        <input id="add-customerNeedTextRenyuan" name="customerNeedTextRenyuan" type="text" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入录入员！-->
-<!--                        </div>-->
+
+                    <div class="row justify-content-evenly">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="add-anzhuangAddress">安装地址</label>
+                                <input id="add-anzhuangAddress" name="anzhuangAddress" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入安装地址！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="add-anzhuangAddressRenyuan">录入员</label>
+                                <input id="add-anzhuangAddressRenyuan" name="anzhuangAddressRenyuan" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入录入员！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="add-customerNeedTextRiqi">完成时间</label>
-                        <input id="add-customerNeedTextRiqi" name="customerNeedTextRiqi" type="datetime-local" step="1" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入完成时间！-->
-<!--                        </div>-->
+                    <div class="row justify-content-evenly">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="add-anzhuangAddressRiqi">完成时间</label>
+                                <input id="add-anzhuangAddressRiqi" name="anzhuangAddressRiqi" type="datetime-local" step="1" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入完成时间！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="add-phone">联系人、电话</label>
+                                <input id="add-phone" name="phone" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入联系人、电话！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="add-customerNeedImg1Renyuan">客户需求图片1录入员</label>
-                        <input id="add-customerNeedImg1Renyuan" name="customerNeedImg1Renyuan" type="text" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入录入员！-->
-<!--                        </div>-->
-                    </div>
-                    <div class="form-group">
-                        <label for="add-customerNeedImg1Riqi">完成时间</label>
-                        <input id="add-customerNeedImg1Riqi" name="customerNeedImg1Riqi" type="datetime-local" step="1" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入完成时间！-->
-<!--                        </div>-->
+
+                    <div class="row justify-content-evenly">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="add-phoneRenyuan">录入员</label>
+                                <input id="add-phoneRenyuan" name="phoneRenyuan" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入录入员！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="add-phoneRiqi">完成时间</label>
+                                <input id="add-phoneRiqi" name="phoneRiqi" type="datetime-local" step="1" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入完成时间！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="add-customerNeedText1">配送文字1</label>
-                        <input id="add-customerNeedText1" name="customerNeedText1" type="text" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入配送文字1！-->
-<!--                        </div>-->
+                    <div class="row justify-content-evenly">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="add-customerOrder">客户订单号</label>
+                                <input id="add-customerOrder" name="customerOrder" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入客户订单号！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="add-customerOrderRenyuan">录入员</label>
+                                <input id="add-customerOrderRenyuan" name="customerOrderRenyuan" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入录入员！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="add-customerNeedText1Renyuan">文件图片1录入员</label>
-                        <input id="add-customerNeedText1Renyuan" name="customerNeedText1Renyuan" type="text" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入录入员！-->
-<!--                        </div>-->
+
+                    <div class="row justify-content-evenly">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="add-customerOrderRiqi">完成时间</label>
+                                <input id="add-customerOrderRiqi" name="customerOrderRiqi" type="datetime-local" step="1" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入完成时间！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="add-songhuoDanhao">送货单号</label>
+                                <input id="add-songhuoDanhao" name="songhuoDanhao" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入送货单号！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="add-customerNeedText1Riqi">完成时间</label>
-                        <input id="add-customerNeedText1Riqi" name="customerNeedText1Riqi" type="datetime-local" step="1" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入完成时间！-->
-<!--                        </div>-->
+
+                    <div class="row justify-content-evenly">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="add-songhuoDanhaoRenyuan">录入员</label>
+                                <input id="add-songhuoDanhaoRenyuan" name="songhuoDanhaoRenyuan" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入录入员！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="add-songhuoDanhaoRiqi">完成时间</label>
+                                <input id="add-songhuoDanhaoRiqi" name="songhuoDanhaoRiqi" type="datetime-local" step="1" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入完成时间！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="add-customerNeedText2Renyuan">文件图片2录入员</label>
-                        <input id="add-customerNeedText2Renyuan" name="customerNeedText2Renyuan" type="text" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入录入员！-->
-<!--                        </div>-->
+
+
+                    <div class="row justify-content-evenly">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="add-peihuoImg1Renyuan">配货图片1录入员</label>
+                                <input id="add-peihuoImg1Renyuan" name="peihuoImg1Renyuan" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入录入员！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="add-peihuoImg1Riqi">完成时间</label>
+                                <input id="add-peihuoImg1Riqi" name="peihuoImg1Riqi" type="datetime-local" step="1" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入完成时间！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="add-customerNeedText2Riqi">完成时间</label>
-                        <input id="add-customerNeedText2Riqi" name="customerNeedText2Riqi" type="datetime-local" step="1" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入完成时间！-->
-<!--                        </div>-->
+
+                    <div class="row justify-content-evenly">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="add-peihuoImg2Renyuan">配货图片2录入员</label>
+                                <input id="add-peihuoImg2Renyuan" name="peihuoImg2Renyuan" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入录入员！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="add-peihuoImg2Riqi">完成时间</label>
+                                <input id="add-peihuoImg2Riqi" name="peihuoImg2Riqi" type="datetime-local" step="1" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入完成时间！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="add-songhuoAddress">送货地址</label>
-                        <input id="add-songhuoAddress" name="songhuoAddress" type="text" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入送货地址！-->
-<!--                        </div>-->
+
+
+                    <div class="row justify-content-evenly">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="add-peihuoImg3Renyuan">配货图片3录入员</label>
+                                <input id="add-peihuoImg3Renyuan" name="peihuoImg3Renyuan" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入录入员！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="add-peihuoImg3Riqi">完成时间</label>
+                                <input id="add-peihuoImg3Riqi" name="peihuoImg3Riqi" type="datetime-local" step="1" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入完成时间！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="add-songhuoAddressRenyuan">录入员</label>
-                        <input id="add-songhuoAddressRenyuan" name="songhuoAddressRenyuan" type="text" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入录入员！-->
-<!--                        </div>-->
+
+                    <div class="row justify-content-evenly">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="add-peihuoImg4Renyuan">配货图片4录入员</label>
+                                <input id="add-peihuoImg4Renyuan" name="peihuoImg4Renyuan" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入录入员！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="add-peihuoImg4Riqi">完成时间</label>
+                                <input id="add-peihuoImg4Riqi" name="peihuoImg4Riqi" type="datetime-local" step="1" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入完成时间！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="add-songhuoAddressRiqi">完成时间</label>
-                        <input id="add-songhuoAddressRiqi" name="songhuoAddressRiqi" type="datetime-local" step="1" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入完成时间！-->
-<!--                        </div>-->
+
+                    <div class="row justify-content-evenly">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="add-peihuoImg5Renyuan">配货图片5录入员</label>
+                                <input id="add-peihuoImg5Renyuan" name="peihuoImg5Renyuan" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入录入员！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="add-peihuoImg5Riqi">完成时间</label>
+                                <input id="add-peihuoImg5Riqi" name="peihuoImg5Riqi" type="datetime-local" step="1" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入完成时间！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+
                     </div>
 
-                    <div class="form-group">
-                        <label for="add-anzhuangAddress">安装地址</label>
-                        <input id="add-anzhuangAddress" name="anzhuangAddress" type="text" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入安装地址！-->
-<!--                        </div>-->
+
+                    <div class="row justify-content-evenly">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="add-peisongImg1Renyuan">配送图片1录入员</label>
+                                <input id="add-peisongImg1Renyuan" name="peisongImg1Renyuan" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入录入员！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="add-peisongImg1Riqi">完成时间</label>
+                                <input id="add-peisongImg1Riqi" name="peisongImg1Riqi" type="datetime-local" step="1" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入完成时间！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="add-anzhuangAddressRenyuan">录入员</label>
-                        <input id="add-anzhuangAddressRenyuan" name="anzhuangAddressRenyuan" type="text" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入录入员！-->
-<!--                        </div>-->
+
+                    <div class="row justify-content-evenly">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="add-peisongImg2Renyuan">配送图片2录入员</label>
+                                <input id="add-peisongImg2Renyuan" name="peisongImg2Renyuan" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入录入员！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="add-peisongImg2Riqi">完成时间</label>
+                                <input id="add-peisongImg2Riqi" name="peisongImg2Riqi" type="datetime-local" step="1" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入完成时间！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="add-anzhuangAddressRiqi">完成时间</label>
-                        <input id="add-anzhuangAddressRiqi" name="anzhuangAddressRiqi" type="datetime-local" step="1" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入完成时间！-->
-<!--                        </div>-->
+
+
+                    <div class="row justify-content-evenly">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="add-peisongImg3Renyuan">配送图片3录入员</label>
+                                <input id="add-peisongImg3Renyuan" name="peisongImg3Renyuan" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入录入员！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="add-peisongImg3Riqi">完成时间</label>
+                                <input id="add-peisongImg3Riqi" name="peisongImg3Riqi" type="datetime-local" step="1" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入完成时间！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="add-phone">联系人、电话</label>
-                        <input id="add-phone" name="phone" type="text" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入联系人、电话！-->
-<!--                        </div>-->
+
+
+                    <div class="row justify-content-evenly">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="add-wancheng">完成情况</label>
+                                <input id="add-wancheng" name="wancheng" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入完成情况！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="add-wanchengRenyuan">录入员</label>
+                                <input id="add-wanchengRenyuan" name="wanchengRenyuan" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入录入员！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="add-phoneRenyuan">录入员</label>
-                        <input id="add-phoneRenyuan" name="phoneRenyuan" type="text" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入录入员！-->
-<!--                        </div>-->
+                    <div class="row justify-content-evenly">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="add-wanchengRiqi">完成时间</label>
+                                <input id="add-wanchengRiqi" name="wanchengRiqi" type="datetime-local" step="1" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入完成时间！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="add-beizhu">备注</label>
+                                <input id="add-beizhu" name="beizhu" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入备注！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="add-phoneRiqi">完成时间</label>
-                        <input id="add-phoneRiqi" name="phoneRiqi" type="datetime-local" step="1" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入完成时间！-->
-<!--                        </div>-->
+
+                    <div class="row justify-content-evenly">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="add-beizhuRenyuan">录入员</label>
+                                <input id="add-beizhuRenyuan" name="beizhuRenyuan" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入录入员！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="add-beizhuRiqi">完成时间</label>
+                                <input id="add-beizhuRiqi" name="beizhuRiqi" type="datetime-local" step="1" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入完成时间！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="add-customerOrder">客户订单号</label>
-                        <input id="add-customerOrder" name="customerOrder" type="text" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入客户订单号！-->
-<!--                        </div>-->
+
+
+                    <div class="row justify-content-evenly">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="add-kucunText">商品库存(文字)</label>
+                                <input id="add-kucunText" name="kucunText" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入商品库存(文字)！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="add-kucunTextRenyuan">录入员</label>
+                                <input id="add-kucunTextRenyuan" name="kucunTextRenyuan" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入录入员！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="add-customerOrderRenyuan">录入员</label>
-                        <input id="add-customerOrderRenyuan" name="customerOrderRenyuan" type="text" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入录入员！-->
-<!--                        </div>-->
+
+                    <div class="row justify-content-evenly">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="add-kucunTextRiqi">完成时间</label>
+                                <input id="add-kucunTextRiqi" name="kucunTextRiqi" type="datetime-local" step="1" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入完成时间！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="add-kucunImg1Renyuan">录库存图片1入员</label>
+                                <input id="add-kucunImg1Renyuan" name="kucunImg1Renyuan" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入录入员！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="add-customerOrderRiqi">完成时间</label>
-                        <input id="add-customerOrderRiqi" name="customerOrderRiqi" type="datetime-local" step="1" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入完成时间！-->
-<!--                        </div>-->
+
+
+                    <div class="row justify-content-evenly">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="add-kucunImg1Riqi">完成时间</label>
+                                <input id="add-kucunImg1Riqi" name="kucunImg1Riqi" type="datetime-local" step="1" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入完成时间！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="add-kucunImg2Renyuan">库存图片2录入员</label>
+                                <input id="add-kucunImg2Renyuan" name="kucunImg2Renyuan" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入录入员！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="add-songhuoDanhao">送货单号</label>
-                        <input id="add-songhuoDanhao" name="songhuoDanhao" type="text" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入送货单号！-->
-<!--                        </div>-->
+
+
+                    <div class="row justify-content-evenly">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="add-kucunImg2Riqi">完成时间</label>
+                                <input id="add-kucunImg2Riqi" name="kucunImg2Riqi" type="datetime-local" step="1" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入完成时间！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="add-kucunImg3Renyuan">库存图片3录入员</label>
+                                <input id="add-kucunImg3Renyuan" name="kucunImg3Renyuan" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入录入员！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="add-songhuoDanhaoRenyuan">录入员</label>
-                        <input id="add-songhuoDanhaoRenyuan" name="songhuoDanhaoRenyuan" type="text" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入录入员！-->
-<!--                        </div>-->
+
+                    <div class="row justify-content-evenly">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="add-kucunImg3Riqi">完成时间</label>
+                                <input id="add-kucunImg3Riqi" name="kucunImg3Riqi" type="datetime-local" step="1" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入完成时间！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="add-money">金额</label>
+                                <input id="add-money" name="money" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入金额！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="add-songhuoDanhaoRiqi">完成时间</label>
-                        <input id="add-songhuoDanhaoRiqi" name="songhuoDanhaoRiqi" type="datetime-local" step="1" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入完成时间！-->
-<!--                        </div>-->
+
+                    <div class="row justify-content-evenly">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="add-moneyRenyuan">录入员</label>
+                                <input id="add-moneyRenyuan" name="moneyRenyuan" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入录入员！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="add-moneyRiqi">完成时间</label>
+                                <input id="add-moneyRiqi" name="moneyRiqi" type="datetime-local" step="1" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入完成时间！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="add-peihuoImg1Renyuan">配货图片1录入员</label>
-                        <input id="add-peihuoImg1Renyuan" name="peihuoImg1Renyuan" type="text" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入录入员！-->
-<!--                        </div>-->
-                    </div>
-                    <div class="form-group">
-                        <label for="add-peihuoImg1Riqi">完成时间</label>
-                        <input id="add-peihuoImg1Riqi" name="peihuoImg1Riqi" type="datetime-local" step="1" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入完成时间！-->
-<!--                        </div>-->
+
+                    <div class="row justify-content-evenly">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="add-shoukuan">收款情况</label>
+                                <input id="add-shoukuan" name="shoukuan" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入收款情况！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="add-shoukuanRenyuan">录入员</label>
+                                <input id="add-shoukuanRenyuan" name="shoukuanRenyuan" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入录入员！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="add-peihuoImg2Renyuan">配货图片2录入员</label>
-                        <input id="add-peihuoImg2Renyuan" name="peihuoImg2Renyuan" type="text" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入录入员！-->
-<!--                        </div>-->
-                    </div>
-                    <div class="form-group">
-                        <label for="add-peihuoImg2Riqi">完成时间</label>
-                        <input id="add-peihuoImg2Riqi" name="peihuoImg2Riqi" type="datetime-local" step="1" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入完成时间！-->
-<!--                        </div>-->
+
+                    <div class="row justify-content-evenly">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="add-shoukuanRiqi">完成时间</label>
+                                <input id="add-shoukuanRiqi" name="shoukuanRiqi" type="datetime-local" step="1" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入完成时间！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="add-songhuoyuan">送货员</label>
+                                <input id="add-songhuoyuan" name="songhuoyuan" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入完成时间！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="add-peihuoImg3Renyuan">配货图片3录入员</label>
-                        <input id="add-peihuoImg3Renyuan" name="peihuoImg3Renyuan" type="text" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入录入员！-->
-<!--                        </div>-->
-                    </div>
-                    <div class="form-group">
-                        <label for="add-peihuoImg3Riqi">完成时间</label>
-                        <input id="add-peihuoImg3Riqi" name="peihuoImg3Riqi" type="datetime-local" step="1" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入完成时间！-->
-<!--                        </div>-->
+
+                    <div class="row justify-content-evenly">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="add-wenjianImg1Renyuan">文件图片录入员</label>
+                                <input id="add-wenjianImg1Renyuan" name="wenjianImg1Renyuan" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入录入员！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="add-wenjianImg1Riqi">完成时间</label>
+                                <input id="add-wenjianImg1Riqi" name="wenjianImg1Riqi" type="datetime-local" step="1" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入完成时间！-->
+                                <!--                        </div>-->
+                            </div>
+
+                        </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="add-peihuoImg4Renyuan">配货图片4录入员</label>
-                        <input id="add-peihuoImg4Renyuan" name="peihuoImg4Renyuan" type="text" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入录入员！-->
-<!--                        </div>-->
-                    </div>
-                    <div class="form-group">
-                        <label for="add-peihuoImg4Riqi">完成时间</label>
-                        <input id="add-peihuoImg4Riqi" name="peihuoImg4Riqi" type="datetime-local" step="1" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入完成时间！-->
-<!--                        </div>-->
-                    </div>
-
-                    <div class="form-group">
-                        <label for="add-peihuoImg5Renyuan">配货图片5录入员</label>
-                        <input id="add-peihuoImg5Renyuan" name="peihuoImg5Renyuan" type="text" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入录入员！-->
-<!--                        </div>-->
-                    </div>
-                    <div class="form-group">
-                        <label for="add-peihuoImg5Riqi">完成时间</label>
-                        <input id="add-peihuoImg5Riqi" name="peihuoImg5Riqi" type="datetime-local" step="1" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入完成时间！-->
-<!--                        </div>-->
-                    </div>
-
-                    <div class="form-group">
-                        <label for="add-peisongImg1Renyuan">配送图片1录入员</label>
-                        <input id="add-peisongImg1Renyuan" name="peisongImg1Renyuan" type="text" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入录入员！-->
-<!--                        </div>-->
-                    </div>
-                    <div class="form-group">
-                        <label for="add-peisongImg1Riqi">完成时间</label>
-                        <input id="add-peisongImg1Riqi" name="peisongImg1Riqi" type="datetime-local" step="1" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入完成时间！-->
-<!--                        </div>-->
-                    </div>
-
-                    <div class="form-group">
-                        <label for="add-peisongImg2Renyuan">配送图片2录入员</label>
-                        <input id="add-peisongImg2Renyuan" name="peisongImg2Renyuan" type="text" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入录入员！-->
-<!--                        </div>-->
-                    </div>
-                    <div class="form-group">
-                        <label for="add-peisongImg2Riqi">完成时间</label>
-                        <input id="add-peisongImg2Riqi" name="peisongImg2Riqi" type="datetime-local" step="1" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入完成时间！-->
-<!--                        </div>-->
-                    </div>
-
-                    <div class="form-group">
-                        <label for="add-peisongImg3Renyuan">配送图片3录入员</label>
-                        <input id="add-peisongImg3Renyuan" name="peisongImg3Renyuan" type="text" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入录入员！-->
-<!--                        </div>-->
-                    </div>
-                    <div class="form-group">
-                        <label for="add-peisongImg3Riqi">完成时间</label>
-                        <input id="add-peisongImg3Riqi" name="peisongImg3Riqi" type="datetime-local" step="1" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入完成时间！-->
-<!--                        </div>-->
-                    </div>
-
-                    <div class="form-group">
-                        <label for="add-wancheng">完成情况</label>
-                        <input id="add-wancheng" name="wancheng" type="text" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入完成情况！-->
-<!--                        </div>-->
-                    </div>
-
-                    <div class="form-group">
-                        <label for="add-wanchengRenyuan">录入员</label>
-                        <input id="add-wanchengRenyuan" name="wanchengRenyuan" type="text" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入录入员！-->
-<!--                        </div>-->
-                    </div>
-
-                    <div class="form-group">
-                        <label for="add-wanchengRiqi">完成时间</label>
-                        <input id="add-wanchengRiqi" name="wanchengRiqi" type="datetime-local" step="1" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入完成时间！-->
-<!--                        </div>-->
-                    </div>
-
-                    <div class="form-group">
-                        <label for="add-beizhu">备注</label>
-                        <input id="add-beizhu" name="beizhu" type="text" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入备注！-->
-<!--                        </div>-->
-                    </div>
-
-                    <div class="form-group">
-                        <label for="add-beizhuRenyuan">录入员</label>
-                        <input id="add-beizhuRenyuan" name="beizhuRenyuan" type="text" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入录入员！-->
-<!--                        </div>-->
-                    </div>
-
-                    <div class="form-group">
-                        <label for="add-beizhuRiqi">完成时间</label>
-                        <input id="add-beizhuRiqi" name="beizhuRiqi" type="datetime-local" step="1" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入完成时间！-->
-<!--                        </div>-->
-                    </div>
-
-                    <div class="form-group">
-                        <label for="add-kucunText">商品库存(文字)</label>
-                        <input id="add-kucunText" name="kucunText" type="text" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入商品库存(文字)！-->
-<!--                        </div>-->
-                    </div>
-
-                    <div class="form-group">
-                        <label for="add-kucunTextRenyuan">录入员</label>
-                        <input id="add-kucunTextRenyuan" name="kucunTextRenyuan" type="text" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入录入员！-->
-<!--                        </div>-->
-                    </div>
-
-                    <div class="form-group">
-                        <label for="add-kucunTextRiqi">完成时间</label>
-                        <input id="add-kucunTextRiqi" name="kucunTextRiqi" type="datetime-local" step="1" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入完成时间！-->
-<!--                        </div>-->
-                    </div>
-
-                    <div class="form-group">
-                        <label for="add-kucunImg1Renyuan">录库存图片1入员</label>
-                        <input id="add-kucunImg1Renyuan" name="kucunImg1Renyuan" type="text" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入录入员！-->
-<!--                        </div>-->
-                    </div>
-                    <div class="form-group">
-                        <label for="add-kucunImg1Riqi">完成时间</label>
-                        <input id="add-kucunImg1Riqi" name="kucunImg1Riqi" type="datetime-local" step="1" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入完成时间！-->
-<!--                        </div>-->
-                    </div>
-
-                    <div class="form-group">
-                        <label for="add-kucunImg2Renyuan">库存图片2录入员</label>
-                        <input id="add-kucunImg2Renyuan" name="kucunImg2Renyuan" type="text" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入录入员！-->
-<!--                        </div>-->
-                    </div>
-                    <div class="form-group">
-                        <label for="add-kucunImg2Riqi">完成时间</label>
-                        <input id="add-kucunImg2Riqi" name="kucunImg2Riqi" type="datetime-local" step="1" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入完成时间！-->
-<!--                        </div>-->
-                    </div>
-
-                    <div class="form-group">
-                        <label for="add-kucunImg3Renyuan">库存图片3录入员</label>
-                        <input id="add-kucunImg3Renyuan" name="kucunImg3Renyuan" type="text" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入录入员！-->
-<!--                        </div>-->
-                    </div>
-                    <div class="form-group">
-                        <label for="add-kucunImg3Riqi">完成时间</label>
-                        <input id="add-kucunImg3Riqi" name="kucunImg3Riqi" type="datetime-local" step="1" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入完成时间！-->
-<!--                        </div>-->
-                    </div>
-
-                    <div class="form-group">
-                        <label for="add-money">金额</label>
-                        <input id="add-money" name="money" type="text" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入金额！-->
-<!--                        </div>-->
-                    </div>
-                    <div class="form-group">
-                        <label for="add-moneyRenyuan">录入员</label>
-                        <input id="add-moneyRenyuan" name="moneyRenyuan" type="text" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入录入员！-->
-<!--                        </div>-->
-                    </div>
-                    <div class="form-group">
-                        <label for="add-moneyRiqi">完成时间</label>
-                        <input id="add-moneyRiqi" name="moneyRiqi" type="datetime-local" step="1" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入完成时间！-->
-<!--                        </div>-->
-                    </div>
-                    <div class="form-group">
-                        <label for="add-shoukuan">收款情况</label>
-                        <input id="add-shoukuan" name="shoukuan" type="text" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入收款情况！-->
-<!--                        </div>-->
-                    </div>
-                    <div class="form-group">
-                        <label for="add-shoukuanRenyuan">录入员</label>
-                        <input id="add-shoukuanRenyuan" name="shoukuanRenyuan" type="text" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入录入员！-->
-<!--                        </div>-->
-                    </div>
-                    <div class="form-group">
-                        <label for="add-shoukuanRiqi">完成时间</label>
-                        <input id="add-shoukuanRiqi" name="shoukuanRiqi" type="datetime-local" step="1" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入完成时间！-->
-<!--                        </div>-->
-                    </div>
-                    <div class="form-group">
-                        <label for="add-songhuoyuan">送货员</label>
-                        <input id="add-songhuoyuan" name="songhuoyuan" type="text" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入完成时间！-->
-<!--                        </div>-->
-                    </div>
-
-                    <div class="form-group">
-                        <label for="add-wenjianImg1Renyuan">文件图片录入员</label>
-                        <input id="add-wenjianImg1Renyuan" name="wenjianImg1Renyuan" type="text" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入录入员！-->
-<!--                        </div>-->
-                    </div>
-                    <div class="form-group">
-                        <label for="add-wenjianImg1Riqi">完成时间</label>
-                        <input id="add-wenjianImg1Riqi" name="wenjianImg1Riqi" type="datetime-local" step="1" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入完成时间！-->
-<!--                        </div>-->
-                    </div>
                     <label for="add-customerNeedImg1">客户需求(图片)</label>
-                    <form th:action="@{https://localhost:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-customerNeedImg1">
+                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-customerNeedImg1">
                         <input type="file" id="fileInput1" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">
                     </form>
 
-<!--                    <label for="add-customerNeedImg2">客户需求(图片)</label>-->
-<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-customerNeedImg2">-->
-<!--                        <input type="file" id="fileInput2" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">-->
-<!--                    </form>-->
+                    <label for="add-customerNeedImg2">客户需求(图片)</label>
+                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-customerNeedImg2">
+                        <input type="file" id="fileInput2" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">
+                    </form>
 
-<!--                    <label for="add-customerNeedImg3">客户需求(图片)</label>-->
-<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-customerNeedImg3">-->
-<!--                        <input type="file" id="fileInput3" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">-->
-<!--                    </form>-->
+                    <label for="add-customerNeedImg3">客户需求(图片)</label>
+                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-customerNeedImg3">
+                        <input type="file" id="fileInput3" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">
+                    </form>
 
-<!--                    <label for="add-customerNeedImg4">客户需求(图片)</label>-->
-<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-customerNeedImg4">-->
-<!--                        <input type="file" id="fileInput4" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">-->
-<!--                    </form>-->
+                    <label for="add-customerNeedImg4">客户需求(图片)</label>
+                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-customerNeedImg4">
+                        <input type="file" id="fileInput4" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">
+                    </form>
 
-<!--                    <label for="add-customerNeedImg5">客户需求(图片)</label>-->
-<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-customerNeedImg5">-->
-<!--                        <input type="file" id="fileInput5" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">-->
-<!--                    </form>-->
+                    <label for="add-customerNeedImg5">客户需求(图片)</label>
+                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-customerNeedImg5">
+                        <input type="file" id="fileInput5" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">
+                    </form>
 
-<!--                    <label for="add-customerNeedImg6">客户需求(图片)</label>-->
-<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-customerNeedImg6">-->
-<!--                        <input type="file" id="fileInput6" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">-->
-<!--                    </form>-->
+                    <label for="add-customerNeedImg6">客户需求(图片)</label>
+                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-customerNeedImg6">
+                        <input type="file" id="fileInput6" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">
+                    </form>
 
-<!--                    <label for="add-customerNeedImg7">客户需求(图片)</label>-->
-<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-customerNeedImg7">-->
-<!--                        <input type="file" id="fileInput7" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">-->
-<!--                    </form>-->
+                    <label for="add-customerNeedImg7">客户需求(图片)</label>
+                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-customerNeedImg7">
+                        <input type="file" id="fileInput7" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">
+                    </form>
 
-<!--                    <label for="add-customerNeedImg8">客户需求(图片)</label>-->
-<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-customerNeedImg8">-->
-<!--                        <input type="file" id="fileInput8" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">-->
-<!--                    </form>-->
-<!--                    <label for="add-customerNeedText2">文件(图片)</label>-->
-<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-customerNeedText2">-->
-<!--                        <input type="file" id="fileInput9" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">-->
-<!--                    </form>-->
-<!--                    <label for="add-peihuoImg1">配货图片</label>-->
-<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-peihuoImg1">-->
-<!--                        <input type="file" id="fileInput10" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">-->
-<!--                    </form>-->
-<!--                    <label for="add-peihuoImg2">配货图片</label>-->
-<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-peihuoImg2">-->
-<!--                        <input type="file" id="fileInput11" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">-->
-<!--                    </form>-->
-<!--                    <label for="add-peihuoImg3">配货图片</label>-->
-<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-peihuoImg3">-->
-<!--                        <input type="file" id="fileInput12" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">-->
-<!--                    </form>-->
-<!--                    <label for="add-peihuoImg4">配货图片</label>-->
-<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-peihuoImg4">-->
-<!--                        <input type="file" id="fileInput13" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">-->
-<!--                    </form>-->
-<!--                    <label for="add-peihuoImg5">配货图片</label>-->
-<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-peihuoImg5">-->
-<!--                        <input type="file" id="fileInput14" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">-->
-<!--                    </form>-->
-<!--                    <label for="add-peihuoImg6">配货图片</label>-->
-<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-peihuoImg6">-->
-<!--                        <input type="file" id="fileInput15" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">-->
-<!--                    </form>-->
-<!--                    <label for="add-peihuoImg7">配货图片</label>-->
-<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-peihuoImg7">-->
-<!--                        <input type="file" id="fileInput16" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">-->
-<!--                    </form>-->
-<!--                    <label for="add-peihuoImg8">配货图片</label>-->
-<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-peihuoImg8">-->
-<!--                        <input type="file" id="fileInput17" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">-->
-<!--                    </form>-->
-<!--                    <label for="add-peisongImg1">配送图片</label>-->
-<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-peisongImg1">-->
-<!--                        <input type="file" id="fileInput18" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">-->
-<!--                    </form>-->
-<!--                    <label for="add-peisongImg2">配送图片</label>-->
-<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-peisongImg2">-->
-<!--                        <input type="file" id="fileInput19" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">-->
-<!--                    </form>-->
-<!--                    <label for="add-peisongImg3">配送图片</label>-->
-<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-peisongImg3">-->
-<!--                        <input type="file" id="fileInput20" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">-->
-<!--                    </form>-->
-<!--                    <label for="add-peisongImg4">配送图片</label>-->
-<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-peisongImg4">-->
-<!--                        <input type="file" id="fileInput21" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">-->
-<!--                    </form>-->
+                    <label for="add-customerNeedImg8">客户需求(图片)</label>
+                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-customerNeedImg8">
+                        <input type="file" id="fileInput8" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">
+                    </form>
+                    <label for="add-customerNeedText2">文件(图片)</label>
+                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-customerNeedText2">
+                        <input type="file" id="fileInput9" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">
+                    </form>
+                    <label for="add-peihuoImg1">配货图片</label>
+                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-peihuoImg1">
+                        <input type="file" id="fileInput10" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">
+                    </form>
+                    <label for="add-peihuoImg2">配货图片</label>
+                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-peihuoImg2">
+                        <input type="file" id="fileInput11" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">
+                    </form>
+                    <label for="add-peihuoImg3">配货图片</label>
+                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-peihuoImg3">
+                        <input type="file" id="fileInput12" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">
+                    </form>
+                    <label for="add-peihuoImg4">配货图片</label>
+                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-peihuoImg4">
+                        <input type="file" id="fileInput13" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">
+                    </form>
+                    <label for="add-peihuoImg5">配货图片</label>
+                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-peihuoImg5">
+                        <input type="file" id="fileInput14" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">
+                    </form>
+                    <label for="add-peihuoImg6">配货图片</label>
+                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-peihuoImg6">
+                        <input type="file" id="fileInput15" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">
+                    </form>
+                    <label for="add-peihuoImg7">配货图片</label>
+                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-peihuoImg7">
+                        <input type="file" id="fileInput16" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">
+                    </form>
+                    <label for="add-peihuoImg8">配货图片</label>
+                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-peihuoImg8">
+                        <input type="file" id="fileInput17" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">
+                    </form>
+                    <label for="add-peisongImg1">配送图片</label>
+                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-peisongImg1">
+                        <input type="file" id="fileInput18" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">
+                    </form>
+                    <label for="add-peisongImg2">配送图片</label>
+                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-peisongImg2">
+                        <input type="file" id="fileInput19" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">
+                    </form>
+                    <label for="add-peisongImg3">配送图片</label>
+                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-peisongImg3">
+                        <input type="file" id="fileInput20" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">
+                    </form>
+                    <label for="add-peisongImg4">配送图片</label>
+                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-peisongImg4">
+                        <input type="file" id="fileInput21" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">
+                    </form>
 
-<!--                    <label for="add-peisongImg5">配送图片</label>-->
-<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-peisongImg5">-->
-<!--                        <input type="file" id="fileInput22" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">-->
-<!--                    </form>-->
+                    <label for="add-peisongImg5">配送图片</label>
+                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-peisongImg5">
+                        <input type="file" id="fileInput22" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">
+                    </form>
 
-<!--                    <label for="add-peisongImg6">配送图片</label>-->
-<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-peisongImg6">-->
-<!--                        <input type="file" id="fileInput23" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">-->
-<!--                    </form>-->
+                    <label for="add-peisongImg6">配送图片</label>
+                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-peisongImg6">
+                        <input type="file" id="fileInput23" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">
+                    </form>
 
-<!--                    <label for="add-peisongImg7">配送图片</label>-->
-<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-peisongImg7">-->
-<!--                        <input type="file" id="fileInput24" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">-->
-<!--                    </form>-->
+                    <label for="add-peisongImg7">配送图片</label>
+                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-peisongImg7">
+                        <input type="file" id="fileInput24" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">
+                    </form>
 
-<!--                    <label for="add-peisongImg8">配送图片</label>-->
-<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-peisongImg8">-->
-<!--                        <input type="file" id="fileInput25" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">-->
-<!--                    </form>-->
-<!--                    <label for="add-kucunImg1">商品库存(图片)</label>-->
-<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-kucunImg1">-->
-<!--                        <input type="file" id="fileInput26" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">-->
-<!--                    </form>-->
-<!--                    <label for="add-kucunImg2">商品库存(图片)</label>-->
-<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-kucunImg2">-->
-<!--                        <input type="file" id="fileInput27" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">-->
-<!--                    </form>-->
-<!--                    <label for="add-kucunImg3">商品库存(图片)</label>-->
-<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-kucunImg3">-->
-<!--                        <input type="file" id="fileInput28" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">-->
-<!--                    </form>-->
-<!--                    <label for="add-kucunImg4">商品库存(图片)</label>-->
-<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-kucunImg4">-->
-<!--                        <input type="file" id="fileInput29" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">-->
-<!--                    </form>-->
-<!--                    <label for="add-kucunImg5">商品库存(图片)</label>-->
-<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-kucunImg5">-->
-<!--                        <input type="file" id="fileInput30" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">-->
-<!--                    </form>-->
-<!--                    <label for="add-kucunImg6">商品库存(图片)</label>-->
-<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-kucunImg6">-->
-<!--                        <input type="file" id="fileInput31" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">-->
-<!--                    </form>-->
-<!--                    <label for="add-kucunImg7">商品库存(图片)</label>-->
-<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-kucunImg7">-->
-<!--                        <input type="file" id="fileInput32" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">-->
-<!--                    </form>-->
-<!--                    <label for="add-kucunImg8">商品库存(图片)</label>-->
-<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-kucunImg8">-->
-<!--                        <input type="file" id="fileInput33" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">-->
-<!--                    </form>-->
-<!--                    <label for="add-wenjianImg1">文件(图片)</label>-->
-<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-wenjianImg1">-->
-<!--                        <input type="file" id="fileInput34" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">-->
-<!--                    </form>-->
-<!--                    <label for="add-wenjianImg2">文件(图片)</label>-->
-<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-wenjianImg2">-->
-<!--                        <input type="file" id="fileInput35" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">-->
-<!--                    </form>-->
-<!--                    <label for="add-wenjianImg3">文件(图片)</label>-->
-<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-wenjianImg3">-->
-<!--                        <input type="file" id="fileInput36" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">-->
-<!--                    </form>-->
-<!--                    <label for="add-wenjianImg4">文件(图片)</label>-->
-<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-wenjianImg4">-->
-<!--                        <input type="file" id="fileInput37" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">-->
-<!--                    </form>-->
-<!--                    <label for="add-wenjianImg5">文件(图片)</label>-->
-<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-wenjianImg5">-->
-<!--                        <input type="file" id="fileInput38" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">-->
-<!--                    </form>-->
-<!--                    <label for="add-wenjianImg6">文件(图片)</label>-->
-<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-wenjianImg6">-->
-<!--                        <input type="file" id="fileInput39" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">-->
-<!--                    </form>-->
-<!--                    <label for="add-wenjianImg7">文件(图片)</label>-->
-<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-wenjianImg7">-->
-<!--                        <input type="file" id="fileInput40" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">-->
-<!--                    </form>-->
-<!--                    <label for="add-wenjianImg8">文件(图片)</label>-->
-<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-wenjianImg8">-->
-<!--                        <input type="file" id="fileInput41" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">-->
-<!--                    </form>-->
+                    <label for="add-peisongImg8">配送图片</label>
+                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-peisongImg8">
+                        <input type="file" id="fileInput25" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">
+                    </form>
+                    <label for="add-kucunImg1">商品库存(图片)</label>
+                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-kucunImg1">
+                        <input type="file" id="fileInput26" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">
+                    </form>
+                    <label for="add-kucunImg2">商品库存(图片)</label>
+                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-kucunImg2">
+                        <input type="file" id="fileInput27" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">
+                    </form>
+                    <label for="add-kucunImg3">商品库存(图片)</label>
+                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-kucunImg3">
+                        <input type="file" id="fileInput28" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">
+                    </form>
+                    <label for="add-kucunImg4">商品库存(图片)</label>
+                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-kucunImg4">
+                        <input type="file" id="fileInput29" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">
+                    </form>
+                    <label for="add-kucunImg5">商品库存(图片)</label>
+                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-kucunImg5">
+                        <input type="file" id="fileInput30" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">
+                    </form>
+                    <label for="add-kucunImg6">商品库存(图片)</label>
+                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-kucunImg6">
+                        <input type="file" id="fileInput31" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">
+                    </form>
+                    <label for="add-kucunImg7">商品库存(图片)</label>
+                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-kucunImg7">
+                        <input type="file" id="fileInput32" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">
+                    </form>
+                    <label for="add-kucunImg8">商品库存(图片)</label>
+                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-kucunImg8">
+                        <input type="file" id="fileInput33" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">
+                    </form>
+                    <label for="add-wenjianImg1">文件(图片)</label>
+                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-wenjianImg1">
+                        <input type="file" id="fileInput34" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">
+                    </form>
+                    <label for="add-wenjianImg2">文件(图片)</label>
+                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-wenjianImg2">
+                        <input type="file" id="fileInput35" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">
+                    </form>
+                    <label for="add-wenjianImg3">文件(图片)</label>
+                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-wenjianImg3">
+                        <input type="file" id="fileInput36" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">
+                    </form>
+                    <label for="add-wenjianImg4">文件(图片)</label>
+                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-wenjianImg4">
+                        <input type="file" id="fileInput37" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">
+                    </form>
+                    <label for="add-wenjianImg5">文件(图片)</label>
+                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-wenjianImg5">
+                        <input type="file" id="fileInput38" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">
+                    </form>
+                    <label for="add-wenjianImg6">文件(图片)</label>
+                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-wenjianImg6">
+                        <input type="file" id="fileInput39" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">
+                    </form>
+                    <label for="add-wenjianImg7">文件(图片)</label>
+                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-wenjianImg7">
+                        <input type="file" id="fileInput40" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">
+                    </form>
+                    <label for="add-wenjianImg8">文件(图片)</label>
+                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-wenjianImg8">
+                        <input type="file" id="fileInput41" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">
+                    </form>
                 </form>
             </div>
             <div class="border-top" style="padding: 15px;">
@@ -874,512 +1117,764 @@
                     <div class="form-group">
                         <input id="id" name="id" type="hidden">
                     </div>
-                    <div class="form-group">
-                        <label for="update-orderNumber">单号</label>
-                        <input id="update-orderNumber" name="orderNumber" type="text" class="form-control" autocomplete="off">
-                        <div class="invalid-feedback">
-                            请输入单号！
+
+                    <div class="row justify-content-evenly">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="update-orderNumber">单号</label>
+                                <input id="update-orderNumber" name="orderNumber" type="text" class="form-control" autocomplete="off">
+                                <div class="invalid-feedback">
+                                    请输入单号！
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="update-insertDate">日期</label>
+                                <input id="update-insertDate" name="insertDate" type="date" class="form-control" autocomplete="off">
+                                <div class="invalid-feedback">
+                                    请输入日期！
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label for="update-insertDate">日期</label>
-                        <input id="update-insertDate" name="insertDate" type="date" class="form-control" autocomplete="off">
-                        <div class="invalid-feedback">
-                            请输入日期！
+
+
+                    <div class="row justify-content-evenly">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="update-customerName">客户名称</label>
+                                <input id="update-customerName" name="customerName" type="text" class="form-control" autocomplete="off">
+                                <div class="invalid-feedback">
+                                    请输入客户名称！
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="update-customerNameRenyuan">录入员</label>
+                                <input id="update-customerNameRenyuan" name="customerNameRenyuan" type="text" class="form-control" autocomplete="off">
+                                <div class="invalid-feedback">
+                                    请输入录入员！
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="row justify-content-evenly">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="update-customerNameRiqi">完成时间</label>
+                                <input id="update-customerNameRiqi" name="customerNameRiqi" type="datetime-local" class="form-control" autocomplete="off">
+                                <div class="invalid-feedback">
+                                    请输入完成时间！
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="update-customerNeedText">客户需求(文字)</label>
+                                <input id="update-customerNeedText" name="customerNeedText" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入客户需求(文字)！-->
+                                <!--                        </div>-->
+                            </div>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label for="update-customerName">客户名称</label>
-                        <input id="update-customerName" name="customerName" type="text" class="form-control" autocomplete="off">
-                        <div class="invalid-feedback">
-                            请输入客户名称！
+
+                    <div class="row justify-content-evenly">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="update-customerNeedTextRenyuan">录入员</label>
+                                <input id="update-customerNeedTextRenyuan" name="customerNeedTextRenyuan" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入录入员！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="update-customerNeedTextRiqi">完成时间</label>
+                                <input id="update-customerNeedTextRiqi" name="customerNeedTextRiqi" type="datetime-local" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入完成时间！-->
+                                <!--                        </div>-->
+                            </div>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label for="update-customerNameRenyuan">录入员</label>
-                        <input id="update-customerNameRenyuan" name="customerNameRenyuan" type="text" class="form-control" autocomplete="off">
-                        <div class="invalid-feedback">
-                            请输入录入员！
+
+                    <div class="row justify-content-evenly">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="update-customerNeedImg1Renyuan">客户需求图片录入员</label>
+                                <input id="update-customerNeedImg1Renyuan" name="customerNeedImg1Renyuan" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入录入员！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="update-customerNeedImg1Riqi">完成时间</label>
+                                <input id="update-customerNeedImg1Riqi" name="customerNeedImg1Riqi" type="datetime-local" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入完成时间！-->
+                                <!--                        </div>-->
+                            </div>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label for="update-customerNameRiqi">完成时间</label>
-                        <input id="update-customerNameRiqi" name="customerNameRiqi" type="datetime-local" class="form-control" autocomplete="off">
-                        <div class="invalid-feedback">
-                            请输入完成时间！
+
+
+                    <div class="row justify-content-evenly">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="update-customerNeedText1">配送文字1</label>
+                                <input id="update-customerNeedText1" name="customerNeedText1" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入配送文字1！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="update-customerNeedText1Renyuan">文件图片1录入员</label>
+                                <input id="update-customerNeedText1Renyuan" name="customerNeedText1Renyuan" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入录入员！-->
+                                <!--                        </div>-->
+                            </div>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label for="update-customerNeedText">客户需求(文字)</label>
-                        <input id="update-customerNeedText" name="customerNeedText" type="text" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入客户需求(文字)！-->
-<!--                        </div>-->
-                    </div>
-                    <div class="form-group">
-                        <label for="update-customerNeedTextRenyuan">录入员</label>
-                        <input id="update-customerNeedTextRenyuan" name="customerNeedTextRenyuan" type="text" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入录入员！-->
-<!--                        </div>-->
-                    </div>
-                    <div class="form-group">
-                        <label for="update-customerNeedTextRiqi">完成时间</label>
-                        <input id="update-customerNeedTextRiqi" name="customerNeedTextRiqi" type="datetime-local" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入完成时间！-->
-<!--                        </div>-->
+
+                    <div class="row justify-content-evenly">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="update-customerNeedText1Riqi">完成时间</label>
+                                <input id="update-customerNeedText1Riqi" name="customerNeedText1Riqi" type="datetime-local" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入完成时间！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="update-customerNeedText2Renyuan">文件图片2录入员</label>
+                                <input id="update-customerNeedText2Renyuan" name="customerNeedText2Renyuan" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入录入员！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="update-customerNeedImg1Renyuan">客户需求图片录入员</label>
-                        <input id="update-customerNeedImg1Renyuan" name="customerNeedImg1Renyuan" type="text" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入录入员！-->
-<!--                        </div>-->
-                    </div>
-                    <div class="form-group">
-                        <label for="update-customerNeedImg1Riqi">完成时间</label>
-                        <input id="update-customerNeedImg1Riqi" name="customerNeedImg1Riqi" type="datetime-local" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入完成时间！-->
-<!--                        </div>-->
-                    </div>
-                    <div class="form-group">
-                        <label for="update-customerNeedText1">配送文字1</label>
-                        <input id="update-customerNeedText1" name="customerNeedText1" type="text" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入配送文字1！-->
-<!--                        </div>-->
-                    </div>
-                    <div class="form-group">
-                        <label for="update-customerNeedText1Renyuan">文件图片1录入员</label>
-                        <input id="update-customerNeedText1Renyuan" name="customerNeedText1Renyuan" type="text" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入录入员！-->
-<!--                        </div>-->
-                    </div>
-                    <div class="form-group">
-                        <label for="update-customerNeedText1Riqi">完成时间</label>
-                        <input id="update-customerNeedText1Riqi" name="customerNeedText1Riqi" type="datetime-local" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入完成时间！-->
-<!--                        </div>-->
+                    <div class="row justify-content-evenly">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="update-customerNeedText2Riqi">完成时间</label>
+                                <input id="update-customerNeedText2Riqi" name="customerNeedText2Riqi" type="datetime-local" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入完成时间！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="update-songhuoAddress">送货地址</label>
+                                <input id="update-songhuoAddress" name="songhuoAddress" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入送货地址！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="update-customerNeedText2Renyuan">文件图片2录入员</label>
-                        <input id="update-customerNeedText2Renyuan" name="customerNeedText2Renyuan" type="text" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入录入员！-->
-<!--                        </div>-->
-                    </div>
-                    <div class="form-group">
-                        <label for="update-customerNeedText2Riqi">完成时间</label>
-                        <input id="update-customerNeedText2Riqi" name="customerNeedText2Riqi" type="datetime-local" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入完成时间！-->
-<!--                        </div>-->
-                    </div>
-                    <div class="form-group">
-                        <label for="update-songhuoAddress">送货地址</label>
-                        <input id="update-songhuoAddress" name="songhuoAddress" type="text" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入送货地址！-->
-<!--                        </div>-->
-                    </div>
-                    <div class="form-group">
-                        <label for="update-songhuoAddressRenyuan">录入员</label>
-                        <input id="update-songhuoAddressRenyuan" name="songhuoAddressRenyuan" type="text" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入录入员！-->
-<!--                        </div>-->
-                    </div>
-                    <div class="form-group">
-                        <label for="update-songhuoAddressRiqi">完成时间</label>
-                        <input id="update-songhuoAddressRiqi" name="songhuoAddressRiqi" type="datetime-local" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入完成时间！-->
-<!--                        </div>-->
-                    </div>
-                    <div class="form-group">
-                        <label for="update-anzhuangAddress">安装地址</label>
-                        <input id="update-anzhuangAddress" name="anzhuangAddress" type="text" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入安装地址！-->
-<!--                        </div>-->
-                    </div>
-                    <div class="form-group">
-                        <label for="update-anzhuangAddressRenyuan">录入员</label>
-                        <input id="update-anzhuangAddressRenyuan" name="anzhuangAddressRenyuan" type="text" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入录入员！-->
-<!--                        </div>-->
-                    </div>
-                    <div class="form-group">
-                        <label for="update-anzhuangAddressRiqi">完成时间</label>
-                        <input id="update-anzhuangAddressRiqi" name="anzhuangAddressRiqi" type="datetime-local" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入完成时间！-->
-<!--                        </div>-->
-                    </div>
-                    <div class="form-group">
-                        <label for="update-phone">联系人、电话</label>
-                        <input id="update-phone" name="phone" type="text" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入联系人、电话！-->
-<!--                        </div>-->
-                    </div>
-                    <div class="form-group">
-                        <label for="update-phoneRenyuan">录入员</label>
-                        <input id="update-phoneRenyuan" name="phoneRenyuan" type="text" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入录入员！-->
-<!--                        </div>-->
-                    </div>
-                    <div class="form-group">
-                        <label for="update-phoneRiqi">完成时间</label>
-                        <input id="update-phoneRiqi" name="phoneRiqi" type="datetime-local" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入完成时间！-->
-<!--                        </div>-->
-                    </div>
-                    <div class="form-group">
-                        <label for="update-customerOrder">客户订单号</label>
-                        <input id="update-customerOrder" name="customerOrder" type="text" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入客户订单号！-->
-<!--                        </div>-->
-                    </div>
-                    <div class="form-group">
-                        <label for="update-customerOrderRenyuan">录入员</label>
-                        <input id="update-customerOrderRenyuan" name="customerOrderRenyuan" type="text" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入录入员！-->
-<!--                        </div>-->
-                    </div>
-                    <div class="form-group">
-                        <label for="update-customerOrderRiqi">完成时间</label>
-                        <input id="update-customerOrderRiqi" name="customerOrderRiqi" type="datetime-local" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入完成时间！-->
-<!--                        </div>-->
-                    </div>
-                    <div class="form-group">
-                        <label for="update-songhuoDanhao">送货单号</label>
-                        <input id="update-songhuoDanhao" name="songhuoDanhao" type="text" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入送货单号！-->
-<!--                        </div>-->
-                    </div>
-                    <div class="form-group">
-                        <label for="update-songhuoDanhaoRenyuan">录入员</label>
-                        <input id="update-songhuoDanhaoRenyuan" name="songhuoDanhaoRenyuan" type="text" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入录入员！-->
-<!--                        </div>-->
-                    </div>
-                    <div class="form-group">
-                        <label for="update-songhuoDanhaoRiqi">完成时间</label>
-                        <input id="update-songhuoDanhaoRiqi" name="songhuoDanhaoRiqi" type="datetime-local" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入完成时间！-->
-<!--                        </div>-->
+                    <div class="row justify-content-evenly">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="update-songhuoAddressRenyuan">录入员</label>
+                                <input id="update-songhuoAddressRenyuan" name="songhuoAddressRenyuan" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入录入员！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="update-songhuoAddressRiqi">完成时间</label>
+                                <input id="update-songhuoAddressRiqi" name="songhuoAddressRiqi" type="datetime-local" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入完成时间！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="update-peihuoImg1Renyuan">配货图片1录入员</label>
-                        <input id="update-peihuoImg1Renyuan" name="peihuoImg1Renyuan" type="text" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入录入员！-->
-<!--                        </div>-->
-                    </div>
-                    <div class="form-group">
-                        <label for="update-peihuoImg1Riqi">完成时间</label>
-                        <input id="update-peihuoImg1Riqi" name="peihuoImg1Riqi" type="datetime-local" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入完成时间！-->
-<!--                        </div>-->
-                    </div>
-
-                    <div class="form-group">
-                        <label for="update-peihuoImg2Renyuan">配货图片2录入员</label>
-                        <input id="update-peihuoImg2Renyuan" name="peihuoImg2Renyuan" type="text" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入录入员！-->
-<!--                        </div>-->
-                    </div>
-                    <div class="form-group">
-                        <label for="update-peihuoImg2Riqi">完成时间</label>
-                        <input id="update-peihuoImg2Riqi" name="peihuoImg2Riqi" type="datetime-local" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入完成时间！-->
-<!--                        </div>-->
+                    <div class="row justify-content-evenly">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="update-anzhuangAddress">安装地址</label>
+                                <input id="update-anzhuangAddress" name="anzhuangAddress" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入安装地址！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="update-anzhuangAddressRenyuan">录入员</label>
+                                <input id="update-anzhuangAddressRenyuan" name="anzhuangAddressRenyuan" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入录入员！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="update-peihuoImg3Renyuan">配货图片3录入员</label>
-                        <input id="update-peihuoImg3Renyuan" name="peihuoImg3Renyuan" type="text" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入录入员！-->
-<!--                        </div>-->
-                    </div>
-                    <div class="form-group">
-                        <label for="update-peihuoImg3Riqi">完成时间</label>
-                        <input id="update-peihuoImg3Riqi" name="peihuoImg3Riqi" type="datetime-local" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入完成时间！-->
-<!--                        </div>-->
+
+                    <div class="row justify-content-evenly">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="update-anzhuangAddressRiqi">完成时间</label>
+                                <input id="update-anzhuangAddressRiqi" name="anzhuangAddressRiqi" type="datetime-local" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入完成时间！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="update-phone">联系人、电话</label>
+                                <input id="update-phone" name="phone" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入联系人、电话！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="update-peihuoImg4Renyuan">配货图片4录入员</label>
-                        <input id="update-peihuoImg4Renyuan" name="peihuoImg4Renyuan" type="text" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入录入员！-->
-<!--                        </div>-->
-                    </div>
-                    <div class="form-group">
-                        <label for="update-peihuoImg4Riqi">完成时间</label>
-                        <input id="update-peihuoImg4Riqi" name="peihuoImg4Riqi" type="datetime-local" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入完成时间！-->
-<!--                        </div>-->
-                    </div>
-
-                    <div class="form-group">
-                        <label for="update-peihuoImg5Renyuan">配货图片5录入员</label>
-                        <input id="update-peihuoImg5Renyuan" name="peihuoImg5Renyuan" type="text" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入录入员！-->
-<!--                        </div>-->
-                    </div>
-                    <div class="form-group">
-                        <label for="update-peihuoImg5Riqi">完成时间</label>
-                        <input id="update-peihuoImg5Riqi" name="peihuoImg5Riqi" type="datetime-local" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入完成时间！-->
-<!--                        </div>-->
+                    <div class="row justify-content-evenly">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="update-phoneRenyuan">录入员</label>
+                                <input id="update-phoneRenyuan" name="phoneRenyuan" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入录入员！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="update-phoneRiqi">完成时间</label>
+                                <input id="update-phoneRiqi" name="phoneRiqi" type="datetime-local" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入完成时间！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="update-peisongImg1Renyuan">配送图片1录入员</label>
-                        <input id="update-peisongImg1Renyuan" name="peisongImg1Renyuan" type="text" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入录入员！-->
-<!--                        </div>-->
-                    </div>
-                    <div class="form-group">
-                        <label for="update-peisongImg1Riqi">完成时间</label>
-                        <input id="update-peisongImg1Riqi" name="peisongImg1Riqi" type="datetime-local" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入完成时间！-->
-<!--                        </div>-->
-                    </div>
-
-                    <div class="form-group">
-                        <label for="update-peisongImg2Renyuan">配送图片2录入员</label>
-                        <input id="update-peisongImg2Renyuan" name="peisongImg2Renyuan" type="text" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入录入员！-->
-<!--                        </div>-->
-                    </div>
-                    <div class="form-group">
-                        <label for="update-peisongImg2Riqi">完成时间</label>
-                        <input id="update-peisongImg2Riqi" name="peisongImg2Riqi" type="datetime-local" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入完成时间！-->
-<!--                        </div>-->
+                    <div class="row justify-content-evenly">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="update-customerOrder">客户订单号</label>
+                                <input id="update-customerOrder" name="customerOrder" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入客户订单号！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="update-customerOrderRenyuan">录入员</label>
+                                <input id="update-customerOrderRenyuan" name="customerOrderRenyuan" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入录入员！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="update-peisongImg3Renyuan">配送图片3录入员</label>
-                        <input id="update-peisongImg3Renyuan" name="peisongImg3Renyuan" type="text" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入录入员！-->
-<!--                        </div>-->
-                    </div>
-                    <div class="form-group">
-                        <label for="update-peisongImg3Riqi">完成时间</label>
-                        <input id="update-peisongImg3Riqi" name="peisongImg3Riqi" type="datetime-local" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入完成时间！-->
-<!--                        </div>-->
+
+                    <div class="row justify-content-evenly">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="update-customerOrderRiqi">完成时间</label>
+                                <input id="update-customerOrderRiqi" name="customerOrderRiqi" type="datetime-local" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入完成时间！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="update-songhuoDanhao">送货单号</label>
+                                <input id="update-songhuoDanhao" name="songhuoDanhao" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入送货单号！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="update-wancheng">完成情况</label>
-                        <input id="update-wancheng" name="wancheng" type="text" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入完成情况！-->
-<!--                        </div>-->
-                    </div>
-                    <div class="form-group">
-                        <label for="update-wanchengRenyuan">录入员</label>
-                        <input id="update-wanchengRenyuan" name="wanchengRenyuan" type="text" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入录入员！-->
-<!--                        </div>-->
-                    </div>
-                    <div class="form-group">
-                        <label for="update-wanchengRiqi">完成时间</label>
-                        <input id="update-wanchengRiqi" name="wanchengRiqi" type="datetime-local" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入完成时间！-->
-<!--                        </div>-->
-                    </div>
-                    <div class="form-group">
-                        <label for="update-beizhu">备注</label>
-                        <input id="update-beizhu" name="beizhu" type="text" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入备注！-->
-<!--                        </div>-->
-                    </div>
-                    <div class="form-group">
-                        <label for="update-beizhuRenyuan">录入员</label>
-                        <input id="update-beizhuRenyuan" name="beizhuRenyuan" type="text" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入录入员！-->
-<!--                        </div>-->
-                    </div>
-                    <div class="form-group">
-                        <label for="update-beizhuRiqi">完成时间</label>
-                        <input id="update-beizhuRiqi" name="beizhuRiqi" type="datetime-local" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入完成时间！-->
-<!--                        </div>-->
-                    </div>
-                    <div class="form-group">
-                        <label for="update-kucunText">商品库存(文字)</label>
-                        <input id="update-kucunText" name="kucunText" type="text" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入商品库存(文字)！-->
-<!--                        </div>-->
-                    </div>
-                    <div class="form-group">
-                        <label for="update-kucunTextRenyuan">录入员</label>
-                        <input id="update-kucunTextRenyuan" name="kucunTextRenyuan" type="text" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入录入员！-->
-<!--                        </div>-->
-                    </div>
-                    <div class="form-group">
-                        <label for="update-kucunTextRiqi">完成时间</label>
-                        <input id="update-kucunTextRiqi" name="kucunTextRiqi" type="datetime-local" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入完成时间！-->
-<!--                        </div>-->
+                    <div class="row justify-content-evenly">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="update-songhuoDanhaoRenyuan">录入员</label>
+                                <input id="update-songhuoDanhaoRenyuan" name="songhuoDanhaoRenyuan" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入录入员！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="update-songhuoDanhaoRiqi">完成时间</label>
+                                <input id="update-songhuoDanhaoRiqi" name="songhuoDanhaoRiqi" type="datetime-local" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入完成时间！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="update-kucunImg1Renyuan">库存图片1录入员</label>
-                        <input id="update-kucunImg1Renyuan" name="kucunImg1Renyuan" type="text" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入录入员！-->
-<!--                        </div>-->
-                    </div>
-                    <div class="form-group">
-                        <label for="update-kucunImg1Riqi">完成时间</label>
-                        <input id="update-kucunImg1Riqi" name="kucunImg1Riqi" type="datetime-local" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入完成时间！-->
-<!--                        </div>-->
+
+                    <div class="row justify-content-evenly">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="update-peihuoImg1Renyuan">配货图片1录入员</label>
+                                <input id="update-peihuoImg1Renyuan" name="peihuoImg1Renyuan" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入录入员！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="update-peihuoImg1Riqi">完成时间</label>
+                                <input id="update-peihuoImg1Riqi" name="peihuoImg1Riqi" type="datetime-local" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入完成时间！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="update-kucunImg2Renyuan">库存图片2录入员</label>
-                        <input id="update-kucunImg2Renyuan" name="kucunImg2Renyuan" type="text" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入录入员！-->
-<!--                        </div>-->
-                    </div>
-                    <div class="form-group">
-                        <label for="update-kucunImg2Riqi">完成时间</label>
-                        <input id="update-kucunImg2Riqi" name="kucunImg2Riqi" type="datetime-local" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入完成时间！-->
-<!--                        </div>-->
+
+                    <div class="row justify-content-evenly">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="update-peihuoImg2Renyuan">配货图片2录入员</label>
+                                <input id="update-peihuoImg2Renyuan" name="peihuoImg2Renyuan" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入录入员！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="update-peihuoImg2Riqi">完成时间</label>
+                                <input id="update-peihuoImg2Riqi" name="peihuoImg2Riqi" type="datetime-local" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入完成时间！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="update-kucunImg3Renyuan">库存图片3录入员</label>
-                        <input id="update-kucunImg3Renyuan" name="kucunImg3Renyuan" type="text" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入录入员！-->
-<!--                        </div>-->
-                    </div>
-                    <div class="form-group">
-                        <label for="update-kucunImg3Riqi">完成时间</label>
-                        <input id="update-kucunImg3Riqi" name="kucunImg3Riqi" type="datetime-local" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入完成时间！-->
-<!--                        </div>-->
+
+                    <div class="row justify-content-evenly">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="update-peihuoImg3Renyuan">配货图片3录入员</label>
+                                <input id="update-peihuoImg3Renyuan" name="peihuoImg3Renyuan" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入录入员！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="update-peihuoImg3Riqi">完成时间</label>
+                                <input id="update-peihuoImg3Riqi" name="peihuoImg3Riqi" type="datetime-local" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入完成时间！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="update-money">金额</label>
-                        <input id="update-money" name="money" type="text" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入金额！-->
-<!--                        </div>-->
-                    </div>
-                    <div class="form-group">
-                        <label for="update-moneyRenyuan">录入员</label>
-                        <input id="update-moneyRenyuan" name="moneyRenyuan" type="text" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入录入员！-->
-<!--                        </div>-->
-                    </div>
-                    <div class="form-group">
-                        <label for="update-moneyRiqi">完成时间</label>
-                        <input id="update-moneyRiqi" name="moneyRiqi" type="datetime-local" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入完成时间！-->
-<!--                        </div>-->
-                    </div>
-                    <div class="form-group">
-                        <label for="update-shoukuan">收款情况</label>
-                        <input id="update-shoukuan" name="shoukuan" type="text" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入收款情况！-->
-<!--                        </div>-->
-                    </div>
-                    <div class="form-group">
-                        <label for="update-shoukuanRenyuan">录入员</label>
-                        <input id="update-shoukuanRenyuan" name="shoukuanRenyuan" type="text" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入录入员！-->
-<!--                        </div>-->
-                    </div>
-                    <div class="form-group">
-                        <label for="update-shoukuanRiqi">完成时间</label>
-                        <input id="update-shoukuanRiqi" name="shoukuanRiqi" type="datetime-local" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入完成时间！-->
-<!--                        </div>-->
-                    </div>
-                    <div class="form-group">
-                        <label for="update-songhuoyuan">送货员</label>
-                        <input id="update-songhuoyuan" name="songhuoyuan" type="text" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入完成时间！-->
-<!--                        </div>-->
+
+                    <div class="row justify-content-evenly">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="update-peihuoImg4Renyuan">配货图片4录入员</label>
+                                <input id="update-peihuoImg4Renyuan" name="peihuoImg4Renyuan" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入录入员！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="update-peihuoImg4Riqi">完成时间</label>
+                                <input id="update-peihuoImg4Riqi" name="peihuoImg4Riqi" type="datetime-local" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入完成时间！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="update-wenjianImg1Renyuan">文件图片录入员</label>
-                        <input id="update-wenjianImg1Renyuan" name="wenjianImg1Renyuan" type="text" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入录入员！-->
-<!--                        </div>-->
+
+                    <div class="row justify-content-evenly">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="update-peihuoImg5Renyuan">配货图片5录入员</label>
+                                <input id="update-peihuoImg5Renyuan" name="peihuoImg5Renyuan" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入录入员！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="update-peihuoImg5Riqi">完成时间</label>
+                                <input id="update-peihuoImg5Riqi" name="peihuoImg5Riqi" type="datetime-local" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入完成时间！-->
+                                <!--                        </div>-->
+                            </div>
+
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="update-wenjianImg1Riqi">完成时间</label>
-                        <input id="update-wenjianImg1Riqi" name="wenjianImg1Riqi" type="datetime-local" class="form-control" autocomplete="off" data-required="1">
-<!--                        <div class="invalid-feedback">-->
-<!--                            请输入完成时间！-->
-<!--                        </div>-->
+
+
+
+                    <div class="row justify-content-evenly">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="update-peisongImg1Renyuan">配送图片1录入员</label>
+                                <input id="update-peisongImg1Renyuan" name="peisongImg1Renyuan" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入录入员！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="update-peisongImg1Riqi">完成时间</label>
+                                <input id="update-peisongImg1Riqi" name="peisongImg1Riqi" type="datetime-local" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入完成时间！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
                     </div>
+
+
+                    <div class="row justify-content-evenly">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="update-peisongImg2Renyuan">配送图片2录入员</label>
+                                <input id="update-peisongImg2Renyuan" name="peisongImg2Renyuan" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入录入员！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="update-peisongImg2Riqi">完成时间</label>
+                                <input id="update-peisongImg2Riqi" name="peisongImg2Riqi" type="datetime-local" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入完成时间！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="row justify-content-evenly">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="update-peisongImg3Renyuan">配送图片3录入员</label>
+                                <input id="update-peisongImg3Renyuan" name="peisongImg3Renyuan" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入录入员！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="update-peisongImg3Riqi">完成时间</label>
+                                <input id="update-peisongImg3Riqi" name="peisongImg3Riqi" type="datetime-local" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入完成时间！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row justify-content-evenly">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="update-wancheng">完成情况</label>
+                                <input id="update-wancheng" name="wancheng" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入完成情况！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="update-wanchengRenyuan">录入员</label>
+                                <input id="update-wanchengRenyuan" name="wanchengRenyuan" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入录入员！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row justify-content-evenly">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="update-wanchengRiqi">完成时间</label>
+                                <input id="update-wanchengRiqi" name="wanchengRiqi" type="datetime-local" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入完成时间！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="update-beizhu">备注</label>
+                                <input id="update-beizhu" name="beizhu" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入备注！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row justify-content-evenly">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="update-beizhuRenyuan">录入员</label>
+                                <input id="update-beizhuRenyuan" name="beizhuRenyuan" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入录入员！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="update-beizhuRiqi">完成时间</label>
+                                <input id="update-beizhuRiqi" name="beizhuRiqi" type="datetime-local" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入完成时间！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row justify-content-evenly">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="update-kucunText">商品库存(文字)</label>
+                                <input id="update-kucunText" name="kucunText" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入商品库存(文字)！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="update-kucunTextRenyuan">录入员</label>
+                                <input id="update-kucunTextRenyuan" name="kucunTextRenyuan" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入录入员！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row justify-content-evenly">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="update-kucunTextRiqi">完成时间</label>
+                                <input id="update-kucunTextRiqi" name="kucunTextRiqi" type="datetime-local" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入完成时间！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="update-kucunImg1Renyuan">库存图片1录入员</label>
+                                <input id="update-kucunImg1Renyuan" name="kucunImg1Renyuan" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入录入员！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row justify-content-evenly">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="update-kucunImg1Riqi">完成时间</label>
+                                <input id="update-kucunImg1Riqi" name="kucunImg1Riqi" type="datetime-local" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入完成时间！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="update-kucunImg2Renyuan">库存图片2录入员</label>
+                                <input id="update-kucunImg2Renyuan" name="kucunImg2Renyuan" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入录入员！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row justify-content-evenly">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="update-kucunImg2Riqi">完成时间</label>
+                                <input id="update-kucunImg2Riqi" name="kucunImg2Riqi" type="datetime-local" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入完成时间！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="update-kucunImg3Renyuan">库存图片3录入员</label>
+                                <input id="update-kucunImg3Renyuan" name="kucunImg3Renyuan" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入录入员！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row justify-content-evenly">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="update-kucunImg3Riqi">完成时间</label>
+                                <input id="update-kucunImg3Riqi" name="kucunImg3Riqi" type="datetime-local" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入完成时间！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="update-money">金额</label>
+                                <input id="update-money" name="money" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入金额！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row justify-content-evenly">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="update-moneyRenyuan">录入员</label>
+                                <input id="update-moneyRenyuan" name="moneyRenyuan" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入录入员！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="update-moneyRiqi">完成时间</label>
+                                <input id="update-moneyRiqi" name="moneyRiqi" type="datetime-local" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入完成时间！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row justify-content-evenly">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="update-shoukuan">收款情况</label>
+                                <input id="update-shoukuan" name="shoukuan" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入收款情况！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="update-shoukuanRenyuan">录入员</label>
+                                <input id="update-shoukuanRenyuan" name="shoukuanRenyuan" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入录入员！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row justify-content-evenly">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="update-shoukuanRiqi">完成时间</label>
+                                <input id="update-shoukuanRiqi" name="shoukuanRiqi" type="datetime-local" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入完成时间！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="update-songhuoyuan">送货员</label>
+                                <input id="update-songhuoyuan" name="songhuoyuan" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入完成时间！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row justify-content-evenly">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="update-wenjianImg1Renyuan">文件图片录入员</label>
+                                <input id="update-wenjianImg1Renyuan" name="wenjianImg1Renyuan" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入录入员！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="update-wenjianImg1Riqi">完成时间</label>
+                                <input id="update-wenjianImg1Riqi" name="wenjianImg1Riqi" type="datetime-local" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入完成时间！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+                    </div>
+
                     <label for="update-customerNeedImg1">客户需求(图片)</label>
                     <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="update-customerNeedImg1">
                         <input type="file" id="fileInput42" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">

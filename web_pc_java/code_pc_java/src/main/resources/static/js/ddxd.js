@@ -240,7 +240,7 @@ $(document).ready(function () {
         } else if (selectedValue === '铝型材') {
             select.innerHTML = '';
             getSelectGh();
-            getSelectLcys()
+            getSelectLcys();
             getInputGy();
             getLxc();
             getLcys();
@@ -249,8 +249,8 @@ $(document).ready(function () {
             getSelectGh();
             getSelectLcys();
             getSelectGy();
-            getDy();
             hqxlGy();
+            getDy();
             getLcys();
 
         } else if (selectedValue === '开关') {
@@ -444,6 +444,46 @@ $(function () {
         $('#update-ddh').val(rows[0].data.ddh);
         $('#update-luruyuan').val(rows[0].data.luruyuan);
         $('#update-fj').val(rows[0].data.fj);
+
+        var selectedValue = rows[0].data.fj
+        var select = document.getElementById('update-gh');
+        if (selectedValue === '房间柜号') {
+            select.innerHTML = '';
+            getInputGh()
+            getInputLcys()
+            getInputGy()
+        } else if (selectedValue === '铝型材') {
+            select.innerHTML = '';
+            getSelectGh();
+            getSelectLcys();
+            getInputGy();
+            getLxc();
+            getLcys();
+        } else if (selectedValue === '电源') {
+            select.innerHTML = '';
+            getSelectGh();
+            getSelectLcys();
+            getSelectGy();
+            hqxlGy();
+            getDy();
+            getLcys();
+
+        } else if (selectedValue === '开关') {
+            select.innerHTML = '';
+            getSelectGh();
+            getSelectLcys();
+            getInputGy();
+            getKg();
+            getLcys();
+        } else if (selectedValue === '配件') {
+            select.innerHTML = '';
+            getSelectGh();
+            getSelectLcys();
+            getInputGy();
+            getPj();
+            getLcys();
+        }
+
         $('#update-gh').val(rows[0].data.gh);
         $('#update-lcys').val(rows[0].data.lcys);
         $('#update-ddcd').val(rows[0].data.ddcd);
@@ -884,8 +924,9 @@ function getToken() {
 
                 length = 0;
                 if (res.data != undefined) {
-                    length = res.data
+                    length = res.data.length
                 }
+                console.log(length)
                 if (Math.floor((length + 1) / 10) === 0) {
                     length = "000" + (length + 1);
                 } else if (Math.floor((length + 1) / 100) === 0) {
@@ -908,3 +949,36 @@ function getToken() {
         }
     })
 }
+
+
+$('#add-comeAgain-btn').click(function () {
+
+    getJe();
+    let params = formToJson("#add-form");
+    if (checkForm('#add-form')) {
+        $ajax({
+            type: 'post',
+            url: '/ddxd/add',
+            data: JSON.stringify({
+                addInfo: params
+            }),
+            dataType: 'json',
+            contentType: 'application/json;charset=utf-8'
+        }, false, '', function (res) {
+            if (res.code == 200) {
+                swal("", res.msg, "success");
+                $('#add-form')[0].reset();
+                getList();
+                $('#add-close-btn').click();
+            }
+        })
+    }
+
+
+    // $('#add-modal').modal('show');
+    // getToken()
+    // getInputGh()
+    // getInputLcys()
+    // getInputGy()
+
+})

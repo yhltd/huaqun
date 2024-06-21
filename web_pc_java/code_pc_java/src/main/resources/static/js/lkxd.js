@@ -1610,7 +1610,7 @@ function getToken() {
 
                 length = 0;
                 if (res.data != undefined) {
-                    length = res.data
+                    length = res.data.length
                 }
                 if (Math.floor((length + 1) / 10) === 0) {
                     length = "000" + (length + 1);

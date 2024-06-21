@@ -79,20 +79,28 @@
 
             <div class="modal-body">
                 <form id="add-form" class="needs-validation">
-                    <div class="form-group">
-                        <label for="add-name">名称型材</label>
-                        <input id="add-name" name="name" type="text" class="form-control" autocomplete="off">
-                        <div class="invalid-feedback">
-                            请输入名称型材！
+
+                    <div class="row justify-content-evenly">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="add-name">名称型材</label>
+                                <input id="add-name" name="name" type="text" class="form-control" autocomplete="off">
+                                <div class="invalid-feedback">
+                                    请输入名称型材！
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="add-chicun">实际尺寸(减)</label>
+                                <input id="add-chicun" name="chicun" type="text" class="form-control" autocomplete="off">
+                                <div class="invalid-feedback">
+                                    请输入实际尺寸(减)！
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label for="add-chicun">实际尺寸(减)</label>
-                        <input id="add-chicun" name="chicun" type="text" class="form-control" autocomplete="off">
-                        <div class="invalid-feedback">
-                            请输入实际尺寸(减)！
-                        </div>
-                    </div>
+
                 </form>
             </div>
             <div class="border-top" style="padding: 15px;">
@@ -123,14 +131,22 @@
                     <div class="form-group">
                         <input id="id" name="id" type="hidden">
                     </div>
-                    <div class="form-group">
-                        <label for="update-name">名称型材</label>
-                        <input id="update-name" name="name" type="text" class="form-control" autocomplete="off">
+
+                    <div class="row justify-content-evenly">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="update-name">名称型材</label>
+                                <input id="update-name" name="name" type="text" class="form-control" autocomplete="off">
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="update-chicun">实际尺寸(减)</label>
+                                <input id="update-chicun" name="chicun" type="text" class="form-control" autocomplete="off">
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="update-chicun">实际尺寸(减)</label>
-                        <input id="update-chicun" name="chicun" type="text" class="form-control" autocomplete="off">
-                    </div>
+
                 </form>
             </div>
             <div class="border-top" style="padding: 15px;">
