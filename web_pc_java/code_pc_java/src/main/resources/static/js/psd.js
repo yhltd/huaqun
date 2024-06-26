@@ -27,6 +27,15 @@ function getList() {
 }
 
 $(function () {
+
+    $ajax({
+        type: 'post',
+        url: '/user/getUserName',
+    }, false, '', function (res) {
+        var this_username = res.data
+        document.getElementById("dlm").innerText = this_username;
+    })
+
     getList();
     setTable();
     initFileInput("fileInput1");
@@ -70,6 +79,7 @@ $(function () {
     initFileInput("fileInput39");
     initFileInput("fileInput40");
     initFileInput("fileInput41");
+    // document.getElementById("dlm").innerText = ($.session.get('username'));
 
     $('#select-btn').click(function () {
         var orderNumber = $('#orderNumber').val();

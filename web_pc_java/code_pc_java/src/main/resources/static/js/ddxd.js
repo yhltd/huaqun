@@ -307,19 +307,28 @@ $(function () {
     getList();
     getKhmc();
     getShfs();
-    this_kuan = $('table').width();
+    // this_kuan = $('table').width();
     //打印
-    $('#print-btn').click(function () {
-        $('table').width(this_kuan)
-        $('.table-div').width(this_kuan)
-        var newstr = window.document.getElementById("div").innerHTML;
-        var oldstr = window.document.body.innerHTML;
-        document.body.innerHTML = newstr;
-        window.print();
-        document.body.innerHTML = oldstr;
-        window.location.reload();
-        return false;
-    });
+    // $('#print-btn').click(function () {
+    //     $('table').width(this_kuan)
+    //     $('.table-div').width(this_kuan)
+    //     var newstr = window.document.getElementById("div").innerHTML;
+    //     var oldstr = window.document.body.innerHTML;
+    //     document.body.innerHTML = newstr;
+    //     window.print();
+    //     document.body.innerHTML = oldstr;
+    //     window.location.reload();
+    //     return false;
+    // });
+    // document.getElementById("dlm").innerText = ($.session.get('username'));
+
+    $ajax({
+        type: 'post',
+        url: '/user/getUserName',
+    }, false, '', function (res) {
+        var this_username = res.data
+        document.getElementById("dlm").innerText = this_username;
+    })
 
     $("#add-djbh").focus(function () {
         const today = new Date();

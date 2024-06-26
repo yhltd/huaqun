@@ -631,6 +631,15 @@ $(function () {
     getJlkw();
     getFjpz();
     getJlpp();
+    // document.getElementById("dlm").innerText = ($.session.get('username'));
+
+    $ajax({
+        type: 'post',
+        url: '/user/getUserName',
+    }, false, '', function (res) {
+        var this_username = res.data
+        document.getElementById("dlm").innerText = this_username;
+    })
 
     $('#select-btn').click(function () {
         var customerNumber = $('#customerNumber').val();
@@ -1576,7 +1585,7 @@ function getToken() {
         type: 'post',
         url: '/user/getToken',
     }, false, '', function (res) {
-
+        console.log(res.data.token)
         if (res.code == 200) {
 
             //默认当前日期

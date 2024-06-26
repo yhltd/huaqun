@@ -7,10 +7,7 @@ import com.example.demo.service.UserInfoService;
 import com.example.demo.util.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 import java.util.Collections;
@@ -38,11 +35,13 @@ public class UserInfoController {
                 SessionUtil.remove(session, "token");
                 SessionUtil.remove(session, "power");
                 SessionUtil.remove(session, "company");
+                SessionUtil.remove(session, "username");
                 return ResultInfo.error(-1, "账号密码错误");
             } else {
                 SessionUtil.setToken(session, map.get("token").toString());
                 SessionUtil.setPower(session, (List<UserInfo>) map.get("power"));
                 SessionUtil.setCompany(session, (List<UserInfo>) map.get("company"));
+                SessionUtil.setUserName(session,(List<UserInfo>) map.get("username"));
                 return ResultInfo.success("登陆成功");
             }
         } catch (Exception e) {
@@ -198,4 +197,17 @@ public class UserInfoController {
             return ResultInfo.error("错误!");
         }
     }
+
+    @RequestMapping("/getUserName")
+    public ResultInfo getUserName(HttpSession session) {
+        UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
+        try {
+            return ResultInfo.success("获取成功", userInfo.getUsername());
+        } catch (Exception e) {
+            e.printStackTrace();
+            log.error("获取失败：{}", e.getMessage());
+            return ResultInfo.error("错误!");
+        }
+    }
+
 }

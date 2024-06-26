@@ -42,6 +42,12 @@ public class SessionUtil {
         session.setAttribute("token", data);
     }
 
+    public static void setUserName(HttpSession session, List<UserInfo> UserInfo) {
+        //设置session过期时间
+        session.setMaxInactiveInterval(MAX_INTERVAL);
+        session.setAttribute("username", UserInfo);
+    }
+
     public static void setPower(HttpSession session, List<UserInfo> UserInfo){
         //设置session过期时间
         session.setMaxInactiveInterval(MAX_INTERVAL);
@@ -59,6 +65,10 @@ public class SessionUtil {
 
     public static List<UserInfo> getPower(HttpSession session){
         return StringUtils.cast(session.getAttribute("power"));
+    }
+
+    public static List<UserInfo> getUserName(HttpSession session){
+        return StringUtils.cast(session.getAttribute("username"));
     }
 
     /**

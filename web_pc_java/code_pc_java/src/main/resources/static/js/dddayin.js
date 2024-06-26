@@ -22,6 +22,14 @@ function getList() {
 $(function () {
     getList();
 
+    $ajax({
+        type: 'post',
+        url: '/user/getUserName',
+    }, false, '', function (res) {
+        var this_username = res.data
+        document.getElementById("dlm").innerText = this_username;
+    })
+
     //刷新
     $("#refresh-btn").click(function () {
         getList();
