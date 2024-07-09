@@ -3,6 +3,23 @@ html,body,#main{
     height: 100%;
     background-color: #f2f2f2;
 }
+::-webkit-scrollbar {display: none;}
+li{
+    margin: 8px 0;
+}
+.icon{
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    margin-top: 1.2px;
+    vertical-align:top;
+}
+.icon1{
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    vertical-align:middle;
+}
 .alerts{
     position: fixed;
     top: 1rem;
