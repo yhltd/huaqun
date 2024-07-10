@@ -265,3 +265,7 @@ $(function () {
         window.open("userInfo.html")
     })
 })
+
+function logout() {
+    window.location.href = 'http://localhost:9091/#';
+}
