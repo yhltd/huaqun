@@ -25,6 +25,41 @@
           <view class="list_view" data-index="0" data-column="customer_name_riqi" data-value="{{list[0].customer_name_riqi}}" style="width:calc(250vmin / 7.5)">{{list[0].customer_name_riqi}}</view>
         </view>
 
+        <view class="table_main">
+          <view class="title_text" style="width:calc(220vmin / 7.5);height:calc(140vmin / 7.5);position:sticky;left:0">送货地址</view>
+          <view class="list_view" bindtap="clickView" data-index="0" data-column="songhuo_address" data-value="{{list[0].songhuo_address}}" style="width:calc(500vmin / 7.5);height: calc(140vmin / 7.5);">{{list[0].songhuo_address}}</view>
+          <view class="list_view" data-index="0" data-column="songhuo_address_renyuan" data-value="{{list[0].songhuo_address_renyuan}}" style="width:calc(250vmin / 7.5);height: calc(140vmin / 7.5);">{{list[0].songhuo_address_renyuan}}</view>
+          <view class="list_view" data-index="0" data-column="songhuo_address_riqi" data-value="{{list[0].songhuo_address_riqi}}" style="width:calc(250vmin / 7.5);height: calc(140vmin / 7.5);">{{list[0].songhuo_address_riqi}}</view>
+        </view>
+
+        <view class="table_main">
+          <view class="title_text" style="width:calc(220vmin / 7.5);height:calc(140vmin / 7.5);position:sticky;left:0">安装地址</view>
+          <view class="list_view" bindtap="clickView" data-index="0" data-column="anzhuang_address" data-value="{{list[0].anzhuang_address}}" style="width:calc(500vmin / 7.5);height: calc(140vmin / 7.5);">{{list[0].anzhuang_address}}</view>
+          <view class="list_view" data-index="0" data-column="anzhuang_address_renyuan" data-value="{{list[0].anzhuang_address_renyuan}}" style="width:calc(250vmin / 7.5);height: calc(140vmin / 7.5);">{{list[0].anzhuang_address_renyuan}}</view>
+          <view class="list_view" data-index="0" data-column="anzhuang_address_riqi" data-value="{{list[0].anzhuang_address_riqi}}" style="width:calc(250vmin / 7.5);height: calc(140vmin / 7.5);">{{list[0].anzhuang_address_riqi}}</view>
+        </view>
+
+        <view class="table_main">
+          <view class="title_text" style="width:calc(220vmin / 7.5);height:calc(70vmin / 7.5);position:sticky;left:0">联系人、电话</view>
+          <view class="list_view" bindtap="clickView" data-index="0" data-column="phone" data-value="{{list[0].phone}}" style="width:calc(500vmin / 7.5)">{{list[0].phone}}</view>
+          <view class="list_view" data-index="0" data-column="phone_renyuan" data-value="{{list[0].phone_renyuan}}" style="width:calc(250vmin / 7.5)">{{list[0].phone_renyuan}}</view>
+          <view class="list_view" data-index="0" data-column="phone_riqi" data-value="{{list[0].phone_riqi}}" style="width:calc(250vmin / 7.5)">{{list[0].phone_riqi}}</view>
+        </view>
+
+        <view class="table_main">
+          <view class="title_text" style="width:calc(220vmin / 7.5);height:calc(70vmin / 7.5);position:sticky;left:0">客户订单号</view>
+          <view class="list_view" bindtap="clickView" data-index="0" data-column="customer_order" data-value="{{list[0].customer_order}}" style="width:calc(500vmin / 7.5)">{{list[0].customer_order}}</view>
+          <view class="list_view" data-index="0" data-column="customer_order_renyuan" data-value="{{list[0].customer_order_renyuan}}" style="width:calc(250vmin / 7.5)">{{list[0].customer_order_renyuan}}</view>
+          <view class="list_view" data-index="0" data-column="customer_order_riqi" data-value="{{list[0].customer_order_riqi}}" style="width:calc(250vmin / 7.5)">{{list[0].customer_order_riqi}}</view>
+        </view>
+
+        <view class="table_main">
+          <view class="title_text" style="width:calc(220vmin / 7.5);height:calc(70vmin / 7.5);position:sticky;left:0">送货单号</view>
+          <view class="list_view" bindtap="clickView" data-index="0" data-column="songhuo_danhao" data-value="{{list[0].songhuo_danhao}}" style="width:calc(500vmin / 7.5)">{{list[0].songhuo_danhao}}</view>
+          <view class="list_view" data-index="0" data-column="songhuo_danhao_renyuan" data-value="{{list[0].songhuo_danhao_renyuan}}" style="width:calc(250vmin / 7.5)">{{list[0].songhuo_danhao_renyuan}}</view>
+          <view class="list_view" data-index="0" data-column="songhuo_danhao_riqi" data-value="{{list[0].songhuo_danhao_riqi}}" style="width:calc(250vmin / 7.5)">{{list[0].songhuo_danhao_riqi}}</view>
+        </view>
+
         <view class="table_main_neirong">
           <view class="title_text" style="width:calc(220vmin / 7.5);height:calc(350vmin / 7.5);position:sticky;left:0">客户需求(文字)</view>
           <view class="list_view" bindtap="clickView" data-index="0" data-column="customer_need_text" data-value="{{list[0].customer_need_text}}" style="width:calc(500vmin / 7.5);height: calc(350vmin / 7.5);">{{list[0].customer_need_text}}</view>
@@ -76,7 +111,7 @@
           <view class="list_view" data-index="0" data-column="wenjian_img1_riqi" data-value="{{list[0].wenjian_img1_riqi}}" style="width:calc(250vmin / 7.5);height: calc({{wenjian_img_height}}vmin / 7.5);">{{list[0].wenjian_img1_riqi}}</view>
         </view>
 
-        <view class="table_main">
+        <!-- <view class="table_main">
           <view class="title_text" style="width:calc(220vmin / 7.5);height:calc(140vmin / 7.5);position:sticky;left:0">送货地址</view>
           <view class="list_view" bindtap="clickView" data-index="0" data-column="songhuo_address" data-value="{{list[0].songhuo_address}}" style="width:calc(500vmin / 7.5);height: calc(140vmin / 7.5);">{{list[0].songhuo_address}}</view>
           <view class="list_view" data-index="0" data-column="songhuo_address_renyuan" data-value="{{list[0].songhuo_address_renyuan}}" style="width:calc(250vmin / 7.5);height: calc(140vmin / 7.5);">{{list[0].songhuo_address_renyuan}}</view>
@@ -109,7 +144,7 @@
           <view class="list_view" bindtap="clickView" data-index="0" data-column="songhuo_danhao" data-value="{{list[0].songhuo_danhao}}" style="width:calc(500vmin / 7.5)">{{list[0].songhuo_danhao}}</view>
           <view class="list_view" data-index="0" data-column="songhuo_danhao_renyuan" data-value="{{list[0].songhuo_danhao_renyuan}}" style="width:calc(250vmin / 7.5)">{{list[0].songhuo_danhao_renyuan}}</view>
           <view class="list_view" data-index="0" data-column="songhuo_danhao_riqi" data-value="{{list[0].songhuo_danhao_riqi}}" style="width:calc(250vmin / 7.5)">{{list[0].songhuo_danhao_riqi}}</view>
-        </view>
+        </view> -->
 
         <view class="table_main_neirong">
           <view class="title_text2" style="width:calc(220vmin / 7.5);height:calc({{peihuo_img_height}}vmin / 7.5);position:sticky;left:0">配货照片(照片)</view>
