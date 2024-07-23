@@ -246,7 +246,7 @@ function downloadFile(url, name = '默认文件名') {
 function downloadFileByBase64(name, base64) {
     var myBlob = dataURLtoBlob(base64, name);
     var myUrl = URL.createObjectURL(myBlob);
-    downloadFile(myUrl, name)
+    // downloadFile(myUrl, name)
 }
 
 function fileShow(id) {
