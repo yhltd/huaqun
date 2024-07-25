@@ -325,5 +325,16 @@ public class lkxd {
      * 录入员
      */
     private String customerNameRenyuan;
-
+    /***
+     * 包装
+     */
+    private String baoZhuang;
+    /**
+     * 完成状态
+     */
+    private String wanCheng;
+    /**
+     * 组装
+     */
+    private String zuzhuang;
 }
