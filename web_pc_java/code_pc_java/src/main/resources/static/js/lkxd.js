@@ -590,15 +590,19 @@ function getZcje() {
 
 function getUpdZcje() {
     var sum_sl2 = parseFloat(document.getElementById('update-sumShuliang2').value);
-    var zcdj2 = parseFloat(document.getElementById('update-danjia2').value);
+    var zcdj2 = parseFloat(document.getElementById('update-danjia1').value);
     var sum_je2 = Math.round(sum_sl2 * zcdj2 * 100) / 100
     document.getElementById("update-sumJine2").value = sum_je2
 }
 
 function getList() {
+    $('#ksinsertDate').val("");
+    $('#jsinsertDate').val("");
     $('#customerNumber').val("");
     $('#customerName').val("");
     $('#installAddress').val("");
+    $('#wancheng').val("");
+
     $ajax({
         type: 'post',
         url: '/lkxd/getList',

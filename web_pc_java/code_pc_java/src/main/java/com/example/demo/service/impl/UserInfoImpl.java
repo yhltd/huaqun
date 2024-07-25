@@ -49,10 +49,15 @@ public class UserInfoImpl extends ServiceImpl<UserInfoMapper, UserInfo> implemen
         return userInfoMapper.getList();
     }
 
+
+
     @Override
     public List<UserInfo> queryList(String name, String pinyin) {
         return userInfoMapper.queryList(name, pinyin);
     }
+
+    @Override
+    public List<UserInfo> getNameByUsername(String username){ return userInfoMapper.getNameByUsername(username);}
 
     @Override
     public boolean update(UserInfo userInfo) { return updateById(userInfo); }
@@ -68,4 +73,12 @@ public class UserInfoImpl extends ServiceImpl<UserInfoMapper, UserInfo> implemen
     @Override
     public List<UserInfo> hqxlKhmc() {return userInfoMapper.hqxlKhmc();}
 
+    @Override
+    public List<UserInfo> glgetList(String username){ return  userInfoMapper.glgetList(username);}
+
+    @Override
+    public List<UserInfo> czygetList(String username){ return userInfoMapper.czygetKist(username);}
+
+    @Override
+    public boolean glupdate(UserInfo userInfo) { return updateById(userInfo); }
 }

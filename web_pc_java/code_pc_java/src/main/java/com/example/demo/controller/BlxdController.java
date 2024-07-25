@@ -34,9 +34,11 @@ public class BlxdController {
     @RequestMapping("/getList")
     public ResultInfo getList(HttpSession session) {
         UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
+        if(userInfo.getPower().equals("客户")){
+            return ResultInfo.error(401, "无权限");
+        }
         try {
-            if(userInfo.getPower().equals("管理员")){
-
+            if(userInfo.getPower().equals("管理员")||userInfo.getPower().equals("超级管理员")){
                 List<blxd> getList = blxdService.getList();
                 return ResultInfo.success("获取成功", getList);
             }else if (userInfo.getPower().equals("玻璃厂")){
@@ -77,7 +79,7 @@ public class BlxdController {
     @RequestMapping(value = "/update", method = RequestMethod.POST)
         public ResultInfo update(@RequestBody String updateJson,HttpSession session) {
         UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
-        if(!userInfo.getPower().equals("管理员")){
+        if(userInfo.getPower().equals("客户")){
             return ResultInfo.error(401, "无权限");
         }
         blxd blxd = null;

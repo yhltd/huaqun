@@ -27,13 +27,13 @@
     <script type="text/javascript" src="../js/main.js"></script>
     <script type="text/javascript" src="../js/psd.js"></script>
 
-<!--    <link href="../bootstrap-4.5.0-dist/css/bootstrap.css"rel="stylesheet">-->
+    <link href="../bootstrap-4.5.0-dist/css/bootstrap.css"rel="stylesheet">
 
-<!--    <link href="../bootstrap-4.5.0-dist/css/fileinput.css" media="all"rel="stylesheet" type="text/css" />-->
+    <link href="../bootstrap-4.5.0-dist/css/fileinput.css" media="all"rel="stylesheet" type="text/css" />
 
-<!--    <script src="../bootstrap-4.5.0-dist/js/fileinput.js"type="text/javascript"></script>-->
+    <script src="../bootstrap-4.5.0-dist/js/fileinput.js"type="text/javascript"></script>
 
-<!--    <script src="../bootstrap-4.5.0-dist/js/bootstrap.js"type="text/javascript"></script>-->
+    <script src="../bootstrap-4.5.0-dist/js/bootstrap.js"type="text/javascript"></script>
 
 </head>
 
@@ -220,10 +220,6 @@
                                 </div>
                             </div>
                         </div>
-                        </div>
-
-
-                    <div class="row justify-content-evenly">
                         <div class="col-6">
                             <div class="form-group">
                                 <label for="add-customerNameRiqi">完成时间</label>
@@ -233,23 +229,33 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-6">
-                            <div class="form-group">
-                                <label for="add-customerNeedText">客户需求(文字)</label>
-                                <input id="add-customerNeedText" name="customerNeedText" type="text" class="form-control" autocomplete="off" data-required="1">
-                                <!--                        <div class="invalid-feedback">-->
-                                <!--                            请输入客户需求(文字)！-->
-                                <!--                        </div>-->
-                            </div>
                         </div>
-                    </div>
 
 
                     <div class="row justify-content-evenly">
+<!--                        <div class="col-6">-->
+<!--                            <div class="form-group">-->
+<!--                                <label for="add-customerNameRiqi">完成时间</label>-->
+<!--                                <input id="add-customerNameRiqi" name="customerNameRiqi" type="datetime-local" step="1" class="form-control" autocomplete="off">-->
+<!--                                <div class="invalid-feedback">-->
+<!--                                    请输入完成时间！-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+                        <div class="col-6">
+
+                            <div class="form-group">
+                                <label for="add-songhuoAddress">送货地址</label>
+                                <input id="add-songhuoAddress" name="songhuoAddress" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入送货地址！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
                         <div class="col-6">
                             <div class="form-group">
-                                <label for="add-customerNeedTextRenyuan">录入员</label>
-                                <input id="add-customerNeedTextRenyuan" name="customerNeedTextRenyuan" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <label for="add-songhuoAddressRenyuan">录入员</label>
+                                <input id="add-songhuoAddressRenyuan" name="songhuoAddressRenyuan" type="text" class="form-control" autocomplete="off" data-required="1">
                                 <!--                        <div class="invalid-feedback">-->
                                 <!--                            请输入录入员！-->
                                 <!--                        </div>-->
@@ -257,18 +263,103 @@
                         </div>
                         <div class="col-6">
                             <div class="form-group">
-                                <label for="add-customerNeedTextRiqi">完成时间</label>
-                                <input id="add-customerNeedTextRiqi" name="customerNeedTextRiqi" type="datetime-local" step="1" class="form-control" autocomplete="off" data-required="1">
+                                <label for="add-songhuoAddressRiqi">完成时间</label>
+                                <input id="add-songhuoAddressRiqi" name="songhuoAddressRiqi" type="datetime-local" step="1" class="form-control" autocomplete="off" data-required="1">
                                 <!--                        <div class="invalid-feedback">-->
                                 <!--                            请输入完成时间！-->
                                 <!--                        </div>-->
                             </div>
                         </div>
-
+<!--                        <div class="col-6">-->
+<!--                            <div class="form-group">-->
+<!--                                <label for="add-customerNeedText">客户需求(文字)</label>-->
+<!--                                <input id="add-customerNeedText" name="customerNeedText" type="text" class="form-control" autocomplete="off" data-required="1">-->
+<!--                                &lt;!&ndash;                        <div class="invalid-feedback">&ndash;&gt;-->
+<!--                                &lt;!&ndash;                            请输入客户需求(文字)！&ndash;&gt;-->
+<!--                                &lt;!&ndash;                        </div>&ndash;&gt;-->
+<!--                            </div>-->
+<!--                        </div>-->
                     </div>
 
 
                     <div class="row justify-content-evenly">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="add-anzhuangAddress">安装地址</label>
+                                <input id="add-anzhuangAddress" name="anzhuangAddress" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入安装地址！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="add-anzhuangAddressRenyuan">录入员</label>
+                                <input id="add-anzhuangAddressRenyuan" name="anzhuangAddressRenyuan" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入录入员！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="add-anzhuangAddressRiqi">完成时间</label>
+                                <input id="add-anzhuangAddressRiqi" name="anzhuangAddressRiqi" type="datetime-local" step="1" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入完成时间！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+<!--                        <div class="col-6">-->
+<!--                            <div class="form-group">-->
+<!--                                <label for="add-customerNeedTextRenyuan">录入员</label>-->
+<!--                                <input id="add-customerNeedTextRenyuan" name="customerNeedTextRenyuan" type="text" class="form-control" autocomplete="off" data-required="1">-->
+<!--                                &lt;!&ndash;                        <div class="invalid-feedback">&ndash;&gt;-->
+<!--                                &lt;!&ndash;                            请输入录入员！&ndash;&gt;-->
+<!--                                &lt;!&ndash;                        </div>&ndash;&gt;-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="col-6">-->
+<!--                            <div class="form-group">-->
+<!--                                <label for="add-customerNeedTextRiqi">完成时间</label>-->
+<!--                                <input id="add-customerNeedTextRiqi" name="customerNeedTextRiqi" type="datetime-local" step="1" class="form-control" autocomplete="off" data-required="1">-->
+<!--                                &lt;!&ndash;                        <div class="invalid-feedback">&ndash;&gt;-->
+<!--                                &lt;!&ndash;                            请输入完成时间！&ndash;&gt;-->
+<!--                                &lt;!&ndash;                        </div>&ndash;&gt;-->
+<!--                            </div>-->
+                        </div>
+
+<!--                    </div>-->
+
+
+                    <div class="row justify-content-evenly">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="add-phone">联系人、电话</label>
+                                <input id="add-phone" name="phone" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入联系人、电话！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="add-phoneRenyuan">录入员</label>
+                                <input id="add-phoneRenyuan" name="phoneRenyuan" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入录入员！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="add-phoneRiqi">完成时间</label>
+                                <input id="add-phoneRiqi" name="phoneRiqi" type="datetime-local" step="1" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入完成时间！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
                         <div class="col-6">
                             <div class="form-group">
                                 <label for="add-customerNeedImg1Renyuan">客户需求图片1录入员</label>
@@ -294,6 +385,86 @@
                     <div class="row justify-content-evenly">
                         <div class="col-6">
                             <div class="form-group">
+                                <label for="add-customerOrder">客户订单号</label>
+                                <input id="add-customerOrder" name="customerOrder" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入客户订单号！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="add-customerOrderRenyuan">录入员</label>
+                                <input id="add-customerOrderRenyuan" name="customerOrderRenyuan" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入录入员！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="add-customerOrderRiqi">完成时间</label>
+                                <input id="add-customerOrderRiqi" name="customerOrderRiqi" type="datetime-local" step="1" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入完成时间！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+<!--                        <div class="col-6">-->
+<!--                            <div class="form-group">-->
+<!--                                <label for="add-customerNeedText">客户需求(文字)</label>-->
+<!--                                <input id="add-customerNeedText" name="customerNeedText" type="text" class="form-control" autocomplete="off" data-required="1">-->
+<!--                                &lt;!&ndash;                        <div class="invalid-feedback">&ndash;&gt;-->
+<!--                                &lt;!&ndash;                            请输入客户需求(文字)！&ndash;&gt;-->
+<!--                                &lt;!&ndash;                        </div>&ndash;&gt;-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="col-6">&ndash;&gt;-->
+<!--                            <div class="form-group">-->
+<!--                                <label for="add-customerNeedTextRenyuan">录入员</label>-->
+<!--                                <input id="add-customerNeedTextRenyuan" name="customerNeedTextRenyuan" type="text" class="form-control" autocomplete="off" data-required="1">-->
+<!--                                &lt;!&ndash;                        <div class="invalid-feedback">&ndash;&gt;-->
+<!--                                &lt;!&ndash;                            请输入录入员！&ndash;&gt;-->
+<!--                                                            &lt;!&ndash;                        </div>&ndash;&gt;-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="col-6">-->
+<!--                            <div class="form-group">-->
+<!--                                <label for="add-customerNeedTextRiqi">完成时间</label>-->
+<!--                                <input id="add-customerNeedTextRiqi" name="customerNeedTextRiqi" type="datetime-local" step="1" class="form-control" autocomplete="off" data-required="1">-->
+<!--                                &lt;!&ndash;                        <div class="invalid-feedback">&ndash;&gt;-->
+<!--                                &lt;!&ndash;                            请输入完成时间！&ndash;&gt;-->
+<!--                                &lt;!&ndash;                        </div>&ndash;&gt;-->
+<!--                            </div>-->
+<!--                        <div class="col-6">-->
+<!--                            <div class="form-group">-->
+<!--                                <label for="add-customerOrder">客户订单号</label>-->
+<!--                                <input id="add-customerOrder" name="customerOrder" type="text" class="form-control" autocomplete="off" data-required="1">-->
+<!--                                &lt;!&ndash;                        <div class="invalid-feedback">&ndash;&gt;-->
+<!--                                &lt;!&ndash;                            请输入客户订单号！&ndash;&gt;-->
+<!--                                &lt;!&ndash;                        </div>&ndash;&gt;-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="col-6">-->
+<!--                            <div class="form-group">-->
+<!--                                <label for="add-customerOrderRenyuan">录入员</label>-->
+<!--                                <input id="add-customerOrderRenyuan" name="customerOrderRenyuan" type="text" class="form-control" autocomplete="off" data-required="1">-->
+<!--                                &lt;!&ndash;                        <div class="invalid-feedback">&ndash;&gt;-->
+<!--                                &lt;!&ndash;                            请输入录入员！&ndash;&gt;-->
+<!--                                &lt;!&ndash;                        </div>&ndash;&gt;-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="col-6">-->
+<!--                            <div class="form-group">-->
+<!--                                <label for="add-customerOrderRiqi">完成时间</label>-->
+<!--                                <input id="add-customerOrderRiqi" name="customerOrderRiqi" type="datetime-local" step="1" class="form-control" autocomplete="off" data-required="1">-->
+<!--                                &lt;!&ndash;                        <div class="invalid-feedback">&ndash;&gt;-->
+<!--                                &lt;!&ndash;                            请输入完成时间！&ndash;&gt;-->
+<!--                                &lt;!&ndash;                        </div>&ndash;&gt;-->
+<!--                            </div>-->
+<!--                        </div>-->
+                        <div class="col-6">
+                            <div class="form-group">
                                 <label for="add-customerNeedText1">配送文字1</label>
                                 <input id="add-customerNeedText1" name="customerNeedText1" type="text" class="form-control" autocomplete="off" data-required="1">
                                 <!--                        <div class="invalid-feedback">-->
@@ -315,6 +486,32 @@
 
 
                     <div class="row justify-content-evenly">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="add-customerNeedText">客户需求(文字)</label>
+                                <input id="add-customerNeedText" name="customerNeedText" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入客户需求(文字)！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+                        <div class="col-6">-->
+                            <div class="form-group">
+                                <label for="add-customerNeedTextRenyuan">录入员</label>
+                                <input id="add-customerNeedTextRenyuan" name="customerNeedTextRenyuan" type="text" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入录入员！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="add-customerNeedTextRiqi">完成时间</label>
+                                <input id="add-customerNeedTextRiqi" name="customerNeedTextRiqi" type="datetime-local" step="1" class="form-control" autocomplete="off" data-required="1">
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入完成时间！-->
+                                <!--                        </div>-->
+                            </div>
                         <div class="col-6">
                             <div class="form-group">
                                 <label for="add-customerNeedText1Riqi">完成时间</label>
@@ -348,138 +545,138 @@
                                 <!--                        </div>-->
                             </div>
                         </div>
-                        <div class="col-6">
+<!--                        <div class="col-6">-->
 
-                            <div class="form-group">
-                                <label for="add-songhuoAddress">送货地址</label>
-                                <input id="add-songhuoAddress" name="songhuoAddress" type="text" class="form-control" autocomplete="off" data-required="1">
-                                <!--                        <div class="invalid-feedback">-->
-                                <!--                            请输入送货地址！-->
-                                <!--                        </div>-->
-                            </div>
-                        </div>
+<!--                            <div class="form-group">-->
+<!--                                <label for="add-songhuoAddress">送货地址</label>-->
+<!--                                <input id="add-songhuoAddress" name="songhuoAddress" type="text" class="form-control" autocomplete="off" data-required="1">-->
+<!--                                &lt;!&ndash;                        <div class="invalid-feedback">&ndash;&gt;-->
+<!--                                &lt;!&ndash;                            请输入送货地址！&ndash;&gt;-->
+<!--                                &lt;!&ndash;                        </div>&ndash;&gt;-->
+<!--                            </div>-->
+<!--                        </div>-->
                     </div>
 
 
 
                     <div class="row justify-content-evenly">
-                        <div class="col-6">
-                            <div class="form-group">
-                                <label for="add-songhuoAddressRenyuan">录入员</label>
-                                <input id="add-songhuoAddressRenyuan" name="songhuoAddressRenyuan" type="text" class="form-control" autocomplete="off" data-required="1">
-                                <!--                        <div class="invalid-feedback">-->
-                                <!--                            请输入录入员！-->
-                                <!--                        </div>-->
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="form-group">
-                                <label for="add-songhuoAddressRiqi">完成时间</label>
-                                <input id="add-songhuoAddressRiqi" name="songhuoAddressRiqi" type="datetime-local" step="1" class="form-control" autocomplete="off" data-required="1">
-                                <!--                        <div class="invalid-feedback">-->
-                                <!--                            请输入完成时间！-->
-                                <!--                        </div>-->
-                            </div>
-                        </div>
+<!--                        <div class="col-6">-->
+<!--                            <div class="form-group">-->
+<!--                                <label for="add-songhuoAddressRenyuan">录入员</label>-->
+<!--                                <input id="add-songhuoAddressRenyuan" name="songhuoAddressRenyuan" type="text" class="form-control" autocomplete="off" data-required="1">-->
+<!--                                &lt;!&ndash;                        <div class="invalid-feedback">&ndash;&gt;-->
+<!--                                &lt;!&ndash;                            请输入录入员！&ndash;&gt;-->
+<!--                                &lt;!&ndash;                        </div>&ndash;&gt;-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="col-6">-->
+<!--                            <div class="form-group">-->
+<!--                                <label for="add-songhuoAddressRiqi">完成时间</label>-->
+<!--                                <input id="add-songhuoAddressRiqi" name="songhuoAddressRiqi" type="datetime-local" step="1" class="form-control" autocomplete="off" data-required="1">-->
+<!--                                &lt;!&ndash;                        <div class="invalid-feedback">&ndash;&gt;-->
+<!--                                &lt;!&ndash;                            请输入完成时间！&ndash;&gt;-->
+<!--                                &lt;!&ndash;                        </div>&ndash;&gt;-->
+<!--                            </div>-->
+<!--                        </div>-->
                     </div>
 
 
                     <div class="row justify-content-evenly">
-                        <div class="col-6">
-                            <div class="form-group">
-                                <label for="add-anzhuangAddress">安装地址</label>
-                                <input id="add-anzhuangAddress" name="anzhuangAddress" type="text" class="form-control" autocomplete="off" data-required="1">
-                                <!--                        <div class="invalid-feedback">-->
-                                <!--                            请输入安装地址！-->
-                                <!--                        </div>-->
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="form-group">
-                                <label for="add-anzhuangAddressRenyuan">录入员</label>
-                                <input id="add-anzhuangAddressRenyuan" name="anzhuangAddressRenyuan" type="text" class="form-control" autocomplete="off" data-required="1">
-                                <!--                        <div class="invalid-feedback">-->
-                                <!--                            请输入录入员！-->
-                                <!--                        </div>-->
-                            </div>
-                        </div>
+<!--                        <div class="col-6">-->
+<!--                            <div class="form-group">-->
+<!--                                <label for="add-anzhuangAddress">安装地址</label>-->
+<!--                                <input id="add-anzhuangAddress" name="anzhuangAddress" type="text" class="form-control" autocomplete="off" data-required="1">-->
+<!--                                &lt;!&ndash;                        <div class="invalid-feedback">&ndash;&gt;-->
+<!--                                &lt;!&ndash;                            请输入安装地址！&ndash;&gt;-->
+<!--                                &lt;!&ndash;                        </div>&ndash;&gt;-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="col-6">-->
+<!--                            <div class="form-group">-->
+<!--                                <label for="add-anzhuangAddressRenyuan">录入员</label>-->
+<!--                                <input id="add-anzhuangAddressRenyuan" name="anzhuangAddressRenyuan" type="text" class="form-control" autocomplete="off" data-required="1">-->
+<!--                                &lt;!&ndash;                        <div class="invalid-feedback">&ndash;&gt;-->
+<!--                                &lt;!&ndash;                            请输入录入员！&ndash;&gt;-->
+<!--                                &lt;!&ndash;                        </div>&ndash;&gt;-->
+<!--                            </div>-->
+<!--                        </div>-->
                     </div>
 
                     <div class="row justify-content-evenly">
-                        <div class="col-6">
-                            <div class="form-group">
-                                <label for="add-anzhuangAddressRiqi">完成时间</label>
-                                <input id="add-anzhuangAddressRiqi" name="anzhuangAddressRiqi" type="datetime-local" step="1" class="form-control" autocomplete="off" data-required="1">
-                                <!--                        <div class="invalid-feedback">-->
-                                <!--                            请输入完成时间！-->
-                                <!--                        </div>-->
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="form-group">
-                                <label for="add-phone">联系人、电话</label>
-                                <input id="add-phone" name="phone" type="text" class="form-control" autocomplete="off" data-required="1">
-                                <!--                        <div class="invalid-feedback">-->
-                                <!--                            请输入联系人、电话！-->
-                                <!--                        </div>-->
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="row justify-content-evenly">
-                        <div class="col-6">
-                            <div class="form-group">
-                                <label for="add-phoneRenyuan">录入员</label>
-                                <input id="add-phoneRenyuan" name="phoneRenyuan" type="text" class="form-control" autocomplete="off" data-required="1">
-                                <!--                        <div class="invalid-feedback">-->
-                                <!--                            请输入录入员！-->
-                                <!--                        </div>-->
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="form-group">
-                                <label for="add-phoneRiqi">完成时间</label>
-                                <input id="add-phoneRiqi" name="phoneRiqi" type="datetime-local" step="1" class="form-control" autocomplete="off" data-required="1">
-                                <!--                        <div class="invalid-feedback">-->
-                                <!--                            请输入完成时间！-->
-                                <!--                        </div>-->
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row justify-content-evenly">
-                        <div class="col-6">
-                            <div class="form-group">
-                                <label for="add-customerOrder">客户订单号</label>
-                                <input id="add-customerOrder" name="customerOrder" type="text" class="form-control" autocomplete="off" data-required="1">
-                                <!--                        <div class="invalid-feedback">-->
-                                <!--                            请输入客户订单号！-->
-                                <!--                        </div>-->
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="form-group">
-                                <label for="add-customerOrderRenyuan">录入员</label>
-                                <input id="add-customerOrderRenyuan" name="customerOrderRenyuan" type="text" class="form-control" autocomplete="off" data-required="1">
-                                <!--                        <div class="invalid-feedback">-->
-                                <!--                            请输入录入员！-->
-                                <!--                        </div>-->
-                            </div>
-                        </div>
+<!--                        <div class="col-6">-->
+<!--                            <div class="form-group">-->
+<!--                                <label for="add-anzhuangAddressRiqi">完成时间</label>-->
+<!--                                <input id="add-anzhuangAddressRiqi" name="anzhuangAddressRiqi" type="datetime-local" step="1" class="form-control" autocomplete="off" data-required="1">-->
+<!--                                &lt;!&ndash;                        <div class="invalid-feedback">&ndash;&gt;-->
+<!--                                &lt;!&ndash;                            请输入完成时间！&ndash;&gt;-->
+<!--                                &lt;!&ndash;                        </div>&ndash;&gt;-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="col-6">-->
+<!--                            <div class="form-group">-->
+<!--                                <label for="add-phone">联系人、电话</label>-->
+<!--                                <input id="add-phone" name="phone" type="text" class="form-control" autocomplete="off" data-required="1">-->
+<!--                                &lt;!&ndash;                        <div class="invalid-feedback">&ndash;&gt;-->
+<!--                                &lt;!&ndash;                            请输入联系人、电话！&ndash;&gt;-->
+<!--                                &lt;!&ndash;                        </div>&ndash;&gt;-->
+<!--                            </div>-->
+<!--                        </div>-->
                     </div>
 
 
                     <div class="row justify-content-evenly">
-                        <div class="col-6">
-                            <div class="form-group">
-                                <label for="add-customerOrderRiqi">完成时间</label>
-                                <input id="add-customerOrderRiqi" name="customerOrderRiqi" type="datetime-local" step="1" class="form-control" autocomplete="off" data-required="1">
-                                <!--                        <div class="invalid-feedback">-->
-                                <!--                            请输入完成时间！-->
-                                <!--                        </div>-->
-                            </div>
-                        </div>
+<!--                        <div class="col-6">-->
+<!--                            <div class="form-group">-->
+<!--                                <label for="add-phoneRenyuan">录入员</label>-->
+<!--                                <input id="add-phoneRenyuan" name="phoneRenyuan" type="text" class="form-control" autocomplete="off" data-required="1">-->
+<!--                                &lt;!&ndash;                        <div class="invalid-feedback">&ndash;&gt;-->
+<!--                                &lt;!&ndash;                            请输入录入员！&ndash;&gt;-->
+<!--                                &lt;!&ndash;                        </div>&ndash;&gt;-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="col-6">-->
+<!--                            <div class="form-group">-->
+<!--                                <label for="add-phoneRiqi">完成时间</label>-->
+<!--                                <input id="add-phoneRiqi" name="phoneRiqi" type="datetime-local" step="1" class="form-control" autocomplete="off" data-required="1">-->
+<!--                                &lt;!&ndash;                        <div class="invalid-feedback">&ndash;&gt;-->
+<!--                                &lt;!&ndash;                            请输入完成时间！&ndash;&gt;-->
+<!--                                &lt;!&ndash;                        </div>&ndash;&gt;-->
+<!--                            </div>-->
+<!--                        </div>-->
+                    </div>
+
+                    <div class="row justify-content-evenly">
+<!--                        <div class="col-6">-->
+<!--                            <div class="form-group">-->
+<!--                                <label for="add-customerOrder">客户订单号</label>-->
+<!--                                <input id="add-customerOrder" name="customerOrder" type="text" class="form-control" autocomplete="off" data-required="1">-->
+<!--                                &lt;!&ndash;                        <div class="invalid-feedback">&ndash;&gt;-->
+<!--                                &lt;!&ndash;                            请输入客户订单号！&ndash;&gt;-->
+<!--                                &lt;!&ndash;                        </div>&ndash;&gt;-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="col-6">-->
+<!--                            <div class="form-group">-->
+<!--                                <label for="add-customerOrderRenyuan">录入员</label>-->
+<!--                                <input id="add-customerOrderRenyuan" name="customerOrderRenyuan" type="text" class="form-control" autocomplete="off" data-required="1">-->
+<!--                                &lt;!&ndash;                        <div class="invalid-feedback">&ndash;&gt;-->
+<!--                                &lt;!&ndash;                            请输入录入员！&ndash;&gt;-->
+<!--                                &lt;!&ndash;                        </div>&ndash;&gt;-->
+<!--                            </div>-->
+<!--                        </div>-->
+                    </div>
+
+
+                    <div class="row justify-content-evenly">
+<!--                        <div class="col-6">-->
+<!--                            <div class="form-group">-->
+<!--                                <label for="add-customerOrderRiqi">完成时间</label>-->
+<!--                                <input id="add-customerOrderRiqi" name="customerOrderRiqi" type="datetime-local" step="1" class="form-control" autocomplete="off" data-required="1">-->
+<!--                                &lt;!&ndash;                        <div class="invalid-feedback">&ndash;&gt;-->
+<!--                                &lt;!&ndash;                            请输入完成时间！&ndash;&gt;-->
+<!--                                &lt;!&ndash;                        </div>&ndash;&gt;-->
+<!--                            </div>-->
+<!--                        </div>-->
                         <div class="col-6">
                             <div class="form-group">
                                 <label for="add-songhuoDanhao">送货单号</label>
@@ -1137,7 +1334,6 @@
                     <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-wenjianImg8">
                         <input type="file" id="fileInput41" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">
                     </form>
-                </form>
             </div>
             <div class="border-top" style="padding: 15px;">
                 <button id="add-submit-btn" type="button" class="btn" style="background-color: limegreen;color: white">
@@ -1148,9 +1344,13 @@
                     <i class="bi bi-x-circle icon"></i>
                     关闭
                 </button>
+                </div>
+                </form>
             </div>
+
         </div>
     </div>
+
 </div>
 
 <div id="update-modal" class="modal fade" tabindex="-1">
@@ -1278,24 +1478,24 @@
 
 
                     <div class="row justify-content-evenly">
-                        <div class="col-6">
-                            <div class="form-group">
-                                <label for="update-customerNeedText1">配送文字1</label>
-                                <input id="update-customerNeedText1" name="customerNeedText1" type="text" class="form-control" autocomplete="off" data-required="1">
-                                <!--                        <div class="invalid-feedback">-->
-                                <!--                            请输入配送文字1！-->
-                                <!--                        </div>-->
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="form-group">
-                                <label for="update-customerNeedText1Renyuan">文件图片1录入员</label>
-                                <input id="update-customerNeedText1Renyuan" name="customerNeedText1Renyuan" type="text" class="form-control" autocomplete="off" data-required="1">
-                                <!--                        <div class="invalid-feedback">-->
-                                <!--                            请输入录入员！-->
-                                <!--                        </div>-->
-                            </div>
-                        </div>
+<!--                        <div class="col-6">-->
+<!--                            <div class="form-group">-->
+<!--                                <label for="update-customerNeedText1">配送文字1</label>-->
+<!--                                <input id="update-customerNeedText1" name="customerNeedText1" type="text" class="form-control" autocomplete="off" data-required="1">-->
+<!--                                &lt;!&ndash;                        <div class="invalid-feedback">&ndash;&gt;-->
+<!--                                &lt;!&ndash;                            请输入配送文字1！&ndash;&gt;-->
+<!--                                &lt;!&ndash;                        </div>&ndash;&gt;-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="col-6">-->
+<!--                            <div class="form-group">-->
+<!--                                <label for="update-customerNeedText1Renyuan">文件图片1录入员</label>-->
+<!--                                <input id="update-customerNeedText1Renyuan" name="customerNeedText1Renyuan" type="text" class="form-control" autocomplete="off" data-required="1">-->
+<!--                                &lt;!&ndash;                        <div class="invalid-feedback">&ndash;&gt;-->
+<!--                                &lt;!&ndash;                            请输入录入员！&ndash;&gt;-->
+<!--                                &lt;!&ndash;                        </div>&ndash;&gt;-->
+<!--                            </div>-->
+<!--                        </div>-->
                     </div>
 
                     <div class="row justify-content-evenly">

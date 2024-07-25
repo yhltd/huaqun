@@ -2,6 +2,7 @@ package com.example.demo.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.example.demo.entity.UserInfo;
+import com.example.demo.entity.loginDate;
 import com.example.demo.entity.xlpz;
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
@@ -30,4 +31,32 @@ public interface UserInfoMapper extends BaseMapper<UserInfo> {
     @Select("select company from userInfo where power = '客户' ")
     List<UserInfo> hqxlKhmc();
 
+    @Select("select name from userInfo where username = #{username}")
+    List<UserInfo> getNameByUsername(String username);
+
+    @Select("select * from userInfo where power = '客户' or power = '玻璃厂' or power = '操作员' or username=#{username} ORDER BY CASE power  " +
+            "    WHEN '管理员' THEN 1  " +
+            "    WHEN '操作员' THEN 2  " +
+            "    WHEN '客户' THEN 3  " +
+            "    WHEN '玻璃厂' THEN 4  END;")
+    List<UserInfo> glgetList(String username);
+
+    @Select("select * from userInfo where username=#{username}")
+    List<UserInfo> czygetKist(String username);
+//    @Update("UPDATE userInfo  " +
+//            "SET username = #{username},  " +
+//            "    password = #{password},  " +
+//            "    company = #{company},  " +
+//            "    name = #{name},  " +
+//            "    pinyin = #{pinyin},  " +
+//            "    quyu = #{quyu},  " +
+//            "    address_name = #{addressName},  " +
+//            "    money = #{money},  " +
+//            "    shendan = #{shendan},  " +
+//            "    pay = #{pay},  " +
+//            "    kailiao = #{kailiao},  " +
+//            "    zuzhuang = #{zuzhuang},  " +
+//            "    baozhuang = #{baozhuang}  " +
+//            "WHERE id = #{id} AND power IN ('操作员', '客户', '玻璃厂');")
+//    boolean glupdate(String username,String password,String company,String name,String pinyin,String power,String quyu,String addressName,String money,String shendan,String pay,String kailiao,String zuzhuang,String baozhuang,int id);
 }

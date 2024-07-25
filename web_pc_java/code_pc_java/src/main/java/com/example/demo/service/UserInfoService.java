@@ -25,11 +25,16 @@ public interface UserInfoService extends IService<UserInfo> {
      */
     List<UserInfo> getList();
 
+
+
     /**
      * 根据姓名和部门查询
      */
     List<UserInfo> queryList(String name, String pinyin);
-
+    /**
+     * 根据username 查name
+     */
+    List<UserInfo> getNameByUsername(String username);
     /**
      * 修改
      */
@@ -49,5 +54,16 @@ public interface UserInfoService extends IService<UserInfo> {
     UserInfo add(UserInfo userInfo);
 
     List<UserInfo> hqxlKhmc();
-
+    /**
+     *  管理员查询用户
+     */
+    List<UserInfo> glgetList(String username);
+    /**
+     * 操作员查询用户
+     */
+    List<UserInfo> czygetList(String username);
+    /**
+     * 管理员管理操作员，客户，玻璃
+     */
+    boolean glupdate(UserInfo userInfo);
 }

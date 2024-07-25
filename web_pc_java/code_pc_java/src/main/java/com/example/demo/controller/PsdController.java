@@ -34,6 +34,9 @@ public class PsdController {
     @RequestMapping("/getList")
     public ResultInfo getList(HttpSession session) {
         UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
+        if(userInfo.getPower().equals("玻璃厂")){
+            return ResultInfo.error(401, "无权限");
+        }
         try {
             List<psd> getList = psdService.getList();
             return ResultInfo.success("获取成功", getList);

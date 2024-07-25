@@ -34,9 +34,18 @@ public class LkxdController {
      * @return ResultInfo
      */
     @RequestMapping("/getList")
-    public ResultInfo getList(HttpSession session) {
+    public ResultInfo getList(HttpSession session,String khmc) {
         UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
+//        UserInfo userInfo1 = GsonUtil.toEntity(SessionUtil.getCompany(session).toString(), UserInfo.class);
+        if(userInfo.getPower().equals("玻璃厂")){
+            return ResultInfo.error(401, "无权限");
+        }
         try {
+//            if(userInfo.getPower().equals("客户")){
+//               userInfo1.setCompany(khmc);
+//               List<lkxd> getListByKeHU = lkxdService.queryPinYin(khmc);
+//               return  ResultInfo.success("获取成功",getListByKeHU);
+//            }
             List<lkxd> getList = lkxdService.getList();
             return ResultInfo.success("获取成功", getList);
         } catch (Exception e) {
@@ -52,12 +61,15 @@ public class LkxdController {
      * @return ResultInfo
      */
     @RequestMapping("/queryList")
-    public ResultInfo queryList(String customerNumber, String customerName,String installAddress, String ksinsertDate,
-                                String jsinsertDate,
-                                String wancheng, HttpSession session) {
+    public ResultInfo queryList(String customerNumber, String customerName,String installAddress,String wancheng, String ksinsertDate,
+                                String jsinsertDate
+                                , HttpSession session) {
         UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
+        if(userInfo.getPower().equals("玻璃厂")){
+            return ResultInfo.error(401, "无权限");
+        }
         try {
-            List<lkxd> list = lkxdService.queryList(customerNumber, customerName, installAddress,ksinsertDate,jsinsertDate,wancheng);
+            List<lkxd> list = lkxdService.queryList(customerNumber, customerName, installAddress, wancheng, ksinsertDate,jsinsertDate);
             return ResultInfo.success("获取成功", list);
         } catch (Exception e) {
             e.printStackTrace();
@@ -74,6 +86,9 @@ public class LkxdController {
     @RequestMapping("/queryPinYin")
     public ResultInfo queryPinYin(String customerName, HttpSession session) {
         UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
+        if(userInfo.getPower().equals("玻璃厂")){
+            return ResultInfo.error(401, "无权限");
+        }
         try {
             List<lkxd> list = lkxdService.queryPinYin(customerName);
             return ResultInfo.success("获取成功", list);
@@ -90,9 +105,9 @@ public class LkxdController {
     @RequestMapping(value = "/update", method = RequestMethod.POST)
     public ResultInfo update(@RequestBody String updateJson, HttpSession session) {
         UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
-//        if(!userInfo.getPower().equals("管理员")){
-//            return ResultInfo.error(401, "无权限");
-//        }
+        if(userInfo.getPower().equals("玻璃厂")||userInfo.getPower().equals("客户")){
+            return ResultInfo.error(401, "无权限");
+        }
         lkxd lkxd = null;
         try {
             lkxd = DecodeUtil.decodeToJson(updateJson, lkxd.class);
@@ -116,7 +131,7 @@ public class LkxdController {
     public ResultInfo add(@RequestBody HashMap map, HttpSession session) {
         UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
         GsonUtil gsonUtil = new GsonUtil(GsonUtil.toJson(map));
-        if(!userInfo.getPower().equals("管理员")){
+        if(!userInfo.getPower().equals("玻璃厂")){
             return ResultInfo.error(401, "无权限");
         }
         try {
@@ -146,7 +161,7 @@ public class LkxdController {
         UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
         GsonUtil gsonUtil = new GsonUtil(GsonUtil.toJson(map));
         List<Integer> idList = GsonUtil.toList(gsonUtil.get("idList"), Integer.class);
-        if(!userInfo.getPower().equals("管理员")){
+        if(!userInfo.getPower().equals("玻璃厂")||userInfo.getPower().equals("客户")){
             return ResultInfo.error(401, "无权限");
         }
         try {

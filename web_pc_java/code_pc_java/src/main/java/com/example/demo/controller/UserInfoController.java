@@ -2,7 +2,10 @@ package com.example.demo.controller;
 
 import com.alibaba.fastjson2.JSONObject;
 import com.example.demo.entity.UserInfo;
+import com.example.demo.entity.lkxd;
+import com.example.demo.entity.loginDate;
 import com.example.demo.entity.xlpz;
+import com.example.demo.service.LoginDateService;
 import com.example.demo.service.UserInfoService;
 import com.example.demo.util.*;
 import lombok.extern.slf4j.Slf4j;
@@ -22,8 +25,12 @@ public class UserInfoController {
     @Autowired
     private UserInfoService userInfoService;
 
+    @Autowired
+    private LoginDateService loginDateService;
     @RequestMapping("/login")
     public ResultInfo login(HttpSession session, String username, String password) {
+        UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
+
         try {
             //获取user
             Map<String, Object> map = userInfoService.login(username, password);
@@ -60,9 +67,20 @@ public class UserInfoController {
     @RequestMapping("/getList")
     public ResultInfo getList(HttpSession session) {
         UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
+        if (userInfo.getPower().equals("客户")||userInfo.getPower().equals("玻璃厂")){
+            return ResultInfo.error(401, "无权限");
+        }
         try {
-            List<UserInfo> getList = userInfoService.getList();
-            return ResultInfo.success("获取成功", getList);
+            if(userInfo.getPower().equals("管理员")){
+                List<UserInfo> glgetList = userInfoService.glgetList(userInfo.getUsername());
+                return ResultInfo.success("获取成功", glgetList);
+            }else if (userInfo.getPower().equals("操作员")){
+                List<UserInfo> czygetList = userInfoService.czygetList(userInfo.getUsername());
+                return ResultInfo.success("获取成功",czygetList);
+            }else {
+                List<UserInfo> getList = userInfoService.getList();
+                return ResultInfo.success("获取成功", getList);
+            }
         } catch (Exception e) {
             e.printStackTrace();
             log.error("获取失败：{}", e.getMessage());
@@ -96,9 +114,9 @@ public class UserInfoController {
     @RequestMapping(value = "/update", method = RequestMethod.POST)
     public ResultInfo update(@RequestBody String updateJson, HttpSession session) {
         UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
-//        if(!userInfo.getPower().equals("管理员")){
-//            return ResultInfo.error(401, "无权限");
-//        }
+        if(!(userInfo.getPower().equals("管理员")||userInfo.getPower().equals("超级管理员"))){
+            return ResultInfo.error(401, "无权限");
+        }
         UserInfo UserInfo = null;
         try {
             UserInfo = DecodeUtil.decodeToJson(updateJson, UserInfo.class);
@@ -122,7 +140,7 @@ public class UserInfoController {
     public ResultInfo add(@RequestBody HashMap map, HttpSession session) {
         UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
         GsonUtil gsonUtil = new GsonUtil(GsonUtil.toJson(map));
-        if(!userInfo.getPower().equals("管理员")){
+        if(!userInfo.getPower().equals("超级管理员")){
             return ResultInfo.error(401, "无权限");
         }
         try {
@@ -210,4 +228,36 @@ public class UserInfoController {
         }
     }
 
-}
+    @RequestMapping("/getPower")
+    public ResultInfo getPower(HttpSession session){
+        UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
+        try {
+            if(userInfo.getPower().equals("管理员")){
+                return ResultInfo.success("获取成功", 1);
+            }else if(userInfo.getPower().equals("客户")){
+                return ResultInfo.success("获取成功", 2);
+            }else if(userInfo.getPower().equals("玻璃厂")){
+                return ResultInfo.success("获取成功", 3);
+            }else{
+                return ResultInfo.success("获取成功", 4);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            log.error("获取失败：{}", e.getMessage());
+            return ResultInfo.error("错误!");
+        }
+    }
+
+
+    @RequestMapping("/getNameByUserName")
+    public ResultInfo getNameByUserName(HttpSession session,String username) {
+        UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
+        try {
+            List<UserInfo> list = userInfoService.getNameByUsername(username);
+            return ResultInfo.success("获取成功",list);
+        } catch (Exception e) {
+            e.printStackTrace();
+            log.error("获取失败：{}", e.getMessage());
+            return ResultInfo.error("错误!");
+        }
+    }}

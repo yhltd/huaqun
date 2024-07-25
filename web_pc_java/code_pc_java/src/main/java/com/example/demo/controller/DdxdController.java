@@ -39,6 +39,9 @@ public class DdxdController {
     public ResultInfo getList(HttpSession session,String khmc) {
         UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
 //        UserInfo userInfo1 = GsonUtil.toEntity(SessionUtil.getCompany(session).toString(), UserInfo.class);
+        if(userInfo.getPower().equals("玻璃厂")){
+            return ResultInfo.error(401, "无权限");
+        }
         try {
 //            if(userInfo.getPower().equals("客户")){
 //                userInfo1.setCompany(khmc);
@@ -63,6 +66,9 @@ public class DdxdController {
     @RequestMapping("/queryList")
     public ResultInfo queryList(String khmc, String ddh,String ksxdrq ,String jsxdrq , String azdz, HttpSession session) {
         UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
+        if(userInfo.getPower().equals("玻璃厂")){
+            return ResultInfo.error(401, "无权限");
+        }
         try {
             List<ddxd> list = ddxdService.queryList(khmc, ddh,ksxdrq ,jsxdrq ,azdz);
             return ResultInfo.success("获取成功", list);
@@ -79,9 +85,9 @@ public class DdxdController {
     @RequestMapping(value = "/update", method = RequestMethod.POST)
     public ResultInfo update(@RequestBody String updateJson, HttpSession session) {
         UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
-//        if(!userInfo.getPower().equals("管理员")){
-//            return ResultInfo.error(401, "无权限");
-//        }
+        if(!(userInfo.getPower().equals("管理员")||userInfo.getPower().equals("超级管理员"))){
+            return ResultInfo.error(401, "无权限");
+        }
         ddxd ddxd = null;
         try {
             ddxd = DecodeUtil.decodeToJson(updateJson, ddxd.class);
@@ -105,7 +111,7 @@ public class DdxdController {
     public ResultInfo add(@RequestBody HashMap map, HttpSession session) {
         UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
         GsonUtil gsonUtil = new GsonUtil(GsonUtil.toJson(map));
-        if(!userInfo.getPower().equals("管理员")){
+        if(userInfo.getPower().equals("玻璃厂")){
             return ResultInfo.error(401, "无权限");
         }
         try {
@@ -135,7 +141,7 @@ public class DdxdController {
         UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
         GsonUtil gsonUtil = new GsonUtil(GsonUtil.toJson(map));
         List<Integer> idList = GsonUtil.toList(gsonUtil.get("idList"), Integer.class);
-        if(!userInfo.getPower().equals("管理员")){
+        if(!(userInfo.getPower().equals("玻璃厂")||userInfo.getPower().equals("客户"))){
             return ResultInfo.error(401, "无权限");
         }
         try {
