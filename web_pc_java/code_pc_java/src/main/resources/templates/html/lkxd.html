@@ -64,18 +64,19 @@
     <a href="main.html" target="_top"><img src="../img/小房子.png" class="img1"></a>
     <img src="../img/太阳.png" class="img1" style="margin-left: 20px;">
 </div>
+<!--搜索框-->
 <div class="top-toolbar row" style="background-color: #d1d2d4">
     <div class="col-md-3 mb-2">
-        <input id="ksinsertDate" type="date" class="form-control" placeholder="开始时间" autocomplete="off">
-    </div>
-    <div class="col-md-3 mb-2">
-        <input id="jsinsertDate" type="date" class="form-control" placeholder="结束时间" autocomplete="off">
+        <input id="customerName" type="text" class="form-control" placeholder="客户名称" autocomplete="off">
     </div>
     <div class="col-md-3 mb-2">
         <input id="customerNumber" type="text" class="form-control" placeholder="订单号" autocomplete="off">
     </div>
     <div class="col-md-3 mb-2">
-        <input id="customerName" type="text" class="form-control" placeholder="客户名称" autocomplete="off">
+        <input id="ksinsertDate" type="date" class="form-control" placeholder="开始时间" autocomplete="off">
+    </div>
+    <div class="col-md-3 mb-2">
+        <input id="jsinsertDate" type="date" class="form-control" placeholder="结束时间" autocomplete="off">
     </div>
     <div class="col-md-3 mb-2">
         <input id="installAddress" type="text" class="form-control" placeholder="安装地址" autocomplete="off">
@@ -90,6 +91,7 @@
         </button>
     </div>
 </div>
+<!-- 功能按钮-->
 <div id="table-toolbar">
     <div class="btn-group" role="group">
         <button id="refresh-btn" class="btn btn-primary" style="border-radius:5px;">
@@ -107,7 +109,7 @@
             修改
         </button>
         <span style="border-right: 20px solid white"></span>
-        <button id="delete-btn" class="btn btn-primary" style="border-radius:5px;background-color: red;border: 1px solid red">
+        <button id="delete-btn" class="btn btn-primary" style="border-radius:5px;background-color: #ff0000;border: 1px solid #ff0000">
             <i class="bi bi-trash icon"></i>
             删除
         </button>
@@ -124,7 +126,7 @@
 <div class="table-div border-top">
     <table id="lkxdTable"></table>
 </div>
-
+<!--提交按钮-->
 <div id="add-modal" class="modal fade" tabindex="-1">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -138,6 +140,16 @@
             <div class="modal-body">
                 <form id="add-form" class="needs-validation">
 
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label for="add-insertDate">下单日期</label>
+                            <input id="add-insertDate" name="insertDate" type="date" class="form-control" autocomplete="off">
+                            <div class="invalid-feedback">
+                                请输入下单日期！
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="row justify-content-evenly">
                         <div class="col-6">
                             <div class="form-group">
@@ -148,15 +160,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-6">
-                            <div class="form-group">
-                                <label for="add-insertDate">下单日期</label>
-                                <input id="add-insertDate" name="insertDate" type="date" class="form-control" autocomplete="off">
-                                <div class="invalid-feedback">
-                                    请输入下单日期！
-                                </div>
-                            </div>
-                        </div>
+
                     </div>
 
                     <div class="row justify-content-evenly">
@@ -924,6 +928,7 @@
     </div>
 </div>
 
+<!--编辑功能-->
 <div id="update-modal" class="modal fade" tabindex="-1">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -938,17 +943,7 @@
                     <div class="form-group">
                         <input id="id" name="id" type="hidden">
                     </div>
-
-
-
-
                     <div class="row justify-content-evenly">
-                        <div class="col-6">
-                            <div class="form-group">
-                                <label for="update-customerName">客户名称</label>
-                                <select id="update-customerName" name="customerName" class="form-control"><option></option></select>
-                            </div>
-                        </div>
                         <div class="col-6">
                             <div class="form-group">
                                 <label for="update-insertDate">下单日期</label>
@@ -956,6 +951,12 @@
                                 <div class="invalid-feedback">
                                     请输入下单日期！
                                 </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="update-customerName">客户名称</label>
+                                <select id="update-customerName" name="customerName" class="form-control"><option></option></select>
                             </div>
                         </div>
                     </div>
@@ -1746,7 +1747,7 @@
         </div>
     </div>
 </div>
-
+<!--删除功能提示-->
 <div id="delete-modal" class="modal fade" tabindex="-1">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -1769,7 +1770,7 @@
         </div>
     </div>
 </div>
-
+<!--底部警示-->
 <div class="background-image2 flex-container" style="margin-top: 800px">
     <div class="info-box" style="width: 500px;margin-left: 10px">
         <span>主办单位：华群家具材料（深圳）有限公司</span><br>

@@ -913,44 +913,50 @@ function setTable(data) {
                     return index + 1;
                 }
             }, {
-                field: 'customerName',
-                title: '客户名称',
-                align: 'center',
-                sortable: true,
-                width: 100,
-            }, {
                 field: 'insertDate',
                 title: '下单日期',
                 align: 'center',
                 sortable: true,
                 width: 100,
-            }, {
+            },{
+                field: 'customerName',
+                title: '客户名称',
+                align: 'center',
+                sortable: true,
+                width: 100,
+            },  {
+                field: 'wanCheng',
+                title: '订单状态',
+                align: 'center',
+                sortable: true,
+                width: 100,
+            },{
                 field: 'orderNumber',
                 title: '单据编号',
                 align: 'center',
                 sortable: true,
                 width: 100,
-            }, {
-                field: 'pinyin',
-                title: '简码',
-                align: 'center',
-                sortable: true,
-                width: 80,
-            }, {
-                field: 'shippingAddress',
-                title: '送货地址',
+            },{
+                field: '',
+                title: '开孔',
                 align: 'center',
                 sortable: true,
                 width: 100,
-            }, {
-                field: 'phone',
-                title: '联系电话',
+            },{
+                field: '',
+                title: '铣孔',
                 align: 'center',
                 sortable: true,
                 width: 100,
-            }, {
-                field: 'shippingType',
-                title: '送货方式',
+            },{
+                field: '',
+                title: '组装',
+                align: 'center',
+                sortable: true,
+                width: 100,
+            },{
+                field: 'baozhuang',
+                title: '包装',
                 align: 'center',
                 sortable: true,
                 width: 100,
@@ -960,420 +966,24 @@ function setTable(data) {
                 align: 'center',
                 sortable: true,
                 width: 100,
-            }, {
-                field: 'customerNameRenyuan',
-                title: '录入员',
-                align: 'center',
-                sortable: true,
-                width: 80,
-            }, {
-                field: 'customerNumber',
-                title: '订单号',
+            },{
+                field: '',
+                title: '订单编号',
                 align: 'center',
                 sortable: true,
                 width: 100,
-            }, {
-                field: 'height',
-                title: '高',
-                align: 'center',
-                sortable: true,
-                width: 80,
-            }, {
-                field: 'width',
-                title: '宽',
-                align: 'center',
-                sortable: true,
-                width: 80,
-            }, {
-                field: 'num',
-                title: '下单数量',
+            },{
+                field: '',
+                title: '操作员',
                 align: 'center',
                 sortable: true,
                 width: 100,
-            }, {
-                field: 'lvxingcai',
-                title: '铝型材',
+            },{
+                field: '',
+                title: '完成时间',
                 align: 'center',
                 sortable: true,
                 width: 100,
-            }, {
-                field: 'lvcaiYanse',
-                title: '铝材颜色',
-                align: 'center',
-                sortable: true,
-                width: 100,
-            }, {
-                field: 'boliShenjiagong',
-                title: '玻璃深加工',
-                align: 'center',
-                sortable: true,
-                width: 130,
-            }, {
-                field: 'boliYanse',
-                title: '玻璃颜色',
-                align: 'center',
-                sortable: true,
-                width: 100,
-            }, {
-                field: 'lashouXinghao',
-                title: '拉手型号',
-                align: 'center',
-                sortable: true,
-                width: 100,
-            }, {
-                field: 'jiaoliankongFangxiangLeft',
-                title: '铰链孔左开门',
-                align: 'center',
-                sortable: true,
-                width: 140,
-            }, {
-                field: 'jiaoliankongFangxiangRight',
-                title: '铰链孔右开门',
-                align: 'center',
-                sortable: true,
-                width: 140,
-            }, {
-                field: 'lashouShuliangLeft',
-                title: '有拉手数量(个)左',
-                align: 'center',
-                sortable: true,
-                width: 150,
-            }, {
-                field: 'lashouShuliangRight',
-                title: '有拉手数量(个)右',
-                align: 'center',
-                sortable: true,
-                width: 150,
-            }, {
-                field: 'lashouweiSelectLeft',
-                title: '左拉手位从下向上',
-                align: 'center',
-                sortable: true,
-                width: 150,
-            }, {
-                field: 'lashouweiInsertLeft',
-                title: '左拉手位从右向左',
-                align: 'center',
-                sortable: true,
-                width: 150,
-            }, {
-                field: 'lashouweiSelectRight',
-                title: '右拉手位从下向上',
-                align: 'center',
-                sortable: true,
-                width: 150,
-            }, {
-                field: 'lashouweiInsertRight',
-                title: '右拉手位从左向右',
-                align: 'center',
-                sortable: true,
-                width: 150,
-            }, {
-                field: 'zhuangsuoshuliangInsertLeft1',
-                title: '左装锁数量',
-                align: 'center',
-                sortable: true,
-                width: 140,
-            }, {
-                field: 'zhuangsuoshuliangInsertRight1',
-                title: '右装锁数量',
-                align: 'center',
-                sortable: true,
-                width: 120,
-            }, {
-                field: 'zhuangsuofangweiInsertLeft1',
-                title: '左锁孔位从下向上',
-                align: 'center',
-                sortable: true,
-                width: 150,
-            }, {
-                field: 'zhuangsuofangweiInsertLeft2',
-                title: '左锁孔位从右向左',
-                align: 'center',
-                sortable: true,
-                width: 150,
-            }, {
-                field: 'zhuangsuofangweiInsertRight1',
-                title: '右锁孔位从下向上',
-                align: 'center',
-                sortable: true,
-                width: 150,
-            }, {
-                field: 'zhuangsuofangweiInsertRight2',
-                title: '右锁孔位从左向右',
-                align: 'center',
-                sortable: true,
-                width: 150,
-            }, {
-                field: 'kaijiaolian',
-                title: '开铰链孔',
-                align: 'center',
-                sortable: true,
-                width: 100,
-            }, {
-                field: 'jiaolian1SelectLeft',
-                title: '左铰链孔位1',
-                align: 'center',
-                sortable: true,
-                width: 140,
-            }, {
-                field: 'jiaolian1InsertLeft',
-                title: '左铰链孔位1数量',
-                align: 'center',
-                sortable: true,
-                width: 150,
-            }, {
-                field: 'jiaolian1SelectRight',
-                title: '右铰链孔位1',
-                align: 'center',
-                sortable: true,
-                width: 140,
-            }, {
-                field: 'jiaolian1InsertRight',
-                title: '右铰链孔位1数量',
-                align: 'center',
-                sortable: true,
-                width: 150,
-            }, {
-                field: 'jiaolian2SelectLeft',
-                title: '左铰链孔位2',
-                align: 'center',
-                sortable: true,
-                width: 140,
-            }, {
-                field: 'jiaolian2InsertLeft',
-                title: '左铰链孔位2数量',
-                align: 'center',
-                sortable: true,
-                width: 150,
-            }, {
-                field: 'jiaolian2SelectRight',
-                title: '右铰链孔位2',
-                align: 'center',
-                sortable: true,
-                width: 140,
-            }, {
-                field: 'jiaolian2InsertRight',
-                title: '右铰链孔位2数量',
-                align: 'center',
-                sortable: true,
-                width: 150,
-            }, {
-                field: 'jiaolian3SelectLeft',
-                title: '左铰链孔位3',
-                align: 'center',
-                sortable: true,
-                width: 140,
-            }, {
-                field: 'jiaolian3InsertLeft',
-                title: '左铰链孔位3数量',
-                align: 'center',
-                sortable: true,
-                width: 150,
-            }, {
-                field: 'jiaolian3SelectRight',
-                title: '右铰链孔位3',
-                align: 'center',
-                sortable: true,
-                width: 140,
-            }, {
-                field: 'jiaolian3InsertRight',
-                title: '右铰链孔位3数量',
-                align: 'center',
-                sortable: true,
-                width: 150,
-            }, {
-                field: 'jiaolian4SelectLeft',
-                title: '左铰链孔位4',
-                align: 'center',
-                sortable: true,
-                width: 140,
-            }, {
-                field: 'jiaolian4InsertLeft',
-                title: '左铰链孔位4数量',
-                align: 'center',
-                sortable: true,
-                width: 150,
-            }, {
-                field: 'jiaolian4SelectRight',
-                title: '右铰链孔位4',
-                align: 'center',
-                sortable: true,
-                width: 140,
-            }, {
-                field: 'jiaolian4InsertRight',
-                title: '右铰链孔位4数量',
-                align: 'center',
-                sortable: true,
-                width: 150,
-            }, {
-                field: 'jiaolian5SelectLeft',
-                title: '左铰链孔位5',
-                align: 'center',
-                sortable: true,
-                width: 140,
-            }, {
-                field: 'jiaolian5InsertLeft',
-                title: '左铰链孔位5数量',
-                align: 'center',
-                sortable: true,
-                width: 150,
-            }, {
-                field: 'jiaolian5SelectRight',
-                title: '右铰链孔位5',
-                align: 'center',
-                sortable: true,
-                width: 140,
-            }, {
-                field: 'jiaolian5InsertRight',
-                title: '右铰链孔位5数量',
-                align: 'center',
-                sortable: true,
-                width: 150,
-            }, {
-                field: 'jiaolian6SelectLeft',
-                title: '左铰链孔位6',
-                align: 'center',
-                sortable: true,
-                width: 140,
-            }, {
-                field: 'jiaolian6InsertLeft',
-                title: '左铰链孔位6数量',
-                align: 'center',
-                sortable: true,
-                width: 150,
-            }, {
-                field: 'jiaolian6SelectRight',
-                title: '右铰链孔位6',
-                align: 'center',
-                sortable: true,
-                width: 140,
-            }, {
-                field: 'jiaolian6InsertRight',
-                title: '右铰链孔位6数量',
-                align: 'center',
-                sortable: true,
-                width: 150,
-            }, {
-                field: 'fujianSelect1',
-                title: '附件配置1',
-                align: 'center',
-                sortable: true,
-                width: 120,
-            }, {
-                field: 'fujianSelect2',
-                title: '附件配置2',
-                align: 'center',
-                sortable: true,
-                width: 120,
-            }, {
-                field: 'fujianSelect3',
-                title: '附件配置3',
-                align: 'center',
-                sortable: true,
-                width: 120,
-            }, {
-                field: 'fujianSelect4',
-                title: '附件配置4',
-                align: 'center',
-                sortable: true,
-                width: 120,
-            }, {
-                field: 'pinpaiSelect1',
-                title: '铰链品牌1',
-                align: 'center',
-                sortable: true,
-                width: 120,
-            }, {
-                field: 'pinpaiSelect2',
-                title: '铰链品牌2',
-                align: 'center',
-                sortable: true,
-                width: 120,
-            }, {
-                field: 'pinpaiSelect3',
-                title: '铰链品牌3',
-                align: 'center',
-                sortable: true,
-                width: 120,
-            }, {
-                field: 'pinpaiSelect4',
-                title: '铰链品牌4',
-                align: 'center',
-                sortable: true,
-                width: 120,
-            }, {
-                field: 'fujianShuliang1',
-                title: '附件数量1',
-                align: 'center',
-                sortable: true,
-                width: 120,
-            }, {
-                field: 'fujianShuliang2',
-                title: '附件数量2',
-                align: 'center',
-                sortable: true,
-                width: 100,
-            }, {
-                field: 'fujianShuliang3',
-                title: '附件数量3',
-                align: 'center',
-                sortable: true,
-                width: 120,
-            }, {
-                field: 'fujianShuliang4',
-                title: '附件数量4',
-                align: 'center',
-                sortable: true,
-                width: 120,
-            }, {
-                field: 'sumShuliang1',
-                title: '数量(平方)',
-                align: 'center',
-                sortable: true,
-                width: 120,
-            }, {
-                field: 'danjia1',
-                title: '单价(平方)',
-                align: 'center',
-                sortable: true,
-                width: 120,
-            }, {
-                field: 'sumJine1',
-                title: '金额(平方)',
-                align: 'center',
-                sortable: true,
-                width: 120,
-            }, {
-                field: 'sumShuliang2',
-                title: '数量(周长)',
-                align: 'center',
-                sortable: true,
-                width: 120,
-            }, {
-                field: 'danjia2',
-                title: '单价(周长)',
-                align: 'center',
-                sortable: true,
-                width: 120,
-            }, {
-                field: 'sumJine2',
-                title: '金额(周长)',
-                align: 'center',
-                sortable: true,
-                width: 120,
-            }, {
-                field: 'wancheng',
-                title: '完成',
-                align: 'center',
-                sortable: true,
-                width: 120,
-            }, {
-                field: 'qita',
-                title: '其他(项目说明)',
-                align: 'center',
-                sortable: true,
-                width: 150,
             }
         ],
         onClickRow: function (row, el) {
@@ -1399,13 +1009,14 @@ function toExcel() {
     }, true, '', function (res) {
         if (res.code == 200) {
             setTable(res.data);
-            console.log(res.data)
+            console.log("所有数据"+res.data)
             var array = res.data
             var header = []
             for (var i = 0; i < array.length; i++) {
                 var body = {
                     customerName: array[i].customerName,
                     insertDate: array[i].insertDate,
+                    packinglist:array[i].packinglist,
                     orderNumber: array[i].orderNumber,
                     pinyin: array[i].pinyin,
                     shippingAddress: array[i].shippingAddress,
@@ -1486,7 +1097,7 @@ function toExcel() {
                 header.push(body)
             }
             console.log(header)
-            title = ['客户名称', '下单日期', '单据编号', '简码', '送货地址', '联系电话', '送货方式', '安装地址', '订单号', '高', '宽', '铝型材', '下单数量', '铝材颜色', '玻璃深加工', '玻璃颜色', '拉手型号', '铰链孔方向左', '铰链孔方向右', '拉手数量左', '拉手数量右', '左拉手位从上向下', '左拉手位从右向左', '右拉手位从下向上', '右拉手位从左向右', '装锁数量(左)', '装锁数量(右)', '装锁方向(右)', '装锁方位(左1)', '装锁方位(左2)', '装锁方位(右1)', '装锁方位(右2)', '开铰链孔', '左铰链孔从下向上', '左铰链孔从右向左', '右铰链孔从下向上', '右铰链孔从左向右', '左铰链孔2从下向上', '左铰链孔2从右向左', '右铰链孔2从下向上', '右铰链孔2从左向右', '左铰链孔3从下向上', '左铰链孔3从右向左', '右铰链孔3从下向上', '右铰链孔3从左向右', '左铰链孔4从下向上', '左铰链孔4从右向左', '右铰链孔4从下向上', '右铰链孔4从左向右', '左铰链孔5从下向上', '左铰链孔5从右向左', '右铰链孔5从下向上', '右铰链孔5从左向右', '左铰链孔6从下向上', '左铰链孔6从右向左', '右铰链孔6从下向上', '右铰链孔6从左向右', '附件1', '附件2', '附件3', '附件4', '品牌1', '品牌2', '品牌3', '品牌4', '附件数量1', '附件数量2', '附件数量3', '附件数量4', '数量(平方)', '单价(平方)', '金额(平方)', '数量(周长)', '单价(周长)', '金额(周长)', '完成', '其他项目(说明)', '录入员']
+            title = ['下单日期', '客户名称', '单据编号', '简码', '送货地址', '联系电话', '送货方式', '安装地址', '订单号', '高', '宽', '铝型材', '下单数量', '铝材颜色', '玻璃深加工', '玻璃颜色', '拉手型号', '铰链孔方向左', '铰链孔方向右', '拉手数量左', '拉手数量右', '左拉手位从上向下', '左拉手位从右向左', '右拉手位从下向上', '右拉手位从左向右', '装锁数量(左)', '装锁数量(右)', '装锁方向(右)', '装锁方位(左1)', '装锁方位(左2)', '装锁方位(右1)', '装锁方位(右2)', '开铰链孔', '左铰链孔从下向上', '左铰链孔从右向左', '右铰链孔从下向上', '右铰链孔从左向右', '左铰链孔2从下向上', '左铰链孔2从右向左', '右铰链孔2从下向上', '右铰链孔2从左向右', '左铰链孔3从下向上', '左铰链孔3从右向左', '右铰链孔3从下向上', '右铰链孔3从左向右', '左铰链孔4从下向上', '左铰链孔4从右向左', '右铰链孔4从下向上', '右铰链孔4从左向右', '左铰链孔5从下向上', '左铰链孔5从右向左', '右铰链孔5从下向上', '右铰链孔5从左向右', '左铰链孔6从下向上', '左铰链孔6从右向左', '右铰链孔6从下向上', '右铰链孔6从左向右', '附件1', '附件2', '附件3', '附件4', '品牌1', '品牌2', '品牌3', '品牌4', '附件数量1', '附件数量2', '附件数量3', '附件数量4', '数量(平方)', '单价(平方)', '金额(平方)', '数量(周长)', '单价(周长)', '金额(周长)', '完成', '其他项目(说明)', '录入员']
             JSONToExcelConvertor(header, "铝框下单", title)
 
         }
