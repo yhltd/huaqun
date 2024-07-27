@@ -80,4 +80,10 @@ public class XlpzImpl extends ServiceImpl<XlpzMapper, xlpz> implements XlpzServi
     @Override
     public List<xlpz> hqxlgy() {return xlpzMapper.hqxlgy();}
 
+    @Override
+    public List<xlpz> hqquyu(){return xlpzMapper.hqquyu();}
+
+    @Override
+    public List<xlpz> hqkucun (){return xlpzMapper.hqkucun();}
+
 }

@@ -15,6 +15,7 @@ public interface PsdService extends IService<psd> {
      */
     List<psd> getList();
 
+    List<psd> getListByName(String customerName);
     /**
      * 根据姓名和部门查询
      */
@@ -44,6 +45,6 @@ public interface PsdService extends IService<psd> {
     /**
      * 根据开始时间和结束时间查询
      */
-    List<psd> queryList(String ksinsertDate,String jsinsertDate);
+    List<psd> queryList1(String ksinsertDate,String jsinsertDate);
 
 }

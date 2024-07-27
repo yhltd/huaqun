@@ -3,26 +3,31 @@ $(function () {
     $("#submit-btn").click(function () {
         if (checkForm('#login-form')) {
             let params = formToJson('#login-form')
+
             $ajax({
                 type: 'post',
                 url: 'user/login',
                 data: {
                     username: params.username,
-                    password: params.password
+                    password: params.password,
+
                 }
             }, true, '', function (res) {
+
                 if (res.code > 0) {
                     swal("", res.msg, "success");
-
                         $ajax({
                             type:'post',
                             url:'user/getNameByUserName',
                             data:{
                                 username:params.username,
+
                             },
 
                         },false,'',function (aa){
-                            if (res.code>0){
+
+
+                            if (aa.code>0){
                                 const now = new Date(); // 定义并初始化now变量
                                 const year = now.getFullYear();
                                 const month = String(now.getMonth() + 1).padStart(2, '0');
@@ -31,13 +36,12 @@ $(function () {
                                 const minutes = String(now.getMinutes()).padStart(2, '0');
                                 const seconds = String(now.getSeconds()).padStart(2, '0');
                                 const loginDate = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+
                                 $ajax({
 
                                     type:'post',
                                     url:'logindate/add',
                                     data: JSON.stringify({
-                                        name:res.data.username,
-                                        userName:params.username,
                                         loginDate:loginDate,
                                     })
                                     ,

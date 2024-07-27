@@ -155,39 +155,3 @@ function setTable(data) {
 //         }
 //     })
 // }
-function getToken() {
-    // 假设已经引入了jQuery
-    $.ajax({
-        type: 'post',
-        url: '/user/getToken',
-        success: function (res) {
-            if (res.code == 200) {
-                const now = new Date(); // 定义并初始化now变量
-                const year = now.getFullYear();
-                const month = String(now.getMonth() + 1).padStart(2, '0');
-                const day = String(now.getDate()).padStart(2, '0');
-                const hours = String(now.getHours()).padStart(2, '0');
-                const minutes = String(now.getMinutes()).padStart(2, '0');
-                const seconds = String(now.getSeconds()).padStart(2, '0');
-                const logindate = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
-
-                const name = res.data.token.name; // 修正属性访问
-                const username = res.data.token.username; // 修正属性访问
-
-                $.ajax({
-                    type: 'post',
-                    url: '/logindate/add',
-                    data: JSON.stringify( {
-                        name: name,
-                        username: username,
-                        logindate: logindate
-                    }),
-
-                });
-            }
-        },
-        error: function (xhr, status, error) {
-            console.error("Error fetching token:", error);
-        }
-    });
-}

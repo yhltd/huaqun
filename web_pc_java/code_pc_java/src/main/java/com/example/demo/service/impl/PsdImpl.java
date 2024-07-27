@@ -21,6 +21,11 @@ public class PsdImpl extends ServiceImpl<PsdMapper, psd> implements PsdService {
     }
 
     @Override
+    public List<psd> getListByName(String customerName) {
+        return psdMapper.getListByName(customerName);
+    }
+
+    @Override
     public List<psd> queryList(String orderNumber, String customerName, String songhuoAddress, String anzhuangAddress, String customerOrder, String songhuoDanhao, String ksinsertDate,
                                String jsinsertDate,
                                String wancheng,
@@ -48,8 +53,8 @@ public class PsdImpl extends ServiceImpl<PsdMapper, psd> implements PsdService {
     }
 
     @Override
-    public List<psd> queryList(String ksinsertDate,String jsinsertDate) {
-        return psdMapper.queryList(ksinsertDate, jsinsertDate);
+    public List<psd> queryList1(String ksinsertDate,String jsinsertDate) {
+        return psdMapper.queryList1(ksinsertDate, jsinsertDate);
     }
 
 }

@@ -38,7 +38,26 @@ public class PsdController {
             return ResultInfo.error(401, "无权限");
         }
         try {
+            if(userInfo.getPower().equals("客户")) {
+            List<psd> getList=psdService.getListByName(userInfo.getName());
+            return ResultInfo.success("获取成功",getList);
+            }
             List<psd> getList = psdService.getList();
+            return ResultInfo.success("获取成功", getList);
+        } catch (Exception e) {
+            e.printStackTrace();
+            log.error("获取失败：{}", e.getMessage());
+            return ResultInfo.error("错误!");
+        }
+    }
+    @RequestMapping("/getListByName")
+    public ResultInfo getListByName(HttpSession session) {
+        UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
+        if(userInfo.getPower().equals("玻璃厂")){
+            return ResultInfo.error(401, "无权限");
+        }
+        try {
+            List<psd> getList = psdService.getListByName(userInfo.getName());
             return ResultInfo.success("获取成功", getList);
         } catch (Exception e) {
             e.printStackTrace();
@@ -106,7 +125,7 @@ public class PsdController {
     public ResultInfo add(@RequestBody HashMap map, HttpSession session) {
         UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
         GsonUtil gsonUtil = new GsonUtil(GsonUtil.toJson(map));
-        if (!userInfo.getPower().equals("管理员")) {
+        if (!(userInfo.getPower().equals("管理员")||userInfo.getPower().equals("超级管理员"))) {
             return ResultInfo.error(401, "无权限");
         }
         try {
@@ -180,7 +199,7 @@ public class PsdController {
         UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
         GsonUtil gsonUtil = new GsonUtil(GsonUtil.toJson(map));
         List<Integer> idList = GsonUtil.toList(gsonUtil.get("idList"), Integer.class);
-        if (!userInfo.getPower().equals("管理员")) {
+        if (!(userInfo.getPower().equals("管理员")||userInfo.getPower().equals("超级管理员"))) {
             return ResultInfo.error(401, "无权限");
         }
         try {
@@ -204,7 +223,7 @@ public class PsdController {
     public ResultInfo queryList(String ksinsertDate,String jsinsertDate,HttpSession session) {
         UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
         try {
-            List<psd> list = psdService.queryList(ksinsertDate ,jsinsertDate);
+            List<psd> list = psdService.queryList1(ksinsertDate ,jsinsertDate);
             return ResultInfo.success("获取成功", list);
         } catch (Exception e) {
             e.printStackTrace();

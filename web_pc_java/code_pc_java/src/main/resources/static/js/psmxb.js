@@ -14,7 +14,7 @@ function getList() {
     }, false, '', function (res) {
         if (res.code == 200) {
             setTable(res.data);
-            $("#psdTable").colResizable({
+            $("#psmxbTable").colResizable({
                 liveDrag: true,
                 gripInnerHtml: "<div class='grip'></div>",
                 draggingClass: "dragging",
@@ -148,192 +148,194 @@ $(function () {
         console.log("params", params)
         console.log("orderNumber", orderNumber)
         // if (checkForm('#add-form')) {
-            $ajax({
-                type: 'post',
-                url: '/psd/add',
-                data: JSON.stringify({
-                    addInfo: params,
-                    orderNumber: orderNumber,
-                }),
-                dataType: 'json',
-                contentType: 'application/json;charset=utf-8'
-            }, false, '', function (res) {
-                if (res.code == 200) {
-                    swal("", res.msg, "success");
-                    $('#add-form')[0].reset();
-                    getList();
-                    $('#add-close-btn').click();
-                }
-            })
+        $ajax({
+            type: 'post',
+            url: '/psd/add',
+            data: JSON.stringify({
+                addInfo: params,
+                orderNumber: orderNumber,
+            }),
+            dataType: 'json',
+            contentType: 'application/json;charset=utf-8'
+        }, false, '', function (res) {
+            if (res.code == 200) {
+                swal("", res.msg, "success");
+                $('#add-form')[0].reset();
+                getList();
+                $('#add-close-btn').click();
+            }
+        })
         // }
     });
 
     //点击修改按钮显示弹窗
     $('#update-btn').click(function () {
-        let rows = getTableSelection('#psdTable');
-        if (rows.length > 1 || rows.length == 0) {
-            swal('请选择一条数据修改!');
-            return;
-        }
-        $('#update-modal').modal('show');
-        setForm(rows[0].data, '#update-form');
-        $('#update-orderNumber').val(rows[0].data.orderNumber);
-        $('#update-insertDate').val(rows[0].data.insertDate);
-        $('#update-customerName').val(rows[0].data.customerName);
-        $('#update-customerNameRenyuan').val(rows[0].data.customerNameRenyuan);
-        $('#update-customerNameRiqi').val(rows[0].data.customerNameRiqi);
-        $('#update-customerNeedText').val(rows[0].data.customerNeedText);
-        $('#update-customerNeedTextRenyuan').val(rows[0].data.customerNeedTextRenyuan);
-        $('#update-customerNeedTextRiqi').val(rows[0].data.customerNeedTextRiqi);
-        $('#update-customerNeedImg1').val(rows[0].data.customerNeedImg1);
-        $('#update-customerNeedImg1Renyuan').val(rows[0].data.customerNeedImg1Renyuan);
-        $('#update-customerNeedImg1Riqi').val(rows[0].data.customerNeedImg1Riqi);
-        $('#update-customerNeedText1').val(rows[0].data.customerNeedText1);
-        $('#update-customerNeedText1Renyuan').val(rows[0].data.customerNeedText1Renyuan);
-        $('#update-customerNeedText1Riqi').val(rows[0].data.customerNeedText1Riqi);
-        $('#update-customerNeedText2').val(rows[0].data.customerNeedText2);
-        $('#update-customerNeedText2Renyuan').val(rows[0].data.customerNeedText2Renyuan);
-        $('#update-customerNeedText2Riqi').val(rows[0].data.customerNeedText2Riqi);
-        $('#update-songhuoAddress').val(rows[0].data.songhuoAddress);
-        $('#update-songhuoAddressRenyuan').val(rows[0].data.songhuoAddressRenyuan);
-        $('#update-songhuoAddressRiqi').val(rows[0].data.songhuoAddressRiqi);
-        $('#update-anzhuangAddress').val(rows[0].data.anzhuangAddress);
-        $('#update-anzhuangAddressRenyuan').val(rows[0].data.anzhuangAddressRenyuan);
-        $('#update-anzhuangAddressRiqi').val(rows[0].data.anzhuangAddressRiqi);
-        $('#update-phone').val(rows[0].data.phone);
-        $('#update-phoneRenyuan').val(rows[0].data.phoneRenyuan);
-        $('#update-phoneRiqi').val(rows[0].data.phoneRiqi);
-        $('#update-customerOrder').val(rows[0].data.customerOrder);
-        $('#update-customerOrderRenyuan').val(rows[0].data.customerOrderRenyuan);
-        $('#update-customerOrderRiqi').val(rows[0].data.customerOrderRiqi);
-        $('#update-songhuoDanhao').val(rows[0].data.songhuoDanhao);
-        $('#update-songhuoDanhaoRenyuan').val(rows[0].data.songhuoDanhaoRenyuan);
-        $('#update-songhuoDanhaoRiqi').val(rows[0].data.songhuoDanhaoRiqi);
-        $('#update-peihuoImg1').val(rows[0].data.peihuoImg1);
-        $('#update-peihuoImg1Renyuan').val(rows[0].data.peihuoImg1Renyuan);
-        $('#update-peihuoImg1Riqi').val(rows[0].data.peihuoImg1Riqi);
-        $('#update-peihuoImg2').val(rows[0].data.peihuoImg2);
-        $('#update-peihuoImg2Renyuan').val(rows[0].data.peihuoImg2Renyuan);
-        $('#update-peihuoImg2Riqi').val(rows[0].data.peihuoImg2Riqi);
-        $('#update-peihuoImg3').val(rows[0].data.peihuoImg3);
-        $('#update-peihuoImg3Renyuan').val(rows[0].data.peihuoImg3Renyuan);
-        $('#update-peihuoImg3Riqi').val(rows[0].data.peihuoImg3Riqi);
-        $('#update-peihuoImg4').val(rows[0].data.peihuoImg4);
-        $('#update-peihuoImg4Renyuan').val(rows[0].data.peihuoImg4Renyuan);
-        $('#update-peihuoImg4Riqi').val(rows[0].data.peihuoImg4Riqi);
-        $('#update-peihuoImg5').val(rows[0].data.peihuoImg5);
-        $('#update-peihuoImg5Renyuan').val(rows[0].data.peihuoImg5Renyuan);
-        $('#update-peihuoImg5Riqi').val(rows[0].data.peihuoImg5Riqi);
-        $('#update-peisongImg1').val(rows[0].data.peisongImg1);
-        $('#update-peisongImg1Renyuan').val(rows[0].data.peisongImg1Renyuan);
-        $('#update-peisongImg1Riqi').val(rows[0].data.peisongImg1Riqi);
-        $('#update-peisongImg2').val(rows[0].data.peisongImg2);
-        $('#update-peisongImg2Renyuan').val(rows[0].data.peisongImg2Renyuan);
-        $('#update-peisongImg2Riqi').val(rows[0].data.peisongImg2Riqi);
-        $('#update-peisongImg3').val(rows[0].data.peisongImg3);
-        $('#update-peisongImg3Renyuan').val(rows[0].data.peisongImg3Renyuan);
-        $('#update-peisongImg3Riqi').val(rows[0].data.peisongImg3Riqi);
-        $('#update-wancheng').val(rows[0].data.wancheng);
-        $('#update-wanchengRenyuan').val(rows[0].data.wanchengRenyuan);
-        $('#update-wanchengRiqi').val(rows[0].data.wanchengRiqi);
-        $('#update-beizhu').val(rows[0].data.beizhu);
-        $('#update-beizhuRenyuan').val(rows[0].data.beizhuRenyuan);
-        $('#update-beizhuRiqi').val(rows[0].data.beizhuRiqi);
-        $('#update-kucunText').val(rows[0].data.kucunText);
-        $('#update-kucunTextRenyuan').val(rows[0].data.kucunTextRenyuan);
-        $('#update-kucunTextRiqi').val(rows[0].data.kucunTextRiqi);
-        $('#update-kucunImg1').val(rows[0].data.kucunImg1);
-        $('#update-kucunImg1Renyuan').val(rows[0].data.kucunImg1Renyuan);
-        $('#update-kucunImg1Riqi').val(rows[0].data.kucunImg1Riqi);
-        $('#update-kucunImg2').val(rows[0].data.kucunImg2);
-        $('#update-kucunImg2Renyuan').val(rows[0].data.kucunImg2Renyuan);
-        $('#update-kucunImg2Riqi').val(rows[0].data.kucunImg2Riqi);
-        $('#update-kucunImg3').val(rows[0].data.kucunImg3);
-        $('#update-kucunImg3Renyuan').val(rows[0].data.kucunImg3Renyuan);
-        $('#update-kucunImg3Riqi').val(rows[0].data.kucunImg3Riqi);
-        $('#update-money').val(rows[0].data.money);
-        $('#update-moneyRenyuan').val(rows[0].data.moneyRenyuan);
-        $('#update-moneyRiqi').val(rows[0].data.moneyRiqi);
-        $('#update-shoukuan').val(rows[0].data.shoukuan);
-        $('#update-shoukuanRenyuan').val(rows[0].data.shoukuanRenyuan);
-        $('#update-shoukuanRiqi').val(rows[0].data.shoukuanRiqi);
-        $('#update-customerNeedImg2').val(rows[0].data.customerNeedImg2);
-        $('#update-customerNeedImg3').val(rows[0].data.customerNeedImg3);
-        $('#update-customerNeedImg4').val(rows[0].data.customerNeedImg4);
-        $('#update-customerNeedImg5').val(rows[0].data.customerNeedImg5);
-        $('#update-customerNeedImg6').val(rows[0].data.customerNeedImg6);
-        $('#update-customerNeedImg7').val(rows[0].data.customerNeedImg7);
-        $('#update-customerNeedImg8').val(rows[0].data.customerNeedImg8);
-        $('#update-peihuoImg6').val(rows[0].data.peihuoImg6);
-        $('#update-peihuoImg7').val(rows[0].data.peihuoImg7);
-        $('#update-peihuoImg8').val(rows[0].data.peihuoImg8);
-        $('#update-peisongImg4').val(rows[0].data.peisongImg4);
-        $('#update-peisongImg5').val(rows[0].data.peisongImg5);
-        $('#update-peisongImg6').val(rows[0].data.peisongImg6);
-        $('#update-peisongImg7').val(rows[0].data.peisongImg7);
-        $('#update-peisongImg8').val(rows[0].data.peisongImg8);
-        $('#update-kucunImg4').val(rows[0].data.kucunImg4);
-        $('#update-kucunImg5').val(rows[0].data.kucunImg5);
-        $('#update-kucunImg6').val(rows[0].data.kucunImg6);
-        $('#update-kucunImg7').val(rows[0].data.kucunImg7);
-        $('#update-kucunImg8').val(rows[0].data.kucunImg8);
-        $('#update-wenjianImg1').val(rows[0].data.wenjianImg1);
-        $('#update-wenjianImg2').val(rows[0].data.wenjianImg2);
-        $('#update-wenjianImg3').val(rows[0].data.wenjianImg3);
-        $('#update-wenjianImg4').val(rows[0].data.wenjianImg4);
-        $('#update-wenjianImg5').val(rows[0].data.wenjianImg5);
-        $('#update-wenjianImg6').val(rows[0].data.wenjianImg6);
-        $('#update-wenjianImg7').val(rows[0].data.wenjianImg7);
-        $('#update-wenjianImg8').val(rows[0].data.wenjianImg8);
-        $('#update-wenjianImg1Renyuan').val(rows[0].data.wenjianImg1Renyuan);
-        $('#update-wenjianImg1Riqi').val(rows[0].data.wenjianImg1Riqi);
+        window.location.href = "psd.html";
     });
+        //     let rows = getTableSelection('#psdTable');
+        //     if (rows.length > 1 || rows.length == 0) {
+        //         swal('请选择一条数据修改!');
+        //         return;
+        //     }
+        //     $('#update-modal').modal('show');
+        //     setForm(rows[0].data, '#update-form');
+        //     $('#update-orderNumber').val(rows[0].data.orderNumber);
+        //     $('#update-insertDate').val(rows[0].data.insertDate);
+        //     $('#update-customerName').val(rows[0].data.customerName);
+        //     $('#update-customerNameRenyuan').val(rows[0].data.customerNameRenyuan);
+        //     $('#update-customerNameRiqi').val(rows[0].data.customerNameRiqi);
+        //     $('#update-customerNeedText').val(rows[0].data.customerNeedText);
+        //     $('#update-customerNeedTextRenyuan').val(rows[0].data.customerNeedTextRenyuan);
+        //     $('#update-customerNeedTextRiqi').val(rows[0].data.customerNeedTextRiqi);
+        //     $('#update-customerNeedImg1').val(rows[0].data.customerNeedImg1);
+        //     $('#update-customerNeedImg1Renyuan').val(rows[0].data.customerNeedImg1Renyuan);
+        //     $('#update-customerNeedImg1Riqi').val(rows[0].data.customerNeedImg1Riqi);
+        //     $('#update-customerNeedText1').val(rows[0].data.customerNeedText1);
+        //     $('#update-customerNeedText1Renyuan').val(rows[0].data.customerNeedText1Renyuan);
+        //     $('#update-customerNeedText1Riqi').val(rows[0].data.customerNeedText1Riqi);
+        //     $('#update-customerNeedText2').val(rows[0].data.customerNeedText2);
+        //     $('#update-customerNeedText2Renyuan').val(rows[0].data.customerNeedText2Renyuan);
+        //     $('#update-customerNeedText2Riqi').val(rows[0].data.customerNeedText2Riqi);
+        //     $('#update-songhuoAddress').val(rows[0].data.songhuoAddress);
+        //     $('#update-songhuoAddressRenyuan').val(rows[0].data.songhuoAddressRenyuan);
+        //     $('#update-songhuoAddressRiqi').val(rows[0].data.songhuoAddressRiqi);
+        //     $('#update-anzhuangAddress').val(rows[0].data.anzhuangAddress);
+        //     $('#update-anzhuangAddressRenyuan').val(rows[0].data.anzhuangAddressRenyuan);
+        //     $('#update-anzhuangAddressRiqi').val(rows[0].data.anzhuangAddressRiqi);
+        //     $('#update-phone').val(rows[0].data.phone);
+        //     $('#update-phoneRenyuan').val(rows[0].data.phoneRenyuan);
+        //     $('#update-phoneRiqi').val(rows[0].data.phoneRiqi);
+        //     $('#update-customerOrder').val(rows[0].data.customerOrder);
+        //     $('#update-customerOrderRenyuan').val(rows[0].data.customerOrderRenyuan);
+        //     $('#update-customerOrderRiqi').val(rows[0].data.customerOrderRiqi);
+        //     $('#update-songhuoDanhao').val(rows[0].data.songhuoDanhao);
+        //     $('#update-songhuoDanhaoRenyuan').val(rows[0].data.songhuoDanhaoRenyuan);
+        //     $('#update-songhuoDanhaoRiqi').val(rows[0].data.songhuoDanhaoRiqi);
+        //     $('#update-peihuoImg1').val(rows[0].data.peihuoImg1);
+        //     $('#update-peihuoImg1Renyuan').val(rows[0].data.peihuoImg1Renyuan);
+        //     $('#update-peihuoImg1Riqi').val(rows[0].data.peihuoImg1Riqi);
+        //     $('#update-peihuoImg2').val(rows[0].data.peihuoImg2);
+        //     $('#update-peihuoImg2Renyuan').val(rows[0].data.peihuoImg2Renyuan);
+        //     $('#update-peihuoImg2Riqi').val(rows[0].data.peihuoImg2Riqi);
+        //     $('#update-peihuoImg3').val(rows[0].data.peihuoImg3);
+        //     $('#update-peihuoImg3Renyuan').val(rows[0].data.peihuoImg3Renyuan);
+        //     $('#update-peihuoImg3Riqi').val(rows[0].data.peihuoImg3Riqi);
+        //     $('#update-peihuoImg4').val(rows[0].data.peihuoImg4);
+        //     $('#update-peihuoImg4Renyuan').val(rows[0].data.peihuoImg4Renyuan);
+        //     $('#update-peihuoImg4Riqi').val(rows[0].data.peihuoImg4Riqi);
+        //     $('#update-peihuoImg5').val(rows[0].data.peihuoImg5);
+        //     $('#update-peihuoImg5Renyuan').val(rows[0].data.peihuoImg5Renyuan);
+        //     $('#update-peihuoImg5Riqi').val(rows[0].data.peihuoImg5Riqi);
+        //     $('#update-peisongImg1').val(rows[0].data.peisongImg1);
+        //     $('#update-peisongImg1Renyuan').val(rows[0].data.peisongImg1Renyuan);
+        //     $('#update-peisongImg1Riqi').val(rows[0].data.peisongImg1Riqi);
+        //     $('#update-peisongImg2').val(rows[0].data.peisongImg2);
+        //     $('#update-peisongImg2Renyuan').val(rows[0].data.peisongImg2Renyuan);
+        //     $('#update-peisongImg2Riqi').val(rows[0].data.peisongImg2Riqi);
+        //     $('#update-peisongImg3').val(rows[0].data.peisongImg3);
+        //     $('#update-peisongImg3Renyuan').val(rows[0].data.peisongImg3Renyuan);
+        //     $('#update-peisongImg3Riqi').val(rows[0].data.peisongImg3Riqi);
+        //     $('#update-wancheng').val(rows[0].data.wancheng);
+        //     $('#update-wanchengRenyuan').val(rows[0].data.wanchengRenyuan);
+        //     $('#update-wanchengRiqi').val(rows[0].data.wanchengRiqi);
+        //     $('#update-beizhu').val(rows[0].data.beizhu);
+        //     $('#update-beizhuRenyuan').val(rows[0].data.beizhuRenyuan);
+        //     $('#update-beizhuRiqi').val(rows[0].data.beizhuRiqi);
+        //     $('#update-kucunText').val(rows[0].data.kucunText);
+        //     $('#update-kucunTextRenyuan').val(rows[0].data.kucunTextRenyuan);
+        //     $('#update-kucunTextRiqi').val(rows[0].data.kucunTextRiqi);
+        //     $('#update-kucunImg1').val(rows[0].data.kucunImg1);
+        //     $('#update-kucunImg1Renyuan').val(rows[0].data.kucunImg1Renyuan);
+        //     $('#update-kucunImg1Riqi').val(rows[0].data.kucunImg1Riqi);
+        //     $('#update-kucunImg2').val(rows[0].data.kucunImg2);
+        //     $('#update-kucunImg2Renyuan').val(rows[0].data.kucunImg2Renyuan);
+        //     $('#update-kucunImg2Riqi').val(rows[0].data.kucunImg2Riqi);
+        //     $('#update-kucunImg3').val(rows[0].data.kucunImg3);
+        //     $('#update-kucunImg3Renyuan').val(rows[0].data.kucunImg3Renyuan);
+        //     $('#update-kucunImg3Riqi').val(rows[0].data.kucunImg3Riqi);
+        //     $('#update-money').val(rows[0].data.money);
+        //     $('#update-moneyRenyuan').val(rows[0].data.moneyRenyuan);
+        //     $('#update-moneyRiqi').val(rows[0].data.moneyRiqi);
+        //     $('#update-shoukuan').val(rows[0].data.shoukuan);
+        //     $('#update-shoukuanRenyuan').val(rows[0].data.shoukuanRenyuan);
+        //     $('#update-shoukuanRiqi').val(rows[0].data.shoukuanRiqi);
+        //     $('#update-customerNeedImg2').val(rows[0].data.customerNeedImg2);
+        //     $('#update-customerNeedImg3').val(rows[0].data.customerNeedImg3);
+        //     $('#update-customerNeedImg4').val(rows[0].data.customerNeedImg4);
+        //     $('#update-customerNeedImg5').val(rows[0].data.customerNeedImg5);
+        //     $('#update-customerNeedImg6').val(rows[0].data.customerNeedImg6);
+        //     $('#update-customerNeedImg7').val(rows[0].data.customerNeedImg7);
+        //     $('#update-customerNeedImg8').val(rows[0].data.customerNeedImg8);
+        //     $('#update-peihuoImg6').val(rows[0].data.peihuoImg6);
+        //     $('#update-peihuoImg7').val(rows[0].data.peihuoImg7);
+        //     $('#update-peihuoImg8').val(rows[0].data.peihuoImg8);
+        //     $('#update-peisongImg4').val(rows[0].data.peisongImg4);
+        //     $('#update-peisongImg5').val(rows[0].data.peisongImg5);
+        //     $('#update-peisongImg6').val(rows[0].data.peisongImg6);
+        //     $('#update-peisongImg7').val(rows[0].data.peisongImg7);
+        //     $('#update-peisongImg8').val(rows[0].data.peisongImg8);
+        //     $('#update-kucunImg4').val(rows[0].data.kucunImg4);
+        //     $('#update-kucunImg5').val(rows[0].data.kucunImg5);
+        //     $('#update-kucunImg6').val(rows[0].data.kucunImg6);
+        //     $('#update-kucunImg7').val(rows[0].data.kucunImg7);
+        //     $('#update-kucunImg8').val(rows[0].data.kucunImg8);
+        //     $('#update-wenjianImg1').val(rows[0].data.wenjianImg1);
+        //     $('#update-wenjianImg2').val(rows[0].data.wenjianImg2);
+        //     $('#update-wenjianImg3').val(rows[0].data.wenjianImg3);
+        //     $('#update-wenjianImg4').val(rows[0].data.wenjianImg4);
+        //     $('#update-wenjianImg5').val(rows[0].data.wenjianImg5);
+        //     $('#update-wenjianImg6').val(rows[0].data.wenjianImg6);
+        //     $('#update-wenjianImg7').val(rows[0].data.wenjianImg7);
+        //     $('#update-wenjianImg8').val(rows[0].data.wenjianImg8);
+        //     $('#update-wenjianImg1Renyuan').val(rows[0].data.wenjianImg1Renyuan);
+        //     $('#update-wenjianImg1Riqi').val(rows[0].data.wenjianImg1Riqi);
 
-    //修改弹窗点击关闭按钮
-    $('#update-close-btn').click(function () {
-        $('#update-form')[0].reset();
-        $('#update-modal').modal('hide');
-    });
+    // });
+    // //修改弹窗点击关闭按钮
+    // $('#update-close-btn').click(function () {
+    //     $('#update-form')[0].reset();
+    //     $('#update-modal').modal('hide');
+    // });
 
     //修改弹窗里点击提交按钮
-    $('#update-submit-btn').click(function () {
-        var msg = confirm("确认要修改吗？");
-        if (msg) {
-            if (checkForm('#update-form')) {
-                let params = formToJson('#update-form');
-                $ajax({
-                    type: 'post',
-                    url: '/psd/update',
-                    data: {
-                        updateJson: JSON.stringify(params)
-                    },
-                    dataType: 'json',
-                    contentType: 'application/json;charset=utf-8'
-                }, false, '', function (res) {
-                    if (res.code == 200) {
-                        setTable(res.data);
-                        $("#psdTable").colResizable({
-                            liveDrag: true,
-                            gripInnerHtml: "<div class='grip'></div>",
-                            draggingClass: "dragging",
-                            resizeMode: 'fit',})
-                        swal("", res.msg, "success");
-                        $('#update-close-btn').click();
-                        $('#update-modal').modal('hide');
-                        getList();
-                    } else {
-                        swal("", res.msg, "error");
-                    }
-                })
-            }
-        }
-    });
+    // $('#update-submit-btn').click(function () {
+    //     var msg = confirm("确认要修改吗？");
+    //     if (msg) {
+    //         if (checkForm('#update-form')) {
+    //             let params = formToJson('#update-form');
+    //             $ajax({
+    //                 type: 'post',
+    //                 url: '/psd/update',
+    //                 data: {
+    //                     updateJson: JSON.stringify(params)
+    //                 },
+    //                 dataType: 'json',
+    //                 contentType: 'application/json;charset=utf-8'
+    //             }, false, '', function (res) {
+    //                 if (res.code == 200) {
+    //                     setTable(res.data);
+    //                     $("#psmxbTable").colResizable({
+    //                         liveDrag: true,
+    //                         gripInnerHtml: "<div class='grip'></div>",
+    //                         draggingClass: "dragging",
+    //                         resizeMode: 'fit',})
+    //                     swal("", res.msg, "success");
+    //                     $('#update-close-btn').click();
+    //                     $('#update-modal').modal('hide');
+    //                     getList();
+    //                 } else {
+    //                     swal("", res.msg, "error");
+    //                 }
+    //             })
+    //         }
+    //     }
+    // });
 
     //点击删除按钮
     $('#delete-btn').click(function () {
         var msg = confirm("确认要删除吗？");
         if (msg) {
-            let rows = getTableSelection("#psdTable");
+            let rows = getTableSelection("#psmxbTable");
             if (rows.length == 0) {
                 swal('请选择要删除的数据！');
                 return;
@@ -447,11 +449,11 @@ function getkucun() {
 }
 
 function setTable(data) {
-    if ($('#psdTable').html != '') {
-        $('#psdTable').bootstrapTable('load', data);
+    if ($('#psmxbTable').html != '') {
+        $('#psmxbTable').bootstrapTable('load', data);
     }
 
-    $('#psdTable').bootstrapTable({
+    $('#psmxbTable').bootstrapTable({
         // url: "http://本机ip:后台端口/Journalism/getList",
         data: data,
         sortStable: true,
@@ -475,7 +477,7 @@ function setTable(data) {
             //         return index + 1;
             //     }
             // },
-           {
+            {
                 field: 'insertDate',
                 title: '日期',
                 align: 'center',
@@ -1468,6 +1470,4 @@ function getNumbern() {
     console.log(djbh)
     $('#add-orderNumber').val(djbh);
     $('#add-insertDate').val(xdrq);
-
 }
-

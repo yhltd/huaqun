@@ -30,8 +30,8 @@ public class LoginDateController {
     @RequestMapping("/add")
     public ResultInfo add(@RequestBody HashMap <String, String> requestData, HttpSession session) {
         UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
-        String userName = requestData.get("userName");
-        String name = requestData.get("name");
+        String userName = userInfo.getUsername();
+        String name = userInfo.getName();
         String loginDate = requestData.get("loginDate");
         try {
             boolean a = loginDateService.add(userName,name,loginDate);
