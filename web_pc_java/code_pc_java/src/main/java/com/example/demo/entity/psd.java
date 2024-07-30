@@ -457,6 +457,10 @@ public class psd {
      * 完成时间
      */
     private String wenjianImg1Riqi;
+    /**
+     * 配送区域
+     */
+    private String quyu;
 
     private String quyu;
 

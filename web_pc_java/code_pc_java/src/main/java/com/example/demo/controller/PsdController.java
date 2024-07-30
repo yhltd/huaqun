@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -246,6 +248,29 @@ public class PsdController {
             e.printStackTrace();
             log.error("获取失败：{}", e.getMessage());
             return ResultInfo.error("错误!");
+        }
+    }
+
+    /**
+     * 打印
+     *
+     * @return ResultInfo
+     */
+    @RequestMapping("/print")
+    public ResultInfo print(@RequestBody HashMap map, HttpSession session, HttpServletResponse response) {
+        try {
+            GsonUtil gsonUtil = new GsonUtil(GsonUtil.toJson(map));
+            List<psd> nlist = GsonUtil.toList(gsonUtil.get("list"), psd.class);
+            List<psd> list=new ArrayList<>();
+            if(nlist != null){
+//                list= psdService.getListByPsd(nlist.get(0).getPsd(),nlist.get(0).getDh(),nlist.get(0).getRiqi());
+                list= psdService.getListByPsd(nlist.get(0).getCustomerName());
+            }
+            return ResultInfo.success("成功！",list);
+        } catch (Exception e) {
+            e.printStackTrace();
+            log.error("失败：{}", e.getMessage());
+            return ResultInfo.error("失败！");
         }
     }
 

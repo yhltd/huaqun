@@ -49,4 +49,6 @@ public interface PsdService extends IService<psd> {
      */
     List<psd> queryList1(String ksinsertDate,String jsinsertDate);
 
+    List<psd> getListByPsd(String customerName);
+
 }
