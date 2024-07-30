@@ -36,4 +36,8 @@ public interface PsdMapper extends BaseMapper<psd> {
 
     @Select("select * from erqi_peisongdan where insert_date >= #{ksinsertDate} and insert_date <= #{jsinsertDate} ")
     List<psd> queryList1(String ksinsertDate,String jsinsertDate);
+
+    @Select("select * from erqi_peisongdan where customer_name=#{customerName}")
+    List<psd> getListByPsd(String customerName);
+
 }

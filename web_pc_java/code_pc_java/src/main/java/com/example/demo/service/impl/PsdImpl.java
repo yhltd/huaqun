@@ -57,4 +57,7 @@ public class PsdImpl extends ServiceImpl<PsdMapper, psd> implements PsdService {
         return psdMapper.queryList1(ksinsertDate, jsinsertDate);
     }
 
+    @Override
+    public List<psd> getListByPsd(String customerName) {return psdMapper.getListByPsd(customerName);}
+
 }

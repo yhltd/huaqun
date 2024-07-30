@@ -550,25 +550,26 @@ function setTable(data) {
                 sortable: true,
                 width: 100,
             }, {
-                field: 'kucun',
+                field: 'kucunText',
                 title: '商品库存(文字)',
                 align: 'center',
                 sortable: true,
                 width: 200,
-                height: 400,}
+                height: 400,},
             // },  {
             //     field: 'customerNameRenyuan',
             //     title: '录入员',
             //     align: 'center',
             //     sortable: true,
             //     width: 100,
-            // }, {
-            //     field: 'customerNameRiqi',
-            //     title: '完成时间',
-            //     align: 'center',
-            //     sortable: true,
-            //     width: 100,
-            // }, {
+            {
+                field: 'customerNameRiqi',
+                title: '完成时间',
+                align: 'center',
+                sortable: true,
+                width: 100,
+            }
+            // , {
             //     field: 'customerNeedText',
             //     title: '客户需求(文字)',
             //     align: 'center',
