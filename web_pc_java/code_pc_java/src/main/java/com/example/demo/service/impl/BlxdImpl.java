@@ -26,9 +26,15 @@ public class BlxdImpl extends ServiceImpl<BlxdMapper, blxd> implements BlxdServi
     public List<blxd> getQita() { return blxdMapper.getQita(); }
 
     @Override
-    public List<blxd> queryList(String pinyin, String shengchan) {
-        return blxdMapper.queryList(pinyin, shengchan);
+    public List<blxd> queryList(String pinyin, String shengchan,String ksxdrq,String jsxdrq) {
+        return blxdMapper.queryList(pinyin, shengchan,ksxdrq,jsxdrq);
     }
+
+//    @Override
+//    public List<blxd> queryList1(String pinyin, String shengchan,String ksxdrq,String jsxdrq) {
+//        return blxdMapper.queryList1(pinyin, shengchan,ksxdrq,jsxdrq);
+//    }
+
 
     @Override
     public boolean update(blxd blxd) { return updateById(blxd);}

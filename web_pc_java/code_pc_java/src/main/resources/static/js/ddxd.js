@@ -275,7 +275,37 @@ function getJe() {
     var ddcd = parseFloat(document.getElementById('add-ddcd').value);
     var sl = parseFloat(document.getElementById('add-sl').value);
     var je = ddcd * 1 / 1000 * sl
+
     document.getElementById("add-je").value = je;
+}
+
+function getGl() {
+    var ddcd = parseFloat(document.getElementById('add-ddcd').value);
+    var sl = parseFloat(document.getElementById('add-sl').value);
+    var gl = Math.ceil(ddcd / 1000 * sl * 12);
+    document.getElementById("add-gl").value = gl;
+}
+function getkailiao() {
+    var ddcd = parseFloat(document.getElementById('add-ddcd').value);
+        $ajax({
+            type: 'post',
+            url: '/ddxd/getkailiao',
+        }, false, '', function (res) {
+            if (res.code == 200) {
+                   for(var i=0;i<res.data.length;i++) {
+                       var name=res.data[i].name;
+                       var gh = document.getElementById('add-gh').value
+                    if (name == gh) {
+                        var klcc=res.data[i].chicun;
+                        var chicun=ddcd-klcc;
+                        // document.getElementById("add-chicun").value = chicun;
+                        document.getElementById("add-chicun").value = 111;
+                    }
+                }
+            }
+
+        })
+
 }
 
 function getList() {
@@ -328,6 +358,14 @@ $(function () {
     }, false, '', function (res) {
         var this_username = res.data
         document.getElementById("dlm").innerText = this_username;
+    })
+    $ajax({
+        type: 'post',
+        url: '/user/getName',
+    }, false, '', function (res) {
+            var this_name = res.data;
+            document.getElementById("khmc").value = this_name;
+
     })
 
     $("#add-djbh").focus(function () {
@@ -413,6 +451,29 @@ $(function () {
     //新增弹窗里点击提交按钮
     $("#add-submit-btn").click(function () {
         getJe();
+        getGl();
+        // getkailiao();
+
+        var ddcd = parseFloat(document.getElementById('add-ddcd').value);
+        $ajax({
+            type: 'post',
+            url: '/ddxd/getkailiao',
+        }, false, '', function (res) {
+            if (res.code == 200) {
+                for(var i=0;i<res.data.length;i++) {
+                    var name=res.data[i].name;
+                    var gh = document.getElementById('add-gh').value
+                    if (name == gh) {
+                        var klcc=res.data[i].chicun;
+                        var chicun=ddcd-klcc;
+                        document.getElementById("add-chicun").value = chicun;
+                        // document.getElementById("add-chicun").value = 111;
+                    }
+                }
+            }
+
+        })
+
         let params = formToJson("#add-form");
         if (checkForm('#add-form')) {
             $ajax({
@@ -431,6 +492,25 @@ $(function () {
                     $('#add-close-btn').click();
                 }
             })
+            // var ddcd = parseFloat(document.getElementById('add-ddcd').value);
+            // $ajax({
+            //     type: 'post',
+            //     url: '/ddxd/getkailiao',
+            // }, false, '', function (res) {
+            //     if (res.code == 200) {
+            //         for(var i=0;i<res.data.length;i++) {
+            //             var name=res.data[i].name;
+            //             var gh = document.getElementById('add-gh').value
+            //             if (name == gh) {
+            //                 var klcc=res.data[i].chicun;
+            //                 var chicun=ddcd-klcc;
+            //                 // document.getElementById("add-chicun").value = chicun;
+            //                 document.getElementById("add-chicun").value = 111;
+            //             }
+            //         }
+            //     }
+            //
+            // })
         }
     });
 
@@ -515,15 +595,18 @@ $(function () {
 
     //修改弹窗里点击提交按钮
     $('#update-submit-btn').click(function () {
+        // var d1 = document.getElementById('add-djbh').value;
         var msg = confirm("确认要修改吗？");
         if (msg) {
             if (checkForm('#update-form')) {
                 let params = formToJson('#update-form');
+
                 $ajax({
                     type: 'post',
                     url: '/ddxd/update',
                     data: {
-                        updateJson: JSON.stringify(params)
+                        updateJson: JSON.stringify(params),
+
                     },
                     dataType: 'json',
                     contentType: 'application/json;charset=utf-8'
@@ -573,7 +656,16 @@ $(function () {
         }
     })
 });
+$("#add-row").click(function () {
 
+        // 创建div元素
+        var div = document.createElement('div');
+
+
+        // 将div添加到容器中
+        document.getElementById('createNew').appendChild(div);
+
+});
 function setTable(data) {
     if ($('#ddxdTable').html != '') {
         $('#ddxdTable').bootstrapTable('load', data);
@@ -602,14 +694,14 @@ function setTable(data) {
                     return index + 1;
                 }
             }, {
-                field: 'khmc',
-                title: '客户名称',
+                field: 'xdrq',
+                title: '下单日期',
                 align: 'center',
                 sortable: true,
                 width: 100,
             }, {
-                field: 'xdrq',
-                title: '下单日期',
+                field: 'khmc',
+                title: '客户名称',
                 align: 'center',
                 sortable: true,
                 width: 100,
@@ -619,24 +711,27 @@ function setTable(data) {
                 align: 'center',
                 sortable: true,
                 width: 100,
-            }, {
-                field: 'shouhuo',
-                title: '送货地址',
+            }
+            , {
+                field: 'wancheng',
+                title: '订单状态',
                 align: 'center',
                 sortable: true,
                 width: 100,
+                formatter: function (value, row, index) {
+                    return '<select>' +
+                        '<option value="已审验">已审验</option>' +
+                        '<option value="未审验">未审验</option>' +
+                        '<option value="完成">完成</option>' +
+                        '<option value="优先处理">优先处理</option>' +
+                        '</select> '
+                }
             }, {
-                field: 'lxdh',
-                title: '联系电话',
+                field: 'je',
+                title: '订单总金额金额',
                 align: 'center',
                 sortable: true,
-                width: 100,
-            }, {
-                field: 'shfs',
-                title: '送货方式',
-                align: 'center',
-                sortable: true,
-                width: 100,
+                width: 80,
             }, {
                 field: 'azdz',
                 title: '安装地址',
@@ -651,89 +746,110 @@ function setTable(data) {
                 width: 100,
             }, {
                 field: 'luruyuan',
-                title: '录入员',
+                title: '操作员',
                 align: 'center',
                 sortable: true,
                 width: 80,
-            }, {
-                field: 'fj',
-                title: '项目类别',
-                align: 'center',
-                sortable: true,
-                width: 100,
-            }, {
-                field: 'gh',
-                title: '项目名称',
-                align: 'center',
-                sortable: true,
-                width: 100,
-            }, {
-                field: 'lcys',
-                title: '铝材颜色',
-                align: 'center',
-                sortable: true,
-                width: 100,
-            }, {
-                field: 'ddcd',
-                title: '灯带长度mm',
-                align: 'center',
-                sortable: true,
-                width: 130,
-            }, {
-                field: 'sl',
-                title: '数量(支)',
-                align: 'center',
-                sortable: true,
-                width: 100,
-            }, {
-                field: 'cxdk',
-                title: '出线端口左出线',
-                align: 'center',
-                sortable: true,
-                width: 140,
-            }, {
-                field: 'cxdkRight',
-                title: '出线端口右出线',
-                align: 'center',
-                sortable: true,
-                width: 140,
-            }, {
-                field: 'gy',
-                title: '光源',
-                align: 'center',
-                sortable: true,
-                width: 80,
-            }, {
-                field: 'gl',
-                title: '功率W',
-                align: 'center',
-                sortable: true,
-                width: 80,
-            }, {
-                field: 'bz',
-                title: '备注',
-                align: 'center',
-                sortable: true,
-                width: 80,
-            }, {
-                field: 'dj',
-                title: '单价',
-                align: 'center',
-                sortable: true,
-                width: 80,
-            }, {
-                field: 'je',
-                title: '金额',
-                align: 'center',
-                sortable: true,
-                width: 80,
-            }, {
-                field: 'chicun',
-                title: '开料尺寸',
+            }
+            , {
+                field: 'wcsj',
+                title: '完成时间',
                 align: 'center',
                 sortable: true,
                 width: 100,
             }
+            // }, {
+            //     field: 'fj',
+            //     title: '项目类别',
+            //     align: 'center',
+            //     sortable: true,
+            //     width: 100,
+            // }, {
+            //     field: 'gh',
+            //     title: '项目名称',
+            //     align: 'center',
+            //     sortable: true,
+            //     width: 100,
+            // }, {
+            //     field: 'lcys',
+            //     title: '铝型材颜色',
+            //     align: 'center',
+            //     sortable: true,
+            //     width: 100,
+            // }, {
+            //     field: 'ddcd',
+            //     title: '灯带长度mm',
+            //     align: 'center',
+            //     sortable: true,
+            //     width: 130,
+            // }, {
+            //     field: 'sl',
+            //     title: '数量(支)',
+            //     align: 'center',
+            //     sortable: true,
+            //     width: 100,
+            // }, {
+            //     field: 'cxdk',
+            //     title: '出线端口左出线',
+            //     align: 'center',
+            //     sortable: true,
+            //     width: 140,
+            // }, {
+            //     field: 'cxdkRight',
+            //     title: '出线端口右出线',
+            //     align: 'center',
+            //     sortable: true,
+            //     width: 140,
+            // }, {
+            //     field: 'gy',
+            //     title: '光源',
+            //     align: 'center',
+            //     sortable: true,
+            //     width: 80,
+            // }, {
+            //     field: 'gl',
+            //     title: '功率W',
+            //     align: 'center',
+            //     sortable: true,
+            //     width: 80,
+            // }, {
+            //     field: 'bz',
+            //     title: '备注',
+            //     align: 'center',
+            //     sortable: true,
+            //     width: 80,
+            // }, {
+            //     field: 'dj',
+            //     title: '单价',
+            //     align: 'center',
+            //     sortable: true,
+            //     width: 80,
+            // }, {
+            //     field: 'chicun',
+            //     title: '开料尺寸',
+            //     align: 'center',
+            //     sortable: true,
+            //     width: 100,
+            //     }, {
+            //         field: 'shouhuo',
+            //         title: '送货地址',
+            //         align: 'center',
+            //         sortable: true,
+            //         width: 100,
+            //     }, {
+            //         field: 'lxdh',
+            //         title: '联系电话',
+            //         align: 'center',
+            //         sortable: true,
+            //         width: 100,
+            //     }, {
+            //         field: 'shfs',
+            //         title: '送货方式',
+            //         align: 'center',
+            //         sortable: true,
+            //         width: 100,
+            //     }
+
         ],
         onClickRow: function (row, el) {
             let isSelect = $(el).hasClass('selected')
@@ -963,6 +1079,8 @@ function getToken() {
 $('#add-comeAgain-btn').click(function () {
 
     getJe();
+    getGl();
+    getkailiao();
     let params = formToJson("#add-form");
     if (checkForm('#add-form')) {
         $ajax({

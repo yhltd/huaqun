@@ -66,4 +66,6 @@ public interface UserInfoService extends IService<UserInfo> {
      * 管理员管理操作员，客户，玻璃
      */
     boolean glupdate(UserInfo userInfo);
+
+    String getName(String username);
 }

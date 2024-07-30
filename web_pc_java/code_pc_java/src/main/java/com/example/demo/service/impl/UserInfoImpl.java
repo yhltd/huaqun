@@ -81,4 +81,7 @@ public class UserInfoImpl extends ServiceImpl<UserInfoMapper, UserInfo> implemen
 
     @Override
     public boolean glupdate(UserInfo userInfo) { return updateById(userInfo); }
+
+    @Override
+    public String getName(String username){return userInfoMapper.getName(username);}
 }

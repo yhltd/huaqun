@@ -1,7 +1,9 @@
 package com.example.demo.controller;
 
 import com.example.demo.entity.UserInfo;
+import com.example.demo.entity.ddklcz;
 import com.example.demo.entity.ddxd;
+import com.example.demo.service.DdklczService;
 import com.example.demo.service.DdxdService;
 import com.example.demo.service.UserInfoService;
 import com.example.demo.util.*;
@@ -30,6 +32,8 @@ public class DdxdController {
     private UserInfoService userInfoService;
     @Autowired
     private DdxdService ddxdService;
+    @Autowired
+    private DdklczService ddklczService;
     /**
      * 查询所有
      *
@@ -48,9 +52,27 @@ public class DdxdController {
 //                List<ddxd> getListByKeHu = ddxdService.getListByKeHu(khmc);
 //                return ResultInfo.success("获取成功", getListByKeHu);
 //            }else{
+            if(userInfo.getPower().equals("客户")){
+                List<ddxd> getList = ddxdService.getListByName(userInfo.getName());
+                return ResultInfo.success("获取成功",getList);
+            }
                 List<ddxd> getList = ddxdService.getList();
                 return ResultInfo.success("获取成功", getList);
 //            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            log.error("获取失败：{}", e.getMessage());
+            return ResultInfo.error("错误!");
+        }
+    }
+    @RequestMapping("/getkailiao")
+    public ResultInfo getkailiao(HttpSession session) {
+        UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
+        try {
+
+                List<ddklcz> getList = ddxdService.getkailiao();
+                return ResultInfo.success("获取成功",getList);
+
         } catch (Exception e) {
             e.printStackTrace();
             log.error("获取失败：{}", e.getMessage());
@@ -82,19 +104,50 @@ public class DdxdController {
     /**
      * 修改
      */
+//    @RequestMapping(value = "/update", method = RequestMethod.POST)
+//    public ResultInfo update(@RequestBody String updateJson,String djbh,HttpSession session) {
+//        UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
+//
+//        ddxd ddxd = null;
+//
+//        try {
+//
+//            ddxd = DecodeUtil.decodeToJson(updateJson, ddxd.class);
+//            String wancheng=ddxdService.getListBydjbh(ddxd.getDjbh());
+//            if(!wancheng.equals("已审验")) {
+//                if (ddxdService.update(ddxd)) {
+//                    return ResultInfo.success("修改成功", ddxd);
+//                } else {
+//                    return ResultInfo.success("修改失败", ddxd);
+//                }
+//            }else{
+//                return ResultInfo.error("修改失败已核验");
+//            }
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            log.error("修改失败：{}", e.getMessage());
+//            log.error("参数：{}", userInfo);
+//            return ResultInfo.error("修改失败");
+//        }
+//    }
     @RequestMapping(value = "/update", method = RequestMethod.POST)
-    public ResultInfo update(@RequestBody String updateJson, HttpSession session) {
+    public ResultInfo update(@RequestBody String updateJson,String djbh,HttpSession session) {
         UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
-        if(!(userInfo.getPower().equals("管理员")||userInfo.getPower().equals("超级管理员"))){
-            return ResultInfo.error(401, "无权限");
-        }
+
         ddxd ddxd = null;
+
         try {
+
             ddxd = DecodeUtil.decodeToJson(updateJson, ddxd.class);
-            if (ddxdService.update(ddxd)) {
-                return ResultInfo.success("修改成功", ddxd);
-            } else {
-                return ResultInfo.success("修改失败", ddxd);
+            String wancheng=ddxdService.getListBydjbh(ddxd.getDjbh());
+            if(!wancheng.equals("已审验") && !wancheng.equals("完成") || userInfo.getPower().equals("超级管理员") || userInfo.getPower().equals("管理员")) {
+                if (ddxdService.update(ddxd)) {
+                    return ResultInfo.success("修改成功", ddxd);
+                } else {
+                    return ResultInfo.success("修改失败", ddxd);
+                }
+            }else{
+                return ResultInfo.error("修改失败订单状态已审验或完成");
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -103,6 +156,31 @@ public class DdxdController {
             return ResultInfo.error("修改失败");
         }
     }
+
+//    @RequestMapping(value = "/update", method = RequestMethod.POST)
+//    public ResultInfo update(@RequestBody String updateJson, HttpSession session) {
+//        UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
+////        if(!userInfo.getPower().equals("管理员")){
+////            return ResultInfo.error(401, "无权限");
+////        }
+//        if(!(userInfo.getPower().equals("管理员")||userInfo.getPower().equals("超级管理员"))){
+//            return ResultInfo.error(401, "无权限");
+//        }
+//        ddxd ddxd = null;
+//        try {
+//            ddxd = DecodeUtil.decodeToJson(updateJson, ddxd.class);
+//            if (ddxdService.update(ddxd)) {
+//                return ResultInfo.success("修改成功", ddxd);
+//            } else {
+//                return ResultInfo.success("修改失败", ddxd);
+//            }
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            log.error("修改失败：{}", e.getMessage());
+//            log.error("参数：{}", userInfo);
+//            return ResultInfo.error("修改失败");
+//        }
+//    }
 
     /**
      * 添加
@@ -116,6 +194,23 @@ public class DdxdController {
         }
         try {
             ddxd ddxd = GsonUtil.toEntity(gsonUtil.get("addInfo"), ddxd.class);
+//            System.out.println("---------------------");
+//            System.out.println(ddxd.getChicun());
+            String cs = ddklczService.getchicun(ddxd.getGh());
+            String ddcd = ddxd.getDdcd();
+            int  intcs =Integer.parseInt(cs);
+            int  intddcd =Integer.parseInt(ddcd);
+            int chicun =intddcd - intcs;
+            String chicun1 =Integer.toString(chicun);
+            ddxd.setChicun(chicun1);
+//            System.out.println(intcs);
+//            System.out.println(intddcd);
+//            System.out.println(chicun1);
+//            System.out.println("---------------------");
+//            System.out.println("---------------------");
+//            ddxd.setChicun("1234");
+//             String chicun = ddxd.getDdcd()-ddxd.get
+//            System.out.println(ddxd.getChicun());
             ddxd = ddxdService.add(ddxd);
             if (StringUtils.isNotNull(ddxd)) {
                 return ResultInfo.success("添加成功", ddxd);
@@ -130,6 +225,7 @@ public class DdxdController {
         }
     }
 
+
     /**
      * 删除
      *
@@ -141,7 +237,7 @@ public class DdxdController {
         UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
         GsonUtil gsonUtil = new GsonUtil(GsonUtil.toJson(map));
         List<Integer> idList = GsonUtil.toList(gsonUtil.get("idList"), Integer.class);
-        if(!(userInfo.getPower().equals("玻璃厂")||userInfo.getPower().equals("客户"))){
+        if(!(userInfo.getPower().equals("管理员")||userInfo.getPower().equals("超级管理员"))){
             return ResultInfo.error(401, "无权限");
         }
         try {

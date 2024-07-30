@@ -46,8 +46,13 @@ public class LkxdController {
 //               List<lkxd> getListByKeHU = lkxdService.queryPinYin(khmc);
 //               return  ResultInfo.success("获取成功",getListByKeHU);
 //            }
-            List<lkxd> getList = lkxdService.getList();
-            return ResultInfo.success("获取成功", getList);
+            if(userInfo.getPower().equals("客户")) {
+                List<lkxd> getList = lkxdService.getListName(userInfo.getName());
+                return ResultInfo.success("获取成功", getList);
+            } else {
+                List<lkxd> getList = lkxdService.getList();
+                return ResultInfo.success("获取成功", getList);
+            }
         } catch (Exception e) {
             e.printStackTrace();
             log.error("获取失败：{}", e.getMessage());
@@ -111,11 +116,17 @@ public class LkxdController {
         lkxd lkxd = null;
         try {
             lkxd = DecodeUtil.decodeToJson(updateJson, lkxd.class);
-            if (lkxdService.update(lkxd)) {
-                return ResultInfo.success("修改成功", lkxd);
-            } else {
-                return ResultInfo.success("修改失败", lkxd);
-            }
+            String wancheng=lkxdService.getListOrderNumber(lkxd.getOrderNumber());
+            if(!wancheng.equals("完成") || userInfo.getPower().equals("超级管理员") || userInfo.getPower().equals("管理员")) {
+                if (lkxdService.update(lkxd)) {
+                    return ResultInfo.success("修改成功", lkxd);
+                } else {
+                    return ResultInfo.success("修改失败", lkxd);
+                }
+            }else{
+            return ResultInfo.error("修改失败订单状态已完成或已审验");
+        }
+
         } catch (Exception e) {
             e.printStackTrace();
             log.error("修改失败：{}", e.getMessage());
@@ -131,7 +142,7 @@ public class LkxdController {
     public ResultInfo add(@RequestBody HashMap map, HttpSession session) {
         UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
         GsonUtil gsonUtil = new GsonUtil(GsonUtil.toJson(map));
-        if(!userInfo.getPower().equals("玻璃厂")){
+        if(userInfo.getPower().equals("玻璃厂")){
             return ResultInfo.error(401, "无权限");
         }
         try {
@@ -161,7 +172,7 @@ public class LkxdController {
         UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
         GsonUtil gsonUtil = new GsonUtil(GsonUtil.toJson(map));
         List<Integer> idList = GsonUtil.toList(gsonUtil.get("idList"), Integer.class);
-        if(!userInfo.getPower().equals("玻璃厂")||userInfo.getPower().equals("客户")){
+        if(!(userInfo.getPower().equals("管理员")||userInfo.getPower().equals("超级管理员"))){
             return ResultInfo.error(401, "无权限");
         }
         try {

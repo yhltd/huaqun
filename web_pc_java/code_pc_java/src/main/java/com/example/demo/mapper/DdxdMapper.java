@@ -16,6 +16,15 @@ public interface DdxdMapper extends BaseMapper<ddxd> {
     @Select("select * from lightbelt order by djbh DESC")
     List<ddxd> getList();
 
+    @Select("select * from lightbelt where khmc=#{khmc} order by djbh DESC")
+    List<ddxd> getListByName(String khmc);
+
+    @Select("select wancheng from lightbelt where djbh=#{djbh} order by djbh DESC")
+    String getListBydjbh(String djbh);
+
+    @Select("select * from dengdai_kailiao")
+    List<ddklcz> getkailiao();
+
 //    @Select("select distinct ddh,luruyuan,case when isnull(wancheng,'未审验') = '' then '未审验' else isnull(wancheng,'未审验') end as wancheng,xdrq,djbh,shouhuo,lxdh,shfs,azdz,khmc,case when isnull(fkzt,'未付款') = '' then '未付款' else isnull(fkzt,'未付款') end as fkzt,isnull(hd,'')as hd,case case when isnull(wancheng,'未审验') = '' then '未审验' else isnull(wancheng,'未审验') end when '未审验' then '1' when '优先处理' then '2' when '已审验' then '3' when '正在加工' then '4' when '加工完成' then '5' when '完成' then '6' else shunxu end as shunxu,sum_money,jgczy,wcsj from lightbelt order by shunxu,djbh DESC")
 //    List<ddxd> getList();
 
@@ -28,10 +37,10 @@ public interface DdxdMapper extends BaseMapper<ddxd> {
     @Delete("delete from lightbelt where id=#{id}")
     boolean deleteid(int id);
 
-    @Update("update lightbelt set khmc=#{khmc},chicun=#{chicun},djbh=#{djbh},shouhuo=#{shouhuo},lxdh=#{lxdh},shfs=#{shfs},azdz=#{azdz},ddh=#{ddh},luruyuan=#{luruyuan},fj=#{fj},gh=#{gh},lcys=#{lcys},ddcd=#{ddcd},sl=#{sl},cxdk=#{cxdk},cxdk_right=#{cxdkright},gy=#{gy},gl=#{gl},bz=#{bz},dj=#{dj},je=#{je},chicun=#{chicun} where id=#{id}")
-    boolean update(String khmc,String xdrq,String djbh,String shouhuo,String lxdh,String shfs,String azdz,String ddh,String luruyuan,String fj,String gh,String lcys,String ddcd,String sl,String cxdk,String cxdkright,String gy,String gl,String bz,String dj,String je,String chicun,int id);
+    @Update("update lightbelt set khmc=#{khmc},chicun=#{chicun},djbh=#{djbh},shouhuo=#{shouhuo},lxdh=#{lxdh},shfs=#{shfs},azdz=#{azdz},ddh=#{ddh},luruyuan=#{luruyuan},fj=#{fj},gh=#{gh},lcys=#{lcys},ddcd=#{ddcd},sl=#{sl},cxdk=#{cxdk},cxdk_right=#{cxdkright},gy=#{gy},gl=#{gl},bz=#{bz},dj=#{dj},je=#{je} where id=#{id}")
+    boolean update(String khmc,String chicun,String xdrq,String djbh,String shouhuo,String lxdh,String shfs,String azdz,String ddh,String luruyuan,String fj,String gh,String lcys,String ddcd,String sl,String cxdk,String cxdkright,String gy,String gl,String bz,String dj,String je ,int id);
 
-    @Insert("insert into lightbelt(khmc,xdrq,djbh,shouhuo,lxdh,shfs,azdz,ddh,luruyuan,fj,gh,lcys,ddcd,sl,cxdk,cxdk_right,gy,gl,bz,dj,je,chicun) values(#{khmc},#{xdrq},#{djbh},#{shouhuo},#{lxdh},#{shfs},#{azdz},#{ddh},#{luruyuan},#{fj},#{gh},#{lcys},#{ddcd},#{sl},#{cxdk},#{cxdkRight},#{gy},#{gl},#{bz},#{dj},#{je}#{chicun})")
+    @Insert("insert into lightbelt(khmc,xdrq,djbh,shouhuo,lxdh,shfs,azdz,ddh,luruyuan,fj,gh,lcys,ddcd,sl,cxdk,cxdk_right,gy,gl,bz,dj,je,chicun) values(#{khmc},#{xdrq},#{djbh},#{shouhuo},#{lxdh},#{shfs},#{azdz},#{ddh},#{luruyuan},#{fj},#{gh},#{lcys},#{ddcd},#{sl},#{cxdk},#{cxdkRight},#{gy},#{gl},#{bz},#{dj},#{je},#{chicun})")
     void add(String khmc,String xdrq,String djbh,String shouhuo,String lxdh,String shfs,String azdz,String ddh,String luruyuan,String fj,String gh,String lcys,String ddcd,String sl,String cxdk,String cxdkRight,String gy,String gl,String bz,String dj,String je,String chicun);
 
     @Select("select * from lightbelt where khmc=#{khmc} and xdrq=#{xdrq} and djbh=#{djbh}")

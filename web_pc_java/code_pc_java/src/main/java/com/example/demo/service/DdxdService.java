@@ -16,6 +16,12 @@ public interface DdxdService extends IService<ddxd> {
      */
     List<ddxd> getList();
 
+    List<ddxd> getListByName(String khmc);
+
+    List<ddklcz> getkailiao();
+
+    String getListBydjbh(String djbh);
+
     /**
      * 客户查询
      */

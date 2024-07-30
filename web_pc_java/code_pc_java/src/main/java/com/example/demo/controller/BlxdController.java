@@ -34,9 +34,9 @@ public class BlxdController {
     @RequestMapping("/getList")
     public ResultInfo getList(HttpSession session) {
         UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
-        if(userInfo.getPower().equals("客户")){
-            return ResultInfo.error(401, "无权限");
-        }
+//        if(userInfo.getPower().equals("客户")){
+//            return ResultInfo.error(401, "无权限");
+//        }
         try {
             if(userInfo.getPower().equals("管理员")||userInfo.getPower().equals("超级管理员")){
                 List<blxd> getList = blxdService.getList();
@@ -61,10 +61,10 @@ public class BlxdController {
      * @return ResultInfo
      */
     @RequestMapping("/queryList")
-    public ResultInfo queryList(String pinyin, String shengchan, HttpSession session) {
+    public ResultInfo queryList(String pinyin, String shengchan,String ksxdrq,String jsxdrq, HttpSession session) {
         UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
         try {
-            List<blxd> list = blxdService.queryList(pinyin, shengchan);
+            List<blxd> list = blxdService.queryList(pinyin, shengchan,ksxdrq,jsxdrq);
             return ResultInfo.success("获取成功", list);
         } catch (Exception e) {
             e.printStackTrace();
@@ -72,6 +72,18 @@ public class BlxdController {
             return ResultInfo.error("错误!");
         }
     }
+//    @RequestMapping("/queryList1")
+//    public ResultInfo queryList1(String pinyin,String shengchan,String ksxdrq,String jsxdrq, HttpSession session) {
+//        UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
+//        try {
+//            List<blxd> list = blxdService.queryList1(pinyin, shengchan,ksxdrq,jsxdrq);
+//            return ResultInfo.success("获取成功", list);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            log.error("获取失败：{}", e.getMessage());
+//            return ResultInfo.error("错误!");
+//        }
+//    }
 
     /**
      * 修改

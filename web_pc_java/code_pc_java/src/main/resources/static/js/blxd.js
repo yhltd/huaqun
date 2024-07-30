@@ -36,12 +36,23 @@ $(function () {
     $('#select-btn').click(function () {
         var pinyin = $('#pinyin').val();
         var shengchan = $('#shengchan').val();
+        var ksxdrq = $('#ksxdrq').val();
+        var jsxdrq = $('#jsxdrq').val();
+        console.log(ksxdrq)
+        if (ksxdrq === "") {
+            ksxdrq = "1999-01-01";
+        }
+        if (jsxdrq === "") {
+            jsxdrq = "2030-12-31";
+        }
         $ajax({
             type: 'post',
             url: '/blxd/queryList',
             data: {
                 pinyin: pinyin,
                 shengchan: shengchan,
+                ksxdrq: ksxdrq,
+                jsxdrq: jsxdrq,
             }
         }, true, '', function (res) {
             if (res.code == 200) {
@@ -49,6 +60,27 @@ $(function () {
             }
         })
     });
+
+    // $('#select-btn').click(function () {
+    //
+    //     var pinyin = $('#pinyin').val();
+    //     var shengchan = $('#shangchan').val();
+    //
+    //
+    //     $ajax({
+    //         type: 'post',
+    //         url: '/blxd/queryList',
+    //         data: {
+    //
+    //             pinyin: pinyin,
+    //             shengchan: shengchan,
+    //         }
+    //     }, true, '', function (res) {
+    //         if (res.code == 200) {
+    //             setTable(res.data);
+    //         }
+    //     })
+    // });
 
     //刷新
     $("#refresh-btn").click(function () {
@@ -130,23 +162,39 @@ function setTable(data) {
                     return index + 1;
                 }
             }, {
+                field: 'customerName',
+                title: '客户名称',
+                align: 'center',
+                sortable: true,
+                width: 130,
+            }
+            , {
                 field: 'insertDate',
                 title: '下单日期',
                 align: 'center',
                 sortable: true,
                 width: 100,
             }, {
-                field: 'orderNumber',
-                title: '单据编号',
+                field: 'pinyin',
+                title: '简码',
                 align: 'center',
                 sortable: true,
-                width: 100,
-            }, {
+                width: 130,
+            }
+            , {
                 field: 'shengchan',
                 title: '生产状态',
                 align: 'center',
                 sortable: true,
                 width: 100,
+                formatter: function (value, row, index) {
+                    return '<select>' +
+                        '<option value="正在加工">正在加工</option>' +
+                        '<option value="加工完成">加工完成</option>' +
+                        '<option value="配送少数">配送少数</option>' +
+                        '<option value="完成">完成</option>' +
+                        '</select> '
+                }
             }, {
                 field: 'gongyingshang',
                 title: '所属供应商',
@@ -172,6 +220,18 @@ function setTable(data) {
                 sortable: true,
                 width: 100,
             }, {
+                field: 'height',
+                title: '高度',
+                align: 'center',
+                sortable: true,
+                width: 100,
+            }, {
+                field: 'width',
+                title: '宽度',
+                align: 'center',
+                sortable: true,
+                width: 100,
+            }, {
                 field: 'shuoming1',
                 title: '开拉手孔数量',
                 align: 'center',
@@ -190,23 +250,11 @@ function setTable(data) {
                 sortable: true,
                 width: 130,
             }, {
-                field: 'height',
-                title: '高度',
+                field: 'orderNumber',
+                title: '单据编号',
                 align: 'center',
                 sortable: true,
                 width: 100,
-            }, {
-                field: 'width',
-                title: '宽度',
-                align: 'center',
-                sortable: true,
-                width: 100,
-            }, {
-                field: 'pinyin',
-                title: '简码',
-                align: 'center',
-                sortable: true,
-                width: 130,
             }, {
                 field: 'shendan',
                 title: '完成时间',
@@ -228,12 +276,27 @@ function setTable(data) {
 
 function toExcel() {
 
-    var query = $('#query').val();
+    // var query = $('#query').val();
+    var pinyin = $('#pinyin').val();
+    var shengchan = $('#shengchan').val();
+    var ksxdrq = $('#ksxdrq').val();
+    var jsxdrq = $('#jsxdrq').val();
+    console.log(ksxdrq)
+    if (ksxdrq === "") {
+        ksxdrq = "1999-01-01";
+    }
+    if (jsxdrq === "") {
+        jsxdrq = "2030-12-31";
+    }
     $ajax({
         type: 'post',
-        url: '/blxd/getList',
+        url: '/blxd/queryList',
         data: {
-            query: query,
+            pinyin: pinyin,
+            shengchan: shengchan,
+            ksxdrq: ksxdrq,
+            jsxdrq: jsxdrq,
+            // query: query,
         }
     }, true, '', function (res) {
         if (res.code == 200) {
@@ -243,12 +306,12 @@ function toExcel() {
             var header = []
             for (var i = 0; i < array.length; i++) {
                 var body = {
-                    insertdate: array[i].insertdate,
-                    ordernumber: array[i].ordernumber,
+                    insertDate: array[i].insertDate,
+                    orderNumber: array[i].orderNumber,
                     shengchan:array[i].shengchan,
                     gongyingshang: array[i].gongyingshang,
-                    boliyanse: array[i].boliyanse,
-                    bolishenjiagong: array[i].bolishenjiagong,
+                    boliYanse: array[i].boliYanse,
+                    boliShenjiagong: array[i].boliShenjiagong,
                     num: array[i].num,
                     shuoming1: array[i].shuoming1,
                     shuoming2: array[i].shuoming2,

@@ -72,10 +72,11 @@
         <input id="jsxdrq" type="date" class="form-control" placeholder="结束日期" autocomplete="off">
     </div>
     <div class="col-md-3 mb-2">
-        <input id="khmc" type="text" class="form-control" placeholder="客户名称" autocomplete="off">
+        <input id="khmc" type="text" class="form-control"  placeholder="客户名称" autocomplete="off" >
     </div>
+
     <div class="col-md-3 mb-2">
-        <input id="ddh" type="text" class="form-control" placeholder="订单号" autocomplete="off">
+        <input id="ddh" type="text" class="form-control" placeholder="订单编号" autocomplete="off">
     </div>
     <div class="col-md-3 mb-2">
         <input id="azdz" type="text" class="form-control" placeholder="安装地址" autocomplete="off">
@@ -101,7 +102,7 @@
         <span style="border-right: 20px solid white"></span>
         <button id="update-btn" class="btn btn-primary" style="border-radius:5px;">
             <i class="bi bi-pencil-square icon"></i>
-            修改
+            查看修改
         </button>
         <span style="border-right: 20px solid white"></span>
         <button id="delete-btn" class="btn btn-primary" style="border-radius:5px;background-color: red;border: 1px solid red">
@@ -308,7 +309,7 @@
 <!--                    </div>-->
 
 
-                    <div class="card">
+                    <div class="card" id="createNew">
                         <div class="card-header" th:each="temp,status :2">
                             项目
                         </div>
@@ -459,18 +460,9 @@
                                     <div class="form-group">
                                         <label for="add-chicun">开料尺寸</label>
                                         <input id="add-chicun" name="chicun" type="text" class="form-control"
-                                               autocomplete="off"
-                                               data-required="1">
-                                        <!--                        <div class="invalid-feedback">-->
-                                        <!--                            请输入开料尺寸！-->
-                                        <!--                        </div>-->
+                                           autocomplete="off"
+                                           data-required="1">
                                     </div>
-                                </div>
-                                <div class="col-4">
-
-                                </div>
-                                <div class="col-4">
-
                                 </div>
                             </div>
                         </div>
@@ -485,6 +477,14 @@
                 <button id="add-close-btn" type="button" class="btn left-margin" style="background-color: red;color: white">
                     <i class="bi bi-x-circle icon"></i>
                     关闭
+                </button>
+                <button id="add-row" type="button" class="btn" style="background-color: limegreen;color: white">
+                    <i class="bi bi-arrow-bar-up icon"></i>
+                    加一行数据
+                </button>
+                <button id="del-row" type="button" class="btn" style="background-color: limegreen;color: white">
+                    <i class="bi bi-arrow-bar-up icon"></i>
+                    减一行数据
                 </button>
 <!--                <button id="add-comeAgain-btn" type="button" class="btn btn-primary">-->
 <!--                    <i class="bi bi-arrow-bar-up icon"></i>-->

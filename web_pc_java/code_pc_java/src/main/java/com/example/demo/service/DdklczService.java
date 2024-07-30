@@ -19,6 +19,9 @@ public interface DdklczService extends IService<ddklcz> {
      */
     List<ddklcz> queryList(String name);
 
+
+    String getchicun(String name);
+
     /**
      * 修改
      */

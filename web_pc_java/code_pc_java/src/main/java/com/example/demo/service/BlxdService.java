@@ -27,7 +27,9 @@ public interface BlxdService extends IService<blxd> {
     /**
      * 根据客户姓名和订单号查询
      */
-    List<blxd> queryList(String pinyin, String shengchan);
+//    List<blxd> queryList(String pinyin, String shengchan);
+
+    List<blxd> queryList(String pinyin,String shengchan,String ksxdrq,String jsxdrq);
 
     /**
      * 修改

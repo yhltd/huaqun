@@ -332,7 +332,7 @@ public class lkxd {
     /**
      * 完成状态
      */
-    private String wanCheng;
+
     /**
      * 组装
      */

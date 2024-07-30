@@ -19,6 +19,9 @@ public interface DdklczMapper extends BaseMapper<ddklcz> {
     @Select("select * from dengdai_kailiao where name like '%'+#{name}+'%' ")
     List<ddklcz> queryList(String name);
 
+    @Select("select chicun from dengdai_kailiao where name like '%'+#{name}+'%' ")
+    String getchicun(String name);
+
     @Delete("delete from dengdai_kailiao where id=#{id}")
     boolean deleteid(int id);
 

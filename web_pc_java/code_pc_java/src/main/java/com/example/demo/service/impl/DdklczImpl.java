@@ -25,6 +25,11 @@ public class DdklczImpl extends ServiceImpl<DdklczMapper, ddklcz> implements Ddk
     }
 
     @Override
+    public String getchicun(String name) {
+        return ddklczMapper.getchicun(name);
+    }
+
+    @Override
     public boolean update(ddklcz ddklcz) { return updateById(ddklcz); }
 
     @Override

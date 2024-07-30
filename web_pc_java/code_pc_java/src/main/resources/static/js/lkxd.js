@@ -925,11 +925,19 @@ function setTable(data) {
                 sortable: true,
                 width: 100,
             },  {
-                field: 'wanCheng',
+                field: 'wancheng',
                 title: '订单状态',
                 align: 'center',
                 sortable: true,
                 width: 100,
+                formatter: function (value, row, index) {
+                    return '<select>' +
+                        '<option value="已审验">已审验</option>' +
+                        '<option value="未审验">未审验</option>' +
+                        '<option value="完成">完成</option>' +
+                        '<option value="优先处理">优先处理</option>' +
+                        '</select> '
+                }
             },{
                 field: 'orderNumber',
                 title: '单据编号',

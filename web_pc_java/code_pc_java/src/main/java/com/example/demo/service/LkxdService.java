@@ -15,6 +15,9 @@ public interface LkxdService extends IService<lkxd> {
      */
     List<lkxd> getList();
 
+    List<lkxd> getListName(String customerName);
+
+    String getListOrderNumber(String orderNumber);
     /**
      * 根据姓名 订单号 安装地址查询
      */

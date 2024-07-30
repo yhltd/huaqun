@@ -59,4 +59,6 @@ public interface UserInfoMapper extends BaseMapper<UserInfo> {
 //            "    baozhuang = #{baozhuang}  " +
 //            "WHERE id = #{id} AND power IN ('操作员', '客户', '玻璃厂');")
 //    boolean glupdate(String username,String password,String company,String name,String pinyin,String power,String quyu,String addressName,String money,String shendan,String pay,String kailiao,String zuzhuang,String baozhuang,int id);
+    @Select("selcect name from userInfo where username=#{username}")
+    String getName(String username);
 }

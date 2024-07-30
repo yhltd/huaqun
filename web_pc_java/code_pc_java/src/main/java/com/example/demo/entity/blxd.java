@@ -17,6 +17,8 @@ public class blxd {
      * 下单日期
      */
     private String insertDate;
+
+    private String customerName;
     /**
      * 单据编号
      */
