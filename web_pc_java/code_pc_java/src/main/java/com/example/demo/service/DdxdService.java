@@ -20,7 +20,7 @@ public interface DdxdService extends IService<ddxd> {
 
     List<ddklcz> getkailiao();
 
-    String getListBydjbh(String djbh);
+    String getListBydjbh(int id);
 
     /**
      * 客户查询

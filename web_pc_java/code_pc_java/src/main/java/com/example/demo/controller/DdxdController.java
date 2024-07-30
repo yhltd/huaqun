@@ -139,7 +139,7 @@ public class DdxdController {
         try {
 
             ddxd = DecodeUtil.decodeToJson(updateJson, ddxd.class);
-            String wancheng=ddxdService.getListBydjbh(ddxd.getDjbh());
+            String wancheng=ddxdService.getListBydjbh(ddxd.getId());
             if(!wancheng.equals("已审验") && !wancheng.equals("完成") || userInfo.getPower().equals("超级管理员") || userInfo.getPower().equals("管理员")) {
                 if (ddxdService.update(ddxd)) {
                     return ResultInfo.success("修改成功", ddxd);

@@ -92,7 +92,7 @@
     <div class="col-md-3 mb-2">
         <select id="quyu" name="quyu" class="form-control" autocomplete="off"
                 data-required="1">
-            <option>--请选择配送情况--</option>
+            <option value="">--请选择配送区域--</option>
             <option value="A自提">A自提</option>
             <option value="A货拉拉、跑腿配送">A货拉拉、跑腿配送</option>
             <option value="B本部周边">B本部周边</option>
@@ -129,7 +129,7 @@
     <div class="col-md-3 mb-2">
         <select id="wancheng" name="wancheng" class="form-control" autocomplete="off"
                 data-required="1">
-            <option>--请选择配送情况--</option>
+            <option value="">--请选择配送情况--</option>
             <option value="优先处理">优先处理</option>
             <option value="配货作业中">配货作业中</option>
             <option value="配货完成">配货完成</option>
@@ -142,7 +142,7 @@
     <div class="col-md-3 mb-2">
         <select id="kucun" name="kucun" class="form-control" autocomplete="off"
                 data-required="1">
-            <option>--请选择商品库存信息--</option>
+            <option value="">--请选择商品库存信息--</option>
             <option value="安排处理">安排处理</option>
             <option value="处理当中">处理当中</option>
             <option value="处理完成">处理完成</option>
@@ -227,10 +227,11 @@
                         <div class="col-4">
                             <div class="form-group">
                                 <label for="add-customerName">客户名称</label>
-                                <input id="add-customerName" name="customerName" type="text" class="form-control"
-                                       autocomplete="off">
+                                <select id="add-customerName" name="customerName" class="form-control">
+                                    <option>--请选择--</option>
+                                </select>
                                 <div class="invalid-feedback">
-                                    请输入客户名称！
+                                    请选择客户名称！
                                 </div>
                             </div>
                         </div>
@@ -247,7 +248,7 @@
                         <div class="col-4">
                             <div class="form-group">
                                 <label for="add-customerNameRiqi">完成时间</label>
-                                <input id="add-customerNameRiqi" name="customerNameRiqi" type="datetime-local" step="1"
+                                <input id="add-customerNameRiqi" name="customerNameRiqi" type="date"
                                        class="form-control" autocomplete="off">
                                 <div class="invalid-feedback">
                                     请输入完成时间！
@@ -272,7 +273,7 @@
                             <div class="form-group">
                                 <label for="add-songhuoAddress">送货地址</label>
                                 <input id="add-songhuoAddress" name="songhuoAddress" type="text" class="form-control"
-                                       autocomplete="off" data-required="1">
+                                       autocomplete="off" data-required="1" oninput="write()">
                                 <!--                        <div class="invalid-feedback">-->
                                 <!--                            请输入送货地址！-->
                                 <!--                        </div>-->

@@ -31,6 +31,18 @@ public class PsdController {
      *
      * @return ResultInfo
      */
+    @RequestMapping("/getloginname")
+    public ResultInfo loginname(HttpSession session) {
+        UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
+        try {
+            String name = userInfo.getName();
+            return ResultInfo.success("获取成功", name);
+        } catch (Exception e) {
+            e.printStackTrace();
+            log.error("获取失败：{}", e.getMessage());
+            return ResultInfo.error("错误!");
+        }
+    }
     @RequestMapping("/getList")
     public ResultInfo getList(HttpSession session) {
         UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
@@ -39,8 +51,8 @@ public class PsdController {
         }
         try {
             if(userInfo.getPower().equals("客户")) {
-            List<psd> getList=psdService.getListByName(userInfo.getName());
-            return ResultInfo.success("获取成功",getList);
+                List<psd> getList=psdService.getListByName(userInfo.getName());
+                return ResultInfo.success("获取成功",getList);
             }
             List<psd> getList = psdService.getList();
             return ResultInfo.success("获取成功", getList);
@@ -72,7 +84,7 @@ public class PsdController {
      * @return ResultInfo
      */
     @RequestMapping("/queryList")
-    public ResultInfo queryList(String orderNumber, String customerName, String songhuoAddress, String anzhuangAddress,
+    public ResultInfo queryList(String orderNumber, String customerName, String quyu, String anzhuangAddress,
                                 String customerOrder, String songhuoDanhao,
                                 String ksinsertDate,
                                 String jsinsertDate,
@@ -81,7 +93,7 @@ public class PsdController {
                                 HttpSession session) {
         UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
         try {
-            List<psd> list = psdService.queryList(orderNumber, customerName, songhuoAddress, anzhuangAddress, customerOrder, songhuoDanhao,ksinsertDate,
+            List<psd> list = psdService.queryList(orderNumber, customerName, quyu, anzhuangAddress, customerOrder, songhuoDanhao,ksinsertDate,
                      jsinsertDate,
                      wancheng,
                      kucun);
@@ -105,10 +117,15 @@ public class PsdController {
         psd psd = null;
         try {
             psd = DecodeUtil.decodeToJson(updateJson, psd.class);
-            if (psdService.update(psd)) {
-                return ResultInfo.success("修改成功", psd);
-            } else {
-                return ResultInfo.success("修改失败", psd);
+            String wancheng = psdService.getListBydjbh(psd.getId());
+            if(!wancheng.equals("完成") || userInfo.getPower().equals("超级管理员") || userInfo.getPower().equals("管理员")) {
+                if (psdService.update(psd)) {
+                    return ResultInfo.success("修改成功", psd);
+                } else {
+                    return ResultInfo.success("修改失败", psd);
+                }
+            }else{
+                return ResultInfo.error("修改失败订单状态完成");
             }
         } catch (Exception e) {
             e.printStackTrace();

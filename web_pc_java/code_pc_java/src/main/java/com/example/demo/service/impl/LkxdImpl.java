@@ -26,8 +26,8 @@ public class LkxdImpl extends ServiceImpl<LkxdMapper, lkxd> implements LkxdServi
     }
 
     @Override
-    public String getListOrderNumber(String orderNumber) {
-        return lkxdMapper.getListOrderNumber(orderNumber);
+    public String getListOrderNumber(int id) {
+        return lkxdMapper.getListOrderNumber(id);
     }
 
     @Override

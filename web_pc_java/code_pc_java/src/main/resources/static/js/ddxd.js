@@ -112,6 +112,10 @@ function hqxlGy() {
         }
     })
 }
+function disGy(){
+    document.getElementById("add-gy").setAttribute("disabled", "true")
+    document.getElementById("update-gy").setAttribute("disabled", "true");
+}
 
 function getInputGh() {
 
@@ -194,6 +198,7 @@ $(document).ready(function () {
             getInputGh()
             getInputLcys()
             getInputGy()
+            disGy()
         } else if (selectedValue === '铝型材') {
             select.innerHTML = '';
             getSelectGh();
@@ -201,6 +206,7 @@ $(document).ready(function () {
             getInputGy();
             getLxc();
             getLcys();
+            disGy();
         } else if (selectedValue === '电源') {
             select.innerHTML = '';
             getSelectGh();
@@ -217,6 +223,7 @@ $(document).ready(function () {
             getInputGy();
             getKg();
             getLcys();
+            disGy();
         } else if (selectedValue === '配件') {
             select.innerHTML = '';
             getSelectGh();
@@ -224,6 +231,7 @@ $(document).ready(function () {
             getInputGy();
             getPj();
             getLcys();
+            disGy();
         }
     })
 })
@@ -299,7 +307,7 @@ function getkailiao() {
                         var klcc=res.data[i].chicun;
                         var chicun=ddcd-klcc;
                         // document.getElementById("add-chicun").value = chicun;
-                        document.getElementById("add-chicun").value = 111;
+                        document.getElementById("add-chicun").value = chicun;
                     }
                 }
             }

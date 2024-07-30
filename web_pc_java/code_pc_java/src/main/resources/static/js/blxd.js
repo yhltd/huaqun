@@ -306,25 +306,26 @@ function toExcel() {
             var header = []
             for (var i = 0; i < array.length; i++) {
                 var body = {
-                    insertDate: array[i].insertDate,
-                    orderNumber: array[i].orderNumber,
+                    customerName:array[i].customerName,
+                    pinyin: array[i].pinyin,
                     shengchan:array[i].shengchan,
                     gongyingshang: array[i].gongyingshang,
                     boliYanse: array[i].boliYanse,
                     boliShenjiagong: array[i].boliShenjiagong,
                     num: array[i].num,
+                    height:array[i].height,
+                    width: array[i].width,
                     shuoming1: array[i].shuoming1,
                     shuoming2: array[i].shuoming2,
                     beizhu: array[i].beizhu,
-                    height:array[i].height,
-                    width: array[i].width,
-                    pinyin: array[i].pinyin,
+                    orderNumber: array[i].orderNumber,
+                    // insertDate: array[i].insertDate,
                     shendan: array[i].shendan,
                 }
                 header.push(body)
             }
             console.log(header)
-            title = ['下单日期','单据编号','生产状态', '所属供应商', '玻璃颜色', '玻璃深加工', '数量', '开拉手孔数量','开锁孔数量','开特殊孔数量','高度','宽度','简码','完成时间']
+            title = ['客户名称','简码','生产状态', '所属供应商', '玻璃颜色', '玻璃深加工', '数量', '高度','宽度','开拉孔数量','开锁孔数量','开特殊孔数量','单据编号','完成时间']
             JSONToExcelConvertor(header, "玻璃下单", title)
 
         }

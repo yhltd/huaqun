@@ -26,10 +26,48 @@ function getList() {
         }
     })
 }
+// function getriqi(){
+//     const now = new Date();
+//     const year = now.getFullYear();
+//     const month = (now.getMonth() + 1).toString().padStart(2, '0');
+//     const day = now.getDate().toString().padStart(2, '0');
+//     const hours = now.getHours().toString().padStart(2, '0');
+//     const minutes = now.getMinutes().toString().padStart(2, '0');
+//     const seconds = now.getSeconds().toString().padStart(2, '0');
+// }
+function getKhmc() {
+    $ajax({
+        type: 'post',
+        url: '/user/hqxlKhmc',
+    }, false, '', function (res) {
+        if (res.code == 200) {
+            for (var i = 0; i < res.data.length; i++) {
+                $("#add-customerName").append("<option>" + res.data[i].company + "</option>");
+                $("#update-customerName").append("<option>" + res.data[i].company + "</option>");
+            }
+        }
+    })
+}
+function getName() {
+    $ajax({
+        type: 'post',
+        url: '/psd/getloginname',
+    }, false, '', function (res) {
+        if (res.code == 200) {
+            var this_name = res.data;
+            document.getElementById("add-customerNameRenyuan").value = this_name;
+
+                // $("#update-customerName").append("<option>" + res.data[i].company + "</option>");
+
+        }
+    })
+}
+function getriqi(){
+
+    document.getElementById("add-customerNameRiqi").value = new Date();
+}
 
 $(function () {
-
-
     $ajax({
         type: 'post',
         url: '/user/getUserName',
@@ -39,6 +77,9 @@ $(function () {
     })
 
     getList();
+    getKhmc();
+    getName();
+    getriqi();
     setTable();
     getkucun();
     getquyuxl();
@@ -89,14 +130,14 @@ $(function () {
     $('#select-btn').click(function () {
         var orderNumber = $('#orderNumber').val();
         var customerName = $('#customerName').val();
-        var songhuoAddress = $('#songhuoAddress').val();
+        var quyu = $('#quyu').val();
         var anzhuangAddress = $('#anzhuangAddress').val();
         var customerOrder = $('#customerOrder').val();
         var songhuoDanhao = $('#songhuoDanhao').val();
-        var ksinsertDate = $('#songhuoAddress').val();
-        var jsinsertDate = $('#anzhuangAddress').val();
-        var wancheng = $('#customerOrder').val();
-        var kucun = $('#songhuoDanhao').val();
+        var ksinsertDate = $('#ksinsertDate').val();
+        var jsinsertDate = $('#jsinsertDate').val();
+        var wancheng = $('#wancheng').val();
+        var kucun = $('#kucun').val();
         if (ksinsertDate === "") {
             ksinsertDate = "1999-01-01";
         }
@@ -109,7 +150,7 @@ $(function () {
             data: {
                 orderNumber: orderNumber,
                 customerName: customerName,
-                songhuoAddress: songhuoAddress,
+                quyu: quyu,
                 anzhuangAddress: anzhuangAddress,
                 customerOrder: customerOrder,
                 songhuoDanhao: songhuoDanhao,
@@ -148,23 +189,23 @@ $(function () {
         console.log("params", params)
         console.log("orderNumber", orderNumber)
         // if (checkForm('#add-form')) {
-            $ajax({
-                type: 'post',
-                url: '/psd/add',
-                data: JSON.stringify({
-                    addInfo: params,
-                    orderNumber: orderNumber,
-                }),
-                dataType: 'json',
-                contentType: 'application/json;charset=utf-8'
-            }, false, '', function (res) {
-                if (res.code == 200) {
-                    swal("", res.msg, "success");
-                    $('#add-form')[0].reset();
-                    getList();
-                    $('#add-close-btn').click();
-                }
-            })
+        $ajax({
+            type: 'post',
+            url: '/psd/add',
+            data: JSON.stringify({
+                addInfo: params,
+                orderNumber: orderNumber,
+            }),
+            dataType: 'json',
+            contentType: 'application/json;charset=utf-8'
+        }, false, '', function (res) {
+            if (res.code == 200) {
+                swal("", res.msg, "success");
+                $('#add-form')[0].reset();
+                getList();
+                $('#add-close-btn').click();
+            }
+        })
         // }
     });
 
@@ -316,7 +357,8 @@ $(function () {
                             liveDrag: true,
                             gripInnerHtml: "<div class='grip'></div>",
                             draggingClass: "dragging",
-                            resizeMode: 'fit',})
+                            resizeMode: 'fit',
+                        })
                         swal("", res.msg, "success");
                         $('#update-close-btn').click();
                         $('#update-modal').modal('hide');
@@ -403,6 +445,7 @@ $(function () {
         })
     }
 });
+
 function getquyuxl() {
     $ajax({
         type: 'post',
@@ -417,6 +460,7 @@ function getquyuxl() {
         }
     })
 }
+
 function getshoukuan() {
     $ajax({
         type: 'post',
@@ -431,6 +475,7 @@ function getshoukuan() {
         }
     })
 }
+
 function getkucun() {
     $ajax({
         type: 'post',
@@ -475,7 +520,7 @@ function setTable(data) {
             //         return index + 1;
             //     }
             // },
-           {
+            {
                 field: 'insertDate',
                 title: '日期',
                 align: 'center',
@@ -527,17 +572,19 @@ function setTable(data) {
                 width: 120,
             }, {
                 field: 'quyu',
-                title: '区域',
+                title: '配送区域',
                 align: 'center',
                 sortable: true,
                 width: 100,
-            }, {
-                field: 'songhuoAddress',
-                title: '配送地址',
-                align: 'center',
-                sortable: true,
-                width: 100,
-            }, {
+            },
+            // {
+            //     field: 'songhuoAddress',
+            //     title: '配送地址',
+            //     align: 'center',
+            //     sortable: true,
+            //     width: 100,
+            // },
+            {
                 field: 'anzhuangAddress',
                 title: '安装地址',
                 align: 'center',
@@ -548,14 +595,15 @@ function setTable(data) {
                 title: '客户需求文字录入员',
                 align: 'center',
                 sortable: true,
-                width: 100,
+                width: 200,
             }, {
                 field: 'kucun',
                 title: '商品库存(文字)',
                 align: 'center',
                 sortable: true,
                 width: 200,
-                height: 400,}
+                height: 400,
+            }
             // },  {
             //     field: 'customerNameRenyuan',
             //     title: '录入员',
@@ -580,103 +628,105 @@ function setTable(data) {
             //     align: 'center',
             //     sortable: true,
             //     width: 100,
-            // }, {
-            //     field: 'customerNeedImg1',
-            //     title: '客户需求(图片)',
-            //     align: 'center',
-            //     sortable: true,
-            //     width: 130,
-            //     height : 50,
-            //     formatter: function(value,row,index){
-            //         console.log("value",value)
-            //         console.log("row", row)
-            //         return '<img  src=' + value + '  style="width: 50px ;height : 50px;">';
-            //     }
-            // }, {
-            //     field: 'customerNeedImg2',
-            //     title: '客户需求(图片)',
-            //     align: 'center',
-            //     sortable: true,
-            //     width: 130,
-            //     height : 50,
-            //     formatter: function(value,row,index){
-            //         console.log("value",value)
-            //         console.log("row", row)
-            //         return '<img  src=' + value + '  style="width: 50px ;height : 50px;">';
-            //     }
-            // }, {
-            //     field: 'customerNeedImg3',
-            //     title: '客户需求(图片)',
-            //     align: 'center',
-            //     sortable: true,
-            //     width: 130,
-            //     height : 50,
-            //     formatter: function(value,row,index){
-            //         console.log("value",value)
-            //         console.log("row", row)
-            //         return '<img  src=' + value + '  style="width: 50px ;height : 50px;">';
-            //     }
-            // }, {
-            //     field: 'customerNeedImg4',
-            //     title: '客户需求(图片)',
-            //     align: 'center',
-            //     sortable: true,
-            //     width: 130,
-            //     height : 50,
-            //     formatter: function(value,row,index){
-            //         console.log("value",value)
-            //         console.log("row", row)
-            //         return '<img  src=' + value + '  style="width: 50px ;height : 50px;">';
-            //     }
-            // }, {
-            //     field: 'customerNeedImg5',
-            //     title: '客户需求(图片)',
-            //     align: 'center',
-            //     sortable: true,
-            //     width: 130,
-            //     height : 50,
-            //     formatter: function(value,row,index){
-            //         console.log("value",value)
-            //         console.log("row", row)
-            //         return '<img  src=' + value + '  style="width: 50px ;height : 50px;">';
-            //     }
-            // }, {
-            //     field: 'customerNeedImg6',
-            //     title: '客户需求(图片)',
-            //     align: 'center',
-            //     sortable: true,
-            //     width: 130,
-            //     height : 50,
-            //     formatter: function(value,row,index){
-            //         console.log("value",value)
-            //         console.log("row", row)
-            //         return '<img  src=' + value + '  style="width: 50px ;height : 50px;">';
-            //     }
-            // }, {
-            //     field: 'customerNeedImg7',
-            //     title: '客户需求(图片)',
-            //     align: 'center',
-            //     sortable: true,
-            //     width: 130,
-            //     height : 50,
-            //     formatter: function(value,row,index){
-            //         console.log("value",value)
-            //         console.log("row", row)
-            //         return '<img  src=' + value + '  style="width: 50px ;height : 50px;">';
-            //     }
-            // }, {
-            //     field: 'customerNeedImg8',
-            //     title: '客户需求(图片)',
-            //     align: 'center',
-            //     sortable: true,
-            //     width: 130,
-            //     height : 50,
-            //     formatter: function(value,row,index){
-            //         console.log("value",value)
-            //         console.log("row", row)
-            //         return '<img  src=' + value + '  style="width: 50px ;height : 50px;">';
-            //     }
-            // }, {
+            // },
+            , {
+                field: 'customerNeedImg1',
+                title: '客户需求(图片)',
+                align: 'center',
+                sortable: true,
+                width: 130,
+                height: 50,
+                formatter: function (value, row, index) {
+                    console.log("value", value)
+                    console.log("row", row)
+                    return '<img  src=' + value + '  style="width: 50px ;height : 50px;">';
+                }
+            }, {
+                field: 'customerNeedImg2',
+                title: '客户需求(图片)',
+                align: 'center',
+                sortable: true,
+                width: 130,
+                height: 50,
+                formatter: function (value, row, index) {
+                    console.log("value", value)
+                    console.log("row", row)
+                    return '<img  src=' + value + '  style="width: 50px ;height : 50px;">';
+                }
+            }, {
+                field: 'customerNeedImg3',
+                title: '客户需求(图片)',
+                align: 'center',
+                sortable: true,
+                width: 130,
+                height: 50,
+                formatter: function (value, row, index) {
+                    console.log("value", value)
+                    console.log("row", row)
+                    return '<img  src=' + value + '  style="width: 50px ;height : 50px;">';
+                }
+            }, {
+                field: 'customerNeedImg4',
+                title: '客户需求(图片)',
+                align: 'center',
+                sortable: true,
+                width: 130,
+                height: 50,
+                formatter: function (value, row, index) {
+                    console.log("value", value)
+                    console.log("row", row)
+                    return '<img  src=' + value + '  style="width: 50px ;height : 50px;">';
+                }
+            }, {
+                field: 'customerNeedImg5',
+                title: '客户需求(图片)',
+                align: 'center',
+                sortable: true,
+                width: 130,
+                height: 50,
+                formatter: function (value, row, index) {
+                    console.log("value", value)
+                    console.log("row", row)
+                    return '<img  src=' + value + '  style="width: 50px ;height : 50px;">';
+                }
+            }, {
+                field: 'customerNeedImg6',
+                title: '客户需求(图片)',
+                align: 'center',
+                sortable: true,
+                width: 130,
+                height: 50,
+                formatter: function (value, row, index) {
+                    console.log("value", value)
+                    console.log("row", row)
+                    return '<img  src=' + value + '  style="width: 50px ;height : 50px;">';
+                }
+            }, {
+                field: 'customerNeedImg7',
+                title: '客户需求(图片)',
+                align: 'center',
+                sortable: true,
+                width: 130,
+                height: 50,
+                formatter: function (value, row, index) {
+                    console.log("value", value)
+                    console.log("row", row)
+                    return '<img  src=' + value + '  style="width: 50px ;height : 50px;">';
+                }
+            }, {
+                field: 'customerNeedImg8',
+                title: '客户需求(图片)',
+                align: 'center',
+                sortable: true,
+                width: 130,
+                height: 50,
+                formatter: function (value, row, index) {
+                    console.log("value", value)
+                    console.log("row", row)
+                    return '<img  src=' + value + '  style="width: 50px ;height : 50px;">';
+                }
+            }
+            // , {
             //     field: 'customerNeedImg1Renyuan',
             //     title: '录入员',
             //     align: 'center',
@@ -700,19 +750,21 @@ function setTable(data) {
             //     align: 'center',
             //     sortable: true,
             //     width: 140,
-            // }, {
-            //     field: 'customerNeedText2',
-            //     title: '文件(照片)',
-            //     align: 'center',
-            //     sortable: true,
-            //     width: 120,
-            //     height : 50,
-            //     formatter: function(value,row,index){
-            //         console.log("value",value)
-            //         console.log("row", row)
-            //         return '<img  src=' + value + '  style="width: 50px ;height : 50px;">';
-            //     }
-            // }, {
+            // }
+            , {
+                field: 'customerNeedText2',
+                title: '文件(照片)',
+                align: 'center',
+                sortable: true,
+                width: 120,
+                height: 50,
+                formatter: function (value, row, index) {
+                    console.log("value", value)
+                    console.log("row", row)
+                    return '<img  src=' + value + '  style="width: 50px ;height : 50px;">';
+                }
+            }
+            // , {
             //     field: 'customerNeedText2Renyuan',
             //     title: '录入员',
             //     align: 'center',
@@ -790,19 +842,21 @@ function setTable(data) {
             //     align: 'center',
             //     sortable: true,
             //     width: 100,
-            // }, {
-            //     field: 'peihuoImg1',
-            //     title: '配货图片',
-            //     align: 'center',
-            //     sortable: true,
-            //     width: 100,
-            //     height : 50,
-            //     formatter: function(value,row,index){
-            //         console.log("value",value)
-            //         console.log("row", row)
-            //         return '<img  src=' + value + '  style="width: 50px ;height : 50px;">';
-            //     }
-            // }, {
+            // }
+            , {
+                field: 'peihuoImg1',
+                title: '配货图片',
+                align: 'center',
+                sortable: true,
+                width: 100,
+                height: 50,
+                formatter: function (value, row, index) {
+                    console.log("value", value)
+                    console.log("row", row)
+                    return '<img  src=' + value + '  style="width: 50px ;height : 50px;">';
+                }
+            }
+            // , {
             //     field: 'peihuoImg1Renyuan',
             //     title: '录入员',
             //     align: 'center',
@@ -814,19 +868,21 @@ function setTable(data) {
             //     align: 'center',
             //     sortable: true,
             //     width: 100,
-            // }, {
-            //     field: 'peihuoImg2',
-            //     title: '配货图片',
-            //     align: 'center',
-            //     sortable: true,
-            //     width: 100,
-            //     height : 50,
-            //     formatter: function(value,row,index){
-            //         console.log("value",value)
-            //         console.log("row", row)
-            //         return '<img  src=' + value + '  style="width: 50px ;height : 50px;">';
-            //     }
-            // }, {
+            // }
+            , {
+                field: 'peihuoImg2',
+                title: '配货图片',
+                align: 'center',
+                sortable: true,
+                width: 100,
+                height: 50,
+                formatter: function (value, row, index) {
+                    console.log("value", value)
+                    console.log("row", row)
+                    return '<img  src=' + value + '  style="width: 50px ;height : 50px;">';
+                }
+            }
+            // , {
             //     field: 'peihuoImg2Renyuan',
             //     title: '录入员',
             //     align: 'center',
@@ -838,19 +894,21 @@ function setTable(data) {
             //     align: 'center',
             //     sortable: true,
             //     width: 100,
-            // }, {
-            //     field: 'peihuoImg3',
-            //     title: '配货图片',
-            //     align: 'center',
-            //     sortable: true,
-            //     width: 100,
-            //     height : 50,
-            //     formatter: function(value,row,index){
-            //         console.log("value",value)
-            //         console.log("row", row)
-            //         return '<img  src=' + value + '  style="width: 50px ;height : 50px;">';
-            //     }
-            // }, {
+            // }
+            , {
+                field: 'peihuoImg3',
+                title: '配货图片',
+                align: 'center',
+                sortable: true,
+                width: 100,
+                height: 50,
+                formatter: function (value, row, index) {
+                    console.log("value", value)
+                    console.log("row", row)
+                    return '<img  src=' + value + '  style="width: 50px ;height : 50px;">';
+                }
+            }
+            // , {
             //     field: 'peihuoImg3Renyuan',
             //     title: '录入员',
             //     align: 'center',
@@ -862,127 +920,139 @@ function setTable(data) {
             //     align: 'center',
             //     sortable: true,
             //     width: 100,
-            // }, {
-            //     field: 'peihuoImg4',
-            //     title: '配货图片',
-            //     align: 'center',
-            //     sortable: true,
-            //     width: 100,
-            //     height : 50,
-            //     formatter: function(value,row,index){
-            //         console.log("value",value)
-            //         console.log("row", row)
-            //         return '<img  src=' + value + '  style="width: 50px ;height : 50px;">';
-            //     }
-            // }, {
+            // }
+            , {
+                field: 'peihuoImg4',
+                title: '配货图片',
+                align: 'center',
+                sortable: true,
+                width: 100,
+                height: 50,
+                formatter: function (value, row, index) {
+                    console.log("value", value)
+                    console.log("row", row)
+                    return '<img  src=' + value + '  style="width: 50px ;height : 50px;">';
+                }
+            }
+            // , {
             //     field: 'peihuoImg4Renyuan',
             //     title: '录入员',
             //     align: 'center',
             //     sortable: true,
             //     width: 100,
-            // }, {
-            //     field: 'peihuoImg4Riqi',
-            //     title: '完成时间',
-            //     align: 'center',
-            //     sortable: true,
-            //     width: 100,
-            // }, {
-            //     field: 'peihuoImg5',
-            //     title: '配货图片',
-            //     align: 'center',
-            //     sortable: true,
-            //     width: 100,
-            //     height : 50,
-            //     formatter: function(value,row,index){
-            //         console.log("value",value)
-            //         console.log("row", row)
-            //         return '<img  src=' + value + '  style="width: 50px ;height : 50px;">';
-            //     }
-            // }, {
-            //     field: 'peihuoImg6',
-            //     title: '配货图片',
-            //     align: 'center',
-            //     sortable: true,
-            //     width: 100,
-            //     height : 50,
-            //     formatter: function(value,row,index){
-            //         console.log("value",value)
-            //         console.log("row", row)
-            //         return '<img  src=' + value + '  style="width: 50px ;height : 50px;">';
-            //     }
-            // }, {
-            //     field: 'peihuoImg7',
-            //     title: '配货图片',
-            //     align: 'center',
-            //     sortable: true,
-            //     width: 100,
-            //     height : 50,
-            //     formatter: function(value,row,index){
-            //         console.log("value",value)
-            //         console.log("row", row)
-            //         return '<img  src=' + value + '  style="width: 50px ;height : 50px;">';
-            //     }
-            // }, {
-            //     field: 'peihuoImg8',
-            //     title: '配货图片',
-            //     align: 'center',
-            //     sortable: true,
-            //     width: 100,
-            //     height : 50,
-            //     formatter: function(value,row,index){
-            //         console.log("value",value)
-            //         console.log("row", row)
-            //         return '<img  src=' + value + '  style="width: 50px ;height : 50px;">';
-            //     }
-            // }, {
+            // }
+            , {
+                field: 'peihuoImg4Riqi',
+                title: '完成时间',
+                align: 'center',
+                sortable: true,
+                width: 100,
+            }
+            , {
+                field: 'peihuoImg5',
+                title: '配货图片',
+                align: 'center',
+                sortable: true,
+                width: 100,
+                height: 50,
+                formatter: function (value, row, index) {
+                    console.log("value", value)
+                    console.log("row", row)
+                    return '<img  src=' + value + '  style="width: 50px ;height : 50px;">';
+                }
+            }
+            , {
+                field: 'peihuoImg6',
+                title: '配货图片',
+                align: 'center',
+                sortable: true,
+                width: 100,
+                height: 50,
+                formatter: function (value, row, index) {
+                    console.log("value", value)
+                    console.log("row", row)
+                    return '<img  src=' + value + '  style="width: 50px ;height : 50px;">';
+                }
+            }, {
+                field: 'peihuoImg7',
+                title: '配货图片',
+                align: 'center',
+                sortable: true,
+                width: 100,
+                height: 50,
+                formatter: function (value, row, index) {
+                    console.log("value", value)
+                    console.log("row", row)
+                    return '<img  src=' + value + '  style="width: 50px ;height : 50px;">';
+                }
+            }, {
+                field: 'peihuoImg8',
+                title: '配货图片',
+                align: 'center',
+                sortable: true,
+                width: 100,
+                height: 50,
+                formatter: function (value, row, index) {
+                    console.log("value", value)
+                    console.log("row", row)
+                    return '<img  src=' + value + '  style="width: 50px ;height : 50px;">';
+                }
+            }
+            // , {
             //     field: 'peihuoImg5Renyuan',
             //     title: '录入员',
             //     align: 'center',
             //     sortable: true,
             //     width: 100,
-            // }, {
+            // }
+            // , {
             //     field: 'peihuoImg5Riqi',
             //     title: '完成时间',
             //     align: 'center',
             //     sortable: true,
             //     width: 100,
-            // }, {
-            //     field: 'peisongImg1',
-            //     title: '配送图片',
-            //     align: 'center',
-            //     sortable: true,
-            //     width: 100,
-            //     height : 50,
-            //     formatter: function(value,row,index){
-            //         console.log("value",value)
-            //         console.log("row", row)
-            //         return '<img  src=' + value + '  style="width: 50px ;height : 50px;">';
-            //     }
-            // }, {
+            // }
+            , {
+                field: 'peisongImg1',
+                title: '配送图片',
+                align: 'center',
+                sortable: true,
+                width: 100,
+                height: 50,
+                formatter: function (value, row, index) {
+                    console.log("value", value)
+                    console.log("row", row)
+                    return '<img  src=' + value + '  style="width: 50px ;height : 50px;">';
+                }
+            }
+            // , {
             //     field: 'peisongImg1Renyuan',
             //     title: '录入员',
             //     align: 'center',
             //     sortable: true,
             //     width: 100,
-            // }, {
+            // }
+            // , {
             //     field: 'peisongImg1Riqi',
             //     title: '完成时间',
             //     align: 'center',
             //     sortable: true,
             //     width: 100,
-            // }, {
-            //     field: 'peisongImg2',
-            //     title: '配送图片',
-            //     align: 'center',
-            //     sortable: true,
-            //     width: 100,
-            //     height : 50,
-            //     formatter: function(value,row,index){
-            //         console.log("value",value)
-            //         console.log("row", row)
-            //         return '<img  src=' + value + '  style="width: 50px ;height : 50px;">';
-            //     }
-            // }, {
+            // }
+            , {
+                field: 'peisongImg2',
+                title: '配送图片',
+                align: 'center',
+                sortable: true,
+                width: 100,
+                height: 50,
+                formatter: function (value, row, index) {
+                    console.log("value", value)
+                    console.log("row", row)
+                    return '<img  src=' + value + '  style="width: 50px ;height : 50px;">';
+                }
+            }
+            // , {
             //     field: 'peisongImg2Renyuan',
             //     title: '录入员',
             //     align: 'center',
@@ -994,79 +1064,82 @@ function setTable(data) {
             //     align: 'center',
             //     sortable: true,
             //     width: 100,
-            // }, {
-            //     field: 'peisongImg3',
-            //     title: '配送图片',
-            //     align: 'center',
-            //     sortable: true,
-            //     width: 100,
-            //     height : 50,
-            //     formatter: function(value,row,index){
-            //         console.log("value",value)
-            //         console.log("row", row)
-            //         return '<img  src=' + value + '  style="width: 50px ;height : 50px;">';
-            //     }
-            // }, {
-            //     field: 'peisongImg4',
-            //     title: '配送图片',
-            //     align: 'center',
-            //     sortable: true,
-            //     width: 100,
-            //     height : 50,
-            //     formatter: function(value,row,index){
-            //         console.log("value",value)
-            //         console.log("row", row)
-            //         return '<img  src=' + value + '  style="width: 50px ;height : 50px;">';
-            //     }
-            // }, {
-            //     field: 'peisongImg5',
-            //     title: '配送图片',
-            //     align: 'center',
-            //     sortable: true,
-            //     width: 100,
-            //     height : 50,
-            //     formatter: function(value,row,index){
-            //         console.log("value",value)
-            //         console.log("row", row)
-            //         return '<img  src=' + value + '  style="width: 50px ;height : 50px;">';
-            //     }
-            // }, {
-            //     field: 'peisongImg6',
-            //     title: '配送图片',
-            //     align: 'center',
-            //     sortable: true,
-            //     width: 100,
-            //     height : 50,
-            //     formatter: function(value,row,index){
-            //         console.log("value",value)
-            //         console.log("row", row)
-            //         return '<img  src=' + value + '  style="width: 50px ;height : 50px;">';
-            //     }
-            // }, {
-            //     field: 'peisongImg7',
-            //     title: '配送图片',
-            //     align: 'center',
-            //     sortable: true,
-            //     width: 100,
-            //     height : 50,
-            //     formatter: function(value,row,index){
-            //         console.log("value",value)
-            //         console.log("row", row)
-            //         return '<img  src=' + value + '  style="width: 50px ;height : 50px;">';
-            //     }
-            // }, {
-            //     field: 'peisongImg8',
-            //     title: '配送图片',
-            //     align: 'center',
-            //     sortable: true,
-            //     width: 100,
-            //     height : 50,
-            //     formatter: function(value,row,index){
-            //         console.log("value",value)
-            //         console.log("row", row)
-            //         return '<img  src=' + value + '  style="width: 50px ;height : 50px;">';
-            //     }
-            // }, {
+            // }
+            , {
+                field: 'peisongImg3',
+                title: '配送图片',
+                align: 'center',
+                sortable: true,
+                width: 100,
+                height: 50,
+                formatter: function (value, row, index) {
+                    console.log("value", value)
+                    console.log("row", row)
+                    return '<img  src=' + value + '  style="width: 50px ;height : 50px;">';
+                }
+            }
+            , {
+                field: 'peisongImg4',
+                title: '配送图片',
+                align: 'center',
+                sortable: true,
+                width: 100,
+                height: 50,
+                formatter: function (value, row, index) {
+                    console.log("value", value)
+                    console.log("row", row)
+                    return '<img  src=' + value + '  style="width: 50px ;height : 50px;">';
+                }
+            }, {
+                field: 'peisongImg5',
+                title: '配送图片',
+                align: 'center',
+                sortable: true,
+                width: 100,
+                height: 50,
+                formatter: function (value, row, index) {
+                    console.log("value", value)
+                    console.log("row", row)
+                    return '<img  src=' + value + '  style="width: 50px ;height : 50px;">';
+                }
+            }, {
+                field: 'peisongImg6',
+                title: '配送图片',
+                align: 'center',
+                sortable: true,
+                width: 100,
+                height: 50,
+                formatter: function (value, row, index) {
+                    console.log("value", value)
+                    console.log("row", row)
+                    return '<img  src=' + value + '  style="width: 50px ;height : 50px;">';
+                }
+            }, {
+                field: 'peisongImg7',
+                title: '配送图片',
+                align: 'center',
+                sortable: true,
+                width: 100,
+                height: 50,
+                formatter: function (value, row, index) {
+                    console.log("value", value)
+                    console.log("row", row)
+                    return '<img  src=' + value + '  style="width: 50px ;height : 50px;">';
+                }
+            }, {
+                field: 'peisongImg8',
+                title: '配送图片',
+                align: 'center',
+                sortable: true,
+                width: 100,
+                height: 50,
+                formatter: function (value, row, index) {
+                    console.log("value", value)
+                    console.log("row", row)
+                    return '<img  src=' + value + '  style="width: 50px ;height : 50px;">';
+                }
+            }
+            // , {
             //     field: 'peisongImg3Renyuan',
             //     title: '录入员',
             //     align: 'center',
@@ -1134,139 +1207,144 @@ function setTable(data) {
             //     sortable: true,
             //     width: 100,
             // }
-            // // , {
-            // //     field: 'kucunImg1',
-            // //     title: '商品库存(图片)',
-            // //     align: 'center',
-            // //     sortable: true,
-            // //     width: 140,
-            // //     height : 50,
-            // //     formatter: function(value,row,index){
-            // //         console.log("value",value)
-            // //         console.log("row", row)
-            // //         return '<img  src=' + value + '  style="width: 50px ;height : 50px;">';
-            // //     }
-            // // }, {
-            // //     field: 'kucunImg1Renyuan',
-            // //     title: '录入员',
-            // //     align: 'center',
-            // //     sortable: true,
-            // //     width: 100,
-            // // }, {
-            // //     field: 'kucunImg1Riqi',
-            // //     title: '完成时间',
-            // //     align: 'center',
-            // //     sortable: true,
-            // //     width: 100,
-            // // }, {
-            // //     field: 'kucunImg2',
-            // //     title: '商品库存(图片)',
-            // //     align: 'center',
-            // //     sortable: true,
-            // //     width: 140,
-            // //     height : 50,
-            // //     formatter: function(value,row,index){
-            // //         console.log("value",value)
-            // //         console.log("row", row)
-            // //         return '<img  src=' + value + '  style="width: 50px ;height : 50px;">';
-            // //     }
-            // // }, {
-            // //     field: 'kucunImg2Renyuan',
-            // //     title: '录入员',
-            // //     align: 'center',
-            // //     sortable: true,
-            // //     width: 100,
-            // // }, {
-            // //     field: 'kucunImg2Riqi',
-            // //     title: '完成时间',
-            // //     align: 'center',
-            // //     sortable: true,
-            // //     width: 100,
-            // // }, {
-            // //     field: 'kucunImg3',
-            // //     title: '商品库存(图片)',
-            // //     align: 'center',
-            // //     sortable: true,
-            // //     width: 140,
-            // //     height : 50,
-            // //     formatter: function(value,row,index){
-            // //         console.log("value",value)
-            // //         console.log("row", row)
-            // //         return '<img  src=' + value + '  style="width: 50px ;height : 50px;">';
-            // //     }
-            // // }, {
-            // //     field: 'kucunImg4',
-            // //     title: '商品库存(图片)',
-            // //     align: 'center',
-            // //     sortable: true,
-            // //     width: 140,
-            // //     height : 50,
-            // //     formatter: function(value,row,index){
-            // //         console.log("value",value)
-            // //         console.log("row", row)
-            // //         return '<img  src=' + value + '  style="width: 50px ;height : 50px;">';
-            // //     }
-            // // }, {
-            // //     field: 'kucunImg5',
-            // //     title: '商品库存(图片)',
-            // //     align: 'center',
-            // //     sortable: true,
-            // //     width: 140,
-            // //     height : 50,
-            // //     formatter: function(value,row,index){
-            // //         console.log("value",value)
-            // //         console.log("row", row)
-            // //         return '<img  src=' + value + '  style="width: 50px ;height : 50px;">';
-            // //     }
-            // // }, {
-            // //     field: 'kucunImg6',
-            // //     title: '商品库存(图片)',
-            // //     align: 'center',
-            // //     sortable: true,
-            // //     width: 140,
-            // //     height : 50,
-            // //     formatter: function(value,row,index){
-            // //         console.log("value",value)
-            // //         console.log("row", row)
-            // //         return '<img  src=' + value + '  style="width: 50px ;height : 50px;">';
-            // //     }
-            // // }, {
-            // //     field: 'kucunImg7',
-            // //     title: '商品库存(图片)',
-            // //     align: 'center',
-            // //     sortable: true,
-            // //     width: 140,
-            // //     height : 50,
-            // //     formatter: function(value,row,index){
-            // //         console.log("value",value)
-            // //         console.log("row", row)
-            // //         return '<img  src=' + value + '  style="width: 50px ;height : 50px;">';
-            // //     }
-            // // }, {
-            // //     field: 'kucunImg8',
-            // //     title: '商品库存(图片)',
-            // //     align: 'center',
-            // //     sortable: true,
-            // //     width: 140,
-            // //     height : 50,
-            // //     formatter: function(value,row,index){
-            // //         console.log("value",value)
-            // //         console.log("row", row)
-            // //         return '<img  src=' + value + '  style="width: 50px ;height : 50px;">';
-            // //     }
-            // // }, {
-            // //     field: 'kucunImg3Renyuan',
-            // //     title: '录入员',
-            // //     align: 'center',
-            // //     sortable: true,
-            // //     width: 100,
-            // // }, {
-            // //     field: 'kucunImg3Riqi',
-            // //     title: '完成时间',
-            // //     align: 'center',
-            // //     sortable: true,
-            // //     width: 100,
-            // // }
+            , {
+                field: 'kucunImg1',
+                title: '商品库存(图片)',
+                align: 'center',
+                sortable: true,
+                width: 140,
+                height: 50,
+                formatter: function (value, row, index) {
+                    console.log("value", value)
+                    console.log("row", row)
+                    return '<img  src=' + value + '  style="width: 50px ;height : 50px;">';
+                }
+            }
+            // , {
+            //     field: 'kucunImg1Renyuan',
+            //     title: '录入员',
+            //     align: 'center',
+            //     sortable: true,
+            //     width: 100,
+            // }, {
+            //     field: 'kucunImg1Riqi',
+            //     title: '完成时间',
+            //     align: 'center',
+            //     sortable: true,
+            //     width: 100,
+            // }
+            , {
+                field: 'kucunImg2',
+                title: '商品库存(图片)',
+                align: 'center',
+                sortable: true,
+                width: 140,
+                height: 50,
+                formatter: function (value, row, index) {
+                    console.log("value", value)
+                    console.log("row", row)
+                    return '<img  src=' + value + '  style="width: 50px ;height : 50px;">';
+                }
+            }
+            // , {
+            //     field: 'kucunImg2Renyuan',
+            //     title: '录入员',
+            //     align: 'center',
+            //     sortable: true,
+            //     width: 100,
+            // }, {
+            //     field: 'kucunImg2Riqi',
+            //     title: '完成时间',
+            //     align: 'center',
+            //     sortable: true,
+            //     width: 100,
+            // }
+            , {
+                field: 'kucunImg3',
+                title: '商品库存(图片)',
+                align: 'center',
+                sortable: true,
+                width: 140,
+                height: 50,
+                formatter: function (value, row, index) {
+                    console.log("value", value)
+                    console.log("row", row)
+                    return '<img  src=' + value + '  style="width: 50px ;height : 50px;">';
+                }
+            }, {
+                field: 'kucunImg4',
+                title: '商品库存(图片)',
+                align: 'center',
+                sortable: true,
+                width: 140,
+                height: 50,
+                formatter: function (value, row, index) {
+                    console.log("value", value)
+                    console.log("row", row)
+                    return '<img  src=' + value + '  style="width: 50px ;height : 50px;">';
+                }
+            }, {
+                field: 'kucunImg5',
+                title: '商品库存(图片)',
+                align: 'center',
+                sortable: true,
+                width: 140,
+                height: 50,
+                formatter: function (value, row, index) {
+                    console.log("value", value)
+                    console.log("row", row)
+                    return '<img  src=' + value + '  style="width: 50px ;height : 50px;">';
+                }
+            }, {
+                field: 'kucunImg6',
+                title: '商品库存(图片)',
+                align: 'center',
+                sortable: true,
+                width: 140,
+                height: 50,
+                formatter: function (value, row, index) {
+                    console.log("value", value)
+                    console.log("row", row)
+                    return '<img  src=' + value + '  style="width: 50px ;height : 50px;">';
+                }
+            }, {
+                field: 'kucunImg7',
+                title: '商品库存(图片)',
+                align: 'center',
+                sortable: true,
+                width: 140,
+                height: 50,
+                formatter: function (value, row, index) {
+                    console.log("value", value)
+                    console.log("row", row)
+                    return '<img  src=' + value + '  style="width: 50px ;height : 50px;">';
+                }
+            }, {
+                field: 'kucunImg8',
+                title: '商品库存(图片)',
+                align: 'center',
+                sortable: true,
+                width: 140,
+                height: 50,
+                formatter: function (value, row, index) {
+                    console.log("value", value)
+                    console.log("row", row)
+                    return '<img  src=' + value + '  style="width: 50px ;height : 50px;">';
+                }
+            },
+            // {
+            //     field: 'kucunImg3Renyuan',
+            //     title: '录入员',
+            //     align: 'center',
+            //     sortable: true,
+            //     width: 100,
+            // }, {
+            //     field: 'kucunImg3Riqi',
+            //     title: '完成时间',
+            //     align: 'center',
+            //     sortable: true,
+            //     width: 100,
+            // }
             //      ,{
             //     field: 'moneyRenyuan',
             //     title: '录入员',
@@ -1297,103 +1375,105 @@ function setTable(data) {
             //     align: 'center',
             //     sortable: true,
             //     width: 100,
-            // }, {
-            //     field: 'wenjianImg1',
-            //     title: '文件(图片)',
-            //     align: 'center',
-            //     sortable: true,
-            //     width: 100,
-            //     height : 50,
-            //     formatter: function(value,row,index){
-            //         console.log("value",value)
-            //         console.log("row", row)
-            //         return '<img  src=' + value + '  style="width: 50px ;height : 50px;">';
-            //     }
-            // }, {
-            //     field: 'wenjianImg2',
-            //     title: '文件(图片)',
-            //     align: 'center',
-            //     sortable: true,
-            //     width: 100,
-            //     height : 50,
-            //     formatter: function(value,row,index){
-            //         console.log("value",value)
-            //         console.log("row", row)
-            //         return '<img  src=' + value + '  style="width: 50px ;height : 50px;">';
-            //     }
-            // }, {
-            //     field: 'wenjianImg3',
-            //     title: '文件(图片)',
-            //     align: 'center',
-            //     sortable: true,
-            //     width: 100,
-            //     height : 50,
-            //     formatter: function(value,row,index){
-            //         console.log("value",value)
-            //         console.log("row", row)
-            //         return '<img  src=' + value + '  style="width: 50px ;height : 50px;">';
-            //     }
-            // }, {
-            //     field: 'wenjianImg4',
-            //     title: '文件(图片)',
-            //     align: 'center',
-            //     sortable: true,
-            //     width: 100,
-            //     height : 50,
-            //     formatter: function(value,row,index){
-            //         console.log("value",value)
-            //         console.log("row", row)
-            //         return '<img  src=' + value + '  style="width: 50px ;height : 50px;">';
-            //     }
-            // }, {
-            //     field: 'wenjianImg5',
-            //     title: '文件(图片)',
-            //     align: 'center',
-            //     sortable: true,
-            //     width: 100,
-            //     height : 50,
-            //     formatter: function(value,row,index){
-            //         console.log("value",value)
-            //         console.log("row", row)
-            //         return '<img  src=' + value + '  style="width: 50px ;height : 50px;">';
-            //     }
-            // }, {
-            //     field: 'wenjianImg6',
-            //     title: '文件(图片)',
-            //     align: 'center',
-            //     sortable: true,
-            //     width: 100,
-            //     height : 50,
-            //     formatter: function(value,row,index){
-            //         console.log("value",value)
-            //         console.log("row", row)
-            //         return '<img  src=' + value + '  style="width: 50px ;height : 50px;">';
-            //     }
-            // }, {
-            //     field: 'wenjianImg7',
-            //     title: '文件(图片)',
-            //     align: 'center',
-            //     sortable: true,
-            //     width: 100,
-            //     height : 50,
-            //     formatter: function(value,row,index){
-            //         console.log("value",value)
-            //         console.log("row", row)
-            //         return '<img  src=' + value + '  style="width: 50px ;height : 50px;">';
-            //     }
-            // }, {
-            //     field: 'wenjianImg8',
-            //     title: '文件(图片)',
-            //     align: 'center',
-            //     sortable: true,
-            //     width: 100,
-            //     height : 50,
-            //     formatter: function(value,row,index){
-            //         console.log("value",value)
-            //         console.log("row", row)
-            //         return '<img  src=' + value + '  style="width: 50px ;height : 50px;">';
-            //     }
-            // }, {
+            // }
+            {
+                field: 'wenjianImg1',
+                title: '文件(图片)',
+                align: 'center',
+                sortable: true,
+                width: 100,
+                height: 50,
+                formatter: function (value, row, index) {
+                    console.log("value", value)
+                    console.log("row", row)
+                    return '<img  src=' + value + '  style="width: 50px ;height : 50px;">';
+                }
+            }, {
+                field: 'wenjianImg2',
+                title: '文件(图片)',
+                align: 'center',
+                sortable: true,
+                width: 100,
+                height: 50,
+                formatter: function (value, row, index) {
+                    console.log("value", value)
+                    console.log("row", row)
+                    return '<img  src=' + value + '  style="width: 50px ;height : 50px;">';
+                }
+            }, {
+                field: 'wenjianImg3',
+                title: '文件(图片)',
+                align: 'center',
+                sortable: true,
+                width: 100,
+                height: 50,
+                formatter: function (value, row, index) {
+                    console.log("value", value)
+                    console.log("row", row)
+                    return '<img  src=' + value + '  style="width: 50px ;height : 50px;">';
+                }
+            }, {
+                field: 'wenjianImg4',
+                title: '文件(图片)',
+                align: 'center',
+                sortable: true,
+                width: 100,
+                height: 50,
+                formatter: function (value, row, index) {
+                    console.log("value", value)
+                    console.log("row", row)
+                    return '<img  src=' + value + '  style="width: 50px ;height : 50px;">';
+                }
+            }, {
+                field: 'wenjianImg5',
+                title: '文件(图片)',
+                align: 'center',
+                sortable: true,
+                width: 100,
+                height: 50,
+                formatter: function (value, row, index) {
+                    console.log("value", value)
+                    console.log("row", row)
+                    return '<img  src=' + value + '  style="width: 50px ;height : 50px;">';
+                }
+            }, {
+                field: 'wenjianImg6',
+                title: '文件(图片)',
+                align: 'center',
+                sortable: true,
+                width: 100,
+                height: 50,
+                formatter: function (value, row, index) {
+                    console.log("value", value)
+                    console.log("row", row)
+                    return '<img  src=' + value + '  style="width: 50px ;height : 50px;">';
+                }
+            }, {
+                field: 'wenjianImg7',
+                title: '文件(图片)',
+                align: 'center',
+                sortable: true,
+                width: 100,
+                height: 50,
+                formatter: function (value, row, index) {
+                    console.log("value", value)
+                    console.log("row", row)
+                    return '<img  src=' + value + '  style="width: 50px ;height : 50px;">';
+                }
+            }, {
+                field: 'wenjianImg8',
+                title: '文件(图片)',
+                align: 'center',
+                sortable: true,
+                width: 100,
+                height: 50,
+                formatter: function (value, row, index) {
+                    console.log("value", value)
+                    console.log("row", row)
+                    return '<img  src=' + value + '  style="width: 50px ;height : 50px;">';
+                }
+            }
+            // {
             //     field: 'wenjianImg1Renyuan',
             //     title: '录入员',
             //     align: 'center',
@@ -1468,6 +1548,8 @@ function getNumbern() {
     console.log(djbh)
     $('#add-orderNumber').val(djbh);
     $('#add-insertDate').val(xdrq);
+    $('#update-insertDate').val(xdrq);
+    $('#add-customerNameRiqi').val(xdrq);
 
 }
 

@@ -259,7 +259,6 @@ function show1(){
 }
 
 
-
 $(function () {
     $('#jumpButton').click(function (){
         window.open("userInfo.html")

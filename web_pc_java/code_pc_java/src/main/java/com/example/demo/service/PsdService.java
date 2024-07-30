@@ -19,10 +19,12 @@ public interface PsdService extends IService<psd> {
     /**
      * 根据姓名和部门查询
      */
-    List<psd> queryList(String ordernumber, String customername, String songhuoaddress, String anzhuangaddress, String customerorder, String songhuodanhao,String ksinsertDate,
+    List<psd> queryList(String ordernumber, String customername, String quyu, String anzhuangaddress, String customerorder, String songhuodanhao,String ksinsertDate,
                         String jsinsertDate,
                         String wancheng,
                         String kucun);
+
+    String getListBydjbh(int id);
 
     /**
      * 修改

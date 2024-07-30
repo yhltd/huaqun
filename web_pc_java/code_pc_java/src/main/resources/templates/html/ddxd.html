@@ -309,164 +309,164 @@
 <!--                    </div>-->
 
 
-                    <div class="card" id="createNew">
-                        <div class="card-header" th:each="temp,status :2">
-                            项目
-                        </div>
-                        <div class="card-body">
-                            <div class="row justify-content-evenly">
-                                <div class="col-4">
-                                    <div class="form-group">
-                                        <label for="add-fj">项目类别</label>
-                                        <!--                        <select id="add-fj" name="fj" class="form-control" autocomplete="off" data-required="1" onchange="fjxl(this.value)">-->
-                                        <select id="add-fj" name="fj" class="form-control" autocomplete="off"
-                                                data-required="1">
-                                            <option>--请选择--</option>
-                                            <option value="房间柜号">房间柜号</option>
-                                            <option value="铝型材">铝型材</option>
-                                            <option value="电源">电源</option>
-                                            <option value="开关">开关</option>
-                                            <option value="配件">配件</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-4">
-                                    <div class="form-group" id="class-add-gh">
-<!--                                        <label for="add-gh">项目名称</label>-->
-<!--                                        <select id="add-gh" name="gh" class="form-control">-->
+<!--                    <div class="card" id="createNew">-->
+<!--                        <div class="card-header" th:each="temp,status :2">-->
+<!--                            项目-->
+<!--                        </div>-->
+<!--                        <div class="card-body">-->
+<!--                            <div class="row justify-content-evenly">-->
+<!--                                <div class="col-4">-->
+<!--                                    <div class="form-group">-->
+<!--                                        <label for="add-fj">项目类别</label>-->
+<!--                                        &lt;!&ndash;                        <select id="add-fj" name="fj" class="form-control" autocomplete="off" data-required="1" onchange="fjxl(this.value)">&ndash;&gt;-->
+<!--                                        <select id="add-fj" name="fj" class="form-control" autocomplete="off"-->
+<!--                                                data-required="1">-->
 <!--                                            <option>&#45;&#45;请选择&#45;&#45;</option>-->
+<!--                                            <option value="房间柜号">房间柜号</option>-->
+<!--                                            <option value="铝型材">铝型材</option>-->
+<!--                                            <option value="电源">电源</option>-->
+<!--                                            <option value="开关">开关</option>-->
+<!--                                            <option value="配件">配件</option>-->
 <!--                                        </select>-->
-                                    </div>
-                                </div>
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="col-4">-->
+<!--                                    <div class="form-group" id="class-add-gh">-->
+<!--&lt;!&ndash;                                        <label for="add-gh">项目名称</label>&ndash;&gt;-->
+<!--&lt;!&ndash;                                        <select id="add-gh" name="gh" class="form-control">&ndash;&gt;-->
+<!--&lt;!&ndash;                                            <option>&#45;&#45;请选择&#45;&#45;</option>&ndash;&gt;-->
+<!--&lt;!&ndash;                                        </select>&ndash;&gt;-->
+<!--                                    </div>-->
+<!--                                </div>-->
 
-                                <div class="col-4">
-                                    <div class="form-group" id="class-add-lcys">
-<!--                                        <label for="add-lcys">铝材颜色</label>-->
-<!--                                        <select id="add-lcys" name="lcys" class="form-control">-->
-<!--                                            <option>&#45;&#45;请选择&#45;&#45;</option>-->
-<!--                                        </select>-->
-                                    </div>
-                                </div>
-                            </div>
+<!--                                <div class="col-4">-->
+<!--                                    <div class="form-group" id="class-add-lcys">-->
+<!--&lt;!&ndash;                                        <label for="add-lcys">铝材颜色</label>&ndash;&gt;-->
+<!--&lt;!&ndash;                                        <select id="add-lcys" name="lcys" class="form-control">&ndash;&gt;-->
+<!--&lt;!&ndash;                                            <option>&#45;&#45;请选择&#45;&#45;</option>&ndash;&gt;-->
+<!--&lt;!&ndash;                                        </select>&ndash;&gt;-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
 
 
-                            <div class="row justify-content-evenly">
-                                <div class="col-4">
-                                    <div class="form-group">
-                                        <label for="add-ddcd">灯带长度mm</label>
-                                        <input id="add-ddcd" name="ddcd" type="text" class="form-control"
-                                               autocomplete="off">
-                                        <div class="invalid-feedback">
-                                            请输入灯带长度mm！
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-4">
-                                    <div class="form-group">
-                                        <label for="add-sl">数量(支)</label>
-                                        <input id="add-sl" name="sl" type="text" class="form-control"
-                                               autocomplete="off">
-                                        <div class="invalid-feedback">
-                                            请输入数量(支)！
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-4">
-                                    <div class="form-group">
-                                        <label for="add-cxdk">出线端口左出线</label>
-                                        <input id="add-cxdk" name="cxdk" type="text" class="form-control"
-                                               autocomplete="off"
-                                               data-required="1">
-                                        <!--                        <div class="invalid-feedback">-->
-                                        <!--                            请输入出线端口左出线！-->
-                                        <!--                        </div>-->
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row justify-content-evenly">
-                                <div class="col-4">
-                                    <div class="form-group">
-                                        <label for="add-cxdkRight">出线端口右出线</label>
-                                        <input id="add-cxdkRight" name="cxdkRight" type="text" class="form-control"
-                                               autocomplete="off"
-                                               data-required="1">
-                                        <!--                        <div class="invalid-feedback">-->
-                                        <!--                            请输入出线端口右出线！-->
-                                        <!--                        </div>-->
-                                    </div>
-                                </div>
-                                <div class="col-4">
-                                    <div class="form-group" id="class-add-gy">
-<!--                                        <label for="add-gy">光源</label>-->
-<!--                                        <select id="add-gy" name="gy" class="form-control">-->
-<!--                                            <option>&#45;&#45;请选择&#45;&#45;</option>-->
-<!--                                        </select>-->
-<!--                                        <input id="add-gy" name="gy" type="text" class="form-control" autocomplete="off"-->
+<!--                            <div class="row justify-content-evenly">-->
+<!--                                <div class="col-4">-->
+<!--                                    <div class="form-group">-->
+<!--                                        <label for="add-ddcd">灯带长度mm</label>-->
+<!--                                        <input id="add-ddcd" name="ddcd" type="text" class="form-control"-->
+<!--                                               autocomplete="off">-->
+<!--                                        <div class="invalid-feedback">-->
+<!--                                            请输入灯带长度mm！-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="col-4">-->
+<!--                                    <div class="form-group">-->
+<!--                                        <label for="add-sl">数量(支)</label>-->
+<!--                                        <input id="add-sl" name="sl" type="text" class="form-control"-->
+<!--                                               autocomplete="off">-->
+<!--                                        <div class="invalid-feedback">-->
+<!--                                            请输入数量(支)！-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="col-4">-->
+<!--                                    <div class="form-group">-->
+<!--                                        <label for="add-cxdk">出线端口左出线</label>-->
+<!--                                        <input id="add-cxdk" name="cxdk" type="text" class="form-control"-->
+<!--                                               autocomplete="off"-->
 <!--                                               data-required="1">-->
-                                        <!--                        <div class="invalid-feedback">-->
-                                        <!--                            请输入光源！-->
-                                        <!--                        </div>-->
-                                    </div>
-                                </div>
-                                <div class="col-4">
-                                    <div class="form-group">
-                                        <label for="add-gl">功率W</label>
-                                        <input id="add-gl" name="gl" type="text" class="form-control" autocomplete="off"
-                                               data-required="1">
-                                        <!--                        <div class="invalid-feedback">-->
-                                        <!--                            请输入功率W！-->
-                                        <!--                        </div>-->
-                                    </div>
-                                </div>
-                            </div>
+<!--                                        &lt;!&ndash;                        <div class="invalid-feedback">&ndash;&gt;-->
+<!--                                        &lt;!&ndash;                            请输入出线端口左出线！&ndash;&gt;-->
+<!--                                        &lt;!&ndash;                        </div>&ndash;&gt;-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+
+<!--                            <div class="row justify-content-evenly">-->
+<!--                                <div class="col-4">-->
+<!--                                    <div class="form-group">-->
+<!--                                        <label for="add-cxdkRight">出线端口右出线</label>-->
+<!--                                        <input id="add-cxdkRight" name="cxdkRight" type="text" class="form-control"-->
+<!--                                               autocomplete="off"-->
+<!--                                               data-required="1">-->
+<!--                                        &lt;!&ndash;                        <div class="invalid-feedback">&ndash;&gt;-->
+<!--                                        &lt;!&ndash;                            请输入出线端口右出线！&ndash;&gt;-->
+<!--                                        &lt;!&ndash;                        </div>&ndash;&gt;-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="col-4">-->
+<!--                                    <div class="form-group" id="class-add-gy">-->
+<!--&lt;!&ndash;                                        <label for="add-gy">光源</label>&ndash;&gt;-->
+<!--&lt;!&ndash;                                        <select id="add-gy" name="gy" class="form-control">&ndash;&gt;-->
+<!--&lt;!&ndash;                                            <option>&#45;&#45;请选择&#45;&#45;</option>&ndash;&gt;-->
+<!--&lt;!&ndash;                                        </select>&ndash;&gt;-->
+<!--&lt;!&ndash;                                        <input id="add-gy" name="gy" type="text" class="form-control" autocomplete="off"&ndash;&gt;-->
+<!--&lt;!&ndash;                                               data-required="1">&ndash;&gt;-->
+<!--                                        &lt;!&ndash;                        <div class="invalid-feedback">&ndash;&gt;-->
+<!--                                        &lt;!&ndash;                            请输入光源！&ndash;&gt;-->
+<!--                                        &lt;!&ndash;                        </div>&ndash;&gt;-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="col-4">-->
+<!--                                    <div class="form-group">-->
+<!--                                        <label for="add-gl">功率W</label>-->
+<!--                                        <input id="add-gl" name="gl" type="text" class="form-control" autocomplete="off"-->
+<!--                                               data-required="1">-->
+<!--                                        &lt;!&ndash;                        <div class="invalid-feedback">&ndash;&gt;-->
+<!--                                        &lt;!&ndash;                            请输入功率W！&ndash;&gt;-->
+<!--                                        &lt;!&ndash;                        </div>&ndash;&gt;-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
 
 
-                            <div class="row justify-content-evenly">
-                                <div class="col-4">
-                                    <div class="form-group">
-                                        <label for="add-bz">备注</label>
-                                        <input id="add-bz" name="bz" type="text" class="form-control" autocomplete="off"
-                                               data-required="1">
-                                        <!--                        <div class="invalid-feedback">-->
-                                        <!--                            请输入备注！-->
-                                        <!--                        </div>-->
-                                    </div>
-                                </div>
-                                <div class="col-4">
-                                    <div class="form-group">
-                                        <label for="add-dj">单价</label>
-                                        <input id="add-dj" name="dj" type="text" class="form-control"
-                                               autocomplete="off">
-                                        <div class="invalid-feedback">
-                                            请输入单价！
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-4">
-                                    <div class="form-group">
-                                        <label for="add-je">金额</label>
-                                        <input id="add-je" name="je" type="text" class="form-control" autocomplete="off"
-                                               data-required="1">
-                                        <!--                        <div class="invalid-feedback">-->
-                                        <!--                            请输入金额！-->
-                                        <!--                        </div>-->
-                                    </div>
-                                </div>
-                            </div>
+<!--                            <div class="row justify-content-evenly">-->
+<!--                                <div class="col-4">-->
+<!--                                    <div class="form-group">-->
+<!--                                        <label for="add-bz">备注</label>-->
+<!--                                        <input id="add-bz" name="bz" type="text" class="form-control" autocomplete="off"-->
+<!--                                               data-required="1">-->
+<!--                                        &lt;!&ndash;                        <div class="invalid-feedback">&ndash;&gt;-->
+<!--                                        &lt;!&ndash;                            请输入备注！&ndash;&gt;-->
+<!--                                        &lt;!&ndash;                        </div>&ndash;&gt;-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="col-4">-->
+<!--                                    <div class="form-group">-->
+<!--                                        <label for="add-dj">单价</label>-->
+<!--                                        <input id="add-dj" name="dj" type="text" class="form-control"-->
+<!--                                               autocomplete="off">-->
+<!--                                        <div class="invalid-feedback">-->
+<!--                                            请输入单价！-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="col-4">-->
+<!--                                    <div class="form-group">-->
+<!--                                        <label for="add-je">金额</label>-->
+<!--                                        <input id="add-je" name="je" type="text" class="form-control" autocomplete="off"-->
+<!--                                               data-required="1">-->
+<!--                                        &lt;!&ndash;                        <div class="invalid-feedback">&ndash;&gt;-->
+<!--                                        &lt;!&ndash;                            请输入金额！&ndash;&gt;-->
+<!--                                        &lt;!&ndash;                        </div>&ndash;&gt;-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
 
-                            <div class="row justify-content-evenly">
-                                <div class="col-4">
-                                    <div class="form-group">
-                                        <label for="add-chicun">开料尺寸</label>
-                                        <input id="add-chicun" name="chicun" type="text" class="form-control"
-                                           autocomplete="off"
-                                           data-required="1">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+<!--                            <div class="row justify-content-evenly">-->
+<!--                                <div class="col-4">-->
+<!--                                    <div class="form-group">-->
+<!--                                        <label for="add-chicun">开料尺寸</label>-->
+<!--                                        <input id="add-chicun" name="chicun" type="text" class="form-control"-->
+<!--                                           autocomplete="off"-->
+<!--                                           data-required="1">-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
                 </form>
             </div>
             <div class="border-top" style="padding: 15px;">

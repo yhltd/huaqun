@@ -116,7 +116,7 @@ public class LkxdController {
         lkxd lkxd = null;
         try {
             lkxd = DecodeUtil.decodeToJson(updateJson, lkxd.class);
-            String wancheng=lkxdService.getListOrderNumber(lkxd.getOrderNumber());
+            String wancheng=lkxdService.getListOrderNumber(lkxd.getId());
             if(!wancheng.equals("完成") || userInfo.getPower().equals("超级管理员") || userInfo.getPower().equals("管理员")) {
                 if (lkxdService.update(lkxd)) {
                     return ResultInfo.success("修改成功", lkxd);

@@ -18,11 +18,11 @@ public interface PsdMapper extends BaseMapper<psd> {
     @Select("select * from erqi_peisongdan where customer_name=#{customerName}")
     List<psd> getListByName(String customerName);
 
-    @Select("select * from erqi_peisongdan where order_number like '%'+#{orderNumber}+'%' and customer_name like '%'+#{customerName}+'%' and songhuo_address like '%'+#{songhuoAddress}+'%' and anzhuang_address like '%'+#{anzhuangAddress}+'%' and customer_order like '%'+#{customerOrder}+'%' and songhuo_danhao like '%'+#{songhuoDanhao}+'%' and kucun like '%'+#{kucun}+'%' ")
-    List<psd> queryList(String orderNumber, String customerName, String songhuoAddress, String anzhuangAddress, String customerOrder, String songhuoDanhao,String ksinsertDate,
-                        String jsinsertDate,
-                        String wancheng,
-                        String kucun);
+    @Select("select wancheng from erqi_peisongdan where id=#{id}")
+    String getListBydjbh(int id);
+
+    @Select("select * from erqi_peisongdan where order_number like '%'+#{orderNumber}+'%' and customer_name like '%'+#{customerName}+'%' and quyu like '%'+#{quyu}+'%' and anzhuang_address like '%'+#{anzhuangAddress}+'%' and customer_order like '%'+#{customerOrder}+'%' and songhuo_danhao like '%'+#{songhuoDanhao}+'%' and wancheng like '%'+#{wancheng}+'%' and kucun like '%'+#{kucun}+'%' and insert_date >= #{ksinsertDate} and insert_date <= #{jsinsertDate}")
+    List<psd> queryList(String orderNumber, String customerName, String quyu, String anzhuangAddress, String customerOrder, String songhuoDanhao,String ksinsertDate, String jsinsertDate, String wancheng, String kucun);
 
     @Delete("delete from erqi_peisongdan where id=#{id}")
     boolean deleteid(int id);

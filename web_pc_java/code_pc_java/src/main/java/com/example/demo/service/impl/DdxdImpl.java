@@ -33,8 +33,8 @@ public class DdxdImpl extends ServiceImpl<DdxdMapper, ddxd> implements DdxdServi
 
 
     @Override
-    public String getListBydjbh(String djbh) {
-        return ddxdMapper.getListBydjbh(djbh);
+    public String getListBydjbh(int id) {
+        return ddxdMapper.getListBydjbh(id);
     }
 //    @Override
 //    public List<ddxd> getListByKeHu(String khmc) { return ddxdMapper.getListByKeHu(khmc); }

@@ -21,16 +21,21 @@ public class PsdImpl extends ServiceImpl<PsdMapper, psd> implements PsdService {
     }
 
     @Override
+    public String getListBydjbh(int id) {
+        return psdMapper.getListBydjbh(id);
+    }
+
+    @Override
     public List<psd> getListByName(String customerName) {
         return psdMapper.getListByName(customerName);
     }
 
     @Override
-    public List<psd> queryList(String orderNumber, String customerName, String songhuoAddress, String anzhuangAddress, String customerOrder, String songhuoDanhao, String ksinsertDate,
+    public List<psd> queryList(String orderNumber, String customerName, String quyu, String anzhuangAddress, String customerOrder, String songhuoDanhao, String ksinsertDate,
                                String jsinsertDate,
                                String wancheng,
                                String kucun) {
-        return psdMapper.queryList(orderNumber, customerName, songhuoAddress, anzhuangAddress, customerOrder, songhuoDanhao,
+        return psdMapper.queryList(orderNumber, customerName, quyu, anzhuangAddress, customerOrder, songhuoDanhao,
                 ksinsertDate,
                 jsinsertDate,
                 wancheng,

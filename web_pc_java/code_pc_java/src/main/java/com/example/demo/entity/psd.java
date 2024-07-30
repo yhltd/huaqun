@@ -458,4 +458,6 @@ public class psd {
      */
     private String wenjianImg1Riqi;
 
+    private String quyu;
+
 }
