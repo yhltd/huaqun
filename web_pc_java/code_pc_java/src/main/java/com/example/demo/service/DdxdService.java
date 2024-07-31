@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import com.example.demo.entity.blxd;
 import com.example.demo.entity.ddklcz;
 import com.example.demo.entity.ddxd;
+import com.example.demo.entity.psd;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -51,5 +52,7 @@ public interface DdxdService extends IService<ddxd> {
     ddxd add(ddxd ddxd);
 
     List<ddxd> getListByKhmc(String khmc,String xdrq,String djbh);
+
+    ddxd add1(ddxd ddxd);
 
 }

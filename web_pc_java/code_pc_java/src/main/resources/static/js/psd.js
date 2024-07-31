@@ -62,10 +62,10 @@ function getName() {
         }
     })
 }
-function getriqi(){
-
-    document.getElementById("add-customerNameRiqi").value = new Date();
-}
+// function getriqi(){
+//
+//     document.getElementById("add-customerNameRiqi").value = new Date();
+// }
 
 $(function () {
     $ajax({
@@ -79,7 +79,7 @@ $(function () {
     getList();
     getKhmc();
     getName();
-    getriqi();
+    // getriqi();
     setTable();
     getkucun();
     getquyuxl();
@@ -125,6 +125,37 @@ $(function () {
     initFileInput("fileInput40");
     initFileInput("fileInput41");
     initFileInput("fileInput42");
+    initFileInput("fileInput43");
+    initFileInput("fileInput44");
+    initFileInput("fileInput45");
+    initFileInput("fileInput46");
+    initFileInput("fileInput47");
+    initFileInput("fileInput48");
+    initFileInput("fileInput49");
+    initFileInput("fileInput50");
+    initFileInput("fileInput51");
+    initFileInput("fileInput52");
+    initFileInput("fileInput53");
+    initFileInput("fileInput54");
+    initFileInput("fileInput55");
+    initFileInput("fileInput56");
+    initFileInput("fileInput57");
+    initFileInput("fileInput58");
+    initFileInput("fileInput59");
+    initFileInput("fileInput60");
+    initFileInput("fileInput61");
+    initFileInput("fileInput62");
+    initFileInput("fileInput63");
+    initFileInput("fileInput64");
+    initFileInput("fileInput65");
+    initFileInput("fileInput66");
+    initFileInput("fileInput67");
+    initFileInput("fileInput68");
+    initFileInput("fileInput69");
+    initFileInput("fileInput70");
+    initFileInput("fileInput71");
+    initFileInput("fileInput72");
+    initFileInput("fileInput73");
     // document.getElementById("dlm").innerText = ($.session.get('username'));
 
     $('#select-btn').click(function () {
@@ -407,7 +438,7 @@ $(function () {
         var control = $('#' + ctrlName);
         control.fileinput({
             language: 'zh',
-            uploadUrl: "https://localhost:9076/file/upload",
+            uploadUrl: "https://huaqunwechar.com:9076/file/upload",
             allowedFileExtensions: ['jpg', 'gif', 'png'],
             uploadAsync: false,
             showUpload: true,

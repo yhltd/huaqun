@@ -3,6 +3,7 @@ package com.example.demo.mapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.example.demo.entity.ddklcz;
 import com.example.demo.entity.ddxd;
+import com.example.demo.entity.psd;
 import com.example.demo.util.SessionUtil;
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
@@ -43,9 +44,13 @@ public interface DdxdMapper extends BaseMapper<ddxd> {
     @Insert("insert into lightbelt(khmc,xdrq,djbh,shouhuo,lxdh,shfs,azdz,ddh,luruyuan,fj,gh,lcys,ddcd,sl,cxdk,cxdk_right,gy,gl,bz,dj,je,chicun) values(#{khmc},#{xdrq},#{djbh},#{shouhuo},#{lxdh},#{shfs},#{azdz},#{ddh},#{luruyuan},#{fj},#{gh},#{lcys},#{ddcd},#{sl},#{cxdk},#{cxdkRight},#{gy},#{gl},#{bz},#{dj},#{je},#{chicun})")
     void add(String khmc,String xdrq,String djbh,String shouhuo,String lxdh,String shfs,String azdz,String ddh,String luruyuan,String fj,String gh,String lcys,String ddcd,String sl,String cxdk,String cxdkRight,String gy,String gl,String bz,String dj,String je,String chicun);
 
-    @Insert("insert into ")
+    @Insert("insert into lightbelt(khmc,xdrq,djbh,shouhuo,lxdh,shfs,azdz,ddh,luruyuan) values(#{khmc},#{xdrq},#{djbh},#{shouhuo},#{lxdh},#{shfs},#{azdz},#{ddh},#{luruyuan})")
+    void add1(String khmc,String xdrq,String djbh,String shouhuo,String lxdh,String shfs,String azdz,String ddh,String luruyuan);
 
     @Select("select * from lightbelt where khmc=#{khmc} and xdrq=#{xdrq} and djbh=#{djbh}")
     List<ddxd> getListByKhmc(String khmc,String xdrq,String djbh);
+
+//    @Select("select * from lightbelt where khmc=#{khmc}")
+//    List<ddxd> getListByPsd(String khmc);
 
 }

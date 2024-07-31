@@ -54,9 +54,11 @@ function getShfs() {
         url: '/xlpz/hqxlShfs',
     }, false, '', function (res) {
         if (res.code == 200) {
+            if (res.data[i] !== null) {
             for (var i = 0; i < res.data.length; i++) {
                 $("#add-shippingType").append("<option>" + res.data[i].shfs + "</option>");
                 $("#update-shippingType").append("<option>" + res.data[i].shfs + "</option>");
+            }
             }
         }
     })
@@ -69,8 +71,10 @@ function getLvxingcai() {
     }, false, '', function (res) {
         if (res.code == 200) {
             for (var i = 0; i < res.data.length; i++) {
-                $("#add-lvxingcai").append("<option>" + res.data[i].lxcLk + "</option>");
-                $("#update-lvxingcai").append("<option>" + res.data[i].lxcLk + "</option>");
+                if (res.data[i] !== null) {
+                    $("#add-lvxingcai").append("<option>" + res.data[i].lxcLk + "</option>");
+                    $("#update-lvxingcai").append("<option>" + res.data[i].lxcLk + "</option>");
+                }
             }
         }
     })
@@ -83,8 +87,10 @@ function getLvcaiYanse() {
     }, false, '', function (res) {
         if (res.code == 200) {
             for (var i = 0; i < res.data.length; i++) {
-                $("#add-lvcaiYanse").append("<option>" + res.data[i].lcysLk + "</option>");
-                $("#update-lvcaiYanse").append("<option>" + res.data[i].lcysLk + "</option>");
+                if (res.data[i] !== null) {
+                    $("#add-lvcaiYanse").append("<option>" + res.data[i].lcysLk + "</option>");
+                    $("#update-lvcaiYanse").append("<option>" + res.data[i].lcysLk + "</option>");
+                }
             }
         }
     })
@@ -97,8 +103,10 @@ function getBlsjg() {
     }, false, '', function (res) {
         if (res.code == 200) {
             for (var i = 0; i < res.data.length; i++) {
-                $("#add-boliShenjiagong").append("<option>" + res.data[i].blsjg + "</option>");
-                $("#update-boliShenjiagong").append("<option>" + res.data[i].blsjg + "</option>");
+                if (res.data[i] !== null) {
+                    $("#add-boliShenjiagong").append("<option>" + res.data[i].blsjg + "</option>");
+                    $("#update-boliShenjiagong").append("<option>" + res.data[i].blsjg + "</option>");
+                }
             }
         }
     })
@@ -111,8 +119,10 @@ function getBlys() {
     }, false, '', function (res) {
         if (res.code == 200) {
             for (var i = 0; i < res.data.length; i++) {
-                $("#add-boliYanse").append("<option>" + res.data[i].blys + "</option>");
-                $("#update-boliYanse").append("<option>" + res.data[i].blys + "</option>");
+                if (res.data[i] !== null) {
+                    $("#add-boliYanse").append("<option>" + res.data[i].blys + "</option>");
+                    $("#update-boliYanse").append("<option>" + res.data[i].blys + "</option>");
+                }
             }
         }
     })
@@ -125,8 +135,10 @@ function getLsxh() {
     }, false, '', function (res) {
         if (res.code == 200) {
             for (var i = 0; i < res.data.length; i++) {
-                $("#add-lashouXinghao").append("<option>" + res.data[i].lsxh + "</option>");
-                $("#update-lashouXinghao").append("<option>" + res.data[i].lsxh + "</option>");
+                if (res.data[i] !== null) {
+                    $("#add-lashouXinghao").append("<option>" + res.data[i].lsxh + "</option>");
+                    $("#update-lashouXinghao").append("<option>" + res.data[i].lsxh + "</option>");
+                }
             }
         }
     })
@@ -139,8 +151,10 @@ function getKjlk() {
     }, false, '', function (res) {
         if (res.code == 200) {
             for (var i = 0; i < res.data.length; i++) {
-                $("#add-kaijiaolian").append("<option>" + res.data[i].kjlk + "</option>");
-                $("#update-kaijiaolian").append("<option>" + res.data[i].kjlk + "</option>");
+                if (res.data[i] !== null) {
+                    $("#add-kaijiaolian").append("<option>" + res.data[i].kjlk + "</option>");
+                    $("#update-kaijiaolian").append("<option>" + res.data[i].kjlk + "</option>");
+                }
             }
         }
     })
@@ -153,19 +167,21 @@ function getJlkw() {
     }, false, '', function (res) {
         if (res.code == 200) {
             for (var i = 0; i < res.data.length; i++) {
-                $("#add-jiaolian1SelectLeft").append("<option>" + res.data[i].jlkw + "</option>");
-                $("#add-jiaolian2SelectLeft").append("<option>" + res.data[i].jlkw + "</option>");
-                $("#add-jiaolian3SelectLeft").append("<option>" + res.data[i].jlkw + "</option>");
-                $("#add-jiaolian4SelectLeft").append("<option>" + res.data[i].jlkw + "</option>");
-                $("#add-jiaolian5SelectLeft").append("<option>" + res.data[i].jlkw + "</option>");
-                $("#add-jiaolian6SelectLeft").append("<option>" + res.data[i].jlkw + "</option>");
+                if (res.data[i] !== null) {
+                    $("#add-jiaolian1SelectLeft").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#add-jiaolian2SelectLeft").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#add-jiaolian3SelectLeft").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#add-jiaolian4SelectLeft").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#add-jiaolian5SelectLeft").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#add-jiaolian6SelectLeft").append("<option>" + res.data[i].jlkw + "</option>");
 
-                $("#update-jiaolian1SelectLeft").append("<option>" + res.data[i].jlkw + "</option>");
-                $("#update-jiaolian2SelectLeft").append("<option>" + res.data[i].jlkw + "</option>");
-                $("#update-jiaolian3SelectLeft").append("<option>" + res.data[i].jlkw + "</option>");
-                $("#update-jiaolian4SelectLeft").append("<option>" + res.data[i].jlkw + "</option>");
-                $("#update-jiaolian5SelectLeft").append("<option>" + res.data[i].jlkw + "</option>");
-                $("#update-jiaolian6SelectLeft").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian1SelectLeft").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian2SelectLeft").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian3SelectLeft").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian4SelectLeft").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian5SelectLeft").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian6SelectLeft").append("<option>" + res.data[i].jlkw + "</option>");
+                }
             }
         }
     })
@@ -178,15 +194,17 @@ function getFjpz() {
     }, false, '', function (res) {
         if (res.code == 200) {
             for (var i = 0; i < res.data.length; i++) {
-                $("#add-fujianSelect1").append("<option>" + res.data[i].fjpz + "</option>");
-                $("#add-fujianSelect2").append("<option>" + res.data[i].fjpz + "</option>");
-                $("#add-fujianSelect3").append("<option>" + res.data[i].fjpz + "</option>");
-                $("#add-fujianSelect4").append("<option>" + res.data[i].fjpz + "</option>");
+                if (res.data[i] !== null) {
+                    $("#add-fujianSelect1").append("<option>" + res.data[i].fjpz + "</option>");
+                    $("#add-fujianSelect2").append("<option>" + res.data[i].fjpz + "</option>");
+                    $("#add-fujianSelect3").append("<option>" + res.data[i].fjpz + "</option>");
+                    $("#add-fujianSelect4").append("<option>" + res.data[i].fjpz + "</option>");
 
-                $("#update-fujianSelect1").append("<option>" + res.data[i].fjpz + "</option>");
-                $("#update-fujianSelect2").append("<option>" + res.data[i].fjpz + "</option>");
-                $("#update-fujianSelect3").append("<option>" + res.data[i].fjpz + "</option>");
-                $("#update-fujianSelect4").append("<option>" + res.data[i].fjpz + "</option>");
+                    $("#update-fujianSelect1").append("<option>" + res.data[i].fjpz + "</option>");
+                    $("#update-fujianSelect2").append("<option>" + res.data[i].fjpz + "</option>");
+                    $("#update-fujianSelect3").append("<option>" + res.data[i].fjpz + "</option>");
+                    $("#update-fujianSelect4").append("<option>" + res.data[i].fjpz + "</option>");
+                }
             }
         }
     })
@@ -930,14 +948,6 @@ function setTable(data) {
                 align: 'center',
                 sortable: true,
                 width: 100,
-                formatter: function (value, row, index) {
-                    return '<select>' +
-                        '<option value="已审验">已审验</option>' +
-                        '<option value="未审验">未审验</option>' +
-                        '<option value="完成">完成</option>' +
-                        '<option value="优先处理">优先处理</option>' +
-                        '</select> '
-                }
             },{
                 field: 'orderNumber',
                 title: '单据编号',
@@ -975,19 +985,19 @@ function setTable(data) {
                 sortable: true,
                 width: 100,
             },{
-                field: '',
+                field: 'guanlian',
                 title: '订单编号',
                 align: 'center',
                 sortable: true,
                 width: 100,
             },{
-                field: '',
+                field: 'customerNameRenyuan',
                 title: '操作员',
                 align: 'center',
                 sortable: true,
                 width: 100,
             },{
-                field: '',
+                field: 'insertDate',
                 title: '完成时间',
                 align: 'center',
                 sortable: true,

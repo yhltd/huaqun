@@ -462,6 +462,5 @@ public class psd {
      */
     private String quyu;
 
-    private String quyu;
 
 }

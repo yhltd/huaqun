@@ -187,14 +187,6 @@ function setTable(data) {
                 align: 'center',
                 sortable: true,
                 width: 100,
-                formatter: function (value, row, index) {
-                    return '<select>' +
-                        '<option value="正在加工">正在加工</option>' +
-                        '<option value="加工完成">加工完成</option>' +
-                        '<option value="配送少数">配送少数</option>' +
-                        '<option value="完成">完成</option>' +
-                        '</select> '
-                }
             }, {
                 field: 'gongyingshang',
                 title: '所属供应商',

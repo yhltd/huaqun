@@ -22,6 +22,7 @@ function getShfs() {
         if (res.code == 200) {
 
             for (var i = 0; i < res.data.length; i++) {
+
                 $("#add-shfs").append("<option>" + res.data[i].shfs + "</option>");
                 $("#update-shfs").append("<option>" + res.data[i].shfs + "</option>");
             }
@@ -36,7 +37,7 @@ function getLxc() {
     }, false, '', function (res) {
         if (res.code == 200) {
             for (var i = 0; i < res.data.length; i++) {
-                $("#add-gh").append("<option>" + res.data[i].lxc + "</option>");
+                // $("#add-gh").append("<option>" + res.data[i].lxc + "</option>");
                 $("#update-gh").append("<option>" + res.data[i].lxc + "</option>");
             }
         }
@@ -50,7 +51,7 @@ function getDy() {
     }, false, '', function (res) {
         if (res.code == 200) {
             for (var i = 0; i < res.data.length; i++) {
-                $("#add-gh").append("<option>" + res.data[i].dy + "</option>");
+                // $("#add-gh").append("<option>" + res.data[i].dy + "</option>");
                 $("#update-gh").append("<option>" + res.data[i].dy + "</option>");
             }
         }
@@ -64,7 +65,7 @@ function getKg() {
     }, false, '', function (res) {
         if (res.code == 200) {
             for (var i = 0; i < res.data.length; i++) {
-                $("#add-gh").append("<option>" + res.data[i].kg + "</option>");
+                // $("#add-gh").append("<option>" + res.data[i].kg + "</option>");
                 $("#update-gh").append("<option>" + res.data[i].kg + "</option>");
             }
         }
@@ -78,7 +79,7 @@ function getPj() {
     }, false, '', function (res) {
         if (res.code == 200) {
             for (var i = 0; i < res.data.length; i++) {
-                $("#add-gh").append("<option>" + res.data[i].pj + "</option>");
+                // $("#add-gh").append("<option>" + res.data[i].pj + "</option>");
                 $("#update-gh").append("<option>" + res.data[i].pj + "</option>");
             }
         }
@@ -106,8 +107,10 @@ function hqxlGy() {
     }, false, '', function (res) {
         if (res.code == 200) {
             for (var i = 0; i < res.data.length; i++) {
-                $("#add-gy").append("<option>" + res.data[i].gy + "</option>");
-                $("#update-gy").append("<option>" + res.data[i].gy + "</option>");
+                if(res.date.gy!==null) {
+                    // $("#add-gy").append("<option>" + res.data[i].gy + "</option>");
+                    $("#update-gy").append("<option>" + res.data[i].gy + "</option>");
+                }
             }
         }
     })
@@ -119,12 +122,12 @@ function disGy(){
 
 function getInputGh() {
 
-    var elementadd = document.getElementById("class-add-gh");
-    elementadd.innerHTML = '';
-    elementadd.innerHTML = "<label for='add-gh'>项目名称</label><input id='add-gh' name='gh' type='text' class='form-control' autocomplete='off' data-required='1'>";
+    // var elementadd = document.getElementById("class-add-gh");
+    // elementadd.innerHTML = '';
+    // elementadd.innerHTML = "<label for='add-gh'>项目名称</label><input id='add-gh' name='gh' type='text' class='form-control' autocomplete='off' data-required='1'>";
 
     var elementupdate = document.getElementById("class-update-gh");
-    elementupdate.innerHTML = '';
+    // elementupdate.innerHTML = '';
     elementupdate.innerHTML = "<label for='update-gh'>项目名称</label><input id='update-gh' name='gh' type='text' class='form-control' autocomplete='off' data-required='1'>";
 
 
@@ -133,9 +136,9 @@ function getInputGh() {
 function getInputLcys() {
 
 
-    var elementadd = document.getElementById("class-add-lcys");
-    elementadd.innerHTML = '';
-    elementadd.innerHTML = "<label for='add-lcys'>铝材颜色</label><input id='add-lcys' name='lcys' type='text' class='form-control' autocomplete='off' data-required='1'>";
+    // var elementadd = document.getElementById("class-add-lcys");
+    // elementadd.innerHTML = '';
+    // elementadd.innerHTML = "<label for='add-lcys'>铝材颜色</label><input id='add-lcys' name='lcys' type='text' class='form-control' autocomplete='off' data-required='1'>";
 
     var elementupdate = document.getElementById("class-update-lcys");
     elementupdate.innerHTML = '';
@@ -157,9 +160,9 @@ function getInputGy() {
 
 
 function getSelectGh() {
-    var elementadd = document.getElementById("class-add-gh");
-    elementadd.innerHTML = '';
-    elementadd.innerHTML = "<label for='add-gh'>项目名称</label><select id='add-gh' name='gh' class='form-control'><option>--请选择--</option></select>";
+    // var elementadd = document.getElementById("add-gh");
+    // elementadd.innerHTML = '';
+    // elementadd.innerHTML = "<label for='add-gh'>项目名称</label><select id='add-gh' name='gh' class='form-control'><option>--请选择--</option></select>";
 
     var elementupdate = document.getElementById("class-update-gh");
     elementupdate.innerHTML = '';
@@ -168,9 +171,9 @@ function getSelectGh() {
 
 
 function getSelectLcys() {
-    var elementadd = document.getElementById("class-add-lcys");
-    elementadd.innerHTML = '';
-    elementadd.innerHTML = "<label for='add-lcys'>铝材颜色</label><select id='add-lcys' name='lcys' class='form-control'><option>--请选择--</option></select>";
+    // var elementadd = document.getElementById("class-add-lcys");
+    // elementadd.innerHTML = '';
+    // elementadd.innerHTML = "<label for='add-lcys'>铝材颜色</label><select id='add-lcys' name='lcys' class='form-control'><option>--请选择--</option></select>";
 
     var elementupdate = document.getElementById("class-update-lcys");
     elementupdate.innerHTML = '';
@@ -179,9 +182,9 @@ function getSelectLcys() {
 
 
 function getSelectGy() {
-    var elementadd = document.getElementById("class-add-gy");
-    elementadd.innerHTML = '';
-    elementadd.innerHTML = "<label for='add-gy'>光源</label><select id='add-gy' name='gy' class='form-control'><option>--请选择--</option></select>";
+    // var elementadd = document.getElementById("class-add-gy");
+    // elementadd.innerHTML = '';
+    // elementadd.innerHTML = "<label for='add-gy'>光源</label><select id='add-gy' name='gy' class='form-control'><option>--请选择--</option></select>";
 
     var elementupdate = document.getElementById("class-update-gy");
     elementupdate.innerHTML = '';
@@ -198,7 +201,7 @@ $(document).ready(function () {
             getInputGh()
             getInputLcys()
             getInputGy()
-            disGy()
+            // disGy()
         } else if (selectedValue === '铝型材') {
             select.innerHTML = '';
             getSelectGh();
@@ -206,7 +209,7 @@ $(document).ready(function () {
             getInputGy();
             getLxc();
             getLcys();
-            disGy();
+            // disGy();
         } else if (selectedValue === '电源') {
             select.innerHTML = '';
             getSelectGh();
@@ -220,7 +223,7 @@ $(document).ready(function () {
             select.innerHTML = '';
             getSelectGh();
             getSelectLcys();
-            getInputGy();
+            // getInputGy();
             getKg();
             getLcys();
             disGy();
@@ -228,7 +231,7 @@ $(document).ready(function () {
             select.innerHTML = '';
             getSelectGh();
             getSelectLcys();
-            getInputGy();
+            // getInputGy();
             getPj();
             getLcys();
             disGy();
@@ -243,39 +246,47 @@ $(document).ready(function () {
         if (selectedValue === '房间柜号') {
             select.innerHTML = '';
             getInputGh()
-            getInputLcys()
-            getInputGy()
+            // getInputLcys()
+            // getInputGy()
+            // disGy()
         } else if (selectedValue === '铝型材') {
-            select.innerHTML = '';
+            // select.innerHTML = '';
+            // getInputGh()
             getSelectGh();
             getSelectLcys();
-            getInputGy();
+            // getInputGy();
             getLxc();
             getLcys();
+            // disGy();
         } else if (selectedValue === '电源') {
             select.innerHTML = '';
             getSelectGh();
-            getSelectLcys();
+            // getSelectLcys();
             getSelectGy();
-            hqxlGy();
             getDy();
-            getLcys();
+            hqxlGy();
+
+            // getLcys();
 
         } else if (selectedValue === '开关') {
             select.innerHTML = '';
             getSelectGh();
-            getSelectLcys();
-            getInputGy();
+            // getSelectLcys();
+            // getInputGy();
             getKg();
-            getLcys();
+            // getLcys();
+            // disGy();
         } else if (selectedValue === '配件') {
             select.innerHTML = '';
             getSelectGh();
-            getSelectLcys();
-            getInputGy();
+            // getSelectLcys();
+            // getInputGy();
             getPj();
-            getLcys();
+            // getPj();
+            // getLcys();
+            // disGy();
         }
+
     })
 })
 
@@ -286,15 +297,22 @@ function getJe() {
 
     document.getElementById("add-je").value = je;
 }
+function getupJe() {
+    var ddcd = parseFloat(document.getElementById('update-ddcd').value);
+    var sl = parseFloat(document.getElementById('update-sl').value);
+    var je = ddcd * 1 / 1000 * sl
 
-function getGl() {
-    var ddcd = parseFloat(document.getElementById('add-ddcd').value);
-    var sl = parseFloat(document.getElementById('add-sl').value);
-    var gl = Math.ceil(ddcd / 1000 * sl * 12);
-    document.getElementById("add-gl").value = gl;
+    document.getElementById("update-je").value = je;
 }
-function getkailiao() {
-    var ddcd = parseFloat(document.getElementById('add-ddcd').value);
+
+function getupGl() {
+    var ddcd = parseFloat(document.getElementById('update-ddcd').value);
+    var sl = parseFloat(document.getElementById('update-sl').value);
+    var gl = Math.ceil(ddcd / 1000 * sl * 12);
+    document.getElementById("update-gl").value = gl;
+}
+function getupkailiao() {
+    var ddcd = parseFloat(document.getElementById('update-ddcd').value);
         $ajax({
             type: 'post',
             url: '/ddxd/getkailiao',
@@ -302,12 +320,12 @@ function getkailiao() {
             if (res.code == 200) {
                    for(var i=0;i<res.data.length;i++) {
                        var name=res.data[i].name;
-                       var gh = document.getElementById('add-gh').value
+                       var gh = document.getElementById('update-gh').value
                     if (name == gh) {
                         var klcc=res.data[i].chicun;
                         var chicun=ddcd-klcc;
                         // document.getElementById("add-chicun").value = chicun;
-                        document.getElementById("add-chicun").value = chicun;
+                        document.getElementById("update-chicun").value = chicun;
                     }
                 }
             }
@@ -454,34 +472,13 @@ $(function () {
     //新增弹窗里点击关闭按钮
     $('#add-close-btn').click(function () {
         $('#add-modal').modal('hide');
+        getList();
     });
 
     //新增弹窗里点击提交按钮
-    $("#add-submit-btn").click(function () {
+    $("#update-add-submit-btn").click(function () {
         getJe();
         getGl();
-        // getkailiao();
-
-        var ddcd = parseFloat(document.getElementById('add-ddcd').value);
-        $ajax({
-            type: 'post',
-            url: '/ddxd/getkailiao',
-        }, false, '', function (res) {
-            if (res.code == 200) {
-                for(var i=0;i<res.data.length;i++) {
-                    var name=res.data[i].name;
-                    var gh = document.getElementById('add-gh').value
-                    if (name == gh) {
-                        var klcc=res.data[i].chicun;
-                        var chicun=ddcd-klcc;
-                        document.getElementById("add-chicun").value = chicun;
-                        // document.getElementById("add-chicun").value = 111;
-                    }
-                }
-            }
-
-        })
-
         let params = formToJson("#add-form");
         if (checkForm('#add-form')) {
             $ajax({
@@ -521,9 +518,38 @@ $(function () {
             // })
         }
     });
+    //新增一行
+    $("#add-row").click(function () {
+        let params = formToJson("#add-form");
+        if (checkForm('#add-form')) {
+            $ajax({
+                type: 'post',
+                url: '/ddxd/add1',
+                data: JSON.stringify({
+                    addInfo: params
+                }),
+                dataType: 'json',
+                contentType: 'application/json;charset=utf-8'
+            }
+            , false, '', function (res) {
+                    if (res.code == 200) {
+                        // swal("", res.msg, "success");
+                      addcishu();
+
+                    }
+                })
+        }
+    });
+    function addcishu() {
+        var spanElement = document.getElementById("cishu");
+        var currentCount = parseInt(spanElement.innerText);
+        spanElement.innerText = currentCount + 1;
+    }
 
     //点击修改按钮显示弹窗
     $('#update-btn').click(function () {
+        getupJe();
+        getupGl();
         let rows = getTableSelection('#ddxdTable');
         if (rows.length > 1 || rows.length == 0) {
             swal('请选择一条数据修改!');
@@ -541,46 +567,6 @@ $(function () {
         $('#update-ddh').val(rows[0].data.ddh);
         $('#update-luruyuan').val(rows[0].data.luruyuan);
         $('#update-fj').val(rows[0].data.fj);
-
-        var selectedValue = rows[0].data.fj
-        var select = document.getElementById('update-gh');
-        if (selectedValue === '房间柜号') {
-            select.innerHTML = '';
-            getInputGh()
-            getInputLcys()
-            getInputGy()
-        } else if (selectedValue === '铝型材') {
-            select.innerHTML = '';
-            getSelectGh();
-            getSelectLcys();
-            getInputGy();
-            getLxc();
-            getLcys();
-        } else if (selectedValue === '电源') {
-            select.innerHTML = '';
-            getSelectGh();
-            getSelectLcys();
-            getSelectGy();
-            hqxlGy();
-            getDy();
-            getLcys();
-
-        } else if (selectedValue === '开关') {
-            select.innerHTML = '';
-            getSelectGh();
-            getSelectLcys();
-            getInputGy();
-            getKg();
-            getLcys();
-        } else if (selectedValue === '配件') {
-            select.innerHTML = '';
-            getSelectGh();
-            getSelectLcys();
-            getInputGy();
-            getPj();
-            getLcys();
-        }
-
         $('#update-gh').val(rows[0].data.gh);
         $('#update-lcys').val(rows[0].data.lcys);
         $('#update-ddcd').val(rows[0].data.ddcd);
@@ -593,6 +579,61 @@ $(function () {
         $('#update-dj').val(rows[0].data.dj);
         $('#update-je').val(rows[0].data.je);
         $('#update-chicun').val(rows[0].data.chicun);
+        var selectedValue = rows[0].data.fj;
+        var select = document.getElementById('update-gh');
+        if (selectedValue === '房间柜号') {
+            select.innerHTML = '';
+            getSelectGh();
+            getInputLcys();
+            getInputGy();
+            disGy();
+        } else if (selectedValue === '铝型材') {
+            select.innerHTML = '';
+            getLxc();
+            getLcys();
+            disGy();
+            getSelectGh();
+            getSelectLcys();
+            getInputGy();
+
+        } else if (selectedValue === '电源') {
+            select.innerHTML = '';
+            getSelectGh();
+            getSelectLcys();
+            getSelectGy();
+            hqxlGy();
+            getDy();
+            getLcys();
+        } else if (selectedValue === '开关') {
+            select.innerHTML = '';
+            getSelectGh();
+            getSelectLcys();
+            getInputGy();
+            getKg();
+            getLcys();
+            disGy();
+        } else if (selectedValue === '配件') {
+            select.innerHTML = '';
+            getSelectGh();
+            getSelectLcys();
+            getInputGy();
+            getPj();
+            getLcys();
+            disGy();
+        }
+
+        // $('#update-gh').val(rows[0].data.gh);
+        // $('#update-lcys').val(rows[0].data.lcys);
+        // $('#update-ddcd').val(rows[0].data.ddcd);
+        // $('#update-sl').val(rows[0].data.sl);
+        // $('#update-cxdk').val(rows[0].data.cxdk);
+        // $('#update-cxdkRight').val(rows[0].data.cxdkRight);
+        // $('#update-gy').val(rows[0].data.gy);
+        // $('#update-gl').val(rows[0].data.gl);
+        // $('#update-bz').val(rows[0].data.bz);
+        // $('#update-dj').val(rows[0].data.dj);
+        // $('#update-je').val(rows[0].data.je);
+        // $('#update-chicun').val(rows[0].data.chicun);
     });
 
     //修改弹窗点击关闭按钮
@@ -604,6 +645,8 @@ $(function () {
     //修改弹窗里点击提交按钮
     $('#update-submit-btn').click(function () {
         // var d1 = document.getElementById('add-djbh').value;
+        getupGl();
+        getupJe();
         var msg = confirm("确认要修改吗？");
         if (msg) {
             if (checkForm('#update-form')) {
@@ -664,16 +707,6 @@ $(function () {
         }
     })
 });
-$("#add-row").click(function () {
-
-        // 创建div元素
-        var div = document.createElement('div');
-
-
-        // 将div添加到容器中
-        document.getElementById('createNew').appendChild(div);
-
-});
 function setTable(data) {
     if ($('#ddxdTable').html != '') {
         $('#ddxdTable').bootstrapTable('load', data);
@@ -726,14 +759,6 @@ function setTable(data) {
                 align: 'center',
                 sortable: true,
                 width: 100,
-                formatter: function (value, row, index) {
-                    return '<select>' +
-                        '<option value="已审验">已审验</option>' +
-                        '<option value="未审验">未审验</option>' +
-                        '<option value="完成">完成</option>' +
-                        '<option value="优先处理">优先处理</option>' +
-                        '</select> '
-                }
             }, {
                 field: 'je',
                 title: '订单总金额金额',
