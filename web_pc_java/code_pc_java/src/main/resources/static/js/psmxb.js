@@ -367,7 +367,7 @@ $(function () {
         var control = $('#' + ctrlName);
         control.fileinput({
             language: 'zh',
-            uploadUrl: "https://localhost:9076/file/upload",
+            uploadUrl: "https://huaqunwechar.com:9076/file/upload",
             allowedFileExtensions: ['jpg', 'gif', 'png'],
             uploadAsync: false,
             showUpload: true,
