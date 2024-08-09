@@ -34,9 +34,9 @@ public class BlxdController {
     @RequestMapping("/getList")
     public ResultInfo getList(HttpSession session) {
         UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
-//        if(userInfo.getPower().equals("客户")){
-//            return ResultInfo.error(401, "无权限");
-//        }
+        if(userInfo.getPower().equals("客户")){
+            return ResultInfo.error(401, "无权限");
+        }
         try {
             if(userInfo.getPower().equals("管理员")||userInfo.getPower().equals("超级管理员")){
                 List<blxd> getList = blxdService.getList();

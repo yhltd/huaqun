@@ -1,4 +1,20 @@
 var idd;
+
+
+function getquyuxl() {
+    $ajax({
+        type: 'post',
+        url: '/xlpz/hqquyu',
+    }, false, '', function (res) {
+        if (res.code == 200) {
+
+            for (var i = 0; i < res.data.length; i++) {
+                $("#add-quyu").append("<option>" + res.data[i].quyu + "</option>");
+                $("#update-quyu").append("<option>" + res.data[i].quyu + "</option>");
+            }
+        }
+    })
+}
 function getList() {
     $('#name').val("");
     $('#pinyin').val("");
@@ -23,6 +39,7 @@ function getList() {
 
 $(function () {
     getList();
+    getquyuxl();
     // document.getElementById("dlm").innerText = ($.session.get('username'));
 
     $ajax({

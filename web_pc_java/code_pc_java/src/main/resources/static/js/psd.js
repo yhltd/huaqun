@@ -8,6 +8,22 @@ function getList() {
     $('#customerOrder').val("");
     $('#songhuoDanhao').val("");
 
+
+    $ajax({
+        type:'post',
+        url:'/user/getPower'
+    },false, '', function (res) {
+        if (res.code == 200) {
+            // for (var i = 0; i < res.data.length; i++) {
+                var power = res.data;
+                if (power == "客户" || power == "操作员") {
+                    document.getElementById("update-customerNeedText").disabled = true;
+                    document.getElementById("update-customerNeedText1").disabled = true;
+                }
+            }
+        // }
+        })
+
     $ajax({
         type: 'post',
         url: '/psd/getList',
@@ -44,6 +60,7 @@ function getKhmc() {
             for (var i = 0; i < res.data.length; i++) {
                 $("#add-customerName").append("<option>" + res.data[i].company + "</option>");
                 $("#update-customerName").append("<option>" + res.data[i].company + "</option>");
+                $("#customerName").append("<option>" + res.data[i].company + "</option>")
             }
         }
     })
@@ -158,6 +175,17 @@ $(function () {
     initFileInput("fileInput73");
     // document.getElementById("dlm").innerText = ($.session.get('username'));
 
+    // $ajax({
+    //     type: 'post',
+    //     url: '/user/getName',
+    // }, false, '', function (res) {
+    //     var this_name = res.data;
+    //     document.getElementById("customerName").value = this_name;
+    // })
+
+
+
+
     $('#select-btn').click(function () {
         var orderNumber = $('#orderNumber').val();
         var customerName = $('#customerName').val();
@@ -205,6 +233,12 @@ $(function () {
     //点击新增按钮显示弹窗
     $("#add-btn").click(function () {
         $('#add-modal').modal('show');
+        var acnt = document.getElementById("add-customerNeedText");
+        var  acnt1   =document.getElementById("add-customerNeedText1");
+        acnt1.addEventListener('input', function() {
+            acnt1.value=acnt.value;
+            acnt1.setSelectionRange(acnt1.value.length, acnt1.value.length);
+        })
         getNumbern();
     });
 
@@ -215,6 +249,7 @@ $(function () {
 
     //新增弹窗里点击提交按钮
     $("#add-submit-btn").click(function () {
+
         var orderNumber = $('#add-orderNumber').val();
         let params = formToJson("#add-form");
         console.log("params", params)

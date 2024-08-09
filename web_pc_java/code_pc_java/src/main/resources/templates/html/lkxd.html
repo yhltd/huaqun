@@ -69,7 +69,10 @@
 <!--搜索框-->
 <div class="top-toolbar row" style="background-color: #d1d2d4">
     <div class="col-md-3 mb-2">
-        <input id="customerName" type="text" class="form-control" placeholder="客户名称" autocomplete="off">
+        <!--        <input id="customerName" type="text" class="form-control" placeholder="客户名称" autocomplete="off">-->
+        <select id="customerName" name="customerName" class="form-control">
+            <option>--请选择--</option>
+        </select>
     </div>
     <div class="col-md-3 mb-2">
         <input id="customerNumber" type="text" class="form-control" placeholder="订单号" autocomplete="off">
@@ -85,8 +88,8 @@
     </div>
     <div class="col-md-3 mb-2">
         <select id="wancheng" name="wancheng" class="form-control" autocomplete="off"
-                data-required="1" >
-           <option selected>--请选择订单状态--</option>
+                data-required="1">
+            <option selected>--请选择订单状态--</option>
             <option value="未审验">未审验</option>
             <option value="优先处理">优先处理</option>
             <option value="已审验">已审验</option>
@@ -484,8 +487,15 @@
                             </select></td>
                             <td><input id="add-jiaolian1InsertLeft" name="jiaolian1InsertLeft" type="text"
                                        class="form-control" autocomplete="off" data-required="1"></td>
-                            <td><input id="add-jiaolian1SelectRight" name="jiaolian1SelectRight" type="text"
-                                       class="form-control" autocomplete="off" data-required="1"></td>
+
+                            <!--                                <input id="add-jiaolian1SelectRight" name="jiaolian1SelectRight" type="text"-->
+                            <!--                                       class="form-control" autocomplete="off" data-required="1">-->
+                            <td>
+                                <select id="add-jiaolian1SelectRight" name="jiaolian1SelectRight" class="form-control"
+                                        data-required="1">
+                                    <option>--请选择--</option>
+                                </select>
+                            </td>
                             <td><input id="add-jiaolian1InsertRight" name="jiaolian1InsertRight" type="text"
                                        class="form-control" autocomplete="off" data-required="1"></td>
                         </tr>
@@ -497,8 +507,14 @@
                             </select></td>
                             <td><input id="add-jiaolian2InsertLeft" name="jiaolian2InsertLeft" type="text"
                                        class="form-control" autocomplete="off" data-required="1"></td>
-                            <td><input id="add-jiaolian2SelectRight" name="jiaolian2SelectRight" type="text"
-                                       class="form-control" autocomplete="off" data-required="1"></td>
+                            <td>
+                                <!--                                <input id="add-jiaolian2SelectRight" name="jiaolian2SelectRight" type="text"-->
+                                <!--                                       class="form-control" autocomplete="off" data-required="1">-->
+                                <select id="add-jiaolian2SelectRight" name="jiaolian2SelectRight" class="form-control"
+                                        data-required="1">
+                                    <option>--请选择--</option>
+                                </select>
+                            </td>
                             <td><input id="add-jiaolian2InsertRight" name="jiaolian2InsertRight" type="text"
                                        class="form-control" autocomplete="off" data-required="1"></td>
 
@@ -512,50 +528,80 @@
                             </select></td>
                             <td><input id="add-jiaolian3InsertLeft" name="jiaolian3InsertLeft" type="text"
                                        class="form-control" autocomplete="off" data-required="1"></td>
-                            <td><input id="add-jiaolian3SelectRight" name="jiaolian3SelectRight" type="text"
-                                       class="form-control" autocomplete="off" data-required="1"></td>
+                            <td>
+                                <!--                                <input id="add-jiaolian3SelectRight" name="jiaolian3SelectRight" type="text"-->
+                                <!--                                       class="form-control" autocomplete="off" data-required="1">-->
+                                <select id="add-jiaolian3SelectRight" name="jiaolian3SelectRight" class="form-control"
+                                        data-required="1">
+                                    <option>--请选择--</option>
+                                </select>
+                            </td>
                             <td><input id="add-jiaolian3InsertRight" name="jiaolian3InsertRight" type="text"
                                        class="form-control" autocomplete="off" data-required="1"></td>
                         </tr>
                         <tr>
                             <td>4</td>
 
-                            <td><select id="add-jiaolian4SelectLeft" name="jiaolian4SelectLeft" class="form-control"
+                            <td>
+                                <select id="add-jiaolian4SelectLeft" name="jiaolian4SelectLeft" class="form-control"
                                         data-required="1">
-                                <option>--请选择--</option>
-                            </select></td>
+                                    <option>--请选择--</option>
+                                </select>
+                            </td>
                             <td><input id="add-jiaolian4InsertLeft" name="jiaolian4InsertLeft" type="text"
                                        class="form-control" autocomplete="off" data-required="1"></td>
-                            <td><input id="add-jiaolian4SelectRight" name="jiaolian4SelectRight" type="text"
-                                       class="form-control" autocomplete="off" data-required="1"></td>
+                            <td>
+                                <!--                                <input id="add-jiaolian4SelectRight" name="jiaolian4SelectRight" type="text"-->
+                                <!--                                       class="form-control" autocomplete="off" data-required="1">-->
+                                <select id="add-jiaolian4SelectRight" name="jiaolian4SelectRight" class="form-control"
+                                        data-required="1">
+                                    <option>--请选择--</option>
+                                </select>
+                            </td>
                             <td><input id="add-jiaolian4InsertRight" name="jiaolian4InsertRight" type="text"
                                        class="form-control" autocomplete="off" data-required="1"></td>
                         </tr>
                         <tr>
                             <td>5</td>
 
-                            <td><select id="add-jiaolian5SelectLeft" name="jiaolian5SelectLeft" class="form-control"
+                            <td>
+                                <select id="add-jiaolian5SelectLeft" name="jiaolian5SelectLeft" class="form-control"
                                         data-required="1">
-                                <option>--请选择--</option>
-                            </select></td>
+                                    <option>--请选择--</option>
+                                </select>
+                            </td>
                             <td><input id="add-jiaolian5InsertLeft" name="jiaolian5InsertLeft" type="text"
                                        class="form-control" autocomplete="off" data-required="1"></td>
-                            <td><input id="add-jiaolian5SelectRight" name="jiaolian5SelectRight" type="text"
-                                       class="form-control" autocomplete="off" data-required="1"></td>
+                            <td>
+                                <!--                                <input id="add-jiaolian5SelectRight" name="jiaolian5SelectRight" type="text"-->
+                                <!--                                       class="form-control" autocomplete="off" data-required="1">-->
+                                <select id="add-jiaolian5SelectRight" name="jiaolian5SelectRight" class="form-control"
+                                        data-required="1">
+                                    <option>--请选择--</option>
+                                </select>
+                            </td>
                             <td><input id="add-jiaolian5InsertRight" name="jiaolian5InsertRight" type="text"
                                        class="form-control" autocomplete="off" data-required="1"></td>
                         </tr>
                         <tr>
                             <td>6</td>
 
-                            <td><select id="add-jiaolian6SelectLeft" name="jiaolian6SelectLeft" class="form-control"
+                            <td>
+                                <select id="add-jiaolian6SelectLeft" name="jiaolian6SelectLeft" class="form-control"
                                         data-required="1">
-                                <option>--请选择--</option>
-                            </select></td>
+                                    <option>--请选择--</option>
+                                </select>
+                            </td>
                             <td><input id="add-jiaolian6InsertLeft" name="jiaolian6InsertLeft" type="text"
                                        class="form-control" autocomplete="off" data-required="1"></td>
-                            <td><input id="add-jiaolian6SelectRight" name="jiaolian6SelectRight" type="text"
-                                       class="form-control" autocomplete="off" data-required="1"></td>
+                            <td>
+                                <!--                                <input id="add-jiaolian6SelectRight" name="jiaolian6SelectRight" type="text"-->
+                                <!--                                       class="form-control" autocomplete="off" data-required="1">-->
+                                <select id="add-jiaolian6SelectRight" name="jiaolian6SelectRight" class="form-control"
+                                        data-required="1">
+                                    <option>--请选择--</option>
+                                </select>
+                            </td>
                             <td><input id="add-jiaolian6InsertRight" name="jiaolian6InsertRight" type="text"
                                        class="form-control" autocomplete="off" data-required="1"></td>
                         </tr>
@@ -611,9 +657,9 @@
                         </tr>
                         <tr>
                             <td colspan="2" rowspan="2"><label for="add-qita">其他(项目说明)</label></td>
-                            <td colspan="2" rowspan="2"><input id="add-qita" name="qita" type="text"
-                                                               class="form-control" autocomplete="off"
-                                                               data-required="1"></td>
+                            <td colspan="4" rowspan="2"><textarea id="add-qita" name="qita" type="text"
+                                                                  class="form-control" autocomplete="off"
+                                                                  data-required="1" rows="2" cols="40"></textarea></td>
 
                         </tr>
                         <tr>
@@ -2187,8 +2233,6 @@
                             </div>
                         </div>
                     </div>
-
-
                     <div class="row justify-content-evenly">
                         <div class="col-4">
                             <div class="form-group">
@@ -2212,51 +2256,62 @@
                         </div>
                     </div>
 
-                    <div class="row justify-content-evenly">
-                        <div class="col-4">
-                            <div class="form-group">
-                                <label for="update-sumJine2">金额(周长)</label>
-                                <input id="update-sumJine2" name="sumJine2" type="text" class="form-control"
-                                       autocomplete="off">
-                                <div class="invalid-feedback">
-                                    请输入金额(周长)！
+
+
+                        <div class="row justify-content-evenly">
+                            <div class="col-4">
+                                <div class="form-group">
+                                    <label for="update-danjia2">单价(周长)</label>
+                                    <input id="update-danjia2" name="danjia2" type="text" class="form-control"
+                                           autocomplete="off">
+                                    <div class="invalid-feedback">
+                                        请输入单价(周长)！
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-group">
+                                    <label for="update-sumJine2">金额(周长)</label>
+                                    <input id="update-sumJine2" name="sumJine2" type="text" class="form-control"
+                                           autocomplete="off">
+                                    <div class="invalid-feedback">
+                                        请输入金额(周长)！
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-4">
-                            <div class="form-group">
-                                <label for="update-wancheng">完成</label>
-                                <select id="update-wancheng" name="wancheng" class="form-control" autocomplete="off"
-                                        data-required="1">
-                                    <option>未审验</option>
-                                    <option>已审验</option>
-                                    <option>优先处理</option>
-                                    <option>加工完成</option>
-                                    <option>正在加工</option>
-                                    <option>完成</option>
-                                </select>
+
+
+                        <div class="row justify-content-evenly">
+                            <div class="col-4">
+                                <div class="form-group">
+                                    <label for="update-wancheng">完成</label>
+                                    <select id="update-wancheng" name="wancheng" class="form-control" autocomplete="off"
+                                            data-required="1">
+                                        <option>未审验</option>
+                                        <option>已审验</option>
+                                        <option>优先处理</option>
+                                        <option>加工完成</option>
+                                        <option>正在加工</option>
+                                        <option>完成</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
-                    </div>
-
 
                     <div class="row justify-content-evenly">
-                        <div class="col-4">
-                            <div class="form-group">
-                                <label for="update-qita">其他(项目说明)</label>
-                                <input id="update-qita" name="qita" type="text" class="form-control" autocomplete="off"
-                                       data-required="1">
-                                <!--                        <div class="invalid-feedback">-->
-                                <!--                            请输入其他(项目说明)！-->
-                                <!--                        </div>-->
-                            </div>
-                        </div>
-                        <div class="col-4">
-
+                    <div class="col-4">
+                        <div class="form-group">
+                            <label for="update-qita">其他(项目说明)</label>
+                            <textarea id="update-qita" name="qita" type="text" class="form-control"
+                                   autocomplete="off"
+                                      data-required="1" rows="2" cols="40"></textarea>
+                            <!--                        <div class="invalid-feedback">-->
+                            <!--                            请输入其他(项目说明)！-->
+                            <!--                        </div>-->
                         </div>
                     </div>
-
-
+                    </div>
                 </form>
             </div>
             <div class="border-top" style="padding: 15px;">

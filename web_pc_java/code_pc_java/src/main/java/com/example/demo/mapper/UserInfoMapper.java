@@ -31,6 +31,9 @@ public interface UserInfoMapper extends BaseMapper<UserInfo> {
     @Select("select company from userInfo where power = '客户' ")
     List<UserInfo> hqxlKhmc();
 
+    @Select("select company from userInfo where power = '客户' and name=#{name}")
+    List<UserInfo> hqxlKhmc1(String name);
+
     @Select("select name from userInfo where username = #{username}")
     List<UserInfo> getNameByUsername(String username);
 

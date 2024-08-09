@@ -9,6 +9,7 @@ function getKhmc() {
             for (var i = 0; i < res.data.length; i++) {
                 $("#add-khmc").append("<option>" + res.data[i].company + "</option>");
                 $("#update-khmc").append("<option>" + res.data[i].company + "</option>");
+                $("#khmc").append("<option>" + res.data[i].company + "</option>");
             }
         }
     })
@@ -107,10 +108,8 @@ function hqxlGy() {
     }, false, '', function (res) {
         if (res.code == 200) {
             for (var i = 0; i < res.data.length; i++) {
-                if(res.date.gy!==null) {
                     // $("#add-gy").append("<option>" + res.data[i].gy + "</option>");
                     $("#update-gy").append("<option>" + res.data[i].gy + "</option>");
-                }
             }
         }
     })
@@ -385,14 +384,15 @@ $(function () {
         var this_username = res.data
         document.getElementById("dlm").innerText = this_username;
     })
-    $ajax({
-        type: 'post',
-        url: '/user/getName',
-    }, false, '', function (res) {
-            var this_name = res.data;
-            document.getElementById("khmc").value = this_name;
-
-    })
+    // $ajax({
+    //     type: 'post',
+    //     url: '/user/getName',
+    // }, false, '', function (res) {
+    //         var this_name = res.data;
+    //
+    //         document.getElementById("khmc").value = this_name;
+    //
+    // })
 
     $("#add-djbh").focus(function () {
         const today = new Date();

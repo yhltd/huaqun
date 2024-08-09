@@ -9,6 +9,7 @@ function getKhmc() {
             for (var i = 0; i < res.data.length; i++) {
                 $("#add-customerName").append("<option>" + res.data[i].company + "</option>");
                 $("#update-customerName").append("<option>" + res.data[i].company + "</option>");
+                $("#customerName").append("<option>" + res.data[i].company + "</option>");
             }
         }
     })
@@ -175,12 +176,29 @@ function getJlkw() {
                     $("#add-jiaolian5SelectLeft").append("<option>" + res.data[i].jlkw + "</option>");
                     $("#add-jiaolian6SelectLeft").append("<option>" + res.data[i].jlkw + "</option>");
 
+
+                    $("#add-jiaolian1SelectRight").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#add-jiaolian2SelectRight").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#add-jiaolian3SelectRight").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#add-jiaolian4SelectRight").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#add-jiaolian5SelectRight").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#add-jiaolian6SelectRight").append("<option>" + res.data[i].jlkw + "</option>");
+
                     $("#update-jiaolian1SelectLeft").append("<option>" + res.data[i].jlkw + "</option>");
                     $("#update-jiaolian2SelectLeft").append("<option>" + res.data[i].jlkw + "</option>");
                     $("#update-jiaolian3SelectLeft").append("<option>" + res.data[i].jlkw + "</option>");
                     $("#update-jiaolian4SelectLeft").append("<option>" + res.data[i].jlkw + "</option>");
                     $("#update-jiaolian5SelectLeft").append("<option>" + res.data[i].jlkw + "</option>");
                     $("#update-jiaolian6SelectLeft").append("<option>" + res.data[i].jlkw + "</option>");
+
+
+                    $("#update-jiaolian1SelectRight").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian2SelectRight").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian3SelectRight").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian4SelectRight").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian5SelectRight").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian6SelectRight").append("<option>" + res.data[i].jlkw + "</option>");
+
                 }
             }
         }
@@ -557,7 +575,7 @@ function getPfsl() {
     var height = parseFloat(document.getElementById('add-height').value);
     var width = parseFloat(document.getElementById('add-width').value);
     var num = parseFloat(document.getElementById('add-num').value);
-    var sum_sl = Math.round(height * width / 1000000 * num * 1000) / 1000
+    var sum_sl = Math.round(height * width * num ) ;
     document.getElementById("add-sumShuliang1").value = sum_sl
 }
 
@@ -587,7 +605,7 @@ function getZcsl() {
     var height = parseFloat(document.getElementById('add-height').value);
     var width = parseFloat(document.getElementById('add-width').value);
     var num = parseFloat(document.getElementById('add-num').value);
-    var sum_sl2 = Math.round((height * 1 + width * 1) / 1000 * 2 * num * 1000) / 1000
+    var sum_sl2 = Math.round((height * 1 + width * 1)  * 2 * num ) ;
     document.getElementById("add-sumShuliang2").value = sum_sl2
 }
 

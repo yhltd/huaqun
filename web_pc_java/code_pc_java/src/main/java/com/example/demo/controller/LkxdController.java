@@ -110,14 +110,14 @@ public class LkxdController {
     @RequestMapping(value = "/update", method = RequestMethod.POST)
     public ResultInfo update(@RequestBody String updateJson, HttpSession session) {
         UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
-        if(userInfo.getPower().equals("玻璃厂")||userInfo.getPower().equals("客户")){
+        if(userInfo.getPower().equals("玻璃厂")){
             return ResultInfo.error(401, "无权限");
         }
         lkxd lkxd = null;
         try {
             lkxd = DecodeUtil.decodeToJson(updateJson, lkxd.class);
             String wancheng=lkxdService.getListOrderNumber(lkxd.getId());
-            if(!wancheng.equals("完成") || userInfo.getPower().equals("超级管理员") || userInfo.getPower().equals("管理员")) {
+            if(!wancheng.equals("已审验") && !wancheng.equals("完成") || userInfo.getPower().equals("超级管理员") || userInfo.getPower().equals("管理员")) {
                 if (lkxdService.update(lkxd)) {
                     return ResultInfo.success("修改成功", lkxd);
                 } else {

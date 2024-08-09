@@ -207,7 +207,24 @@ public class UserInfoController {
     }
 
     @RequestMapping("/hqxlKhmc")
-    public ResultInfo hqxlKhmc() {
+    public ResultInfo hqxlKhmc(HttpSession session) {
+        UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
+        try {
+            if(userInfo.getPower().equals("客户")){
+                List<UserInfo> getList = userInfoService.hqxlKhmc1(userInfo.getName());
+                return ResultInfo.success("获取成功", getList);
+            }else {
+                List<UserInfo> getList = userInfoService.hqxlKhmc();
+                return ResultInfo.success("获取成功", getList);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            log.error("获取失败：{}", e.getMessage());
+            return ResultInfo.error("错误!");
+        }
+    }
+    @RequestMapping("/hqxlKhmc1")
+    public ResultInfo hqxlKhmc1() {
         try {
             List<UserInfo> getList = userInfoService.hqxlKhmc();
             return ResultInfo.success("获取成功", getList);
@@ -250,15 +267,9 @@ public class UserInfoController {
     public ResultInfo getPower(HttpSession session){
         UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
         try {
-            if(userInfo.getPower().equals("管理员")){
-                return ResultInfo.success("获取成功", 1);
-            }else if(userInfo.getPower().equals("客户")){
-                return ResultInfo.success("获取成功", 2);
-            }else if(userInfo.getPower().equals("玻璃厂")){
-                return ResultInfo.success("获取成功", 3);
-            }else{
-                return ResultInfo.success("获取成功", 4);
-            }
+                String power = userInfo.getPower();
+                return ResultInfo.success("获取成功", power);
+
         } catch (Exception e) {
             e.printStackTrace();
             log.error("获取失败：{}", e.getMessage());
@@ -278,4 +289,17 @@ public class UserInfoController {
             log.error("获取失败：{}", e.getMessage());
             return ResultInfo.error("错误!");
         }
-    }}
+    }
+    @RequestMapping("/getpower")
+    public ResultInfo getpower(HttpSession session,String username) {
+        UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
+        try {
+            String power = userInfo.getPower();
+            return ResultInfo.success("获取成功", power);
+        } catch (Exception e) {
+            e.printStackTrace();
+            log.error("获取失败：{}", e.getMessage());
+            return ResultInfo.error("错误!");
+        }
+    }
+}

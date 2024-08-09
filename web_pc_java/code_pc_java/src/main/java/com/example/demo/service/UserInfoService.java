@@ -54,6 +54,9 @@ public interface UserInfoService extends IService<UserInfo> {
     UserInfo add(UserInfo userInfo);
 
     List<UserInfo> hqxlKhmc();
+
+
+    List<UserInfo> hqxlKhmc1(String name);
     /**
      *  管理员查询用户
      */

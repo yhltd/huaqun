@@ -74,6 +74,9 @@ public class UserInfoImpl extends ServiceImpl<UserInfoMapper, UserInfo> implemen
     public List<UserInfo> hqxlKhmc() {return userInfoMapper.hqxlKhmc();}
 
     @Override
+    public List<UserInfo> hqxlKhmc1(String name) {return userInfoMapper.hqxlKhmc1(name);}
+
+    @Override
     public List<UserInfo> glgetList(String username){ return  userInfoMapper.glgetList(username);}
 
     @Override
