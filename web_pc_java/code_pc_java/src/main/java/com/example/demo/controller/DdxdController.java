@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import sun.security.util.Length;
 
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -141,14 +142,15 @@ public class DdxdController {
 
         try {
             ddxd = DecodeUtil.decodeToJson(updateJson, ddxd.class);
-            String cs = ddklczService.getchicun(ddxd.getGh());
-            String ddcd = ddxd.getDdcd();
-            int intcs = Integer.parseInt(cs);
-            int intddcd = Integer.parseInt(ddcd);
-            int chicun = intddcd - intcs;
-            String chicun1 = Integer.toString(chicun);
-            ddxd.setChicun(chicun1);
-
+                String cs = ddklczService.getchicun(ddxd.getGh());
+                if(cs!=null) {
+                    String ddcd = ddxd.getDdcd();
+                    int intcs = Integer.parseInt(cs);
+                    int intddcd = Integer.parseInt(ddcd);
+                    int chicun = intddcd - intcs;
+                    String chicun1 = Integer.toString(chicun);
+                    ddxd.setChicun(chicun1);
+                }
             String wancheng = ddxdService.getListBydjbh(ddxd.getId());
             if (!wancheng.equals("已审验") && !wancheng.equals("完成") || userInfo.getPower().equals("超级管理员") || userInfo.getPower().equals("管理员")) {
                 if (ddxdService.update(ddxd)) {

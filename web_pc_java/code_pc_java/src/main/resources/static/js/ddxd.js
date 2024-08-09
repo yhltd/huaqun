@@ -196,7 +196,7 @@ $(document).ready(function () {
         var selectedValue = $(this).val();
         var select = document.getElementById('add-gh');
         if (selectedValue === '房间柜号') {
-            select.innerHTML = '';
+            // select.innerHTML = '';
             getInputGh()
             getInputLcys()
             getInputGy()

@@ -476,8 +476,8 @@
                     <!--                        <tr>-->
                     <!--
      &lt;!&ndash;                                             <td></td>-->
-<!--                    &lt;!&ndash;                        </tr>&ndash;&gt;-->
-<!--                    &lt;!&ndash;                    </table>&ndash;&gt;-->
+                    <!--                    &lt;!&ndash;                        </tr>&ndash;&gt;-->
+                    <!--                    &lt;!&ndash;                    </table>&ndash;&gt;-->
                     <div class="row justify-content-evenly">
                         <table style="border: 0px" width="100%">
                             <tr>
@@ -485,7 +485,7 @@
                                     <div class="form-group">
                                         <label for="add-customerNeedText">客户需求(文字)</label>
                                         <textarea id="add-customerNeedText" name="customerNeedText" type="text"
-                                                   class="form-control" autocomplete="off"
+                                                  class="form-control" autocomplete="off"
                                                   data-required="1" rows="6" cols="20"></textarea>
                                     </div>
                                 </td>
@@ -658,11 +658,11 @@
                             <div class="form-group">
                                 <label for="add-shoukuan">收款情况</label>
                                 <select id="add-shoukuan" name="shoukuan" class="form-control">
-                                    <option>--请选择--</option>
+                                    <option value="">--请选择收款情况--</option>
+                                    <option value="已收款">已收款</option>
+                                    <option value="配送收款">配送收款</option>
                                 </select>
-                                <div class="invalid-feedback">
-                                    请选择收款情况！
-                                </div>
+
                             </div>
                         </div>
 
@@ -753,37 +753,37 @@
                                data-show-caption="true" data-required="1">
                     </form>
 
-                    <label for="add-customerNeedImg5">客户需求(图片)</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"
-                          enctype="multipart/form-data" id="add-customerNeedImg5">
-                        <input type="file" id="fileInput5" name="file" multiple="multiple"
-                               th:multiple="multiple"
-                               data-show-caption="true" data-required="1">
-                    </form>
+                    <!--                    <label for="add-customerNeedImg5">客户需求(图片)</label>-->
+                    <!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"-->
+                    <!--                          enctype="multipart/form-data" id="add-customerNeedImg5">-->
+                    <!--                        <input type="file" id="fileInput5" name="file" multiple="multiple"-->
+                    <!--                               th:multiple="multiple"-->
+                    <!--                               data-show-caption="true" data-required="1">-->
+                    <!--                    </form>-->
 
-                    <label for="add-customerNeedImg6">客户需求(图片)</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"
-                          enctype="multipart/form-data" id="add-customerNeedImg6">
-                        <input type="file" id="fileInput6" name="file" multiple="multiple"
-                               th:multiple="multiple"
-                               data-show-caption="true" data-required="1">
-                    </form>
+                    <!--                    <label for="add-customerNeedImg6">客户需求(图片)</label>-->
+                    <!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"-->
+                    <!--                          enctype="multipart/form-data" id="add-customerNeedImg6">-->
+                    <!--                        <input type="file" id="fileInput6" name="file" multiple="multiple"-->
+                    <!--                               th:multiple="multiple"-->
+                    <!--                               data-show-caption="true" data-required="1">-->
+                    <!--                    </form>-->
 
-                    <label for="add-customerNeedImg7">客户需求(图片)</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"
-                          enctype="multipart/form-data" id="add-customerNeedImg7">
-                        <input type="file" id="fileInput7" name="file" multiple="multiple"
-                               th:multiple="multiple"
-                               data-show-caption="true" data-required="1">
-                    </form>
+                    <!--                    <label for="add-customerNeedImg7">客户需求(图片)</label>-->
+                    <!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"-->
+                    <!--                          enctype="multipart/form-data" id="add-customerNeedImg7">-->
+                    <!--                        <input type="file" id="fileInput7" name="file" multiple="multiple"-->
+                    <!--                               th:multiple="multiple"-->
+                    <!--                               data-show-caption="true" data-required="1">-->
+                    <!--                    </form>-->
 
-                    <label for="add-customerNeedImg8">客户需求(图片)</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"
-                          enctype="multipart/form-data" id="add-customerNeedImg8">
-                        <input type="file" id="fileInput8" name="file" multiple="multiple"
-                               th:multiple="multiple"
-                               data-show-caption="true" data-required="1">
-                    </form>
+                    <!--                    <label for="add-customerNeedImg8">客户需求(图片)</label>-->
+                    <!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"-->
+                    <!--                          enctype="multipart/form-data" id="add-customerNeedImg8">-->
+                    <!--                        <input type="file" id="fileInput8" name="file" multiple="multiple"-->
+                    <!--                               th:multiple="multiple"-->
+                    <!--                               data-show-caption="true" data-required="1">-->
+                    <!--                    </form>-->
                     <div class="row justify-content-evenly">
                         <div class="col-6">
                             <div class="form-group">
@@ -815,55 +815,55 @@
                                th:multiple="multiple"
                                data-show-caption="true" data-required="1">
                     </form>
-                    <label for="add-wenjianImg2">文件(图片)</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"
-                          enctype="multipart/form-data" id="add-wenjianImg2">
-                        <input type="file" id="fileInput35" name="file" multiple="multiple"
-                               th:multiple="multiple"
-                               data-show-caption="true" data-required="1">
-                    </form>
-                    <label for="add-wenjianImg3">文件(图片)</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"
-                          enctype="multipart/form-data" id="add-wenjianImg3">
-                        <input type="file" id="fileInput36" name="file" multiple="multiple"
-                               th:multiple="multiple"
-                               data-show-caption="true" data-required="1">
-                    </form>
-                    <label for="add-wenjianImg4">文件(图片)</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"
-                          enctype="multipart/form-data" id="add-wenjianImg4">
-                        <input type="file" id="fileInput37" name="file" multiple="multiple"
-                               th:multiple="multiple"
-                               data-show-caption="true" data-required="1">
-                    </form>
-                    <label for="add-wenjianImg5">文件(图片)</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"
-                          enctype="multipart/form-data" id="add-wenjianImg5">
-                        <input type="file" id="fileInput38" name="file" multiple="multiple"
-                               th:multiple="multiple"
-                               data-show-caption="true" data-required="1">
-                    </form>
-                    <label for="add-wenjianImg6">文件(图片)</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"
-                          enctype="multipart/form-data" id="add-wenjianImg6">
-                        <input type="file" id="fileInput39" name="file" multiple="multiple"
-                               th:multiple="multiple"
-                               data-show-caption="true" data-required="1">
-                    </form>
-                    <label for="add-wenjianImg7">文件(图片)</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"
-                          enctype="multipart/form-data" id="add-wenjianImg7">
-                        <input type="file" id="fileInput40" name="file" multiple="multiple"
-                               th:multiple="multiple"
-                               data-show-caption="true" data-required="1">
-                    </form>
-                    <label for="add-wenjianImg8">文件(图片)</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"
-                          enctype="multipart/form-data" id="add-wenjianImg8">
-                        <input type="file" id="fileInput41" name="file" multiple="multiple"
-                               th:multiple="multiple"
-                               data-show-caption="true" data-required="1">
-                    </form>
+                                        <label for="add-wenjianImg2">文件(图片)</label>
+                                        <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"
+                                              enctype="multipart/form-data" id="add-wenjianImg2">
+                                            <input type="file" id="fileInput35" name="file" multiple="multiple"
+                                                   th:multiple="multiple"
+                                                   data-show-caption="true" data-required="1">
+                                        </form>
+                    <!--                    <label for="add-wenjianImg3">文件(图片)</label>-->
+                    <!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"-->
+                    <!--                          enctype="multipart/form-data" id="add-wenjianImg3">-->
+                    <!--                        <input type="file" id="fileInput36" name="file" multiple="multiple"-->
+                    <!--                               th:multiple="multiple"-->
+                    <!--                               data-show-caption="true" data-required="1">-->
+                    <!--                    </form>-->
+                    <!--                    <label for="add-wenjianImg4">文件(图片)</label>-->
+                    <!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"-->
+                    <!--                          enctype="multipart/form-data" id="add-wenjianImg4">-->
+                    <!--                        <input type="file" id="fileInput37" name="file" multiple="multiple"-->
+                    <!--                               th:multiple="multiple"-->
+                    <!--                               data-show-caption="true" data-required="1">-->
+                    <!--                    </form>-->
+                    <!--                    <label for="add-wenjianImg5">文件(图片)</label>-->
+                    <!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"-->
+                    <!--                          enctype="multipart/form-data" id="add-wenjianImg5">-->
+                    <!--                        <input type="file" id="fileInput38" name="file" multiple="multiple"-->
+                    <!--                               th:multiple="multiple"-->
+                    <!--                               data-show-caption="true" data-required="1">-->
+                    <!--                    </form>-->
+                    <!--                    <label for="add-wenjianImg6">文件(图片)</label>-->
+                    <!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"-->
+                    <!--                          enctype="multipart/form-data" id="add-wenjianImg6">-->
+                    <!--                        <input type="file" id="fileInput39" name="file" multiple="multiple"-->
+                    <!--                               th:multiple="multiple"-->
+                    <!--                               data-show-caption="true" data-required="1">-->
+                    <!--                    </form>-->
+                    <!--                    <label for="add-wenjianImg7">文件(图片)</label>-->
+                    <!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"-->
+                    <!--                          enctype="multipart/form-data" id="add-wenjianImg7">-->
+                    <!--                        <input type="file" id="fileInput40" name="file" multiple="multiple"-->
+                    <!--                               th:multiple="multiple"-->
+                    <!--                               data-show-caption="true" data-required="1">-->
+                    <!--                    </form>-->
+                    <!--                    <label for="add-wenjianImg8">文件(图片)</label>-->
+                    <!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"-->
+                    <!--                          enctype="multipart/form-data" id="add-wenjianImg8">-->
+                    <!--                        <input type="file" id="fileInput41" name="file" multiple="multiple"-->
+                    <!--                               th:multiple="multiple"-->
+                    <!--                               data-show-caption="true" data-required="1">-->
+                    <!--                    </form>-->
                     <div class="row justify-content-evenly">
                         <div class="col-6">
                             <div class="form-group">
@@ -918,151 +918,151 @@
                             </div>
                         </div>
                     </div>
-                    <label for="add-peihuoImg2">配货图片</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"
-                          enctype="multipart/form-data" id="add-peihuoImg2">
-                        <input type="file" id="fileInput11" name="file" multiple="multiple"
-                               th:multiple="multiple"
-                               data-show-caption="true" data-required="1">
-                    </form>
-                    <div class="row justify-content-evenly">
-                        <div class="col-4">
-                            <div class="form-group">
-                                <label for="add-peihuoImg2Renyuan">配货图片2录入员</label>
-                                <input id="add-peihuoImg2Renyuan" name="peihuoImg2Renyuan" type="text"
-                                       class="form-control" autocomplete="off" data-required="1">
-                                <!--                        <div class="invalid-feedback">-->
-                                <!--                            请输入录入员！-->
-                                <!--                        </div>-->
-                            </div>
-                        </div>
-                        <div class="col-4">
-                            <div class="form-group">
-                                <label for="add-peihuoImg2Riqi">完成时间</label>
-                                <input id="add-peihuoImg2Riqi" name="peihuoImg2Riqi" type="datetime-local"
-                                       step="1"
-                                       class="form-control" autocomplete="off" data-required="1">
-                                <!--                        <div class="invalid-feedback">-->
-                                <!--                            请输入完成时间！-->
-                                <!--                        </div>-->
-                            </div>
-                        </div>
-                    </div>
-                    <label for="add-peihuoImg3">配货图片</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"
-                          enctype="multipart/form-data" id="add-peihuoImg3">
-                        <input type="file" id="fileInput12" name="file" multiple="multiple"
-                               th:multiple="multiple"
-                               data-show-caption="true" data-required="1">
-                    </form>
-                    <div class="row justify-content-evenly">
-                        <div class="col-6">
-                            <div class="form-group">
-                                <label for="add-peihuoImg3Renyuan">配货图片3录入员</label>
-                                <input id="add-peihuoImg3Renyuan" name="peihuoImg3Renyuan" type="text"
-                                       class="form-control" autocomplete="off" data-required="1">
-                                <!--                        <div class="invalid-feedback">-->
-                                <!--                            请输入录入员！-->
-                                <!--                        </div>-->
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="form-group">
-                                <label for="add-peihuoImg3Riqi">完成时间</label>
-                                <input id="add-peihuoImg3Riqi" name="peihuoImg3Riqi" type="datetime-local"
-                                       step="1"
-                                       class="form-control" autocomplete="off" data-required="1">
-                                <!--                        <div class="invalid-feedback">-->
-                                <!--                            请输入完成时间！-->
-                                <!--                        </div>-->
-                            </div>
-                        </div>
-                    </div>
-                    <label for="add-peihuoImg4">配货图片</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"
-                          enctype="multipart/form-data" id="add-peihuoImg4">
-                        <input type="file" id="fileInput13" name="file" multiple="multiple"
-                               th:multiple="multiple"
-                               data-show-caption="true" data-required="1">
-                    </form>
-                    <div class="row justify-content-evenly">
-                        <div class="col-6">
-                            <div class="form-group">
-                                <label for="add-peihuoImg4Renyuan">配货图片4录入员</label>
-                                <input id="add-peihuoImg4Renyuan" name="peihuoImg4Renyuan" type="text"
-                                       class="form-control" autocomplete="off" data-required="1">
-                                <!--                        <div class="invalid-feedback">-->
-                                <!--                            请输入录入员！-->
-                                <!--                        </div>-->
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="form-group">
-                                <label for="add-peihuoImg4Riqi">完成时间</label>
-                                <input id="add-peihuoImg4Riqi" name="peihuoImg4Riqi" type="datetime-local"
-                                       step="1"
-                                       class="form-control" autocomplete="off" data-required="1">
-                                <!--                        <div class="invalid-feedback">-->
-                                <!--                            请输入完成时间！-->
-                                <!--                        </div>-->
-                            </div>
-                        </div>
-                    </div>
-                    <label for="add-peihuoImg5">配货图片</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"
-                          enctype="multipart/form-data" id="add-peihuoImg5">
-                        <input type="file" id="fileInput14" name="file" multiple="multiple"
-                               th:multiple="multiple"
-                               data-show-caption="true" data-required="1">
-                    </form>
+                                        <label for="add-peihuoImg2">配货图片</label>
+                                        <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"
+                                              enctype="multipart/form-data" id="add-peihuoImg2">
+                                            <input type="file" id="fileInput11" name="file" multiple="multiple"
+                                                   th:multiple="multiple"
+                                                   data-show-caption="true" data-required="1">
+                                        </form>
+                                        <div class="row justify-content-evenly">
+                                            <div class="col-4">
+                                                <div class="form-group">
+                                                    <label for="add-peihuoImg2Renyuan">配货图片2录入员</label>
+                                                    <input id="add-peihuoImg2Renyuan" name="peihuoImg2Renyuan" type="text"
+                                                           class="form-control" autocomplete="off" data-required="1">
+                                                    <!--                        <div class="invalid-feedback">-->
+                                                    <!--                            请输入录入员！-->
+                                                    <!--                        </div>-->
+                                                </div>
+                                            </div>
+                                            <div class="col-4">
+                                                <div class="form-group">
+                                                    <label for="add-peihuoImg2Riqi">完成时间</label>
+                                                    <input id="add-peihuoImg2Riqi" name="peihuoImg2Riqi" type="datetime-local"
+                                                           step="1"
+                                                           class="form-control" autocomplete="off" data-required="1">
+                                                    <!--                        <div class="invalid-feedback">-->
+                                                    <!--                            请输入完成时间！-->
+                                                    <!--                        </div>-->
+                                                </div>
+                                            </div>
+                                        </div>
+                    <!--                    <label for="add-peihuoImg3">配货图片</label>-->
+                    <!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"-->
+                    <!--                          enctype="multipart/form-data" id="add-peihuoImg3">-->
+                    <!--                        <input type="file" id="fileInput12" name="file" multiple="multiple"-->
+                    <!--                               th:multiple="multiple"-->
+                    <!--                               data-show-caption="true" data-required="1">-->
+                    <!--                    </form>-->
+                    <!--                    <div class="row justify-content-evenly">-->
+                    <!--                        <div class="col-6">-->
+                    <!--                            <div class="form-group">-->
+                    <!--                                <label for="add-peihuoImg3Renyuan">配货图片3录入员</label>-->
+                    <!--                                <input id="add-peihuoImg3Renyuan" name="peihuoImg3Renyuan" type="text"-->
+                    <!--                                       class="form-control" autocomplete="off" data-required="1">-->
+                    <!--                                &lt;!&ndash;                        <div class="invalid-feedback">&ndash;&gt;-->
+                    <!--                                &lt;!&ndash;                            请输入录入员！&ndash;&gt;-->
+                    <!--                                &lt;!&ndash;                        </div>&ndash;&gt;-->
+                    <!--                            </div>-->
+                    <!--                        </div>-->
+                    <!--                        <div class="col-6">-->
+                    <!--                            <div class="form-group">-->
+                    <!--                                <label for="add-peihuoImg3Riqi">完成时间</label>-->
+                    <!--                                <input id="add-peihuoImg3Riqi" name="peihuoImg3Riqi" type="datetime-local"-->
+                    <!--                                       step="1"-->
+                    <!--                                       class="form-control" autocomplete="off" data-required="1">-->
+                    <!--                                &lt;!&ndash;                        <div class="invalid-feedback">&ndash;&gt;-->
+                    <!--                                &lt;!&ndash;                            请输入完成时间！&ndash;&gt;-->
+                    <!--                                &lt;!&ndash;                        </div>&ndash;&gt;-->
+                    <!--                            </div>-->
+                    <!--                        </div>-->
+                    <!--                    </div>-->
+                    <!--                    <label for="add-peihuoImg4">配货图片</label>-->
+                    <!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"-->
+                    <!--                          enctype="multipart/form-data" id="add-peihuoImg4">-->
+                    <!--                        <input type="file" id="fileInput13" name="file" multiple="multiple"-->
+                    <!--                               th:multiple="multiple"-->
+                    <!--                               data-show-caption="true" data-required="1">-->
+                    <!--                    </form>-->
+                    <!--                    <div class="row justify-content-evenly">-->
+                    <!--                        <div class="col-6">-->
+                    <!--                            <div class="form-group">-->
+                    <!--                                <label for="add-peihuoImg4Renyuan">配货图片4录入员</label>-->
+                    <!--                                <input id="add-peihuoImg4Renyuan" name="peihuoImg4Renyuan" type="text"-->
+                    <!--                                       class="form-control" autocomplete="off" data-required="1">-->
+                    <!--                                &lt;!&ndash;                        <div class="invalid-feedback">&ndash;&gt;-->
+                    <!--                                &lt;!&ndash;                            请输入录入员！&ndash;&gt;-->
+                    <!--                                &lt;!&ndash;                        </div>&ndash;&gt;-->
+                    <!--                            </div>-->
+                    <!--                        </div>-->
+                    <!--                        <div class="col-6">-->
+                    <!--                            <div class="form-group">-->
+                    <!--                                <label for="add-peihuoImg4Riqi">完成时间</label>-->
+                    <!--                                <input id="add-peihuoImg4Riqi" name="peihuoImg4Riqi" type="datetime-local"-->
+                    <!--                                       step="1"-->
+                    <!--                                       class="form-control" autocomplete="off" data-required="1">-->
+                    <!--                                &lt;!&ndash;                        <div class="invalid-feedback">&ndash;&gt;-->
+                    <!--                                &lt;!&ndash;                            请输入完成时间！&ndash;&gt;-->
+                    <!--                                &lt;!&ndash;                        </div>&ndash;&gt;-->
+                    <!--                            </div>-->
+                    <!--                        </div>-->
+                    <!--                    </div>-->
+                    <!--                    <label for="add-peihuoImg5">配货图片</label>-->
+                    <!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"-->
+                    <!--                          enctype="multipart/form-data" id="add-peihuoImg5">-->
+                    <!--                        <input type="file" id="fileInput14" name="file" multiple="multiple"-->
+                    <!--                               th:multiple="multiple"-->
+                    <!--                               data-show-caption="true" data-required="1">-->
+                    <!--                    </form>-->
 
 
-                    <label for="add-peihuoImg6">配货图片</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"
-                          enctype="multipart/form-data" id="add-peihuoImg6">
-                        <input type="file" id="fileInput15" name="file" multiple="multiple"
-                               th:multiple="multiple"
-                               data-show-caption="true" data-required="1">
-                    </form>
+                    <!--                    <label for="add-peihuoImg6">配货图片</label>-->
+                    <!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"-->
+                    <!--                          enctype="multipart/form-data" id="add-peihuoImg6">-->
+                    <!--                        <input type="file" id="fileInput15" name="file" multiple="multiple"-->
+                    <!--                               th:multiple="multiple"-->
+                    <!--                               data-show-caption="true" data-required="1">-->
+                    <!--                    </form>-->
 
-                    <label for="add-peihuoImg7">配货图片</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"
-                          enctype="multipart/form-data" id="add-peihuoImg7">
-                        <input type="file" id="fileInput16" name="file" multiple="multiple"
-                               th:multiple="multiple"
-                               data-show-caption="true" data-required="1">
-                    </form>
-                    <label for="add-peihuoImg8">配货图片</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"
-                          enctype="multipart/form-data" id="add-peihuoImg8">
-                        <input type="file" id="fileInput17" name="file" multiple="multiple"
-                               th:multiple="multiple"
-                               data-show-caption="true" data-required="1">
-                    </form>
-                    <div class="row justify-content-evenly">
-                        <div class="col-6">
-                            <div class="form-group">
-                                <label for="add-peihuoImg5Renyuan">配货图片5录入员</label>
-                                <input id="add-peihuoImg5Renyuan" name="peihuoImg5Renyuan" type="text"
-                                       class="form-control" autocomplete="off" data-required="1">
-                                <!--                        <div class="invalid-feedback">-->
-                                <!--                            请输入录入员！-->
-                                <!--                        </div>-->
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="form-group">
-                                <label for="add-peihuoImg5Riqi">完成时间</label>
-                                <input id="add-peihuoImg5Riqi" name="peihuoImg5Riqi" type="datetime-local"
-                                       step="1"
-                                       class="form-control" autocomplete="off" data-required="1">
-                                <!--                        <div class="invalid-feedback">-->
-                                <!--                            请输入完成时间！-->
-                                <!--                        </div>-->
-                            </div>
-                        </div>
+                    <!--                    <label for="add-peihuoImg7">配货图片</label>-->
+                    <!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"-->
+                    <!--                          enctype="multipart/form-data" id="add-peihuoImg7">-->
+                    <!--                        <input type="file" id="fileInput16" name="file" multiple="multiple"-->
+                    <!--                               th:multiple="multiple"-->
+                    <!--                               data-show-caption="true" data-required="1">-->
+                    <!--                    </form>-->
+                    <!--                    <label for="add-peihuoImg8">配货图片</label>-->
+                    <!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"-->
+                    <!--                          enctype="multipart/form-data" id="add-peihuoImg8">-->
+                    <!--                        <input type="file" id="fileInput17" name="file" multiple="multiple"-->
+                    <!--                               th:multiple="multiple"-->
+                    <!--                               data-show-caption="true" data-required="1">-->
+                    <!--                    </form>-->
+                    <!--                    <div class="row justify-content-evenly">-->
+                    <!--                        <div class="col-6">-->
+                    <!--                            <div class="form-group">-->
+                    <!--                                <label for="add-peihuoImg5Renyuan">配货图片5录入员</label>-->
+                    <!--                                <input id="add-peihuoImg5Renyuan" name="peihuoImg5Renyuan" type="text"-->
+                    <!--                                       class="form-control" autocomplete="off" data-required="1">-->
+                    <!--                                &lt;!&ndash;                        <div class="invalid-feedback">&ndash;&gt;-->
+                    <!--                                &lt;!&ndash;                            请输入录入员！&ndash;&gt;-->
+                    <!--                                &lt;!&ndash;                        </div>&ndash;&gt;-->
+                    <!--                            </div>-->
+                    <!--                        </div>-->
+                    <!--                        <div class="col-6">-->
+                    <!--                            <div class="form-group">-->
+                    <!--                                <label for="add-peihuoImg5Riqi">完成时间</label>-->
+                    <!--                                <input id="add-peihuoImg5Riqi" name="peihuoImg5Riqi" type="datetime-local"-->
+                    <!--                                       step="1"-->
+                    <!--                                       class="form-control" autocomplete="off" data-required="1">-->
+                    <!--                                &lt;!&ndash;                        <div class="invalid-feedback">&ndash;&gt;-->
+                    <!--                                &lt;!&ndash;                            请输入完成时间！&ndash;&gt;-->
+                    <!--                                &lt;!&ndash;                        </div>&ndash;&gt;-->
+                    <!--                            </div>-->
+                    <!--                        </div>-->
 
-                    </div>
+                    <!--                    </div>-->
                     <label for="add-peisongImg1">配送图片</label>
                     <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"
                           enctype="multipart/form-data" id="add-peisongImg1">
@@ -1095,109 +1095,109 @@
                     </div>
 
 
-                    <label for="add-peisongImg2">配送图片</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"
-                          enctype="multipart/form-data" id="add-peisongImg2">
-                        <input type="file" id="fileInput19" name="file" multiple="multiple"
-                               th:multiple="multiple"
-                               data-show-caption="true" data-required="1">
-                    </form>
-                    <div class="row justify-content-evenly">
-                        <div class="col-6">
-                            <div class="form-group">
-                                <label for="add-peisongImg2Renyuan">配送图片2录入员</label>
-                                <input id="add-peisongImg2Renyuan" name="peisongImg2Renyuan" type="text"
-                                       class="form-control" autocomplete="off" data-required="1">
-                                <!--                        <div class="invalid-feedback">-->
-                                <!--                            请输入录入员！-->
-                                <!--                        </div>-->
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="form-group">
-                                <label for="add-peisongImg2Riqi">完成时间</label>
-                                <input id="add-peisongImg2Riqi" name="peisongImg2Riqi" type="datetime-local"
-                                       step="1"
-                                       class="form-control" autocomplete="off" data-required="1">
-                                <!--                        <div class="invalid-feedback">-->
-                                <!--                            请输入完成时间！-->
-                                <!--                        </div>-->
-                            </div>
-                        </div>
-                    </div>
+                                        <label for="add-peisongImg2">配送图片</label>
+                                        <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"
+                                              enctype="multipart/form-data" id="add-peisongImg2">
+                                            <input type="file" id="fileInput19" name="file" multiple="multiple"
+                                                   th:multiple="multiple"
+                                                   data-show-caption="true" data-required="1">
+                                        </form>
+                                        <div class="row justify-content-evenly">
+                                            <div class="col-6">
+                                                <div class="form-group">
+                                                    <label for="add-peisongImg2Renyuan">配送图片2录入员</label>
+                                                    <input id="add-peisongImg2Renyuan" name="peisongImg2Renyuan" type="text"
+                                                           class="form-control" autocomplete="off" data-required="1">
+                                                    <!--                        <div class="invalid-feedback">-->
+                                                    <!--                            请输入录入员！-->
+                                                    <!--                        </div>-->
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="form-group">
+                                                    <label for="add-peisongImg2Riqi">完成时间</label>
+                                                    <input id="add-peisongImg2Riqi" name="peisongImg2Riqi" type="datetime-local"
+                                                           step="1"
+                                                           class="form-control" autocomplete="off" data-required="1">
+                                                    <!--                        <div class="invalid-feedback">-->
+                                                    <!--                            请输入完成时间！-->
+                                                    <!--                        </div>-->
+                                                </div>
+                                            </div>
+                                        </div>
 
 
-                    <label for="add-peisongImg3">配送图片</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"
-                          enctype="multipart/form-data" id="add-peisongImg3">
-                        <input type="file" id="fileInput20" name="file" multiple="multiple"
-                               th:multiple="multiple"
-                               data-show-caption="true" data-required="1">
-                    </form>
+                    <!--                    <label for="add-peisongImg3">配送图片</label>-->
+                    <!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"-->
+                    <!--                          enctype="multipart/form-data" id="add-peisongImg3">-->
+                    <!--                        <input type="file" id="fileInput20" name="file" multiple="multiple"-->
+                    <!--                               th:multiple="multiple"-->
+                    <!--                               data-show-caption="true" data-required="1">-->
+                    <!--                    </form>-->
 
 
-                    <label for="add-peisongImg4">配送图片</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"
-                          enctype="multipart/form-data" id="add-peisongImg4">
-                        <input type="file" id="fileInput21" name="file" multiple="multiple"
-                               th:multiple="multiple"
-                               data-show-caption="true" data-required="1">
-                    </form>
+                    <!--                    <label for="add-peisongImg4">配送图片</label>-->
+                    <!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"-->
+                    <!--                          enctype="multipart/form-data" id="add-peisongImg4">-->
+                    <!--                        <input type="file" id="fileInput21" name="file" multiple="multiple"-->
+                    <!--                               th:multiple="multiple"-->
+                    <!--                               data-show-caption="true" data-required="1">-->
+                    <!--                    </form>-->
 
-                    <label for="add-peisongImg5">配送图片</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"
-                          enctype="multipart/form-data" id="add-peisongImg5">
-                        <input type="file" id="fileInput22" name="file" multiple="multiple"
-                               th:multiple="multiple"
-                               data-show-caption="true" data-required="1">
-                    </form>
+                    <!--                    <label for="add-peisongImg5">配送图片</label>-->
+                    <!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"-->
+                    <!--                          enctype="multipart/form-data" id="add-peisongImg5">-->
+                    <!--                        <input type="file" id="fileInput22" name="file" multiple="multiple"-->
+                    <!--                               th:multiple="multiple"-->
+                    <!--                               data-show-caption="true" data-required="1">-->
+                    <!--                    </form>-->
 
-                    <label for="add-peisongImg6">配送图片</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"
-                          enctype="multipart/form-data" id="add-peisongImg6">
-                        <input type="file" id="fileInput23" name="file" multiple="multiple"
-                               th:multiple="multiple"
-                               data-show-caption="true" data-required="1">
-                    </form>
+                    <!--                    <label for="add-peisongImg6">配送图片</label>-->
+                    <!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"-->
+                    <!--                          enctype="multipart/form-data" id="add-peisongImg6">-->
+                    <!--                        <input type="file" id="fileInput23" name="file" multiple="multiple"-->
+                    <!--                               th:multiple="multiple"-->
+                    <!--                               data-show-caption="true" data-required="1">-->
+                    <!--                    </form>-->
 
-                    <label for="add-peisongImg7">配送图片</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"
-                          enctype="multipart/form-data" id="add-peisongImg7">
-                        <input type="file" id="fileInput24" name="file" multiple="multiple"
-                               th:multiple="multiple"
-                               data-show-caption="true" data-required="1">
-                    </form>
+                    <!--                    <label for="add-peisongImg7">配送图片</label>-->
+                    <!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"-->
+                    <!--                          enctype="multipart/form-data" id="add-peisongImg7">-->
+                    <!--                        <input type="file" id="fileInput24" name="file" multiple="multiple"-->
+                    <!--                               th:multiple="multiple"-->
+                    <!--                               data-show-caption="true" data-required="1">-->
+                    <!--                    </form>-->
 
-                    <label for="add-peisongImg8">配送图片</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"
-                          enctype="multipart/form-data" id="add-peisongImg8">
-                        <input type="file" id="fileInput25" name="file" multiple="multiple"
-                               th:multiple="multiple"
-                               data-show-caption="true" data-required="1">
-                    </form>
-                    <div class="row justify-content-evenly">
-                        <div class="col-6">
-                            <div class="form-group">
-                                <label for="add-peisongImg3Renyuan">配送图片3录入员</label>
-                                <input id="add-peisongImg3Renyuan" name="peisongImg3Renyuan" type="text"
-                                       class="form-control" autocomplete="off" data-required="1">
-                                <!--                        <div class="invalid-feedback">-->
-                                <!--                            请输入录入员！-->
-                                <!--                        </div>-->
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="form-group">
-                                <label for="add-peisongImg3Riqi">完成时间</label>
-                                <input id="add-peisongImg3Riqi" name="peisongImg3Riqi" type="datetime-local"
-                                       step="1"
-                                       class="form-control" autocomplete="off" data-required="1">
-                                <!--                        <div class="invalid-feedback">-->
-                                <!--                            请输入完成时间！-->
-                                <!--                        </div>-->
-                            </div>
-                        </div>
-                    </div>
+                    <!--                    <label for="add-peisongImg8">配送图片</label>-->
+                    <!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"-->
+                    <!--                          enctype="multipart/form-data" id="add-peisongImg8">-->
+                    <!--                        <input type="file" id="fileInput25" name="file" multiple="multiple"-->
+                    <!--                               th:multiple="multiple"-->
+                    <!--                               data-show-caption="true" data-required="1">-->
+                    <!--                    </form>-->
+                    <!--                    <div class="row justify-content-evenly">-->
+                    <!--                        <div class="col-6">-->
+                    <!--                            <div class="form-group">-->
+                    <!--                                <label for="add-peisongImg3Renyuan">配送图片3录入员</label>-->
+                    <!--                                <input id="add-peisongImg3Renyuan" name="peisongImg3Renyuan" type="text"-->
+                    <!--                                       class="form-control" autocomplete="off" data-required="1">-->
+                    <!--                                &lt;!&ndash;                        <div class="invalid-feedback">&ndash;&gt;-->
+                    <!--                                &lt;!&ndash;                            请输入录入员！&ndash;&gt;-->
+                    <!--                                &lt;!&ndash;                        </div>&ndash;&gt;-->
+                    <!--                            </div>-->
+                    <!--                        </div>-->
+                    <!--                        <div class="col-6">-->
+                    <!--                            <div class="form-group">-->
+                    <!--                                <label for="add-peisongImg3Riqi">完成时间</label>-->
+                    <!--                                <input id="add-peisongImg3Riqi" name="peisongImg3Riqi" type="datetime-local"-->
+                    <!--                                       step="1"-->
+                    <!--                                       class="form-control" autocomplete="off" data-required="1">-->
+                    <!--                                &lt;!&ndash;                        <div class="invalid-feedback">&ndash;&gt;-->
+                    <!--                                &lt;!&ndash;                            请输入完成时间！&ndash;&gt;-->
+                    <!--                                &lt;!&ndash;                        </div>&ndash;&gt;-->
+                    <!--                            </div>-->
+                    <!--                        </div>-->
+                    <!--                    </div>-->
                     <div class="row justify-content-evenly">
 
                         <div class="col-4">
@@ -2228,7 +2228,7 @@
                     <!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post" enctype="multipart/form-data" id="add-wenjianImg8">-->
                     <!--                        <input type="file" id="fileInput41" name="file" multiple="multiple" th:multiple="multiple" data-show-caption="true" data-required="1">-->
                     <!--                    </form>-->
-            </div>
+
             <div class="border-top" style="padding: 15px;">
                 <button id="add-submit-btn" type="button" class="btn"
                         style="background-color: limegreen;color: white">
@@ -2337,7 +2337,8 @@
                             <div class="form-group">
                                 <label for="update-customerNeedText">客户需求(文字)</label>
                                 <textarea id="update-customerNeedText" name="customerNeedText" type="text"
-                                          class="form-control" autocomplete="off" data-required="1" rows="2" cols="20"></textarea>
+                                          class="form-control" autocomplete="off" data-required="1" rows="2"
+                                          cols="20"></textarea>
                                 <!--                        <div class="invalid-feedback">-->
                                 <!--                            请输入客户需求(文字)！-->
                                 <!--                        </div>-->
@@ -2392,26 +2393,26 @@
                                data-show-caption="true" data-required="1">
                     </form>
 
-                    <label for="update-customerNeedImg6">客户需求(图片)</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"
-                          enctype="multipart/form-data" id="update-customerNeedImg6">
-                        <input type="file" id="fileInput47" name="file" multiple="multiple" th:multiple="multiple"
-                               data-show-caption="true" data-required="1">
-                    </form>
+                    <!--                    <label for="update-customerNeedImg6">客户需求(图片)</label>-->
+                    <!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"-->
+                    <!--                          enctype="multipart/form-data" id="update-customerNeedImg6">-->
+                    <!--                        <input type="file" id="fileInput47" name="file" multiple="multiple" th:multiple="multiple"-->
+                    <!--                               data-show-caption="true" data-required="1">-->
+                    <!--                    </form>-->
 
-                    <label for="update-customerNeedImg7">客户需求(图片)</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"
-                          enctype="multipart/form-data" id="update-customerNeedImg7">
-                        <input type="file" id="fileInput48" name="file" multiple="multiple" th:multiple="multiple"
-                               data-show-caption="true" data-required="1">
-                    </form>
+                    <!--                    <label for="update-customerNeedImg7">客户需求(图片)</label>-->
+                    <!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"-->
+                    <!--                          enctype="multipart/form-data" id="update-customerNeedImg7">-->
+                    <!--                        <input type="file" id="fileInput48" name="file" multiple="multiple" th:multiple="multiple"-->
+                    <!--                               data-show-caption="true" data-required="1">-->
+                    <!--                    </form>-->
 
-                    <label for="update-customerNeedImg8">客户需求(图片)</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"
-                          enctype="multipart/form-data" id="update-customerNeedImg8">
-                        <input type="file" id="fileInput49" name="file" multiple="multiple" th:multiple="multiple"
-                               data-show-caption="true" data-required="1">
-                    </form>
+                    <!--                    <label for="update-customerNeedImg8">客户需求(图片)</label>-->
+                    <!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"-->
+                    <!--                          enctype="multipart/form-data" id="update-customerNeedImg8">-->
+                    <!--                        <input type="file" id="fileInput49" name="file" multiple="multiple" th:multiple="multiple"-->
+                    <!--                               data-show-caption="true" data-required="1">-->
+                    <!--                    </form>-->
 
                     <div class="row justify-content-evenly">
                         <!--                        <div class="col-4">-->
@@ -2453,16 +2454,18 @@
                             </div>
                         </div>
                     </div>
-                        <div class="row justify-content-evenly">
+                    <div class="row justify-content-evenly">
                         <div class="col-4">
-                                                        <div class="form-group">
-                                                            <label for="update-customerNeedText1">配送文字1</label>
-                                                            <textarea id="update-customerNeedText1" name="customerNeedText1" type="text" class="form-control" autocomplete="off" data-required="1" rows="2" cols="20"></textarea>
-                                                            <!--                        <div class="invalid-feedback">-->
-                                                            <!--                            请输入配送文字1！-->
-                                                            <!--                        </div>-->
-                                                        </div>
-                                                    </div>
+                            <div class="form-group">
+                                <label for="update-customerNeedText1">配送文字1</label>
+                                <textarea id="update-customerNeedText1" name="customerNeedText1" type="text"
+                                          class="form-control" autocomplete="off" data-required="1" rows="2"
+                                          cols="20"></textarea>
+                                <!--                        <div class="invalid-feedback">-->
+                                <!--                            请输入配送文字1！-->
+                                <!--                        </div>-->
+                            </div>
+                        </div>
                         <div class="col-4">
                             <div class="form-group">
                                 <label for="update-customerNeedText1Riqi">完成时间</label>
@@ -2828,170 +2831,170 @@
                     </div>
 
 
-                    <label for="update-peihuoImg2">配货图片</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"
-                          enctype="multipart/form-data" id="update-peihuoImg2">
-                        <input type="file" id="fileInput52" name="file" multiple="multiple" th:multiple="multiple"
-                               data-show-caption="true" data-required="1">
-                    </form>
-                    <div class="row justify-content-evenly">
-                        <!--                        <div class="col-4">-->
-                        <!--                            <div class="form-group">-->
-                        <!--                                <label for="update-phoneRenyuan">录入员</label>-->
-                        <!--                                <input id="update-phoneRenyuan" name="phoneRenyuan" type="text" class="form-control" autocomplete="off" data-required="1">-->
-                        <!--                                &lt;!&ndash;                        <div class="invalid-feedback">&ndash;&gt;-->
-                        <!--                                &lt;!&ndash;                            请输入录入员！&ndash;&gt;-->
-                        <!--                                &lt;!&ndash;                        </div>&ndash;&gt;-->
-                        <!--                            </div>-->
-                        <!--                        </div>-->
-                        <!--                        <div class="col-4">-->
-                        <!--                            <div class="form-group">-->
-                        <!--                                <label for="update-phoneRiqi">完成时间</label>-->
-                        <!--                                <input id="update-phoneRiqi" name="phoneRiqi" type="datetime-local" class="form-control" autocomplete="off" data-required="1">-->
-                        <!--                                &lt;!&ndash;                        <div class="invalid-feedback">&ndash;&gt;-->
-                        <!--                                &lt;!&ndash;                            请输入完成时间！&ndash;&gt;-->
-                        <!--                                &lt;!&ndash;                        </div>&ndash;&gt;-->
-                        <!--                            </div>-->
-                        <!--                        </div>-->
-                        <div class="col-4">
-                            <div class="form-group">
-                                <label for="update-peihuoImg2Renyuan">配货图片2录入员</label>
-                                <input id="update-peihuoImg2Renyuan" name="peihuoImg2Renyuan" type="text"
-                                       class="form-control" autocomplete="off" data-required="1">
-                                <!--                        <div class="invalid-feedback">-->
-                                <!--                            请输入录入员！-->
-                                <!--                        </div>-->
-                            </div>
-                        </div>
-                        <div class="col-4">
-                            <div class="form-group">
-                                <label for="update-peihuoImg2Riqi">完成时间</label>
-                                <input id="update-peihuoImg2Riqi" name="peihuoImg2Riqi" type="datetime-local"
-                                       class="form-control" autocomplete="off" data-required="1">
-                                <!--                        <div class="invalid-feedback">-->
-                                <!--                            请输入完成时间！-->
-                                <!--                        </div>-->
-                            </div>
-                        </div>
-                    </div>
-                    <label for="update-peihuoImg3">配货图片</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"
-                          enctype="multipart/form-data" id="update-peihuoImg3">
-                        <input type="file" id="fileInput53" name="file" multiple="multiple" th:multiple="multiple"
-                               data-show-caption="true" data-required="1">
-                    </form>
-                    <div class="row justify-content-evenly">
-                        <!--                        <div class="col-4">-->
-                        <!--                            <div class="form-group">-->
-                        <!--                                <label for="update-customerOrder">客户订单号</label>-->
-                        <!--                                <input id="update-customerOrder" name="customerOrder" type="text" class="form-control" autocomplete="off" data-required="1">-->
-                        <!--                                &lt;!&ndash;                        <div class="invalid-feedback">&ndash;&gt;-->
-                        <!--                                &lt;!&ndash;                            请输入客户订单号！&ndash;&gt;-->
-                        <!--                                &lt;!&ndash;                        </div>&ndash;&gt;-->
-                        <!--                            </div>-->
-                        <!--                        </div>-->
-                        <!--                        <div class="col-4">-->
-                        <!--                            <div class="form-group">-->
-                        <!--                                <label for="update-customerOrderRenyuan">录入员</label>-->
-                        <!--                                <input id="update-customerOrderRenyuan" name="customerOrderRenyuan" type="text" class="form-control" autocomplete="off" data-required="1">-->
-                        <!--                                &lt;!&ndash;                        <div class="invalid-feedback">&ndash;&gt;-->
-                        <!--                                &lt;!&ndash;                            请输入录入员！&ndash;&gt;-->
-                        <!--                                &lt;!&ndash;                        </div>&ndash;&gt;-->
-                        <!--                            </div>-->
-                        <!--                        </div>-->
-                        <div class="col-4">
-                            <div class="form-group">
-                                <label for="update-peihuoImg3Renyuan">配货图片3录入员</label>
-                                <input id="update-peihuoImg3Renyuan" name="peihuoImg3Renyuan" type="text"
-                                       class="form-control" autocomplete="off" data-required="1">
-                                <!--                        <div class="invalid-feedback">-->
-                                <!--                            请输入录入员！-->
-                                <!--                        </div>-->
-                            </div>
-                        </div>
-                        <div class="col-4">
-                            <div class="form-group">
-                                <label for="update-peihuoImg3Riqi">完成时间</label>
-                                <input id="update-peihuoImg3Riqi" name="peihuoImg3Riqi" type="datetime-local"
-                                       class="form-control" autocomplete="off" data-required="1">
-                                <!--                        <div class="invalid-feedback">-->
-                                <!--                            请输入完成时间！-->
-                                <!--                        </div>-->
-                            </div>
-                        </div>
-                    </div>
+                                        <label for="update-peihuoImg2">配货图片</label>
+                                        <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"
+                                              enctype="multipart/form-data" id="update-peihuoImg2">
+                                            <input type="file" id="fileInput52" name="file" multiple="multiple" th:multiple="multiple"
+                                                   data-show-caption="true" data-required="1">
+                                        </form>
+                                        <div class="row justify-content-evenly">
+                    <!--                        <div class="col-4">-->
+                    <!--                            <div class="form-group">-->
+                    <!--                                <label for="update-phoneRenyuan">录入员</label>-->
+                    <!--                                <input id="update-phoneRenyuan" name="phoneRenyuan" type="text" class="form-control" autocomplete="off" data-required="1">-->
+                    <!--                                &lt;!&ndash;                        <div class="invalid-feedback">&ndash;&gt;-->
+                    <!--                                &lt;!&ndash;                            请输入录入员！&ndash;&gt;-->
+                    <!--                                &lt;!&ndash;                        </div>&ndash;&gt;-->
+                    <!--                            </div>-->
+                    <!--                        </div>-->
+                    <!--                        <div class="col-4">-->
+                    <!--                            <div class="form-group">-->
+                    <!--                                <label for="update-phoneRiqi">完成时间</label>-->
+                    <!--                                <input id="update-phoneRiqi" name="phoneRiqi" type="datetime-local" class="form-control" autocomplete="off" data-required="1">-->
+                    <!--                                &lt;!&ndash;                        <div class="invalid-feedback">&ndash;&gt;-->
+                    <!--                                &lt;!&ndash;                            请输入完成时间！&ndash;&gt;-->
+                    <!--                                &lt;!&ndash;                        </div>&ndash;&gt;-->
+                    <!--                            </div>-->
+                    <!--                        </div>-->
+                                            <div class="col-4">
+                                                <div class="form-group">
+                                                    <label for="update-peihuoImg2Renyuan">配货图片2录入员</label>
+                                                    <input id="update-peihuoImg2Renyuan" name="peihuoImg2Renyuan" type="text"
+                                                           class="form-control" autocomplete="off" data-required="1">
+                                                    <!--                        <div class="invalid-feedback">-->
+                                                    <!--                            请输入录入员！-->
+                                                    <!--                        </div>-->
+                                                </div>
+                                            </div>
+                                            <div class="col-4">
+                                                <div class="form-group">
+                                                    <label for="update-peihuoImg2Riqi">完成时间</label>
+                                                    <input id="update-peihuoImg2Riqi" name="peihuoImg2Riqi" type="datetime-local"
+                                                           class="form-control" autocomplete="off" data-required="1">
+                                                    <!--                        <div class="invalid-feedback">-->
+                                                    <!--                            请输入完成时间！-->
+                                                    <!--                        </div>-->
+                                                </div>
+                                            </div>
+                                        </div>
+                    <!--                    <label for="update-peihuoImg3">配货图片</label>-->
+                    <!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"-->
+                    <!--                          enctype="multipart/form-data" id="update-peihuoImg3">-->
+                    <!--                        <input type="file" id="fileInput53" name="file" multiple="multiple" th:multiple="multiple"-->
+                    <!--                               data-show-caption="true" data-required="1">-->
+                    <!--                    </form>-->
+                    <!--                    <div class="row justify-content-evenly">-->
+                    <!--                        <div class="col-4">-->
+                    <!--                            <div class="form-group">-->
+                    <!--                                <label for="update-customerOrder">客户订单号</label>-->
+                    <!--                                <input id="update-customerOrder" name="customerOrder" type="text" class="form-control" autocomplete="off" data-required="1">-->
+                    <!--                                &lt;!&ndash;                        <div class="invalid-feedback">&ndash;&gt;-->
+                    <!--                                &lt;!&ndash;                            请输入客户订单号！&ndash;&gt;-->
+                    <!--                                &lt;!&ndash;                        </div>&ndash;&gt;-->
+                    <!--                            </div>-->
+                    <!--                        </div>-->
+                    <!--                        <div class="col-4">-->
+                    <!--                            <div class="form-group">-->
+                    <!--                                <label for="update-customerOrderRenyuan">录入员</label>-->
+                    <!--                                <input id="update-customerOrderRenyuan" name="customerOrderRenyuan" type="text" class="form-control" autocomplete="off" data-required="1">-->
+                    <!--                                &lt;!&ndash;                        <div class="invalid-feedback">&ndash;&gt;-->
+                    <!--                                &lt;!&ndash;                            请输入录入员！&ndash;&gt;-->
+                    <!--                                &lt;!&ndash;                        </div>&ndash;&gt;-->
+                    <!--                            </div>-->
+                    <!--                        </div>-->
+                    <!--                        <div class="col-4">-->
+                    <!--                            <div class="form-group">-->
+                    <!--                                <label for="update-peihuoImg3Renyuan">配货图片3录入员</label>-->
+                    <!--                                <input id="update-peihuoImg3Renyuan" name="peihuoImg3Renyuan" type="text"-->
+                    <!--                                       class="form-control" autocomplete="off" data-required="1">-->
+                    <!--                                &lt;!&ndash;                        <div class="invalid-feedback">&ndash;&gt;-->
+                    <!--                                &lt;!&ndash;                            请输入录入员！&ndash;&gt;-->
+                    <!--                                &lt;!&ndash;                        </div>&ndash;&gt;-->
+                    <!--                            </div>-->
+                    <!--                        </div>-->
+                    <!--                        <div class="col-4">-->
+                    <!--                            <div class="form-group">-->
+                    <!--                                <label for="update-peihuoImg3Riqi">完成时间</label>-->
+                    <!--                                <input id="update-peihuoImg3Riqi" name="peihuoImg3Riqi" type="datetime-local"-->
+                    <!--                                       class="form-control" autocomplete="off" data-required="1">-->
+                    <!--                                &lt;!&ndash;                        <div class="invalid-feedback">&ndash;&gt;-->
+                    <!--                                &lt;!&ndash;                            请输入完成时间！&ndash;&gt;-->
+                    <!--                                &lt;!&ndash;                        </div>&ndash;&gt;-->
+                    <!--                            </div>-->
+                    <!--                        </div>-->
+                    <!--                    </div>-->
 
-                    <label for="update-peihuoImg4">配货图片</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"
-                          enctype="multipart/form-data" id="update-peihuoImg4">
-                        <input type="file" id="fileInput54" name="file" multiple="multiple" th:multiple="multiple"
-                               data-show-caption="true" data-required="1">
-                    </form>
-                    <div class="row justify-content-evenly">
-                        <!--                        <div class="col-4">-->
-                        <!--                            <div class="form-group">-->
-                        <!--                                <label for="update-customerOrderRiqi">完成时间</label>-->
-                        <!--                                <input id="update-customerOrderRiqi" name="customerOrderRiqi" type="datetime-local" class="form-control" autocomplete="off" data-required="1">-->
-                        <!--                                &lt;!&ndash;                        <div class="invalid-feedback">&ndash;&gt;-->
-                        <!--                                &lt;!&ndash;                            请输入完成时间！&ndash;&gt;-->
-                        <!--                                &lt;!&ndash;                        </div>&ndash;&gt;-->
-                        <!--                            </div>-->
-                        <!--                        </div>-->
-                        <!--                        <div class="col-4">-->
-                        <!--                            <div class="form-group">-->
-                        <!--                                <label for="update-songhuoDanhao">送货单号</label>-->
-                        <!--                                <input id="update-songhuoDanhao" name="songhuoDanhao" type="text" class="form-control" autocomplete="off" data-required="1">-->
-                        <!--                                &lt;!&ndash;                        <div class="invalid-feedback">&ndash;&gt;-->
-                        <!--                                &lt;!&ndash;                            请输入送货单号！&ndash;&gt;-->
-                        <!--                                &lt;!&ndash;                        </div>&ndash;&gt;-->
-                        <!--                            </div>-->
-                        <!--                        </div>-->
-                        <div class="col-4">
-                            <div class="form-group">
-                                <label for="update-peihuoImg4Renyuan">配货图片4录入员</label>
-                                <input id="update-peihuoImg4Renyuan" name="peihuoImg4Renyuan" type="text"
-                                       class="form-control" autocomplete="off" data-required="1">
-                                <!--                        <div class="invalid-feedback">-->
-                                <!--                            请输入录入员！-->
-                                <!--                        </div>-->
-                            </div>
-                        </div>
-                        <div class="col-4">
-                            <div class="form-group">
-                                <label for="update-peihuoImg4Riqi">完成时间</label>
-                                <input id="update-peihuoImg4Riqi" name="peihuoImg4Riqi" type="datetime-local"
-                                       class="form-control" autocomplete="off" data-required="1">
-                                <!--                        <div class="invalid-feedback">-->
-                                <!--                            请输入完成时间！-->
-                                <!--                        </div>-->
-                            </div>
-                        </div>
-                    </div>
+                    <!--                    <label for="update-peihuoImg4">配货图片</label>-->
+                    <!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"-->
+                    <!--                          enctype="multipart/form-data" id="update-peihuoImg4">-->
+                    <!--                        <input type="file" id="fileInput54" name="file" multiple="multiple" th:multiple="multiple"-->
+                    <!--                               data-show-caption="true" data-required="1">-->
+                    <!--                    </form>-->
+                    <!--                    <div class="row justify-content-evenly">-->
+                    <!--                        &lt;!&ndash;                        <div class="col-4">&ndash;&gt;-->
+                    <!--                        &lt;!&ndash;                            <div class="form-group">&ndash;&gt;-->
+                    <!--                        &lt;!&ndash;                                <label for="update-customerOrderRiqi">完成时间</label>&ndash;&gt;-->
+                    <!--                        &lt;!&ndash;                                <input id="update-customerOrderRiqi" name="customerOrderRiqi" type="datetime-local" class="form-control" autocomplete="off" data-required="1">&ndash;&gt;-->
+                    <!--                        &lt;!&ndash;                                &lt;!&ndash;                        <div class="invalid-feedback">&ndash;&gt;&ndash;&gt;-->
+                    <!--                        &lt;!&ndash;                                &lt;!&ndash;                            请输入完成时间！&ndash;&gt;&ndash;&gt;-->
+                    <!--                        &lt;!&ndash;                                &lt;!&ndash;                        </div>&ndash;&gt;&ndash;&gt;-->
+                    <!--                        &lt;!&ndash;                            </div>&ndash;&gt;-->
+                    <!--                        &lt;!&ndash;                        </div>&ndash;&gt;-->
+                    <!--                        &lt;!&ndash;                        <div class="col-4">&ndash;&gt;-->
+                    <!--                        &lt;!&ndash;                            <div class="form-group">&ndash;&gt;-->
+                    <!--                        &lt;!&ndash;                                <label for="update-songhuoDanhao">送货单号</label>&ndash;&gt;-->
+                    <!--                        &lt;!&ndash;                                <input id="update-songhuoDanhao" name="songhuoDanhao" type="text" class="form-control" autocomplete="off" data-required="1">&ndash;&gt;-->
+                    <!--                        &lt;!&ndash;                                &lt;!&ndash;                        <div class="invalid-feedback">&ndash;&gt;&ndash;&gt;-->
+                    <!--                        &lt;!&ndash;                                &lt;!&ndash;                            请输入送货单号！&ndash;&gt;&ndash;&gt;-->
+                    <!--                        &lt;!&ndash;                                &lt;!&ndash;                        </div>&ndash;&gt;&ndash;&gt;-->
+                    <!--                        &lt;!&ndash;                            </div>&ndash;&gt;-->
+                    <!--                        &lt;!&ndash;                        </div>&ndash;&gt;-->
+                    <!--                        <div class="col-4">-->
+                    <!--                            <div class="form-group">-->
+                    <!--                                <label for="update-peihuoImg4Renyuan">配货图片4录入员</label>-->
+                    <!--                                <input id="update-peihuoImg4Renyuan" name="peihuoImg4Renyuan" type="text"-->
+                    <!--                                       class="form-control" autocomplete="off" data-required="1">-->
+                    <!--                                &lt;!&ndash;                        <div class="invalid-feedback">&ndash;&gt;-->
+                    <!--                                &lt;!&ndash;                            请输入录入员！&ndash;&gt;-->
+                    <!--                                &lt;!&ndash;                        </div>&ndash;&gt;-->
+                    <!--                            </div>-->
+                    <!--                        </div>-->
+                    <!--                        <div class="col-4">-->
+                    <!--                            <div class="form-group">-->
+                    <!--                                <label for="update-peihuoImg4Riqi">完成时间</label>-->
+                    <!--                                <input id="update-peihuoImg4Riqi" name="peihuoImg4Riqi" type="datetime-local"-->
+                    <!--                                       class="form-control" autocomplete="off" data-required="1">-->
+                    <!--                                &lt;!&ndash;                        <div class="invalid-feedback">&ndash;&gt;-->
+                    <!--                                &lt;!&ndash;                            请输入完成时间！&ndash;&gt;-->
+                    <!--                                &lt;!&ndash;                        </div>&ndash;&gt;-->
+                    <!--                            </div>-->
+                    <!--                        </div>-->
+                    <!--                    </div>-->
 
-                    <label for="update-peihuoImg5">配货图片</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"
-                          enctype="multipart/form-data" id="update-peihuoImg5">
-                        <input type="file" id="fileInput55" name="file" multiple="multiple" th:multiple="multiple"
-                               data-show-caption="true" data-required="1">
-                    </form>
-                    <label for="update-peihuoImg6">配货图片</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"
-                          enctype="multipart/form-data" id="update-peihuoImg6">
-                        <input type="file" id="fileInput56" name="file" multiple="multiple" th:multiple="multiple"
-                               data-show-caption="true" data-required="1">
-                    </form>
-                    <label for="update-peihuoImg7">配货图片</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"
-                          enctype="multipart/form-data" id="update-peihuoImg7">
-                        <input type="file" id="fileInput57" name="file" multiple="multiple" th:multiple="multiple"
-                               data-show-caption="true" data-required="1">
-                    </form>
-                    <label for="update-peihuoImg8">配货图片</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"
-                          enctype="multipart/form-data" id="update-peihuoImg8">
-                        <input type="file" id="fileInput58" name="file" multiple="multiple" th:multiple="multiple"
-                               data-show-caption="true" data-required="1">
-                    </form>
+                    <!--                    <label for="update-peihuoImg5">配货图片</label>-->
+                    <!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"-->
+                    <!--                          enctype="multipart/form-data" id="update-peihuoImg5">-->
+                    <!--                        <input type="file" id="fileInput55" name="file" multiple="multiple" th:multiple="multiple"-->
+                    <!--                               data-show-caption="true" data-required="1">-->
+                    <!--                    </form>-->
+                    <!--                    <label for="update-peihuoImg6">配货图片</label>-->
+                    <!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"-->
+                    <!--                          enctype="multipart/form-data" id="update-peihuoImg6">-->
+                    <!--                        <input type="file" id="fileInput56" name="file" multiple="multiple" th:multiple="multiple"-->
+                    <!--                               data-show-caption="true" data-required="1">-->
+                    <!--                    </form>-->
+                    <!--                    <label for="update-peihuoImg7">配货图片</label>-->
+                    <!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"-->
+                    <!--                          enctype="multipart/form-data" id="update-peihuoImg7">-->
+                    <!--                        <input type="file" id="fileInput57" name="file" multiple="multiple" th:multiple="multiple"-->
+                    <!--                               data-show-caption="true" data-required="1">-->
+                    <!--                    </form>-->
+                    <!--                    <label for="update-peihuoImg8">配货图片</label>-->
+                    <!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"-->
+                    <!--                          enctype="multipart/form-data" id="update-peihuoImg8">-->
+                    <!--                        <input type="file" id="fileInput58" name="file" multiple="multiple" th:multiple="multiple"-->
+                    <!--                               data-show-caption="true" data-required="1">-->
+                    <!--                    </form>-->
                     <div class="row justify-content-evenly">
                         <!--                        <div class="col-4">-->
                         <!--                            <div class="form-group">-->
@@ -3011,27 +3014,27 @@
                         <!--                                &lt;!&ndash;                        </div>&ndash;&gt;-->
                         <!--                            </div>-->
                         <!--                        </div>-->
-                        <div class="col-4">
-                            <div class="form-group">
-                                <label for="update-peihuoImg5Renyuan">配货图片5录入员</label>
-                                <input id="update-peihuoImg5Renyuan" name="peihuoImg5Renyuan" type="text"
-                                       class="form-control" autocomplete="off" data-required="1">
-                                <!--                        <div class="invalid-feedback">-->
-                                <!--                            请输入录入员！-->
-                                <!--                        </div>-->
-                            </div>
-                        </div>
-                        <div class="col-4">
-                            <div class="form-group">
-                                <label for="update-peihuoImg5Riqi">完成时间</label>
-                                <input id="update-peihuoImg5Riqi" name="peihuoImg5Riqi" type="datetime-local"
-                                       class="form-control" autocomplete="off" data-required="1">
-                                <!--                        <div class="invalid-feedback">-->
-                                <!--                            请输入完成时间！-->
-                                <!--                        </div>-->
-                            </div>
+                        <!--                        <div class="col-4">-->
+                        <!--                            <div class="form-group">-->
+                        <!--                                <label for="update-peihuoImg5Renyuan">配货图片5录入员</label>-->
+                        <!--                                <input id="update-peihuoImg5Renyuan" name="peihuoImg5Renyuan" type="text"-->
+                        <!--                                       class="form-control" autocomplete="off" data-required="1">-->
+                        <!--                                &lt;!&ndash;                        <div class="invalid-feedback">&ndash;&gt;-->
+                        <!--                                &lt;!&ndash;                            请输入录入员！&ndash;&gt;-->
+                        <!--                                &lt;!&ndash;                        </div>&ndash;&gt;-->
+                        <!--                            </div>-->
+                        <!--                        </div>-->
+                        <!--                        <div class="col-4">-->
+                        <!--                            <div class="form-group">-->
+                        <!--                                <label for="update-peihuoImg5Riqi">完成时间</label>-->
+                        <!--                                <input id="update-peihuoImg5Riqi" name="peihuoImg5Riqi" type="datetime-local"-->
+                        <!--                                       class="form-control" autocomplete="off" data-required="1">-->
+                        <!--                                &lt;!&ndash;                        <div class="invalid-feedback">&ndash;&gt;-->
+                        <!--                                &lt;!&ndash;                            请输入完成时间！&ndash;&gt;-->
+                        <!--                                &lt;!&ndash;                        </div>&ndash;&gt;-->
+                        <!--                            </div>-->
 
-                        </div>
+                        <!--                        </div>-->
                     </div>
 
                     <div class="row justify-content-evenly">
@@ -3174,99 +3177,99 @@
                         </div>
                     </div>
 
-                    <label for="update-peisongImg2">配送图片</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"
-                          enctype="multipart/form-data" id="update-peisongImg2">
-                        <input type="file" id="fileInput60" name="file" multiple="multiple" th:multiple="multiple"
-                               data-show-caption="true" data-required="1">
-                    </form>
-                    <div class="row justify-content-evenly">
-                        <div class="col-4">
-                            <div class="form-group">
-                                <label for="update-peisongImg2Renyuan">配送图片2录入员</label>
-                                <input id="update-peisongImg2Renyuan" name="peisongImg2Renyuan" type="text"
-                                       class="form-control" autocomplete="off" data-required="1">
-                                <!--                        <div class="invalid-feedback">-->
-                                <!--                            请输入录入员！-->
-                                <!--                        </div>-->
-                            </div>
-                        </div>
-                        <div class="col-4">
-                            <div class="form-group">
-                                <label for="update-peisongImg2Riqi">完成时间</label>
-                                <input id="update-peisongImg2Riqi" name="peisongImg2Riqi" type="datetime-local"
-                                       class="form-control" autocomplete="off" data-required="1">
-                                <!--                        <div class="invalid-feedback">-->
-                                <!--                            请输入完成时间！-->
-                                <!--                        </div>-->
-                            </div>
-                        </div>
-                    </div>
+                                        <label for="update-peisongImg2">配送图片</label>
+                                        <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"
+                                              enctype="multipart/form-data" id="update-peisongImg2">
+                                            <input type="file" id="fileInput60" name="file" multiple="multiple" th:multiple="multiple"
+                                                   data-show-caption="true" data-required="1">
+                                        </form>
+                                        <div class="row justify-content-evenly">
+                                            <div class="col-4">
+                                                <div class="form-group">
+                                                    <label for="update-peisongImg2Renyuan">配送图片2录入员</label>
+                                                    <input id="update-peisongImg2Renyuan" name="peisongImg2Renyuan" type="text"
+                                                           class="form-control" autocomplete="off" data-required="1">
+                                                    <!--                        <div class="invalid-feedback">-->
+                                                    <!--                            请输入录入员！-->
+                                                    <!--                        </div>-->
+                                                </div>
+                                            </div>
+                                            <div class="col-4">
+                                                <div class="form-group">
+                                                    <label for="update-peisongImg2Riqi">完成时间</label>
+                                                    <input id="update-peisongImg2Riqi" name="peisongImg2Riqi" type="datetime-local"
+                                                           class="form-control" autocomplete="off" data-required="1">
+                                                    <!--                        <div class="invalid-feedback">-->
+                                                    <!--                            请输入完成时间！-->
+                                                    <!--                        </div>-->
+                                                </div>
+                                            </div>
+                                        </div>
 
-                    <label for="update-peisongImg3">配送图片</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"
-                          enctype="multipart/form-data" id="update-peisongImg3">
-                        <input type="file" id="fileInput61" name="file" multiple="multiple" th:multiple="multiple"
-                               data-show-caption="true" data-required="1">
-                    </form>
+                    <!--                    <label for="update-peisongImg3">配送图片</label>-->
+                    <!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"-->
+                    <!--                          enctype="multipart/form-data" id="update-peisongImg3">-->
+                    <!--                        <input type="file" id="fileInput61" name="file" multiple="multiple" th:multiple="multiple"-->
+                    <!--                               data-show-caption="true" data-required="1">-->
+                    <!--                    </form>-->
 
-                    <label for="update-peisongImg4">配送图片</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"
-                          enctype="multipart/form-data" id="update-peisongImg4">
-                        <input type="file" id="fileInput62" name="file" multiple="multiple" th:multiple="multiple"
-                               data-show-caption="true" data-required="1">
-                    </form>
+                    <!--                    <label for="update-peisongImg4">配送图片</label>-->
+                    <!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"-->
+                    <!--                          enctype="multipart/form-data" id="update-peisongImg4">-->
+                    <!--                        <input type="file" id="fileInput62" name="file" multiple="multiple" th:multiple="multiple"-->
+                    <!--                               data-show-caption="true" data-required="1">-->
+                    <!--                    </form>-->
 
-                    <label for="update-peisongImg5">配送图片</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"
-                          enctype="multipart/form-data" id="update-peisongImg5">
-                        <input type="file" id="fileInput63" name="file" multiple="multiple" th:multiple="multiple"
-                               data-show-caption="true" data-required="1">
-                    </form>
+                    <!--                    <label for="update-peisongImg5">配送图片</label>-->
+                    <!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"-->
+                    <!--                          enctype="multipart/form-data" id="update-peisongImg5">-->
+                    <!--                        <input type="file" id="fileInput63" name="file" multiple="multiple" th:multiple="multiple"-->
+                    <!--                               data-show-caption="true" data-required="1">-->
+                    <!--                    </form>-->
 
-                    <label for="update-peisongImg6">配送图片</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"
-                          enctype="multipart/form-data" id="update-peisongImg6">
-                        <input type="file" id="fileInput64" name="file" multiple="multiple" th:multiple="multiple"
-                               data-show-caption="true" data-required="1">
-                    </form>
+                    <!--                    <label for="update-peisongImg6">配送图片</label>-->
+                    <!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"-->
+                    <!--                          enctype="multipart/form-data" id="update-peisongImg6">-->
+                    <!--                        <input type="file" id="fileInput64" name="file" multiple="multiple" th:multiple="multiple"-->
+                    <!--                               data-show-caption="true" data-required="1">-->
+                    <!--                    </form>-->
 
-                    <label for="update-peisongImg7">配送图片</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"
-                          enctype="multipart/form-data" id="update-peisongImg7">
-                        <input type="file" id="fileInput65" name="file" multiple="multiple" th:multiple="multiple"
-                               data-show-caption="true" data-required="1">
-                    </form>
+                    <!--                    <label for="update-peisongImg7">配送图片</label>-->
+                    <!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"-->
+                    <!--                          enctype="multipart/form-data" id="update-peisongImg7">-->
+                    <!--                        <input type="file" id="fileInput65" name="file" multiple="multiple" th:multiple="multiple"-->
+                    <!--                               data-show-caption="true" data-required="1">-->
+                    <!--                    </form>-->
 
-                    <label for="update-peisongImg8">配送图片</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"
-                          enctype="multipart/form-data" id="update-peisongImg8">
-                        <input type="file" id="fileInput66" name="file" multiple="multiple" th:multiple="multiple"
-                               data-show-caption="true" data-required="1">
-                    </form>
+                    <!--                    <label for="update-peisongImg8">配送图片</label>-->
+                    <!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"-->
+                    <!--                          enctype="multipart/form-data" id="update-peisongImg8">-->
+                    <!--                        <input type="file" id="fileInput66" name="file" multiple="multiple" th:multiple="multiple"-->
+                    <!--                               data-show-caption="true" data-required="1">-->
+                    <!--                    </form>-->
 
-                    <div class="row justify-content-evenly">
-                        <div class="col-4">
-                            <div class="form-group">
-                                <label for="update-peisongImg3Renyuan">配送图片3录入员</label>
-                                <input id="update-peisongImg3Renyuan" name="peisongImg3Renyuan" type="text"
-                                       class="form-control" autocomplete="off" data-required="1">
-                                <!--                        <div class="invalid-feedback">-->
-                                <!--                            请输入录入员！-->
-                                <!--                        </div>-->
-                            </div>
-                        </div>
-                        <div class="col-4">
-                            <div class="form-group">
-                                <label for="update-peisongImg3Riqi">完成时间</label>
-                                <input id="update-peisongImg3Riqi" name="peisongImg3Riqi" type="datetime-local"
-                                       class="form-control" autocomplete="off" data-required="1">
-                                <!--                        <div class="invalid-feedback">-->
-                                <!--                            请输入完成时间！-->
-                                <!--                        </div>-->
-                            </div>
-                        </div>
-                    </div>
+                    <!--                    <div class="row justify-content-evenly">-->
+                    <!--                        <div class="col-4">-->
+                    <!--                            <div class="form-group">-->
+                    <!--                                <label for="update-peisongImg3Renyuan">配送图片3录入员</label>-->
+                    <!--                                <input id="update-peisongImg3Renyuan" name="peisongImg3Renyuan" type="text"-->
+                    <!--                                       class="form-control" autocomplete="off" data-required="1">-->
+                    <!--                                &lt;!&ndash;                        <div class="invalid-feedback">&ndash;&gt;-->
+                    <!--                                &lt;!&ndash;                            请输入录入员！&ndash;&gt;-->
+                    <!--                                &lt;!&ndash;                        </div>&ndash;&gt;-->
+                    <!--                            </div>-->
+                    <!--                        </div>-->
+                    <!--                        <div class="col-4">-->
+                    <!--                            <div class="form-group">-->
+                    <!--                                <label for="update-peisongImg3Riqi">完成时间</label>-->
+                    <!--                                <input id="update-peisongImg3Riqi" name="peisongImg3Riqi" type="datetime-local"-->
+                    <!--                                       class="form-control" autocomplete="off" data-required="1">-->
+                    <!--                                &lt;!&ndash;                        <div class="invalid-feedback">&ndash;&gt;-->
+                    <!--                                &lt;!&ndash;                            请输入完成时间！&ndash;&gt;-->
+                    <!--                                &lt;!&ndash;                        </div>&ndash;&gt;-->
+                    <!--                            </div>-->
+                    <!--                        </div>-->
+                    <!--                    </div>-->
 
 
                     <div class="row justify-content-evenly">
@@ -3393,9 +3396,6 @@
                             </div>
                         </div>
                     </div>
-
-
-
 
 
                     <!--                    <div class="row justify-content-evenly">-->
@@ -3555,8 +3555,12 @@
                         <div class="col-4">
                             <div class="form-group">
                                 <label for="update-shoukuan">收款情况</label>
-                                <input id="update-shoukuan" name="shoukuan" type="text" class="form-control"
-                                       autocomplete="off" data-required="1">
+                                <select id="update-shoukuan" name="shoukuan" type="text" class="form-control"
+                                        autocomplete="off" data-required="1">
+                                    <option value="">--请选择收款情况--</option>
+                                    <option value="已收款">已收款</option>
+                                    <option value="配送收款">配送收款</option>
+                                </select>
                                 <!--                        <div class="invalid-feedback">-->
                                 <!--                            请输入收款情况！-->
                                 <!--                        </div>-->
@@ -3650,42 +3654,42 @@
                         <input type="file" id="fileInput75" name="file" multiple="multiple"
                                th:multiple="multiple" data-show-caption="true" data-required="1">
                     </form>
-                    <label for="update-wenjianImg3">文件(图片)</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"
-                          enctype="multipart/form-data" id="update-wenjianImg3">
-                        <input type="file" id="fileInput76" name="file" multiple="multiple"
-                               th:multiple="multiple" data-show-caption="true" data-required="1">
-                    </form>
-                    <label for="update-wenjianImg4">文件(图片)</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"
-                          enctype="multipart/form-data" id="update-wenjianImg4">
-                        <input type="file" id="fileInput77" name="file" multiple="multiple"
-                               th:multiple="multiple" data-show-caption="true" data-required="1">
-                    </form>
-                    <label for="update-wenjianImg5">文件(图片)</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"
-                          enctype="multipart/form-data" id="update-wenjianImg5">
-                        <input type="file" id="fileInput78" name="file" multiple="multiple"
-                               th:multiple="multiple" data-show-caption="true" data-required="1">
-                    </form>
-                    <label for="update-wenjianImg6">文件(图片)</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"
-                          enctype="multipart/form-data" id="update-wenjianImg6">
-                        <input type="file" id="fileInput79" name="file" multiple="multiple"
-                               th:multiple="multiple" data-show-caption="true" data-required="1">
-                    </form>
-                    <label for="update-wenjianImg7">文件(图片)</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"
-                          enctype="multipart/form-data" id="update-wenjianImg7">
-                        <input type="file" id="fileInput80" name="file" multiple="multiple"
-                               th:multiple="multiple" data-show-caption="true" data-required="1">
-                    </form>
-                    <label for="update-wenjianImg8">文件(图片)</label>
-                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"
-                          enctype="multipart/form-data" id="update-wenjianImg8">
-                        <input type="file" id="fileInput81" name="file" multiple="multiple"
-                               th:multiple="multiple" data-show-caption="true" data-required="1">
-                    </form>
+<!--                    <label for="update-wenjianImg3">文件(图片)</label>-->
+<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"-->
+<!--                          enctype="multipart/form-data" id="update-wenjianImg3">-->
+<!--                        <input type="file" id="fileInput76" name="file" multiple="multiple"-->
+<!--                               th:multiple="multiple" data-show-caption="true" data-required="1">-->
+<!--                    </form>-->
+<!--                    <label for="update-wenjianImg4">文件(图片)</label>-->
+<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"-->
+<!--                          enctype="multipart/form-data" id="update-wenjianImg4">-->
+<!--                        <input type="file" id="fileInput77" name="file" multiple="multiple"-->
+<!--                               th:multiple="multiple" data-show-caption="true" data-required="1">-->
+<!--                    </form>-->
+<!--                    <label for="update-wenjianImg5">文件(图片)</label>-->
+<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"-->
+<!--                          enctype="multipart/form-data" id="update-wenjianImg5">-->
+<!--                        <input type="file" id="fileInput78" name="file" multiple="multiple"-->
+<!--                               th:multiple="multiple" data-show-caption="true" data-required="1">-->
+<!--                    </form>-->
+<!--                    <label for="update-wenjianImg6">文件(图片)</label>-->
+<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"-->
+<!--                          enctype="multipart/form-data" id="update-wenjianImg6">-->
+<!--                        <input type="file" id="fileInput79" name="file" multiple="multiple"-->
+<!--                               th:multiple="multiple" data-show-caption="true" data-required="1">-->
+<!--                    </form>-->
+<!--                    <label for="update-wenjianImg7">文件(图片)</label>-->
+<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"-->
+<!--                          enctype="multipart/form-data" id="update-wenjianImg7">-->
+<!--                        <input type="file" id="fileInput80" name="file" multiple="multiple"-->
+<!--                               th:multiple="multiple" data-show-caption="true" data-required="1">-->
+<!--                    </form>-->
+<!--                    <label for="update-wenjianImg8">文件(图片)</label>-->
+<!--                    <form th:action="@{https://huaqunwechar.com:9076/file/upload}" method="post"-->
+<!--                          enctype="multipart/form-data" id="update-wenjianImg8">-->
+<!--                        <input type="file" id="fileInput81" name="file" multiple="multiple"-->
+<!--                               th:multiple="multiple" data-show-caption="true" data-required="1">-->
+<!--                    </form>-->
                     <div class="row justify-content-evenly">
                         <div class="col-4">
                             <div class="form-group">
