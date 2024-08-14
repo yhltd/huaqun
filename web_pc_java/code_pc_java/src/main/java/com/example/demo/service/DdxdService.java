@@ -16,6 +16,7 @@ public interface DdxdService extends IService<ddxd> {
      * 查询所有
      */
     List<ddxd> getList();
+    List<ddxd> getListdjbh(String djbh);
 
     List<ddxd> getListByName(String khmc);
 
@@ -41,10 +42,10 @@ public interface DdxdService extends IService<ddxd> {
     /**
      * 删除
      *
-     * @param idList 根据id集合删除
+//     * @param idList 根据id集合删除
      * @return 是否删除成功
      */
-    boolean delete(List<Integer> idList);
+    boolean delete(String djbh);
 
     /**
      * 添加
@@ -54,5 +55,11 @@ public interface DdxdService extends IService<ddxd> {
     List<ddxd> getListByKhmc(String khmc,String xdrq,String djbh);
 
     ddxd add1(ddxd ddxd);
+
+
+
+    boolean update1(String fj, String gh, String ddcd, String sl, String cxdk, String lcys, String gy
+            , String gl, String bz, String dj, String je, String chicun, String cxdkRight, String summoney, String wcsj, String luruyuan, int id);
+
 
 }

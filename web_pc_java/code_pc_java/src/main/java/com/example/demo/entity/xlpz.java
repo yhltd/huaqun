@@ -89,4 +89,5 @@ public class xlpz {
      * 配送区域
      */
     private String quyu;
+    private String ghxl;
 }

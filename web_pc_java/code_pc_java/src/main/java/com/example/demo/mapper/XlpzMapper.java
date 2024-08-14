@@ -77,4 +77,8 @@ public interface XlpzMapper extends BaseMapper<xlpz> {
 
     @Select("select kucun from dropdowntable")
     List<xlpz> hqkucun();
+
+    @Select("select ghxl from dropdowntable")
+    List<xlpz> ghxl();
+
 }

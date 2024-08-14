@@ -83,6 +83,20 @@ public class DdxdController {
             return ResultInfo.error("错误!");
         }
     }
+    @RequestMapping("/getListdjbh")
+    public ResultInfo getListdjdh(HttpSession session,String djbh) {
+        UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
+        try {
+
+            List<ddxd> getList = ddxdService.getListdjbh(djbh);
+            return ResultInfo.success("获取成功", getList);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            log.error("获取失败：{}", e.getMessage());
+            return ResultInfo.error("错误!");
+        }
+    }
 
     /**
      * 根据客户名称和订单号查询
@@ -281,30 +295,69 @@ public class DdxdController {
     /**
      * 删除
      *
-     * @param map
-     * @return ResultInfo
+//     * @param map
+//     * @return ResultInfo
      */
-    @RequestMapping("/delete")
-    public ResultInfo delete(@RequestBody HashMap map, HttpSession session) {
+//    @RequestMapping("/delete")
+//    public ResultInfo delete(HttpSession session,String djbh) {
+//        UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
+//
+//        if (!(userInfo.getPower().equals("管理员") || userInfo.getPower().equals("超级管理员"))) {
+//            return ResultInfo.error(401, "无权限");
+//        }
+//        try {
+//            System.out.println(djbh);
+//                ddxdService.delete(djbh);
+//            return ResultInfo.success("删除成功", null);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            log.error("删除失败：{}", e.getMessage());
+//            return ResultInfo.error("删除失败");
+//        }
+//    }
+    @RequestMapping(value = "/delete")
+    public ResultInfo delete(HttpSession session,String djbh) {
         UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
-        GsonUtil gsonUtil = new GsonUtil(GsonUtil.toJson(map));
-        List<Integer> idList = GsonUtil.toList(gsonUtil.get("idList"), Integer.class);
         if (!(userInfo.getPower().equals("管理员") || userInfo.getPower().equals("超级管理员"))) {
             return ResultInfo.error(401, "无权限");
         }
         try {
-            for (int i = 0; i < idList.size(); i++) {
-                int this_id = idList.get(i);
-                ddxdService.delete(Collections.singletonList(this_id));
-            }
-            return ResultInfo.success("删除成功", idList);
-        } catch (Exception e) {
+            ddxdService.delete(djbh);
+            return ResultInfo.success("删除成功", null);
+        }catch (Exception e) {
             e.printStackTrace();
             log.error("删除失败：{}", e.getMessage());
-            log.error("参数：{}", idList);
             return ResultInfo.error("删除失败");
         }
     }
+
+
+
+
+
+    @RequestMapping(value = "/update1", method = RequestMethod.POST)
+    public ResultInfo update1(HttpSession session,  String fj, String gh, String ddcd, String sl, String cxdk, String lcys, String gy
+            , String gl, String bz, String dj, String je, String chicun, String cxdkRight, String summoney, String wcsj, String luruyuan ,int id) {
+
+        UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
+        try {
+            ddxdService.update1(fj, gh, ddcd, sl, cxdk, lcys, gy, gl, bz, dj, je, chicun, cxdkRight, summoney, wcsj, luruyuan, id);
+            return ResultInfo.success("添加成功", null);
+        }catch (Exception e) {
+            e.printStackTrace();
+            log.error("修改失败：{}", e.getMessage());
+            return ResultInfo.error("修改失败");
+        }
+    }
+
+
+
+
+
+
+
+
+
 }
     /**
      * 打印

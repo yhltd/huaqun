@@ -22,6 +22,11 @@ public class DdxdImpl extends ServiceImpl<DdxdMapper, ddxd> implements DdxdServi
     }
 
     @Override
+    public List<ddxd> getListdjbh(String djbh) {
+        return ddxdMapper.getListdjbh(djbh);
+    }
+
+    @Override
     public List<ddxd> getListByName(String khmc) {
         return ddxdMapper.getListByName(khmc);
     }
@@ -40,14 +45,18 @@ public class DdxdImpl extends ServiceImpl<DdxdMapper, ddxd> implements DdxdServi
 //    public List<ddxd> getListByKeHu(String khmc) { return ddxdMapper.getListByKeHu(khmc); }
 
     @Override
-    public List<ddxd> queryList(String khmc, String ddh,String ksxdrq ,String jsxdrq ,String azdz ) { return ddxdMapper.queryList(khmc,ddh, ksxdrq , jsxdrq , azdz ); }
+    public List<ddxd> queryList(String khmc, String ddh, String ksxdrq, String jsxdrq, String azdz) {
+        return ddxdMapper.queryList(khmc, ddh, ksxdrq, jsxdrq, azdz);
+    }
 
     @Override
-    public boolean update(ddxd ddxd) { return updateById(ddxd); }
+    public boolean update(ddxd ddxd) {
+        return updateById(ddxd);
+    }
 
     @Override
-    public boolean delete(List<Integer> idList) {
-        return removeByIds(idList);
+    public boolean delete(String djbh) {
+        return ddxdMapper.delete(djbh);
     }
 
     @Override
@@ -56,12 +65,20 @@ public class DdxdImpl extends ServiceImpl<DdxdMapper, ddxd> implements DdxdServi
     }
 
     @Override
-    public List<ddxd> getListByKhmc(String khmc,String xdrq,String djbh) {
-        return ddxdMapper.getListByKhmc(khmc,xdrq,djbh);
+    public List<ddxd> getListByKhmc(String khmc, String xdrq, String djbh) {
+        return ddxdMapper.getListByKhmc(khmc, xdrq, djbh);
     }
+
     @Override
     public ddxd add1(ddxd ddxd) {
         return save(ddxd) ? ddxd : null;
     }
+
+
+    public boolean update1(String fj, String gh, String ddcd, String sl, String cxdk, String lcys, String gy
+            , String gl, String bz, String dj, String je, String chicun, String cxdkRight, String summoney, String wcsj, String luruyuan, int id) {
+        return ddxdMapper.update1(fj, gh, ddcd, sl, cxdk, lcys, gy, gl, bz, dj, je, chicun, cxdkRight, summoney, wcsj, luruyuan, id);
+    }
+
 
 }

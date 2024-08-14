@@ -14,8 +14,11 @@ import java.util.List;
 @Repository
 public interface DdxdMapper extends BaseMapper<ddxd> {
 
-    @Select("select * from lightbelt order by djbh DESC")
+    @Select("select distinct ddh,luruyuan,case when isnull(wancheng,'未审验') = '' then '未审验' else isnull(wancheng,'未审验') end as wancheng,xdrq,djbh,shouhuo,lxdh,shfs,azdz,khmc,case when isnull(fkzt,'未付款') = '' then '未付款' else isnull(fkzt,'未付款') end as fkzt,isnull(hd,'')as hd,case case when isnull(wancheng,'未审验') = '' then '未审验' else isnull(wancheng,'未审验') end when '未审验' then '1' when '优先处理' then '2' when '已审验' then '3' when '正在加工' then '4' when '加工完成' then '5' when '完成' then '6' else shunxu end as shunxu,sum_money,jgczy,wcsj from lightbelt order by shunxu,djbh DESC")
     List<ddxd> getList();
+
+    @Select("select * from lightbelt where djbh=#{djbh} order by djbh DESC")
+    List<ddxd> getListdjbh(String djbh);
 
     @Select("select * from lightbelt where khmc=#{khmc} order by djbh DESC")
     List<ddxd> getListByName(String khmc);
@@ -35,8 +38,8 @@ public interface DdxdMapper extends BaseMapper<ddxd> {
     @Select("select * from lightbelt where khmc like '%'+#{khmc}+'%' and ddh like '%'+#{ddh}+'%' and azdz like '%'+#{azdz}+'%' and xdrq >= #{ksxdrq} and xdrq <= #{jsxdrq}")
     List<ddxd> queryList(String khmc, String ddh,String ksxdrq ,String jsxdrq , String azdz );
 
-    @Delete("delete from lightbelt where id=#{id}")
-    boolean deleteid(int id);
+    @Delete("delete from lightbelt where djbh=#{djbh}")
+    boolean delete(String djbh);
 
     @Update("update lightbelt set khmc=#{khmc},chicun=#{chicun},djbh=#{djbh},shouhuo=#{shouhuo},lxdh=#{lxdh},shfs=#{shfs},azdz=#{azdz},ddh=#{ddh},luruyuan=#{luruyuan},fj=#{fj},gh=#{gh},lcys=#{lcys},ddcd=#{ddcd},sl=#{sl},cxdk=#{cxdk},cxdk_right=#{cxdkright},gy=#{gy},gl=#{gl},bz=#{bz},dj=#{dj},je=#{je} where id=#{id}")
     boolean update(String khmc,String chicun,String xdrq,String djbh,String shouhuo,String lxdh,String shfs,String azdz,String ddh,String luruyuan,String fj,String gh,String lcys,String ddcd,String sl,String cxdk,String cxdkright,String gy,String gl,String bz,String dj,String je ,int id);
@@ -49,6 +52,18 @@ public interface DdxdMapper extends BaseMapper<ddxd> {
 
     @Select("select * from lightbelt where khmc=#{khmc} and xdrq=#{xdrq} and djbh=#{djbh}")
     List<ddxd> getListByKhmc(String khmc,String xdrq,String djbh);
+
+
+
+
+
+    @Update("update lightbelt set fj = #{fj},gh = #{gh},ddcd = #{ddcd},sl = #{sl},cxdk = #{cxdk},lcys = #{lcys},gy = #{gy},gl = #{gl},bz = #{bz},dj = #{dj},je = #{je},chicun = #{chicun},cxdk_right = #{cxdkRight},sum_money = #{summoney},wcsj = #{wcsj},luruyuan = #{luruyuan} where id=#{id}")
+    boolean update1(String fj, String gh, String ddcd, String sl, String cxdk, String lcys, String gy, String gl, String bz, String dj, String je, String chicun, String cxdkRight, String summoney, String wcsj, String luruyuan ,int id);
+
+
+
+
+
 
 //    @Select("select * from lightbelt where khmc=#{khmc}")
 //    List<ddxd> getListByPsd(String khmc);

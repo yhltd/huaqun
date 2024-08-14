@@ -1,4 +1,12 @@
 var idd;
+let select = [];
+let select_lcys = [];
+let select_shfs = [];
+let select_gy = [];
+let select_lxc = [];
+let select_gh= [];
+let n = 0;
+let tbl = 0;
 
 function getKhmc() {
     $ajax({
@@ -21,11 +29,13 @@ function getShfs() {
         url: '/xlpz/hqxlShfs',
     }, false, '', function (res) {
         if (res.code == 200) {
-
+            var item = "";
+            select_shfs = res.data
             for (var i = 0; i < res.data.length; i++) {
 
                 $("#add-shfs").append("<option>" + res.data[i].shfs + "</option>");
                 $("#update-shfs").append("<option>" + res.data[i].shfs + "</option>");
+                item = "<option value=\"" + res.data[i].shfs + "\">" + res.data[i].shfs + "</option>"
             }
         }
     })
@@ -37,9 +47,28 @@ function getLxc() {
         url: '/xlpz/hqxllxc',
     }, false, '', function (res) {
         if (res.code == 200) {
+            var item = "";
+            select_lxc = res.data
             for (var i = 0; i < res.data.length; i++) {
                 // $("#add-gh").append("<option>" + res.data[i].lxc + "</option>");
                 $("#update-gh").append("<option>" + res.data[i].lxc + "</option>");
+                item = "<option value=\"" + res.data[i].lxc + "\">" + res.data[i].lxc + "</option>"
+            }
+        }
+    })
+}
+function getGh() {
+    $ajax({
+        type: 'post',
+        url: '/xlpz/ghxl',
+    }, false, '', function (res) {
+        if (res.code == 200) {
+            var item = "";
+            select_gh = res.data
+            for (var i = 0; i < res.data.length; i++) {
+                // $("#add-gh").append("<option>" + res.data[i].lxc + "</option>");
+                $("#update-gh").append("<option>" + res.data[i].ghxl + "</option>");
+                item = "<option value=\"" + res.data[i].ghxl + "\">" + res.data[i].ghxl + "</option>"
             }
         }
     })
@@ -54,6 +83,9 @@ function getDy() {
             for (var i = 0; i < res.data.length; i++) {
                 // $("#add-gh").append("<option>" + res.data[i].dy + "</option>");
                 $("#update-gh").append("<option>" + res.data[i].dy + "</option>");
+                if (res.data[i].dy == "") {
+                    break
+                }
             }
         }
     })
@@ -93,9 +125,16 @@ function getLcys() {
         url: '/xlpz/hqxlLcys',
     }, false, '', function (res) {
         if (res.code == 200) {
+            var item = "";
+            select_lcys = res.data;
             for (var i = 0; i < res.data.length; i++) {
-                $("#add-lcys").append("<option>" + res.data[i].lcys + "</option>");
-                $("#update-lcys").append("<option>" + res.data[i].lcys + "</option>");
+                // $("#add-lcys").append("<option>" + res.data[i].lcys + "</option>");
+                // $("#update-lcys").append("<option>" + res.data[i].lcys + "</option>");
+                item = "<option value=\"" + res.data[i].lcys + "\">" + res.data[i].lcys + "</option>"
+                // item= "<option value=\"" + res.data[i].lcys + "\">" + res.data[i].lcys + "</option>"
+                if (res.data[i].lcys == "") {
+                    break
+                }
             }
         }
     })
@@ -107,14 +146,22 @@ function hqxlGy() {
         url: '/xlpz/hqxlgy',
     }, false, '', function (res) {
         if (res.code == 200) {
+            var item = "";
+            select_gy = res.data;
             for (var i = 0; i < res.data.length; i++) {
-                    // $("#add-gy").append("<option>" + res.data[i].gy + "</option>");
-                    $("#update-gy").append("<option>" + res.data[i].gy + "</option>");
+                // $("#add-gy").append("<option>" + res.data[i].gy + "</option>");
+                // $("#update-gy").append("<option>" + res.data[i].gy + "</option>");
+                // item= "<option value=\"" + res.data[i].gy + "\">" + res.data[i].gy + "</option>"
+                item = "<option value=\"" + res.data[i].gy + "\">" + res.data[i].gy + "</option>"
+                if (res.data[i].gy == "") {
+                    break
+                }
             }
         }
     })
 }
-function disGy(){
+
+function disGy() {
     document.getElementById("add-gy").setAttribute("disabled", "true")
     document.getElementById("update-gy").setAttribute("disabled", "true");
 }
@@ -190,7 +237,59 @@ function getSelectGy() {
     elementupdate.innerHTML = "<label for='update-gy'>光源</label><select id='update-gy' name='gy' class='form-control'><option>--请选择--</option></select>";
 }
 
+function panduan(){
+    var table = document.getElementById("ddxddjbhTable")
+    var tbe = table.rows.length;
+    for(i=0;i<tbe;i++){
+        $(document).ready(function () {
+            $('#fj'+table.rows[i].id).on('change', function () {
+                var selectedValue = $(this).val();
+                var select = document.getElementById('gh'+table.rows[i].id);
+                if (selectedValue === '房间柜号') {
+                    // select.innerHTML = '';
+                    getInputGh()
+                    getInputLcys()
+                    getInputGy()
+                    // disGy()
+                } else if (selectedValue === '铝型材') {
+                    select.innerHTML = '';
+                    getSelectGh();
+                    getSelectLcys();
+                    getInputGy();
+                    getLxc();
+                    getLcys();
+                    // disGy();
+                } else if (selectedValue === '电源') {
+                    select.innerHTML = '';
+                    getSelectGh();
+                    getSelectLcys();
+                    getSelectGy();
+                    hqxlGy();
+                    getDy();
+                    getLcys();
 
+                } else if (selectedValue === '开关') {
+                    select.innerHTML = '';
+                    getSelectGh();
+                    getSelectLcys();
+                    // getInputGy();
+                    getKg();
+                    getLcys();
+                    disGy();
+                } else if (selectedValue === '配件') {
+                    select.innerHTML = '';
+                    getSelectGh();
+                    getSelectLcys();
+                    // getInputGy();
+                    getPj();
+                    getLcys();
+                    disGy();
+                }
+            })
+        })
+
+    }
+}
 $(document).ready(function () {
     $('#add-fj').on('change', function () {
         var selectedValue = $(this).val();
@@ -296,6 +395,7 @@ function getJe() {
 
     document.getElementById("add-je").value = je;
 }
+
 function getupJe() {
     var ddcd = parseFloat(document.getElementById('update-ddcd').value);
     var sl = parseFloat(document.getElementById('update-sl').value);
@@ -310,26 +410,27 @@ function getupGl() {
     var gl = Math.ceil(ddcd / 1000 * sl * 12);
     document.getElementById("update-gl").value = gl;
 }
+
 function getupkailiao() {
     var ddcd = parseFloat(document.getElementById('update-ddcd').value);
-        $ajax({
-            type: 'post',
-            url: '/ddxd/getkailiao',
-        }, false, '', function (res) {
-            if (res.code == 200) {
-                   for(var i=0;i<res.data.length;i++) {
-                       var name=res.data[i].name;
-                       var gh = document.getElementById('update-gh').value
-                    if (name == gh) {
-                        var klcc=res.data[i].chicun;
-                        var chicun=ddcd-klcc;
-                        // document.getElementById("add-chicun").value = chicun;
-                        document.getElementById("update-chicun").value = chicun;
-                    }
+    $ajax({
+        type: 'post',
+        url: '/ddxd/getkailiao',
+    }, false, '', function (res) {
+        if (res.code == 200) {
+            for (var i = 0; i < res.data.length; i++) {
+                var name = res.data[i].name;
+                var gh = document.getElementById('update-gh').value
+                if (name == gh) {
+                    var klcc = res.data[i].chicun;
+                    var chicun = ddcd - klcc;
+                    // document.getElementById("add-chicun").value = chicun;
+                    document.getElementById("update-chicun").value = chicun;
                 }
             }
+        }
 
-        })
+    })
 
 }
 
@@ -358,10 +459,39 @@ function getList() {
     })
 }
 
+// function getList2() {
+//     djbh:document.getElementById("add-djbh").value
+//     $ajax({
+//         type: 'post',
+//         url: '/ddxd/getListdjbh',
+//         data:{
+//             djbh:djbh
+//         }
+//     }, false, '', function (res) {
+//         if (res.code == 200) {
+//             setTable2(res.data);
+//             $("#ddxddjbhTable").colResizable({
+//                 liveDrag: true,
+//                 gripInnerHtml: "<div class='grip'></div>",
+//                 draggingClass: "dragging",
+//                 resizeMode: 'fit'
+//             });
+//             for (i = 0; i <= res.data.id; i++) {
+//                 idd = i;
+//             }
+//         }
+//     })
+// }
+
+
 $(function () {
     getList();
     getKhmc();
     getShfs();
+    getLcys();
+    getDy();
+    hqxlGy();
+    getGh();
     // this_kuan = $('table').width();
     //打印
     // $('#print-btn').click(function () {
@@ -455,6 +585,66 @@ $(function () {
         })
     });
 
+
+    $('#add-up-btn').click(function () {
+        for (i = 0; i < n; i = i + 1) {
+            let c = parseFloat($('#id1').val()) + i
+            var q = c.toString();
+            var fj = $('#fj' + q).val();
+            var gh = $('#gh' + q).val();
+            var ddcd = $('#ddcd' + q).val();
+            var sl = $('#sl' + q).val();
+            var d = parseFloat(ddcd);
+            var s = parseFloat(sl);
+            var cxdk = $('#cxdk' + q).val();
+            var lcys = $('#lcys' + q).val();
+            var gy = $('#gy' + q).val();
+            var g = Math.ceil(d / 1000 * s * 12);
+            var gl = g.toString();
+            var bz = $('#bz' + q).val();
+            var dj = $('#dj' + q).val();
+            var j = d * 1 / 1000 * s;
+            var je = j.toString();
+            var chicun = $('#chicun' + q).val();
+            var cxdkRight = $('#cxdkRight' + q).val();
+            var sumMoney = $('#sumMoney' + q).val();
+            var wcsj = $('#wcsj' + q).val();
+            var luruyuan = $('#luruyuan' + q).val();
+
+            $ajax({
+                type: 'post',
+                url: '/ddxd/update1',
+                data: {
+                    fj: fj,
+                    gh: gh,
+                    ddcd: ddcd,
+                    sl: sl,
+                    cxdk: cxdk,
+                    lcys: lcys,
+                    gy: gy,
+                    gl: gl,
+                    bz: bz,
+                    dj: dj,
+                    je: je,
+                    chicun: chicun,
+                    cxdkRight: cxdkRight,
+                    sumMoney: sumMoney,
+                    wcsj: wcsj,
+                    luruyuan: luruyuan,
+                    id: q,
+                },
+
+            }, false, '', function (res) {
+                swal("", res.msg, "success");
+                $('#add-modal').modal('hide');
+                getList();
+
+            })
+
+        }
+    })
+
+
     //刷新
     $("#refresh-btn").click(function () {
         getList();
@@ -463,19 +653,41 @@ $(function () {
     //点击新增按钮显示弹窗
     $("#add-btn").click(function () {
         $('#add-modal').modal('show');
-        getToken()
-        getInputGh()
-        getInputLcys()
-        getInputGy()
-    });
+        $ajax({
+            type: 'post',
+            url: '/ddxd/getListdjbh',
+            data: {
+                djbh: "exe"
+            }
+        }, true, '', function (res) {
+            setTable2(res.data)
+            $("#ddxddjbhTable").colResizable({
+                liveDrag: true,
+                gripInnerHtml: "<div class='grip'></div>",
+                draggingClass: "dragging",
+                resizeMode: 'fit'
+            });
+        })
+
+        getToken();
+        getInputGh();
+        getInputLcys();
+        getInputGy();
+    })
+
+    //  djbh=document.getElementById("add-djbh").value
 
     //新增弹窗里点击关闭按钮
     $('#add-close-btn').click(function () {
+
+        $('#add-form')[0].reset();
         $('#add-modal').modal('hide');
+        document.getElementById("cishu").value = 0;
         getList();
     });
 
-    //新增弹窗里点击提交按钮
+
+//新增弹窗里点击提交按钮
     $("#update-add-submit-btn").click(function () {
         getJe();
         getGl();
@@ -518,11 +730,12 @@ $(function () {
             // })
         }
     });
-    //新增一行
+//新增一行
     $("#add-row").click(function () {
+        n++;
         let params = formToJson("#add-form");
-        if (checkForm('#add-form')) {
-            $ajax({
+        // if (checkForm('#add-form')) {
+        $ajax({
                 type: 'post',
                 url: '/ddxd/add1',
                 data: JSON.stringify({
@@ -532,95 +745,133 @@ $(function () {
                 contentType: 'application/json;charset=utf-8'
             }
             , false, '', function (res) {
-                    if (res.code == 200) {
-                        // swal("", res.msg, "success");
-                      addcishu();
+                if (res.code == 200) {
+                    // swal("", res.msg, "success");
 
-                    }
-                })
+                    var djbh = document.getElementById("add-djbh").value;
+                    $ajax({
+                        type: 'post',
+                        url: '/ddxd/getListdjbh',
+                        data: {
+                            djbh: djbh
+                        }
+                    }, false, '', function (res) {
+
+                        setTable2(res.data)
+                        addcishu();
+                        getList();
+
+                    })
+
+                }
+            })
+        // }
+        // var djbh = document.getElementById("add-djbh").value;
+        // $ajax({
+        //         type: 'post',
+        //         url: '/ddxd/getListdjbh',
+        //         data:{
+        //             djbh: djbh
+        //         },
+        //     }
+        //     , false, '', function (res) {
+        //         setTable2(res.data)
+        //     })
+
+        function addcishu() {
+            var spanElement = document.getElementById("cishu");
+            var currentCount = parseInt(spanElement.innerText);
+            spanElement.innerText = currentCount + 1;
         }
-    });
-    function addcishu() {
-        var spanElement = document.getElementById("cishu");
-        var currentCount = parseInt(spanElement.innerText);
-        spanElement.innerText = currentCount + 1;
-    }
 
+    });
     //点击修改按钮显示弹窗
     $('#update-btn').click(function () {
-        getupJe();
-        getupGl();
+
         let rows = getTableSelection('#ddxdTable');
+
         if (rows.length > 1 || rows.length == 0) {
             swal('请选择一条数据修改!');
             return;
         }
         $('#update-modal').modal('show');
         setForm(rows[0].data, '#update-form');
+
         $('#update-khmc').val(rows[0].data.khmc);
         $('#update-xdrq').val(rows[0].data.xdrq);
-        $('#update-djbh').val(rows[0].data.djbh);
+        // $('#update-djbh').val(rows[0].data.djbh);
         $('#update-shouhuo').val(rows[0].data.shouhuo);
         $('#update-lxdh').val(rows[0].data.lxdh);
         $('#update-shfs').val(rows[0].data.shfs);
         $('#update-azdz').val(rows[0].data.azdz);
         $('#update-ddh').val(rows[0].data.ddh);
         $('#update-luruyuan').val(rows[0].data.luruyuan);
-        $('#update-fj').val(rows[0].data.fj);
-        $('#update-gh').val(rows[0].data.gh);
-        $('#update-lcys').val(rows[0].data.lcys);
-        $('#update-ddcd').val(rows[0].data.ddcd);
-        $('#update-sl').val(rows[0].data.sl);
-        $('#update-cxdk').val(rows[0].data.cxdk);
-        $('#update-cxdkRight').val(rows[0].data.cxdkRight);
-        $('#update-gy').val(rows[0].data.gy);
-        $('#update-gl').val(rows[0].data.gl);
-        $('#update-bz').val(rows[0].data.bz);
-        $('#update-dj').val(rows[0].data.dj);
-        $('#update-je').val(rows[0].data.je);
-        $('#update-chicun').val(rows[0].data.chicun);
-        var selectedValue = rows[0].data.fj;
-        var select = document.getElementById('update-gh');
-        if (selectedValue === '房间柜号') {
-            select.innerHTML = '';
-            getSelectGh();
-            getInputLcys();
-            getInputGy();
-            disGy();
-        } else if (selectedValue === '铝型材') {
-            select.innerHTML = '';
-            getLxc();
-            getLcys();
-            disGy();
-            getSelectGh();
-            getSelectLcys();
-            getInputGy();
+        $('#update-djbh').val(rows[0].data.djbh);
+        var djbh = document.getElementById("update-djbh").value;
+        $ajax({
+            type: 'post',
+            url: '/ddxd/getListdjbh',
+            data: {
+                djbh: djbh
+            }
+        }, false, '', function (res) {
 
-        } else if (selectedValue === '电源') {
-            select.innerHTML = '';
-            getSelectGh();
-            getSelectLcys();
-            getSelectGy();
-            hqxlGy();
-            getDy();
-            getLcys();
-        } else if (selectedValue === '开关') {
-            select.innerHTML = '';
-            getSelectGh();
-            getSelectLcys();
-            getInputGy();
-            getKg();
-            getLcys();
-            disGy();
-        } else if (selectedValue === '配件') {
-            select.innerHTML = '';
-            getSelectGh();
-            getSelectLcys();
-            getInputGy();
-            getPj();
-            getLcys();
-            disGy();
-        }
+            setTable3(res.data)
+            for (i=0;i<res.data.length;i++) {
+                document.getElementById("fj" + res.data[i].id).value=res.data[i].fj;
+                document.getElementById("gh"+res.data[i].id).value=res.data[i].gh;
+                document.getElementById("lcys"+res.data[i].id).value=res.data[i].lcys;
+                document.getElementById("gy"+res.data[i].id).value=res.data[i].gy;
+            }
+            $("#ddxddjbhTable1").colResizable({
+                liveDrag: true,
+                gripInnerHtml: "<div class='grip'></div>",
+                draggingClass: "dragging",
+                resizeMode: 'fit'
+            });
+        })
+        // var selectedValue = rows[0].data.fj;
+        // var select = document.getElementById('update-gh');
+        // if (selectedValue === '房间柜号') {
+        //     select.innerHTML = '';
+        //     getSelectGh();
+        //     getInputLcys();
+        //     getInputGy();
+        //     disGy();
+        // } else if (selectedValue === '铝型材') {
+        //     select.innerHTML = '';
+        //     getLxc();
+        //     getLcys();
+        //     disGy();
+        //     getSelectGh();
+        //     getSelectLcys();
+        //     getInputGy();
+        //
+        // } else if (selectedValue === '电源') {
+        //     select.innerHTML = '';
+        //     getSelectGh();
+        //     getSelectLcys();
+        //     getSelectGy();
+        //     hqxlGy();
+        //     getDy();
+        //     getLcys();
+        // } else if (selectedValue === '开关') {
+        //     select.innerHTML = '';
+        //     getSelectGh();
+        //     getSelectLcys();
+        //     getInputGy();
+        //     getKg();
+        //     getLcys();
+        //     disGy();
+        // } else if (selectedValue === '配件') {
+        //     select.innerHTML = '';
+        //     getSelectGh();
+        //     getSelectLcys();
+        //     getInputGy();
+        //     getPj();
+        //     getLcys();
+        //     disGy();
+        // }
 
         // $('#update-gh').val(rows[0].data.gh);
         // $('#update-lcys').val(rows[0].data.lcys);
@@ -638,41 +889,98 @@ $(function () {
 
     //修改弹窗点击关闭按钮
     $('#update-close-btn').click(function () {
+
         $('#update-form')[0].reset();
         $('#update-modal').modal('hide');
     });
 
     //修改弹窗里点击提交按钮
     $('#update-submit-btn').click(function () {
-        // var d1 = document.getElementById('add-djbh').value;
-        getupGl();
-        getupJe();
-        var msg = confirm("确认要修改吗？");
-        if (msg) {
-            if (checkForm('#update-form')) {
-                let params = formToJson('#update-form');
+        var table = document.getElementById("ddxddjbhTable1")
+        var tbl = table.rows.length;
+        for (i = 0; i < tbl; i = i + 1) {
+            let c = parseFloat($('#id2').val()) + i
+            var q = c.toString();
+            var fj = $('#fj' + q).val();
+            var gh = $('#gh' + q).val();
+            var ddcd = $('#ddcd' + q).val();
+            var sl = $('#sl' + q).val();
+            var d = parseFloat(ddcd);
+            var s = parseFloat(sl);
+            var cxdk = $('#cxdk' + q).val();
+            var lcys = $('#lcys' + q).val();
+            var gy = $('#gy' + q).val();
+            var g = Math.ceil(d / 1000 * s * 12);
+            var gl = g.toString();
+            var bz = $('#bz' + q).val();
+            var dj = $('#dj' + q).val();
+            var j = d * 1 / 1000 * s;
+            var je = j.toString();
+            var chicun = $('#chicun' + q).val();
+            var cxdkRight = $('#cxdkRight' + q).val();
+            var sumMoney = $('#sumMoney' + q).val();
+            var wcsj = $('#wcsj' + q).val();
+            var luruyuan = $('#luruyuan' + q).val();
 
-                $ajax({
-                    type: 'post',
-                    url: '/ddxd/update',
-                    data: {
-                        updateJson: JSON.stringify(params),
+            $ajax({
+                type: 'post',
+                url: '/ddxd/update1',
+                data: {
+                    fj: fj,
+                    gh: gh,
+                    ddcd: ddcd,
+                    sl: sl,
+                    cxdk: cxdk,
+                    lcys: lcys,
+                    gy: gy,
+                    gl: gl,
+                    bz: bz,
+                    dj: dj,
+                    je: je,
+                    chicun: chicun,
+                    cxdkRight: cxdkRight,
+                    sumMoney: sumMoney,
+                    wcsj: wcsj,
+                    luruyuan: luruyuan,
+                    id: q,
+                },
 
-                    },
-                    dataType: 'json',
-                    contentType: 'application/json;charset=utf-8'
-                }, false, '', function (res) {
-                    if (res.code == 200) {
-                        swal("", res.msg, "success");
-                        $('#update-close-btn').click();
-                        $('#update-modal').modal('hide');
-                        getList();
-                    } else {
-                        swal("", res.msg, "error");
-                    }
-                })
-            }
+            }, false, '', function (res) {
+                swal("", res.msg, "success");
+                $('#update-modal').modal('hide');
+                getList();
+            })
+
         }
+        // var d1 = document.getElementById('add-djbh').value;
+        // getupGl();
+        // getupJe();
+        // var msg = confirm("确认要修改吗？");
+        // if (msg) {
+        //     if (checkForm('#update-form')) {
+        //         let params = formToJson('#update-form');
+        //
+        //         $ajax({
+        //             type: 'post',
+        //             url: '/ddxd/update',
+        //             data: {
+        //                 updateJson: JSON.stringify(params),
+        //
+        //             },
+        //             dataType: 'json',
+        //             contentType: 'application/json;charset=utf-8'
+        //         }, false, '', function (res) {
+        //             if (res.code == 200) {
+        //                 swal("", res.msg, "success");
+        //                 $('#update-close-btn').click();
+        //                 $('#update-modal').modal('hide');
+        //                 getList();
+        //             } else {
+        //                 swal("", res.msg, "error");
+        //             }
+        //         })
+        //     }
+        // }
     });
 
     //点击删除按钮
@@ -684,18 +992,19 @@ $(function () {
                 swal('请选择要删除的数据！');
                 return;
             }
-            let idList = [];
-            $.each(rows, function (index, row) {
-                idList.push(row.data.id)
-            });
+
+            var bh = rows[0].data.djbh
+            // let idList = [];
+            // $.each(rows, function (index, row) {
+            //     idList.push(row.data.id)
+            // });
             $ajax({
                 type: 'post',
                 url: '/ddxd/delete',
-                data: JSON.stringify({
-                    idList: idList
-                }),
-                dataType: 'json',
-                contentType: 'application/json;charset=utf-8'
+                data: {
+                    djbh: bh
+                },
+
             }, false, '', function (res) {
                 if (res.code == 200) {
                     swal("", res.msg, "success");
@@ -706,7 +1015,9 @@ $(function () {
             })
         }
     })
-});
+
+})
+
 function setTable(data) {
     if ($('#ddxdTable').html != '') {
         $('#ddxdTable').bootstrapTable('load', data);
@@ -790,6 +1101,12 @@ function setTable(data) {
                 align: 'center',
                 sortable: true,
                 width: 100,
+            }, {
+                field: 'shfs',
+                title: 'shfs',
+                align: 'center',
+                sortable: true,
+                width: 0,
             }
             // }, {
             //     field: 'fj',
@@ -883,6 +1200,601 @@ function setTable(data) {
             //         width: 100,
             //     }
 
+        ],
+        onClickRow: function (row, el) {
+            let isSelect = $(el).hasClass('selected')
+            if (isSelect) {
+                $(el).removeClass('selected')
+            } else {
+                $(el).addClass('selected')
+            }
+        }
+    })
+}
+
+
+function setTable2(data) {
+
+    if ($('#ddxddjbhTable').html != '') {
+        $('#ddxddjbhTable').bootstrapTable('load', data);
+    }
+
+    $('#ddxddjbhTable').bootstrapTable({
+
+        data: data,
+        sortStable: true,
+        classes: 'table table-striped table-hover',
+        idField: 'id',
+        pagination: true,
+        pageSize: 15,//单页记录数
+        clickToSelect: true,
+        locale: 'zh-CN',
+        toolbarAlign: 'left',
+        theadClasses: "thead-light",//这里设置表头样式
+        style: 'table-layout:fixed',
+        height: document.body.clientHeight * 0.85,
+        columns: [
+            {
+                field: '',
+                title: '序号',
+                align: 'center',
+                width: 50,
+                formatter: function (value, row, index) {
+                    return index + 1;
+                }
+            }, {
+                field: 'fj',
+                title: '项目类别',
+                align: 'center',
+                sortable: true,
+                width: 100,
+                formatter: function (value, row, index) {
+                    if (value == null) {
+                        value = '';
+                    }
+
+                    return "<select id='fj" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"fj\"" + ")' placeholder='是否月结' type='text' class='form-control'  value='" + value + "'>" +
+                        "<option value=''>请选择项目类别</option>" +
+                        "<option value='铝型材'>铝型材</option>" +
+                        "<option value='房间柜号'>房间柜号</option>" +
+                        "<option value='电源'>电源</option>" +
+                        "<option value='开关'>开关</option>" +
+                        "<option value='配件'>配件</option>" +
+                        "</select>"
+
+                }
+            }, {
+                field: 'gh',
+                title: '项目名称',
+                align: 'center',
+                sortable: true,
+                width: 100,
+                formatter: function (value, row, index) {
+                    if (value == null) {
+                        value = '';
+                    }
+
+                    var this_gh = ""
+                    var select4 = ""
+                    for (var i = 0; i < select_lcys.length; i++) {
+                        this_gh = this_gh + "<option value=\"" + select_gh[i].ghxl + "\" selected=\"selected\">" + select_gh[i].ghxl + "</option>"
+                        select4 = "<select id='gh" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"gh\"" + ")' placeholder='项目名称' type='text' class='form-control'  value='" + value + "'>"
+                        select4 = select4 + this_gh;
+                        select4 = select4 + "<select/>"
+
+                    }
+                    return select4;
+                }
+
+
+                // return "<select id='gh" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"gh\" " + ")' placeholder='项目名称' type='text' class='form-control'  value='" + value + "'>"+"</select>"
+
+            }, {
+                field: 'lcys',
+                title: '铝型材颜色',
+                align: 'center',
+                sortable: true,
+                width: 100,
+                formatter: function (value, row, index) {
+                    if (value == null) {
+                        value = '';
+                    }
+                    var this_lcys = ""
+                    var select2 = ""
+                    for (var i = 0; i < select_lcys.length; i++) {
+                        this_lcys = this_lcys + "<option value=\"" + select_lcys[i].lcys + "\" selected=\"selected\">" + select_lcys[i].lcys + "</option>"
+                        select2 = "<select id='lcys" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"lcys\"" + ")' placeholder='铝材颜色' type='text' class='form-control'  value='" + value + "'>"
+                        select2 = select2 + this_lcys;
+                        select2 = select2 + "<select/>"
+
+                    }
+                    return select2;
+                }
+            }, {
+                field: 'ddcd',
+                title: '灯带长度mm',
+                align: 'center',
+                sortable: true,
+                width: 130,
+                formatter: function (value, row, index) {
+                    if (value == null) {
+                        value = '';
+                    }
+
+                    return "<input id='ddcd" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"ddcd\" " + ")' placeholder='灯带长度' type='text' class='form-control'  value='" + value + "'>"
+                }
+            }, {
+                field: 'sl',
+                title: '数量(支)',
+                align: 'center',
+                sortable: true,
+                width: 100,
+                formatter: function (value, row, index) {
+                    if (value == null) {
+                        value = '';
+                    }
+
+                    return "<input id='sl" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"sl\" " + ")' placeholder='数量' type='text' class='form-control'  value='" + value + "'>"
+                }
+            }, {
+                field: 'cxdk',
+                title: '出线端口左出线',
+                align: 'center',
+                sortable: true,
+                width: 140,
+                formatter: function (value, row, index) {
+                    if (value == null) {
+                        value = '';
+                    }
+
+                    return "<input id='cxdk" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"cxdk\" " + ")' placeholder='出线端口左出线' type='text' class='form-control'  value='" + value + "'>"
+                }
+            }, {
+                field: 'cxdk_right',
+                title: '出线端口右出线',
+                align: 'center',
+                sortable: true,
+                width: 140,
+                formatter: function (value, row, index) {
+                    if (value == null) {
+                        value = '';
+                    }
+                    return "<input id='cxdkRight" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"cxdkRight\" " + ")' placeholder='出线端口右出线' type='text' class='form-control'  value='" + value + "'>"
+                }
+            }, {
+                field: 'gy',
+                title: '光源',
+                align: 'center',
+                sortable: true,
+                width: 80,
+                formatter: function (value, row, index) {
+                    if (value == null) {
+                        value = '';
+                    }
+                    var this_gy = ""
+                    var select3 = ""
+                    for (var i = 0; i < select_gy.length; i++) {
+                        this_gy = this_gy + "<option value=\"" + select_gy[i].gy + "\" selected=\"selected\">" + select_gy[i].gy + "</option>"
+                        select3 = "<select id='gy" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"lcys\"" + ")' placeholder='光源' type='text' class='form-control'  value='" + value + "'>"
+                        select3 = select3 + this_gy;
+                        select3 = select3 + "<select/>"
+
+                    }
+                    return select3;
+                }
+            }, {
+                field: 'gl',
+                title: '功率W',
+                align: 'center',
+                sortable: true,
+                width: 80,
+                formatter: function (value, row, index) {
+                    if (value == null) {
+                        value = '';
+                    }
+                    return "<input id='gl" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"gl\" " + ")' placeholder='功率' type='text' class='form-control'  value='" + value + "'>"
+                }
+            }, {
+                field: 'bz',
+                title: '备注',
+                align: 'center',
+                sortable: true,
+                width: 80,
+                formatter: function (value, row, index) {
+                    if (value == null) {
+                        value = '';
+                    }
+                    return "<input id='bz" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"bz\" " + ")' placeholder='备注' type='text' class='form-control'  value='" + value + "'>"
+                }
+            }, {
+                field: 'dj',
+                title: '单价',
+                align: 'center',
+                sortable: true,
+                width: 80,
+                formatter: function (value, row, index) {
+                    if (value == null) {
+                        value = '';
+                    }
+                    return "<input id='dj" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"dj\" " + ")' placeholder='单价' type='text' class='form-control'  value='" + value + "'>"
+                }
+            }, {
+                field: 'je',
+                title: '金额',
+                align: 'center',
+                sortable: true,
+                width: 80,
+                formatter: function (value, row, index) {
+                    if (value == null) {
+                        value = '';
+                    }
+                    return "<input id='je" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"je\" " + ")' placeholder='金额' type='text' class='form-control'  value='" + value + "'>"
+                }
+            }, {
+                field: 'chicun',
+                title: '开料尺寸',
+                align: 'center',
+                sortable: true,
+                width: 100,
+                formatter: function (value, row, index) {
+                    if (value == null) {
+                        value = '';
+                    }
+                    return "<input id='chicun" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"chicun\" " + ")' placeholder='尺寸' type='text' class='form-control'  value='" + value + "'>"
+                }
+            }
+            // {
+            //     field: 'shouhuo',
+            //     title: '送货地址',
+            //     align: 'center',
+            //     sortable: true,
+            //     width: 100,
+            //     formatter: function (value, row, index) {
+            //         if (value == null) {
+            //             value = '';
+            //         }
+            //         return "<input id='shouhuo" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"shouhuo\" " + ")' placeholder='收货地址' type='text' class='form-control'  value='" + value + "'>"
+            //     }
+            // }
+            , {
+                field: 'lxdh',
+                title: '联系电话',
+                align: 'center',
+                sortable: true,
+                width: 100,
+                formatter: function (value, row, index) {
+                    if (value == null) {
+                        value = '';
+                    }
+                    return "<input id='lxdh" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"lxdh\" " + ")' placeholder='联系电话' type='text' class='form-control'  value='" + value + "'>"
+                }
+            }
+            // , {
+            //     field: 'shfs',
+            //     title: '送货方式',
+            //     align: 'center',
+            //     sortable: true,
+            //     width: 100,
+            //     formatter: function (value, row, index) {
+            //         if (value == null) {
+            //             value = '';
+            //         }
+            //         var this_shfs = ""
+            //         var select4 = ""
+            //         for (var i = 0; i < select_shfs.length; i++) {
+            //             this_shfs = this_shfs + "<option value=\"" + select_shfs[i].shfs + "\" selected=\"selected\">" + select_shfs[i].shfs + "</option>"
+            //             select4 = "<select id='shfs" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"shfs\"" + ")' placeholder='收货方式' type='text' class='form-control'  value='" + value + "'>"
+            //             select4 = select4 + this_shfs;
+            //             select4 = select4 + "<select/>"
+            //
+            //         }
+            //         return select4;
+            //     }
+            //
+            // }
+            , {
+                field: 'id',
+                title: 'id',
+                align: 'center',
+                sortable: true,
+                hidden:true,
+                width: 0,
+                formatter: function (value, row, index) {
+                    if (value == null) {
+                        value = '';
+                    }
+                    var c = row.id
+                    return "<input id='id1' name='id' value='" + c + "' oninput='javascript:columnUpd(" + row.id + "," + "\"id\"" + ")' placeholder='id' type='text' class='form-control'  value='" + value + "'>"
+                }
+            }
+        ],
+        onClickRow: function (row, el) {
+            let isSelect = $(el).hasClass('selected')
+            if (isSelect) {
+                $(el).removeClass('selected')
+            } else {
+                $(el).addClass('selected')
+            }
+        }
+    })
+}
+
+function setTable3(data) {
+    if ($('#ddxddjbhTable1').html != '') {
+        $('#ddxddjbhTable1').bootstrapTable('load', data);
+    }
+    // $(document).ready(function() {
+    //     $('#fj'+row.id).change(function() {
+    //         var selectedValue = $(this).val();
+    //         var $select2 = $('#gh'+row.id);
+    //         $select2.empty();
+    //         if(selectedValue=='铝型材'){
+    //             var this_lcys = ""
+    //             var select4 = ""
+    //             for (var i = 0; i < select_lxc.length; i++) {
+    //                 this_lcys = this_lcys + "<option value=\"" + select_lxc[i].lxc + "\" selected=\"selected\">" + select_lxc[i].lxc + "</option>"
+    //                 select4 = "<select id='lxc" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"lxc\"" + ")' placeholder='铝材颜色' type='text' class='form-control'  value='" + value + "'>"
+    //                 select4 = select4 + this_lxc;
+    //                 select4 = select4 + "<select/>"
+    //
+    //             }
+    //             return select4;
+    //         }
+    //         // else if(selectedValue=='fangjianguihao')
+    //     })
+    // })
+
+    $('#ddxddjbhTable1').bootstrapTable({
+        data: data,
+        sortStable: true,
+        classes: 'table table-striped table-hover',
+        idField: 'id',
+        pagination: true,
+        pageSize: 15,//单页记录数
+        clickToSelect: true,
+        locale: 'zh-CN',
+        toolbarAlign: 'left',
+        theadClasses: "thead-light",//这里设置表头样式
+        style: 'table-layout:fixed',
+        height: document.body.clientHeight * 0.85,
+        columns: [
+            {
+                field: '',
+                title: '序号',
+                align: 'center',
+                width: 50,
+                formatter: function (value, row, index) {
+                    return index + 1;
+                }
+            }, {
+                field: 'fj',
+                title: '项目类别',
+                align: 'center',
+                sortable: true,
+                width: 100,
+                formatter: function (value, row, index) {
+                    if (value == null) {
+                        value = '';
+                    }
+
+                    return "<select id='fj" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"fj\"" + ")' placeholder='是否月结' type='text' class='form-control'  value='" + value + "'>" +
+                        "<option value=''>请选择项目类别</option>" +
+                        "<option value='铝型材'>铝型材</option>" +
+                        "<option value='房间柜号'>房间柜号</option>" +
+                        "<option value='电源'>电源</option>" +
+                        "<option value='开关'>开关</option>" +
+                        "<option value='配件'>配件</option>" +
+                        "</select>"
+
+
+                }
+            }, {
+                field: 'gh',
+                title: '项目名称',
+                align: 'center',
+                sortable: true,
+                width: 100,
+                formatter: function (value, row, index) {
+                    if (value == null) {
+                        value = '';
+                    }
+
+                        var this_gh = ""
+                        var select4 = ""
+                        for (var i = 0; i < select_lcys.length; i++) {
+                            this_gh = this_gh + "<option value=\"" + select_gh[i].ghxl + "\" selected=\"selected\">" + select_gh[i].ghxl + "</option>"
+                            select4 = "<select id='gh" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"gh\"" + ")' placeholder='项目名称' type='text' class='form-control'  value='" + value + "'>"
+                            select4 = select4 + this_gh;
+                            select4 = select4 + "<select/>"
+
+                        }
+                        return select4;
+                    }
+
+
+                    // return "<select id='gh" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"gh\" " + ")' placeholder='项目名称' type='text' class='form-control'  value='" + value + "'>"+"</select>"
+
+            }, {
+                field: 'lcys',
+                title: '铝型材颜色',
+                align: 'center',
+                sortable: true,
+                width: 100,
+                formatter: function (value, row, index) {
+                    if (value == null) {
+                        value = '';
+                    }
+                    var this_lcys = ""
+                    var select2 = ""
+                    for (var i = 0; i < select_lcys.length; i++) {
+                        this_lcys = this_lcys + "<option value=\"" + select_lcys[i].lcys + "\" selected=\"selected\">" + select_lcys[i].lcys + "</option>"
+                        select2 = "<select id='lcys" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"lcys\"" + ")' placeholder='铝材颜色' type='text' class='form-control'  value='" + value + "'>"
+                        select2 = select2 + this_lcys;
+                        select2 = select2 + "<select/>"
+
+                    }
+                    return select2;
+                }
+            }, {
+                field: 'ddcd',
+                title: '灯带长度mm',
+                align: 'center',
+                sortable: true,
+                width: 130,
+                formatter: function (value, row, index) {
+                    if (value == null) {
+                        value = '';
+                    }
+
+                    return "<input id='ddcd" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"ddcd\" " + ")' placeholder='灯带长度' type='text' class='form-control'  value='" + value + "'>"
+                }
+            }, {
+                field: 'sl',
+                title: '数量(支)',
+                align: 'center',
+                sortable: true,
+                width: 100,
+                formatter: function (value, row, index) {
+                    if (value == null) {
+                        value = '';
+                    }
+
+                    return "<input id='sl" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"sl\" " + ")' placeholder='数量' type='text' class='form-control'  value='" + value + "'>"
+                }
+            }, {
+                field: 'cxdk',
+                title: '出线端口左出线',
+                align: 'center',
+                sortable: true,
+                width: 140,
+                formatter: function (value, row, index) {
+                    if (value == null) {
+                        value = '';
+                    }
+
+                    return "<input id='cxdk" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"cxdk\" " + ")' placeholder='出线端口左出线' type='text' class='form-control'  value='" + value + "'>"
+                }
+            }, {
+                field: 'cxdk_right',
+                title: '出线端口右出线',
+                align: 'center',
+                sortable: true,
+                width: 140,
+                formatter: function (value, row, index) {
+                    if (value == null) {
+                        value = '';
+                    }
+                    return "<input id='cxdkRight" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"cxdkRight\" " + ")' placeholder='出线端口右出线' type='text' class='form-control'  value='" + value + "'>"
+                }
+            }, {
+                field: 'gy',
+                title: '光源',
+                align: 'center',
+                sortable: true,
+                width: 80,
+                formatter: function (value, row, index) {
+                    if (value == null) {
+                        value = '';
+                    }
+                    var this_gy = ""
+                    var select3 = ""
+                    for (var i = 0; i < select_gy.length; i++) {
+                        this_gy = this_gy + "<option value=\"" + select_gy[i].gy + "\" selected=\"selected\">" + select_gy[i].gy + "</option>"
+                        select3 = "<select id='gy" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"lcys\"" + ")' placeholder='光源' type='text' class='form-control'  value='" + value + "'>"
+                        select3 = select3 + this_gy;
+                        select3 = select3 + "<select/>"
+
+                    }
+                    return select3;
+                }
+            }, {
+                field: 'gl',
+                title: '功率W',
+                align: 'center',
+                sortable: true,
+                width: 80,
+                formatter: function (value, row, index) {
+                    if (value == null) {
+                        value = '';
+                    }
+                    return "<input id='gl" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"gl\" " + ")' placeholder='功率' type='text' class='form-control'  value='" + value + "'>"
+                }
+            }, {
+                field: 'bz',
+                title: '备注',
+                align: 'center',
+                sortable: true,
+                width: 80,
+                formatter: function (value, row, index) {
+                    if (value == null) {
+                        value = '';
+                    }
+                    return "<input id='bz" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"bz\" " + ")' placeholder='备注' type='text' class='form-control'  value='" + value + "'>"
+                }
+            }, {
+                field: 'dj',
+                title: '单价',
+                align: 'center',
+                sortable: true,
+                width: 80,
+                formatter: function (value, row, index) {
+                    if (value == null) {
+                        value = '';
+                    }
+                    return "<input id='dj" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"dj\" " + ")' placeholder='单价' type='text' class='form-control'  value='" + value + "'>"
+                }
+            }, {
+                field: 'je',
+                title: '金额',
+                align: 'center',
+                sortable: true,
+                width: 80,
+                formatter: function (value, row, index) {
+                    if (value == null) {
+                        value = '';
+                    }
+                    return "<input id='je" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"je\" " + ")' placeholder='金额' type='text' class='form-control'  value='" + value + "'>"
+                }
+            }, {
+                field: 'chicun',
+                title: '开料尺寸',
+                align: 'center',
+                sortable: true,
+                width: 100,
+                formatter: function (value, row, index) {
+                    if (value == null) {
+                        value = '';
+                    }
+                    return "<input id='chicun" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"chicun\" " + ")' placeholder='尺寸' type='text' class='form-control'  value='" + value + "'>"
+                }
+            }
+            , {
+                field: 'lxdh',
+                title: '联系电话',
+                align: 'center',
+                sortable: true,
+                width: 100,
+                formatter: function (value, row, index) {
+                    if (value == null) {
+                        value = '';
+                    }
+                    return "<input id='lxdh" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"lxdh\" " + ")' placeholder='联系电话' type='text' class='form-control'  value='" + value + "'>"
+                }
+            }
+            , {
+                field: 'id',
+                title: 'id',
+                align: 'center',
+                sortable: true,
+                width: 0,
+                formatter: function (value, row, index) {
+                    if (value == null) {
+                        value = '';
+                    }
+                    var c = row.id
+                    return "<input id='id2' name='id' value='" + c + "' oninput='javascript:columnUpd(" + row.id + "," + "\"id\"" + ")' placeholder='id' type='text' class='form-control'  value='" + value + "'>"
+                }
+            }
         ],
         onClickRow: function (row, el) {
             let isSelect = $(el).hasClass('selected')
