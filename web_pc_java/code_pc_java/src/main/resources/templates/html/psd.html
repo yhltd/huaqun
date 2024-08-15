@@ -570,11 +570,17 @@
                         <div class="col-4">
                             <div class="form-group">
                                 <label for="add-wancheng">完成情况</label>
-                                <input id="add-wancheng" name="wancheng" type="text" class="form-control"
-                                       autocomplete="off" data-required="1">
-                                <!--                        <div class="invalid-feedback">-->
-                                <!--                            请输入完成情况！-->
-                                <!--                        </div>-->
+                                <select id="add-wancheng" name="wancheng" class="form-control" autocomplete="off"
+                                        data-required="1">
+                                    <option value="">--请选择配送情况--</option>
+                                    <option value="优先处理">优先处理</option>
+                                    <option value="配货作业中">配货作业中</option>
+                                    <option value="配货完成">配货完成</option>
+                                    <option value="正在配送">正在配送</option>
+                                    <option value="完成">完成</option>
+                                    <option value="未完成-缺货">未完成-缺货</option>
+                                    <option value="未完成-配错货">未完成-配错货</option>
+                                </select>
                             </div>
                         </div>
                         <div class="col-4">
@@ -1913,7 +1919,7 @@
                         <div class="col-4">
                             <div class="form-group">
                                 <label for="update-customerNameRiqi">完成时间</label>
-                                <input id="update-customerNameRiqi" name="customerNameRiqi" type="datetime-local"
+                                <input id="update-customerNameRiqi" name="customerNameRiqi" type="data"
                                        class="form-control" autocomplete="off" disabled>
                                 <div class="invalid-feedback">
                                     请输入完成时间！
@@ -2602,11 +2608,17 @@
                         <div class="col-4">
                             <div class="form-group">
                                 <label for="update-wancheng">完成情况</label>
-                                <input id="update-wancheng" name="wancheng" type="text" class="form-control"
-                                       autocomplete="off" data-required="1">
-                                <!--                        <div class="invalid-feedback">-->
-                                <!--                            请输入完成情况！-->
-                                <!--                        </div>-->
+                                <select id="update-wancheng" name="wancheng" class="form-control" autocomplete="off"
+                                        data-required="1">
+                                    <option value="">--请选择配送情况--</option>
+                                    <option value="优先处理">优先处理</option>
+                                    <option value="配货作业中">配货作业中</option>
+                                    <option value="配货完成">配货完成</option>
+                                    <option value="正在配送">正在配送</option>
+                                    <option value="完成">完成</option>
+                                    <option value="未完成-缺货">未完成-缺货</option>
+                                    <option value="未完成-配错货">未完成-配错货</option>
+                                </select>
                             </div>
                         </div>
                         <div class="col-4">

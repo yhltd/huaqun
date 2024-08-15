@@ -426,7 +426,7 @@ $(function () {
     $('#update-submit-btn').click(function () {
         var msg = confirm("确认要修改吗？");
         if (msg) {
-            if (checkForm('#update-form')) {
+            // if (checkForm('#update-form')) {
                 let params = formToJson('#update-form');
                 $ajax({
                     type: 'post',
@@ -453,7 +453,7 @@ $(function () {
                         swal("", res.msg, "error");
                     }
                 })
-            }
+            // }
         }
     });
 

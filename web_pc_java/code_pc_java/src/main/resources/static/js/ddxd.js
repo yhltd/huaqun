@@ -5,9 +5,13 @@ let select_shfs = [];
 let select_gy = [];
 let select_lxc = [];
 let select_gh= [];
+let select_dy=[];
+let select_kg=[];
+let select_pj=[];
 let n = 0;
 let tbl = 0;
-
+let r=0;
+let select8="";
 function getKhmc() {
     $ajax({
         type: 'post',
@@ -48,7 +52,8 @@ function getLxc() {
     }, false, '', function (res) {
         if (res.code == 200) {
             var item = "";
-            select_lxc = res.data
+            select_lxc = res.data;
+            r=res.data.length;
             for (var i = 0; i < res.data.length; i++) {
                 // $("#add-gh").append("<option>" + res.data[i].lxc + "</option>");
                 $("#update-gh").append("<option>" + res.data[i].lxc + "</option>");
@@ -80,9 +85,12 @@ function getDy() {
         url: '/xlpz/hqxlDy',
     }, false, '', function (res) {
         if (res.code == 200) {
+            var item = "";
+            select_dy = res.data
             for (var i = 0; i < res.data.length; i++) {
                 // $("#add-gh").append("<option>" + res.data[i].dy + "</option>");
                 $("#update-gh").append("<option>" + res.data[i].dy + "</option>");
+                item = "<option value=\"" + res.data[i].dy + "\">" + res.data[i].dy + "</option>"
                 if (res.data[i].dy == "") {
                     break
                 }
@@ -97,9 +105,12 @@ function getKg() {
         url: '/xlpz/hqxlKg',
     }, false, '', function (res) {
         if (res.code == 200) {
+            var item = "";
+            select_kg = res.data
             for (var i = 0; i < res.data.length; i++) {
                 // $("#add-gh").append("<option>" + res.data[i].kg + "</option>");
                 $("#update-gh").append("<option>" + res.data[i].kg + "</option>");
+                item = "<option value=\"" + res.data[i].kg + "\">" + res.data[i].kg + "</option>"
             }
         }
     })
@@ -111,9 +122,12 @@ function getPj() {
         url: '/xlpz/hqxlPj',
     }, false, '', function (res) {
         if (res.code == 200) {
+            var item = "";
+            select_pj = res.data
             for (var i = 0; i < res.data.length; i++) {
                 // $("#add-gh").append("<option>" + res.data[i].pj + "</option>");
                 $("#update-gh").append("<option>" + res.data[i].pj + "</option>");
+                item = "<option value=\"" + res.data[i].pj + "\">" + res.data[i].pj + "</option>"
             }
         }
     })
@@ -166,18 +180,18 @@ function disGy() {
     document.getElementById("update-gy").setAttribute("disabled", "true");
 }
 
-function getInputGh() {
-
-    // var elementadd = document.getElementById("class-add-gh");
-    // elementadd.innerHTML = '';
-    // elementadd.innerHTML = "<label for='add-gh'>项目名称</label><input id='add-gh' name='gh' type='text' class='form-control' autocomplete='off' data-required='1'>";
-
-    var elementupdate = document.getElementById("class-update-gh");
-    // elementupdate.innerHTML = '';
-    elementupdate.innerHTML = "<label for='update-gh'>项目名称</label><input id='update-gh' name='gh' type='text' class='form-control' autocomplete='off' data-required='1'>";
-
-
-}
+// function getInputGh() {
+//
+//     // var elementadd = document.getElementById("class-add-gh");
+//     // elementadd.innerHTML = '';
+//     // elementadd.innerHTML = "<label for='add-gh'>项目名称</label><input id='add-gh' name='gh' type='text' class='form-control' autocomplete='off' data-required='1'>";
+//
+//     var elementupdate = document.getElementById("class-update-gh");
+//     // elementupdate.innerHTML = '';
+//     elementupdate.innerHTML = "<label for='update-gh'>项目名称</label><input id='update-gh' name='gh' type='text' class='form-control' autocomplete='off' data-required='1'>";
+//
+//
+// }
 
 function getInputLcys() {
 
@@ -237,105 +251,7 @@ function getSelectGy() {
     elementupdate.innerHTML = "<label for='update-gy'>光源</label><select id='update-gy' name='gy' class='form-control'><option>--请选择--</option></select>";
 }
 
-function panduan(){
-    var table = document.getElementById("ddxddjbhTable")
-    var tbe = table.rows.length;
-    for(i=0;i<tbe;i++){
-        $(document).ready(function () {
-            $('#fj'+table.rows[i].id).on('change', function () {
-                var selectedValue = $(this).val();
-                var select = document.getElementById('gh'+table.rows[i].id);
-                if (selectedValue === '房间柜号') {
-                    // select.innerHTML = '';
-                    getInputGh()
-                    getInputLcys()
-                    getInputGy()
-                    // disGy()
-                } else if (selectedValue === '铝型材') {
-                    select.innerHTML = '';
-                    getSelectGh();
-                    getSelectLcys();
-                    getInputGy();
-                    getLxc();
-                    getLcys();
-                    // disGy();
-                } else if (selectedValue === '电源') {
-                    select.innerHTML = '';
-                    getSelectGh();
-                    getSelectLcys();
-                    getSelectGy();
-                    hqxlGy();
-                    getDy();
-                    getLcys();
 
-                } else if (selectedValue === '开关') {
-                    select.innerHTML = '';
-                    getSelectGh();
-                    getSelectLcys();
-                    // getInputGy();
-                    getKg();
-                    getLcys();
-                    disGy();
-                } else if (selectedValue === '配件') {
-                    select.innerHTML = '';
-                    getSelectGh();
-                    getSelectLcys();
-                    // getInputGy();
-                    getPj();
-                    getLcys();
-                    disGy();
-                }
-            })
-        })
-
-    }
-}
-$(document).ready(function () {
-    $('#add-fj').on('change', function () {
-        var selectedValue = $(this).val();
-        var select = document.getElementById('add-gh');
-        if (selectedValue === '房间柜号') {
-            // select.innerHTML = '';
-            getInputGh()
-            getInputLcys()
-            getInputGy()
-            // disGy()
-        } else if (selectedValue === '铝型材') {
-            select.innerHTML = '';
-            getSelectGh();
-            getSelectLcys();
-            getInputGy();
-            getLxc();
-            getLcys();
-            // disGy();
-        } else if (selectedValue === '电源') {
-            select.innerHTML = '';
-            getSelectGh();
-            getSelectLcys();
-            getSelectGy();
-            hqxlGy();
-            getDy();
-            getLcys();
-
-        } else if (selectedValue === '开关') {
-            select.innerHTML = '';
-            getSelectGh();
-            getSelectLcys();
-            // getInputGy();
-            getKg();
-            getLcys();
-            disGy();
-        } else if (selectedValue === '配件') {
-            select.innerHTML = '';
-            getSelectGh();
-            getSelectLcys();
-            // getInputGy();
-            getPj();
-            getLcys();
-            disGy();
-        }
-    })
-})
 
 $(document).ready(function () {
     $('#update-fj').on('change', function () {
@@ -488,10 +404,13 @@ $(function () {
     getList();
     getKhmc();
     getShfs();
+    getLxc();
     getLcys();
     getDy();
     hqxlGy();
     getGh();
+    getKg();
+    getPj();
     // this_kuan = $('table').width();
     //打印
     // $('#print-btn').click(function () {
@@ -591,7 +510,11 @@ $(function () {
             let c = parseFloat($('#id1').val()) + i
             var q = c.toString();
             var fj = $('#fj' + q).val();
-            var gh = $('#gh' + q).val();
+            if($('#gh' + q).val()==null || $('#gh' + q).val()==""){
+                var gh=$('#gh1' + q).val()
+            }else {
+                var gh = $('#gh' + q).val();
+            }
             var ddcd = $('#ddcd' + q).val();
             var sl = $('#sl' + q).val();
             var d = parseFloat(ddcd);
@@ -670,9 +593,9 @@ $(function () {
         })
 
         getToken();
-        getInputGh();
-        getInputLcys();
-        getInputGy();
+        // getInputGh();
+        // getInputLcys();
+        // getInputGy();
     })
 
     //  djbh=document.getElementById("add-djbh").value
@@ -902,7 +825,11 @@ $(function () {
             let c = parseFloat($('#id2').val()) + i
             var q = c.toString();
             var fj = $('#fj' + q).val();
-            var gh = $('#gh' + q).val();
+            if($('#gh' + q).val()==null || $('#gh' + q).val()==""){
+                var gh=$('#gh1' + q).val()
+            }else {
+                var gh = $('#gh' + q).val();
+            }
             var ddcd = $('#ddcd' + q).val();
             var sl = $('#sl' + q).val();
             var d = parseFloat(ddcd);
@@ -1214,11 +1141,120 @@ function setTable(data) {
 
 
 function setTable2(data) {
+// $(document).ready(function() {
+//         $('#fj'+row.id).change(function() {
+//             var selectedValue = $(this).val();
+//             var $select8 = $('#gh'+row.id);
+//             $select8.empty();
+//             if(selectedValue=='铝型材'){
+//                 var this_lcys = ""
+//                 var select4 = ""
+//                 for (var i = 0; i < select_lxc.length; i++) {
+//                     this_lcys = this_lcys + "<option value=\"" + select_lxc[i].lxc + "\" selected=\"selected\">" + select_lxc[i].lxc + "</option>"
+//                     select4 = "<select id='lxc" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"lxc\"" + ")' placeholder='铝材颜色' type='text' class='form-control'  value='" + value + "'>"
+//                     select4 = select4 + this_lxc;
+//                     select4 = select4 + "<select/>"
+//
+//                 }
+//                 return select4;
+//             }
+//             else if(selectedValue=='房间柜号'){
+//                 return "<input id='gh" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"gh\" " + ")' placeholder='项目名称' type='text' class='form-control'  value='" + value + "'>"
+//             }else if(selectedValue=='电源'){
+//                 var this_dy = ""
+//                 var select5 = ""
+//                 for (var i = 0; i < select_dy.length; i++) {
+//                     this_dy = this_dy + "<option value=\"" + select_dy[i].dy + "\" selected=\"selected\">" + select_dy[i].dy + "</option>"
+//                     select5 = "<select id='dy" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"dy\"" + ")' placeholder='电源' type='text' class='form-control'  value='" + value + "'>"
+//                     select5 = select5 + this_dy;
+//                     select5 = select5 + "<select/>"
+//
+//                 }
+//                 return select5;
+//             }else if(selectedValue=='开关'){
+//                 var this_kg = ""
+//                 var select6 = ""
+//                 for (var i = 0; i < select_kg.length; i++) {
+//                     this_kg = this_kg + "<option value=\"" + select_kg[i].kg + "\" selected=\"selected\">" + select_kg[i].kg + "</option>"
+//                     select6 = "<select id='kg" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"kg\"" + ")' placeholder='开关' type='text' class='form-control'  value='" + value + "'>"
+//                     select6 = select6 + this_kg;
+//                     select6 = select6 + "<select/>"
+//
+//                 }
+//                 return select6;
+//             }else if(selectedValue=='配件'){
+//                 var this_pj = ""
+//                 var select7 = ""
+//                 for (var i = 0; i < select_kg.length; i++) {
+//                     this_pj = this_pj + "<option value=\"" + select_pj[i].pj + "\" selected=\"selected\">" + select_pj[i].pj + "</option>"
+//                     select7 = "<select id='pj" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"pj\"" + ")' placeholder='开关' type='text' class='form-control'  value='" + value + "'>"
+//                     select7 = select7 + this_pj;
+//                     select7 = select7 + "<select/>"
+//
+//                 }
+//                 return select7;
+//             }
+//         })
+//     })
 
     if ($('#ddxddjbhTable').html != '') {
         $('#ddxddjbhTable').bootstrapTable('load', data);
     }
-
+    // $(document).ready(function() {
+    //     $('#fj'+row.id).change(function() {
+    //         var selectedValue = $(this).val();
+    //         var $select8 = $('#gh'+row.id);
+    //         $select8.empty();
+    //         if(selectedValue=='铝型材'){
+    //             var this_lcys = ""
+    //             var select4 = ""
+    //             for (var i = 0; i < select_lxc.length; i++) {
+    //                 this_lcys = this_lcys + "<option value=\"" + select_lxc[i].lxc + "\" selected=\"selected\">" + select_lxc[i].lxc + "</option>"
+    //                 select4 = "<select id='lxc" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"lxc\"" + ")' placeholder='铝材颜色' type='text' class='form-control'  value='" + value + "'>"
+    //                 select4 = select4 + this_lxc;
+    //                 select4 = select4 + "<select/>"
+    //
+    //             }
+    //             return select4;
+    //         }
+    //         else if(selectedValue=='房间柜号'){
+    //             return "<input id='gh" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"gh\" " + ")' placeholder='项目名称' type='text' class='form-control'  value='" + value + "'>"
+    //         }else if(selectedValue=='电源'){
+    //             var this_dy = ""
+    //             var select5 = ""
+    //             for (var i = 0; i < select_dy.length; i++) {
+    //                 this_dy = this_dy + "<option value=\"" + select_dy[i].dy + "\" selected=\"selected\">" + select_dy[i].dy + "</option>"
+    //                 select5 = "<select id='dy" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"dy\"" + ")' placeholder='电源' type='text' class='form-control'  value='" + value + "'>"
+    //                 select5 = select5 + this_dy;
+    //                 select5 = select5 + "<select/>"
+    //
+    //             }
+    //             return select5;
+    //         }else if(selectedValue=='开关'){
+    //             var this_kg = ""
+    //             var select6 = ""
+    //             for (var i = 0; i < select_kg.length; i++) {
+    //                 this_kg = this_kg + "<option value=\"" + select_kg[i].kg + "\" selected=\"selected\">" + select_kg[i].kg + "</option>"
+    //                 select6 = "<select id='kg" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"kg\"" + ")' placeholder='开关' type='text' class='form-control'  value='" + value + "'>"
+    //                 select6 = select6 + this_kg;
+    //                 select6 = select6 + "<select/>"
+    //
+    //             }
+    //             return select6;
+    //         }else if(selectedValue=='配件'){
+    //             var this_pj = ""
+    //             var select7 = ""
+    //             for (var i = 0; i < select_kg.length; i++) {
+    //                 this_pj = this_pj + "<option value=\"" + select_pj[i].pj + "\" selected=\"selected\">" + select_pj[i].pj + "</option>"
+    //                 select7 = "<select id='pj" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"pj\"" + ")' placeholder='开关' type='text' class='form-control'  value='" + value + "'>"
+    //                 select7 = select7 + this_pj;
+    //                 select7 = select7 + "<select/>"
+    //
+    //             }
+    //             return select7;
+    //         }
+    //     })
+    // })
     $('#ddxddjbhTable').bootstrapTable({
 
         data: data,
@@ -1252,7 +1288,89 @@ function setTable2(data) {
                     if (value == null) {
                         value = '';
                     }
+                    $(document).ready(function() {
+                        $('#fj'+row.id).change(function() {
+                            var selectedValue = $(this).val();
 
+                            var $select8 = $('#gh'+row.id);
+                            $select8.empty();
+                            if(selectedValue=='铝型材'){
+                                var this_lxc = ""
+                                var this_gy=""
+                                var select4 = ""
+                                var select9 = ""
+                                for (var i = 0; i < r; i++) {
+                                    this_lxc = this_lxc + "<option value=\"" + select_lxc[i].lxc + "\" selected=\"selected\">" + select_lxc[i].lxc + "</option>"
+                                    select4 = "<select id='lxc" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"lxc\"" + ")' placeholder='铝材颜色' type='text' class='form-control'  value='" + value + "'>"
+                                    select4 = select4 + this_lxc;
+                                    select4 = select4 + "<select/>"
+
+                                    $("#gh"+row.id).append("<option>" + select_lxc[i].lxc + "</option>")
+
+                                }
+                                for(var i = 0; i < r; i++) {
+                                    this_gy = this_gy + "<option value=\"" + select_gy[i].gy + "\" selected=\"selected\">" + select_gy[i].gy + "</option>"
+                                    select9 = "<select id='gy" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"gy\"" + ")' placeholder='光源' type='text' class='form-control'  value='" + value + "'>"
+                                    select9 = select9 + this_gy;
+                                    select9 = select9 + "<select/>"
+                                    $("#gy"+row.id).append("<option>" + select_gy[i].gy + "</option>")
+                                }
+                                $("#gh1"+row.id).hide();
+                                $("#gh"+row.id).show();
+                                return select4;
+                            }
+                            else if(selectedValue=='房间柜号'){
+                                // $("#gh"+row.id).remove();
+                                $("#gy"+row.id).remove();
+                                $("#gh"+row.id).value="";
+                                $("#gh"+row.id).hide();
+                                $("#gh1"+row.id).show();
+
+                            }else if(selectedValue=='电源'){
+                                var this_dy = ""
+                                var select5 = ""
+                                for (var i = 0; i < select_dy.length; i++) {
+                                    this_dy = this_dy + "<option value=\"" + select_dy[i].dy + "\" selected=\"selected\">" + select_dy[i].dy + "</option>"
+                                    select5 = "<select id='dy" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"dy\"" + ")' placeholder='电源' type='text' class='form-control'  value='" + value + "'>"
+                                    select5 = select5 + this_dy;
+                                    select5 = select5 + "<select/>"
+                                    $("#gh"+row.id).append("<option>" + select_dy[i].dy + "</option>")
+                                    $("#gy"+row.id).remove();
+                                    $("#gh1"+row.id).hide();
+                                    $("#gh"+row.id).show();
+                                }
+                                return select5;
+                            }else if(selectedValue=='开关'){
+                                var this_kg = ""
+                                var select6 = ""
+                                for (var i = 0; i < select_kg.length; i++) {
+                                    this_kg = this_kg + "<option value=\"" + select_kg[i].kg + "\" selected=\"selected\">" + select_kg[i].kg + "</option>"
+                                    select6 = "<select id='kg" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"kg\"" + ")' placeholder='开关' type='text' class='form-control'  value='" + value + "'>"
+                                    select6 = select6 + this_kg;
+                                    select6 = select6 + "<select/>"
+                                    $("#gh"+row.id).append("<option>" + select_kg[i].kg + "</option>")
+                                    $("#gy"+row.id).remove();
+                                    $("#gh1"+row.id).hide();
+                                    $("#gh"+row.id).show();
+                                }
+                                return select6;
+                            }else if(selectedValue=='配件'){
+                                var this_pj = ""
+                                var select7 = ""
+                                for (var i = 0; i < select_kg.length; i++) {
+                                    this_pj = this_pj + "<option value=\"" + select_pj[i].pj + "\" selected=\"selected\">" + select_pj[i].pj + "</option>"
+                                    select7 = "<select id='pj" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"pj\"" + ")' placeholder='开关' type='text' class='form-control'  value='" + value + "'>"
+                                    select7 = select7 + this_pj;
+                                    select7 = select7 + "<select/>"
+                                    $("#gh"+row.id).append("<option>" + select_pj[i].pj  + "</option>")
+                                    $("#gy"+row.id).remove();
+                                    $("#gh1"+row.id).hide();
+                                    $("#gh"+row.id).show();
+                                }
+                                return select7;
+                            }
+                        })
+                    })
                     return "<select id='fj" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"fj\"" + ")' placeholder='是否月结' type='text' class='form-control'  value='" + value + "'>" +
                         "<option value=''>请选择项目类别</option>" +
                         "<option value='铝型材'>铝型材</option>" +
@@ -1261,7 +1379,6 @@ function setTable2(data) {
                         "<option value='开关'>开关</option>" +
                         "<option value='配件'>配件</option>" +
                         "</select>"
-
                 }
             }, {
                 field: 'gh',
@@ -1274,21 +1391,27 @@ function setTable2(data) {
                         value = '';
                     }
 
-                    var this_gh = ""
-                    var select4 = ""
-                    for (var i = 0; i < select_lcys.length; i++) {
-                        this_gh = this_gh + "<option value=\"" + select_gh[i].ghxl + "\" selected=\"selected\">" + select_gh[i].ghxl + "</option>"
-                        select4 = "<select id='gh" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"gh\"" + ")' placeholder='项目名称' type='text' class='form-control'  value='" + value + "'>"
-                        select4 = select4 + this_gh;
-                        select4 = select4 + "<select/>"
-
-                    }
-                    return select4;
+                   return "<select id='gh" + row.id + "' 'columnUpd(" + row.id + "," + "\"gh\" " + ")' placeholder='项目名称' type='text' class='form-control'  value='" + value + "'>"+
+                       "</select>"
                 }
 
 
                 // return "<select id='gh" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"gh\" " + ")' placeholder='项目名称' type='text' class='form-control'  value='" + value + "'>"+"</select>"
 
+            }
+            , {
+                field: 'gh',
+                title: '房间柜号',
+                align: 'center',
+                sortable: true,
+                width: 130,
+                formatter: function (value, row, index) {
+                    if (value == null) {
+                        value = '';
+                    }
+
+                    return "<input id='gh1" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"gh\" " + ")' placeholder='房间柜号' type='text' class='form-control'  value='" + value + "'>"
+                }
             }, {
                 field: 'lcys',
                 title: '铝型材颜色',
@@ -1371,16 +1494,18 @@ function setTable2(data) {
                     if (value == null) {
                         value = '';
                     }
-                    var this_gy = ""
-                    var select3 = ""
-                    for (var i = 0; i < select_gy.length; i++) {
-                        this_gy = this_gy + "<option value=\"" + select_gy[i].gy + "\" selected=\"selected\">" + select_gy[i].gy + "</option>"
-                        select3 = "<select id='gy" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"lcys\"" + ")' placeholder='光源' type='text' class='form-control'  value='" + value + "'>"
-                        select3 = select3 + this_gy;
-                        select3 = select3 + "<select/>"
-
-                    }
-                    return select3;
+                    // var this_gy = ""
+                    // var select3 = ""
+                    // for (var i = 0; i < select_gy.length; i++) {
+                    //     this_gy = this_gy + "<option value=\"" + select_gy[i].gy + "\" selected=\"selected\">" + select_gy[i].gy + "</option>"
+                    //     select3 = "<select id='gy" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"lcys\"" + ")' placeholder='光源' type='text' class='form-control'  value='" + value + "'>"
+                    //     select3 = select3 + this_gy;
+                    //     select3 = select3 + "<select/>"
+                    //
+                    // }
+                    // return select3;
+                    return "<select id='gy" + row.id + "' 'columnUpd(" + row.id + "," + "\"gy\" " + ")' placeholder='光源' type='text' class='form-control'  value='" + value + "'>"+
+                        "</select>"
                 }
             }, {
                 field: 'gl',
@@ -1576,7 +1701,95 @@ function setTable3(data) {
                     if (value == null) {
                         value = '';
                     }
+                    $(document).ready(function() {
+                        $('#fj'+row.id).change(function() {
+                            var selectedValue = $(this).val();
 
+                            var $select8 = $('#gh'+row.id);
+                            $select8.empty();
+                            if(selectedValue=='铝型材'){
+                                var this_lxc = ""
+                                var this_gy=""
+                                var select4 = ""
+                                var select9 = ""
+                                for (var i = 0; i < r; i++) {
+                                    this_lxc = this_lxc + "<option value=\"" + select_lxc[i].lxc + "\" selected=\"selected\">" + select_lxc[i].lxc + "</option>"
+                                    select4 = "<select id='lxc" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"lxc\"" + ")' placeholder='铝材颜色' type='text' class='form-control'  value='" + value + "'>"
+                                    select4 = select4 + this_lxc;
+                                    select4 = select4 + "<select/>"
+
+                                    $("#gh"+row.id).append("<option>" + select_lxc[i].lxc + "</option>")
+
+                                }
+                                for(var i = 0; i < r; i++) {
+                                    this_gy = this_gy + "<option value=\"" + select_gy[i].gy + "\" selected=\"selected\">" + select_gy[i].gy + "</option>"
+                                    select9 = "<select id='gy" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"gy\"" + ")' placeholder='光源' type='text' class='form-control'  value='" + value + "'>"
+                                    select9 = select9 + this_gy;
+                                    select9 = select9 + "<select/>"
+                                    $("#gy"+row.id).append("<option>" + select_gy[i].gy + "</option>")
+                                }
+                                $("#gh1"+row.id).value="";
+                                $("#gh1"+row.id).hide();
+                                $("#gh"+row.id).show();
+                                return select4;
+                            }
+                            else if(selectedValue=='房间柜号'){
+                                // $("#gh"+row.id).remove();
+                                $("#gy"+row.id).remove();
+                                $("#gh"+row.id).value="";
+                                $("#gh"+row.id).hide();
+                                $("#gh1"+row.id).show();
+
+                            }else if(selectedValue=='电源'){
+                                var this_dy = ""
+                                var select5 = ""
+                                for (var i = 0; i < select_dy.length; i++) {
+                                    this_dy = this_dy + "<option value=\"" + select_dy[i].dy + "\" selected=\"selected\">" + select_dy[i].dy + "</option>"
+                                    select5 = "<select id='dy" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"dy\"" + ")' placeholder='电源' type='text' class='form-control'  value='" + value + "'>"
+                                    select5 = select5 + this_dy;
+                                    select5 = select5 + "<select/>"
+                                    $("#gh"+row.id).append("<option>" + select_dy[i].dy + "</option>")
+                                    $("#gy"+row.id).remove();
+                                    $("#gh1"+row.id).hide();
+                                    $("#gh"+row.id).show();
+                                    $("#gh1"+row.id).value="";
+                                }
+
+                                return select5;
+                            }else if(selectedValue=='开关'){
+                                var this_kg = ""
+                                var select6 = ""
+                                for (var i = 0; i < select_kg.length; i++) {
+                                    this_kg = this_kg + "<option value=\"" + select_kg[i].kg + "\" selected=\"selected\">" + select_kg[i].kg + "</option>"
+                                    select6 = "<select id='kg" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"kg\"" + ")' placeholder='开关' type='text' class='form-control'  value='" + value + "'>"
+                                    select6 = select6 + this_kg;
+                                    select6 = select6 + "<select/>"
+                                    $("#gh"+row.id).append("<option>" + select_kg[i].kg + "</option>")
+                                    $("#gy"+row.id).remove();
+                                    $("#gh1"+row.id).hide();
+                                    $("#gh"+row.id).show();
+                                    $("#gh1"+row.id).value="";
+                                }
+
+                                return select6;
+                            }else if(selectedValue=='配件'){
+                                var this_pj = ""
+                                var select7 = ""
+                                for (var i = 0; i < select_kg.length; i++) {
+                                    this_pj = this_pj + "<option value=\"" + select_pj[i].pj + "\" selected=\"selected\">" + select_pj[i].pj + "</option>"
+                                    select7 = "<select id='pj" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"pj\"" + ")' placeholder='开关' type='text' class='form-control'  value='" + value + "'>"
+                                    select7 = select7 + this_pj;
+                                    select7 = select7 + "<select/>"
+                                    $("#gh"+row.id).append("<option>" + select_pj[i].pj  + "</option>")
+                                    $("#gy"+row.id).remove();
+                                    $("#gh1"+row.id).hide();
+                                    $("#gh"+row.id).show();
+                                    $("#gh1"+row.id).value="";
+                                }
+                                return select7;
+                            }
+                        })
+                    })
                     return "<select id='fj" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"fj\"" + ")' placeholder='是否月结' type='text' class='form-control'  value='" + value + "'>" +
                         "<option value=''>请选择项目类别</option>" +
                         "<option value='铝型材'>铝型材</option>" +
@@ -1599,21 +1812,36 @@ function setTable3(data) {
                         value = '';
                     }
 
-                        var this_gh = ""
-                        var select4 = ""
-                        for (var i = 0; i < select_lcys.length; i++) {
-                            this_gh = this_gh + "<option value=\"" + select_gh[i].ghxl + "\" selected=\"selected\">" + select_gh[i].ghxl + "</option>"
-                            select4 = "<select id='gh" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"gh\"" + ")' placeholder='项目名称' type='text' class='form-control'  value='" + value + "'>"
-                            select4 = select4 + this_gh;
-                            select4 = select4 + "<select/>"
-
-                        }
-                        return select4;
-                    }
+                    // var this_gh = ""
+                    // var select4 = ""
+                    // for (var i = 0; i < select_lcys.length; i++) {
+                    //     this_gh = this_gh + "<option value=\"" + select_gh[i].ghxl + "\" selected=\"selected\">" + select_gh[i].ghxl + "</option>"
+                    //     select4 = "<select id='gh" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"gh\"" + ")' placeholder='项目名称' type='text' class='form-control'  value='" + value + "'>"
+                    //     select4 = select4 + this_gh;
+                    //     select4 = select4 + "<select/>"
+                    //
+                    // }
+                    // return select4;
+                    return "<select id='gh" + row.id + "' 'columnUpd(" + row.id + "," + "\"gh\" " + ")' placeholder='项目名称' type='text' class='form-control'  value='" + value + "'>" +
+                        "</select>"
+                }
 
 
                     // return "<select id='gh" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"gh\" " + ")' placeholder='项目名称' type='text' class='form-control'  value='" + value + "'>"+"</select>"
 
+            }, {
+                field: 'gh',
+                title: '房间柜号',
+                align: 'center',
+                sortable: true,
+                width: 130,
+                formatter: function (value, row, index) {
+                    if (value == null) {
+                        value = '';
+                    }
+
+                    return "<input id='gh1" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"gh\" " + ")' placeholder='房间柜号' type='text' class='form-control'  value='" + value + "'>"
+                }
             }, {
                 field: 'lcys',
                 title: '铝型材颜色',
@@ -2048,9 +2276,9 @@ $('#add-comeAgain-btn').click(function () {
 
 
     // $('#add-modal').modal('show');
-    // getToken()
+    getToken()
     // getInputGh()
-    // getInputLcys()
-    // getInputGy()
+    getInputLcys()
+    getInputGy()
 
 })
