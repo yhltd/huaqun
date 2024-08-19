@@ -148,40 +148,40 @@ public class DdxdController {
 //            return ResultInfo.error("修改失败");
 //        }
 //    }
-    @RequestMapping(value = "/update", method = RequestMethod.POST)
-    public ResultInfo update(@RequestBody String updateJson, String djbh, HttpSession session) {
-        UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
-
-        ddxd ddxd = null;
-
-        try {
-            ddxd = DecodeUtil.decodeToJson(updateJson, ddxd.class);
-                String cs = ddklczService.getchicun(ddxd.getGh());
-                if(cs!=null) {
-                    String ddcd = ddxd.getDdcd();
-                    int intcs = Integer.parseInt(cs);
-                    int intddcd = Integer.parseInt(ddcd);
-                    int chicun = intddcd - intcs;
-                    String chicun1 = Integer.toString(chicun);
-                    ddxd.setChicun(chicun1);
-                }
-            String wancheng = ddxdService.getListBydjbh(ddxd.getId());
-            if (!wancheng.equals("已审验") && !wancheng.equals("完成") || userInfo.getPower().equals("超级管理员") || userInfo.getPower().equals("管理员")) {
-                if (ddxdService.update(ddxd)) {
-                    return ResultInfo.success("修改成功", ddxd);
-                } else {
-                    return ResultInfo.success("修改失败", ddxd);
-                }
-            } else {
-                return ResultInfo.error("修改失败订单状态已审验或完成");
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-            log.error("修改失败：{}", e.getMessage());
-            log.error("参数：{}", userInfo);
-            return ResultInfo.error("修改失败");
-        }
-    }
+//    @RequestMapping(value = "/update", method = RequestMethod.POST)
+//    public ResultInfo update(@RequestBody String updateJson, String djbh, HttpSession session) {
+//        UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
+//
+//        ddxd ddxd = null;
+//
+//        try {
+//            ddxd = DecodeUtil.decodeToJson(updateJson, ddxd.class);
+//                String cs = ddklczService.getchicun(ddxd.getGh());
+//                if(cs!=null) {
+//                    String ddcd = ddxd.getDdcd();
+//                    int intcs = Integer.parseInt(cs);
+//                    int intddcd = Integer.parseInt(ddcd);
+//                    int chicun = intddcd - intcs;
+//                    String chicun1 = Integer.toString(chicun);
+//                    ddxd.setChicun(chicun1);
+//                }
+//            String wancheng = ddxdService.getListBydjbh(ddxd.getId());
+//            if (!wancheng.equals("已审验") && !wancheng.equals("完成") || userInfo.getPower().equals("超级管理员") || userInfo.getPower().equals("管理员")) {
+//                if (ddxdService.update(ddxd)) {
+//                    return ResultInfo.success("修改成功", ddxd);
+//                } else {
+//                    return ResultInfo.success("修改失败", ddxd);
+//                }
+//            } else {
+//                return ResultInfo.error("修改失败订单状态已审验或完成");
+//            }
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            log.error("修改失败：{}", e.getMessage());
+//            log.error("参数：{}", userInfo);
+//            return ResultInfo.error("修改失败");
+//        }
+//    }
 
     @RequestMapping("/print")
     public ResultInfo print(@RequestBody HashMap map, HttpSession session, HttpServletResponse response) {
@@ -331,17 +331,18 @@ public class DdxdController {
         }
     }
 
-
-
-
-
     @RequestMapping(value = "/update1", method = RequestMethod.POST)
     public ResultInfo update1(HttpSession session,  String fj, String gh, String ddcd, String sl, String cxdk, String lcys, String gy
-            , String gl, String bz, String dj, String je, String chicun, String cxdkRight, String summoney, String wcsj, String luruyuan ,int id) {
-
+            , String gl, String bz, String dj, String je, String chicun, String cxdkRight, String summoney, String wcsj, String luruyuan,String wancheng, int id) {
         UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
+//        --------------权限判断有问题
+//        ddxd ddxd = null;
+//        String wancheng1 = ddxdService.getListBydjbh(ddxd.getId());
+//        if (userInfo.getPower().equals("客户") && userInfo.getPower().equals("玻璃厂") || wancheng1.equals("已审验") && wancheng1.equals("完成")) {
+//            return ResultInfo.error(401, "无权限");
+//        }
         try {
-            ddxdService.update1(fj, gh, ddcd, sl, cxdk, lcys, gy, gl, bz, dj, je, chicun, cxdkRight, summoney, wcsj, luruyuan, id);
+            ddxdService.update1(fj, gh, ddcd, sl, cxdk, lcys, gy, gl, bz, dj, je, chicun, cxdkRight, summoney, wcsj, luruyuan, wancheng, id);
             return ResultInfo.success("添加成功", null);
         }catch (Exception e) {
             e.printStackTrace();
@@ -349,35 +350,4 @@ public class DdxdController {
             return ResultInfo.error("修改失败");
         }
     }
-
-
-
-
-
-
-
-
-
 }
-    /**
-     * 打印
-     *
-     * @return ResultInfo
-     */
-//    @RequestMapping("/print")
-//    public ResultInfo print(@RequestBody HashMap map, HttpSession session, HttpServletResponse response) {
-//        try {
-//            GsonUtil gsonUtil = new GsonUtil(GsonUtil.toJson(map));
-//            List<ddxd> nlist = GsonUtil.toList(gsonUtil.get("list"), ddxd.class);
-//            List<ddxd> list=new ArrayList<>();
-//            if(nlist != null){
-//                list= ddxdService.getListByKhmc(nlist.get(0).getKhmc(),nlist.get(0).getXdrq(),nlist.get(0).getDjbh());
-//            }
-//            return ResultInfo.success("成功！",list);
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//            log.error("失败：{}", e.getMessage());
-//            return ResultInfo.error("失败！");
-//        }
-//    }
-//}

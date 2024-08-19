@@ -113,9 +113,9 @@ public class PsdController {
     @RequestMapping(value = "/update", method = RequestMethod.POST)
     public ResultInfo update(@RequestBody String updateJson, HttpSession session) {
         UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
-//        if(!userInfo.getPower().equals("管理员")){
-//            return ResultInfo.error(401, "无权限");
-//        }
+        if(userInfo.getPower().equals("客户")){
+            return ResultInfo.error(401, "无权限");
+        }
         psd psd = null;
         try {
             psd = DecodeUtil.decodeToJson(updateJson, psd.class);
@@ -144,13 +144,13 @@ public class PsdController {
     public ResultInfo add(@RequestBody HashMap map, HttpSession session) {
         UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
         GsonUtil gsonUtil = new GsonUtil(GsonUtil.toJson(map));
-        if (!(userInfo.getPower().equals("管理员")||userInfo.getPower().equals("超级管理员"))) {
+        if (userInfo.getPower().equals("玻璃厂")) {
             return ResultInfo.error(401, "无权限");
         }
         try {
             psd psd = GsonUtil.toEntity(gsonUtil.get("addInfo"), psd.class);
-            System.out.println("===============");
-            System.out.println(psd);
+//            System.out.println("===============");
+//            System.out.println(psd);
             psd.setCustomerNeedImg1("http://yhocn.cn:9076/huaqun_erqi/" + psd.getOrderNumber()+ "-01.jpg");
             psd.setCustomerNeedImg2("http://yhocn.cn:9076/huaqun_erqi/" + psd.getOrderNumber()+ "-02.jpg");
             psd.setCustomerNeedImg3("http://yhocn.cn:9076/huaqun_erqi/" + psd.getOrderNumber()+ "-03.jpg");

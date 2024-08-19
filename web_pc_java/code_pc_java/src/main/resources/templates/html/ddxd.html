@@ -148,7 +148,7 @@
 
                     <div class="row justify-content-evenly">
                         <div class="col-4">
-                            <div class="form-group">
+                            <div class="form-group" id="d-khmc">
                                 <label for="add-khmc">客户名称</label>
                                 <select id="add-khmc" name="khmc" class="form-control">
                                     <option>--请选择--</option>
@@ -478,13 +478,7 @@
                 </form>
             </div>
 
-
-
             <div class="border-top" style="padding: 15px;">
-                <!--                <button id="add-submit-btn" type="button" class="btn" style="background-color: limegreen;color: white">-->
-                <!--                    <i class="bi bi-arrow-bar-up icon"></i>-->
-                <!--                    提交-->
-                <!--                </button>-->
                 <button id="add-row" type="button" class="btn" style="background-color: limegreen;color: white">
                     <i class="bi bi-arrow-bar-up icon"></i>
                     加一行数据
@@ -501,16 +495,7 @@
                     关闭
                 </button>
 
-                <!--                <button id="add-comeAgain-btn" type="button" class="btn btn-primary">-->
-                <!--                    <i class="bi bi-arrow-bar-up icon"></i>-->
-                <!--                    添加一行-->
-                <!--                </button>-->
-                <!--                <button id="add-Specify-btn" type="button" class="btn btn-primary left-margin">-->
-                <!--                    <i class="bi bi-x-circle icon"></i>-->
-                <!--                    指定添加-->
-                <!--                </button>-->
             </div>
-
         </div>
     </div>
 </div>
@@ -528,11 +513,9 @@
 
                 <form id="update-form" class="needs-validation">
 
-
                     <div class="form-group">
                         <input id="id" name="id" type="hidden">
                     </div>
-
 
                     <div class="row justify-content-evenly">
                         <div class="col-4">
@@ -563,17 +546,7 @@
                         </div>
                     </div>
 
-
                     <div class="row justify-content-evenly">
-                        <!--                        <div class="col-4">-->
-                        <!--                            <div class="form-group">-->
-                        <!--                                <label for="update-djbh">单据编号</label>-->
-                        <!--                                <input id="update-djbh" name="djbh" type="text" class="form-control" autocomplete="off">-->
-                        <!--                                <div class="invalid-feedback">-->
-                        <!--                                    请输入单据编号！-->
-                        <!--                                </div>-->
-                        <!--                            </div>-->
-                        <!--                        </div>-->
                         <div class="col-4">
                             <div class="form-group">
                                 <label for="update-shouhuo">送货地址</label>
@@ -602,7 +575,6 @@
                             </div>
                         </div>
                     </div>
-
 
                     <div class="row justify-content-evenly">
                         <div class="col-4">
@@ -635,8 +607,6 @@
                             </div>
                         </div>
                     </div>
-
-
 
                     <div class="table-div border-top">
                         <table id="ddxddjbhTable1"></table>

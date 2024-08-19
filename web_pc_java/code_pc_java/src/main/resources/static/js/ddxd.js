@@ -373,6 +373,35 @@ function getList() {
             }
         }
     })
+
+    $ajax({
+        type: 'post',
+        url: '/user/getPower'
+    }, false, '', function (res) {
+        if (res.code == 200) {
+            var power = res.data;
+            if (power == "客户") {
+                document.getElementById("add-khmc").remove();
+                var div = document.getElementById('d-khmc');
+                var textBox = document.createElement('input');
+                textBox.id='add-khmc';
+                textBox.type='text';
+                textBox.name='khmc';
+                textBox.class='form-control';
+                textBox.autocomplete='off';
+                div.appendChild(textBox);
+                $ajax({
+                    type: 'post',
+                    url: '/psd/getloginname',
+                }, false, '', function (res) {
+                    if (res.code == 200) {
+                        var this_name = res.data;
+                        document.getElementById("add-khmc").value = this_name;
+                    }
+                })
+            }
+        }
+    })
 }
 
 // function getList2() {
@@ -506,6 +535,7 @@ $(function () {
 
 
     $('#add-up-btn').click(function () {
+        // alert("请先填入上方数据，点击加一行数据再点击提交");
         for (i = 0; i < n; i = i + 1) {
             let c = parseFloat($('#id1').val()) + i
             var q = c.toString();
@@ -559,9 +589,11 @@ $(function () {
 
             }, false, '', function (res) {
                 swal("", res.msg, "success");
+                // $('#update-form').reset();
+                // document.getElementById('add-shouhuo').value = "";
+                // document.getElementById('add-lxdh').value = "";
                 $('#add-modal').modal('hide');
                 getList();
-
             })
 
         }
@@ -848,6 +880,7 @@ $(function () {
             var sumMoney = $('#sumMoney' + q).val();
             var wcsj = $('#wcsj' + q).val();
             var luruyuan = $('#luruyuan' + q).val();
+            var wancheng = $('#wancheng' + q).val();
 
             $ajax({
                 type: 'post',
@@ -869,6 +902,7 @@ $(function () {
                     sumMoney: sumMoney,
                     wcsj: wcsj,
                     luruyuan: luruyuan,
+                    wancheng: wancheng,
                     id: q,
                 },
 
@@ -1030,7 +1064,7 @@ function setTable(data) {
                 width: 100,
             }, {
                 field: 'shfs',
-                title: 'shfs',
+                title: '送货方式',
                 align: 'center',
                 sortable: true,
                 width: 0,
@@ -1595,6 +1629,21 @@ function setTable2(data) {
                 }
             }
             // , {
+            //     field: 'wancheng',
+            //     title: '完成状态',
+            //     align: 'center',
+            //     sortable: true,
+            //     width: 130,
+            //     formatter: function (value, row, index) {
+            //         if (value == null) {
+            //             value = '';
+            //         }
+            //         return "<input id='lxdh" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"lxdh\" " + ")' placeholder='联系电话' type='text' class='form-control'  value='" + value + "'>"
+            //     }
+            // }
+
+
+            // , {
             //     field: 'shfs',
             //     title: '送货方式',
             //     align: 'center',
@@ -1995,21 +2044,39 @@ function setTable3(data) {
                     }
                     return "<input id='chicun" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"chicun\" " + ")' placeholder='尺寸' type='text' class='form-control'  value='" + value + "'>"
                 }
-            }
-            , {
+            }, {
                 field: 'lxdh',
                 title: '联系电话',
                 align: 'center',
                 sortable: true,
-                width: 100,
+                width: 130,
                 formatter: function (value, row, index) {
                     if (value == null) {
                         value = '';
                     }
                     return "<input id='lxdh" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"lxdh\" " + ")' placeholder='联系电话' type='text' class='form-control'  value='" + value + "'>"
                 }
-            }
-            , {
+            }, {
+                field: 'wancheng',
+                title: '完成状态',
+                align: 'center',
+                sortable: true,
+                width: 180,
+                formatter: function (value, row, index) {
+                    if (value == null) {
+                        value = '';
+                    }
+                    return "<select id='wancheng" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"wancheng\"" + ")' placeholder='完成状态' type='text' class='form-control'  value='" + value + "'>" +
+                        "<option value=''>--请选择完成状态--</option>" +
+                        "<option value='已审验'>已审验</option>" +
+                        "<option value='未审验'>未审验</option>" +
+                        "<option value='优先处理'>优先处理</option>" +
+                        "<option value='加工完成'>加工完成</option>" +
+                        "<option value='正在加工'>正在加工</option>" +
+                        "<option value='正在加工'>完成</option>" +
+                        "</select>"
+                }
+            }, {
                 field: 'id',
                 title: 'id',
                 align: 'center',

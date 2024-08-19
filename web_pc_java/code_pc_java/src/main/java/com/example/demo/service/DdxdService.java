@@ -56,10 +56,7 @@ public interface DdxdService extends IService<ddxd> {
 
     ddxd add1(ddxd ddxd);
 
-
-
     boolean update1(String fj, String gh, String ddcd, String sl, String cxdk, String lcys, String gy
-            , String gl, String bz, String dj, String je, String chicun, String cxdkRight, String summoney, String wcsj, String luruyuan, int id);
-
+            , String gl, String bz, String dj, String je, String chicun, String cxdkRight, String summoney, String wcsj, String luruyuan, String wancheng, int id);
 
 }

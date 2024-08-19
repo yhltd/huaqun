@@ -76,8 +76,8 @@ public class DdxdImpl extends ServiceImpl<DdxdMapper, ddxd> implements DdxdServi
 
 
     public boolean update1(String fj, String gh, String ddcd, String sl, String cxdk, String lcys, String gy
-            , String gl, String bz, String dj, String je, String chicun, String cxdkRight, String summoney, String wcsj, String luruyuan, int id) {
-        return ddxdMapper.update1(fj, gh, ddcd, sl, cxdk, lcys, gy, gl, bz, dj, je, chicun, cxdkRight, summoney, wcsj, luruyuan, id);
+            , String gl, String bz, String dj, String je, String chicun, String cxdkRight, String summoney, String wcsj, String luruyuan, String wancheng, int id) {
+        return ddxdMapper.update1(fj, gh, ddcd, sl, cxdk, lcys, gy, gl, bz, dj, je, chicun, cxdkRight, summoney, wcsj, luruyuan, wancheng, id);
     }
 
 
