@@ -71,5 +71,9 @@ public class blxd {
      * 完成时间
      */
     private String shendan;
+    /**
+     * 关联
+     */
+    private String guanlian;
 
 }

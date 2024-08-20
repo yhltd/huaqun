@@ -75,7 +75,7 @@
 
 <div class="top-toolbar row">
     <div class="col-md-3 mb-2">
-        <input id="name" type="text" class="form-control" placeholder="姓名" autocomplete="off">
+        <input id="company" type="text" class="form-control" placeholder="公司" autocomplete="off">
     </div>
     <div class="col-md-3 mb-2">
         <input id="pinyin" type="text" class="form-control" placeholder="简码" autocomplete="off">
@@ -203,7 +203,7 @@
                             <div class="form-group">
                                 <label for="add-quyu">区域</label>
 <!--                                <input id="add-quyu" name="quyu" type="text" class="form-control" autocomplete="off" data-required="1">-->
-                                <select id="add-quyu" name="quyu" class="form-control">
+                                <select id="add-quyu" name="quyu" class="form-control" data-required="1">
                                     <option>--请选择--</option>
                                 </select>
                                 <!--                        <div class="invalid-feedback">-->
@@ -388,9 +388,12 @@
                         <div class="col-6">
                             <div class="form-group">
                                 <label for="update-quyu">区域</label>
-                                <input id="update-quyu" name="quyu" type="text" class="form-control" autocomplete="off">
+<!--                                <input id="update-quyu" name="quyu" type="text" class="form-control" autocomplete="off">-->
+                                <select id="update-quyu" name="quyu" class="form-control">
+                                    <option>--请选择--</option>
+                                </select>
                                 <div class="invalid-feedback">
-                                    请输入区域！
+                                    请选择区域！
                                 </div>
                             </div>
                         </div>

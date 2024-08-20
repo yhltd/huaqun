@@ -52,8 +52,8 @@ public class UserInfoImpl extends ServiceImpl<UserInfoMapper, UserInfo> implemen
 
 
     @Override
-    public List<UserInfo> queryList(String name, String pinyin) {
-        return userInfoMapper.queryList(name, pinyin);
+    public List<UserInfo> queryList(String company, String pinyin) {
+        return userInfoMapper.queryList(company, pinyin);
     }
 
     @Override

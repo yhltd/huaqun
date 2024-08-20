@@ -1,6 +1,4 @@
 var idd;
-
-
 function getquyuxl() {
     $ajax({
         type: 'post',
@@ -16,7 +14,7 @@ function getquyuxl() {
     })
 }
 function getList() {
-    $('#name').val("");
+    $('#company').val("");
     $('#pinyin').val("");
     $ajax({
         type: 'post',
@@ -51,13 +49,13 @@ $(function () {
     })
 
     $('#select-btn').click(function () {
-        var name = $('#name').val();
+        var company = $('#company').val();
         var pinyin = $('#pinyin').val();
         $ajax({
             type: 'post',
             url: '/user/queryList',
             data: {
-                name: name,
+                company: company,
                 pinyin: pinyin,
             }
         }, true, '', function (res) {

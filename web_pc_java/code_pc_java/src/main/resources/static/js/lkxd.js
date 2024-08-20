@@ -3092,1428 +3092,1428 @@ $(document).ready(function () {
     })
 })
 
-function getJe() {
-    var jl1 = document.getElementById('add-jiaolian1SelectLeft').value;
-    var jl2 = document.getElementById('add-jiaolian2SelectLeft').value;
-    if ($("#add-jiaolian3SelectLeft").jiaolian3SelectLeft != "" && $("#add-jiaolian3SelectLeft").jiaolian3SelectLeft != undefined) {
-        var jl3 = $("#add-jiaolian3SelectLeft").jiaolian3SelectLeft;
-    }
-    if ($("#add-jiaolian4SelectLeft").jiaolian4SelectLeft != "" && $("#add-jiaolian4SelectLeft").jiaolian4SelectLeft != undefined) {
-        var jl4 = $("#add-jiaolian4SelectLeft").jiaolian4SelectLeft;
-    }
-    if ($("#add-jiaolian5SelectLeft").jiaolian5SelectLeft != "" && $("#add-jiaolian5SelectLeft").jiaolian5SelectLeft != undefined) {
-        var jl5 = $("#add-jiaolian5SelectLeft").jiaolian5SelectLeft;
-    }
-    if ($("#add-jiaolian6SelectLeft").jiaolian6SelectLeft != "" && $("#add-jiaolian6SelectLeft").jiaolian6SelectLeft != undefined) {
-        var jl6 = $("#add-jiaolian6SelectLeft").jiaolian6SelectLeft;
-    }
-    var height = parseFloat(document.getElementById('add-height').value);
-    if (jl1 == '距中') {
-        var jiaolian1Insert = height / 2;
-        document.getElementById("add-jiaolian1SelectRight").value = jl1
-        document.getElementById("add-jiaolian1SelectRight").value = jl1
-
-        document.getElementById("add-jiaolian1InsertLeft").value = jiaolian1Insert;
-
-        document.getElementById("add-jiaolian1InsertRight").value = jiaolian1Insert;
-
-    }
-    if (jl2 == '距中') {
-        var jiaolian2Insert = height / 2;
-        document.getElementById("add-jiaolian2SelectRight").value = jl2
-
-        document.getElementById("add-jiaolian2InsertLeft").value = jiaolian2Insert;
-
-        document.getElementById("add-jiaolian2InsertRight").value = jiaolian2Insert;
-
-    }
-    if (jl3 == '距中') {
-        var jiaolian3Insert = height / 2;
-        document.getElementById("add-jiaolian3SelectRight").value = jl3
-
-        document.getElementById("add-jiaolian3InsertLeft").value = jiaolian3Insert;
-
-        document.getElementById("add-jiaolian3InsertRight").value = jiaolian3Insert;
-
-    }
-    if (jl4 == '距中') {
-        var jiaolian4Insert = height / 2;
-        document.getElementById("add-jiaolian4SelectRight").value = jl4
-
-        document.getElementById("add-jiaolian4InsertLeft").value = jiaolian4Insert;
-
-        document.getElementById("add-jiaolian4InsertRight").value = jiaolian4Insert;
-
-    }
-    if (jl5 == '距中') {
-        var jiaolian5Insert = height / 2;
-        document.getElementById("add-jiaolian5SelectRight").value = jl5
-
-        document.getElementById("add-jiaolian5InsertLeft").value = jiaolian5Insert;
-
-        document.getElementById("add-jiaolian5InsertRight").value = jiaolian5Insert;
-
-    }
-    if (jl6 == '距中') {
-        var jiaolian6Insert = height / 2;
-        document.getElementById("add-jiaolian6SelectRight").value = jl6
-
-        document.getElementById("add-jiaolian6InsertLeft").value = jiaolian6Insert;
-
-        document.getElementById("add-jiaolian6InsertRight").value = jiaolian6Insert;
-
-    }
-
-    var jl11 = document.getElementById('add-jiaolian1SelectLeft1').value;
-    var jl21 = document.getElementById('add-jiaolian2SelectLeft1').value;
-    if ($("#add-jiaolian3SelectLeft1").jiaolian3SelectLeft != "" && $("#add-jiaolian3SelectLeft1").jiaolian3SelectLeft != undefined) {
-        var jl31 = $("#add-jiaolian3SelectLeft").jiaolian3SelectLeft;
-    }
-    if ($("#add-jiaolian4SelectLeft1").jiaolian4SelectLeft != "" && $("#add-jiaolian4SelectLeft1").jiaolian4SelectLeft != undefined) {
-        var jl41 = $("#add-jiaolian4SelectLeft1").jiaolian4SelectLeft;
-    }
-    if ($("#add-jiaolian5SelectLeft1").jiaolian5SelectLeft != "" && $("#add-jiaolian5SelectLeft1").jiaolian5SelectLeft != undefined) {
-        var jl51 = $("#add-jiaolian5SelectLeft1").jiaolian5SelectLeft;
-    }
-    if ($("#add-jiaolian6SelectLeft1").jiaolian6SelectLeft != "" && $("#add-jiaolian6SelectLeft1").jiaolian6SelectLeft != undefined) {
-        var jl61 = $("#add-jiaolian6SelectLeft1").jiaolian6SelectLeft;
-    }
-    var height1 = parseFloat(document.getElementById('add-height1').value);
-    if (jl1 == '距中') {
-        var jiaolian1Insert1 = height1 / 2;
-        document.getElementById("add-jiaolian1SelectRight1").value = jl11
-        document.getElementById("add-jiaolian1SelectRight1").value = jl11
-
-        document.getElementById("add-jiaolian1InsertLeft1").value = jiaolian1Insert1;
-
-        document.getElementById("add-jiaolian1InsertRight1").value = jiaolian1Insert1;
-
-    }
-    if (jl21 == '距中') {
-        var jiaolian2Insert1 = height1 / 2;
-        document.getElementById("add-jiaolian2SelectRight1").value = jl21
-
-        document.getElementById("add-jiaolian2InsertLeft1").value = jiaolian2Insert1;
-
-        document.getElementById("add-jiaolian2InsertRight1").value = jiaolian2Insert1;
-
-    }
-    if (jl31 == '距中') {
-        var jiaolian3Insert1 = height1 / 2;
-        document.getElementById("add-jiaolian3SelectRight1").value = jl31
-
-        document.getElementById("add-jiaolian3InsertLeft1").value = jiaolian3Insert1;
-
-        document.getElementById("add-jiaolian3InsertRight1").value = jiaolian3Insert1;
-
-    }
-    if (jl41 == '距中') {
-        var jiaolian4Insert1 = height1 / 2;
-        document.getElementById("add-jiaolian4SelectRight1").value = jl41
-
-        document.getElementById("add-jiaolian4InsertLeft1").value = jiaolian4Insert1;
-
-        document.getElementById("add-jiaolian4InsertRight1").value = jiaolian4Insert1;
-
-    }
-    if (jl51 == '距中') {
-        var jiaolian5Insert1 = height1 / 2;
-        document.getElementById("add-jiaolian5SelectRight1").value = jl51
-
-        document.getElementById("add-jiaolian5InsertLeft1").value = jiaolian5Insert1;
-
-        document.getElementById("add-jiaolian5InsertRight1").value = jiaolian5Insert1;
-
-    }
-    if (jl61 == '距中') {
-        var jiaolian6Insert1 = height1 / 2;
-        document.getElementById("add-jiaolian6SelectRight1").value = jl61
-
-        document.getElementById("add-jiaolian6InsertLeft1").value = jiaolian6Insert1;
-
-        document.getElementById("add-jiaolian6InsertRight1").value = jiaolian6Insert1;
-
-    }
-
-    var jl12 = document.getElementById('add-jiaolian1SelectLeft2').value;
-    var jl22 = document.getElementById('add-jiaolian2SelectLeft2').value;
-    if ($("#add-jiaolian3SelectLeft2").jiaolian3SelectLeft != "" && $("#add-jiaolian3SelectLeft2").jiaolian3SelectLeft != undefined) {
-        var jl32 = $("#add-jiaolian3SelectLeft2").jiaolian3SelectLeft;
-    }
-    if ($("#add-jiaolian4SelectLeft2").jiaolian4SelectLeft != "" && $("#add-jiaolian4SelectLeft2").jiaolian4SelectLeft != undefined) {
-        var jl42 = $("#add-jiaolian4SelectLeft2").jiaolian4SelectLeft;
-    }
-    if ($("#add-jiaolian5SelectLeft2").jiaolian5SelectLeft != "" && $("#add-jiaolian5SelectLeft2").jiaolian5SelectLeft != undefined) {
-        var jl52 = $("#add-jiaolian5SelectLeft2").jiaolian5SelectLeft;
-    }
-    if ($("#add-jiaolian6SelectLeft2").jiaolian6SelectLeft != "" && $("#add-jiaolian6SelectLeft2").jiaolian6SelectLeft != undefined) {
-        var jl62 = $("#add-jiaolian6SelectLeft2").jiaolian6SelectLeft;
-    }
-    var height2 = parseFloat(document.getElementById('add-height2').value);
-    if (jl2 == '距中') {
-        var jiaolian1Insert2 = height2 / 2;
-        document.getElementById("add-jiaolian1SelectRight2").value = jl12
-        document.getElementById("add-jiaolian1SelectRight2").value = jl12
-
-        document.getElementById("add-jiaolian1InsertLeft2").value = jiaolian1Insert2;
-
-        document.getElementById("add-jiaolian1InsertRight2").value = jiaolian1Insert2;
-
-    }
-    if (jl22 == '距中') {
-        var jiaolian2Insert2 = height2 / 2;
-        document.getElementById("add-jiaolian2SelectRight2").value = jl22
-
-        document.getElementById("add-jiaolian2InsertLeft2").value = jiaolian2Insert2;
-
-        document.getElementById("add-jiaolian2InsertRight2").value = jiaolian2Insert2;
-
-    }
-    if (jl32 == '距中') {
-        var jiaolian3Insert2 = height2 / 2;
-        document.getElementById("add-jiaolian3SelectRight2").value = jl32
-
-        document.getElementById("add-jiaolian3InsertLeft2").value = jiaolian3Insert2;
-
-        document.getElementById("add-jiaolian3InsertRight2").value = jiaolian3Insert2;
-
-    }
-    if (jl42 == '距中') {
-        var jiaolian4Insert2 = height2 / 2;
-        document.getElementById("add-jiaolian4SelectRight2").value = jl42
-
-        document.getElementById("add-jiaolian4InsertLeft2").value = jiaolian4Insert2;
-
-        document.getElementById("add-jiaolian4InsertRight2").value = jiaolian4Insert2;
-
-    }
-    if (jl52 == '距中') {
-        var jiaolian5Insert2 = height2 / 2;
-        document.getElementById("add-jiaolian5SelectRight2").value = jl52
-
-        document.getElementById("add-jiaolian5InsertLeft2").value = jiaolian5Insert2;
-
-        document.getElementById("add-jiaolian5InsertRight2").value = jiaolian5Insert2;
-
-    }
-    if (jl62 == '距中') {
-        var jiaolian6Insert2 = height2 / 2;
-        document.getElementById("add-jiaolian6SelectRight2").value = jl62
-
-        document.getElementById("add-jiaolian6InsertLeft2").value = jiaolian6Insert2;
-
-        document.getElementById("add-jiaolian6InsertRight2").value = jiaolian6Insert2;
-
-    }
-
-    var jl13 = document.getElementById('add-jiaolian1SelectLeft3').value;
-    var jl23 = document.getElementById('add-jiaolian2SelectLeft3').value;
-    if ($("#add-jiaolian3SelectLeft3").jiaolian3SelectLeft != "" && $("#add-jiaolian3SelectLeft3").jiaolian3SelectLeft != undefined) {
-        var jl33 = $("#add-jiaolian3SelectLeft3").jiaolian3SelectLeft;
-    }
-    if ($("#add-jiaolian4SelectLeft3").jiaolian4SelectLeft != "" && $("#add-jiaolian4SelectLeft3").jiaolian4SelectLeft != undefined) {
-        var jl43 = $("#add-jiaolian4SelectLeft3").jiaolian4SelectLeft;
-    }
-    if ($("#add-jiaolian5SelectLeft3").jiaolian5SelectLeft != "" && $("#add-jiaolian5SelectLeft3").jiaolian5SelectLeft != undefined) {
-        var jl53 = $("#add-jiaolian5SelectLeft3").jiaolian5SelectLeft;
-    }
-    if ($("#add-jiaolian6SelectLeft3").jiaolian6SelectLeft != "" && $("#add-jiaolian6SelectLeft3").jiaolian6SelectLeft != undefined) {
-        var jl63 = $("#add-jiaolian6SelectLeft3").jiaolian6SelectLeft;
-    }
-    var height3 = parseFloat(document.getElementById('add-height3').value);
-    if (jl3 == '距中') {
-        var jiaolian1Insert3 = height3 / 2;
-        document.getElementById("add-jiaolian1SelectRight3").value = jl13
-        document.getElementById("add-jiaolian1SelectRight3").value = jl13
-
-        document.getElementById("add-jiaolian1InsertLeft3").value = jiaolian1Insert3;
-
-        document.getElementById("add-jiaolian1InsertRight3").value = jiaolian1Insert3;
-
-    }
-    if (jl23 == '距中') {
-        var jiaolian2Insert3 = height3 / 2;
-        document.getElementById("add-jiaolian2SelectRight3").value = jl23
-
-        document.getElementById("add-jiaolian2InsertLeft3").value = jiaolian2Insert3;
-
-        document.getElementById("add-jiaolian2InsertRight3").value = jiaolian2Insert3;
-
-    }
-    if (jl33 == '距中') {
-        var jiaolian3Insert3 = height3 / 2;
-        document.getElementById("add-jiaolian3SelectRight3").value = jl33
-
-        document.getElementById("add-jiaolian3InsertLeft3").value = jiaolian3Insert3;
-
-        document.getElementById("add-jiaolian3InsertRight3").value = jiaolian3Insert3;
-
-    }
-    if (jl43 == '距中') {
-        var jiaolian4Insert3 = height3 / 2;
-        document.getElementById("add-jiaolian4SelectRight3").value = jl43
-
-        document.getElementById("add-jiaolian4InsertLeft3").value = jiaolian4Insert3;
-
-        document.getElementById("add-jiaolian4InsertRight3").value = jiaolian4Insert3;
-
-    }
-    if (jl53 == '距中') {
-        var jiaolian5Insert3 = height3 / 2;
-        document.getElementById("add-jiaolian5SelectRight3").value = jl53
-
-        document.getElementById("add-jiaolian5InsertLeft3").value = jiaolian5Insert3;
-
-        document.getElementById("add-jiaolian5InsertRight3").value = jiaolian5Insert3;
-
-    }
-    if (jl63 == '距中') {
-        var jiaolian6Insert3 = height3 / 2;
-        document.getElementById("add-jiaolian6SelectRight3").value = jl63
-
-        document.getElementById("add-jiaolian6InsertLeft3").value = jiaolian6Insert3;
-
-        document.getElementById("add-jiaolian6InsertRight3").value = jiaolian6Insert3;
-
-    }
-
-    var jl14 = document.getElementById('add-jiaolian1SelectLeft4').value;
-    var jl24 = document.getElementById('add-jiaolian2SelectLeft4').value;
-    if ($("#add-jiaolian3SelectLeft4").jiaolian3SelectLeft != "" && $("#add-jiaolian3SelectLeft4").jiaolian3SelectLeft != undefined) {
-        var jl34 = $("#add-jiaolian3SelectLeft4").jiaolian3SelectLeft;
-    }
-    if ($("#add-jiaolian4SelectLeft4").jiaolian4SelectLeft != "" && $("#add-jiaolian4SelectLeft4").jiaolian4SelectLeft != undefined) {
-        var jl44 = $("#add-jiaolian4SelectLeft4").jiaolian4SelectLeft;
-    }
-    if ($("#add-jiaolian5SelectLeft4").jiaolian5SelectLeft != "" && $("#add-jiaolian5SelectLeft4").jiaolian5SelectLeft != undefined) {
-        var jl54 = $("#add-jiaolian5SelectLeft4").jiaolian5SelectLeft;
-    }
-    if ($("#add-jiaolian6SelectLeft4").jiaolian6SelectLeft != "" && $("#add-jiaolian6SelectLeft4").jiaolian6SelectLeft != undefined) {
-        var jl64 = $("#add-jiaolian6SelectLeft4").jiaolian6SelectLeft;
-    }
-    var height4 = parseFloat(document.getElementById('add-height4').value);
-    if (jl4 == '距中') {
-        var jiaolian1Insert4 = height4 / 2;
-        document.getElementById("add-jiaolian1SelectRight4").value = jl14
-        document.getElementById("add-jiaolian1SelectRight4").value = jl14
-
-        document.getElementById("add-jiaolian1InsertLeft4").value = jiaolian1Insert4;
-
-        document.getElementById("add-jiaolian1InsertRight4").value = jiaolian1Insert4;
-
-    }
-    if (jl24 == '距中') {
-        var jiaolian2Insert4 = height4 / 2;
-        document.getElementById("add-jiaolian2SelectRight4").value = jl24
-
-        document.getElementById("add-jiaolian2InsertLeft4").value = jiaolian2Insert4;
-
-        document.getElementById("add-jiaolian2InsertRight4").value = jiaolian2Insert4;
-
-    }
-    if (jl34 == '距中') {
-        var jiaolian3Insert4 = height4 / 2;
-        document.getElementById("add-jiaolian3SelectRight4").value = jl34
-
-        document.getElementById("add-jiaolian3InsertLeft4").value = jiaolian3Insert4;
-
-        document.getElementById("add-jiaolian3InsertRight4").value = jiaolian3Insert4;
-
-    }
-    if (jl44 == '距中') {
-        var jiaolian4Insert4 = height4 / 2;
-        document.getElementById("add-jiaolian4SelectRight4").value = jl44
-
-        document.getElementById("add-jiaolian4InsertLeft4").value = jiaolian4Insert4;
-
-        document.getElementById("add-jiaolian4InsertRight4").value = jiaolian4Insert4;
-
-    }
-    if (jl54 == '距中') {
-        var jiaolian5Insert4 = height4 / 2;
-        document.getElementById("add-jiaolian5SelectRight4").value = jl54
-
-        document.getElementById("add-jiaolian5InsertLeft4").value = jiaolian5Insert4;
-
-        document.getElementById("add-jiaolian5InsertRight4").value = jiaolian5Insert4;
-
-    }
-    if (jl64 == '距中') {
-        var jiaolian6Insert4 = height4 / 2;
-        document.getElementById("add-jiaolian6SelectRight4").value = jl64
-
-        document.getElementById("add-jiaolian6InsertLeft4").value = jiaolian6Insert4;
-
-        document.getElementById("add-jiaolian6InsertRight4").value = jiaolian6Insert4;
-
-    }
-
-    var jl15 = document.getElementById('add-jiaolian1SelectLeft5').value;
-    var jl25 = document.getElementById('add-jiaolian2SelectLeft5').value;
-    if ($("#add-jiaolian3SelectLeft5").jiaolian3SelectLeft != "" && $("#add-jiaolian3SelectLeft5").jiaolian3SelectLeft != undefined) {
-        var jl35 = $("#add-jiaolian3SelectLeft5").jiaolian3SelectLeft;
-    }
-    if ($("#add-jiaolian4SelectLeft5").jiaolian4SelectLeft != "" && $("#add-jiaolian4SelectLeft5").jiaolian4SelectLeft != undefined) {
-        var jl45 = $("#add-jiaolian4SelectLeft5").jiaolian4SelectLeft;
-    }
-    if ($("#add-jiaolian5SelectLeft5").jiaolian5SelectLeft != "" && $("#add-jiaolian5SelectLeft5").jiaolian5SelectLeft != undefined) {
-        var jl55 = $("#add-jiaolian5SelectLeft5").jiaolian5SelectLeft;
-    }
-    if ($("#add-jiaolian6SelectLeft5").jiaolian6SelectLeft != "" && $("#add-jiaolian6SelectLeft5").jiaolian6SelectLeft != undefined) {
-        var jl65 = $("#add-jiaolian6SelectLeft5").jiaolian6SelectLeft;
-    }
-    var height5 = parseFloat(document.getElementById('add-height5').value);
-    if (jl5 == '距中') {
-        var jiaolian1Insert5 = height5 / 2;
-        document.getElementById("add-jiaolian1SelectRight5").value = jl15
-        document.getElementById("add-jiaolian1SelectRight5").value = jl15
-
-        document.getElementById("add-jiaolian1InsertLeft5").value = jiaolian1Insert5;
-
-        document.getElementById("add-jiaolian1InsertRight5").value = jiaolian1Insert5;
-
-    }
-    if (jl25 == '距中') {
-        var jiaolian2Insert5 = height5 / 2;
-        document.getElementById("add-jiaolian2SelectRight5").value = jl25
-
-        document.getElementById("add-jiaolian2InsertLeft5").value = jiaolian2Insert5;
-
-        document.getElementById("add-jiaolian2InsertRight5").value = jiaolian2Insert5;
-
-    }
-    if (jl35 == '距中') {
-        var jiaolian3Insert5 = height5 / 2;
-        document.getElementById("add-jiaolian3SelectRight5").value = jl35
-
-        document.getElementById("add-jiaolian3InsertLeft5").value = jiaolian3Insert5;
-
-        document.getElementById("add-jiaolian3InsertRight5").value = jiaolian3Insert5;
-
-    }
-    if (jl45 == '距中') {
-        var jiaolian4Insert5 = height5 / 2;
-        document.getElementById("add-jiaolian4SelectRight5").value = jl45
-
-        document.getElementById("add-jiaolian4InsertLeft5").value = jiaolian4Insert5;
-
-        document.getElementById("add-jiaolian4InsertRight5").value = jiaolian4Insert5;
-
-    }
-    if (jl55 == '距中') {
-        var jiaolian5Insert5 = height5 / 2;
-        document.getElementById("add-jiaolian5SelectRight5").value = jl55
-
-        document.getElementById("add-jiaolian5InsertLeft5").value = jiaolian5Insert5;
-
-        document.getElementById("add-jiaolian5InsertRight5").value = jiaolian5Insert5;
-
-    }
-    if (jl65 == '距中') {
-        var jiaolian6Insert5 = height5 / 2;
-        document.getElementById("add-jiaolian6SelectRight5").value = jl65
-
-        document.getElementById("add-jiaolian6InsertLeft5").value = jiaolian6Insert5;
-
-        document.getElementById("add-jiaolian6InsertRight5").value = jiaolian6Insert5;
-
-    }
-
-    var jl16 = document.getElementById('add-jiaolian1SelectLeft6').value;
-    var jl26 = document.getElementById('add-jiaolian2SelectLeft6').value;
-    if ($("#add-jiaolian3SelectLeft6").jiaolian3SelectLeft != "" && $("#add-jiaolian3SelectLeft6").jiaolian3SelectLeft != undefined) {
-        var jl36 = $("#add-jiaolian3SelectLeft6").jiaolian3SelectLeft;
-    }
-    if ($("#add-jiaolian4SelectLeft6").jiaolian4SelectLeft != "" && $("#add-jiaolian4SelectLeft6").jiaolian4SelectLeft != undefined) {
-        var jl46 = $("#add-jiaolian4SelectLeft6").jiaolian4SelectLeft;
-    }
-    if ($("#add-jiaolian5SelectLeft6").jiaolian5SelectLeft != "" && $("#add-jiaolian5SelectLeft6").jiaolian5SelectLeft != undefined) {
-        var jl56 = $("#add-jiaolian5SelectLeft6").jiaolian5SelectLeft;
-    }
-    if ($("#add-jiaolian6SelectLeft6").jiaolian6SelectLeft != "" && $("#add-jiaolian6SelectLeft6").jiaolian6SelectLeft != undefined) {
-        var jl66 = $("#add-jiaolian6SelectLeft6").jiaolian6SelectLeft;
-    }
-    var height6 = parseFloat(document.getElementById('add-height6').value);
-    if (jl6 == '距中') {
-        var jiaolian1Insert6 = height6 / 2;
-        document.getElementById("add-jiaolian1SelectRight6").value = jl16
-        document.getElementById("add-jiaolian1SelectRight6").value = jl16
-
-        document.getElementById("add-jiaolian1InsertLeft6").value = jiaolian1Insert6;
-
-        document.getElementById("add-jiaolian1InsertRight6").value = jiaolian1Insert6;
-
-    }
-    if (jl26 == '距中') {
-        var jiaolian2Insert6 = height6 / 2;
-        document.getElementById("add-jiaolian2SelectRight6").value = jl26
-
-        document.getElementById("add-jiaolian2InsertLeft6").value = jiaolian2Insert6;
-
-        document.getElementById("add-jiaolian2InsertRight6").value = jiaolian2Insert6;
-
-    }
-    if (jl36 == '距中') {
-        var jiaolian3Insert6 = height6 / 2;
-        document.getElementById("add-jiaolian3SelectRight6").value = jl36
-
-        document.getElementById("add-jiaolian3InsertLeft6").value = jiaolian3Insert6;
-
-        document.getElementById("add-jiaolian3InsertRight6").value = jiaolian3Insert6;
-
-    }
-    if (jl46 == '距中') {
-        var jiaolian4Insert6 = height6 / 2;
-        document.getElementById("add-jiaolian4SelectRight6").value = jl46
-
-        document.getElementById("add-jiaolian4InsertLeft6").value = jiaolian4Insert6;
-
-        document.getElementById("add-jiaolian4InsertRight6").value = jiaolian4Insert6;
-
-    }
-    if (jl56 == '距中') {
-        var jiaolian5Insert6 = height6 / 2;
-        document.getElementById("add-jiaolian5SelectRight6").value = jl56
-
-        document.getElementById("add-jiaolian5InsertLeft6").value = jiaolian5Insert6;
-
-        document.getElementById("add-jiaolian5InsertRight6").value = jiaolian5Insert6;
-
-    }
-    if (jl66 == '距中') {
-        var jiaolian6Insert6 = height6 / 2;
-        document.getElementById("add-jiaolian6SelectRight6").value = jl66
-
-        document.getElementById("add-jiaolian6InsertLeft6").value = jiaolian6Insert6;
-
-        document.getElementById("add-jiaolian6InsertRight6").value = jiaolian6Insert6;
-
-    }
-
-    var jl17 = document.getElementById('add-jiaolian1SelectLeft7').value;
-    var jl27 = document.getElementById('add-jiaolian2SelectLeft7').value;
-    if ($("#add-jiaolian3SelectLeft7").jiaolian3SelectLeft != "" && $("#add-jiaolian3SelectLeft7").jiaolian3SelectLeft != undefined) {
-        var jl37 = $("#add-jiaolian3SelectLeft7").jiaolian3SelectLeft;
-    }
-    if ($("#add-jiaolian4SelectLeft7").jiaolian4SelectLeft != "" && $("#add-jiaolian4SelectLeft7").jiaolian4SelectLeft != undefined) {
-        var jl47 = $("#add-jiaolian4SelectLeft7").jiaolian4SelectLeft;
-    }
-    if ($("#add-jiaolian5SelectLeft7").jiaolian5SelectLeft != "" && $("#add-jiaolian5SelectLeft7").jiaolian5SelectLeft != undefined) {
-        var jl57 = $("#add-jiaolian5SelectLeft7").jiaolian5SelectLeft;
-    }
-    if ($("#add-jiaolian6SelectLeft7").jiaolian6SelectLeft != "" && $("#add-jiaolian6SelectLeft7").jiaolian6SelectLeft != undefined) {
-        var jl67 = $("#add-jiaolian6SelectLeft7").jiaolian6SelectLeft;
-    }
-    var height7 = parseFloat(document.getElementById('add-height7').value);
-    if (jl17 == '距中') {
-        var jiaolian1Insert7 = height7 / 2;
-        document.getElementById("add-jiaolian1SelectRight7").value = jl17
-        document.getElementById("add-jiaolian1SelectRight7").value = jl17
-
-        document.getElementById("add-jiaolian1InsertLeft7").value = jiaolian1Insert7;
-
-        document.getElementById("add-jiaolian1InsertRight7").value = jiaolian1Insert7;
-
-    }
-    if (jl27 == '距中') {
-        var jiaolian2Insert7 = height7 / 2;
-        document.getElementById("add-jiaolian2SelectRight7").value = jl27
-
-        document.getElementById("add-jiaolian2InsertLeft7").value = jiaolian2Insert7;
-
-        document.getElementById("add-jiaolian2InsertRight7").value = jiaolian2Insert7;
-
-    }
-    if (jl37 == '距中') {
-        var jiaolian3Insert7 = height7 / 2;
-        document.getElementById("add-jiaolian3SelectRight7").value = jl37
-
-        document.getElementById("add-jiaolian3InsertLeft7").value = jiaolian3Insert7;
-
-        document.getElementById("add-jiaolian3InsertRight7").value = jiaolian3Insert7;
-
-    }
-    if (jl47 == '距中') {
-        var jiaolian4Insert7 = height7 / 2;
-        document.getElementById("add-jiaolian4SelectRight7").value = jl47
-
-        document.getElementById("add-jiaolian4InsertLeft7").value = jiaolian4Insert7;
-
-        document.getElementById("add-jiaolian4InsertRight7").value = jiaolian4Insert7;
-
-    }
-    if (jl57 == '距中') {
-        var jiaolian5Insert7 = height7 / 2;
-        document.getElementById("add-jiaolian5SelectRight7").value = jl57
-
-        document.getElementById("add-jiaolian5InsertLeft7").value = jiaolian5Insert7;
-
-        document.getElementById("add-jiaolian5InsertRight7").value = jiaolian5Insert7;
-
-    }
-    if (jl67 == '距中') {
-        var jiaolian6Insert7 = height7 / 2;
-        document.getElementById("add-jiaolian6SelectRight7").value = jl67
-
-        document.getElementById("add-jiaolian6InsertLeft7").value = jiaolian6Insert7;
-
-        document.getElementById("add-jiaolian6InsertRight7").value = jiaolian6Insert7;
-
-    }
-
-    var jl18 = document.getElementById('add-jiaolian1SelectLeft8').value;
-    var jl28 = document.getElementById('add-jiaolian2SelectLeft8').value;
-    if ($("#add-jiaolian3SelectLeft8").jiaolian3SelectLeft != "" && $("#add-jiaolian3SelectLeft8").jiaolian3SelectLeft != undefined) {
-        var jl38 = $("#add-jiaolian3SelectLeft8").jiaolian3SelectLeft;
-    }
-    if ($("#add-jiaolian4SelectLeft8").jiaolian4SelectLeft != "" && $("#add-jiaolian4SelectLeft8").jiaolian4SelectLeft != undefined) {
-        var jl48 = $("#add-jiaolian4SelectLeft8").jiaolian4SelectLeft;
-    }
-    if ($("#add-jiaolian5SelectLeft8").jiaolian5SelectLeft != "" && $("#add-jiaolian5SelectLeft8").jiaolian5SelectLeft != undefined) {
-        var jl58 = $("#add-jiaolian5SelectLeft8").jiaolian5SelectLeft;
-    }
-    if ($("#add-jiaolian6SelectLeft8").jiaolian6SelectLeft != "" && $("#add-jiaolian6SelectLeft8").jiaolian6SelectLeft != undefined) {
-        var jl68 = $("#add-jiaolian6SelectLeft8").jiaolian6SelectLeft;
-    }
-    var height8 = parseFloat(document.getElementById('add-height8').value);
-    if (jl18 == '距中') {
-        var jiaolian1Insert8 = height8 / 2;
-        document.getElementById("add-jiaolian1SelectRight8").value = jl18
-        document.getElementById("add-jiaolian1SelectRight8").value = jl18
-
-        document.getElementById("add-jiaolian1InsertLeft8").value = jiaolian1Insert8;
-
-        document.getElementById("add-jiaolian1InsertRight8").value = jiaolian1Insert8;
-
-    }
-    if (jl28 == '距中') {
-        var jiaolian2Insert8 = height8 / 2;
-        document.getElementById("add-jiaolian2SelectRight8").value = jl28
-
-        document.getElementById("add-jiaolian2InsertLeft8").value = jiaolian2Insert8;
-
-        document.getElementById("add-jiaolian2InsertRight8").value = jiaolian2Insert8;
-
-    }
-    if (jl38 == '距中') {
-        var jiaolian3Insert8 = height8 / 2;
-        document.getElementById("add-jiaolian3SelectRight8").value = jl38
-
-        document.getElementById("add-jiaolian3InsertLeft8").value = jiaolian3Insert8;
-
-        document.getElementById("add-jiaolian3InsertRight8").value = jiaolian3Insert8;
-
-    }
-    if (jl48 == '距中') {
-        var jiaolian4Insert8 = height8 / 2;
-        document.getElementById("add-jiaolian4SelectRight8").value = jl48
-
-        document.getElementById("add-jiaolian4InsertLeft8").value = jiaolian4Insert8;
-
-        document.getElementById("add-jiaolian4InsertRight8").value = jiaolian4Insert8;
-
-    }
-    if (jl58 == '距中') {
-        var jiaolian5Insert8 = height8 / 2;
-        document.getElementById("add-jiaolian5SelectRight8").value = jl58
-
-        document.getElementById("add-jiaolian5InsertLeft8").value = jiaolian5Insert8;
-
-        document.getElementById("add-jiaolian5InsertRight8").value = jiaolian5Insert8;
-
-    }
-    if (jl68 == '距中') {
-        var jiaolian6Insert8 = height8 / 2;
-        document.getElementById("add-jiaolian6SelectRight8").value = jl68
-
-        document.getElementById("add-jiaolian6InsertLeft8").value = jiaolian6Insert8;
-
-        document.getElementById("add-jiaolian6InsertRight8").value = jiaolian6Insert8;
-
-    }
-
-    var jl19 = document.getElementById('add-jiaolian1SelectLeft9').value;
-    var jl29 = document.getElementById('add-jiaolian2SelectLeft9').value;
-    if ($("#add-jiaolian3SelectLeft9").jiaolian3SelectLeft != "" && $("#add-jiaolian3SelectLeft9").jiaolian3SelectLeft != undefined) {
-        var jl39 = $("#add-jiaolian3SelectLeft9").jiaolian3SelectLeft;
-    }
-    if ($("#add-jiaolian4SelectLeft9").jiaolian4SelectLeft != "" && $("#add-jiaolian4SelectLeft9").jiaolian4SelectLeft != undefined) {
-        var jl49 = $("#add-jiaolian4SelectLeft9").jiaolian4SelectLeft;
-    }
-    if ($("#add-jiaolian5SelectLeft9").jiaolian5SelectLeft != "" && $("#add-jiaolian5SelectLeft9").jiaolian5SelectLeft != undefined) {
-        var jl59 = $("#add-jiaolian5SelectLeft9").jiaolian5SelectLeft;
-    }
-    if ($("#add-jiaolian6SelectLeft9").jiaolian6SelectLeft != "" && $("#add-jiaolian6SelectLeft9").jiaolian6SelectLeft != undefined) {
-        var jl69 = $("#add-jiaolian6SelectLeft9").jiaolian6SelectLeft;
-    }
-    var height9 = parseFloat(document.getElementById('add-height9').value);
-    if (jl19 == '距中') {
-        var jiaolian1Insert9 = height9 / 2;
-        document.getElementById("add-jiaolian1SelectRight9").value = jl19
-        document.getElementById("add-jiaolian1SelectRight9").value = jl19
-
-        document.getElementById("add-jiaolian1InsertLeft9").value = jiaolian1Insert9;
-
-        document.getElementById("add-jiaolian1InsertRight9").value = jiaolian1Insert9;
-
-    }
-    if (jl29 == '距中') {
-        var jiaolian2Insert9 = height9 / 2;
-        document.getElementById("add-jiaolian2SelectRight9").value = jl29
-
-        document.getElementById("add-jiaolian2InsertLeft9").value = jiaolian2Insert9;
-
-        document.getElementById("add-jiaolian2InsertRight9").value = jiaolian2Insert9;
-
-    }
-    if (jl39 == '距中') {
-        var jiaolian3Insert9 = height9 / 2;
-        document.getElementById("add-jiaolian3SelectRight9").value = jl39
-
-        document.getElementById("add-jiaolian3InsertLeft9").value = jiaolian3Insert9;
-
-        document.getElementById("add-jiaolian3InsertRight9").value = jiaolian3Insert9;
-
-    }
-    if (jl49 == '距中') {
-        var jiaolian4Insert9 = height9 / 2;
-        document.getElementById("add-jiaolian4SelectRight9").value = jl49
-
-        document.getElementById("add-jiaolian4InsertLeft9").value = jiaolian4Insert9;
-
-        document.getElementById("add-jiaolian4InsertRight9").value = jiaolian4Insert9;
-
-    }
-    if (jl59 == '距中') {
-        var jiaolian5Insert9 = height9 / 2;
-        document.getElementById("add-jiaolian5SelectRight9").value = jl59
-
-        document.getElementById("add-jiaolian5InsertLeft9").value = jiaolian5Insert9;
-
-        document.getElementById("add-jiaolian5InsertRight9").value = jiaolian5Insert9;
-
-    }
-    if (jl69 == '距中') {
-        var jiaolian6Insert9 = height9 / 2;
-        document.getElementById("add-jiaolian6SelectRight9").value = jl69
-
-        document.getElementById("add-jiaolian6InsertLeft9").value = jiaolian6Insert9;
-
-        document.getElementById("add-jiaolian6InsertRight9").value = jiaolian6Insert9;
-
-    }
-
-    var jl110 = document.getElementById('add-jiaolian1SelectLeft10').value;
-    var jl210 = document.getElementById('add-jiaolian2SelectLeft10').value;
-    if ($("#add-jiaolian3SelectLeft10").jiaolian3SelectLeft != "" && $("#add-jiaolian3SelectLeft10").jiaolian3SelectLeft != undefined) {
-        var jl310 = $("#add-jiaolian3SelectLeft10").jiaolian3SelectLeft;
-    }
-    if ($("#add-jiaolian4SelectLeft10").jiaolian4SelectLeft != "" && $("#add-jiaolian4SelectLeft10").jiaolian4SelectLeft != undefined) {
-        var jl410 = $("#add-jiaolian4SelectLeft10").jiaolian4SelectLeft;
-    }
-    if ($("#add-jiaolian5SelectLeft10").jiaolian5SelectLeft != "" && $("#add-jiaolian5SelectLeft10").jiaolian5SelectLeft != undefined) {
-        var jl510 = $("#add-jiaolian5SelectLeft10").jiaolian5SelectLeft;
-    }
-    if ($("#add-jiaolian6SelectLeft10").jiaolian6SelectLeft != "" && $("#add-jiaolian6SelectLeft10").jiaolian6SelectLeft != undefined) {
-        var jl610 = $("#add-jiaolian6SelectLeft10").jiaolian6SelectLeft;
-    }
-    var height10 = parseFloat(document.getElementById('add-height10').value);
-    if (jl110 == '距中') {
-        var jiaolian1Insert10 = height10 / 2;
-        document.getElementById("add-jiaolian1SelectRight10").value = jl110
-        document.getElementById("add-jiaolian1SelectRight10").value = jl110
-
-        document.getElementById("add-jiaolian1InsertLeft10").value = jiaolian1Insert10;
-
-        document.getElementById("add-jiaolian1InsertRight10").value = jiaolian1Insert10;
-
-    }
-    if (jl210 == '距中') {
-        var jiaolian2Insert10 = height10 / 2;
-        document.getElementById("add-jiaolian2SelectRight10").value = jl210
-
-        document.getElementById("add-jiaolian2InsertLeft10").value = jiaolian2Insert10;
-
-        document.getElementById("add-jiaolian2InsertRight10").value = jiaolian2Insert10;
-
-    }
-    if (jl310 == '距中') {
-        var jiaolian3Insert10 = height10 / 2;
-        document.getElementById("add-jiaolian3SelectRight10").value = jl310
-
-        document.getElementById("add-jiaolian3InsertLeft10").value = jiaolian3Insert10;
-
-        document.getElementById("add-jiaolian3InsertRight10").value = jiaolian3Insert10;
-
-    }
-    if (jl410 == '距中') {
-        var jiaolian4Insert10 = height10 / 2;
-        document.getElementById("add-jiaolian4SelectRight10").value = jl410
-
-        document.getElementById("add-jiaolian4InsertLeft10").value = jiaolian4Insert10;
-
-        document.getElementById("add-jiaolian4InsertRight10").value = jiaolian4Insert10;
-
-    }
-    if (jl510 == '距中') {
-        var jiaolian5Insert10 = height10 / 2;
-        document.getElementById("add-jiaolian5SelectRight10").value = jl510
-
-        document.getElementById("add-jiaolian5InsertLeft10").value = jiaolian5Insert10;
-
-        document.getElementById("add-jiaolian5InsertRight10").value = jiaolian5Insert10;
-
-    }
-    if (jl610 == '距中') {
-        var jiaolian6Insert10 = height10 / 2;
-        document.getElementById("add-jiaolian6SelectRight10").value = jl610
-
-        document.getElementById("add-jiaolian6InsertLeft10").value = jiaolian6Insert10;
-
-        document.getElementById("add-jiaolian6InsertRight10").value = jiaolian6Insert10;
-
-    }
-
-    var jl111 = document.getElementById('add-jiaolian1SelectLeft11').value;
-    var jl211 = document.getElementById('add-jiaolian2SelectLeft11').value;
-    if ($("#add-jiaolian3SelectLeft11").jiaolian3SelectLeft != "" && $("#add-jiaolian3SelectLeft11").jiaolian3SelectLeft != undefined) {
-        var jl311 = $("#add-jiaolian3SelectLeft11").jiaolian3SelectLeft;
-    }
-    if ($("#add-jiaolian4SelectLeft11").jiaolian4SelectLeft != "" && $("#add-jiaolian4SelectLeft11").jiaolian4SelectLeft != undefined) {
-        var jl411 = $("#add-jiaolian4SelectLeft11").jiaolian4SelectLeft;
-    }
-    if ($("#add-jiaolian5SelectLeft11").jiaolian5SelectLeft != "" && $("#add-jiaolian5SelectLeft11").jiaolian5SelectLeft != undefined) {
-        var jl511 = $("#add-jiaolian5SelectLeft11").jiaolian5SelectLeft;
-    }
-    if ($("#add-jiaolian6SelectLeft11").jiaolian6SelectLeft != "" && $("#add-jiaolian6SelectLeft11").jiaolian6SelectLeft != undefined) {
-        var jl611 = $("#add-jiaolian6SelectLeft11").jiaolian6SelectLeft;
-    }
-    var height11 = parseFloat(document.getElementById('add-height11').value);
-    if (jl11 == '距中') {
-        var jiaolian1Insert11 = height11 / 2;
-        document.getElementById("add-jiaolian1SelectRight11").value = jl111
-        document.getElementById("add-jiaolian1SelectRight11").value = jl111
-
-        document.getElementById("add-jiaolian1InsertLeft11").value = jiaolian1Insert11;
-
-        document.getElementById("add-jiaolian1InsertRight11").value = jiaolian1Insert11;
-
-    }
-    if (jl211 == '距中') {
-        var jiaolian2Insert11 = height11 / 2;
-        document.getElementById("add-jiaolian2SelectRight11").value = jl211
-
-        document.getElementById("add-jiaolian2InsertLeft11").value = jiaolian2Insert11;
-
-        document.getElementById("add-jiaolian2InsertRight11").value = jiaolian2Insert11;
-
-    }
-    if (jl311 == '距中') {
-        var jiaolian3Insert11 = height11 / 2;
-        document.getElementById("add-jiaolian3SelectRight11").value = jl311
-
-        document.getElementById("add-jiaolian3InsertLeft11").value = jiaolian3Insert11;
-
-        document.getElementById("add-jiaolian3InsertRight11").value = jiaolian3Insert11;
-
-    }
-    if (jl411 == '距中') {
-        var jiaolian4Insert11 = height11 / 2;
-        document.getElementById("add-jiaolian4SelectRight11").value = jl411
-
-        document.getElementById("add-jiaolian4InsertLeft11").value = jiaolian4Insert11;
-
-        document.getElementById("add-jiaolian4InsertRight11").value = jiaolian4Insert11;
-
-    }
-    if (jl511 == '距中') {
-        var jiaolian5Insert11 = height11 / 2;
-        document.getElementById("add-jiaolian5SelectRight11").value = jl511
-
-        document.getElementById("add-jiaolian5InsertLeft11").value = jiaolian5Insert11;
-
-        document.getElementById("add-jiaolian5InsertRight11").value = jiaolian5Insert11;
-
-    }
-    if (jl611 == '距中') {
-        var jiaolian6Insert11 = height11 / 2;
-        document.getElementById("add-jiaolian6SelectRight11").value = jl611
-
-        document.getElementById("add-jiaolian6InsertLeft11").value = jiaolian6Insert11;
-
-        document.getElementById("add-jiaolian6InsertRight11").value = jiaolian6Insert11;
-
-    }
-
-    var jl112 = document.getElementById('add-jiaolian1SelectLeft12').value;
-    var jl212 = document.getElementById('add-jiaolian2SelectLeft12').value;
-    if ($("#add-jiaolian3SelectLeft12").jiaolian3SelectLeft != "" && $("#add-jiaolian3SelectLeft12").jiaolian3SelectLeft != undefined) {
-        var jl312 = $("#add-jiaolian3SelectLeft12").jiaolian3SelectLeft;
-    }
-    if ($("#add-jiaolian4SelectLeft12").jiaolian4SelectLeft != "" && $("#add-jiaolian4SelectLeft12").jiaolian4SelectLeft != undefined) {
-        var jl412 = $("#add-jiaolian4SelectLeft12").jiaolian4SelectLeft;
-    }
-    if ($("#add-jiaolian5SelectLeft12").jiaolian5SelectLeft != "" && $("#add-jiaolian5SelectLeft12").jiaolian5SelectLeft != undefined) {
-        var jl512 = $("#add-jiaolian5SelectLeft12").jiaolian5SelectLeft;
-    }
-    if ($("#add-jiaolian6SelectLeft12").jiaolian6SelectLeft != "" && $("#add-jiaolian6SelectLeft12").jiaolian6SelectLeft != undefined) {
-        var jl612 = $("#add-jiaolian6SelectLeft12").jiaolian6SelectLeft;
-    }
-    var height12 = parseFloat(document.getElementById('add-height12').value);
-    if (jl12 == '距中') {
-        var jiaolian1Insert12 = height12 / 2;
-        document.getElementById("add-jiaolian1SelectRight12").value = jl112
-        document.getElementById("add-jiaolian1SelectRight12").value = jl112
-
-        document.getElementById("add-jiaolian1InsertLeft12").value = jiaolian1Insert12;
-
-        document.getElementById("add-jiaolian1InsertRight12").value = jiaolian1Insert12;
-
-    }
-    if (jl212 == '距中') {
-        var jiaolian2Insert12 = height12 / 2;
-        document.getElementById("add-jiaolian2SelectRight12").value = jl212
-
-        document.getElementById("add-jiaolian2InsertLeft12").value = jiaolian2Insert12;
-
-        document.getElementById("add-jiaolian2InsertRight12").value = jiaolian2Insert12;
-
-    }
-    if (jl312 == '距中') {
-        var jiaolian3Insert12 = height12 / 2;
-        document.getElementById("add-jiaolian3SelectRight12").value = jl312
-
-        document.getElementById("add-jiaolian3InsertLeft12").value = jiaolian3Insert12;
-
-        document.getElementById("add-jiaolian3InsertRight12").value = jiaolian3Insert12;
-
-    }
-    if (jl412 == '距中') {
-        var jiaolian4Insert12 = height12 / 2;
-        document.getElementById("add-jiaolian4SelectRight12").value = jl412
-
-        document.getElementById("add-jiaolian4InsertLeft12").value = jiaolian4Insert12;
-
-        document.getElementById("add-jiaolian4InsertRight12").value = jiaolian4Insert12;
-
-    }
-    if (jl512 == '距中') {
-        var jiaolian5Insert12 = height12 / 2;
-        document.getElementById("add-jiaolian5SelectRight12").value = jl512
-
-        document.getElementById("add-jiaolian5InsertLeft12").value = jiaolian5Insert12;
-
-        document.getElementById("add-jiaolian5InsertRight12").value = jiaolian5Insert12;
-
-    }
-    if (jl612 == '距中') {
-        var jiaolian6Insert12 = height12 / 2;
-        document.getElementById("add-jiaolian6SelectRight12").value = jl612
-
-        document.getElementById("add-jiaolian6InsertLeft12").value = jiaolian6Insert12;
-
-        document.getElementById("add-jiaolian6InsertRight12").value = jiaolian6Insert12;
-
-    }
-
-    var jl113 = document.getElementById('add-jiaolian1SelectLeft13').value;
-    var jl213 = document.getElementById('add-jiaolian2SelectLeft13').value;
-    if ($("#add-jiaolian3SelectLeft13").jiaolian3SelectLeft != "" && $("#add-jiaolian3SelectLeft13").jiaolian3SelectLeft != undefined) {
-        var jl313 = $("#add-jiaolian3SelectLeft13").jiaolian3SelectLeft;
-    }
-    if ($("#add-jiaolian4SelectLeft13").jiaolian4SelectLeft != "" && $("#add-jiaolian4SelectLeft13").jiaolian4SelectLeft != undefined) {
-        var jl413 = $("#add-jiaolian4SelectLeft13").jiaolian4SelectLeft;
-    }
-    if ($("#add-jiaolian5SelectLeft13").jiaolian5SelectLeft != "" && $("#add-jiaolian5SelectLeft13").jiaolian5SelectLeft != undefined) {
-        var jl513 = $("#add-jiaolian5SelectLeft13").jiaolian5SelectLeft;
-    }
-    if ($("#add-jiaolian6SelectLeft13").jiaolian6SelectLeft != "" && $("#add-jiaolian6SelectLeft13").jiaolian6SelectLeft != undefined) {
-        var jl613 = $("#add-jiaolian6SelectLeft13").jiaolian6SelectLeft;
-    }
-    var height13 = parseFloat(document.getElementById('add-height13').value);
-    if (jl13 == '距中') {
-        var jiaolian1Insert13 = height13 / 2;
-        document.getElementById("add-jiaolian1SelectRight13").value = jl113
-        document.getElementById("add-jiaolian1SelectRight13").value = jl113
-
-        document.getElementById("add-jiaolian1InsertLeft13").value = jiaolian1Insert13;
-
-        document.getElementById("add-jiaolian1InsertRight13").value = jiaolian1Insert13;
-
-    }
-    if (jl213 == '距中') {
-        var jiaolian2Insert13 = height13 / 2;
-        document.getElementById("add-jiaolian2SelectRight13").value = jl213
-
-        document.getElementById("add-jiaolian2InsertLeft13").value = jiaolian2Insert13;
-
-        document.getElementById("add-jiaolian2InsertRight13").value = jiaolian2Insert13;
-
-    }
-    if (jl313 == '距中') {
-        var jiaolian3Insert13 = height13 / 2;
-        document.getElementById("add-jiaolian3SelectRight13").value = jl313
-
-        document.getElementById("add-jiaolian3InsertLeft13").value = jiaolian3Insert13;
-
-        document.getElementById("add-jiaolian3InsertRight13").value = jiaolian3Insert13;
-
-    }
-    if (jl413 == '距中') {
-        var jiaolian4Insert13 = height13 / 2;
-        document.getElementById("add-jiaolian4SelectRight13").value = jl413
-
-        document.getElementById("add-jiaolian4InsertLeft13").value = jiaolian4Insert13;
-
-        document.getElementById("add-jiaolian4InsertRight13").value = jiaolian4Insert13;
-
-    }
-    if (jl513 == '距中') {
-        var jiaolian5Insert13 = height13 / 2;
-        document.getElementById("add-jiaolian5SelectRight13").value = jl513
-
-        document.getElementById("add-jiaolian5InsertLeft13").value = jiaolian5Insert13;
-
-        document.getElementById("add-jiaolian5InsertRight13").value = jiaolian5Insert13;
-
-    }
-    if (jl613 == '距中') {
-        var jiaolian6Insert13 = height13 / 2;
-        document.getElementById("add-jiaolian6SelectRight13").value = jl613
-
-        document.getElementById("add-jiaolian6InsertLeft13").value = jiaolian6Insert13;
-
-        document.getElementById("add-jiaolian6InsertRight13").value = jiaolian6Insert13;
-
-    }
-
-    var jl114 = document.getElementById('add-jiaolian1SelectLeft14').value;
-    var jl214 = document.getElementById('add-jiaolian2SelectLeft14').value;
-    if ($("#add-jiaolian3SelectLeft14").jiaolian3SelectLeft != "" && $("#add-jiaolian3SelectLeft14").jiaolian3SelectLeft != undefined) {
-        var jl314 = $("#add-jiaolian3SelectLeft14").jiaolian3SelectLeft;
-    }
-    if ($("#add-jiaolian4SelectLeft14").jiaolian4SelectLeft != "" && $("#add-jiaolian4SelectLeft14").jiaolian4SelectLeft != undefined) {
-        var jl414 = $("#add-jiaolian4SelectLeft14").jiaolian4SelectLeft;
-    }
-    if ($("#add-jiaolian5SelectLeft14").jiaolian5SelectLeft != "" && $("#add-jiaolian5SelectLeft14").jiaolian5SelectLeft != undefined) {
-        var jl514 = $("#add-jiaolian5SelectLeft14").jiaolian5SelectLeft;
-    }
-    if ($("#add-jiaolian6SelectLeft14").jiaolian6SelectLeft != "" && $("#add-jiaolian6SelectLeft14").jiaolian6SelectLeft != undefined) {
-        var jl614 = $("#add-jiaolian6SelectLeft14").jiaolian6SelectLeft;
-    }
-    var height14 = parseFloat(document.getElementById('add-height14').value);
-    if (jl14 == '距中') {
-        var jiaolian1Insert14 = height14 / 2;
-        document.getElementById("add-jiaolian1SelectRight14").value = jl114
-        document.getElementById("add-jiaolian1SelectRight14").value = jl114
-
-        document.getElementById("add-jiaolian1InsertLeft14").value = jiaolian1Insert14;
-
-        document.getElementById("add-jiaolian1InsertRight14").value = jiaolian1Insert14;
-
-    }
-    if (jl214 == '距中') {
-        var jiaolian2Insert14 = height14 / 2;
-        document.getElementById("add-jiaolian2SelectRight14").value = jl214
-
-        document.getElementById("add-jiaolian2InsertLeft14").value = jiaolian2Insert14;
-
-        document.getElementById("add-jiaolian2InsertRight14").value = jiaolian2Insert14;
-
-    }
-    if (jl314 == '距中') {
-        var jiaolian3Insert14 = height14 / 2;
-        document.getElementById("add-jiaolian3SelectRight14").value = jl314
-
-        document.getElementById("add-jiaolian3InsertLeft14").value = jiaolian3Insert14;
-
-        document.getElementById("add-jiaolian3InsertRight14").value = jiaolian3Insert14;
-
-    }
-    if (jl414 == '距中') {
-        var jiaolian4Insert14 = height14 / 2;
-        document.getElementById("add-jiaolian4SelectRight14").value = jl414
-
-        document.getElementById("add-jiaolian4InsertLeft14").value = jiaolian4Insert14;
-
-        document.getElementById("add-jiaolian4InsertRight14").value = jiaolian4Insert14;
-
-    }
-    if (jl514 == '距中') {
-        var jiaolian5Insert14 = height14 / 2;
-        document.getElementById("add-jiaolian5SelectRight14").value = jl514
-
-        document.getElementById("add-jiaolian5InsertLeft14").value = jiaolian5Insert14;
-
-        document.getElementById("add-jiaolian5InsertRight14").value = jiaolian5Insert14;
-
-    }
-    if (jl614 == '距中') {
-        var jiaolian6Insert14 = height14 / 2;
-        document.getElementById("add-jiaolian6SelectRight14").value = jl614
-
-        document.getElementById("add-jiaolian6InsertLeft14").value = jiaolian6Insert14;
-
-        document.getElementById("add-jiaolian6InsertRight14").value = jiaolian6Insert14;
-
-    }
-
-    var jl115 = document.getElementById('add-jiaolian1SelectLeft15').value;
-    var jl215 = document.getElementById('add-jiaolian2SelectLeft15').value;
-    if ($("#add-jiaolian3SelectLeft15").jiaolian3SelectLeft != "" && $("#add-jiaolian3SelectLeft15").jiaolian3SelectLeft != undefined) {
-        var jl315 = $("#add-jiaolian3SelectLeft15").jiaolian3SelectLeft;
-    }
-    if ($("#add-jiaolian4SelectLeft15").jiaolian4SelectLeft != "" && $("#add-jiaolian4SelectLeft15").jiaolian4SelectLeft != undefined) {
-        var jl415 = $("#add-jiaolian4SelectLeft15").jiaolian4SelectLeft;
-    }
-    if ($("#add-jiaolian5SelectLeft15").jiaolian5SelectLeft != "" && $("#add-jiaolian5SelectLeft15").jiaolian5SelectLeft != undefined) {
-        var jl515 = $("#add-jiaolian5SelectLeft15").jiaolian5SelectLeft;
-    }
-    if ($("#add-jiaolian6SelectLeft15").jiaolian6SelectLeft != "" && $("#add-jiaolian6SelectLeft15").jiaolian6SelectLeft != undefined) {
-        var jl615 = $("#add-jiaolian6SelectLeft15").jiaolian6SelectLeft;
-    }
-    var height15 = parseFloat(document.getElementById('add-height15').value);
-    if (jl15 == '距中') {
-        var jiaolian1Insert15 = height15 / 2;
-        document.getElementById("add-jiaolian1SelectRight15").value = jl115
-        document.getElementById("add-jiaolian1SelectRight15").value = jl115
-
-        document.getElementById("add-jiaolian1InsertLeft15").value = jiaolian1Insert15;
-
-        document.getElementById("add-jiaolian1InsertRight15").value = jiaolian1Insert15;
-
-    }
-    if (jl215 == '距中') {
-        var jiaolian2Insert15 = height15 / 2;
-        document.getElementById("add-jiaolian2SelectRight15").value = jl215
-
-        document.getElementById("add-jiaolian2InsertLeft15").value = jiaolian2Insert15;
-
-        document.getElementById("add-jiaolian2InsertRight15").value = jiaolian2Insert15;
-
-    }
-    if (jl315 == '距中') {
-        var jiaolian3Insert15 = height15 / 2;
-        document.getElementById("add-jiaolian3SelectRight15").value = jl315
-
-        document.getElementById("add-jiaolian3InsertLeft15").value = jiaolian3Insert15;
-
-        document.getElementById("add-jiaolian3InsertRight15").value = jiaolian3Insert15;
-
-    }
-    if (jl415 == '距中') {
-        var jiaolian4Insert15 = height15 / 2;
-        document.getElementById("add-jiaolian4SelectRight15").value = jl415
-
-        document.getElementById("add-jiaolian4InsertLeft15").value = jiaolian4Insert15;
-
-        document.getElementById("add-jiaolian4InsertRight15").value = jiaolian4Insert15;
-
-    }
-    if (jl515 == '距中') {
-        var jiaolian5Insert15 = height15 / 2;
-        document.getElementById("add-jiaolian5SelectRight15").value = jl515
-
-        document.getElementById("add-jiaolian5InsertLeft15").value = jiaolian5Insert15;
-
-        document.getElementById("add-jiaolian5InsertRight15").value = jiaolian5Insert15;
-
-    }
-    if (jl615 == '距中') {
-        var jiaolian6Insert15 = height15 / 2;
-        document.getElementById("add-jiaolian6SelectRight15").value = jl615
-
-        document.getElementById("add-jiaolian6InsertLeft15").value = jiaolian6Insert15;
-
-        document.getElementById("add-jiaolian6InsertRight15").value = jiaolian6Insert15;
-
-    }
-
-    var jl116 = document.getElementById('add-jiaolian1SelectLeft16').value;
-    var jl216 = document.getElementById('add-jiaolian2SelectLeft16').value;
-    if ($("#add-jiaolian3SelectLeft16").jiaolian3SelectLeft != "" && $("#add-jiaolian3SelectLeft16").jiaolian3SelectLeft != undefined) {
-        var jl316 = $("#add-jiaolian3SelectLeft16").jiaolian3SelectLeft;
-    }
-    if ($("#add-jiaolian4SelectLeft16").jiaolian4SelectLeft != "" && $("#add-jiaolian4SelectLeft16").jiaolian4SelectLeft != undefined) {
-        var jl416 = $("#add-jiaolian4SelectLeft16").jiaolian4SelectLeft;
-    }
-    if ($("#add-jiaolian5SelectLeft16").jiaolian5SelectLeft != "" && $("#add-jiaolian5SelectLeft16").jiaolian5SelectLeft != undefined) {
-        var jl516 = $("#add-jiaolian5SelectLeft16").jiaolian5SelectLeft;
-    }
-    if ($("#add-jiaolian6SelectLeft16").jiaolian6SelectLeft != "" && $("#add-jiaolian6SelectLeft16").jiaolian6SelectLeft != undefined) {
-        var jl616 = $("#add-jiaolian6SelectLeft16").jiaolian6SelectLeft;
-    }
-    var height16 = parseFloat(document.getElementById('add-height16').value);
-    if (jl16 == '距中') {
-        var jiaolian1Insert16 = height16 / 2;
-        document.getElementById("add-jiaolian1SelectRight16").value = jl116
-        document.getElementById("add-jiaolian1SelectRight16").value = jl116
-
-        document.getElementById("add-jiaolian1InsertLeft16").value = jiaolian1Insert16;
-
-        document.getElementById("add-jiaolian1InsertRight16").value = jiaolian1Insert16;
-
-    }
-    if (jl216 == '距中') {
-        var jiaolian2Insert16 = height16 / 2;
-        document.getElementById("add-jiaolian2SelectRight16").value = jl216
-
-        document.getElementById("add-jiaolian2InsertLeft16").value = jiaolian2Insert16;
-
-        document.getElementById("add-jiaolian2InsertRight16").value = jiaolian2Insert16;
-
-    }
-    if (jl316 == '距中') {
-        var jiaolian3Insert16 = height16 / 2;
-        document.getElementById("add-jiaolian3SelectRight16").value = jl316
-
-        document.getElementById("add-jiaolian3InsertLeft16").value = jiaolian3Insert16;
-
-        document.getElementById("add-jiaolian3InsertRight16").value = jiaolian3Insert16;
-
-    }
-    if (jl416 == '距中') {
-        var jiaolian4Insert16 = height16 / 2;
-        document.getElementById("add-jiaolian4SelectRight16").value = jl416
-
-        document.getElementById("add-jiaolian4InsertLeft16").value = jiaolian4Insert16;
-
-        document.getElementById("add-jiaolian4InsertRight16").value = jiaolian4Insert16;
-
-    }
-    if (jl516 == '距中') {
-        var jiaolian5Insert16 = height16 / 2;
-        document.getElementById("add-jiaolian5SelectRight16").value = jl516
-
-        document.getElementById("add-jiaolian5InsertLeft16").value = jiaolian5Insert16;
-
-        document.getElementById("add-jiaolian5InsertRight16").value = jiaolian5Insert16;
-
-    }
-    if (jl616 == '距中') {
-        var jiaolian6Insert16 = height16 / 2;
-        document.getElementById("add-jiaolian6SelectRight16").value = jl616
-
-        document.getElementById("add-jiaolian6InsertLeft16").value = jiaolian6Insert16;
-
-        document.getElementById("add-jiaolian6InsertRight16").value = jiaolian6Insert16;
-
-    }
-
-    var jl117 = document.getElementById('add-jiaolian1SelectLeft17').value;
-    var jl217 = document.getElementById('add-jiaolian2SelectLeft17').value;
-    if ($("#add-jiaolian3SelectLeft17").jiaolian3SelectLeft != "" && $("#add-jiaolian3SelectLeft17").jiaolian3SelectLeft != undefined) {
-        var jl317 = $("#add-jiaolian3SelectLeft17").jiaolian3SelectLeft;
-    }
-    if ($("#add-jiaolian4SelectLeft17").jiaolian4SelectLeft != "" && $("#add-jiaolian4SelectLeft17").jiaolian4SelectLeft != undefined) {
-        var jl417 = $("#add-jiaolian4SelectLeft17").jiaolian4SelectLeft;
-    }
-    if ($("#add-jiaolian5SelectLeft17").jiaolian5SelectLeft != "" && $("#add-jiaolian5SelectLeft17").jiaolian5SelectLeft != undefined) {
-        var jl517 = $("#add-jiaolian5SelectLeft17").jiaolian5SelectLeft;
-    }
-    if ($("#add-jiaolian6SelectLeft17").jiaolian6SelectLeft != "" && $("#add-jiaolian6SelectLeft17").jiaolian6SelectLeft != undefined) {
-        var jl617 = $("#add-jiaolian6SelectLeft17").jiaolian6SelectLeft;
-    }
-    var height17 = parseFloat(document.getElementById('add-height17').value);
-    if (jl17 == '距中') {
-        var jiaolian1Insert17 = height17 / 2;
-        document.getElementById("add-jiaolian1SelectRight17").value = jl117
-        document.getElementById("add-jiaolian1SelectRight17").value = jl117
-
-        document.getElementById("add-jiaolian1InsertLeft17").value = jiaolian1Insert17;
-
-        document.getElementById("add-jiaolian1InsertRight17").value = jiaolian1Insert17;
-
-    }
-    if (jl217 == '距中') {
-        var jiaolian2Insert17 = height17 / 2;
-        document.getElementById("add-jiaolian2SelectRight17").value = jl217
-
-        document.getElementById("add-jiaolian2InsertLeft17").value = jiaolian2Insert17;
-
-        document.getElementById("add-jiaolian2InsertRight17").value = jiaolian2Insert17;
-
-    }
-    if (jl317 == '距中') {
-        var jiaolian3Insert17 = height17 / 2;
-        document.getElementById("add-jiaolian3SelectRight17").value = jl317
-
-        document.getElementById("add-jiaolian3InsertLeft17").value = jiaolian3Insert17;
-
-        document.getElementById("add-jiaolian3InsertRight17").value = jiaolian3Insert17;
-
-    }
-    if (jl417 == '距中') {
-        var jiaolian4Insert17 = height17 / 2;
-        document.getElementById("add-jiaolian4SelectRight17").value = jl417
-
-        document.getElementById("add-jiaolian4InsertLeft17").value = jiaolian4Insert17;
-
-        document.getElementById("add-jiaolian4InsertRight17").value = jiaolian4Insert17;
-
-    }
-    if (jl517 == '距中') {
-        var jiaolian5Insert17 = height17 / 2;
-        document.getElementById("add-jiaolian5SelectRight17").value = jl517
-
-        document.getElementById("add-jiaolian5InsertLeft17").value = jiaolian5Insert17;
-
-        document.getElementById("add-jiaolian5InsertRight17").value = jiaolian5Insert17;
-
-    }
-    if (jl617 == '距中') {
-        var jiaolian6Insert17 = height17 / 2;
-        document.getElementById("add-jiaolian6SelectRight17").value = jl617
-
-        document.getElementById("add-jiaolian6InsertLeft17").value = jiaolian6Insert17;
-
-        document.getElementById("add-jiaolian6InsertRight17").value = jiaolian6Insert17;
-
-    }
-
-    var jl118 = document.getElementById('add-jiaolian1SelectLeft18').value;
-    var jl218 = document.getElementById('add-jiaolian2SelectLeft18').value;
-    if ($("#add-jiaolian3SelectLeft18").jiaolian3SelectLeft != "" && $("#add-jiaolian3SelectLeft18").jiaolian3SelectLeft != undefined) {
-        var jl318 = $("#add-jiaolian3SelectLeft18").jiaolian3SelectLeft;
-    }
-    if ($("#add-jiaolian4SelectLeft18").jiaolian4SelectLeft != "" && $("#add-jiaolian4SelectLeft18").jiaolian4SelectLeft != undefined) {
-        var jl418 = $("#add-jiaolian4SelectLeft18").jiaolian4SelectLeft;
-    }
-    if ($("#add-jiaolian5SelectLeft18").jiaolian5SelectLeft != "" && $("#add-jiaolian5SelectLeft18").jiaolian5SelectLeft != undefined) {
-        var jl518 = $("#add-jiaolian5SelectLeft18").jiaolian5SelectLeft;
-    }
-    if ($("#add-jiaolian6SelectLeft18").jiaolian6SelectLeft != "" && $("#add-jiaolian6SelectLeft18").jiaolian6SelectLeft != undefined) {
-        var jl618 = $("#add-jiaolian6SelectLeft18").jiaolian6SelectLeft;
-    }
-    var height18 = parseFloat(document.getElementById('add-height18').value);
-    if (jl18 == '距中') {
-        var jiaolian1Insert18 = height18 / 2;
-        document.getElementById("add-jiaolian1SelectRight18").value = jl118
-        document.getElementById("add-jiaolian1SelectRight18").value = jl118
-
-        document.getElementById("add-jiaolian1InsertLeft18").value = jiaolian1Insert18;
-
-        document.getElementById("add-jiaolian1InsertRight18").value = jiaolian1Insert18;
-
-    }
-    if (jl218 == '距中') {
-        var jiaolian2Insert18 = height18 / 2;
-        document.getElementById("add-jiaolian2SelectRight18").value = jl218
-
-        document.getElementById("add-jiaolian2InsertLeft18").value = jiaolian2Insert18;
-
-        document.getElementById("add-jiaolian2InsertRight18").value = jiaolian2Insert18;
-
-    }
-    if (jl318 == '距中') {
-        var jiaolian3Insert18 = height18 / 2;
-        document.getElementById("add-jiaolian3SelectRight18").value = jl318
-
-        document.getElementById("add-jiaolian3InsertLeft18").value = jiaolian3Insert18;
-
-        document.getElementById("add-jiaolian3InsertRight18").value = jiaolian3Insert18;
-
-    }
-    if (jl418 == '距中') {
-        var jiaolian4Insert18 = height18 / 2;
-        document.getElementById("add-jiaolian4SelectRight18").value = jl418
-
-        document.getElementById("add-jiaolian4InsertLeft18").value = jiaolian4Insert18;
-
-        document.getElementById("add-jiaolian4InsertRight18").value = jiaolian4Insert18;
-
-    }
-    if (jl518 == '距中') {
-        var jiaolian5Insert18 = height18 / 2;
-        document.getElementById("add-jiaolian5SelectRight18").value = jl518
-
-        document.getElementById("add-jiaolian5InsertLeft18").value = jiaolian5Insert18;
-
-        document.getElementById("add-jiaolian5InsertRight18").value = jiaolian5Insert18;
-
-    }
-    if (jl618 == '距中') {
-        var jiaolian6Insert18 = height18 / 2;
-        document.getElementById("add-jiaolian6SelectRight18").value = jl618
-
-        document.getElementById("add-jiaolian6InsertLeft18").value = jiaolian6Insert18;
-
-        document.getElementById("add-jiaolian6InsertRight18").value = jiaolian6Insert18;
-
-    }
-
-    var jl119 = document.getElementById('add-jiaolian1SelectLeft19').value;
-    var jl219 = document.getElementById('add-jiaolian2SelectLeft19').value;
-    if ($("#add-jiaolian3SelectLeft19").jiaolian3SelectLeft != "" && $("#add-jiaolian3SelectLeft19").jiaolian3SelectLeft != undefined) {
-        var jl319 = $("#add-jiaolian3SelectLeft19").jiaolian3SelectLeft;
-    }
-    if ($("#add-jiaolian4SelectLeft19").jiaolian4SelectLeft != "" && $("#add-jiaolian4SelectLeft19").jiaolian4SelectLeft != undefined) {
-        var jl419 = $("#add-jiaolian4SelectLeft19").jiaolian4SelectLeft;
-    }
-    if ($("#add-jiaolian5SelectLeft19").jiaolian5SelectLeft != "" && $("#add-jiaolian5SelectLeft19").jiaolian5SelectLeft != undefined) {
-        var jl519 = $("#add-jiaolian5SelectLeft19").jiaolian5SelectLeft;
-    }
-    if ($("#add-jiaolian6SelectLeft19").jiaolian6SelectLeft != "" && $("#add-jiaolian6SelectLeft19").jiaolian6SelectLeft != undefined) {
-        var jl619 = $("#add-jiaolian6SelectLeft19").jiaolian6SelectLeft;
-    }
-    var height19 = parseFloat(document.getElementById('add-height19').value);
-    if (jl19 == '距中') {
-        var jiaolian1Insert19 = height19 / 2;
-        document.getElementById("add-jiaolian1SelectRight19").value = jl119
-        document.getElementById("add-jiaolian1SelectRight19").value = jl119
-
-        document.getElementById("add-jiaolian1InsertLeft19").value = jiaolian1Insert19;
-
-        document.getElementById("add-jiaolian1InsertRight19").value = jiaolian1Insert19;
-
-    }
-    if (jl219 == '距中') {
-        var jiaolian2Insert19 = height19 / 2;
-        document.getElementById("add-jiaolian2SelectRight19").value = jl219
-
-        document.getElementById("add-jiaolian2InsertLeft19").value = jiaolian2Insert19;
-
-        document.getElementById("add-jiaolian2InsertRight19").value = jiaolian2Insert19;
-
-    }
-    if (jl319 == '距中') {
-        var jiaolian3Insert19 = height19 / 2;
-        document.getElementById("add-jiaolian3SelectRight19").value = jl319
-
-        document.getElementById("add-jiaolian3InsertLeft19").value = jiaolian3Insert19;
-
-        document.getElementById("add-jiaolian3InsertRight19").value = jiaolian3Insert19;
-
-    }
-    if (jl419 == '距中') {
-        var jiaolian4Insert19 = height19 / 2;
-        document.getElementById("add-jiaolian4SelectRight19").value = jl419
-
-        document.getElementById("add-jiaolian4InsertLeft19").value = jiaolian4Insert19;
-
-        document.getElementById("add-jiaolian4InsertRight19").value = jiaolian4Insert19;
-
-    }
-    if (jl519 == '距中') {
-        var jiaolian5Insert19 = height19 / 2;
-        document.getElementById("add-jiaolian5SelectRight19").value = jl519
-
-        document.getElementById("add-jiaolian5InsertLeft19").value = jiaolian5Insert19;
-
-        document.getElementById("add-jiaolian5InsertRight19").value = jiaolian5Insert19;
-
-    }
-    if (jl619 == '距中') {
-        var jiaolian6Insert19 = height19 / 2;
-        document.getElementById("add-jiaolian6SelectRight19").value = jl619
-
-        document.getElementById("add-jiaolian6InsertLeft19").value = jiaolian6Insert19;
-
-        document.getElementById("add-jiaolian6InsertRight19").value = jiaolian6Insert19;
-
-    }
-
-}
+// function getJe() {
+//     var jl1 = document.getElementById('add-jiaolian1SelectLeft').value;
+//     var jl2 = document.getElementById('add-jiaolian2SelectLeft').value;
+//     if ($("#add-jiaolian3SelectLeft").jiaolian3SelectLeft != "" && $("#add-jiaolian3SelectLeft").jiaolian3SelectLeft != undefined) {
+//         var jl3 = $("#add-jiaolian3SelectLeft").jiaolian3SelectLeft;
+//     }
+//     if ($("#add-jiaolian4SelectLeft").jiaolian4SelectLeft != "" && $("#add-jiaolian4SelectLeft").jiaolian4SelectLeft != undefined) {
+//         var jl4 = $("#add-jiaolian4SelectLeft").jiaolian4SelectLeft;
+//     }
+//     if ($("#add-jiaolian5SelectLeft").jiaolian5SelectLeft != "" && $("#add-jiaolian5SelectLeft").jiaolian5SelectLeft != undefined) {
+//         var jl5 = $("#add-jiaolian5SelectLeft").jiaolian5SelectLeft;
+//     }
+//     if ($("#add-jiaolian6SelectLeft").jiaolian6SelectLeft != "" && $("#add-jiaolian6SelectLeft").jiaolian6SelectLeft != undefined) {
+//         var jl6 = $("#add-jiaolian6SelectLeft").jiaolian6SelectLeft;
+//     }
+//     var height = parseFloat(document.getElementById('add-height').value);
+//     if (jl1 == '距中') {
+//         var jiaolian1Insert = height / 2;
+//         document.getElementById("add-jiaolian1SelectRight").value = jl1
+//         document.getElementById("add-jiaolian1SelectRight").value = jl1
+//
+//         document.getElementById("add-jiaolian1InsertLeft").value = jiaolian1Insert;
+//
+//         document.getElementById("add-jiaolian1InsertRight").value = jiaolian1Insert;
+//
+//     }
+//     if (jl2 == '距中') {
+//         var jiaolian2Insert = height / 2;
+//         document.getElementById("add-jiaolian2SelectRight").value = jl2
+//
+//         document.getElementById("add-jiaolian2InsertLeft").value = jiaolian2Insert;
+//
+//         document.getElementById("add-jiaolian2InsertRight").value = jiaolian2Insert;
+//
+//     }
+//     if (jl3 == '距中') {
+//         var jiaolian3Insert = height / 2;
+//         document.getElementById("add-jiaolian3SelectRight").value = jl3
+//
+//         document.getElementById("add-jiaolian3InsertLeft").value = jiaolian3Insert;
+//
+//         document.getElementById("add-jiaolian3InsertRight").value = jiaolian3Insert;
+//
+//     }
+//     if (jl4 == '距中') {
+//         var jiaolian4Insert = height / 2;
+//         document.getElementById("add-jiaolian4SelectRight").value = jl4
+//
+//         document.getElementById("add-jiaolian4InsertLeft").value = jiaolian4Insert;
+//
+//         document.getElementById("add-jiaolian4InsertRight").value = jiaolian4Insert;
+//
+//     }
+//     if (jl5 == '距中') {
+//         var jiaolian5Insert = height / 2;
+//         document.getElementById("add-jiaolian5SelectRight").value = jl5
+//
+//         document.getElementById("add-jiaolian5InsertLeft").value = jiaolian5Insert;
+//
+//         document.getElementById("add-jiaolian5InsertRight").value = jiaolian5Insert;
+//
+//     }
+//     if (jl6 == '距中') {
+//         var jiaolian6Insert = height / 2;
+//         document.getElementById("add-jiaolian6SelectRight").value = jl6
+//
+//         document.getElementById("add-jiaolian6InsertLeft").value = jiaolian6Insert;
+//
+//         document.getElementById("add-jiaolian6InsertRight").value = jiaolian6Insert;
+//
+//     }
+//
+//     var jl11 = document.getElementById('add-jiaolian1SelectLeft1').value;
+//     var jl21 = document.getElementById('add-jiaolian2SelectLeft1').value;
+//     if ($("#add-jiaolian3SelectLeft1").jiaolian3SelectLeft != "" && $("#add-jiaolian3SelectLeft1").jiaolian3SelectLeft != undefined) {
+//         var jl31 = $("#add-jiaolian3SelectLeft").jiaolian3SelectLeft;
+//     }
+//     if ($("#add-jiaolian4SelectLeft1").jiaolian4SelectLeft != "" && $("#add-jiaolian4SelectLeft1").jiaolian4SelectLeft != undefined) {
+//         var jl41 = $("#add-jiaolian4SelectLeft1").jiaolian4SelectLeft;
+//     }
+//     if ($("#add-jiaolian5SelectLeft1").jiaolian5SelectLeft != "" && $("#add-jiaolian5SelectLeft1").jiaolian5SelectLeft != undefined) {
+//         var jl51 = $("#add-jiaolian5SelectLeft1").jiaolian5SelectLeft;
+//     }
+//     if ($("#add-jiaolian6SelectLeft1").jiaolian6SelectLeft != "" && $("#add-jiaolian6SelectLeft1").jiaolian6SelectLeft != undefined) {
+//         var jl61 = $("#add-jiaolian6SelectLeft1").jiaolian6SelectLeft;
+//     }
+//     var height1 = parseFloat(document.getElementById('add-height1').value);
+//     if (jl1 == '距中') {
+//         var jiaolian1Insert1 = height1 / 2;
+//         document.getElementById("add-jiaolian1SelectRight1").value = jl11
+//         document.getElementById("add-jiaolian1SelectRight1").value = jl11
+//
+//         document.getElementById("add-jiaolian1InsertLeft1").value = jiaolian1Insert1;
+//
+//         document.getElementById("add-jiaolian1InsertRight1").value = jiaolian1Insert1;
+//
+//     }
+//     if (jl21 == '距中') {
+//         var jiaolian2Insert1 = height1 / 2;
+//         document.getElementById("add-jiaolian2SelectRight1").value = jl21
+//
+//         document.getElementById("add-jiaolian2InsertLeft1").value = jiaolian2Insert1;
+//
+//         document.getElementById("add-jiaolian2InsertRight1").value = jiaolian2Insert1;
+//
+//     }
+//     if (jl31 == '距中') {
+//         var jiaolian3Insert1 = height1 / 2;
+//         document.getElementById("add-jiaolian3SelectRight1").value = jl31
+//
+//         document.getElementById("add-jiaolian3InsertLeft1").value = jiaolian3Insert1;
+//
+//         document.getElementById("add-jiaolian3InsertRight1").value = jiaolian3Insert1;
+//
+//     }
+//     if (jl41 == '距中') {
+//         var jiaolian4Insert1 = height1 / 2;
+//         document.getElementById("add-jiaolian4SelectRight1").value = jl41
+//
+//         document.getElementById("add-jiaolian4InsertLeft1").value = jiaolian4Insert1;
+//
+//         document.getElementById("add-jiaolian4InsertRight1").value = jiaolian4Insert1;
+//
+//     }
+//     if (jl51 == '距中') {
+//         var jiaolian5Insert1 = height1 / 2;
+//         document.getElementById("add-jiaolian5SelectRight1").value = jl51
+//
+//         document.getElementById("add-jiaolian5InsertLeft1").value = jiaolian5Insert1;
+//
+//         document.getElementById("add-jiaolian5InsertRight1").value = jiaolian5Insert1;
+//
+//     }
+//     if (jl61 == '距中') {
+//         var jiaolian6Insert1 = height1 / 2;
+//         document.getElementById("add-jiaolian6SelectRight1").value = jl61
+//
+//         document.getElementById("add-jiaolian6InsertLeft1").value = jiaolian6Insert1;
+//
+//         document.getElementById("add-jiaolian6InsertRight1").value = jiaolian6Insert1;
+//
+//     }
+//
+//     var jl12 = document.getElementById('add-jiaolian1SelectLeft2').value;
+//     var jl22 = document.getElementById('add-jiaolian2SelectLeft2').value;
+//     if ($("#add-jiaolian3SelectLeft2").jiaolian3SelectLeft != "" && $("#add-jiaolian3SelectLeft2").jiaolian3SelectLeft != undefined) {
+//         var jl32 = $("#add-jiaolian3SelectLeft2").jiaolian3SelectLeft;
+//     }
+//     if ($("#add-jiaolian4SelectLeft2").jiaolian4SelectLeft != "" && $("#add-jiaolian4SelectLeft2").jiaolian4SelectLeft != undefined) {
+//         var jl42 = $("#add-jiaolian4SelectLeft2").jiaolian4SelectLeft;
+//     }
+//     if ($("#add-jiaolian5SelectLeft2").jiaolian5SelectLeft != "" && $("#add-jiaolian5SelectLeft2").jiaolian5SelectLeft != undefined) {
+//         var jl52 = $("#add-jiaolian5SelectLeft2").jiaolian5SelectLeft;
+//     }
+//     if ($("#add-jiaolian6SelectLeft2").jiaolian6SelectLeft != "" && $("#add-jiaolian6SelectLeft2").jiaolian6SelectLeft != undefined) {
+//         var jl62 = $("#add-jiaolian6SelectLeft2").jiaolian6SelectLeft;
+//     }
+//     var height2 = parseFloat(document.getElementById('add-height2').value);
+//     if (jl2 == '距中') {
+//         var jiaolian1Insert2 = height2 / 2;
+//         document.getElementById("add-jiaolian1SelectRight2").value = jl12
+//         document.getElementById("add-jiaolian1SelectRight2").value = jl12
+//
+//         document.getElementById("add-jiaolian1InsertLeft2").value = jiaolian1Insert2;
+//
+//         document.getElementById("add-jiaolian1InsertRight2").value = jiaolian1Insert2;
+//
+//     }
+//     if (jl22 == '距中') {
+//         var jiaolian2Insert2 = height2 / 2;
+//         document.getElementById("add-jiaolian2SelectRight2").value = jl22
+//
+//         document.getElementById("add-jiaolian2InsertLeft2").value = jiaolian2Insert2;
+//
+//         document.getElementById("add-jiaolian2InsertRight2").value = jiaolian2Insert2;
+//
+//     }
+//     if (jl32 == '距中') {
+//         var jiaolian3Insert2 = height2 / 2;
+//         document.getElementById("add-jiaolian3SelectRight2").value = jl32
+//
+//         document.getElementById("add-jiaolian3InsertLeft2").value = jiaolian3Insert2;
+//
+//         document.getElementById("add-jiaolian3InsertRight2").value = jiaolian3Insert2;
+//
+//     }
+//     if (jl42 == '距中') {
+//         var jiaolian4Insert2 = height2 / 2;
+//         document.getElementById("add-jiaolian4SelectRight2").value = jl42
+//
+//         document.getElementById("add-jiaolian4InsertLeft2").value = jiaolian4Insert2;
+//
+//         document.getElementById("add-jiaolian4InsertRight2").value = jiaolian4Insert2;
+//
+//     }
+//     if (jl52 == '距中') {
+//         var jiaolian5Insert2 = height2 / 2;
+//         document.getElementById("add-jiaolian5SelectRight2").value = jl52
+//
+//         document.getElementById("add-jiaolian5InsertLeft2").value = jiaolian5Insert2;
+//
+//         document.getElementById("add-jiaolian5InsertRight2").value = jiaolian5Insert2;
+//
+//     }
+//     if (jl62 == '距中') {
+//         var jiaolian6Insert2 = height2 / 2;
+//         document.getElementById("add-jiaolian6SelectRight2").value = jl62
+//
+//         document.getElementById("add-jiaolian6InsertLeft2").value = jiaolian6Insert2;
+//
+//         document.getElementById("add-jiaolian6InsertRight2").value = jiaolian6Insert2;
+//
+//     }
+//
+//     var jl13 = document.getElementById('add-jiaolian1SelectLeft3').value;
+//     var jl23 = document.getElementById('add-jiaolian2SelectLeft3').value;
+//     if ($("#add-jiaolian3SelectLeft3").jiaolian3SelectLeft != "" && $("#add-jiaolian3SelectLeft3").jiaolian3SelectLeft != undefined) {
+//         var jl33 = $("#add-jiaolian3SelectLeft3").jiaolian3SelectLeft;
+//     }
+//     if ($("#add-jiaolian4SelectLeft3").jiaolian4SelectLeft != "" && $("#add-jiaolian4SelectLeft3").jiaolian4SelectLeft != undefined) {
+//         var jl43 = $("#add-jiaolian4SelectLeft3").jiaolian4SelectLeft;
+//     }
+//     if ($("#add-jiaolian5SelectLeft3").jiaolian5SelectLeft != "" && $("#add-jiaolian5SelectLeft3").jiaolian5SelectLeft != undefined) {
+//         var jl53 = $("#add-jiaolian5SelectLeft3").jiaolian5SelectLeft;
+//     }
+//     if ($("#add-jiaolian6SelectLeft3").jiaolian6SelectLeft != "" && $("#add-jiaolian6SelectLeft3").jiaolian6SelectLeft != undefined) {
+//         var jl63 = $("#add-jiaolian6SelectLeft3").jiaolian6SelectLeft;
+//     }
+//     var height3 = parseFloat(document.getElementById('add-height3').value);
+//     if (jl3 == '距中') {
+//         var jiaolian1Insert3 = height3 / 2;
+//         document.getElementById("add-jiaolian1SelectRight3").value = jl13
+//         document.getElementById("add-jiaolian1SelectRight3").value = jl13
+//
+//         document.getElementById("add-jiaolian1InsertLeft3").value = jiaolian1Insert3;
+//
+//         document.getElementById("add-jiaolian1InsertRight3").value = jiaolian1Insert3;
+//
+//     }
+//     if (jl23 == '距中') {
+//         var jiaolian2Insert3 = height3 / 2;
+//         document.getElementById("add-jiaolian2SelectRight3").value = jl23
+//
+//         document.getElementById("add-jiaolian2InsertLeft3").value = jiaolian2Insert3;
+//
+//         document.getElementById("add-jiaolian2InsertRight3").value = jiaolian2Insert3;
+//
+//     }
+//     if (jl33 == '距中') {
+//         var jiaolian3Insert3 = height3 / 2;
+//         document.getElementById("add-jiaolian3SelectRight3").value = jl33
+//
+//         document.getElementById("add-jiaolian3InsertLeft3").value = jiaolian3Insert3;
+//
+//         document.getElementById("add-jiaolian3InsertRight3").value = jiaolian3Insert3;
+//
+//     }
+//     if (jl43 == '距中') {
+//         var jiaolian4Insert3 = height3 / 2;
+//         document.getElementById("add-jiaolian4SelectRight3").value = jl43
+//
+//         document.getElementById("add-jiaolian4InsertLeft3").value = jiaolian4Insert3;
+//
+//         document.getElementById("add-jiaolian4InsertRight3").value = jiaolian4Insert3;
+//
+//     }
+//     if (jl53 == '距中') {
+//         var jiaolian5Insert3 = height3 / 2;
+//         document.getElementById("add-jiaolian5SelectRight3").value = jl53
+//
+//         document.getElementById("add-jiaolian5InsertLeft3").value = jiaolian5Insert3;
+//
+//         document.getElementById("add-jiaolian5InsertRight3").value = jiaolian5Insert3;
+//
+//     }
+//     if (jl63 == '距中') {
+//         var jiaolian6Insert3 = height3 / 2;
+//         document.getElementById("add-jiaolian6SelectRight3").value = jl63
+//
+//         document.getElementById("add-jiaolian6InsertLeft3").value = jiaolian6Insert3;
+//
+//         document.getElementById("add-jiaolian6InsertRight3").value = jiaolian6Insert3;
+//
+//     }
+//
+//     var jl14 = document.getElementById('add-jiaolian1SelectLeft4').value;
+//     var jl24 = document.getElementById('add-jiaolian2SelectLeft4').value;
+//     if ($("#add-jiaolian3SelectLeft4").jiaolian3SelectLeft != "" && $("#add-jiaolian3SelectLeft4").jiaolian3SelectLeft != undefined) {
+//         var jl34 = $("#add-jiaolian3SelectLeft4").jiaolian3SelectLeft;
+//     }
+//     if ($("#add-jiaolian4SelectLeft4").jiaolian4SelectLeft != "" && $("#add-jiaolian4SelectLeft4").jiaolian4SelectLeft != undefined) {
+//         var jl44 = $("#add-jiaolian4SelectLeft4").jiaolian4SelectLeft;
+//     }
+//     if ($("#add-jiaolian5SelectLeft4").jiaolian5SelectLeft != "" && $("#add-jiaolian5SelectLeft4").jiaolian5SelectLeft != undefined) {
+//         var jl54 = $("#add-jiaolian5SelectLeft4").jiaolian5SelectLeft;
+//     }
+//     if ($("#add-jiaolian6SelectLeft4").jiaolian6SelectLeft != "" && $("#add-jiaolian6SelectLeft4").jiaolian6SelectLeft != undefined) {
+//         var jl64 = $("#add-jiaolian6SelectLeft4").jiaolian6SelectLeft;
+//     }
+//     var height4 = parseFloat(document.getElementById('add-height4').value);
+//     if (jl4 == '距中') {
+//         var jiaolian1Insert4 = height4 / 2;
+//         document.getElementById("add-jiaolian1SelectRight4").value = jl14
+//         document.getElementById("add-jiaolian1SelectRight4").value = jl14
+//
+//         document.getElementById("add-jiaolian1InsertLeft4").value = jiaolian1Insert4;
+//
+//         document.getElementById("add-jiaolian1InsertRight4").value = jiaolian1Insert4;
+//
+//     }
+//     if (jl24 == '距中') {
+//         var jiaolian2Insert4 = height4 / 2;
+//         document.getElementById("add-jiaolian2SelectRight4").value = jl24
+//
+//         document.getElementById("add-jiaolian2InsertLeft4").value = jiaolian2Insert4;
+//
+//         document.getElementById("add-jiaolian2InsertRight4").value = jiaolian2Insert4;
+//
+//     }
+//     if (jl34 == '距中') {
+//         var jiaolian3Insert4 = height4 / 2;
+//         document.getElementById("add-jiaolian3SelectRight4").value = jl34
+//
+//         document.getElementById("add-jiaolian3InsertLeft4").value = jiaolian3Insert4;
+//
+//         document.getElementById("add-jiaolian3InsertRight4").value = jiaolian3Insert4;
+//
+//     }
+//     if (jl44 == '距中') {
+//         var jiaolian4Insert4 = height4 / 2;
+//         document.getElementById("add-jiaolian4SelectRight4").value = jl44
+//
+//         document.getElementById("add-jiaolian4InsertLeft4").value = jiaolian4Insert4;
+//
+//         document.getElementById("add-jiaolian4InsertRight4").value = jiaolian4Insert4;
+//
+//     }
+//     if (jl54 == '距中') {
+//         var jiaolian5Insert4 = height4 / 2;
+//         document.getElementById("add-jiaolian5SelectRight4").value = jl54
+//
+//         document.getElementById("add-jiaolian5InsertLeft4").value = jiaolian5Insert4;
+//
+//         document.getElementById("add-jiaolian5InsertRight4").value = jiaolian5Insert4;
+//
+//     }
+//     if (jl64 == '距中') {
+//         var jiaolian6Insert4 = height4 / 2;
+//         document.getElementById("add-jiaolian6SelectRight4").value = jl64
+//
+//         document.getElementById("add-jiaolian6InsertLeft4").value = jiaolian6Insert4;
+//
+//         document.getElementById("add-jiaolian6InsertRight4").value = jiaolian6Insert4;
+//
+//     }
+//
+//     var jl15 = document.getElementById('add-jiaolian1SelectLeft5').value;
+//     var jl25 = document.getElementById('add-jiaolian2SelectLeft5').value;
+//     if ($("#add-jiaolian3SelectLeft5").jiaolian3SelectLeft != "" && $("#add-jiaolian3SelectLeft5").jiaolian3SelectLeft != undefined) {
+//         var jl35 = $("#add-jiaolian3SelectLeft5").jiaolian3SelectLeft;
+//     }
+//     if ($("#add-jiaolian4SelectLeft5").jiaolian4SelectLeft != "" && $("#add-jiaolian4SelectLeft5").jiaolian4SelectLeft != undefined) {
+//         var jl45 = $("#add-jiaolian4SelectLeft5").jiaolian4SelectLeft;
+//     }
+//     if ($("#add-jiaolian5SelectLeft5").jiaolian5SelectLeft != "" && $("#add-jiaolian5SelectLeft5").jiaolian5SelectLeft != undefined) {
+//         var jl55 = $("#add-jiaolian5SelectLeft5").jiaolian5SelectLeft;
+//     }
+//     if ($("#add-jiaolian6SelectLeft5").jiaolian6SelectLeft != "" && $("#add-jiaolian6SelectLeft5").jiaolian6SelectLeft != undefined) {
+//         var jl65 = $("#add-jiaolian6SelectLeft5").jiaolian6SelectLeft;
+//     }
+//     var height5 = parseFloat(document.getElementById('add-height5').value);
+//     if (jl5 == '距中') {
+//         var jiaolian1Insert5 = height5 / 2;
+//         document.getElementById("add-jiaolian1SelectRight5").value = jl15
+//         document.getElementById("add-jiaolian1SelectRight5").value = jl15
+//
+//         document.getElementById("add-jiaolian1InsertLeft5").value = jiaolian1Insert5;
+//
+//         document.getElementById("add-jiaolian1InsertRight5").value = jiaolian1Insert5;
+//
+//     }
+//     if (jl25 == '距中') {
+//         var jiaolian2Insert5 = height5 / 2;
+//         document.getElementById("add-jiaolian2SelectRight5").value = jl25
+//
+//         document.getElementById("add-jiaolian2InsertLeft5").value = jiaolian2Insert5;
+//
+//         document.getElementById("add-jiaolian2InsertRight5").value = jiaolian2Insert5;
+//
+//     }
+//     if (jl35 == '距中') {
+//         var jiaolian3Insert5 = height5 / 2;
+//         document.getElementById("add-jiaolian3SelectRight5").value = jl35
+//
+//         document.getElementById("add-jiaolian3InsertLeft5").value = jiaolian3Insert5;
+//
+//         document.getElementById("add-jiaolian3InsertRight5").value = jiaolian3Insert5;
+//
+//     }
+//     if (jl45 == '距中') {
+//         var jiaolian4Insert5 = height5 / 2;
+//         document.getElementById("add-jiaolian4SelectRight5").value = jl45
+//
+//         document.getElementById("add-jiaolian4InsertLeft5").value = jiaolian4Insert5;
+//
+//         document.getElementById("add-jiaolian4InsertRight5").value = jiaolian4Insert5;
+//
+//     }
+//     if (jl55 == '距中') {
+//         var jiaolian5Insert5 = height5 / 2;
+//         document.getElementById("add-jiaolian5SelectRight5").value = jl55
+//
+//         document.getElementById("add-jiaolian5InsertLeft5").value = jiaolian5Insert5;
+//
+//         document.getElementById("add-jiaolian5InsertRight5").value = jiaolian5Insert5;
+//
+//     }
+//     if (jl65 == '距中') {
+//         var jiaolian6Insert5 = height5 / 2;
+//         document.getElementById("add-jiaolian6SelectRight5").value = jl65
+//
+//         document.getElementById("add-jiaolian6InsertLeft5").value = jiaolian6Insert5;
+//
+//         document.getElementById("add-jiaolian6InsertRight5").value = jiaolian6Insert5;
+//
+//     }
+//
+//     var jl16 = document.getElementById('add-jiaolian1SelectLeft6').value;
+//     var jl26 = document.getElementById('add-jiaolian2SelectLeft6').value;
+//     if ($("#add-jiaolian3SelectLeft6").jiaolian3SelectLeft != "" && $("#add-jiaolian3SelectLeft6").jiaolian3SelectLeft != undefined) {
+//         var jl36 = $("#add-jiaolian3SelectLeft6").jiaolian3SelectLeft;
+//     }
+//     if ($("#add-jiaolian4SelectLeft6").jiaolian4SelectLeft != "" && $("#add-jiaolian4SelectLeft6").jiaolian4SelectLeft != undefined) {
+//         var jl46 = $("#add-jiaolian4SelectLeft6").jiaolian4SelectLeft;
+//     }
+//     if ($("#add-jiaolian5SelectLeft6").jiaolian5SelectLeft != "" && $("#add-jiaolian5SelectLeft6").jiaolian5SelectLeft != undefined) {
+//         var jl56 = $("#add-jiaolian5SelectLeft6").jiaolian5SelectLeft;
+//     }
+//     if ($("#add-jiaolian6SelectLeft6").jiaolian6SelectLeft != "" && $("#add-jiaolian6SelectLeft6").jiaolian6SelectLeft != undefined) {
+//         var jl66 = $("#add-jiaolian6SelectLeft6").jiaolian6SelectLeft;
+//     }
+//     var height6 = parseFloat(document.getElementById('add-height6').value);
+//     if (jl6 == '距中') {
+//         var jiaolian1Insert6 = height6 / 2;
+//         document.getElementById("add-jiaolian1SelectRight6").value = jl16
+//         document.getElementById("add-jiaolian1SelectRight6").value = jl16
+//
+//         document.getElementById("add-jiaolian1InsertLeft6").value = jiaolian1Insert6;
+//
+//         document.getElementById("add-jiaolian1InsertRight6").value = jiaolian1Insert6;
+//
+//     }
+//     if (jl26 == '距中') {
+//         var jiaolian2Insert6 = height6 / 2;
+//         document.getElementById("add-jiaolian2SelectRight6").value = jl26
+//
+//         document.getElementById("add-jiaolian2InsertLeft6").value = jiaolian2Insert6;
+//
+//         document.getElementById("add-jiaolian2InsertRight6").value = jiaolian2Insert6;
+//
+//     }
+//     if (jl36 == '距中') {
+//         var jiaolian3Insert6 = height6 / 2;
+//         document.getElementById("add-jiaolian3SelectRight6").value = jl36
+//
+//         document.getElementById("add-jiaolian3InsertLeft6").value = jiaolian3Insert6;
+//
+//         document.getElementById("add-jiaolian3InsertRight6").value = jiaolian3Insert6;
+//
+//     }
+//     if (jl46 == '距中') {
+//         var jiaolian4Insert6 = height6 / 2;
+//         document.getElementById("add-jiaolian4SelectRight6").value = jl46
+//
+//         document.getElementById("add-jiaolian4InsertLeft6").value = jiaolian4Insert6;
+//
+//         document.getElementById("add-jiaolian4InsertRight6").value = jiaolian4Insert6;
+//
+//     }
+//     if (jl56 == '距中') {
+//         var jiaolian5Insert6 = height6 / 2;
+//         document.getElementById("add-jiaolian5SelectRight6").value = jl56
+//
+//         document.getElementById("add-jiaolian5InsertLeft6").value = jiaolian5Insert6;
+//
+//         document.getElementById("add-jiaolian5InsertRight6").value = jiaolian5Insert6;
+//
+//     }
+//     if (jl66 == '距中') {
+//         var jiaolian6Insert6 = height6 / 2;
+//         document.getElementById("add-jiaolian6SelectRight6").value = jl66
+//
+//         document.getElementById("add-jiaolian6InsertLeft6").value = jiaolian6Insert6;
+//
+//         document.getElementById("add-jiaolian6InsertRight6").value = jiaolian6Insert6;
+//
+//     }
+//
+//     var jl17 = document.getElementById('add-jiaolian1SelectLeft7').value;
+//     var jl27 = document.getElementById('add-jiaolian2SelectLeft7').value;
+//     if ($("#add-jiaolian3SelectLeft7").jiaolian3SelectLeft != "" && $("#add-jiaolian3SelectLeft7").jiaolian3SelectLeft != undefined) {
+//         var jl37 = $("#add-jiaolian3SelectLeft7").jiaolian3SelectLeft;
+//     }
+//     if ($("#add-jiaolian4SelectLeft7").jiaolian4SelectLeft != "" && $("#add-jiaolian4SelectLeft7").jiaolian4SelectLeft != undefined) {
+//         var jl47 = $("#add-jiaolian4SelectLeft7").jiaolian4SelectLeft;
+//     }
+//     if ($("#add-jiaolian5SelectLeft7").jiaolian5SelectLeft != "" && $("#add-jiaolian5SelectLeft7").jiaolian5SelectLeft != undefined) {
+//         var jl57 = $("#add-jiaolian5SelectLeft7").jiaolian5SelectLeft;
+//     }
+//     if ($("#add-jiaolian6SelectLeft7").jiaolian6SelectLeft != "" && $("#add-jiaolian6SelectLeft7").jiaolian6SelectLeft != undefined) {
+//         var jl67 = $("#add-jiaolian6SelectLeft7").jiaolian6SelectLeft;
+//     }
+//     var height7 = parseFloat(document.getElementById('add-height7').value);
+//     if (jl17 == '距中') {
+//         var jiaolian1Insert7 = height7 / 2;
+//         document.getElementById("add-jiaolian1SelectRight7").value = jl17
+//         document.getElementById("add-jiaolian1SelectRight7").value = jl17
+//
+//         document.getElementById("add-jiaolian1InsertLeft7").value = jiaolian1Insert7;
+//
+//         document.getElementById("add-jiaolian1InsertRight7").value = jiaolian1Insert7;
+//
+//     }
+//     if (jl27 == '距中') {
+//         var jiaolian2Insert7 = height7 / 2;
+//         document.getElementById("add-jiaolian2SelectRight7").value = jl27
+//
+//         document.getElementById("add-jiaolian2InsertLeft7").value = jiaolian2Insert7;
+//
+//         document.getElementById("add-jiaolian2InsertRight7").value = jiaolian2Insert7;
+//
+//     }
+//     if (jl37 == '距中') {
+//         var jiaolian3Insert7 = height7 / 2;
+//         document.getElementById("add-jiaolian3SelectRight7").value = jl37
+//
+//         document.getElementById("add-jiaolian3InsertLeft7").value = jiaolian3Insert7;
+//
+//         document.getElementById("add-jiaolian3InsertRight7").value = jiaolian3Insert7;
+//
+//     }
+//     if (jl47 == '距中') {
+//         var jiaolian4Insert7 = height7 / 2;
+//         document.getElementById("add-jiaolian4SelectRight7").value = jl47
+//
+//         document.getElementById("add-jiaolian4InsertLeft7").value = jiaolian4Insert7;
+//
+//         document.getElementById("add-jiaolian4InsertRight7").value = jiaolian4Insert7;
+//
+//     }
+//     if (jl57 == '距中') {
+//         var jiaolian5Insert7 = height7 / 2;
+//         document.getElementById("add-jiaolian5SelectRight7").value = jl57
+//
+//         document.getElementById("add-jiaolian5InsertLeft7").value = jiaolian5Insert7;
+//
+//         document.getElementById("add-jiaolian5InsertRight7").value = jiaolian5Insert7;
+//
+//     }
+//     if (jl67 == '距中') {
+//         var jiaolian6Insert7 = height7 / 2;
+//         document.getElementById("add-jiaolian6SelectRight7").value = jl67
+//
+//         document.getElementById("add-jiaolian6InsertLeft7").value = jiaolian6Insert7;
+//
+//         document.getElementById("add-jiaolian6InsertRight7").value = jiaolian6Insert7;
+//
+//     }
+//
+//     var jl18 = document.getElementById('add-jiaolian1SelectLeft8').value;
+//     var jl28 = document.getElementById('add-jiaolian2SelectLeft8').value;
+//     if ($("#add-jiaolian3SelectLeft8").jiaolian3SelectLeft != "" && $("#add-jiaolian3SelectLeft8").jiaolian3SelectLeft != undefined) {
+//         var jl38 = $("#add-jiaolian3SelectLeft8").jiaolian3SelectLeft;
+//     }
+//     if ($("#add-jiaolian4SelectLeft8").jiaolian4SelectLeft != "" && $("#add-jiaolian4SelectLeft8").jiaolian4SelectLeft != undefined) {
+//         var jl48 = $("#add-jiaolian4SelectLeft8").jiaolian4SelectLeft;
+//     }
+//     if ($("#add-jiaolian5SelectLeft8").jiaolian5SelectLeft != "" && $("#add-jiaolian5SelectLeft8").jiaolian5SelectLeft != undefined) {
+//         var jl58 = $("#add-jiaolian5SelectLeft8").jiaolian5SelectLeft;
+//     }
+//     if ($("#add-jiaolian6SelectLeft8").jiaolian6SelectLeft != "" && $("#add-jiaolian6SelectLeft8").jiaolian6SelectLeft != undefined) {
+//         var jl68 = $("#add-jiaolian6SelectLeft8").jiaolian6SelectLeft;
+//     }
+//     var height8 = parseFloat(document.getElementById('add-height8').value);
+//     if (jl18 == '距中') {
+//         var jiaolian1Insert8 = height8 / 2;
+//         document.getElementById("add-jiaolian1SelectRight8").value = jl18
+//         document.getElementById("add-jiaolian1SelectRight8").value = jl18
+//
+//         document.getElementById("add-jiaolian1InsertLeft8").value = jiaolian1Insert8;
+//
+//         document.getElementById("add-jiaolian1InsertRight8").value = jiaolian1Insert8;
+//
+//     }
+//     if (jl28 == '距中') {
+//         var jiaolian2Insert8 = height8 / 2;
+//         document.getElementById("add-jiaolian2SelectRight8").value = jl28
+//
+//         document.getElementById("add-jiaolian2InsertLeft8").value = jiaolian2Insert8;
+//
+//         document.getElementById("add-jiaolian2InsertRight8").value = jiaolian2Insert8;
+//
+//     }
+//     if (jl38 == '距中') {
+//         var jiaolian3Insert8 = height8 / 2;
+//         document.getElementById("add-jiaolian3SelectRight8").value = jl38
+//
+//         document.getElementById("add-jiaolian3InsertLeft8").value = jiaolian3Insert8;
+//
+//         document.getElementById("add-jiaolian3InsertRight8").value = jiaolian3Insert8;
+//
+//     }
+//     if (jl48 == '距中') {
+//         var jiaolian4Insert8 = height8 / 2;
+//         document.getElementById("add-jiaolian4SelectRight8").value = jl48
+//
+//         document.getElementById("add-jiaolian4InsertLeft8").value = jiaolian4Insert8;
+//
+//         document.getElementById("add-jiaolian4InsertRight8").value = jiaolian4Insert8;
+//
+//     }
+//     if (jl58 == '距中') {
+//         var jiaolian5Insert8 = height8 / 2;
+//         document.getElementById("add-jiaolian5SelectRight8").value = jl58
+//
+//         document.getElementById("add-jiaolian5InsertLeft8").value = jiaolian5Insert8;
+//
+//         document.getElementById("add-jiaolian5InsertRight8").value = jiaolian5Insert8;
+//
+//     }
+//     if (jl68 == '距中') {
+//         var jiaolian6Insert8 = height8 / 2;
+//         document.getElementById("add-jiaolian6SelectRight8").value = jl68
+//
+//         document.getElementById("add-jiaolian6InsertLeft8").value = jiaolian6Insert8;
+//
+//         document.getElementById("add-jiaolian6InsertRight8").value = jiaolian6Insert8;
+//
+//     }
+//
+//     var jl19 = document.getElementById('add-jiaolian1SelectLeft9').value;
+//     var jl29 = document.getElementById('add-jiaolian2SelectLeft9').value;
+//     if ($("#add-jiaolian3SelectLeft9").jiaolian3SelectLeft != "" && $("#add-jiaolian3SelectLeft9").jiaolian3SelectLeft != undefined) {
+//         var jl39 = $("#add-jiaolian3SelectLeft9").jiaolian3SelectLeft;
+//     }
+//     if ($("#add-jiaolian4SelectLeft9").jiaolian4SelectLeft != "" && $("#add-jiaolian4SelectLeft9").jiaolian4SelectLeft != undefined) {
+//         var jl49 = $("#add-jiaolian4SelectLeft9").jiaolian4SelectLeft;
+//     }
+//     if ($("#add-jiaolian5SelectLeft9").jiaolian5SelectLeft != "" && $("#add-jiaolian5SelectLeft9").jiaolian5SelectLeft != undefined) {
+//         var jl59 = $("#add-jiaolian5SelectLeft9").jiaolian5SelectLeft;
+//     }
+//     if ($("#add-jiaolian6SelectLeft9").jiaolian6SelectLeft != "" && $("#add-jiaolian6SelectLeft9").jiaolian6SelectLeft != undefined) {
+//         var jl69 = $("#add-jiaolian6SelectLeft9").jiaolian6SelectLeft;
+//     }
+//     var height9 = parseFloat(document.getElementById('add-height9').value);
+//     if (jl19 == '距中') {
+//         var jiaolian1Insert9 = height9 / 2;
+//         document.getElementById("add-jiaolian1SelectRight9").value = jl19
+//         document.getElementById("add-jiaolian1SelectRight9").value = jl19
+//
+//         document.getElementById("add-jiaolian1InsertLeft9").value = jiaolian1Insert9;
+//
+//         document.getElementById("add-jiaolian1InsertRight9").value = jiaolian1Insert9;
+//
+//     }
+//     if (jl29 == '距中') {
+//         var jiaolian2Insert9 = height9 / 2;
+//         document.getElementById("add-jiaolian2SelectRight9").value = jl29
+//
+//         document.getElementById("add-jiaolian2InsertLeft9").value = jiaolian2Insert9;
+//
+//         document.getElementById("add-jiaolian2InsertRight9").value = jiaolian2Insert9;
+//
+//     }
+//     if (jl39 == '距中') {
+//         var jiaolian3Insert9 = height9 / 2;
+//         document.getElementById("add-jiaolian3SelectRight9").value = jl39
+//
+//         document.getElementById("add-jiaolian3InsertLeft9").value = jiaolian3Insert9;
+//
+//         document.getElementById("add-jiaolian3InsertRight9").value = jiaolian3Insert9;
+//
+//     }
+//     if (jl49 == '距中') {
+//         var jiaolian4Insert9 = height9 / 2;
+//         document.getElementById("add-jiaolian4SelectRight9").value = jl49
+//
+//         document.getElementById("add-jiaolian4InsertLeft9").value = jiaolian4Insert9;
+//
+//         document.getElementById("add-jiaolian4InsertRight9").value = jiaolian4Insert9;
+//
+//     }
+//     if (jl59 == '距中') {
+//         var jiaolian5Insert9 = height9 / 2;
+//         document.getElementById("add-jiaolian5SelectRight9").value = jl59
+//
+//         document.getElementById("add-jiaolian5InsertLeft9").value = jiaolian5Insert9;
+//
+//         document.getElementById("add-jiaolian5InsertRight9").value = jiaolian5Insert9;
+//
+//     }
+//     if (jl69 == '距中') {
+//         var jiaolian6Insert9 = height9 / 2;
+//         document.getElementById("add-jiaolian6SelectRight9").value = jl69
+//
+//         document.getElementById("add-jiaolian6InsertLeft9").value = jiaolian6Insert9;
+//
+//         document.getElementById("add-jiaolian6InsertRight9").value = jiaolian6Insert9;
+//
+//     }
+//
+//     var jl110 = document.getElementById('add-jiaolian1SelectLeft10').value;
+//     var jl210 = document.getElementById('add-jiaolian2SelectLeft10').value;
+//     if ($("#add-jiaolian3SelectLeft10").jiaolian3SelectLeft != "" && $("#add-jiaolian3SelectLeft10").jiaolian3SelectLeft != undefined) {
+//         var jl310 = $("#add-jiaolian3SelectLeft10").jiaolian3SelectLeft;
+//     }
+//     if ($("#add-jiaolian4SelectLeft10").jiaolian4SelectLeft != "" && $("#add-jiaolian4SelectLeft10").jiaolian4SelectLeft != undefined) {
+//         var jl410 = $("#add-jiaolian4SelectLeft10").jiaolian4SelectLeft;
+//     }
+//     if ($("#add-jiaolian5SelectLeft10").jiaolian5SelectLeft != "" && $("#add-jiaolian5SelectLeft10").jiaolian5SelectLeft != undefined) {
+//         var jl510 = $("#add-jiaolian5SelectLeft10").jiaolian5SelectLeft;
+//     }
+//     if ($("#add-jiaolian6SelectLeft10").jiaolian6SelectLeft != "" && $("#add-jiaolian6SelectLeft10").jiaolian6SelectLeft != undefined) {
+//         var jl610 = $("#add-jiaolian6SelectLeft10").jiaolian6SelectLeft;
+//     }
+//     var height10 = parseFloat(document.getElementById('add-height10').value);
+//     if (jl110 == '距中') {
+//         var jiaolian1Insert10 = height10 / 2;
+//         document.getElementById("add-jiaolian1SelectRight10").value = jl110
+//         document.getElementById("add-jiaolian1SelectRight10").value = jl110
+//
+//         document.getElementById("add-jiaolian1InsertLeft10").value = jiaolian1Insert10;
+//
+//         document.getElementById("add-jiaolian1InsertRight10").value = jiaolian1Insert10;
+//
+//     }
+//     if (jl210 == '距中') {
+//         var jiaolian2Insert10 = height10 / 2;
+//         document.getElementById("add-jiaolian2SelectRight10").value = jl210
+//
+//         document.getElementById("add-jiaolian2InsertLeft10").value = jiaolian2Insert10;
+//
+//         document.getElementById("add-jiaolian2InsertRight10").value = jiaolian2Insert10;
+//
+//     }
+//     if (jl310 == '距中') {
+//         var jiaolian3Insert10 = height10 / 2;
+//         document.getElementById("add-jiaolian3SelectRight10").value = jl310
+//
+//         document.getElementById("add-jiaolian3InsertLeft10").value = jiaolian3Insert10;
+//
+//         document.getElementById("add-jiaolian3InsertRight10").value = jiaolian3Insert10;
+//
+//     }
+//     if (jl410 == '距中') {
+//         var jiaolian4Insert10 = height10 / 2;
+//         document.getElementById("add-jiaolian4SelectRight10").value = jl410
+//
+//         document.getElementById("add-jiaolian4InsertLeft10").value = jiaolian4Insert10;
+//
+//         document.getElementById("add-jiaolian4InsertRight10").value = jiaolian4Insert10;
+//
+//     }
+//     if (jl510 == '距中') {
+//         var jiaolian5Insert10 = height10 / 2;
+//         document.getElementById("add-jiaolian5SelectRight10").value = jl510
+//
+//         document.getElementById("add-jiaolian5InsertLeft10").value = jiaolian5Insert10;
+//
+//         document.getElementById("add-jiaolian5InsertRight10").value = jiaolian5Insert10;
+//
+//     }
+//     if (jl610 == '距中') {
+//         var jiaolian6Insert10 = height10 / 2;
+//         document.getElementById("add-jiaolian6SelectRight10").value = jl610
+//
+//         document.getElementById("add-jiaolian6InsertLeft10").value = jiaolian6Insert10;
+//
+//         document.getElementById("add-jiaolian6InsertRight10").value = jiaolian6Insert10;
+//
+//     }
+//
+//     var jl111 = document.getElementById('add-jiaolian1SelectLeft11').value;
+//     var jl211 = document.getElementById('add-jiaolian2SelectLeft11').value;
+//     if ($("#add-jiaolian3SelectLeft11").jiaolian3SelectLeft != "" && $("#add-jiaolian3SelectLeft11").jiaolian3SelectLeft != undefined) {
+//         var jl311 = $("#add-jiaolian3SelectLeft11").jiaolian3SelectLeft;
+//     }
+//     if ($("#add-jiaolian4SelectLeft11").jiaolian4SelectLeft != "" && $("#add-jiaolian4SelectLeft11").jiaolian4SelectLeft != undefined) {
+//         var jl411 = $("#add-jiaolian4SelectLeft11").jiaolian4SelectLeft;
+//     }
+//     if ($("#add-jiaolian5SelectLeft11").jiaolian5SelectLeft != "" && $("#add-jiaolian5SelectLeft11").jiaolian5SelectLeft != undefined) {
+//         var jl511 = $("#add-jiaolian5SelectLeft11").jiaolian5SelectLeft;
+//     }
+//     if ($("#add-jiaolian6SelectLeft11").jiaolian6SelectLeft != "" && $("#add-jiaolian6SelectLeft11").jiaolian6SelectLeft != undefined) {
+//         var jl611 = $("#add-jiaolian6SelectLeft11").jiaolian6SelectLeft;
+//     }
+//     var height11 = parseFloat(document.getElementById('add-height11').value);
+//     if (jl11 == '距中') {
+//         var jiaolian1Insert11 = height11 / 2;
+//         document.getElementById("add-jiaolian1SelectRight11").value = jl111
+//         document.getElementById("add-jiaolian1SelectRight11").value = jl111
+//
+//         document.getElementById("add-jiaolian1InsertLeft11").value = jiaolian1Insert11;
+//
+//         document.getElementById("add-jiaolian1InsertRight11").value = jiaolian1Insert11;
+//
+//     }
+//     if (jl211 == '距中') {
+//         var jiaolian2Insert11 = height11 / 2;
+//         document.getElementById("add-jiaolian2SelectRight11").value = jl211
+//
+//         document.getElementById("add-jiaolian2InsertLeft11").value = jiaolian2Insert11;
+//
+//         document.getElementById("add-jiaolian2InsertRight11").value = jiaolian2Insert11;
+//
+//     }
+//     if (jl311 == '距中') {
+//         var jiaolian3Insert11 = height11 / 2;
+//         document.getElementById("add-jiaolian3SelectRight11").value = jl311
+//
+//         document.getElementById("add-jiaolian3InsertLeft11").value = jiaolian3Insert11;
+//
+//         document.getElementById("add-jiaolian3InsertRight11").value = jiaolian3Insert11;
+//
+//     }
+//     if (jl411 == '距中') {
+//         var jiaolian4Insert11 = height11 / 2;
+//         document.getElementById("add-jiaolian4SelectRight11").value = jl411
+//
+//         document.getElementById("add-jiaolian4InsertLeft11").value = jiaolian4Insert11;
+//
+//         document.getElementById("add-jiaolian4InsertRight11").value = jiaolian4Insert11;
+//
+//     }
+//     if (jl511 == '距中') {
+//         var jiaolian5Insert11 = height11 / 2;
+//         document.getElementById("add-jiaolian5SelectRight11").value = jl511
+//
+//         document.getElementById("add-jiaolian5InsertLeft11").value = jiaolian5Insert11;
+//
+//         document.getElementById("add-jiaolian5InsertRight11").value = jiaolian5Insert11;
+//
+//     }
+//     if (jl611 == '距中') {
+//         var jiaolian6Insert11 = height11 / 2;
+//         document.getElementById("add-jiaolian6SelectRight11").value = jl611
+//
+//         document.getElementById("add-jiaolian6InsertLeft11").value = jiaolian6Insert11;
+//
+//         document.getElementById("add-jiaolian6InsertRight11").value = jiaolian6Insert11;
+//
+//     }
+//
+//     var jl112 = document.getElementById('add-jiaolian1SelectLeft12').value;
+//     var jl212 = document.getElementById('add-jiaolian2SelectLeft12').value;
+//     if ($("#add-jiaolian3SelectLeft12").jiaolian3SelectLeft != "" && $("#add-jiaolian3SelectLeft12").jiaolian3SelectLeft != undefined) {
+//         var jl312 = $("#add-jiaolian3SelectLeft12").jiaolian3SelectLeft;
+//     }
+//     if ($("#add-jiaolian4SelectLeft12").jiaolian4SelectLeft != "" && $("#add-jiaolian4SelectLeft12").jiaolian4SelectLeft != undefined) {
+//         var jl412 = $("#add-jiaolian4SelectLeft12").jiaolian4SelectLeft;
+//     }
+//     if ($("#add-jiaolian5SelectLeft12").jiaolian5SelectLeft != "" && $("#add-jiaolian5SelectLeft12").jiaolian5SelectLeft != undefined) {
+//         var jl512 = $("#add-jiaolian5SelectLeft12").jiaolian5SelectLeft;
+//     }
+//     if ($("#add-jiaolian6SelectLeft12").jiaolian6SelectLeft != "" && $("#add-jiaolian6SelectLeft12").jiaolian6SelectLeft != undefined) {
+//         var jl612 = $("#add-jiaolian6SelectLeft12").jiaolian6SelectLeft;
+//     }
+//     var height12 = parseFloat(document.getElementById('add-height12').value);
+//     if (jl12 == '距中') {
+//         var jiaolian1Insert12 = height12 / 2;
+//         document.getElementById("add-jiaolian1SelectRight12").value = jl112
+//         document.getElementById("add-jiaolian1SelectRight12").value = jl112
+//
+//         document.getElementById("add-jiaolian1InsertLeft12").value = jiaolian1Insert12;
+//
+//         document.getElementById("add-jiaolian1InsertRight12").value = jiaolian1Insert12;
+//
+//     }
+//     if (jl212 == '距中') {
+//         var jiaolian2Insert12 = height12 / 2;
+//         document.getElementById("add-jiaolian2SelectRight12").value = jl212
+//
+//         document.getElementById("add-jiaolian2InsertLeft12").value = jiaolian2Insert12;
+//
+//         document.getElementById("add-jiaolian2InsertRight12").value = jiaolian2Insert12;
+//
+//     }
+//     if (jl312 == '距中') {
+//         var jiaolian3Insert12 = height12 / 2;
+//         document.getElementById("add-jiaolian3SelectRight12").value = jl312
+//
+//         document.getElementById("add-jiaolian3InsertLeft12").value = jiaolian3Insert12;
+//
+//         document.getElementById("add-jiaolian3InsertRight12").value = jiaolian3Insert12;
+//
+//     }
+//     if (jl412 == '距中') {
+//         var jiaolian4Insert12 = height12 / 2;
+//         document.getElementById("add-jiaolian4SelectRight12").value = jl412
+//
+//         document.getElementById("add-jiaolian4InsertLeft12").value = jiaolian4Insert12;
+//
+//         document.getElementById("add-jiaolian4InsertRight12").value = jiaolian4Insert12;
+//
+//     }
+//     if (jl512 == '距中') {
+//         var jiaolian5Insert12 = height12 / 2;
+//         document.getElementById("add-jiaolian5SelectRight12").value = jl512
+//
+//         document.getElementById("add-jiaolian5InsertLeft12").value = jiaolian5Insert12;
+//
+//         document.getElementById("add-jiaolian5InsertRight12").value = jiaolian5Insert12;
+//
+//     }
+//     if (jl612 == '距中') {
+//         var jiaolian6Insert12 = height12 / 2;
+//         document.getElementById("add-jiaolian6SelectRight12").value = jl612
+//
+//         document.getElementById("add-jiaolian6InsertLeft12").value = jiaolian6Insert12;
+//
+//         document.getElementById("add-jiaolian6InsertRight12").value = jiaolian6Insert12;
+//
+//     }
+//
+//     var jl113 = document.getElementById('add-jiaolian1SelectLeft13').value;
+//     var jl213 = document.getElementById('add-jiaolian2SelectLeft13').value;
+//     if ($("#add-jiaolian3SelectLeft13").jiaolian3SelectLeft != "" && $("#add-jiaolian3SelectLeft13").jiaolian3SelectLeft != undefined) {
+//         var jl313 = $("#add-jiaolian3SelectLeft13").jiaolian3SelectLeft;
+//     }
+//     if ($("#add-jiaolian4SelectLeft13").jiaolian4SelectLeft != "" && $("#add-jiaolian4SelectLeft13").jiaolian4SelectLeft != undefined) {
+//         var jl413 = $("#add-jiaolian4SelectLeft13").jiaolian4SelectLeft;
+//     }
+//     if ($("#add-jiaolian5SelectLeft13").jiaolian5SelectLeft != "" && $("#add-jiaolian5SelectLeft13").jiaolian5SelectLeft != undefined) {
+//         var jl513 = $("#add-jiaolian5SelectLeft13").jiaolian5SelectLeft;
+//     }
+//     if ($("#add-jiaolian6SelectLeft13").jiaolian6SelectLeft != "" && $("#add-jiaolian6SelectLeft13").jiaolian6SelectLeft != undefined) {
+//         var jl613 = $("#add-jiaolian6SelectLeft13").jiaolian6SelectLeft;
+//     }
+//     var height13 = parseFloat(document.getElementById('add-height13').value);
+//     if (jl13 == '距中') {
+//         var jiaolian1Insert13 = height13 / 2;
+//         document.getElementById("add-jiaolian1SelectRight13").value = jl113
+//         document.getElementById("add-jiaolian1SelectRight13").value = jl113
+//
+//         document.getElementById("add-jiaolian1InsertLeft13").value = jiaolian1Insert13;
+//
+//         document.getElementById("add-jiaolian1InsertRight13").value = jiaolian1Insert13;
+//
+//     }
+//     if (jl213 == '距中') {
+//         var jiaolian2Insert13 = height13 / 2;
+//         document.getElementById("add-jiaolian2SelectRight13").value = jl213
+//
+//         document.getElementById("add-jiaolian2InsertLeft13").value = jiaolian2Insert13;
+//
+//         document.getElementById("add-jiaolian2InsertRight13").value = jiaolian2Insert13;
+//
+//     }
+//     if (jl313 == '距中') {
+//         var jiaolian3Insert13 = height13 / 2;
+//         document.getElementById("add-jiaolian3SelectRight13").value = jl313
+//
+//         document.getElementById("add-jiaolian3InsertLeft13").value = jiaolian3Insert13;
+//
+//         document.getElementById("add-jiaolian3InsertRight13").value = jiaolian3Insert13;
+//
+//     }
+//     if (jl413 == '距中') {
+//         var jiaolian4Insert13 = height13 / 2;
+//         document.getElementById("add-jiaolian4SelectRight13").value = jl413
+//
+//         document.getElementById("add-jiaolian4InsertLeft13").value = jiaolian4Insert13;
+//
+//         document.getElementById("add-jiaolian4InsertRight13").value = jiaolian4Insert13;
+//
+//     }
+//     if (jl513 == '距中') {
+//         var jiaolian5Insert13 = height13 / 2;
+//         document.getElementById("add-jiaolian5SelectRight13").value = jl513
+//
+//         document.getElementById("add-jiaolian5InsertLeft13").value = jiaolian5Insert13;
+//
+//         document.getElementById("add-jiaolian5InsertRight13").value = jiaolian5Insert13;
+//
+//     }
+//     if (jl613 == '距中') {
+//         var jiaolian6Insert13 = height13 / 2;
+//         document.getElementById("add-jiaolian6SelectRight13").value = jl613
+//
+//         document.getElementById("add-jiaolian6InsertLeft13").value = jiaolian6Insert13;
+//
+//         document.getElementById("add-jiaolian6InsertRight13").value = jiaolian6Insert13;
+//
+//     }
+//
+//     var jl114 = document.getElementById('add-jiaolian1SelectLeft14').value;
+//     var jl214 = document.getElementById('add-jiaolian2SelectLeft14').value;
+//     if ($("#add-jiaolian3SelectLeft14").jiaolian3SelectLeft != "" && $("#add-jiaolian3SelectLeft14").jiaolian3SelectLeft != undefined) {
+//         var jl314 = $("#add-jiaolian3SelectLeft14").jiaolian3SelectLeft;
+//     }
+//     if ($("#add-jiaolian4SelectLeft14").jiaolian4SelectLeft != "" && $("#add-jiaolian4SelectLeft14").jiaolian4SelectLeft != undefined) {
+//         var jl414 = $("#add-jiaolian4SelectLeft14").jiaolian4SelectLeft;
+//     }
+//     if ($("#add-jiaolian5SelectLeft14").jiaolian5SelectLeft != "" && $("#add-jiaolian5SelectLeft14").jiaolian5SelectLeft != undefined) {
+//         var jl514 = $("#add-jiaolian5SelectLeft14").jiaolian5SelectLeft;
+//     }
+//     if ($("#add-jiaolian6SelectLeft14").jiaolian6SelectLeft != "" && $("#add-jiaolian6SelectLeft14").jiaolian6SelectLeft != undefined) {
+//         var jl614 = $("#add-jiaolian6SelectLeft14").jiaolian6SelectLeft;
+//     }
+//     var height14 = parseFloat(document.getElementById('add-height14').value);
+//     if (jl14 == '距中') {
+//         var jiaolian1Insert14 = height14 / 2;
+//         document.getElementById("add-jiaolian1SelectRight14").value = jl114
+//         document.getElementById("add-jiaolian1SelectRight14").value = jl114
+//
+//         document.getElementById("add-jiaolian1InsertLeft14").value = jiaolian1Insert14;
+//
+//         document.getElementById("add-jiaolian1InsertRight14").value = jiaolian1Insert14;
+//
+//     }
+//     if (jl214 == '距中') {
+//         var jiaolian2Insert14 = height14 / 2;
+//         document.getElementById("add-jiaolian2SelectRight14").value = jl214
+//
+//         document.getElementById("add-jiaolian2InsertLeft14").value = jiaolian2Insert14;
+//
+//         document.getElementById("add-jiaolian2InsertRight14").value = jiaolian2Insert14;
+//
+//     }
+//     if (jl314 == '距中') {
+//         var jiaolian3Insert14 = height14 / 2;
+//         document.getElementById("add-jiaolian3SelectRight14").value = jl314
+//
+//         document.getElementById("add-jiaolian3InsertLeft14").value = jiaolian3Insert14;
+//
+//         document.getElementById("add-jiaolian3InsertRight14").value = jiaolian3Insert14;
+//
+//     }
+//     if (jl414 == '距中') {
+//         var jiaolian4Insert14 = height14 / 2;
+//         document.getElementById("add-jiaolian4SelectRight14").value = jl414
+//
+//         document.getElementById("add-jiaolian4InsertLeft14").value = jiaolian4Insert14;
+//
+//         document.getElementById("add-jiaolian4InsertRight14").value = jiaolian4Insert14;
+//
+//     }
+//     if (jl514 == '距中') {
+//         var jiaolian5Insert14 = height14 / 2;
+//         document.getElementById("add-jiaolian5SelectRight14").value = jl514
+//
+//         document.getElementById("add-jiaolian5InsertLeft14").value = jiaolian5Insert14;
+//
+//         document.getElementById("add-jiaolian5InsertRight14").value = jiaolian5Insert14;
+//
+//     }
+//     if (jl614 == '距中') {
+//         var jiaolian6Insert14 = height14 / 2;
+//         document.getElementById("add-jiaolian6SelectRight14").value = jl614
+//
+//         document.getElementById("add-jiaolian6InsertLeft14").value = jiaolian6Insert14;
+//
+//         document.getElementById("add-jiaolian6InsertRight14").value = jiaolian6Insert14;
+//
+//     }
+//
+//     var jl115 = document.getElementById('add-jiaolian1SelectLeft15').value;
+//     var jl215 = document.getElementById('add-jiaolian2SelectLeft15').value;
+//     if ($("#add-jiaolian3SelectLeft15").jiaolian3SelectLeft != "" && $("#add-jiaolian3SelectLeft15").jiaolian3SelectLeft != undefined) {
+//         var jl315 = $("#add-jiaolian3SelectLeft15").jiaolian3SelectLeft;
+//     }
+//     if ($("#add-jiaolian4SelectLeft15").jiaolian4SelectLeft != "" && $("#add-jiaolian4SelectLeft15").jiaolian4SelectLeft != undefined) {
+//         var jl415 = $("#add-jiaolian4SelectLeft15").jiaolian4SelectLeft;
+//     }
+//     if ($("#add-jiaolian5SelectLeft15").jiaolian5SelectLeft != "" && $("#add-jiaolian5SelectLeft15").jiaolian5SelectLeft != undefined) {
+//         var jl515 = $("#add-jiaolian5SelectLeft15").jiaolian5SelectLeft;
+//     }
+//     if ($("#add-jiaolian6SelectLeft15").jiaolian6SelectLeft != "" && $("#add-jiaolian6SelectLeft15").jiaolian6SelectLeft != undefined) {
+//         var jl615 = $("#add-jiaolian6SelectLeft15").jiaolian6SelectLeft;
+//     }
+//     var height15 = parseFloat(document.getElementById('add-height15').value);
+//     if (jl15 == '距中') {
+//         var jiaolian1Insert15 = height15 / 2;
+//         document.getElementById("add-jiaolian1SelectRight15").value = jl115
+//         document.getElementById("add-jiaolian1SelectRight15").value = jl115
+//
+//         document.getElementById("add-jiaolian1InsertLeft15").value = jiaolian1Insert15;
+//
+//         document.getElementById("add-jiaolian1InsertRight15").value = jiaolian1Insert15;
+//
+//     }
+//     if (jl215 == '距中') {
+//         var jiaolian2Insert15 = height15 / 2;
+//         document.getElementById("add-jiaolian2SelectRight15").value = jl215
+//
+//         document.getElementById("add-jiaolian2InsertLeft15").value = jiaolian2Insert15;
+//
+//         document.getElementById("add-jiaolian2InsertRight15").value = jiaolian2Insert15;
+//
+//     }
+//     if (jl315 == '距中') {
+//         var jiaolian3Insert15 = height15 / 2;
+//         document.getElementById("add-jiaolian3SelectRight15").value = jl315
+//
+//         document.getElementById("add-jiaolian3InsertLeft15").value = jiaolian3Insert15;
+//
+//         document.getElementById("add-jiaolian3InsertRight15").value = jiaolian3Insert15;
+//
+//     }
+//     if (jl415 == '距中') {
+//         var jiaolian4Insert15 = height15 / 2;
+//         document.getElementById("add-jiaolian4SelectRight15").value = jl415
+//
+//         document.getElementById("add-jiaolian4InsertLeft15").value = jiaolian4Insert15;
+//
+//         document.getElementById("add-jiaolian4InsertRight15").value = jiaolian4Insert15;
+//
+//     }
+//     if (jl515 == '距中') {
+//         var jiaolian5Insert15 = height15 / 2;
+//         document.getElementById("add-jiaolian5SelectRight15").value = jl515
+//
+//         document.getElementById("add-jiaolian5InsertLeft15").value = jiaolian5Insert15;
+//
+//         document.getElementById("add-jiaolian5InsertRight15").value = jiaolian5Insert15;
+//
+//     }
+//     if (jl615 == '距中') {
+//         var jiaolian6Insert15 = height15 / 2;
+//         document.getElementById("add-jiaolian6SelectRight15").value = jl615
+//
+//         document.getElementById("add-jiaolian6InsertLeft15").value = jiaolian6Insert15;
+//
+//         document.getElementById("add-jiaolian6InsertRight15").value = jiaolian6Insert15;
+//
+//     }
+//
+//     var jl116 = document.getElementById('add-jiaolian1SelectLeft16').value;
+//     var jl216 = document.getElementById('add-jiaolian2SelectLeft16').value;
+//     if ($("#add-jiaolian3SelectLeft16").jiaolian3SelectLeft != "" && $("#add-jiaolian3SelectLeft16").jiaolian3SelectLeft != undefined) {
+//         var jl316 = $("#add-jiaolian3SelectLeft16").jiaolian3SelectLeft;
+//     }
+//     if ($("#add-jiaolian4SelectLeft16").jiaolian4SelectLeft != "" && $("#add-jiaolian4SelectLeft16").jiaolian4SelectLeft != undefined) {
+//         var jl416 = $("#add-jiaolian4SelectLeft16").jiaolian4SelectLeft;
+//     }
+//     if ($("#add-jiaolian5SelectLeft16").jiaolian5SelectLeft != "" && $("#add-jiaolian5SelectLeft16").jiaolian5SelectLeft != undefined) {
+//         var jl516 = $("#add-jiaolian5SelectLeft16").jiaolian5SelectLeft;
+//     }
+//     if ($("#add-jiaolian6SelectLeft16").jiaolian6SelectLeft != "" && $("#add-jiaolian6SelectLeft16").jiaolian6SelectLeft != undefined) {
+//         var jl616 = $("#add-jiaolian6SelectLeft16").jiaolian6SelectLeft;
+//     }
+//     var height16 = parseFloat(document.getElementById('add-height16').value);
+//     if (jl16 == '距中') {
+//         var jiaolian1Insert16 = height16 / 2;
+//         document.getElementById("add-jiaolian1SelectRight16").value = jl116
+//         document.getElementById("add-jiaolian1SelectRight16").value = jl116
+//
+//         document.getElementById("add-jiaolian1InsertLeft16").value = jiaolian1Insert16;
+//
+//         document.getElementById("add-jiaolian1InsertRight16").value = jiaolian1Insert16;
+//
+//     }
+//     if (jl216 == '距中') {
+//         var jiaolian2Insert16 = height16 / 2;
+//         document.getElementById("add-jiaolian2SelectRight16").value = jl216
+//
+//         document.getElementById("add-jiaolian2InsertLeft16").value = jiaolian2Insert16;
+//
+//         document.getElementById("add-jiaolian2InsertRight16").value = jiaolian2Insert16;
+//
+//     }
+//     if (jl316 == '距中') {
+//         var jiaolian3Insert16 = height16 / 2;
+//         document.getElementById("add-jiaolian3SelectRight16").value = jl316
+//
+//         document.getElementById("add-jiaolian3InsertLeft16").value = jiaolian3Insert16;
+//
+//         document.getElementById("add-jiaolian3InsertRight16").value = jiaolian3Insert16;
+//
+//     }
+//     if (jl416 == '距中') {
+//         var jiaolian4Insert16 = height16 / 2;
+//         document.getElementById("add-jiaolian4SelectRight16").value = jl416
+//
+//         document.getElementById("add-jiaolian4InsertLeft16").value = jiaolian4Insert16;
+//
+//         document.getElementById("add-jiaolian4InsertRight16").value = jiaolian4Insert16;
+//
+//     }
+//     if (jl516 == '距中') {
+//         var jiaolian5Insert16 = height16 / 2;
+//         document.getElementById("add-jiaolian5SelectRight16").value = jl516
+//
+//         document.getElementById("add-jiaolian5InsertLeft16").value = jiaolian5Insert16;
+//
+//         document.getElementById("add-jiaolian5InsertRight16").value = jiaolian5Insert16;
+//
+//     }
+//     if (jl616 == '距中') {
+//         var jiaolian6Insert16 = height16 / 2;
+//         document.getElementById("add-jiaolian6SelectRight16").value = jl616
+//
+//         document.getElementById("add-jiaolian6InsertLeft16").value = jiaolian6Insert16;
+//
+//         document.getElementById("add-jiaolian6InsertRight16").value = jiaolian6Insert16;
+//
+//     }
+//
+//     var jl117 = document.getElementById('add-jiaolian1SelectLeft17').value;
+//     var jl217 = document.getElementById('add-jiaolian2SelectLeft17').value;
+//     if ($("#add-jiaolian3SelectLeft17").jiaolian3SelectLeft != "" && $("#add-jiaolian3SelectLeft17").jiaolian3SelectLeft != undefined) {
+//         var jl317 = $("#add-jiaolian3SelectLeft17").jiaolian3SelectLeft;
+//     }
+//     if ($("#add-jiaolian4SelectLeft17").jiaolian4SelectLeft != "" && $("#add-jiaolian4SelectLeft17").jiaolian4SelectLeft != undefined) {
+//         var jl417 = $("#add-jiaolian4SelectLeft17").jiaolian4SelectLeft;
+//     }
+//     if ($("#add-jiaolian5SelectLeft17").jiaolian5SelectLeft != "" && $("#add-jiaolian5SelectLeft17").jiaolian5SelectLeft != undefined) {
+//         var jl517 = $("#add-jiaolian5SelectLeft17").jiaolian5SelectLeft;
+//     }
+//     if ($("#add-jiaolian6SelectLeft17").jiaolian6SelectLeft != "" && $("#add-jiaolian6SelectLeft17").jiaolian6SelectLeft != undefined) {
+//         var jl617 = $("#add-jiaolian6SelectLeft17").jiaolian6SelectLeft;
+//     }
+//     var height17 = parseFloat(document.getElementById('add-height17').value);
+//     if (jl17 == '距中') {
+//         var jiaolian1Insert17 = height17 / 2;
+//         document.getElementById("add-jiaolian1SelectRight17").value = jl117
+//         document.getElementById("add-jiaolian1SelectRight17").value = jl117
+//
+//         document.getElementById("add-jiaolian1InsertLeft17").value = jiaolian1Insert17;
+//
+//         document.getElementById("add-jiaolian1InsertRight17").value = jiaolian1Insert17;
+//
+//     }
+//     if (jl217 == '距中') {
+//         var jiaolian2Insert17 = height17 / 2;
+//         document.getElementById("add-jiaolian2SelectRight17").value = jl217
+//
+//         document.getElementById("add-jiaolian2InsertLeft17").value = jiaolian2Insert17;
+//
+//         document.getElementById("add-jiaolian2InsertRight17").value = jiaolian2Insert17;
+//
+//     }
+//     if (jl317 == '距中') {
+//         var jiaolian3Insert17 = height17 / 2;
+//         document.getElementById("add-jiaolian3SelectRight17").value = jl317
+//
+//         document.getElementById("add-jiaolian3InsertLeft17").value = jiaolian3Insert17;
+//
+//         document.getElementById("add-jiaolian3InsertRight17").value = jiaolian3Insert17;
+//
+//     }
+//     if (jl417 == '距中') {
+//         var jiaolian4Insert17 = height17 / 2;
+//         document.getElementById("add-jiaolian4SelectRight17").value = jl417
+//
+//         document.getElementById("add-jiaolian4InsertLeft17").value = jiaolian4Insert17;
+//
+//         document.getElementById("add-jiaolian4InsertRight17").value = jiaolian4Insert17;
+//
+//     }
+//     if (jl517 == '距中') {
+//         var jiaolian5Insert17 = height17 / 2;
+//         document.getElementById("add-jiaolian5SelectRight17").value = jl517
+//
+//         document.getElementById("add-jiaolian5InsertLeft17").value = jiaolian5Insert17;
+//
+//         document.getElementById("add-jiaolian5InsertRight17").value = jiaolian5Insert17;
+//
+//     }
+//     if (jl617 == '距中') {
+//         var jiaolian6Insert17 = height17 / 2;
+//         document.getElementById("add-jiaolian6SelectRight17").value = jl617
+//
+//         document.getElementById("add-jiaolian6InsertLeft17").value = jiaolian6Insert17;
+//
+//         document.getElementById("add-jiaolian6InsertRight17").value = jiaolian6Insert17;
+//
+//     }
+//
+//     var jl118 = document.getElementById('add-jiaolian1SelectLeft18').value;
+//     var jl218 = document.getElementById('add-jiaolian2SelectLeft18').value;
+//     if ($("#add-jiaolian3SelectLeft18").jiaolian3SelectLeft != "" && $("#add-jiaolian3SelectLeft18").jiaolian3SelectLeft != undefined) {
+//         var jl318 = $("#add-jiaolian3SelectLeft18").jiaolian3SelectLeft;
+//     }
+//     if ($("#add-jiaolian4SelectLeft18").jiaolian4SelectLeft != "" && $("#add-jiaolian4SelectLeft18").jiaolian4SelectLeft != undefined) {
+//         var jl418 = $("#add-jiaolian4SelectLeft18").jiaolian4SelectLeft;
+//     }
+//     if ($("#add-jiaolian5SelectLeft18").jiaolian5SelectLeft != "" && $("#add-jiaolian5SelectLeft18").jiaolian5SelectLeft != undefined) {
+//         var jl518 = $("#add-jiaolian5SelectLeft18").jiaolian5SelectLeft;
+//     }
+//     if ($("#add-jiaolian6SelectLeft18").jiaolian6SelectLeft != "" && $("#add-jiaolian6SelectLeft18").jiaolian6SelectLeft != undefined) {
+//         var jl618 = $("#add-jiaolian6SelectLeft18").jiaolian6SelectLeft;
+//     }
+//     var height18 = parseFloat(document.getElementById('add-height18').value);
+//     if (jl18 == '距中') {
+//         var jiaolian1Insert18 = height18 / 2;
+//         document.getElementById("add-jiaolian1SelectRight18").value = jl118
+//         document.getElementById("add-jiaolian1SelectRight18").value = jl118
+//
+//         document.getElementById("add-jiaolian1InsertLeft18").value = jiaolian1Insert18;
+//
+//         document.getElementById("add-jiaolian1InsertRight18").value = jiaolian1Insert18;
+//
+//     }
+//     if (jl218 == '距中') {
+//         var jiaolian2Insert18 = height18 / 2;
+//         document.getElementById("add-jiaolian2SelectRight18").value = jl218
+//
+//         document.getElementById("add-jiaolian2InsertLeft18").value = jiaolian2Insert18;
+//
+//         document.getElementById("add-jiaolian2InsertRight18").value = jiaolian2Insert18;
+//
+//     }
+//     if (jl318 == '距中') {
+//         var jiaolian3Insert18 = height18 / 2;
+//         document.getElementById("add-jiaolian3SelectRight18").value = jl318
+//
+//         document.getElementById("add-jiaolian3InsertLeft18").value = jiaolian3Insert18;
+//
+//         document.getElementById("add-jiaolian3InsertRight18").value = jiaolian3Insert18;
+//
+//     }
+//     if (jl418 == '距中') {
+//         var jiaolian4Insert18 = height18 / 2;
+//         document.getElementById("add-jiaolian4SelectRight18").value = jl418
+//
+//         document.getElementById("add-jiaolian4InsertLeft18").value = jiaolian4Insert18;
+//
+//         document.getElementById("add-jiaolian4InsertRight18").value = jiaolian4Insert18;
+//
+//     }
+//     if (jl518 == '距中') {
+//         var jiaolian5Insert18 = height18 / 2;
+//         document.getElementById("add-jiaolian5SelectRight18").value = jl518
+//
+//         document.getElementById("add-jiaolian5InsertLeft18").value = jiaolian5Insert18;
+//
+//         document.getElementById("add-jiaolian5InsertRight18").value = jiaolian5Insert18;
+//
+//     }
+//     if (jl618 == '距中') {
+//         var jiaolian6Insert18 = height18 / 2;
+//         document.getElementById("add-jiaolian6SelectRight18").value = jl618
+//
+//         document.getElementById("add-jiaolian6InsertLeft18").value = jiaolian6Insert18;
+//
+//         document.getElementById("add-jiaolian6InsertRight18").value = jiaolian6Insert18;
+//
+//     }
+//
+//     var jl119 = document.getElementById('add-jiaolian1SelectLeft19').value;
+//     var jl219 = document.getElementById('add-jiaolian2SelectLeft19').value;
+//     if ($("#add-jiaolian3SelectLeft19").jiaolian3SelectLeft != "" && $("#add-jiaolian3SelectLeft19").jiaolian3SelectLeft != undefined) {
+//         var jl319 = $("#add-jiaolian3SelectLeft19").jiaolian3SelectLeft;
+//     }
+//     if ($("#add-jiaolian4SelectLeft19").jiaolian4SelectLeft != "" && $("#add-jiaolian4SelectLeft19").jiaolian4SelectLeft != undefined) {
+//         var jl419 = $("#add-jiaolian4SelectLeft19").jiaolian4SelectLeft;
+//     }
+//     if ($("#add-jiaolian5SelectLeft19").jiaolian5SelectLeft != "" && $("#add-jiaolian5SelectLeft19").jiaolian5SelectLeft != undefined) {
+//         var jl519 = $("#add-jiaolian5SelectLeft19").jiaolian5SelectLeft;
+//     }
+//     if ($("#add-jiaolian6SelectLeft19").jiaolian6SelectLeft != "" && $("#add-jiaolian6SelectLeft19").jiaolian6SelectLeft != undefined) {
+//         var jl619 = $("#add-jiaolian6SelectLeft19").jiaolian6SelectLeft;
+//     }
+//     var height19 = parseFloat(document.getElementById('add-height19').value);
+//     if (jl19 == '距中') {
+//         var jiaolian1Insert19 = height19 / 2;
+//         document.getElementById("add-jiaolian1SelectRight19").value = jl119
+//         document.getElementById("add-jiaolian1SelectRight19").value = jl119
+//
+//         document.getElementById("add-jiaolian1InsertLeft19").value = jiaolian1Insert19;
+//
+//         document.getElementById("add-jiaolian1InsertRight19").value = jiaolian1Insert19;
+//
+//     }
+//     if (jl219 == '距中') {
+//         var jiaolian2Insert19 = height19 / 2;
+//         document.getElementById("add-jiaolian2SelectRight19").value = jl219
+//
+//         document.getElementById("add-jiaolian2InsertLeft19").value = jiaolian2Insert19;
+//
+//         document.getElementById("add-jiaolian2InsertRight19").value = jiaolian2Insert19;
+//
+//     }
+//     if (jl319 == '距中') {
+//         var jiaolian3Insert19 = height19 / 2;
+//         document.getElementById("add-jiaolian3SelectRight19").value = jl319
+//
+//         document.getElementById("add-jiaolian3InsertLeft19").value = jiaolian3Insert19;
+//
+//         document.getElementById("add-jiaolian3InsertRight19").value = jiaolian3Insert19;
+//
+//     }
+//     if (jl419 == '距中') {
+//         var jiaolian4Insert19 = height19 / 2;
+//         document.getElementById("add-jiaolian4SelectRight19").value = jl419
+//
+//         document.getElementById("add-jiaolian4InsertLeft19").value = jiaolian4Insert19;
+//
+//         document.getElementById("add-jiaolian4InsertRight19").value = jiaolian4Insert19;
+//
+//     }
+//     if (jl519 == '距中') {
+//         var jiaolian5Insert19 = height19 / 2;
+//         document.getElementById("add-jiaolian5SelectRight19").value = jl519
+//
+//         document.getElementById("add-jiaolian5InsertLeft19").value = jiaolian5Insert19;
+//
+//         document.getElementById("add-jiaolian5InsertRight19").value = jiaolian5Insert19;
+//
+//     }
+//     if (jl619 == '距中') {
+//         var jiaolian6Insert19 = height19 / 2;
+//         document.getElementById("add-jiaolian6SelectRight19").value = jl619
+//
+//         document.getElementById("add-jiaolian6InsertLeft19").value = jiaolian6Insert19;
+//
+//         document.getElementById("add-jiaolian6InsertRight19").value = jiaolian6Insert19;
+//
+//     }
+//
+// }
 
 function getUpdJe() {
     var jl1 = document.getElementById('update-jiaolian1SelectLeft').value;
@@ -4566,121 +4566,161 @@ function getPfsl() {
     var width = parseFloat(document.getElementById('add-width').value);
     var num = parseFloat(document.getElementById('add-num').value);
     var sum_sl = Math.round(height * width * num);
-    document.getElementById("add-sumShuliang1").value = sum_sl
+    var ssl = sum_sl.toFixed(3);
+    var s = ssl / 1000000;
+    document.getElementById("add-sumShuliang1").value = s
 
     var height1 = parseFloat(document.getElementById('add-height1').value);
     var width1 = parseFloat(document.getElementById('add-width1').value);
     var num1 = parseFloat(document.getElementById('add-num1').value);
     var sum_sl1 = Math.round(height1 * width1 * num1);
-    document.getElementById("add-sumShuliang11").value = sum_sl1
+    var ssl1 = sum_sl1.toFixed(3);
+    var s1 = ssl1 / 1000000;
+    document.getElementById("add-sumShuliang11").value = s1
 
     var height2 = parseFloat(document.getElementById('add-height2').value);
     var width2 = parseFloat(document.getElementById('add-width2').value);
     var num2 = parseFloat(document.getElementById('add-num2').value);
     var sum_sl2 = Math.round(height2 * width2 * num2);
-    document.getElementById("add-sumShuliang12").value = sum_sl2
+    var ssl2 = sum_sl2.toFixed(3);
+    var s2 = ssl2 / 1000000;
+    document.getElementById("add-sumShuliang12").value = s2
 
     var height3 = parseFloat(document.getElementById('add-height3').value);
     var width3 = parseFloat(document.getElementById('add-width3').value);
     var num3 = parseFloat(document.getElementById('add-num3').value);
     var sum_sl3 = Math.round(height3 * width3 * num3);
-    document.getElementById("add-sumShuliang13").value = sum_sl3
+    var ssl3 = sum_sl3.toFixed(3);
+    var s3 = ssl3 / 1000000;
+    document.getElementById("add-sumShuliang13").value = s3
 
     var height4 = parseFloat(document.getElementById('add-height4').value);
     var width4 = parseFloat(document.getElementById('add-width4').value);
     var num4 = parseFloat(document.getElementById('add-num4').value);
     var sum_sl4 = Math.round(height4 * width4 * num4);
-    document.getElementById("add-sumShuliang14").value = sum_sl4
+    var ssl4 = sum_sl4.toFixed(3);
+    var s4 = ssl4 / 1000000;
+    document.getElementById("add-sumShuliang14").value = s4
 
     var height5 = parseFloat(document.getElementById('add-height5').value);
     var width5 = parseFloat(document.getElementById('add-width5').value);
     var num5 = parseFloat(document.getElementById('add-num5').value);
     var sum_sl5 = Math.round(height5 * width5 * num5);
-    document.getElementById("add-sumShuliang15").value = sum_sl5
+    var ssl5 = sum_sl5.toFixed(3);
+    var s5 = ssl5 / 1000000;
+    document.getElementById("add-sumShuliang15").value = s5
 
     var height6 = parseFloat(document.getElementById('add-height6').value);
     var width6 = parseFloat(document.getElementById('add-width6').value);
     var num6 = parseFloat(document.getElementById('add-num6').value);
     var sum_sl6 = Math.round(height6 * width6 * num6);
-    document.getElementById("add-sumShuliang16").value = sum_sl6
+    var ssl6 = sum_sl6.toFixed(3);
+    var s6 = ssl6 / 1000000;
+    document.getElementById("add-sumShuliang16").value = s6
 
     var height7 = parseFloat(document.getElementById('add-height7').value);
     var width7 = parseFloat(document.getElementById('add-width7').value);
     var num7 = parseFloat(document.getElementById('add-num7').value);
     var sum_sl7 = Math.round(height7 * width7 * num7);
-    document.getElementById("add-sumShuliang17").value = sum_sl7
+    var ssl7 = sum_sl7.toFixed(3);
+    var s7 = ssl7 / 1000000;
+    document.getElementById("add-sumShuliang17").value = s7
 
     var height8 = parseFloat(document.getElementById('add-height8').value);
     var width8 = parseFloat(document.getElementById('add-width8').value);
     var num8 = parseFloat(document.getElementById('add-num8').value);
     var sum_sl8 = Math.round(height8 * width8 * num8);
-    document.getElementById("add-sumShuliang18").value = sum_sl8
+    var ssl8 = sum_sl8.toFixed(3);
+    var s8 = ssl8 / 1000000;
+    document.getElementById("add-sumShuliang18").value = s8
 
     var height9 = parseFloat(document.getElementById('add-height9').value);
     var width9 = parseFloat(document.getElementById('add-width9').value);
     var num9 = parseFloat(document.getElementById('add-num9').value);
     var sum_sl9 = Math.round(height9 * width9 * num9);
-    document.getElementById("add-sumShuliang19").value = sum_sl9
+    var ssl9 = sum_sl9.toFixed(3);
+    var s9 = ssl9 / 1000000;
+    document.getElementById("add-sumShuliang19").value = s9
 
     var height10 = parseFloat(document.getElementById('add-height10').value);
     var width10 = parseFloat(document.getElementById('add-width10').value);
     var num10 = parseFloat(document.getElementById('add-num10').value);
     var sum_sl10 = Math.round(height10 * width10 * num10);
-    document.getElementById("add-sumShuliang110").value = sum_sl10
+    var ssl10 = sum_sl10.toFixed(3);
+    var s10 = ssl10 / 1000000;
+    document.getElementById("add-sumShuliang110").value = s10
 
     var height11 = parseFloat(document.getElementById('add-height11').value);
     var width11 = parseFloat(document.getElementById('add-width11').value);
     var num11 = parseFloat(document.getElementById('add-num11').value);
     var sum_sl11 = Math.round(height11 * width11 * num11);
-    document.getElementById("add-sumShuliang111").value = sum_sl11
+    var ssl11 = sum_sl11.toFixed(3);
+    var s11 = ssl11 / 1000000;
+    document.getElementById("add-sumShuliang111").value = s11
 
     var height12 = parseFloat(document.getElementById('add-height12').value);
     var width12 = parseFloat(document.getElementById('add-width12').value);
     var num12 = parseFloat(document.getElementById('add-num12').value);
     var sum_sl12 = Math.round(height12 * width12 * num12);
-    document.getElementById("add-sumShuliang112").value = sum_sl12
+    var ssl12 = sum_sl12.toFixed(3);
+    var s12 = ssl12 / 1000000;
+    document.getElementById("add-sumShuliang112").value = s12
 
     var height13 = parseFloat(document.getElementById('add-height13').value);
     var width13 = parseFloat(document.getElementById('add-width13').value);
     var num13 = parseFloat(document.getElementById('add-num13').value);
     var sum_sl13 = Math.round(height13 * width13 * num13);
-    document.getElementById("add-sumShuliang113").value = sum_sl13
+    var ssl13 = sum_sl13.toFixed(3);
+    var s13 = ssl13 / 1000000;
+    document.getElementById("add-sumShuliang113").value = s13
 
     var height14 = parseFloat(document.getElementById('add-height14').value);
     var width14 = parseFloat(document.getElementById('add-width14').value);
     var num14 = parseFloat(document.getElementById('add-num14').value);
     var sum_sl14 = Math.round(height14 * width14 * num14);
-    document.getElementById("add-sumShuliang114").value = sum_sl14
+    var ssl14 = sum_sl14.toFixed(3);
+    var s14 = ssl14 / 1000000;
+    document.getElementById("add-sumShuliang114").value = s14
 
     var height15 = parseFloat(document.getElementById('add-height15').value);
     var width15 = parseFloat(document.getElementById('add-width15').value);
     var num15 = parseFloat(document.getElementById('add-num15').value);
     var sum_sl15 = Math.round(height15 * width15 * num15);
-    document.getElementById("add-sumShuliang115").value = sum_sl15
+    var ssl15 = sum_sl15.toFixed(3);
+    var s15 = ssl15 / 1000000;
+    document.getElementById("add-sumShuliang115").value = s15
 
     var height16 = parseFloat(document.getElementById('add-height16').value);
     var width16 = parseFloat(document.getElementById('add-width16').value);
     var num16 = parseFloat(document.getElementById('add-num16').value);
     var sum_sl16 = Math.round(height16 * width16 * num16);
-    document.getElementById("add-sumShuliang116").value = sum_sl16
+    var ssl16 = sum_sl16.toFixed(3);
+    var s16 = ssl16 / 1000000;
+    document.getElementById("add-sumShuliang116").value = s16
 
     var height17 = parseFloat(document.getElementById('add-height17').value);
     var width17 = parseFloat(document.getElementById('add-width17').value);
     var num17 = parseFloat(document.getElementById('add-num17').value);
     var sum_sl17 = Math.round(height17 * width17 * num17);
-    document.getElementById("add-sumShuliang117").value = sum_sl17
+    var ssl17 = sum_sl17.toFixed(3);
+    var s17 = ssl17 / 1000000;
+    document.getElementById("add-sumShuliang117").value = s17
 
     var height18 = parseFloat(document.getElementById('add-height18').value);
     var width18 = parseFloat(document.getElementById('add-width18').value);
     var num18 = parseFloat(document.getElementById('add-num18').value);
     var sum_sl18 = Math.round(height18 * width18 * num18);
-    document.getElementById("add-sumShuliang118").value = sum_sl18
+    var ssl18 = sum_sl18.toFixed(3);
+    var s18 = ssl18 / 1000000;
+    document.getElementById("add-sumShuliang118").value = s18
 
     var height19 = parseFloat(document.getElementById('add-height19').value);
     var width19 = parseFloat(document.getElementById('add-width19').value);
     var num19 = parseFloat(document.getElementById('add-num19').value);
     var sum_sl19 = Math.round(height19 * width19 * num19);
-    document.getElementById("add-sumShuliang119").value = sum_sl19
+    var ssl19 = sum_sl19.toFixed(3);
+    var s19 = ssl19 / 1000000;
+    document.getElementById("add-sumShuliang119").value = s19
 
 }
 
@@ -4807,121 +4847,161 @@ function getZcsl() {
     var width = parseFloat(document.getElementById('add-width').value);
     var num = parseFloat(document.getElementById('add-num').value);
     var sum_sl2 = Math.round((height * 1 + width * 1) * 2 * num);
-    document.getElementById("add-sumShuliang2").value = sum_sl2
+    var zcsl = sum_sl2.toFixed(3);
+    var zc = zcsl / 1000;
+    document.getElementById("add-sumShuliang2").value = zc
 
     var height1 = parseFloat(document.getElementById('add-height1').value);
     var width1 = parseFloat(document.getElementById('add-width1').value);
     var num1 = parseFloat(document.getElementById('add-num1').value);
     var sum_sl21 = Math.round((height1 * 1 + width1 * 1) * 2 * num1);
-    document.getElementById("add-sumShuliang21").value = sum_sl21
+    var zcsl1 = sum_sl21.toFixed(3);
+    var zc1 = zcsl1 / 1000;
+    document.getElementById("add-sumShuliang21").value = zc1
 
     var height2 = parseFloat(document.getElementById('add-height2').value);
     var width2 = parseFloat(document.getElementById('add-width2').value);
     var num2 = parseFloat(document.getElementById('add-num2').value);
     var sum_sl22 = Math.round((height2 * 1 + width2 * 1) * 2 * num2);
-    document.getElementById("add-sumShuliang22").value = sum_sl22
+    var zcsl2 = sum_sl22.toFixed(3);
+    var zc2 = zcsl2 / 1000;
+    document.getElementById("add-sumShuliang22").value = zc2
 
     var height3 = parseFloat(document.getElementById('add-height3').value);
     var width3 = parseFloat(document.getElementById('add-width3').value);
     var num3 = parseFloat(document.getElementById('add-num3').value);
     var sum_sl23 = Math.round((height3 * 1 + width3 * 1) * 2 * num3);
-    document.getElementById("add-sumShuliang23").value = sum_sl23
+    var zcsl3 = sum_sl23.toFixed(3);
+    var zc3 = zcsl3 / 1000;
+    document.getElementById("add-sumShuliang23").value = zc3
 
     var height4 = parseFloat(document.getElementById('add-height4').value);
     var width4 = parseFloat(document.getElementById('add-width4').value);
     var num4 = parseFloat(document.getElementById('add-num4').value);
     var sum_sl24 = Math.round((height4 * 1 + width4 * 1) * 2 * num4);
-    document.getElementById("add-sumShuliang24").value = sum_sl24
+    var zcsl4 = sum_sl24.toFixed(3);
+    var zc4 = zcsl4 / 1000;
+    document.getElementById("add-sumShuliang24").value = zc4
 
     var height5 = parseFloat(document.getElementById('add-height5').value);
     var width5 = parseFloat(document.getElementById('add-width5').value);
     var num5 = parseFloat(document.getElementById('add-num5').value);
     var sum_sl25 = Math.round((height5 * 1 + width5 * 1) * 2 * num5);
-    document.getElementById("add-sumShuliang25").value = sum_sl25
+    var zcsl5 = sum_sl25.toFixed(3);
+    var zc5 = zcsl5 / 1000;
+    document.getElementById("add-sumShuliang25").value = zc5
 
     var height6 = parseFloat(document.getElementById('add-height6').value);
     var width6 = parseFloat(document.getElementById('add-width6').value);
     var num6 = parseFloat(document.getElementById('add-num6').value);
     var sum_sl26 = Math.round((height6 * 1 + width6 * 1) * 2 * num6);
-    document.getElementById("add-sumShuliang26").value = sum_sl26
+    var zcsl6 = sum_sl26.toFixed(3);
+    var zc6 = zcsl6 / 1000;
+    document.getElementById("add-sumShuliang26").value = zc6
 
     var height7 = parseFloat(document.getElementById('add-height7').value);
     var width7 = parseFloat(document.getElementById('add-width7').value);
     var num7 = parseFloat(document.getElementById('add-num7').value);
     var sum_sl27 = Math.round((height7 * 1 + width7 * 1) * 2 * num7);
-    document.getElementById("add-sumShuliang27").value = sum_sl27
+    var zcsl7 = sum_sl27.toFixed(3);
+    var zc7 = zcsl7 / 1000;
+    document.getElementById("add-sumShuliang27").value = zc7
 
     var height8 = parseFloat(document.getElementById('add-height8').value);
     var width8 = parseFloat(document.getElementById('add-width8').value);
     var num8 = parseFloat(document.getElementById('add-num8').value);
     var sum_sl28 = Math.round((height8 * 1 + width8 * 1) * 2 * num8);
-    document.getElementById("add-sumShuliang28").value = sum_sl28
+    var zcsl8 = sum_sl28.toFixed(3);
+    var zc8 = zcsl8 / 1000;
+    document.getElementById("add-sumShuliang28").value = zc8
 
     var height9 = parseFloat(document.getElementById('add-height9').value);
     var width9 = parseFloat(document.getElementById('add-width9').value);
     var num9 = parseFloat(document.getElementById('add-num9').value);
     var sum_sl29 = Math.round((height9 * 1 + width9 * 1) * 2 * num9);
-    document.getElementById("add-sumShuliang29").value = sum_sl29
+    var zcsl9 = sum_sl29.toFixed(3);
+    var zc9 = zcsl9 / 1000;
+    document.getElementById("add-sumShuliang29").value = zc9
 
     var height10 = parseFloat(document.getElementById('add-height10').value);
     var width10 = parseFloat(document.getElementById('add-width10').value);
     var num10 = parseFloat(document.getElementById('add-num10').value);
     var sum_sl210 = Math.round((height10 * 1 + width10 * 1) * 2 * num10);
-    document.getElementById("add-sumShuliang210").value = sum_sl210
+    var zcsl10 = sum_sl210.toFixed(3);
+    var zc10 = zcsl10 / 1000;
+    document.getElementById("add-sumShuliang210").value = zc10
 
     var height11 = parseFloat(document.getElementById('add-height11').value);
     var width11 = parseFloat(document.getElementById('add-width11').value);
     var num11 = parseFloat(document.getElementById('add-num11').value);
     var sum_sl211 = Math.round((height11 * 1 + width11 * 1) * 2 * num11);
-    document.getElementById("add-sumShuliang211").value = sum_sl211
+    var zcsl11 = sum_sl211.toFixed(3);
+    var zc11 = zcsl11 / 1000;
+    document.getElementById("add-sumShuliang211").value = zc11
 
     var height12 = parseFloat(document.getElementById('add-height12').value);
     var width12 = parseFloat(document.getElementById('add-width12').value);
     var num12 = parseFloat(document.getElementById('add-num12').value);
     var sum_sl212 = Math.round((height12 * 1 + width12 * 1) * 2 * num12);
-    document.getElementById("add-sumShuliang212").value = sum_sl212
+    var zcsl12 = sum_sl212.toFixed(3);
+    var zc12 = zcsl12 / 1000;
+    document.getElementById("add-sumShuliang212").value = zc12
 
     var height13 = parseFloat(document.getElementById('add-height13').value);
     var width13 = parseFloat(document.getElementById('add-width13').value);
     var num13 = parseFloat(document.getElementById('add-num13').value);
     var sum_sl213 = Math.round((height13 * 1 + width13 * 1) * 2 * num13);
-    document.getElementById("add-sumShuliang213").value = sum_sl213
+    var zcsl13 = sum_sl213.toFixed(3);
+    var zc13 = zcsl13 / 1000;
+    document.getElementById("add-sumShuliang213").value = zc13
 
     var height14 = parseFloat(document.getElementById('add-height14').value);
     var width14 = parseFloat(document.getElementById('add-width14').value);
     var num14 = parseFloat(document.getElementById('add-num14').value);
     var sum_sl214 = Math.round((height14 * 1 + width14 * 1) * 2 * num14);
-    document.getElementById("add-sumShuliang214").value = sum_sl214
+    var zcsl14 = sum_sl214.toFixed(3);
+    var zc14 = zcsl14 / 1000;
+    document.getElementById("add-sumShuliang214").value = zc14
 
     var height15 = parseFloat(document.getElementById('add-height15').value);
     var width15 = parseFloat(document.getElementById('add-width15').value);
     var num15 = parseFloat(document.getElementById('add-num15').value);
     var sum_sl215 = Math.round((height15 * 1 + width15 * 1) * 2 * num15);
-    document.getElementById("add-sumShuliang215").value = sum_sl215
+    var zcsl15 = sum_sl215.toFixed(3);
+    var zc15 = zcsl15 / 1000;
+    document.getElementById("add-sumShuliang215").value = zc15
 
     var height16 = parseFloat(document.getElementById('add-height16').value);
     var width16 = parseFloat(document.getElementById('add-width16').value);
     var num16 = parseFloat(document.getElementById('add-num16').value);
     var sum_sl216 = Math.round((height16 * 1 + width16 * 1) * 2 * num16);
-    document.getElementById("add-sumShuliang216").value = sum_sl216
+    var zcsl16 = sum_sl216.toFixed(3);
+    var zc16 = zcsl16 / 1000;
+    document.getElementById("add-sumShuliang216").value = zc16
 
     var height17 = parseFloat(document.getElementById('add-height17').value);
     var width17 = parseFloat(document.getElementById('add-width17').value);
     var num17 = parseFloat(document.getElementById('add-num17').value);
     var sum_sl217 = Math.round((height17 * 1 + width17 * 1) * 2 * num17);
-    document.getElementById("add-sumShuliang217").value = sum_sl217
+    var zcsl17 = sum_sl217.toFixed(3);
+    var zc17 = zcsl17 / 1000;
+    document.getElementById("add-sumShuliang217").value = zc17
 
     var height18 = parseFloat(document.getElementById('add-height18').value);
     var width18 = parseFloat(document.getElementById('add-width18').value);
     var num18 = parseFloat(document.getElementById('add-num18').value);
     var sum_sl218 = Math.round((height18 * 1 + width18 * 1) * 2 * num18);
-    document.getElementById("add-sumShuliang218").value = sum_sl218
+    var zcsl18 = sum_sl218.toFixed(3);
+    var zc18 = zcsl18 / 1000;
+    document.getElementById("add-sumShuliang218").value = zc18
 
     var height19 = parseFloat(document.getElementById('add-height19').value);
     var width19 = parseFloat(document.getElementById('add-width19').value);
     var num19 = parseFloat(document.getElementById('add-num19').value);
     var sum_sl219 = Math.round((height19 * 1 + width19 * 1) * 2 * num19);
-    document.getElementById("add-sumShuliang219").value = sum_sl219
+    var zcsl19 = sum_sl219.toFixed(3);
+    var zc19 = zcsl19 / 1000;
+    document.getElementById("add-sumShuliang219").value = zc19
 
 }
 
@@ -5076,14 +5156,17 @@ function getList() {
         if (res.code == 200) {
             var power = res.data;
             if (power == "客户") {
+
+                document.getElementById("customerName").disabled=true;
+                document.getElementById("update-wancheng").disabled=true;
                 document.getElementById("add-customerName").remove();
                 var div = document.getElementById('d-customerName');
                 var textBox = document.createElement('input');
-                textBox.id='add-customerName';
-                textBox.type='text';
-                textBox.name='customerName';
-                textBox.class='form-control';
-                textBox.autocomplete='off';
+                textBox.id = 'add-customerName';
+                textBox.type = 'text';
+                textBox.name = 'customerName';
+                textBox.class = 'form-control';
+                textBox.autocomplete = 'off';
                 div.appendChild(textBox);
                 $ajax({
                     type: 'post',
@@ -5092,6 +5175,7 @@ function getList() {
                     if (res.code == 200) {
                         var this_name = res.data;
                         document.getElementById("add-customerName").value = this_name;
+                        document.getElementById("op1").value = this_name;
                     }
                 })
             }
@@ -5116,11 +5200,3477 @@ $(function () {
     // document.getElementById("dlm").innerText = ($.session.get('username'));
 
     var inp1 = document.getElementById('add-jiaoliankongFangxiangLeft');
-    inp1.addEventListener('blur', function() {
-        var xdsl = document.getElementById('add-num').value();
-        var jlkfxl = document.getElementById('add-jiaoliankongFangxiangLeft');
+    inp1.addEventListener('blur', function () {
+        var xdsl = document.getElementById('add-num').value;
+        var jlkfxl = document.getElementById('add-jiaoliankongFangxiangLeft').value;
         var jlkfxr = xdsl - jlkfxl;
         document.getElementById('add-jiaoliankongFangxiangRight').value = jlkfxr;
+    })
+
+    var inp2 = document.getElementById('add-lashouShuliangLeft');
+    inp2.addEventListener('blur', function () {
+        var xdsl1 = document.getElementById('add-num').value;
+        var lssll = document.getElementById('add-lashouShuliangLeft').value;
+        var lsslr = xdsl1 - lssll;
+        document.getElementById('add-lashouShuliangRight').value = lsslr;
+    })
+    // ------------------1
+    var inp3 = document.getElementById('add-jiaolian1SelectLeft');
+    inp3.addEventListener('blur', function () {
+        var jl1sl = document.getElementById('add-jiaolian1SelectLeft').value;
+        document.getElementById('add-jiaolian1SelectRight').value = jl1sl;
+    })
+
+    var inp4 = document.getElementById('add-jiaolian2SelectLeft');
+    inp4.addEventListener('blur', function () {
+        var jl2sl = document.getElementById('add-jiaolian2SelectLeft').value;
+        document.getElementById('add-jiaolian2SelectRight').value = jl2sl;
+    })
+
+    var inp5 = document.getElementById('add-jiaolian3SelectLeft');
+    inp5.addEventListener('blur', function () {
+        var jl3sl = document.getElementById('add-jiaolian3SelectLeft').value;
+        document.getElementById('add-jiaolian3SelectRight').value = jl3sl;
+    })
+
+    var inp6 = document.getElementById('add-jiaolian4SelectLeft');
+    inp6.addEventListener('blur', function () {
+        var jl4sl = document.getElementById('add-jiaolian4SelectLeft').value;
+        document.getElementById('add-jiaolian4SelectRight').value = jl4sl;
+    })
+
+    var inp7 = document.getElementById('add-jiaolian5SelectLeft');
+    inp7.addEventListener('blur', function () {
+        var jl5sl = document.getElementById('add-jiaolian5SelectLeft').value;
+        document.getElementById('add-jiaolian5SelectRight').value = jl5sl;
+    })
+
+    var inp8 = document.getElementById('add-jiaolian6SelectLeft');
+    inp8.addEventListener('blur', function () {
+        var jl6sl = document.getElementById('add-jiaolian6SelectLeft').value;
+        document.getElementById('add-jiaolian6SelectRight').value = jl6sl;
+    })
+
+    var jl1inp = document.getElementById('add-jiaolian1SelectLeft');
+    jl1inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft').value;
+        var height = parseFloat(document.getElementById('add-height').value);
+        if (jl1 == '距中') {
+            var jiaolian1Insert = height / 2;
+            document.getElementById("add-jiaolian1SelectRight").value = jl1
+
+            document.getElementById("add-jiaolian1InsertLeft").value = jiaolian1Insert;
+
+            document.getElementById("add-jiaolian1InsertRight").value = jiaolian1Insert;
+
+        }
+    })
+
+    var jl1inp = document.getElementById('add-jiaolian2SelectLeft');
+    jl1inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft').value;
+        var height = parseFloat(document.getElementById('add-height').value);
+        if (jl2 == '距中') {
+            var jiaolian2Insert = height / 2;
+            document.getElementById("add-jiaolian2SelectRight").value = jl2
+
+            document.getElementById("add-jiaolian2InsertLeft").value = jiaolian2Insert;
+
+            document.getElementById("add-jiaolian2InsertRight").value = jiaolian2Insert;
+
+        }
+    })
+
+    var jl1inp = document.getElementById('add-jiaolian3SelectLeft');
+    jl1inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft').value;
+        var height = parseFloat(document.getElementById('add-height').value);
+        if (jl3 == '距中') {
+            var jiaolian3Insert = height / 2;
+            document.getElementById("add-jiaolian3SelectRight").value = jl3
+
+            document.getElementById("add-jiaolian3InsertLeft").value = jiaolian3Insert;
+
+            document.getElementById("add-jiaolian3InsertRight").value = jiaolian3Insert;
+
+        }
+    })
+
+    var jl1inp = document.getElementById('add-jiaolian4SelectLeft');
+    jl1inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft').value;
+        var height = parseFloat(document.getElementById('add-height').value);
+        if (jl4 == '距中') {
+            var jiaolian4Insert = height / 2;
+            document.getElementById("add-jiaolian4SelectRight").value = jl4
+
+            document.getElementById("add-jiaolian4InsertLeft").value = jiaolian4Insert;
+
+            document.getElementById("add-jiaolian4InsertRight").value = jiaolian4Insert;
+
+        }
+    })
+
+    var jl5inp = document.getElementById('add-jiaolian5SelectLeft');
+    jl5inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft').value;
+        var height = parseFloat(document.getElementById('add-height').value);
+        if (jl5 == '距中') {
+            var jiaolian5Insert = height / 2;
+            document.getElementById("add-jiaolian5SelectRight").value = jl5
+
+            document.getElementById("add-jiaolian5InsertLeft").value = jiaolian5Insert;
+
+            document.getElementById("add-jiaolian5InsertRight").value = jiaolian5Insert;
+
+        }
+    })
+
+    var jl6inp = document.getElementById('add-jiaolian6SelectLeft');
+    jl6inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft').value;
+        var height = parseFloat(document.getElementById('add-height').value);
+        if (jl6 == '距中') {
+            var jiaolian6Insert = height / 2;
+            document.getElementById("add-jiaolian6SelectRight").value = jl6
+
+            document.getElementById("add-jiaolian6InsertLeft").value = jiaolian6Insert;
+
+            document.getElementById("add-jiaolian6InsertRight").value = jiaolian6Insert;
+
+        }
+    })
+
+    // ----------2
+    var inp11 = document.getElementById('add-jiaoliankongFangxiangLeft1');
+    inp11.addEventListener('blur', function () {
+        var xdsl1 = document.getElementById('add-num1').value;
+        var jlkfxl1 = document.getElementById('add-jiaoliankongFangxiangLeft1').value;
+        var jlkfxr1 = xdsl1 - jlkfxl1;
+        document.getElementById('add-jiaoliankongFangxiangRight1').value = jlkfxr1;
+    })
+
+    var inp22 = document.getElementById('add-lashouShuliangLeft1');
+    inp22.addEventListener('blur', function () {
+        var xdsl1 = document.getElementById('add-num1').value;
+        var lssll1 = document.getElementById('add-lashouShuliangLeft1').value;
+        var lsslr1 = xdsl1 - lssll1;
+        document.getElementById('add-lashouShuliangRight1').value = lsslr1;
+    })
+
+    var inp3 = document.getElementById('add-jiaolian1SelectLeft1');
+    inp3.addEventListener('blur', function () {
+        var jl1sl1 = document.getElementById('add-jiaolian1SelectLeft1').value;
+        document.getElementById('add-jiaolian1SelectRight1').value = jl1sl1;
+    })
+
+    var inp4 = document.getElementById('add-jiaolian2SelectLeft1');
+    inp4.addEventListener('blur', function () {
+        var jl2sl1 = document.getElementById('add-jiaolian2SelectLeft1').value;
+        document.getElementById('add-jiaolian2SelectRight1').value = jl2sl1;
+    })
+
+    var inp5 = document.getElementById('add-jiaolian3SelectLeft1');
+    inp5.addEventListener('blur', function () {
+        var jl3sl1 = document.getElementById('add-jiaolian3SelectLeft1').value;
+        document.getElementById('add-jiaolian3SelectRight1').value = jl3sl1;
+    })
+
+    var inp6 = document.getElementById('add-jiaolian4SelectLeft1');
+    inp6.addEventListener('blur', function () {
+        var jl4sl1 = document.getElementById('add-jiaolian4SelectLeft1').value;
+        document.getElementById('add-jiaolian4SelectRight1').value = jl4sl1;
+    })
+
+    var inp7 = document.getElementById('add-jiaolian5SelectLeft1');
+    inp7.addEventListener('blur', function () {
+        var jl5sl1 = document.getElementById('add-jiaolian5SelectLeft1').value;
+        document.getElementById('add-jiaolian5SelectRight1').value = jl5sl1;
+    })
+
+    var inp8 = document.getElementById('add-jiaolian6SelectLeft1');
+    inp8.addEventListener('blur', function () {
+        var jl6sl1 = document.getElementById('add-jiaolian6SelectLeft1').value;
+        document.getElementById('add-jiaolian6SelectRight1').value = jl6sl1;
+    })
+
+    var jl1inp = document.getElementById('add-jiaolian1SelectLeft1');
+    jl1inp.addEventListener('blur', function () {
+    var jl1 = document.getElementById('add-jiaolian1SelectLeft1').value;
+    var jl2 = document.getElementById('add-jiaolian2SelectLeft1').value;
+    var jl3 = document.getElementById('add-jiaolian3SelectLeft1').value;
+    var jl4 = document.getElementById('add-jiaolian4SelectLeft1').value;
+    var jl5 = document.getElementById('add-jiaolian5SelectLeft1').value;
+    var jl6 = document.getElementById('add-jiaolian6SelectLeft1').value;
+    var height = parseFloat(document.getElementById('add-height1').value);
+        if (jl1 == '距中') {
+            var jiaolian1Insert = height / 2;
+            document.getElementById("add-jiaolian1SelectRight1").value = jl1
+
+            document.getElementById("add-jiaolian1InsertLeft1").value = jiaolian1Insert;
+
+            document.getElementById("add-jiaolian1InsertRight1").value = jiaolian1Insert;
+
+        }
+    })
+
+    var jl1inp = document.getElementById('add-jiaolian2SelectLeft1');
+    jl1inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft1').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft1').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft1').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft1').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft1').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft1').value;
+        var height = parseFloat(document.getElementById('add-height1').value);
+        if (jl2 == '距中') {
+            var jiaolian2Insert = height / 2;
+            document.getElementById("add-jiaolian2SelectRight1").value = jl2
+
+            document.getElementById("add-jiaolian2InsertLeft1").value = jiaolian2Insert;
+
+            document.getElementById("add-jiaolian2InsertRight1").value = jiaolian2Insert;
+
+        }
+    })
+
+    var jl2inp = document.getElementById('add-jiaolian3SelectLeft1');
+    jl2inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft1').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft1').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft1').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft1').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft1').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft1').value;
+        var height = parseFloat(document.getElementById('add-height1').value);
+        if (jl3 == '距中') {
+            var jiaolian3Insert = height / 2;
+            document.getElementById("add-jiaolian3SelectRight1").value = jl3
+
+            document.getElementById("add-jiaolian3InsertLeft1").value = jiaolian3Insert;
+
+            document.getElementById("add-jiaolian3InsertRight1").value = jiaolian3Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian4SelectLeft1');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft1').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft1').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft1').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft1').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft1').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft1').value;
+        var height = parseFloat(document.getElementById('add-height1').value);
+        if (jl4 == '距中') {
+            var jiaolian4Insert = height / 2;
+            document.getElementById("add-jiaolian4SelectRight1").value = jl4
+
+            document.getElementById("add-jiaolian4InsertLeft1").value = jiaolian4Insert;
+
+            document.getElementById("add-jiaolian4InsertRight1").value = jiaolian4Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian5SelectLeft1');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft1').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft1').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft1').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft1').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft1').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft1').value;
+        var height = parseFloat(document.getElementById('add-height1').value);
+        if (jl5 == '距中') {
+            var jiaolian5Insert = height / 2;
+            document.getElementById("add-jiaolian5SelectRight1").value = jl5
+
+            document.getElementById("add-jiaolian5InsertLeft1").value = jiaolian5Insert;
+
+            document.getElementById("add-jiaolian5InsertRight1").value = jiaolian5Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian6SelectLeft1');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft1').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft1').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft1').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft1').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft1').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft1').value;
+        var height = parseFloat(document.getElementById('add-height1').value);
+        if (jl6 == '距中') {
+            var jiaolian6Insert = height / 2;
+            document.getElementById("add-jiaolian6SelectRight1").value = jl6
+
+            document.getElementById("add-jiaolian6InsertLeft1").value = jiaolian6Insert;
+
+            document.getElementById("add-jiaolian6InsertRight1").value = jiaolian6Insert;
+
+        }
+    })
+
+    // --------------------3
+    var inp12 = document.getElementById('add-jiaoliankongFangxiangLeft2');
+    inp12.addEventListener('blur', function () {
+        var xdsl2 = document.getElementById('add-num2').value;
+        var jlkfxl2 = document.getElementById('add-jiaoliankongFangxiangLeft2').value;
+        var jlkfxr2 = xdsl2 - jlkfxl2;
+        document.getElementById('add-jiaoliankongFangxiangRight2').value = jlkfxr2;
+    })
+
+    var inp2 = document.getElementById('add-lashouShuliangLeft2');
+    inp2.addEventListener('blur', function () {
+        var xdsl = document.getElementById('add-num2').value;
+        var lssll = document.getElementById('add-lashouShuliangLeft2').value;
+        var lsslr = xdsl - lssll;
+        document.getElementById('add-lashouShuliangRight2').value = lsslr;
+    })
+
+    var inp3 = document.getElementById('add-jiaolian1SelectLeft2');
+    inp3.addEventListener('blur', function () {
+        var jl1sl = document.getElementById('add-jiaolian1SelectLeft2').value;
+        document.getElementById('add-jiaolian1SelectRight2').value = jl1sl;
+    })
+
+    var inp4 = document.getElementById('add-jiaolian2SelectLeft2');
+    inp4.addEventListener('blur', function () {
+        var jl2sl = document.getElementById('add-jiaolian2SelectLeft2').value;
+        document.getElementById('add-jiaolian2SelectRight2').value = jl2sl;
+    })
+
+    var inp5 = document.getElementById('add-jiaolian3SelectLeft2');
+    inp5.addEventListener('blur', function () {
+        var jl3sl = document.getElementById('add-jiaolian3SelectLeft2').value;
+        document.getElementById('add-jiaolian3SelectRight2').value = jl3sl;
+    })
+
+    var inp6 = document.getElementById('add-jiaolian4SelectLeft2');
+    inp6.addEventListener('blur', function () {
+        var jl4sl = document.getElementById('add-jiaolian4SelectLeft2').value;
+        document.getElementById('add-jiaolian4SelectRight2').value = jl4sl;
+    })
+
+    var inp7 = document.getElementById('add-jiaolian5SelectLeft2');
+    inp7.addEventListener('blur', function () {
+        var jl5sl = document.getElementById('add-jiaolian5SelectLeft2').value;
+        document.getElementById('add-jiaolian5SelectRight2').value = jl5sl;
+    })
+
+    var inp8 = document.getElementById('add-jiaolian6SelectLeft2');
+    inp8.addEventListener('blur', function () {
+        var jl6sl = document.getElementById('add-jiaolian6SelectLeft2').value;
+        document.getElementById('add-jiaolian6SelectRight2').value = jl6sl;
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian1SelectLeft2');
+    jl3inp.addEventListener('blur', function () {
+    var jl1 = document.getElementById('add-jiaolian1SelectLeft2').value;
+    var jl2 = document.getElementById('add-jiaolian2SelectLeft2').value;
+    var jl3 = document.getElementById('add-jiaolian3SelectLeft2').value;
+    var jl4 = document.getElementById('add-jiaolian4SelectLeft2').value;
+    var jl5 = document.getElementById('add-jiaolian5SelectLeft2').value;
+    var jl6 = document.getElementById('add-jiaolian6SelectLeft2').value;
+    var height = parseFloat(document.getElementById('add-height2').value);
+        if (jl1 == '距中') {
+            var jiaolian1Insert = height / 2;
+            document.getElementById("add-jiaolian1SelectRight2").value = jl1
+
+            document.getElementById("add-jiaolian1InsertLeft2").value = jiaolian1Insert;
+
+            document.getElementById("add-jiaolian1InsertRight2").value = jiaolian1Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian2SelectLeft2');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft2').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft2').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft2').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft2').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft2').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft2').value;
+        var height = parseFloat(document.getElementById('add-height2').value);
+        if (jl2 == '距中') {
+            var jiaolian2Insert = height / 2;
+            document.getElementById("add-jiaolian2SelectRight2").value = jl2
+
+            document.getElementById("add-jiaolian2InsertLeft2").value = jiaolian2Insert;
+
+            document.getElementById("add-jiaolian2InsertRight2").value = jiaolian2Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian3SelectLeft2');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft2').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft2').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft2').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft2').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft2').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft2').value;
+        var height = parseFloat(document.getElementById('add-height2').value);
+        if (jl3 == '距中') {
+            var jiaolian3Insert = height / 2;
+            document.getElementById("add-jiaolian3SelectRight2").value = jl3
+
+            document.getElementById("add-jiaolian3InsertLeft2").value = jiaolian3Insert;
+
+            document.getElementById("add-jiaolian3InsertRight2").value = jiaolian3Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian4SelectLeft2');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft2').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft2').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft2').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft2').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft2').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft2').value;
+        var height = parseFloat(document.getElementById('add-height2').value);
+        if (jl4 == '距中') {
+            var jiaolian4Insert = height / 2;
+            document.getElementById("add-jiaolian4SelectRight2").value = jl4
+
+            document.getElementById("add-jiaolian4InsertLeft2").value = jiaolian4Insert;
+
+            document.getElementById("add-jiaolian4InsertRight2").value = jiaolian4Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian5SelectLeft2');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft2').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft2').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft2').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft2').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft2').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft2').value;
+        var height = parseFloat(document.getElementById('add-height2').value);
+        if (jl5 == '距中') {
+            var jiaolian5Insert = height / 2;
+            document.getElementById("add-jiaolian5SelectRight2").value = jl5
+
+            document.getElementById("add-jiaolian5InsertLeft2").value = jiaolian5Insert;
+
+            document.getElementById("add-jiaolian5InsertRight2").value = jiaolian5Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian6SelectLeft2');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft2').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft2').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft2').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft2').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft2').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft2').value;
+        var height = parseFloat(document.getElementById('add-height2').value);
+        if (jl6 == '距中') {
+            var jiaolian6Insert = height / 2;
+            document.getElementById("add-jiaolian6SelectRight2").value = jl6
+
+            document.getElementById("add-jiaolian6InsertLeft2").value = jiaolian6Insert;
+
+            document.getElementById("add-jiaolian6InsertRight2").value = jiaolian6Insert;
+
+        }
+    })
+
+    // -------4
+    var inp2 = document.getElementById('add-jiaoliankongFangxiangLeft3');
+    inp2.addEventListener('blur', function () {
+        var xdsl = document.getElementById('add-num3').value;
+        var jlkfxl = document.getElementById('add-jiaoliankongFangxiangLeft3').value;
+        var jlkfxr = xdsl - jlkfxl;
+        document.getElementById('add-jiaoliankongFangxiangRight3').value = jlkfxr;
+    })
+
+    var inp2 = document.getElementById('add-lashouShuliangLeft3');
+    inp2.addEventListener('blur', function () {
+        var xdsl = document.getElementById('add-num3').value;
+        var lssll = document.getElementById('add-lashouShuliangLeft3').value;
+        var lsslr = xdsl - lssll;
+        document.getElementById('add-lashouShuliangRight3').value = lsslr;
+    })
+
+    var inp3 = document.getElementById('add-jiaolian1SelectLeft3');
+    inp3.addEventListener('blur', function () {
+        var jl1sl = document.getElementById('add-jiaolian1SelectLeft3').value;
+        document.getElementById('add-jiaolian1SelectRight3').value = jl1sl;
+    })
+
+    var inp4 = document.getElementById('add-jiaolian2SelectLeft3');
+    inp4.addEventListener('blur', function () {
+        var jl2sl = document.getElementById('add-jiaolian2SelectLeft3').value;
+        document.getElementById('add-jiaolian2SelectRight3').value = jl2sl;
+    })
+
+    var inp5 = document.getElementById('add-jiaolian3SelectLeft3');
+    inp5.addEventListener('blur', function () {
+        var jl3sl = document.getElementById('add-jiaolian3SelectLeft3').value;
+        document.getElementById('add-jiaolian3SelectRight3').value = jl3sl;
+    })
+
+    var inp6 = document.getElementById('add-jiaolian4SelectLeft3');
+    inp6.addEventListener('blur', function () {
+        var jl4sl = document.getElementById('add-jiaolian4SelectLeft3').value;
+        document.getElementById('add-jiaolian4SelectRight3').value = jl4sl;
+    })
+
+    var inp7 = document.getElementById('add-jiaolian5SelectLeft3');
+    inp7.addEventListener('blur', function () {
+        var jl5sl = document.getElementById('add-jiaolian5SelectLeft3').value;
+        document.getElementById('add-jiaolian5SelectRight3').value = jl5sl;
+    })
+
+    var inp8 = document.getElementById('add-jiaolian6SelectLeft3');
+    inp8.addEventListener('blur', function () {
+        var jl6sl = document.getElementById('add-jiaolian6SelectLeft3').value;
+        document.getElementById('add-jiaolian6SelectRight3').value = jl6sl;
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian1SelectLeft3');
+    jl3inp.addEventListener('blur', function () {
+    var jl1 = document.getElementById('add-jiaolian1SelectLeft3').value;
+    var jl2 = document.getElementById('add-jiaolian2SelectLeft3').value;
+    var jl3 = document.getElementById('add-jiaolian3SelectLeft3').value;
+    var jl4 = document.getElementById('add-jiaolian4SelectLeft3').value;
+    var jl5 = document.getElementById('add-jiaolian5SelectLeft3').value;
+    var jl6 = document.getElementById('add-jiaolian6SelectLeft3').value;
+    var height = parseFloat(document.getElementById('add-height3').value);
+        if (jl1 == '距中') {
+            var jiaolian1Insert = height / 2;
+            document.getElementById("add-jiaolian1SelectRight3").value = jl1
+            document.getElementById("add-jiaolian1SelectRight3").value = jl1
+
+            document.getElementById("add-jiaolian1InsertLeft3").value = jiaolian1Insert;
+
+            document.getElementById("add-jiaolian1InsertRight3").value = jiaolian1Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian2SelectLeft3');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft3').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft3').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft3').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft3').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft3').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft3').value;
+        var height = parseFloat(document.getElementById('add-height3').value);
+        if (jl2 == '距中') {
+            var jiaolian2Insert = height / 2;
+            document.getElementById("add-jiaolian2SelectRight3").value = jl2
+
+            document.getElementById("add-jiaolian2InsertLeft3").value = jiaolian2Insert;
+
+            document.getElementById("add-jiaolian2InsertRight3").value = jiaolian2Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian3SelectLeft3');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft3').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft3').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft3').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft3').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft3').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft3').value;
+        var height = parseFloat(document.getElementById('add-height3').value);
+        if (jl3 == '距中') {
+            var jiaolian3Insert = height / 2;
+            document.getElementById("add-jiaolian3SelectRight3").value = jl3
+
+            document.getElementById("add-jiaolian3InsertLeft3").value = jiaolian3Insert;
+
+            document.getElementById("add-jiaolian3InsertRight3").value = jiaolian3Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian4SelectLeft3');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft3').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft3').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft3').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft3').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft3').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft3').value;
+        var height = parseFloat(document.getElementById('add-height3').value);
+        if (jl4 == '距中') {
+            var jiaolian4Insert = height / 2;
+            document.getElementById("add-jiaolian4SelectRight3").value = jl4
+
+            document.getElementById("add-jiaolian4InsertLeft3").value = jiaolian4Insert;
+
+            document.getElementById("add-jiaolian4InsertRight3").value = jiaolian4Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian5SelectLeft3');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft3').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft3').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft3').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft3').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft3').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft3').value;
+        var height = parseFloat(document.getElementById('add-height3').value);
+        if (jl5 == '距中') {
+            var jiaolian5Insert = height / 2;
+            document.getElementById("add-jiaolian5SelectRight3").value = jl5
+
+            document.getElementById("add-jiaolian5InsertLeft3").value = jiaolian5Insert;
+
+            document.getElementById("add-jiaolian5InsertRight3").value = jiaolian5Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian6SelectLeft3');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft3').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft3').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft3').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft3').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft3').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft3').value;
+        var height = parseFloat(document.getElementById('add-height3').value);
+        if (jl6 == '距中') {
+            var jiaolian6Insert = height / 2;
+            document.getElementById("add-jiaolian6SelectRight3").value = jl6
+
+            document.getElementById("add-jiaolian6InsertLeft3").value = jiaolian6Insert;
+
+            document.getElementById("add-jiaolian6InsertRight3").value = jiaolian6Insert;
+
+        }
+    })
+
+    // ----------------5
+    var inp2 = document.getElementById('add-jiaoliankongFangxiangLeft4');
+    inp2.addEventListener('blur', function () {
+        var xdsl = document.getElementById('add-num4').value;
+        var jlkfxl = document.getElementById('add-jiaoliankongFangxiangLeft4').value;
+        var jlkfxr = xdsl - jlkfxl;
+        document.getElementById('add-jiaoliankongFangxiangRight4').value = jlkfxr;
+    })
+
+    var inp2 = document.getElementById('add-lashouShuliangLeft4');
+    inp2.addEventListener('blur', function () {
+        var xdsl = document.getElementById('add-num4').value;
+        var lssll = document.getElementById('add-lashouShuliangLeft4').value;
+        var lsslr = xdsl - lssll;
+        document.getElementById('add-lashouShuliangRight4').value = lsslr;
+    })
+
+    var inp3 = document.getElementById('add-jiaolian1SelectLeft4');
+    inp3.addEventListener('blur', function () {
+        var jl1sl = document.getElementById('add-jiaolian1SelectLeft4').value;
+        document.getElementById('add-jiaolian1SelectRight4').value = jl1sl;
+    })
+
+    var inp4 = document.getElementById('add-jiaolian2SelectLeft4');
+    inp4.addEventListener('blur', function () {
+        var jl2sl = document.getElementById('add-jiaolian2SelectLeft4').value;
+        document.getElementById('add-jiaolian2SelectRight4').value = jl2sl;
+    })
+
+    var inp5 = document.getElementById('add-jiaolian3SelectLeft4');
+    inp5.addEventListener('blur', function () {
+        var jl3sl = document.getElementById('add-jiaolian3SelectLeft4').value;
+        document.getElementById('add-jiaolian3SelectRight4').value = jl3sl;
+    })
+
+    var inp6 = document.getElementById('add-jiaolian4SelectLeft4');
+    inp6.addEventListener('blur', function () {
+        var jl4sl = document.getElementById('add-jiaolian4SelectLeft4').value;
+        document.getElementById('add-jiaolian4SelectRight4').value = jl4sl;
+    })
+
+    var inp7 = document.getElementById('add-jiaolian5SelectLeft4');
+    inp7.addEventListener('blur', function () {
+        var jl5sl = document.getElementById('add-jiaolian5SelectLeft4').value;
+        document.getElementById('add-jiaolian5SelectRight4').value = jl5sl;
+    })
+
+    var inp8 = document.getElementById('add-jiaolian6SelectLeft4');
+    inp8.addEventListener('blur', function () {
+        var jl6sl = document.getElementById('add-jiaolian6SelectLeft4').value;
+        document.getElementById('add-jiaolian6SelectRight4').value = jl6sl;
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian1SelectLeft4');
+    jl3inp.addEventListener('blur', function () {
+    var jl1 = document.getElementById('add-jiaolian1SelectLeft4').value;
+    var jl2 = document.getElementById('add-jiaolian2SelectLeft4').value;
+    var jl3 = document.getElementById('add-jiaolian3SelectLeft4').value;
+    var jl4 = document.getElementById('add-jiaolian4SelectLeft4').value;
+    var jl5 = document.getElementById('add-jiaolian5SelectLeft4').value;
+    var jl6 = document.getElementById('add-jiaolian6SelectLeft4').value;
+    var height = parseFloat(document.getElementById('add-height4').value);
+        if (jl1 == '距中') {
+            var jiaolian1Insert = height / 2;
+            document.getElementById("add-jiaolian1SelectRight4").value = jl1
+            document.getElementById("add-jiaolian1SelectRight4").value = jl1
+
+            document.getElementById("add-jiaolian1InsertLeft4").value = jiaolian1Insert;
+
+            document.getElementById("add-jiaolian1InsertRight4").value = jiaolian1Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian2SelectLeft4');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft4').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft4').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft4').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft4').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft4').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft4').value;
+        var height = parseFloat(document.getElementById('add-height4').value);
+        if (jl2 == '距中') {
+            var jiaolian2Insert = height / 2;
+            document.getElementById("add-jiaolian2SelectRight4").value = jl2
+
+            document.getElementById("add-jiaolian2InsertLeft4").value = jiaolian2Insert;
+
+            document.getElementById("add-jiaolian2InsertRight4").value = jiaolian2Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian3SelectLeft4');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft4').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft4').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft4').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft4').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft4').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft4').value;
+        var height = parseFloat(document.getElementById('add-height4').value);
+        if (jl3 == '距中') {
+            var jiaolian3Insert = height / 2;
+            document.getElementById("add-jiaolian3SelectRight4").value = jl3
+
+            document.getElementById("add-jiaolian3InsertLeft4").value = jiaolian3Insert;
+
+            document.getElementById("add-jiaolian3InsertRight4").value = jiaolian3Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian4SelectLeft4');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft4').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft4').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft4').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft4').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft4').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft4').value;
+        var height = parseFloat(document.getElementById('add-height4').value);
+        if (jl4 == '距中') {
+            var jiaolian4Insert = height / 2;
+            document.getElementById("add-jiaolian4SelectRight4").value = jl4
+
+            document.getElementById("add-jiaolian4InsertLeft4").value = jiaolian4Insert;
+
+            document.getElementById("add-jiaolian4InsertRight4").value = jiaolian4Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian5SelectLeft4');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft4').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft4').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft4').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft4').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft4').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft4').value;
+        var height = parseFloat(document.getElementById('add-height4').value);
+        if (jl5 == '距中') {
+            var jiaolian5Insert = height / 2;
+            document.getElementById("add-jiaolian5SelectRight4").value = jl5
+
+            document.getElementById("add-jiaolian5InsertLeft4").value = jiaolian5Insert;
+
+            document.getElementById("add-jiaolian5InsertRight4").value = jiaolian5Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian6SelectLeft4');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft4').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft4').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft4').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft4').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft4').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft4').value;
+        var height = parseFloat(document.getElementById('add-height4').value);
+        if (jl6 == '距中') {
+            var jiaolian6Insert = height / 2;
+            document.getElementById("add-jiaolian6SelectRight4").value = jl6
+
+            document.getElementById("add-jiaolian6InsertLeft4").value = jiaolian6Insert;
+
+            document.getElementById("add-jiaolian6InsertRight4").value = jiaolian6Insert;
+
+        }
+    })
+
+    // -----------6
+    var inp2 = document.getElementById('add-jiaoliankongFangxiangLeft5');
+    inp2.addEventListener('blur', function () {
+        var xdsl = document.getElementById('add-num5').value;
+        var jlkfxl = document.getElementById('add-jiaoliankongFangxiangLeft5').value;
+        var jlkfxr = xdsl - jlkfxl;
+        document.getElementById('add-jiaoliankongFangxiangRight5').value = jlkfxr;
+    })
+
+    var inp2 = document.getElementById('add-lashouShuliangLeft5');
+    inp2.addEventListener('blur', function () {
+        var xdsl = document.getElementById('add-num5').value;
+        var lssll = document.getElementById('add-lashouShuliangLeft5').value;
+        var lsslr = xdsl - lssll;
+        document.getElementById('add-lashouShuliangRight5').value = lsslr;
+    })
+
+    var inp3 = document.getElementById('add-jiaolian1SelectLeft5');
+    inp3.addEventListener('blur', function () {
+        var jl1sl = document.getElementById('add-jiaolian1SelectLeft5').value;
+        document.getElementById('add-jiaolian1SelectRight5').value = jl1sl;
+    })
+
+    var inp4 = document.getElementById('add-jiaolian2SelectLeft5');
+    inp4.addEventListener('blur', function () {
+        var jl2sl = document.getElementById('add-jiaolian2SelectLeft5').value;
+        document.getElementById('add-jiaolian2SelectRight5').value = jl2sl;
+    })
+
+    var inp5 = document.getElementById('add-jiaolian3SelectLeft5');
+    inp5.addEventListener('blur', function () {
+        var jl3sl = document.getElementById('add-jiaolian3SelectLeft5').value;
+        document.getElementById('add-jiaolian3SelectRight5').value = jl3sl;
+    })
+
+    var inp6 = document.getElementById('add-jiaolian4SelectLeft5');
+    inp6.addEventListener('blur', function () {
+        var jl4sl = document.getElementById('add-jiaolian4SelectLeft5').value;
+        document.getElementById('add-jiaolian4SelectRight5').value = jl4sl;
+    })
+
+    var inp7 = document.getElementById('add-jiaolian5SelectLeft5');
+    inp7.addEventListener('blur', function () {
+        var jl5sl = document.getElementById('add-jiaolian5SelectLeft5').value;
+        document.getElementById('add-jiaolian5SelectRight5').value = jl5sl;
+    })
+
+    var inp8 = document.getElementById('add-jiaolian6SelectLeft5');
+    inp8.addEventListener('blur', function () {
+        var jl6sl = document.getElementById('add-jiaolian6SelectLeft5').value;
+        document.getElementById('add-jiaolian6SelectRight5').value = jl6sl;
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian1SelectLeft5');
+    jl3inp.addEventListener('blur', function () {
+    var jl1 = document.getElementById('add-jiaolian1SelectLeft5').value;
+    var jl2 = document.getElementById('add-jiaolian2SelectLeft5').value;
+    var jl3 = document.getElementById('add-jiaolian3SelectLeft5').value;
+    var jl4 = document.getElementById('add-jiaolian4SelectLeft5').value;
+    var jl5 = document.getElementById('add-jiaolian5SelectLeft5').value;
+    var jl6 = document.getElementById('add-jiaolian6SelectLeft5').value;
+    var height = parseFloat(document.getElementById('add-height5').value);
+        if (jl1 == '距中') {
+            var jiaolian1Insert = height / 2;
+            document.getElementById("add-jiaolian1SelectRight5").value = jl1
+
+            document.getElementById("add-jiaolian1InsertLeft5").value = jiaolian1Insert;
+
+            document.getElementById("add-jiaolian1InsertRight5").value = jiaolian1Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian2SelectLeft5');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft5').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft5').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft5').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft5').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft5').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft5').value;
+        var height = parseFloat(document.getElementById('add-height5').value);
+        if (jl2 == '距中') {
+            var jiaolian2Insert = height / 2;
+            document.getElementById("add-jiaolian2SelectRight5").value = jl2
+
+            document.getElementById("add-jiaolian2InsertLeft5").value = jiaolian2Insert;
+
+            document.getElementById("add-jiaolian2InsertRight5").value = jiaolian2Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian3SelectLeft5');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft5').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft5').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft5').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft5').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft5').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft5').value;
+        var height = parseFloat(document.getElementById('add-height5').value);
+        if (jl3 == '距中') {
+            var jiaolian3Insert = height / 2;
+            document.getElementById("add-jiaolian3SelectRight5").value = jl3
+
+            document.getElementById("add-jiaolian3InsertLeft5").value = jiaolian3Insert;
+
+            document.getElementById("add-jiaolian3InsertRight5").value = jiaolian3Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian4SelectLeft5');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft5').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft5').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft5').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft5').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft5').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft5').value;
+        var height = parseFloat(document.getElementById('add-height5').value);
+        if (jl4 == '距中') {
+            var jiaolian4Insert = height / 2;
+            document.getElementById("add-jiaolian4SelectRight5").value = jl4
+
+            document.getElementById("add-jiaolian4InsertLeft5").value = jiaolian4Insert;
+
+            document.getElementById("add-jiaolian4InsertRight5").value = jiaolian4Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian5SelectLeft5');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft5').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft5').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft5').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft5').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft5').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft5').value;
+        var height = parseFloat(document.getElementById('add-height5').value);
+        if (jl5 == '距中') {
+            var jiaolian5Insert = height / 2;
+            document.getElementById("add-jiaolian5SelectRight5").value = jl5
+
+            document.getElementById("add-jiaolian5InsertLeft5").value = jiaolian5Insert;
+
+            document.getElementById("add-jiaolian5InsertRight5").value = jiaolian5Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian6SelectLeft5');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft5').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft5').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft5').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft5').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft5').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft5').value;
+        var height = parseFloat(document.getElementById('add-height5').value);
+        if (jl6 == '距中') {
+            var jiaolian6Insert = height / 2;
+            document.getElementById("add-jiaolian6SelectRight5").value = jl6
+
+            document.getElementById("add-jiaolian6InsertLeft5").value = jiaolian6Insert;
+
+            document.getElementById("add-jiaolian6InsertRight5").value = jiaolian6Insert;
+
+        }
+    })
+
+    // -------7
+    var inp2 = document.getElementById('add-jiaoliankongFangxiangLeft6');
+    inp2.addEventListener('blur', function () {
+        var xdsl = document.getElementById('add-num6').value;
+        var jlkfxl = document.getElementById('add-jiaoliankongFangxiangLeft6').value;
+        var jlkfxr = xdsl - jlkfxl;
+        document.getElementById('add-jiaoliankongFangxiangRight6').value = jlkfxr;
+    })
+
+    var inp2 = document.getElementById('add-lashouShuliangLeft6');
+    inp2.addEventListener('blur', function () {
+        var xdsl = document.getElementById('add-num6').value;
+        var lssll = document.getElementById('add-lashouShuliangLeft6').value;
+        var lsslr = xdsl - lssll;
+        document.getElementById('add-lashouShuliangRight6').value = lsslr;
+    })
+
+    var inp3 = document.getElementById('add-jiaolian1SelectLeft6');
+    inp3.addEventListener('blur', function () {
+        var jl1sl = document.getElementById('add-jiaolian1SelectLeft6').value;
+        document.getElementById('add-jiaolian1SelectRight6').value = jl1sl;
+    })
+
+    var inp4 = document.getElementById('add-jiaolian2SelectLeft6');
+    inp4.addEventListener('blur', function () {
+        var jl2sl = document.getElementById('add-jiaolian2SelectLeft6').value;
+        document.getElementById('add-jiaolian2SelectRight6').value = jl2sl;
+    })
+
+    var inp5 = document.getElementById('add-jiaolian3SelectLeft6');
+    inp5.addEventListener('blur', function () {
+        var jl3sl = document.getElementById('add-jiaolian3SelectLeft6').value;
+        document.getElementById('add-jiaolian3SelectRight6').value = jl3sl;
+    })
+
+    var inp6 = document.getElementById('add-jiaolian4SelectLeft6');
+    inp6.addEventListener('blur', function () {
+        var jl4sl = document.getElementById('add-jiaolian4SelectLeft6').value;
+        document.getElementById('add-jiaolian4SelectRight6').value = jl4sl;
+    })
+
+    var inp7 = document.getElementById('add-jiaolian5SelectLeft6');
+    inp7.addEventListener('blur', function () {
+        var jl5sl = document.getElementById('add-jiaolian5SelectLeft6').value;
+        document.getElementById('add-jiaolian5SelectRight6').value = jl5sl;
+    })
+
+    var inp8 = document.getElementById('add-jiaolian6SelectLeft6');
+    inp8.addEventListener('blur', function () {
+        var jl6sl = document.getElementById('add-jiaolian6SelectLeft6').value;
+        document.getElementById('add-jiaolian6SelectRight6').value = jl6sl;
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian1SelectLeft6');
+    jl3inp.addEventListener('blur', function () {
+    var jl1 = document.getElementById('add-jiaolian1SelectLeft6').value;
+    var jl2 = document.getElementById('add-jiaolian2SelectLeft6').value;
+    var jl3 = document.getElementById('add-jiaolian3SelectLeft6').value;
+    var jl4 = document.getElementById('add-jiaolian4SelectLeft6').value;
+    var jl5 = document.getElementById('add-jiaolian5SelectLeft6').value;
+    var jl6 = document.getElementById('add-jiaolian6SelectLeft6').value;
+    var height = parseFloat(document.getElementById('add-height6').value);
+        if (jl1 == '距中') {
+            var jiaolian1Insert = height / 2;
+            document.getElementById("add-jiaolian1SelectRight6").value = jl1
+
+            document.getElementById("add-jiaolian1InsertLeft6").value = jiaolian1Insert;
+
+            document.getElementById("add-jiaolian1InsertRight6").value = jiaolian1Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian2SelectLeft6');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft6').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft6').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft6').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft6').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft6').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft6').value;
+        var height = parseFloat(document.getElementById('add-height6').value);
+        if (jl2 == '距中') {
+            var jiaolian2Insert = height / 2;
+            document.getElementById("add-jiaolian2SelectRight6").value = jl2
+
+            document.getElementById("add-jiaolian2InsertLeft6").value = jiaolian2Insert;
+
+            document.getElementById("add-jiaolian2InsertRight6").value = jiaolian2Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian3SelectLeft6');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft6').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft6').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft6').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft6').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft6').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft6').value;
+        var height = parseFloat(document.getElementById('add-height6').value);
+        if (jl3 == '距中') {
+            var jiaolian3Insert = height / 2;
+            document.getElementById("add-jiaolian3SelectRight6").value = jl3
+
+            document.getElementById("add-jiaolian3InsertLeft6").value = jiaolian3Insert;
+
+            document.getElementById("add-jiaolian3InsertRight6").value = jiaolian3Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian4SelectLeft6');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft6').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft6').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft6').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft6').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft6').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft6').value;
+        var height = parseFloat(document.getElementById('add-height6').value);
+        if (jl4 == '距中') {
+            var jiaolian4Insert = height / 2;
+            document.getElementById("add-jiaolian4SelectRight6").value = jl4
+
+            document.getElementById("add-jiaolian4InsertLeft6").value = jiaolian4Insert;
+
+            document.getElementById("add-jiaolian4InsertRight6").value = jiaolian4Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian5SelectLeft6');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft6').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft6').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft6').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft6').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft6').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft6').value;
+        var height = parseFloat(document.getElementById('add-height6').value);
+        if (jl5 == '距中') {
+            var jiaolian5Insert = height / 2;
+            document.getElementById("add-jiaolian5SelectRight6").value = jl5
+
+            document.getElementById("add-jiaolian5InsertLeft6").value = jiaolian5Insert;
+
+            document.getElementById("add-jiaolian5InsertRight6").value = jiaolian5Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian6SelectLeft6');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft6').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft6').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft6').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft6').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft6').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft6').value;
+        var height = parseFloat(document.getElementById('add-height6').value);
+        if (jl6 == '距中') {
+            var jiaolian6Insert = height / 2;
+            document.getElementById("add-jiaolian6SelectRight6").value = jl6
+
+            document.getElementById("add-jiaolian6InsertLeft6").value = jiaolian6Insert;
+
+            document.getElementById("add-jiaolian6InsertRight6").value = jiaolian6Insert;
+
+        }
+    })
+
+    // ------8
+    var inp2 = document.getElementById('add-jiaoliankongFangxiangLeft7');
+    inp2.addEventListener('blur', function () {
+        var xdsl = document.getElementById('add-num7').value;
+        var jlkfxl = document.getElementById('add-jiaoliankongFangxiangLeft7').value;
+        var jlkfxr = xdsl - jlkfxl;
+        document.getElementById('add-jiaoliankongFangxiangRight7').value = jlkfxr;
+    })
+
+    var inp2 = document.getElementById('add-lashouShuliangLeft7');
+    inp2.addEventListener('blur', function () {
+        var xdsl = document.getElementById('add-num7').value;
+        var lssll = document.getElementById('add-lashouShuliangLeft7').value;
+        var lsslr = xdsl - lssll;
+        document.getElementById('add-lashouShuliangRight7').value = lsslr;
+    })
+
+    var inp3 = document.getElementById('add-jiaolian1SelectLeft7');
+    inp3.addEventListener('blur', function () {
+        var jl1sl = document.getElementById('add-jiaolian1SelectLeft7').value;
+        document.getElementById('add-jiaolian1SelectRight7').value = jl1sl;
+    })
+
+    var inp4 = document.getElementById('add-jiaolian2SelectLeft7');
+    inp4.addEventListener('blur', function () {
+        var jl2sl = document.getElementById('add-jiaolian2SelectLeft7').value;
+        document.getElementById('add-jiaolian2SelectRight7').value = jl2sl;
+    })
+
+    var inp5 = document.getElementById('add-jiaolian3SelectLeft6');
+    inp5.addEventListener('blur', function () {
+        var jl3sl = document.getElementById('add-jiaolian3SelectLeft6').value;
+        document.getElementById('add-jiaolian3SelectRight6').value = jl3sl;
+    })
+
+    var inp6 = document.getElementById('add-jiaolian4SelectLeft7');
+    inp6.addEventListener('blur', function () {
+        var jl4sl = document.getElementById('add-jiaolian4SelectLeft7').value;
+        document.getElementById('add-jiaolian4SelectRight7').value = jl4sl;
+    })
+
+    var inp7 = document.getElementById('add-jiaolian5SelectLeft7');
+    inp7.addEventListener('blur', function () {
+        var jl5sl = document.getElementById('add-jiaolian5SelectLeft7').value;
+        document.getElementById('add-jiaolian5SelectRight7').value = jl5sl;
+    })
+
+    var inp8 = document.getElementById('add-jiaolian6SelectLeft7');
+    inp8.addEventListener('blur', function () {
+        var jl6sl = document.getElementById('add-jiaolian6SelectLeft7').value;
+        document.getElementById('add-jiaolian6SelectRight7').value = jl6sl;
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian1SelectLeft7');
+    jl3inp.addEventListener('blur', function () {
+    var jl1 = document.getElementById('add-jiaolian1SelectLeft7').value;
+    var jl2 = document.getElementById('add-jiaolian2SelectLeft7').value;
+    var jl3 = document.getElementById('add-jiaolian3SelectLeft7').value;
+    var jl4 = document.getElementById('add-jiaolian4SelectLeft7').value;
+    var jl5 = document.getElementById('add-jiaolian5SelectLeft7').value;
+    var jl6 = document.getElementById('add-jiaolian6SelectLeft7').value;
+    var height = parseFloat(document.getElementById('add-height7').value);
+        if (jl1 == '距中') {
+            var jiaolian1Insert = height / 2;
+            document.getElementById("add-jiaolian1SelectRight7").value = jl1
+
+            document.getElementById("add-jiaolian1InsertLeft7").value = jiaolian1Insert;
+
+            document.getElementById("add-jiaolian1InsertRight7").value = jiaolian1Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian2SelectLeft7');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft7').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft7').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft7').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft7').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft7').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft7').value;
+        var height = parseFloat(document.getElementById('add-height7').value);
+        if (jl2 == '距中') {
+            var jiaolian2Insert = height / 2;
+            document.getElementById("add-jiaolian2SelectRight7").value = jl2
+
+            document.getElementById("add-jiaolian2InsertLeft7").value = jiaolian2Insert;
+
+            document.getElementById("add-jiaolian2InsertRight7").value = jiaolian2Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian3SelectLeft7');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft7').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft7').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft7').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft7').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft7').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft7').value;
+        var height = parseFloat(document.getElementById('add-height7').value);
+        if (jl3 == '距中') {
+            var jiaolian3Insert = height / 2;
+            document.getElementById("add-jiaolian3SelectRight7").value = jl3
+
+            document.getElementById("add-jiaolian3InsertLeft7").value = jiaolian3Insert;
+
+            document.getElementById("add-jiaolian3InsertRight7").value = jiaolian3Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian4SelectLeft7');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft7').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft7').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft7').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft7').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft7').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft7').value;
+        var height = parseFloat(document.getElementById('add-height7').value);
+        if (jl4 == '距中') {
+            var jiaolian4Insert = height / 2;
+            document.getElementById("add-jiaolian4SelectRight7").value = jl4
+
+            document.getElementById("add-jiaolian4InsertLeft7").value = jiaolian4Insert;
+
+            document.getElementById("add-jiaolian4InsertRight7").value = jiaolian4Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian5SelectLeft7');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft7').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft7').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft7').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft7').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft7').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft7').value;
+        var height = parseFloat(document.getElementById('add-height7').value);
+        if (jl5 == '距中') {
+            var jiaolian5Insert = height / 2;
+            document.getElementById("add-jiaolian5SelectRight7").value = jl5
+
+            document.getElementById("add-jiaolian5InsertLeft7").value = jiaolian5Insert;
+
+            document.getElementById("add-jiaolian5InsertRight7").value = jiaolian5Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian6SelectLeft7');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft7').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft7').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft7').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft7').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft7').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft7').value;
+        var height = parseFloat(document.getElementById('add-height7').value);
+        if (jl6 == '距中') {
+            var jiaolian6Insert = height / 2;
+            document.getElementById("add-jiaolian6SelectRight7").value = jl6
+
+            document.getElementById("add-jiaolian6InsertLeft7").value = jiaolian6Insert;
+
+            document.getElementById("add-jiaolian6InsertRight7").value = jiaolian6Insert;
+
+        }
+    })
+
+    // ------9
+    var inp2 = document.getElementById('add-jiaoliankongFangxiangLeft8');
+    inp2.addEventListener('blur', function () {
+        var xdsl = document.getElementById('add-num8').value;
+        var jlkfxl = document.getElementById('add-jiaoliankongFangxiangLeft8').value;
+        var jlkfxr = xdsl - jlkfxl;
+        document.getElementById('add-jiaoliankongFangxiangRight8').value = jlkfxr;
+    })
+
+    var inp2 = document.getElementById('add-lashouShuliangLeft8');
+    inp2.addEventListener('blur', function () {
+        var xdsl = document.getElementById('add-num8').value;
+        var lssll = document.getElementById('add-lashouShuliangLeft8').value;
+        var lsslr = xdsl - lssll;
+        document.getElementById('add-lashouShuliangRight8').value = lsslr;
+    })
+
+    var inp3 = document.getElementById('add-jiaolian1SelectLeft8');
+    inp3.addEventListener('blur', function () {
+        var jl1sl = document.getElementById('add-jiaolian1SelectLeft8').value;
+        document.getElementById('add-jiaolian1SelectRight8').value = jl1sl;
+    })
+
+    var inp4 = document.getElementById('add-jiaolian2SelectLeft8');
+    inp4.addEventListener('blur', function () {
+        var jl2sl = document.getElementById('add-jiaolian2SelectLeft8').value;
+        document.getElementById('add-jiaolian2SelectRight8').value = jl2sl;
+    })
+
+    var inp5 = document.getElementById('add-jiaolian3SelectLeft8');
+    inp5.addEventListener('blur', function () {
+        var jl3sl = document.getElementById('add-jiaolian3SelectLeft8').value;
+        document.getElementById('add-jiaolian3SelectRight8').value = jl3sl;
+    })
+
+    var inp6 = document.getElementById('add-jiaolian4SelectLeft8');
+    inp6.addEventListener('blur', function () {
+        var jl4sl = document.getElementById('add-jiaolian4SelectLeft8').value;
+        document.getElementById('add-jiaolian4SelectRight8').value = jl4sl;
+    })
+
+    var inp7 = document.getElementById('add-jiaolian5SelectLeft8');
+    inp7.addEventListener('blur', function () {
+        var jl5sl = document.getElementById('add-jiaolian5SelectLeft8').value;
+        document.getElementById('add-jiaolian5SelectRight8').value = jl5sl;
+    })
+
+    var inp8 = document.getElementById('add-jiaolian6SelectLeft8');
+    inp8.addEventListener('blur', function () {
+        var jl6sl = document.getElementById('add-jiaolian6SelectLeft8').value;
+        document.getElementById('add-jiaolian6SelectRight8').value = jl6sl;
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian1SelectLeft8');
+    jl3inp.addEventListener('blur', function () {
+    var jl1 = document.getElementById('add-jiaolian1SelectLeft8').value;
+    var jl2 = document.getElementById('add-jiaolian2SelectLeft8').value;
+    var jl3 = document.getElementById('add-jiaolian3SelectLeft8').value;
+    var jl4 = document.getElementById('add-jiaolian4SelectLeft8').value;
+    var jl5 = document.getElementById('add-jiaolian5SelectLeft8').value;
+    var jl6 = document.getElementById('add-jiaolian6SelectLeft8').value;
+    var height = parseFloat(document.getElementById('add-height8').value);
+        if (jl1 == '距中') {
+            var jiaolian1Insert = height / 2;
+            document.getElementById("add-jiaolian1SelectRight8").value = jl1
+
+            document.getElementById("add-jiaolian1InsertLeft8").value = jiaolian1Insert;
+
+            document.getElementById("add-jiaolian1InsertRight8").value = jiaolian1Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian2SelectLeft8');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft8').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft8').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft8').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft8').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft8').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft8').value;
+        var height = parseFloat(document.getElementById('add-height8').value);
+        if (jl2 == '距中') {
+            var jiaolian2Insert = height / 2;
+            document.getElementById("add-jiaolian2SelectRight8").value = jl2
+
+            document.getElementById("add-jiaolian2InsertLeft8").value = jiaolian2Insert;
+
+            document.getElementById("add-jiaolian2InsertRight8").value = jiaolian2Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian3SelectLeft8');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft8').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft8').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft8').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft8').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft8').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft8').value;
+        var height = parseFloat(document.getElementById('add-height8').value);
+        if (jl3 == '距中') {
+            var jiaolian3Insert = height / 2;
+            document.getElementById("add-jiaolian3SelectRight8").value = jl3
+
+            document.getElementById("add-jiaolian3InsertLeft8").value = jiaolian3Insert;
+
+            document.getElementById("add-jiaolian3InsertRight8").value = jiaolian3Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian4SelectLeft8');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft8').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft8').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft8').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft8').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft8').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft8').value;
+        var height = parseFloat(document.getElementById('add-height8').value);
+        if (jl4 == '距中') {
+            var jiaolian4Insert = height / 2;
+            document.getElementById("add-jiaolian4SelectRight8").value = jl4
+
+            document.getElementById("add-jiaolian4InsertLeft8").value = jiaolian4Insert;
+
+            document.getElementById("add-jiaolian4InsertRight8").value = jiaolian4Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian5SelectLeft8');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft8').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft8').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft8').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft8').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft8').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft8').value;
+        var height = parseFloat(document.getElementById('add-height8').value);
+        if (jl5 == '距中') {
+            var jiaolian5Insert = height / 2;
+            document.getElementById("add-jiaolian5SelectRight8").value = jl5
+
+            document.getElementById("add-jiaolian5InsertLeft8").value = jiaolian5Insert;
+
+            document.getElementById("add-jiaolian5InsertRight8").value = jiaolian5Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian6SelectLeft8');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft8').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft8').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft8').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft8').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft8').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft8').value;
+        var height = parseFloat(document.getElementById('add-height8').value);
+        if (jl6 == '距中') {
+            var jiaolian6Insert = height / 2;
+            document.getElementById("add-jiaolian6SelectRight8").value = jl6
+
+            document.getElementById("add-jiaolian6InsertLeft8").value = jiaolian6Insert;
+
+            document.getElementById("add-jiaolian6InsertRight8").value = jiaolian6Insert;
+
+        }
+    })
+
+    // ----------10
+    var inp2 = document.getElementById('add-jiaoliankongFangxiangLeft9');
+    inp2.addEventListener('blur', function () {
+        var xdsl = document.getElementById('add-num9').value;
+        var jlkfxl = document.getElementById('add-jiaoliankongFangxiangLeft9').value;
+        var jlkfxr = xdsl - jlkfxl;
+        document.getElementById('add-jiaoliankongFangxiangRight9').value = jlkfxr;
+    })
+
+    var inp2 = document.getElementById('add-lashouShuliangLeft9');
+    inp2.addEventListener('blur', function () {
+        var xdsl = document.getElementById('add-num9').value;
+        var lssll = document.getElementById('add-lashouShuliangLeft9').value;
+        var lsslr = xdsl - lssll;
+        document.getElementById('add-lashouShuliangRight9').value = lsslr;
+    })
+
+    var inp3 = document.getElementById('add-jiaolian1SelectLeft9');
+    inp3.addEventListener('blur', function () {
+        var jl1sl = document.getElementById('add-jiaolian1SelectLeft9').value;
+        document.getElementById('add-jiaolian1SelectRight9').value = jl1sl;
+    })
+
+    var inp4 = document.getElementById('add-jiaolian2SelectLeft9');
+    inp4.addEventListener('blur', function () {
+        var jl2sl = document.getElementById('add-jiaolian2SelectLeft9').value;
+        document.getElementById('add-jiaolian2SelectRight9').value = jl2sl;
+    })
+
+    var inp5 = document.getElementById('add-jiaolian3SelectLeft9');
+    inp5.addEventListener('blur', function () {
+        var jl3sl = document.getElementById('add-jiaolian3SelectLeft9').value;
+        document.getElementById('add-jiaolian3SelectRight9').value = jl3sl;
+    })
+
+    var inp6 = document.getElementById('add-jiaolian4SelectLeft9');
+    inp6.addEventListener('blur', function () {
+        var jl4sl = document.getElementById('add-jiaolian4SelectLeft9').value;
+        document.getElementById('add-jiaolian4SelectRight9').value = jl4sl;
+    })
+
+    var inp7 = document.getElementById('add-jiaolian5SelectLeft9');
+    inp7.addEventListener('blur', function () {
+        var jl5sl = document.getElementById('add-jiaolian5SelectLeft9').value;
+        document.getElementById('add-jiaolian5SelectRight9').value = jl5sl;
+    })
+
+    var inp8 = document.getElementById('add-jiaolian6SelectLeft9');
+    inp8.addEventListener('blur', function () {
+        var jl6sl = document.getElementById('add-jiaolian6SelectLeft9').value;
+        document.getElementById('add-jiaolian6SelectRight9').value = jl6sl;
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian1SelectLeft9');
+    jl3inp.addEventListener('blur', function () {
+    var jl1 = document.getElementById('add-jiaolian1SelectLeft9').value;
+    var jl2 = document.getElementById('add-jiaolian2SelectLeft9').value;
+    var jl3 = document.getElementById('add-jiaolian3SelectLeft9').value;
+    var jl4 = document.getElementById('add-jiaolian4SelectLeft9').value;
+    var jl5 = document.getElementById('add-jiaolian5SelectLeft9').value;
+    var jl6 = document.getElementById('add-jiaolian6SelectLeft9').value;
+    var height = parseFloat(document.getElementById('add-height9').value);
+        if (jl1 == '距中') {
+            var jiaolian1Insert = height / 2;
+            document.getElementById("add-jiaolian1SelectRight9").value = jl1
+
+            document.getElementById("add-jiaolian1InsertLeft9").value = jiaolian1Insert;
+
+            document.getElementById("add-jiaolian1InsertRight9").value = jiaolian1Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian2SelectLeft9');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft9').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft9').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft9').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft9').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft9').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft9').value;
+        var height = parseFloat(document.getElementById('add-height9').value);
+        if (jl2 == '距中') {
+            var jiaolian2Insert = height / 2;
+            document.getElementById("add-jiaolian2SelectRight9").value = jl2
+
+            document.getElementById("add-jiaolian2InsertLeft9").value = jiaolian2Insert;
+
+            document.getElementById("add-jiaolian2InsertRight9").value = jiaolian2Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian3SelectLeft9');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft9').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft9').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft9').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft9').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft9').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft9').value;
+        var height = parseFloat(document.getElementById('add-height9').value);
+        if (jl3 == '距中') {
+            var jiaolian3Insert = height / 2;
+            document.getElementById("add-jiaolian3SelectRight9").value = jl3
+
+            document.getElementById("add-jiaolian3InsertLeft9").value = jiaolian3Insert;
+
+            document.getElementById("add-jiaolian3InsertRight9").value = jiaolian3Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian4SelectLeft9');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft9').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft9').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft9').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft9').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft9').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft9').value;
+        var height = parseFloat(document.getElementById('add-height9').value);
+        if (jl4 == '距中') {
+            var jiaolian4Insert = height / 2;
+            document.getElementById("add-jiaolian4SelectRight9").value = jl4
+
+            document.getElementById("add-jiaolian4InsertLeft9").value = jiaolian4Insert;
+
+            document.getElementById("add-jiaolian4InsertRight9").value = jiaolian4Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian5SelectLeft9');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft9').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft9').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft9').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft9').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft9').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft9').value;
+        var height = parseFloat(document.getElementById('add-height9').value);
+        if (jl5 == '距中') {
+            var jiaolian5Insert = height / 2;
+            document.getElementById("add-jiaolian5SelectRight9").value = jl5
+
+            document.getElementById("add-jiaolian5InsertLeft9").value = jiaolian5Insert;
+
+            document.getElementById("add-jiaolian5InsertRight9").value = jiaolian5Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian6SelectLeft9');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft9').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft9').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft9').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft9').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft9').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft9').value;
+        var height = parseFloat(document.getElementById('add-height9').value);
+        if (jl6 == '距中') {
+            var jiaolian6Insert = height / 2;
+            document.getElementById("add-jiaolian6SelectRight9").value = jl6
+
+            document.getElementById("add-jiaolian6InsertLeft9").value = jiaolian6Insert;
+
+            document.getElementById("add-jiaolian6InsertRight9").value = jiaolian6Insert;
+
+        }
+    })
+
+    // -----------11
+    var inp2 = document.getElementById('add-jiaoliankongFangxiangLeft10');
+    inp2.addEventListener('blur', function () {
+        var xdsl = document.getElementById('add-num10').value;
+        var jlkfxl = document.getElementById('add-jiaoliankongFangxiangLeft10').value;
+        var jlkfxr = xdsl - jlkfxl;
+        document.getElementById('add-jiaoliankongFangxiangRight10').value = jlkfxr;
+    })
+
+    var inp2 = document.getElementById('add-lashouShuliangLeft10');
+    inp2.addEventListener('blur', function () {
+        var xdsl = document.getElementById('add-num10').value;
+        var lssll = document.getElementById('add-lashouShuliangLeft10').value;
+        var lsslr = xdsl - lssll;
+        document.getElementById('add-lashouShuliangRight10').value = lsslr;
+    })
+
+    var inp3 = document.getElementById('add-jiaolian1SelectLeft10');
+    inp3.addEventListener('blur', function () {
+        var jl1sl = document.getElementById('add-jiaolian1SelectLeft10').value;
+        document.getElementById('add-jiaolian1SelectRight10').value = jl1sl;
+    })
+
+    var inp4 = document.getElementById('add-jiaolian2SelectLeft10');
+    inp4.addEventListener('blur', function () {
+        var jl2sl = document.getElementById('add-jiaolian2SelectLeft10').value;
+        document.getElementById('add-jiaolian2SelectRight10').value = jl2sl;
+    })
+
+    var inp5 = document.getElementById('add-jiaolian3SelectLeft10');
+    inp5.addEventListener('blur', function () {
+        var jl3sl = document.getElementById('add-jiaolian3SelectLeft10').value;
+        document.getElementById('add-jiaolian3SelectRight10').value = jl3sl;
+    })
+
+    var inp6 = document.getElementById('add-jiaolian4SelectLeft10');
+    inp6.addEventListener('blur', function () {
+        var jl4sl = document.getElementById('add-jiaolian4SelectLeft10').value;
+        document.getElementById('add-jiaolian4SelectRight10').value = jl4sl;
+    })
+
+    var inp7 = document.getElementById('add-jiaolian5SelectLeft10');
+    inp7.addEventListener('blur', function () {
+        var jl5sl = document.getElementById('add-jiaolian5SelectLeft10').value;
+        document.getElementById('add-jiaolian5SelectRight10').value = jl5sl;
+    })
+
+    var inp8 = document.getElementById('add-jiaolian6SelectLeft10');
+    inp8.addEventListener('blur', function () {
+        var jl6sl = document.getElementById('add-jiaolian6SelectLeft10').value;
+        document.getElementById('add-jiaolian6SelectRight10').value = jl6sl;
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian1SelectLeft10');
+    jl3inp.addEventListener('blur', function () {
+    var jl1 = document.getElementById('add-jiaolian1SelectLeft10').value;
+    var jl2 = document.getElementById('add-jiaolian2SelectLeft10').value;
+    var jl3 = document.getElementById('add-jiaolian3SelectLeft10').value;
+    var jl4 = document.getElementById('add-jiaolian4SelectLeft10').value;
+    var jl5 = document.getElementById('add-jiaolian5SelectLeft10').value;
+    var jl6 = document.getElementById('add-jiaolian6SelectLeft10').value;
+    var height = parseFloat(document.getElementById('add-height10').value);
+        if (jl1 == '距中') {
+            var jiaolian1Insert = height / 2;
+            document.getElementById("add-jiaolian1SelectRight10").value = jl1
+
+            document.getElementById("add-jiaolian1InsertLeft10").value = jiaolian1Insert;
+
+            document.getElementById("add-jiaolian1InsertRight10").value = jiaolian1Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian2SelectLeft10');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft10').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft10').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft10').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft10').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft10').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft10').value;
+        var height = parseFloat(document.getElementById('add-height10').value);
+        if (jl2 == '距中') {
+            var jiaolian2Insert = height / 2;
+            document.getElementById("add-jiaolian2SelectRight10").value = jl2
+
+            document.getElementById("add-jiaolian2InsertLeft10").value = jiaolian2Insert;
+
+            document.getElementById("add-jiaolian2InsertRight10").value = jiaolian2Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian3SelectLeft10');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft10').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft10').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft10').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft10').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft10').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft10').value;
+        var height = parseFloat(document.getElementById('add-height10').value);
+        if (jl3 == '距中') {
+            var jiaolian3Insert = height / 2;
+            document.getElementById("add-jiaolian3SelectRight10").value = jl3
+
+            document.getElementById("add-jiaolian3InsertLeft10").value = jiaolian3Insert;
+
+            document.getElementById("add-jiaolian3InsertRight10").value = jiaolian3Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian4SelectLeft10');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft10').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft10').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft10').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft10').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft10').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft10').value;
+        var height = parseFloat(document.getElementById('add-height10').value);
+        if (jl4 == '距中') {
+            var jiaolian4Insert = height / 2;
+            document.getElementById("add-jiaolian4SelectRight10").value = jl4
+
+            document.getElementById("add-jiaolian4InsertLeft10").value = jiaolian4Insert;
+
+            document.getElementById("add-jiaolian4InsertRight10").value = jiaolian4Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian5SelectLeft10');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft10').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft10').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft10').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft10').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft10').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft10').value;
+        var height = parseFloat(document.getElementById('add-height10').value);
+        if (jl5 == '距中') {
+            var jiaolian5Insert = height / 2;
+            document.getElementById("add-jiaolian5SelectRight10").value = jl5
+
+            document.getElementById("add-jiaolian5InsertLeft10").value = jiaolian5Insert;
+
+            document.getElementById("add-jiaolian5InsertRight10").value = jiaolian5Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian6SelectLeft10');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft10').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft10').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft10').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft10').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft10').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft10').value;
+        var height = parseFloat(document.getElementById('add-height10').value);
+        if (jl6 == '距中') {
+            var jiaolian6Insert = height / 2;
+            document.getElementById("add-jiaolian6SelectRight10").value = jl6
+
+            document.getElementById("add-jiaolian6InsertLeft10").value = jiaolian6Insert;
+
+            document.getElementById("add-jiaolian6InsertRight10").value = jiaolian6Insert;
+
+        }
+    })
+
+    // --------------12
+    var inp2 = document.getElementById('add-jiaoliankongFangxiangLeft11');
+    inp2.addEventListener('blur', function () {
+        var xdsl = document.getElementById('add-num11').value;
+        var jlkfxl = document.getElementById('add-jiaoliankongFangxiangLeft11').value;
+        var jlkfxr = xdsl - jlkfxl;
+        document.getElementById('add-jiaoliankongFangxiangRight11').value = jlkfxr;
+    })
+
+    var inp2 = document.getElementById('add-lashouShuliangLeft11');
+    inp2.addEventListener('blur', function () {
+        var xdsl = document.getElementById('add-num11').value;
+        var lssll = document.getElementById('add-lashouShuliangLeft11').value;
+        var lsslr = xdsl - lssll;
+        document.getElementById('add-lashouShuliangRight11').value = lsslr;
+    })
+
+    var inp3 = document.getElementById('add-jiaolian1SelectLeft11');
+    inp3.addEventListener('blur', function () {
+        var jl1sl = document.getElementById('add-jiaolian1SelectLeft11').value;
+        document.getElementById('add-jiaolian1SelectRight11').value = jl1sl;
+    })
+
+    var inp4 = document.getElementById('add-jiaolian2SelectLeft11');
+    inp4.addEventListener('blur', function () {
+        var jl2sl = document.getElementById('add-jiaolian2SelectLeft11').value;
+        document.getElementById('add-jiaolian2SelectRight11').value = jl2sl;
+    })
+
+    var inp5 = document.getElementById('add-jiaolian3SelectLeft11');
+    inp5.addEventListener('blur', function () {
+        var jl3sl = document.getElementById('add-jiaolian3SelectLeft11').value;
+        document.getElementById('add-jiaolian3SelectRight11').value = jl3sl;
+    })
+
+    var inp6 = document.getElementById('add-jiaolian4SelectLeft11');
+    inp6.addEventListener('blur', function () {
+        var jl4sl = document.getElementById('add-jiaolian4SelectLeft11').value;
+        document.getElementById('add-jiaolian4SelectRight11').value = jl4sl;
+    })
+
+    var inp7 = document.getElementById('add-jiaolian5SelectLeft11');
+    inp7.addEventListener('blur', function () {
+        var jl5sl = document.getElementById('add-jiaolian5SelectLeft11').value;
+        document.getElementById('add-jiaolian5SelectRight11').value = jl5sl;
+    })
+
+    var inp8 = document.getElementById('add-jiaolian6SelectLeft11');
+    inp8.addEventListener('blur', function () {
+        var jl6sl = document.getElementById('add-jiaolian6SelectLeft11').value;
+        document.getElementById('add-jiaolian6SelectRight11').value = jl6sl;
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian1SelectLeft11');
+    jl3inp.addEventListener('blur', function () {
+    var jl1 = document.getElementById('add-jiaolian1SelectLeft11').value;
+    var jl2 = document.getElementById('add-jiaolian2SelectLeft11').value;
+    var jl3 = document.getElementById('add-jiaolian3SelectLeft11').value;
+    var jl4 = document.getElementById('add-jiaolian4SelectLeft11').value;
+    var jl5 = document.getElementById('add-jiaolian5SelectLeft11').value;
+    var jl6 = document.getElementById('add-jiaolian6SelectLeft11').value;
+    var height = parseFloat(document.getElementById('add-height11').value);
+        if (jl1 == '距中') {
+            var jiaolian1Insert = height / 2;
+            document.getElementById("add-jiaolian1SelectRight11").value = jl1
+
+            document.getElementById("add-jiaolian1InsertLeft11").value = jiaolian1Insert;
+
+            document.getElementById("add-jiaolian1InsertRight11").value = jiaolian1Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian2SelectLeft11');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft11').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft11').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft11').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft11').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft11').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft11').value;
+        var height = parseFloat(document.getElementById('add-height11').value);
+        if (jl2 == '距中') {
+            var jiaolian2Insert = height / 2;
+            document.getElementById("add-jiaolian2SelectRight11").value = jl2
+
+            document.getElementById("add-jiaolian2InsertLeft11").value = jiaolian2Insert;
+
+            document.getElementById("add-jiaolian2InsertRight11").value = jiaolian2Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian3SelectLeft11');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft11').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft11').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft11').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft11').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft11').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft11').value;
+        var height = parseFloat(document.getElementById('add-height11').value);
+        if (jl3 == '距中') {
+            var jiaolian3Insert = height / 2;
+            document.getElementById("add-jiaolian3SelectRight11").value = jl3
+
+            document.getElementById("add-jiaolian3InsertLeft11").value = jiaolian3Insert;
+
+            document.getElementById("add-jiaolian3InsertRight11").value = jiaolian3Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian4SelectLeft11');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft11').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft11').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft11').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft11').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft11').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft11').value;
+        var height = parseFloat(document.getElementById('add-height11').value);
+        if (jl4 == '距中') {
+            var jiaolian4Insert = height / 2;
+            document.getElementById("add-jiaolian4SelectRight11").value = jl4
+
+            document.getElementById("add-jiaolian4InsertLeft11").value = jiaolian4Insert;
+
+            document.getElementById("add-jiaolian4InsertRight11").value = jiaolian4Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian5SelectLeft11');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft11').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft11').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft11').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft11').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft11').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft11').value;
+        var height = parseFloat(document.getElementById('add-height11').value);
+        if (jl5 == '距中') {
+            var jiaolian5Insert = height / 2;
+            document.getElementById("add-jiaolian5SelectRight11").value = jl5
+
+            document.getElementById("add-jiaolian5InsertLeft11").value = jiaolian5Insert;
+
+            document.getElementById("add-jiaolian5InsertRight11").value = jiaolian5Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian6SelectLeft11');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft11').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft11').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft11').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft11').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft11').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft11').value;
+        var height = parseFloat(document.getElementById('add-height11').value);
+        if (jl6 == '距中') {
+            var jiaolian6Insert = height / 2;
+            document.getElementById("add-jiaolian6SelectRight11").value = jl6
+
+            document.getElementById("add-jiaolian6InsertLeft11").value = jiaolian6Insert;
+
+            document.getElementById("add-jiaolian6InsertRight11").value = jiaolian6Insert;
+
+        }
+    })
+
+    // --------------13
+    var inp2 = document.getElementById('add-jiaoliankongFangxiangLeft12');
+    inp2.addEventListener('blur', function () {
+        var xdsl = document.getElementById('add-num12').value;
+        var jlkfxl = document.getElementById('add-jiaoliankongFangxiangLeft12').value;
+        var jlkfxr = xdsl - jlkfxl;
+        document.getElementById('add-jiaoliankongFangxiangRight12').value = jlkfxr;
+    })
+
+    var inp2 = document.getElementById('add-lashouShuliangLeft12');
+    inp2.addEventListener('blur', function () {
+        var xdsl = document.getElementById('add-num12').value;
+        var lssll = document.getElementById('add-lashouShuliangLeft12').value;
+        var lsslr = xdsl - lssll;
+        document.getElementById('add-lashouShuliangRight12').value = lsslr;
+    })
+
+    var inp3 = document.getElementById('add-jiaolian1SelectLeft12');
+    inp3.addEventListener('blur', function () {
+        var jl1sl = document.getElementById('add-jiaolian1SelectLeft12').value;
+        document.getElementById('add-jiaolian1SelectRight12').value = jl1sl;
+    })
+
+    var inp4 = document.getElementById('add-jiaolian2SelectLeft12');
+    inp4.addEventListener('blur', function () {
+        var jl2sl = document.getElementById('add-jiaolian2SelectLeft12').value;
+        document.getElementById('add-jiaolian2SelectRight12').value = jl2sl;
+    })
+
+    var inp5 = document.getElementById('add-jiaolian3SelectLeft12');
+    inp5.addEventListener('blur', function () {
+        var jl3sl = document.getElementById('add-jiaolian3SelectLeft12').value;
+        document.getElementById('add-jiaolian3SelectRight12').value = jl3sl;
+    })
+
+    var inp6 = document.getElementById('add-jiaolian4SelectLeft12');
+    inp6.addEventListener('blur', function () {
+        var jl4sl = document.getElementById('add-jiaolian4SelectLeft12').value;
+        document.getElementById('add-jiaolian4SelectRight12').value = jl4sl;
+    })
+
+    var inp7 = document.getElementById('add-jiaolian5SelectLeft12');
+    inp7.addEventListener('blur', function () {
+        var jl5sl = document.getElementById('add-jiaolian5SelectLeft12').value;
+        document.getElementById('add-jiaolian5SelectRight12').value = jl5sl;
+    })
+
+    var inp8 = document.getElementById('add-jiaolian6SelectLeft12');
+    inp8.addEventListener('blur', function () {
+        var jl6sl = document.getElementById('add-jiaolian6SelectLeft12').value;
+        document.getElementById('add-jiaolian6SelectRight12').value = jl6sl;
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian1SelectLeft12');
+    jl3inp.addEventListener('blur', function () {
+    var jl1 = document.getElementById('add-jiaolian1SelectLeft12').value;
+    var jl2 = document.getElementById('add-jiaolian2SelectLeft12').value;
+    var jl3 = document.getElementById('add-jiaolian3SelectLeft12').value;
+    var jl4 = document.getElementById('add-jiaolian4SelectLeft12').value;
+    var jl5 = document.getElementById('add-jiaolian5SelectLeft12').value;
+    var jl6 = document.getElementById('add-jiaolian6SelectLeft12').value;
+    var height = parseFloat(document.getElementById('add-height12').value);
+        if (jl1 == '距中') {
+            var jiaolian1Insert = height / 2;
+            document.getElementById("add-jiaolian1SelectRight12").value = jl1
+
+            document.getElementById("add-jiaolian1InsertLeft12").value = jiaolian1Insert;
+
+            document.getElementById("add-jiaolian1InsertRight12").value = jiaolian1Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian2SelectLeft12');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft12').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft12').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft12').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft12').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft12').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft12').value;
+        var height = parseFloat(document.getElementById('add-height12').value);
+        if (jl2 == '距中') {
+            var jiaolian2Insert = height / 2;
+            document.getElementById("add-jiaolian2SelectRight12").value = jl2
+
+            document.getElementById("add-jiaolian2InsertLeft12").value = jiaolian2Insert;
+
+            document.getElementById("add-jiaolian2InsertRight12").value = jiaolian2Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian3SelectLeft12');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft12').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft12').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft12').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft12').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft12').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft12').value;
+        var height = parseFloat(document.getElementById('add-height12').value);
+        if (jl3 == '距中') {
+            var jiaolian3Insert = height / 2;
+            document.getElementById("add-jiaolian3SelectRight12").value = jl3
+
+            document.getElementById("add-jiaolian3InsertLeft12").value = jiaolian3Insert;
+
+            document.getElementById("add-jiaolian3InsertRight12").value = jiaolian3Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian4SelectLeft12');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft12').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft12').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft12').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft12').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft12').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft12').value;
+        var height = parseFloat(document.getElementById('add-height12').value);
+        if (jl4 == '距中') {
+            var jiaolian4Insert = height / 2;
+            document.getElementById("add-jiaolian4SelectRight12").value = jl4
+
+            document.getElementById("add-jiaolian4InsertLeft12").value = jiaolian4Insert;
+
+            document.getElementById("add-jiaolian4InsertRight12").value = jiaolian4Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian5SelectLeft12');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft12').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft12').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft12').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft12').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft12').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft12').value;
+        var height = parseFloat(document.getElementById('add-height12').value);
+        if (jl5 == '距中') {
+            var jiaolian5Insert = height / 2;
+            document.getElementById("add-jiaolian5SelectRight12").value = jl5
+
+            document.getElementById("add-jiaolian5InsertLeft12").value = jiaolian5Insert;
+
+            document.getElementById("add-jiaolian5InsertRight12").value = jiaolian5Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian6SelectLeft12');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft12').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft12').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft12').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft12').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft12').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft12').value;
+        var height = parseFloat(document.getElementById('add-height12').value);
+        if (jl6 == '距中') {
+            var jiaolian6Insert = height / 2;
+            document.getElementById("add-jiaolian6SelectRight12").value = jl6
+
+            document.getElementById("add-jiaolian6InsertLeft12").value = jiaolian6Insert;
+
+            document.getElementById("add-jiaolian6InsertRight12").value = jiaolian6Insert;
+
+        }
+    })
+
+    // -------14
+    var inp2 = document.getElementById('add-jiaoliankongFangxiangLeft13');
+    inp2.addEventListener('blur', function () {
+        var xdsl = document.getElementById('add-num13').value;
+        var jlkfxl = document.getElementById('add-jiaoliankongFangxiangLeft13').value;
+        var jlkfxr = xdsl - jlkfxl;
+        document.getElementById('add-jiaoliankongFangxiangRight13').value = jlkfxr;
+    })
+
+    var inp2 = document.getElementById('add-lashouShuliangLeft13');
+    inp2.addEventListener('blur', function () {
+        var xdsl = document.getElementById('add-num13').value;
+        var lssll = document.getElementById('add-lashouShuliangLeft13').value;
+        var lsslr = xdsl - lssll;
+        document.getElementById('add-lashouShuliangRight13').value = lsslr;
+    })
+
+    var inp3 = document.getElementById('add-jiaolian1SelectLeft13');
+    inp3.addEventListener('blur', function () {
+        var jl1sl = document.getElementById('add-jiaolian1SelectLeft13').value;
+        document.getElementById('add-jiaolian1SelectRight13').value = jl1sl;
+    })
+
+    var inp4 = document.getElementById('add-jiaolian2SelectLeft13');
+    inp4.addEventListener('blur', function () {
+        var jl2sl = document.getElementById('add-jiaolian2SelectLeft13').value;
+        document.getElementById('add-jiaolian2SelectRight13').value = jl2sl;
+    })
+
+    var inp5 = document.getElementById('add-jiaolian3SelectLeft13');
+    inp5.addEventListener('blur', function () {
+        var jl3sl = document.getElementById('add-jiaolian3SelectLeft13').value;
+        document.getElementById('add-jiaolian3SelectRight13').value = jl3sl;
+    })
+
+    var inp6 = document.getElementById('add-jiaolian4SelectLeft13');
+    inp6.addEventListener('blur', function () {
+        var jl4sl = document.getElementById('add-jiaolian4SelectLeft13').value;
+        document.getElementById('add-jiaolian4SelectRight13').value = jl4sl;
+    })
+
+    var inp7 = document.getElementById('add-jiaolian5SelectLeft13');
+    inp7.addEventListener('blur', function () {
+        var jl5sl = document.getElementById('add-jiaolian5SelectLeft13').value;
+        document.getElementById('add-jiaolian5SelectRight13').value = jl5sl;
+    })
+
+    var inp8 = document.getElementById('add-jiaolian6SelectLeft13');
+    inp8.addEventListener('blur', function () {
+        var jl6sl = document.getElementById('add-jiaolian6SelectLeft13').value;
+        document.getElementById('add-jiaolian6SelectRight13').value = jl6sl;
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian1SelectLeft13');
+    jl3inp.addEventListener('blur', function () {
+    var jl1 = document.getElementById('add-jiaolian1SelectLeft13').value;
+    var jl2 = document.getElementById('add-jiaolian2SelectLeft13').value;
+    var jl3 = document.getElementById('add-jiaolian3SelectLeft13').value;
+    var jl4 = document.getElementById('add-jiaolian4SelectLeft13').value;
+    var jl5 = document.getElementById('add-jiaolian5SelectLeft13').value;
+    var jl6 = document.getElementById('add-jiaolian6SelectLeft13').value;
+    var height = parseFloat(document.getElementById('add-height13').value);
+        if (jl1 == '距中') {
+            var jiaolian1Insert = height / 2;
+            document.getElementById("add-jiaolian1SelectRight13").value = jl1
+
+            document.getElementById("add-jiaolian1InsertLeft13").value = jiaolian1Insert;
+
+            document.getElementById("add-jiaolian1InsertRight13").value = jiaolian1Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian2SelectLeft13');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft13').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft13').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft13').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft13').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft13').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft13').value;
+        var height = parseFloat(document.getElementById('add-height13').value);
+        if (jl2 == '距中') {
+            var jiaolian2Insert = height / 2;
+            document.getElementById("add-jiaolian2SelectRight13").value = jl2
+
+            document.getElementById("add-jiaolian2InsertLeft13").value = jiaolian2Insert;
+
+            document.getElementById("add-jiaolian2InsertRight13").value = jiaolian2Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian3SelectLeft13');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft13').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft13').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft13').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft13').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft13').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft13').value;
+        var height = parseFloat(document.getElementById('add-height13').value);
+        if (jl3 == '距中') {
+            var jiaolian3Insert = height / 2;
+            document.getElementById("add-jiaolian3SelectRight13").value = jl3
+
+            document.getElementById("add-jiaolian3InsertLeft13").value = jiaolian3Insert;
+
+            document.getElementById("add-jiaolian3InsertRight13").value = jiaolian3Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian4SelectLeft13');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft13').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft13').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft13').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft13').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft13').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft13').value;
+        var height = parseFloat(document.getElementById('add-height13').value);
+        if (jl4 == '距中') {
+            var jiaolian4Insert = height / 2;
+            document.getElementById("add-jiaolian4SelectRight13").value = jl4
+
+            document.getElementById("add-jiaolian4InsertLeft13").value = jiaolian4Insert;
+
+            document.getElementById("add-jiaolian4InsertRight13").value = jiaolian4Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian5SelectLeft13');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft13').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft13').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft13').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft13').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft13').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft13').value;
+        var height = parseFloat(document.getElementById('add-height13').value);
+        if (jl5 == '距中') {
+            var jiaolian5Insert = height / 2;
+            document.getElementById("add-jiaolian5SelectRight13").value = jl5
+
+            document.getElementById("add-jiaolian5InsertLeft13").value = jiaolian5Insert;
+
+            document.getElementById("add-jiaolian5InsertRight13").value = jiaolian5Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian6SelectLeft13');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft13').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft13').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft13').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft13').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft13').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft13').value;
+        var height = parseFloat(document.getElementById('add-height13').value);
+        if (jl6 == '距中') {
+            var jiaolian6Insert = height / 2;
+            document.getElementById("add-jiaolian6SelectRight13").value = jl6
+
+            document.getElementById("add-jiaolian6InsertLeft13").value = jiaolian6Insert;
+
+            document.getElementById("add-jiaolian6InsertRight13").value = jiaolian6Insert;
+
+        }
+    })
+
+    // -------15
+    var inp2 = document.getElementById('add-jiaoliankongFangxiangLeft14');
+    inp2.addEventListener('blur', function () {
+        var xdsl = document.getElementById('add-num14').value;
+        var jlkfxl = document.getElementById('add-jiaoliankongFangxiangLeft14').value;
+        var jlkfxr = xdsl - jlkfxl;
+        document.getElementById('add-jiaoliankongFangxiangRight14').value = jlkfxr;
+    })
+
+    var inp2 = document.getElementById('add-lashouShuliangLeft14');
+    inp2.addEventListener('blur', function () {
+        var xdsl = document.getElementById('add-num14').value;
+        var lssll = document.getElementById('add-lashouShuliangLeft14').value;
+        var lsslr = xdsl - lssll;
+        document.getElementById('add-lashouShuliangRight14').value = lsslr;
+    })
+
+    var inp3 = document.getElementById('add-jiaolian1SelectLeft14');
+    inp3.addEventListener('blur', function () {
+        var jl1sl = document.getElementById('add-jiaolian1SelectLeft14').value;
+        document.getElementById('add-jiaolian1SelectRight14').value = jl1sl;
+    })
+
+    var inp4 = document.getElementById('add-jiaolian2SelectLeft14');
+    inp4.addEventListener('blur', function () {
+        var jl2sl = document.getElementById('add-jiaolian2SelectLeft14').value;
+        document.getElementById('add-jiaolian2SelectRight14').value = jl2sl;
+    })
+
+    var inp5 = document.getElementById('add-jiaolian3SelectLeft14');
+    inp5.addEventListener('blur', function () {
+        var jl3sl = document.getElementById('add-jiaolian3SelectLeft14').value;
+        document.getElementById('add-jiaolian3SelectRight14').value = jl3sl;
+    })
+
+    var inp6 = document.getElementById('add-jiaolian4SelectLeft14');
+    inp6.addEventListener('blur', function () {
+        var jl4sl = document.getElementById('add-jiaolian4SelectLeft14').value;
+        document.getElementById('add-jiaolian4SelectRight14').value = jl4sl;
+    })
+
+    var inp7 = document.getElementById('add-jiaolian5SelectLeft14');
+    inp7.addEventListener('blur', function () {
+        var jl5sl = document.getElementById('add-jiaolian5SelectLeft14').value;
+        document.getElementById('add-jiaolian5SelectRight14').value = jl5sl;
+    })
+
+    var inp8 = document.getElementById('add-jiaolian6SelectLeft14');
+    inp8.addEventListener('blur', function () {
+        var jl6sl = document.getElementById('add-jiaolian6SelectLeft14').value;
+        document.getElementById('add-jiaolian6SelectRight14').value = jl6sl;
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian1SelectLeft14');
+    jl3inp.addEventListener('blur', function () {
+    var jl1 = document.getElementById('add-jiaolian1SelectLeft14').value;
+    var jl2 = document.getElementById('add-jiaolian2SelectLeft14').value;
+    var jl3 = document.getElementById('add-jiaolian3SelectLeft14').value;
+    var jl4 = document.getElementById('add-jiaolian4SelectLeft14').value;
+    var jl5 = document.getElementById('add-jiaolian5SelectLeft14').value;
+    var jl6 = document.getElementById('add-jiaolian6SelectLeft14').value;
+    var height = parseFloat(document.getElementById('add-height14').value);
+        if (jl1 == '距中') {
+            var jiaolian1Insert = height / 2;
+            document.getElementById("add-jiaolian1SelectRight14").value = jl1
+
+            document.getElementById("add-jiaolian1InsertLeft14").value = jiaolian1Insert;
+
+            document.getElementById("add-jiaolian1InsertRight14").value = jiaolian1Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian2SelectLeft14');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft14').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft14').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft14').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft14').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft14').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft14').value;
+        var height = parseFloat(document.getElementById('add-height14').value);
+        if (jl2 == '距中') {
+            var jiaolian2Insert = height / 2;
+            document.getElementById("add-jiaolian2SelectRight14").value = jl2
+
+            document.getElementById("add-jiaolian2InsertLeft14").value = jiaolian2Insert;
+
+            document.getElementById("add-jiaolian2InsertRight14").value = jiaolian2Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian3SelectLeft14');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft14').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft14').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft14').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft14').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft14').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft14').value;
+        var height = parseFloat(document.getElementById('add-height14').value);
+        if (jl3 == '距中') {
+            var jiaolian3Insert = height / 2;
+            document.getElementById("add-jiaolian3SelectRight14").value = jl3
+
+            document.getElementById("add-jiaolian3InsertLeft14").value = jiaolian3Insert;
+
+            document.getElementById("add-jiaolian3InsertRight14").value = jiaolian3Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian4SelectLeft14');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft14').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft14').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft14').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft14').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft14').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft14').value;
+        var height = parseFloat(document.getElementById('add-height14').value);
+        if (jl4 == '距中') {
+            var jiaolian4Insert = height / 2;
+            document.getElementById("add-jiaolian4SelectRight14").value = jl4
+
+            document.getElementById("add-jiaolian4InsertLeft14").value = jiaolian4Insert;
+
+            document.getElementById("add-jiaolian4InsertRight14").value = jiaolian4Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian5SelectLeft14');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft14').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft14').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft14').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft14').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft14').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft14').value;
+        var height = parseFloat(document.getElementById('add-height14').value);
+        if (jl5 == '距中') {
+            var jiaolian5Insert = height / 2;
+            document.getElementById("add-jiaolian5SelectRight14").value = jl5
+
+            document.getElementById("add-jiaolian5InsertLeft14").value = jiaolian5Insert;
+
+            document.getElementById("add-jiaolian5InsertRight14").value = jiaolian5Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian6SelectLeft14');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft14').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft14').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft14').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft14').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft14').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft14').value;
+        var height = parseFloat(document.getElementById('add-height14').value);
+        if (jl6 == '距中') {
+            var jiaolian6Insert = height / 2;
+            document.getElementById("add-jiaolian6SelectRight14").value = jl6
+
+            document.getElementById("add-jiaolian6InsertLeft14").value = jiaolian6Insert;
+
+            document.getElementById("add-jiaolian6InsertRight14").value = jiaolian6Insert;
+
+        }
+    })
+
+    // ---------16
+    var inp2 = document.getElementById('add-jiaoliankongFangxiangLeft15');
+    inp2.addEventListener('blur', function () {
+        var xdsl = document.getElementById('add-num15').value;
+        var jlkfxl = document.getElementById('add-jiaoliankongFangxiangLeft15').value;
+        var jlkfxr = xdsl - jlkfxl;
+        document.getElementById('add-jiaoliankongFangxiangRight15').value = jlkfxr;
+    })
+
+    var inp2 = document.getElementById('add-lashouShuliangLeft15');
+    inp2.addEventListener('blur', function () {
+        var xdsl = document.getElementById('add-num15').value;
+        var lssll = document.getElementById('add-lashouShuliangLeft15').value;
+        var lsslr = xdsl - lssll;
+        document.getElementById('add-lashouShuliangRight15').value = lsslr;
+    })
+
+    var inp3 = document.getElementById('add-jiaolian1SelectLeft15');
+    inp3.addEventListener('blur', function () {
+        var jl1sl = document.getElementById('add-jiaolian1SelectLeft15').value;
+        document.getElementById('add-jiaolian1SelectRight15').value = jl1sl;
+    })
+
+    var inp4 = document.getElementById('add-jiaolian2SelectLeft15');
+    inp4.addEventListener('blur', function () {
+        var jl2sl = document.getElementById('add-jiaolian2SelectLeft15').value;
+        document.getElementById('add-jiaolian2SelectRight15').value = jl2sl;
+    })
+
+    var inp5 = document.getElementById('add-jiaolian3SelectLeft15');
+    inp5.addEventListener('blur', function () {
+        var jl3sl = document.getElementById('add-jiaolian3SelectLeft15').value;
+        document.getElementById('add-jiaolian3SelectRight15').value = jl3sl;
+    })
+
+    var inp6 = document.getElementById('add-jiaolian4SelectLeft15');
+    inp6.addEventListener('blur', function () {
+        var jl4sl = document.getElementById('add-jiaolian4SelectLeft15').value;
+        document.getElementById('add-jiaolian4SelectRight15').value = jl4sl;
+    })
+
+    var inp7 = document.getElementById('add-jiaolian5SelectLeft15');
+    inp7.addEventListener('blur', function () {
+        var jl5sl = document.getElementById('add-jiaolian5SelectLeft15').value;
+        document.getElementById('add-jiaolian5SelectRight15').value = jl5sl;
+    })
+
+    var inp8 = document.getElementById('add-jiaolian6SelectLeft15');
+    inp8.addEventListener('blur', function () {
+        var jl6sl = document.getElementById('add-jiaolian6SelectLeft15').value;
+        document.getElementById('add-jiaolian6SelectRight15').value = jl6sl;
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian1SelectLeft15');
+    jl3inp.addEventListener('blur', function () {
+    var jl1 = document.getElementById('add-jiaolian1SelectLeft15').value;
+    var jl2 = document.getElementById('add-jiaolian2SelectLeft15').value;
+    var jl3 = document.getElementById('add-jiaolian3SelectLeft15').value;
+    var jl4 = document.getElementById('add-jiaolian4SelectLeft15').value;
+    var jl5 = document.getElementById('add-jiaolian5SelectLeft15').value;
+    var jl6 = document.getElementById('add-jiaolian6SelectLeft15').value;
+    var height = parseFloat(document.getElementById('add-height15').value);
+        if (jl1 == '距中') {
+            var jiaolian1Insert = height / 2;
+            document.getElementById("add-jiaolian1SelectRight15").value = jl1
+
+            document.getElementById("add-jiaolian1InsertLeft15").value = jiaolian1Insert;
+
+            document.getElementById("add-jiaolian1InsertRight15").value = jiaolian1Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian2SelectLeft15');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft15').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft15').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft15').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft15').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft15').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft15').value;
+        var height = parseFloat(document.getElementById('add-height15').value);
+        if (jl2 == '距中') {
+            var jiaolian2Insert = height / 2;
+            document.getElementById("add-jiaolian2SelectRight15").value = jl2
+
+            document.getElementById("add-jiaolian2InsertLeft15").value = jiaolian2Insert;
+
+            document.getElementById("add-jiaolian2InsertRight15").value = jiaolian2Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian3SelectLeft15');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft15').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft15').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft15').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft15').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft15').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft15').value;
+        var height = parseFloat(document.getElementById('add-height15').value);
+        if (jl3 == '距中') {
+            var jiaolian3Insert = height / 2;
+            document.getElementById("add-jiaolian3SelectRight15").value = jl3
+
+            document.getElementById("add-jiaolian3InsertLeft15").value = jiaolian3Insert;
+
+            document.getElementById("add-jiaolian3InsertRight15").value = jiaolian3Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian4SelectLeft15');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft15').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft15').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft15').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft15').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft15').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft15').value;
+        var height = parseFloat(document.getElementById('add-height15').value);
+        if (jl4 == '距中') {
+            var jiaolian4Insert = height / 2;
+            document.getElementById("add-jiaolian4SelectRight15").value = jl4
+
+            document.getElementById("add-jiaolian4InsertLeft15").value = jiaolian4Insert;
+
+            document.getElementById("add-jiaolian4InsertRight15").value = jiaolian4Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian5SelectLeft15');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft15').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft15').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft15').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft15').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft15').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft15').value;
+        var height = parseFloat(document.getElementById('add-height15').value);
+        if (jl5 == '距中') {
+            var jiaolian5Insert = height / 2;
+            document.getElementById("add-jiaolian5SelectRight15").value = jl5
+
+            document.getElementById("add-jiaolian5InsertLeft15").value = jiaolian5Insert;
+
+            document.getElementById("add-jiaolian5InsertRight15").value = jiaolian5Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian6SelectLeft15');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft15').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft15').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft15').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft15').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft15').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft15').value;
+        var height = parseFloat(document.getElementById('add-height15').value);
+        if (jl6 == '距中') {
+            var jiaolian6Insert = height / 2;
+            document.getElementById("add-jiaolian6SelectRight15").value = jl6
+
+            document.getElementById("add-jiaolian6InsertLeft15").value = jiaolian6Insert;
+
+            document.getElementById("add-jiaolian6InsertRight15").value = jiaolian6Insert;
+
+        }
+    })
+
+    // ---------17
+    var inp2 = document.getElementById('add-jiaoliankongFangxiangLeft16');
+    inp2.addEventListener('blur', function () {
+        var xdsl = document.getElementById('add-num16').value;
+        var jlkfxl = document.getElementById('add-jiaoliankongFangxiangLeft16').value;
+        var jlkfxr = xdsl - jlkfxl;
+        document.getElementById('add-jiaoliankongFangxiangRight16').value = jlkfxr;
+    })
+
+    var inp2 = document.getElementById('add-lashouShuliangLeft16');
+    inp2.addEventListener('blur', function () {
+        var xdsl = document.getElementById('add-num16').value;
+        var lssll = document.getElementById('add-lashouShuliangLeft16').value;
+        var lsslr = xdsl - lssll;
+        document.getElementById('add-lashouShuliangRight16').value = lsslr;
+    })
+
+    var inp3 = document.getElementById('add-jiaolian1SelectLeft16');
+    inp3.addEventListener('blur', function () {
+        var jl1sl = document.getElementById('add-jiaolian1SelectLeft16').value;
+        document.getElementById('add-jiaolian1SelectRight16').value = jl1sl;
+    })
+
+    var inp4 = document.getElementById('add-jiaolian2SelectLeft16');
+    inp4.addEventListener('blur', function () {
+        var jl2sl = document.getElementById('add-jiaolian2SelectLeft16').value;
+        document.getElementById('add-jiaolian2SelectRight16').value = jl2sl;
+    })
+
+    var inp5 = document.getElementById('add-jiaolian3SelectLeft16');
+    inp5.addEventListener('blur', function () {
+        var jl3sl = document.getElementById('add-jiaolian3SelectLeft16').value;
+        document.getElementById('add-jiaolian3SelectRight16').value = jl3sl;
+    })
+
+    var inp6 = document.getElementById('add-jiaolian4SelectLeft16');
+    inp6.addEventListener('blur', function () {
+        var jl4sl = document.getElementById('add-jiaolian4SelectLeft16').value;
+        document.getElementById('add-jiaolian4SelectRight16').value = jl4sl;
+    })
+
+    var inp7 = document.getElementById('add-jiaolian5SelectLeft16');
+    inp7.addEventListener('blur', function () {
+        var jl5sl = document.getElementById('add-jiaolian5SelectLeft16').value;
+        document.getElementById('add-jiaolian5SelectRight16').value = jl5sl;
+    })
+
+    var inp8 = document.getElementById('add-jiaolian6SelectLeft16');
+    inp8.addEventListener('blur', function () {
+        var jl6sl = document.getElementById('add-jiaolian6SelectLeft16').value;
+        document.getElementById('add-jiaolian6SelectRight16').value = jl6sl;
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian1SelectLeft16');
+    jl3inp.addEventListener('blur', function () {
+    var jl1 = document.getElementById('add-jiaolian1SelectLeft16').value;
+    var jl2 = document.getElementById('add-jiaolian2SelectLeft16').value;
+    var jl3 = document.getElementById('add-jiaolian3SelectLeft16').value;
+    var jl4 = document.getElementById('add-jiaolian4SelectLeft16').value;
+    var jl5 = document.getElementById('add-jiaolian5SelectLeft16').value;
+    var jl6 = document.getElementById('add-jiaolian6SelectLeft16').value;
+    var height = parseFloat(document.getElementById('add-height16').value);
+        if (jl1 == '距中') {
+            var jiaolian1Insert = height / 2;
+            document.getElementById("add-jiaolian1SelectRight16").value = jl1
+
+            document.getElementById("add-jiaolian1InsertLeft16").value = jiaolian1Insert;
+
+            document.getElementById("add-jiaolian1InsertRight16").value = jiaolian1Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian2SelectLeft16');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft16').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft16').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft16').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft16').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft16').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft16').value;
+        var height = parseFloat(document.getElementById('add-height16').value);
+        if (jl2 == '距中') {
+            var jiaolian2Insert = height / 2;
+            document.getElementById("add-jiaolian2SelectRight16").value = jl2
+
+            document.getElementById("add-jiaolian2InsertLeft16").value = jiaolian2Insert;
+
+            document.getElementById("add-jiaolian2InsertRight16").value = jiaolian2Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian3SelectLeft16');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft16').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft16').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft16').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft16').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft16').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft16').value;
+        var height = parseFloat(document.getElementById('add-height16').value);
+        if (jl3 == '距中') {
+            var jiaolian3Insert = height / 2;
+            document.getElementById("add-jiaolian3SelectRight16").value = jl3
+
+            document.getElementById("add-jiaolian3InsertLeft16").value = jiaolian3Insert;
+
+            document.getElementById("add-jiaolian3InsertRight16").value = jiaolian3Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian4SelectLeft16');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft16').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft16').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft16').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft16').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft16').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft16').value;
+        var height = parseFloat(document.getElementById('add-height16').value);
+        if (jl4 == '距中') {
+            var jiaolian4Insert = height / 2;
+            document.getElementById("add-jiaolian4SelectRight16").value = jl4
+
+            document.getElementById("add-jiaolian4InsertLeft16").value = jiaolian4Insert;
+
+            document.getElementById("add-jiaolian4InsertRight16").value = jiaolian4Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian5SelectLeft16');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft16').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft16').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft16').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft16').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft16').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft16').value;
+        var height = parseFloat(document.getElementById('add-height16').value);
+        if (jl5 == '距中') {
+            var jiaolian5Insert = height / 2;
+            document.getElementById("add-jiaolian5SelectRight16").value = jl5
+
+            document.getElementById("add-jiaolian5InsertLeft16").value = jiaolian5Insert;
+
+            document.getElementById("add-jiaolian5InsertRight16").value = jiaolian5Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian6SelectLeft16');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft16').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft16').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft16').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft16').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft16').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft16').value;
+        var height = parseFloat(document.getElementById('add-height16').value);
+        if (jl6 == '距中') {
+            var jiaolian6Insert = height / 2;
+            document.getElementById("add-jiaolian6SelectRight16").value = jl6
+
+            document.getElementById("add-jiaolian6InsertLeft16").value = jiaolian6Insert;
+
+            document.getElementById("add-jiaolian6InsertRight16").value = jiaolian6Insert;
+
+        }
+    })
+
+    // ---------18
+    var inp2 = document.getElementById('add-jiaoliankongFangxiangLeft17');
+    inp2.addEventListener('blur', function () {
+        var xdsl = document.getElementById('add-num17').value;
+        var jlkfxl = document.getElementById('add-jiaoliankongFangxiangLeft17').value;
+        var jlkfxr = xdsl - jlkfxl;
+        document.getElementById('add-jiaoliankongFangxiangRight17').value = jlkfxr;
+    })
+
+    var inp2 = document.getElementById('add-lashouShuliangLeft17');
+    inp2.addEventListener('blur', function () {
+        var xdsl = document.getElementById('add-num17').value;
+        var lssll = document.getElementById('add-lashouShuliangLeft17').value;
+        var lsslr = xdsl - lssll;
+        document.getElementById('add-lashouShuliangRight17').value = lsslr;
+    })
+
+    var inp3 = document.getElementById('add-jiaolian1SelectLeft17');
+    inp3.addEventListener('blur', function () {
+        var jl1sl = document.getElementById('add-jiaolian1SelectLeft17').value;
+        document.getElementById('add-jiaolian1SelectRight17').value = jl1sl;
+    })
+
+    var inp4 = document.getElementById('add-jiaolian2SelectLeft17');
+    inp4.addEventListener('blur', function () {
+        var jl2sl = document.getElementById('add-jiaolian2SelectLeft17').value;
+        document.getElementById('add-jiaolian2SelectRight17').value = jl2sl;
+    })
+
+    var inp5 = document.getElementById('add-jiaolian3SelectLeft17');
+    inp5.addEventListener('blur', function () {
+        var jl3sl = document.getElementById('add-jiaolian3SelectLeft17').value;
+        document.getElementById('add-jiaolian3SelectRight17').value = jl3sl;
+    })
+
+    var inp6 = document.getElementById('add-jiaolian4SelectLeft17');
+    inp6.addEventListener('blur', function () {
+        var jl4sl = document.getElementById('add-jiaolian4SelectLeft17').value;
+        document.getElementById('add-jiaolian4SelectRight17').value = jl4sl;
+    })
+
+    var inp7 = document.getElementById('add-jiaolian5SelectLeft17');
+    inp7.addEventListener('blur', function () {
+        var jl5sl = document.getElementById('add-jiaolian5SelectLeft17').value;
+        document.getElementById('add-jiaolian5SelectRight17').value = jl5sl;
+    })
+
+    var inp8 = document.getElementById('add-jiaolian6SelectLeft17');
+    inp8.addEventListener('blur', function () {
+        var jl6sl = document.getElementById('add-jiaolian6SelectLeft17').value;
+        document.getElementById('add-jiaolian6SelectRight17').value = jl6sl;
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian1SelectLeft17');
+    jl3inp.addEventListener('blur', function () {
+    var jl1 = document.getElementById('add-jiaolian1SelectLeft17').value;
+    var jl2 = document.getElementById('add-jiaolian2SelectLeft17').value;
+    var jl3 = document.getElementById('add-jiaolian3SelectLeft17').value;
+    var jl4 = document.getElementById('add-jiaolian4SelectLeft17').value;
+    var jl5 = document.getElementById('add-jiaolian5SelectLeft17').value;
+    var jl6 = document.getElementById('add-jiaolian6SelectLeft17').value;
+    var height = parseFloat(document.getElementById('add-height17').value);
+        if (jl1 == '距中') {
+            var jiaolian1Insert = height / 2;
+            document.getElementById("add-jiaolian1SelectRight17").value = jl1
+
+            document.getElementById("add-jiaolian1InsertLeft17").value = jiaolian1Insert;
+
+            document.getElementById("add-jiaolian1InsertRight17").value = jiaolian1Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian2SelectLeft17');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft17').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft17').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft17').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft17').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft17').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft17').value;
+        var height = parseFloat(document.getElementById('add-height17').value);
+        if (jl2 == '距中') {
+            var jiaolian2Insert = height / 2;
+            document.getElementById("add-jiaolian2SelectRight17").value = jl2
+
+            document.getElementById("add-jiaolian2InsertLeft17").value = jiaolian2Insert;
+
+            document.getElementById("add-jiaolian2InsertRight17").value = jiaolian2Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian3SelectLeft17');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft17').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft17').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft17').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft17').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft17').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft17').value;
+        var height = parseFloat(document.getElementById('add-height17').value);
+        if (jl3 == '距中') {
+            var jiaolian3Insert = height / 2;
+            document.getElementById("add-jiaolian3SelectRight17").value = jl3
+
+            document.getElementById("add-jiaolian3InsertLeft17").value = jiaolian3Insert;
+
+            document.getElementById("add-jiaolian3InsertRight17").value = jiaolian3Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian4SelectLeft17');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft17').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft17').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft17').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft17').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft17').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft17').value;
+        var height = parseFloat(document.getElementById('add-height17').value);
+        if (jl4 == '距中') {
+            var jiaolian4Insert = height / 2;
+            document.getElementById("add-jiaolian4SelectRight17").value = jl4
+
+            document.getElementById("add-jiaolian4InsertLeft17").value = jiaolian4Insert;
+
+            document.getElementById("add-jiaolian4InsertRight17").value = jiaolian4Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian5SelectLeft17');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft17').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft17').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft17').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft17').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft17').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft17').value;
+        var height = parseFloat(document.getElementById('add-height17').value);
+        if (jl5 == '距中') {
+            var jiaolian5Insert = height / 2;
+            document.getElementById("add-jiaolian5SelectRight17").value = jl5
+
+            document.getElementById("add-jiaolian5InsertLeft17").value = jiaolian5Insert;
+
+            document.getElementById("add-jiaolian5InsertRight17").value = jiaolian5Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian6SelectLeft17');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft17').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft17').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft17').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft17').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft17').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft17').value;
+        var height = parseFloat(document.getElementById('add-height17').value);
+        if (jl6 == '距中') {
+            var jiaolian6Insert = height / 2;
+            document.getElementById("add-jiaolian6SelectRight17").value = jl6
+
+            document.getElementById("add-jiaolian6InsertLeft17").value = jiaolian6Insert;
+
+            document.getElementById("add-jiaolian6InsertRight17").value = jiaolian6Insert;
+
+        }
+    })
+
+    // ------------19
+    var inp2 = document.getElementById('add-jiaoliankongFangxiangLeft18');
+    inp2.addEventListener('blur', function () {
+        var xdsl = document.getElementById('add-num18').value;
+        var jlkfxl = document.getElementById('add-jiaoliankongFangxiangLeft18').value;
+        var jlkfxr = xdsl - jlkfxl;
+        document.getElementById('add-jiaoliankongFangxiangRight18').value = jlkfxr;
+    })
+
+    var inp2 = document.getElementById('add-lashouShuliangLeft18');
+    inp2.addEventListener('blur', function () {
+        var xdsl = document.getElementById('add-num18').value;
+        var lssll = document.getElementById('add-lashouShuliangLeft18').value;
+        var lsslr = xdsl - lssll;
+        document.getElementById('add-lashouShuliangRight18').value = lsslr;
+    })
+
+    var inp3 = document.getElementById('add-jiaolian1SelectLeft18');
+    inp3.addEventListener('blur', function () {
+        var jl1sl = document.getElementById('add-jiaolian1SelectLeft18').value;
+        document.getElementById('add-jiaolian1SelectRight18').value = jl1sl;
+    })
+
+    var inp4 = document.getElementById('add-jiaolian2SelectLeft18');
+    inp4.addEventListener('blur', function () {
+        var jl2sl = document.getElementById('add-jiaolian2SelectLeft18').value;
+        document.getElementById('add-jiaolian2SelectRight18').value = jl2sl;
+    })
+
+    var inp5 = document.getElementById('add-jiaolian3SelectLeft18');
+    inp5.addEventListener('blur', function () {
+        var jl3sl = document.getElementById('add-jiaolian3SelectLeft18').value;
+        document.getElementById('add-jiaolian3SelectRight18').value = jl3sl;
+    })
+
+    var inp6 = document.getElementById('add-jiaolian4SelectLeft18');
+    inp6.addEventListener('blur', function () {
+        var jl4sl = document.getElementById('add-jiaolian4SelectLeft18').value;
+        document.getElementById('add-jiaolian4SelectRight18').value = jl4sl;
+    })
+
+    var inp7 = document.getElementById('add-jiaolian5SelectLeft18');
+    inp7.addEventListener('blur', function () {
+        var jl5sl = document.getElementById('add-jiaolian5SelectLeft18').value;
+        document.getElementById('add-jiaolian5SelectRight18').value = jl5sl;
+    })
+
+    var inp8 = document.getElementById('add-jiaolian6SelectLeft18');
+    inp8.addEventListener('blur', function () {
+        var jl6sl = document.getElementById('add-jiaolian6SelectLeft18').value;
+        document.getElementById('add-jiaolian6SelectRight18').value = jl6sl;
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian1SelectLeft18');
+    jl3inp.addEventListener('blur', function () {
+    var jl1 = document.getElementById('add-jiaolian1SelectLeft18').value;
+    var jl2 = document.getElementById('add-jiaolian2SelectLeft18').value;
+    var jl3 = document.getElementById('add-jiaolian3SelectLeft18').value;
+    var jl4 = document.getElementById('add-jiaolian4SelectLeft18').value;
+    var jl5 = document.getElementById('add-jiaolian5SelectLeft18').value;
+    var jl6 = document.getElementById('add-jiaolian6SelectLeft18').value;
+    var height = parseFloat(document.getElementById('add-height18').value);
+        if (jl1 == '距中') {
+            var jiaolian1Insert = height / 2;
+            document.getElementById("add-jiaolian1SelectRight18").value = jl1
+
+            document.getElementById("add-jiaolian1InsertLeft18").value = jiaolian1Insert;
+
+            document.getElementById("add-jiaolian1InsertRight18").value = jiaolian1Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian2SelectLeft18');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft18').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft18').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft18').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft18').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft18').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft18').value;
+        var height = parseFloat(document.getElementById('add-height18').value);
+        if (jl2 == '距中') {
+            var jiaolian2Insert = height / 2;
+            document.getElementById("add-jiaolian2SelectRight18").value = jl2
+
+            document.getElementById("add-jiaolian2InsertLeft18").value = jiaolian2Insert;
+
+            document.getElementById("add-jiaolian2InsertRight18").value = jiaolian2Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian3SelectLeft18');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft18').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft18').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft18').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft18').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft18').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft18').value;
+        var height = parseFloat(document.getElementById('add-height18').value);
+        if (jl3 == '距中') {
+            var jiaolian3Insert = height / 2;
+            document.getElementById("add-jiaolian3SelectRight18").value = jl3
+
+            document.getElementById("add-jiaolian3InsertLeft18").value = jiaolian3Insert;
+
+            document.getElementById("add-jiaolian3InsertRight18").value = jiaolian3Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian4SelectLeft18');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft18').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft18').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft18').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft18').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft18').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft18').value;
+        var height = parseFloat(document.getElementById('add-height18').value);
+        if (jl4 == '距中') {
+            var jiaolian4Insert = height / 2;
+            document.getElementById("add-jiaolian4SelectRight18").value = jl4
+
+            document.getElementById("add-jiaolian4InsertLeft18").value = jiaolian4Insert;
+
+            document.getElementById("add-jiaolian4InsertRight18").value = jiaolian4Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian5SelectLeft18');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft18').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft18').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft18').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft18').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft18').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft18').value;
+        var height = parseFloat(document.getElementById('add-height18').value);
+        if (jl5 == '距中') {
+            var jiaolian5Insert = height / 2;
+            document.getElementById("add-jiaolian5SelectRight18").value = jl5
+
+            document.getElementById("add-jiaolian5InsertLeft18").value = jiaolian5Insert;
+
+            document.getElementById("add-jiaolian5InsertRight18").value = jiaolian5Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian6SelectLeft18');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft18').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft18').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft18').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft18').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft18').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft18').value;
+        var height = parseFloat(document.getElementById('add-height18').value);
+        if (jl6 == '距中') {
+            var jiaolian6Insert = height / 2;
+            document.getElementById("add-jiaolian6SelectRight18").value = jl6
+
+            document.getElementById("add-jiaolian6InsertLeft18").value = jiaolian6Insert;
+
+            document.getElementById("add-jiaolian6InsertRight18").value = jiaolian6Insert;
+
+        }
+    })
+
+    // --------20
+    var inp2 = document.getElementById('add-jiaoliankongFangxiangLeft19');
+    inp2.addEventListener('blur', function () {
+        var xdsl = document.getElementById('add-num19').value;
+        var jlkfxl = document.getElementById('add-jiaoliankongFangxiangLeft19').value;
+        var jlkfxr = xdsl - jlkfxl;
+        document.getElementById('add-jiaoliankongFangxiangRight19').value = jlkfxr;
+    })
+
+    var inp2 = document.getElementById('add-lashouShuliangLeft19');
+    inp2.addEventListener('blur', function () {
+        var xdsl = document.getElementById('add-num19').value;
+        var lssll = document.getElementById('add-lashouShuliangLeft19').value;
+        var lsslr = xdsl - lssll;
+        document.getElementById('add-lashouShuliangRight19').value = lsslr;
+    })
+
+    var inp3 = document.getElementById('add-jiaolian1SelectLeft19');
+    inp3.addEventListener('blur', function () {
+        var jl1sl = document.getElementById('add-jiaolian1SelectLeft19').value;
+        document.getElementById('add-jiaolian1SelectRight19').value = jl1sl;
+    })
+
+    var inp4 = document.getElementById('add-jiaolian2SelectLeft19');
+    inp4.addEventListener('blur', function () {
+        var jl2sl = document.getElementById('add-jiaolian2SelectLeft19').value;
+        document.getElementById('add-jiaolian2SelectRight19').value = jl2sl;
+    })
+
+    var inp5 = document.getElementById('add-jiaolian3SelectLeft19');
+    inp5.addEventListener('blur', function () {
+        var jl3sl = document.getElementById('add-jiaolian3SelectLeft19').value;
+        document.getElementById('add-jiaolian3SelectRight19').value = jl3sl;
+    })
+
+    var inp6 = document.getElementById('add-jiaolian4SelectLeft19');
+    inp6.addEventListener('blur', function () {
+        var jl4sl = document.getElementById('add-jiaolian4SelectLeft19').value;
+        document.getElementById('add-jiaolian4SelectRight19').value = jl4sl;
+    })
+
+    var inp7 = document.getElementById('add-jiaolian5SelectLeft19');
+    inp7.addEventListener('blur', function () {
+        var jl5sl = document.getElementById('add-jiaolian5SelectLeft19').value;
+        document.getElementById('add-jiaolian5SelectRight19').value = jl5sl;
+    })
+
+    var inp8 = document.getElementById('add-jiaolian6SelectLeft19');
+    inp8.addEventListener('blur', function () {
+        var jl6sl = document.getElementById('add-jiaolian6SelectLeft19').value;
+        document.getElementById('add-jiaolian6SelectRight19').value = jl6sl;
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian1SelectLeft19');
+    jl3inp.addEventListener('blur', function () {
+    var jl1 = document.getElementById('add-jiaolian1SelectLeft19').value;
+    var jl2 = document.getElementById('add-jiaolian2SelectLeft19').value;
+    var jl3 = document.getElementById('add-jiaolian3SelectLeft19').value;
+    var jl4 = document.getElementById('add-jiaolian4SelectLeft19').value;
+    var jl5 = document.getElementById('add-jiaolian5SelectLeft19').value;
+    var jl6 = document.getElementById('add-jiaolian6SelectLeft19').value;
+    var height = parseFloat(document.getElementById('add-height19').value);
+        if (jl1 == '距中') {
+            var jiaolian1Insert = height / 2;
+            document.getElementById("add-jiaolian1SelectRight19").value = jl1
+
+            document.getElementById("add-jiaolian1InsertLeft19").value = jiaolian1Insert;
+
+            document.getElementById("add-jiaolian1InsertRight19").value = jiaolian1Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian2SelectLeft19');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft19').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft19').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft19').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft19').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft19').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft19').value;
+        var height = parseFloat(document.getElementById('add-height19').value);
+        if (jl2 == '距中') {
+            var jiaolian2Insert = height / 2;
+            document.getElementById("add-jiaolian2SelectRight19").value = jl2
+
+            document.getElementById("add-jiaolian2InsertLeft19").value = jiaolian2Insert;
+
+            document.getElementById("add-jiaolian2InsertRight19").value = jiaolian2Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian3SelectLeft19');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft19').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft19').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft19').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft19').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft19').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft19').value;
+        var height = parseFloat(document.getElementById('add-height19').value);
+        if (jl3 == '距中') {
+            var jiaolian3Insert = height / 2;
+            document.getElementById("add-jiaolian3SelectRight19").value = jl3
+
+            document.getElementById("add-jiaolian3InsertLeft19").value = jiaolian3Insert;
+
+            document.getElementById("add-jiaolian3InsertRight19").value = jiaolian3Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian4SelectLeft19');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft19').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft19').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft19').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft19').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft19').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft19').value;
+        var height = parseFloat(document.getElementById('add-height19').value);
+        if (jl4 == '距中') {
+            var jiaolian4Insert = height / 2;
+            document.getElementById("add-jiaolian4SelectRight19").value = jl4
+
+            document.getElementById("add-jiaolian4InsertLeft19").value = jiaolian4Insert;
+
+            document.getElementById("add-jiaolian4InsertRight19").value = jiaolian4Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian5SelectLeft19');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft19').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft19').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft19').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft19').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft19').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft19').value;
+        var height = parseFloat(document.getElementById('add-height19').value);
+        if (jl5 == '距中') {
+            var jiaolian5Insert = height / 2;
+            document.getElementById("add-jiaolian5SelectRight19").value = jl5
+
+            document.getElementById("add-jiaolian5InsertLeft19").value = jiaolian5Insert;
+
+            document.getElementById("add-jiaolian5InsertRight19").value = jiaolian5Insert;
+
+        }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian6SelectLeft19');
+    jl3inp.addEventListener('blur', function () {
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft19').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft19').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft19').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft19').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft19').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft19').value;
+        var height = parseFloat(document.getElementById('add-height19').value);
+        if (jl6 == '距中') {
+            var jiaolian6Insert = height / 2;
+            document.getElementById("add-jiaolian6SelectRight19").value = jl6
+
+            document.getElementById("add-jiaolian6InsertLeft19").value = jiaolian6Insert;
+
+            document.getElementById("add-jiaolian6InsertRight19").value = jiaolian6Insert;
+
+        }
+    })
+
+    // -------拉手位
+    var inp1 = document.getElementById('add-lashouweiSelectLeft');
+    inp1.addEventListener('blur', function () {
+        var lswsl = document.getElementById('add-lashouweiSelectLeft').value;
+        document.getElementById('add-lashouweiSelectRight').value = lswsl;
+    })
+
+    var inp1 = document.getElementById('add-lashouweiInsertLeft');
+    inp1.addEventListener('blur', function () {
+        var lswsr = document.getElementById('add-lashouweiInsertLeft').value;
+        document.getElementById('add-lashouweiInsertRight').value = lswsr;
     })
 
     $ajax({
@@ -5183,7 +8733,7 @@ $(function () {
     //新增弹窗里点击提交按钮
     $("#add-submit-btn").click(function () {
         // getAddKk();
-        getJe();
+        // getJe();
         getPfsl();
         getPfje();
         getZcsl();
@@ -5192,352 +8742,352 @@ $(function () {
 
 
         // if (checkForm('#add-form')) {
-            for (i = 0; i < 20; i++) {
-                if (i == 0) {
-                    customerName = $("#add-customerName").val();
-                    insertDate = $("#add-insertDate").val();
-                    orderNumber = $("#add-orderNumber").val();
-                    shippingAddress = $("#add-shippingAddress").val();
-                    phone = $("#add-phone").val();
-                    shippingType = $("#add-shippingType").val();
-                    installAddress = $("#add-installAddress").val();
-                    customerNumber = $("#add-customerNumber").val();
-                    pinyin = $("#add-pinyin").val();
-                    customerNameRenyuan = $("#add-customerNameRenyuan").val();
-                    height = $("#add-height").val();
-                    width = $("#add-width").val();
-                    num = $("#add-num").val();
-                    lvxingcai = $("#add-lvxingcai").val();
-                    lvcaiYanse = $("#add-lvcaiYanse").val();
-                    boliShenjiagong = $("#add-boliShenjiagong").val();
-                    boliYanse = $("#add-boliYanse").val();
-                    lashouXinghao = $("#add-lashouXinghao").val();
-                    jiaoliankongFangxiangLeft = $("#add-jiaoliankongFangxiangLeft").val();
-                    jiaoliankongFangxiangRight = $("#add-jiaoliankongFangxiangRight").val();
-                    lashouShuliangLeft = $("#add-lashouShuliangLeft").val();
-                    lashouShuliangRight = $("#add-lashouShuliangRight").val();
-                    lashouweiSelectLeft = $("#add-lashouweiSelectLeft").val();
-                    lashouweiInsertLeft = $("#add-lashouweiInsertLeft").val();
-                    lashouweiSelectRight = $("#add-lashouweiSelectRight").val();
-                    lashouweiInsertRight = $("#add-lashouweiInsertRight").val();
-                    zhuangsuoshuliangInsertLeft1 = $("#add-zhuangsuoshuliangInsertLeft1").val();
-                    zhuangsuoshuliangInsertRight1 = $("#add-zhuangsuoshuliangInsertRight1").val();
-                    zhuangsuofangweiInsertLeft1 = $("#add-zhuangsuofangweiInsertLeft1").val();
-                    zhuangsuofangweiInsertLeft2 = $("#add-zhuangsuofangweiInsertLeft2").val();
-                    zhuangsuofangweiInsertRight1 = $("#add-zhuangsuofangweiInsertRight1").val();
-                    zhuangsuofangweiInsertRight2 = $("#add-zhuangsuofangweiInsertRight2").val();
-                    kaijiaolian = $("#add-kaijiaolian").val();
-                    jiaolian1SelectLeft = $("#add-jiaolian1SelectLeft").val();
-                    jiaolian1InsertLeft = $("#add-jiaolian1InsertLeft").val();
-                    iaolian1SelectRight = $("#add-iaolian1SelectRight").val();
-                    jiaolian1InsertRight = $("#add-jiaolian1InsertRight").val();
-                    jiaolian2SelectLeft = $("#add-jiaolian2SelectLeft").val();
-                    jiaolian2InsertLeft = $("#add-jiaolian2InsertLeft").val();
-                    jiaolian2SelectRight = $("#add-jiaolian2SelectRight").val();
-                    jiaolian2InsertRight = $("#add-jiaolian2InsertRight").val();
-                    jiaolian3SelectLeft = $("#add-jiaolian3SelectLeft").val();
-                    jiaolian3InsertLeft = $("#add-jiaolian3InsertLeft").val();
-                    jiaolian3SelectRight = $("#add-jiaolian3SelectRight").val();
-                    jiaolian3InsertRight = $("#add-jiaolian3InsertRight").val();
-                    jiaolian4SelectLeft = $("#add-jiaolian4SelectLeft").val();
-                    jiaolian4InsertLeft = $("#add-jiaolian4InsertLeft").val();
-                    jiaolian4SelectRight = $("#add-jiaolian4SelectRight").val();
-                    jiaolian4InsertRight = $("#add-jiaolian4InsertRight").val();
-                    jiaolian5SelectLeft = $("#add-jiaolian5SelectLeft").val();
-                    jiaolian5InsertLeft = $("#add-jiaolian5InsertLeft").val();
-                    jiaolian5SelectRight = $("#add-jiaolian5SelectRight").val();
-                    jiaolian6SelectLeft = $("#add-jiaolian6SelectLeft").val();
-                    jiaolian6InsertLeft = $("#add-jiaolian6InsertLeft").val();
-                    jiaolian6SelectRight = $("#add-jiaolian6SelectRight").val();
-                    jiaolian6InsertRight = $("#add-jiaolian6InsertRight").val();
-                    fujianSelect1 = $("#add-fujianSelect1").val();
-                    fujianSelect2 = $("#add-fujianSelect2").val();
-                    fujianSelect3 = $("#add-fujianSelect3").val();
-                    fujianSelect4 = $("#add-fujianSelect4").val();
-                    pinpaiSelect1 = $("#add-pinpaiSelect1").val();
-                    pinpaiSelect2 = $("#add-pinpaiSelect2").val();
-                    pinpaiSelect3 = $("#add-pinpaiSelect3").val();
-                    pinpaiSelect4 = $("#add-pinpaiSelect4").val();
-                    fujianShuliang1 = $("#add-fujianShuliang1").val();
-                    fujianShuliang2 = $("#add-fujianShuliang2").val();
-                    fujianShuliang3 = $("#add-fujianShuliang3").val();
-                    fujianShuliang4 = $("#add-fujianShuliang4").val();
-                    qita = $("#add-qita").val();
-                    sumShuliang1 = $("#add-sumShuliang1").val();
-                    danjia1 = $("#add-danjia1").val();
-                    sumJine1 = $("#add-sumJine1").val();
-                    sumShuliang2 = $("#add-sumShuliang2").val();
-                    danjia2 = $("#add-danjia2").val();
-                    sumJine2 = $("#add-sumJine2").val();
-                    wancheng = $("#add-wancheng").val();
-                    var arr={
-                        customerName : customerName,
-                        insertDate : insertDate,
-                        orderNumber : orderNumber,
-                        shippingAddress : shippingAddress,
-                        phone : phone,
-                        shippingType : shippingType,
-                        installAddress : installAddress,
-                        customerNumber : customerNumber,
-                        pinyin : pinyin,
-                        customerNameRenyuan : customerNameRenyuan,
-                        height : height,
-                        width : width,
-                        num : num,
-                        lvxingcai : lvxingcai,
-                        lvcaiYanse : lvcaiYanse,
-                        boliShenjiagong : boliShenjiagong,
-                        boliYanse : boliYanse,
-                        lashouXinghao : lashouXinghao,
-                        jiaoliankongFangxiangLeft : jiaoliankongFangxiangLeft,
-                        jiaoliankongFangxiangRight : jiaoliankongFangxiangRight,
-                        lashouShuliangLeft : lashouShuliangLeft,
-                        lashouShuliangRight : lashouShuliangRight,
-                        lashouweiSelectLeft : lashouweiSelectLeft,
-                        lashouweiInsertLeft : lashouweiInsertLeft,
-                        lashouweiSelectRight : lashouweiSelectRight,
-                        lashouweiInsertRight : lashouweiInsertRight,
-                        zhuangsuoshuliangInsertLeft1 : zhuangsuoshuliangInsertLeft1,
-                        zhuangsuoshuliangInsertRight1 : zhuangsuoshuliangInsertRight1,
-                        zhuangsuofangweiInsertLeft1 : zhuangsuofangweiInsertLeft1,
-                        zhuangsuofangweiInsertLeft2 : zhuangsuofangweiInsertLeft2,
-                        zhuangsuofangweiInsertRight1 : zhuangsuofangweiInsertRight1,
-                        zhuangsuofangweiInsertRight2 : zhuangsuofangweiInsertRight2,
-                        kaijiaolian : kaijiaolian,
-                        jiaolian1SelectLeft : jiaolian1SelectLeft,
-                        jiaolian1InsertLeft : jiaolian1InsertLeft,
-                        iaolian1SelectRight : iaolian1SelectRight,
-                        jiaolian1InsertRight : jiaolian1InsertRight,
-                        jiaolian2SelectLeft : jiaolian2SelectLeft,
-                        jiaolian2InsertLeft : jiaolian2InsertLeft,
-                        jiaolian2SelectRight : jiaolian2SelectRight,
-                        jiaolian2InsertRight : jiaolian2InsertRight,
-                        jiaolian3SelectLeft : jiaolian3SelectLeft,
-                        jiaolian3InsertLeft : jiaolian3InsertLeft,
-                        jiaolian3SelectRight : jiaolian3SelectRight,
-                        jiaolian3InsertRight : jiaolian3InsertRight,
-                        jiaolian4SelectLeft : jiaolian4SelectLeft,
-                        jiaolian4InsertLeft : jiaolian4InsertLeft,
-                        jiaolian4SelectRight : jiaolian4SelectRight,
-                        jiaolian4InsertRight : jiaolian4InsertRight,
-                        jiaolian5SelectLeft : jiaolian5SelectLeft,
-                        jiaolian5InsertLeft : jiaolian5InsertLeft,
-                        jiaolian5SelectRight : jiaolian5SelectRight,
-                        jiaolian6SelectLeft : jiaolian6SelectLeft,
-                        jiaolian6InsertLeft : jiaolian6InsertLeft,
-                        jiaolian6SelectRight : jiaolian6SelectRight,
-                        jiaolian6InsertRight : jiaolian6InsertRight,
-                        fujianSelect1 : fujianSelect1,
-                        fujianSelect2 : fujianSelect2,
-                        fujianSelect3 : fujianSelect3,
-                        fujianSelect4 : fujianSelect4,
-                        pinpaiSelect1 : pinpaiSelect1,
-                        pinpaiSelect2 : pinpaiSelect2,
-                        pinpaiSelect3 : pinpaiSelect3,
-                        pinpaiSelect4 : pinpaiSelect4,
-                        fujianShuliang1 : fujianShuliang1,
-                        fujianShuliang2 : fujianShuliang2,
-                        fujianShuliang3 : fujianShuliang3,
-                        fujianShuliang4 : fujianShuliang4,
-                        qita : qita,
-                        sumShuliang1 : sumShuliang1,
-                        danjia1 : danjia1,
-                        sumJine1 : sumJine1,
-                        sumShuliang2 : sumShuliang2,
-                        danjia2 : danjia2,
-                        sumJine2 : sumJine2,
-                        wancheng: wancheng
+        for (i = 0; i < 20; i++) {
+            if (i == 0) {
+                customerName = $("#add-customerName").val();
+                insertDate = $("#add-insertDate").val();
+                orderNumber = $("#add-orderNumber").val();
+                shippingAddress = $("#add-shippingAddress").val();
+                phone = $("#add-phone").val();
+                shippingType = $("#add-shippingType").val();
+                installAddress = $("#add-installAddress").val();
+                customerNumber = $("#add-customerNumber").val();
+                pinyin = $("#add-pinyin").val();
+                customerNameRenyuan = $("#add-customerNameRenyuan").val();
+                height = $("#add-height").val();
+                width = $("#add-width").val();
+                num = $("#add-num").val();
+                lvxingcai = $("#add-lvxingcai").val();
+                lvcaiYanse = $("#add-lvcaiYanse").val();
+                boliShenjiagong = $("#add-boliShenjiagong").val();
+                boliYanse = $("#add-boliYanse").val();
+                lashouXinghao = $("#add-lashouXinghao").val();
+                jiaoliankongFangxiangLeft = $("#add-jiaoliankongFangxiangLeft").val();
+                jiaoliankongFangxiangRight = $("#add-jiaoliankongFangxiangRight").val();
+                lashouShuliangLeft = $("#add-lashouShuliangLeft").val();
+                lashouShuliangRight = $("#add-lashouShuliangRight").val();
+                lashouweiSelectLeft = $("#add-lashouweiSelectLeft").val();
+                lashouweiInsertLeft = $("#add-lashouweiInsertLeft").val();
+                lashouweiSelectRight = $("#add-lashouweiSelectRight").val();
+                lashouweiInsertRight = $("#add-lashouweiInsertRight").val();
+                zhuangsuoshuliangInsertLeft1 = $("#add-zhuangsuoshuliangInsertLeft1").val();
+                zhuangsuoshuliangInsertRight1 = $("#add-zhuangsuoshuliangInsertRight1").val();
+                zhuangsuofangweiInsertLeft1 = $("#add-zhuangsuofangweiInsertLeft1").val();
+                zhuangsuofangweiInsertLeft2 = $("#add-zhuangsuofangweiInsertLeft2").val();
+                zhuangsuofangweiInsertRight1 = $("#add-zhuangsuofangweiInsertRight1").val();
+                zhuangsuofangweiInsertRight2 = $("#add-zhuangsuofangweiInsertRight2").val();
+                kaijiaolian = $("#add-kaijiaolian").val();
+                jiaolian1SelectLeft = $("#add-jiaolian1SelectLeft").val();
+                jiaolian1InsertLeft = $("#add-jiaolian1InsertLeft").val();
+                iaolian1SelectRight = $("#add-iaolian1SelectRight").val();
+                jiaolian1InsertRight = $("#add-jiaolian1InsertRight").val();
+                jiaolian2SelectLeft = $("#add-jiaolian2SelectLeft").val();
+                jiaolian2InsertLeft = $("#add-jiaolian2InsertLeft").val();
+                jiaolian2SelectRight = $("#add-jiaolian2SelectRight").val();
+                jiaolian2InsertRight = $("#add-jiaolian2InsertRight").val();
+                jiaolian3SelectLeft = $("#add-jiaolian3SelectLeft").val();
+                jiaolian3InsertLeft = $("#add-jiaolian3InsertLeft").val();
+                jiaolian3SelectRight = $("#add-jiaolian3SelectRight").val();
+                jiaolian3InsertRight = $("#add-jiaolian3InsertRight").val();
+                jiaolian4SelectLeft = $("#add-jiaolian4SelectLeft").val();
+                jiaolian4InsertLeft = $("#add-jiaolian4InsertLeft").val();
+                jiaolian4SelectRight = $("#add-jiaolian4SelectRight").val();
+                jiaolian4InsertRight = $("#add-jiaolian4InsertRight").val();
+                jiaolian5SelectLeft = $("#add-jiaolian5SelectLeft").val();
+                jiaolian5InsertLeft = $("#add-jiaolian5InsertLeft").val();
+                jiaolian5SelectRight = $("#add-jiaolian5SelectRight").val();
+                jiaolian6SelectLeft = $("#add-jiaolian6SelectLeft").val();
+                jiaolian6InsertLeft = $("#add-jiaolian6InsertLeft").val();
+                jiaolian6SelectRight = $("#add-jiaolian6SelectRight").val();
+                jiaolian6InsertRight = $("#add-jiaolian6InsertRight").val();
+                fujianSelect1 = $("#add-fujianSelect1").val();
+                fujianSelect2 = $("#add-fujianSelect2").val();
+                fujianSelect3 = $("#add-fujianSelect3").val();
+                fujianSelect4 = $("#add-fujianSelect4").val();
+                pinpaiSelect1 = $("#add-pinpaiSelect1").val();
+                pinpaiSelect2 = $("#add-pinpaiSelect2").val();
+                pinpaiSelect3 = $("#add-pinpaiSelect3").val();
+                pinpaiSelect4 = $("#add-pinpaiSelect4").val();
+                fujianShuliang1 = $("#add-fujianShuliang1").val();
+                fujianShuliang2 = $("#add-fujianShuliang2").val();
+                fujianShuliang3 = $("#add-fujianShuliang3").val();
+                fujianShuliang4 = $("#add-fujianShuliang4").val();
+                qita = $("#add-qita").val();
+                sumShuliang1 = $("#add-sumShuliang1").val();
+                danjia1 = $("#add-danjia1").val();
+                sumJine1 = $("#add-sumJine1").val();
+                sumShuliang2 = $("#add-sumShuliang2").val();
+                danjia2 = $("#add-danjia2").val();
+                sumJine2 = $("#add-sumJine2").val();
+                wancheng = $("#add-wancheng").val();
+                var arr = {
+                    customerName: customerName,
+                    insertDate: insertDate,
+                    orderNumber: orderNumber,
+                    shippingAddress: shippingAddress,
+                    phone: phone,
+                    shippingType: shippingType,
+                    installAddress: installAddress,
+                    customerNumber: customerNumber,
+                    pinyin: pinyin,
+                    customerNameRenyuan: customerNameRenyuan,
+                    height: height,
+                    width: width,
+                    num: num,
+                    lvxingcai: lvxingcai,
+                    lvcaiYanse: lvcaiYanse,
+                    boliShenjiagong: boliShenjiagong,
+                    boliYanse: boliYanse,
+                    lashouXinghao: lashouXinghao,
+                    jiaoliankongFangxiangLeft: jiaoliankongFangxiangLeft,
+                    jiaoliankongFangxiangRight: jiaoliankongFangxiangRight,
+                    lashouShuliangLeft: lashouShuliangLeft,
+                    lashouShuliangRight: lashouShuliangRight,
+                    lashouweiSelectLeft: lashouweiSelectLeft,
+                    lashouweiInsertLeft: lashouweiInsertLeft,
+                    lashouweiSelectRight: lashouweiSelectRight,
+                    lashouweiInsertRight: lashouweiInsertRight,
+                    zhuangsuoshuliangInsertLeft1: zhuangsuoshuliangInsertLeft1,
+                    zhuangsuoshuliangInsertRight1: zhuangsuoshuliangInsertRight1,
+                    zhuangsuofangweiInsertLeft1: zhuangsuofangweiInsertLeft1,
+                    zhuangsuofangweiInsertLeft2: zhuangsuofangweiInsertLeft2,
+                    zhuangsuofangweiInsertRight1: zhuangsuofangweiInsertRight1,
+                    zhuangsuofangweiInsertRight2: zhuangsuofangweiInsertRight2,
+                    kaijiaolian: kaijiaolian,
+                    jiaolian1SelectLeft: jiaolian1SelectLeft,
+                    jiaolian1InsertLeft: jiaolian1InsertLeft,
+                    iaolian1SelectRight: iaolian1SelectRight,
+                    jiaolian1InsertRight: jiaolian1InsertRight,
+                    jiaolian2SelectLeft: jiaolian2SelectLeft,
+                    jiaolian2InsertLeft: jiaolian2InsertLeft,
+                    jiaolian2SelectRight: jiaolian2SelectRight,
+                    jiaolian2InsertRight: jiaolian2InsertRight,
+                    jiaolian3SelectLeft: jiaolian3SelectLeft,
+                    jiaolian3InsertLeft: jiaolian3InsertLeft,
+                    jiaolian3SelectRight: jiaolian3SelectRight,
+                    jiaolian3InsertRight: jiaolian3InsertRight,
+                    jiaolian4SelectLeft: jiaolian4SelectLeft,
+                    jiaolian4InsertLeft: jiaolian4InsertLeft,
+                    jiaolian4SelectRight: jiaolian4SelectRight,
+                    jiaolian4InsertRight: jiaolian4InsertRight,
+                    jiaolian5SelectLeft: jiaolian5SelectLeft,
+                    jiaolian5InsertLeft: jiaolian5InsertLeft,
+                    jiaolian5SelectRight: jiaolian5SelectRight,
+                    jiaolian6SelectLeft: jiaolian6SelectLeft,
+                    jiaolian6InsertLeft: jiaolian6InsertLeft,
+                    jiaolian6SelectRight: jiaolian6SelectRight,
+                    jiaolian6InsertRight: jiaolian6InsertRight,
+                    fujianSelect1: fujianSelect1,
+                    fujianSelect2: fujianSelect2,
+                    fujianSelect3: fujianSelect3,
+                    fujianSelect4: fujianSelect4,
+                    pinpaiSelect1: pinpaiSelect1,
+                    pinpaiSelect2: pinpaiSelect2,
+                    pinpaiSelect3: pinpaiSelect3,
+                    pinpaiSelect4: pinpaiSelect4,
+                    fujianShuliang1: fujianShuliang1,
+                    fujianShuliang2: fujianShuliang2,
+                    fujianShuliang3: fujianShuliang3,
+                    fujianShuliang4: fujianShuliang4,
+                    qita: qita,
+                    sumShuliang1: sumShuliang1,
+                    danjia1: danjia1,
+                    sumJine1: sumJine1,
+                    sumShuliang2: sumShuliang2,
+                    danjia2: danjia2,
+                    sumJine2: sumJine2,
+                    wancheng: wancheng
                 }
-                    $ajax({
-                        type: 'post',
-                        url: '/lkxd/add',
-                        data: JSON.stringify({
-                            addInfo: arr
-                        }),
-                        dataType: 'json',
-                        contentType: 'application/json;charset=utf-8'
-                    }, false, '', function (res) {
-                        if (res.code == 200) {
-                            swal("", res.msg, "success");
-                            $('#add-form')[0].reset();
-                            getList();
-                            $('#add-close-btn').click();
-                        }
-                    })
-                }else{
-                    customerName = $("#add-customerName").val();
-                    insertDate = $("#add-insertDate").val();
-                    orderNumber = $("#add-orderNumber").val();
-                    shippingAddress = $("#add-shippingAddress").val();
-                    phone = $("#add-phone").val();
-                    shippingType = $("#add-shippingType").val();
-                    installAddress = $("#add-installAddress").val();
-                    customerNumber = $("#add-customerNumber").val();
-                    pinyin = $("#add-pinyin").val();
-                    customerNameRenyuan = $("#add-customerNameRenyuan").val();
-                    height = $("#add-height"+i).val();
-                    if(height=="" || height==null){
-                        break;
+                $ajax({
+                    type: 'post',
+                    url: '/lkxd/add',
+                    data: JSON.stringify({
+                        addInfo: arr
+                    }),
+                    dataType: 'json',
+                    contentType: 'application/json;charset=utf-8'
+                }, false, '', function (res) {
+                    if (res.code == 200) {
+                        swal("", res.msg, "success");
+                        $('#add-form')[0].reset();
+                        getList();
+                        $('#add-close-btn').click();
                     }
-                    width = $("#add-width"+i).val();
-                    num = $("#add-num"+i).val();
-                    lvxingcai = $("#add-lvxingcai"+i).val();
-                    lvcaiYanse = $("#add-lvcaiYanse"+i).val();
-                    boliShenjiagong = $("#add-boliShenjiagong"+i).val();
-                    boliYanse = $("#add-boliYanse"+i).val();
-                    lashouXinghao = $("#add-lashouXinghao"+i).val();
-                    jiaoliankongFangxiangLeft = $("#add-jiaoliankongFangxiangLeft"+i).val();
-                    jiaoliankongFangxiangRight = $("#add-jiaoliankongFangxiangRight"+i).val();
-                    lashouShuliangLeft = $("#add-lashouShuliangLeft"+i).val();
-                    lashouShuliangRight = $("#add-lashouShuliangRight"+i).val();
-                    lashouweiSelectLeft = $("#add-lashouweiSelectLeft"+i).val();
-                    lashouweiInsertLeft = $("#add-lashouweiInsertLeft"+i).val();
-                    lashouweiSelectRight = $("#add-lashouweiSelectRight"+i).val();
-                    lashouweiInsertRight = $("#add-lashouweiInsertRight"+i).val();
-                    zhuangsuoshuliangInsertLeft1 = $("#add-zhuangsuoshuliangInsertLeft1"+i).val();
-                    zhuangsuoshuliangInsertRight1 = $("#add-zhuangsuoshuliangInsertRight1"+i).val();
-                    zhuangsuofangweiInsertLeft1 = $("#add-zhuangsuofangweiInsertLeft1"+i).val();
-                    zhuangsuofangweiInsertLeft2 = $("#add-zhuangsuofangweiInsertLeft2"+i).val();
-                    zhuangsuofangweiInsertRight1 = $("#add-zhuangsuofangweiInsertRight1"+i).val();
-                    zhuangsuofangweiInsertRight2 = $("#add-zhuangsuofangweiInsertRight2"+i).val();
-                    kaijiaolian = $("#add-kaijiaolian"+i).val();
-                    jiaolian1SelectLeft = $("#add-jiaolian1SelectLeft"+i).val();
-                    jiaolian1InsertLeft = $("#add-jiaolian1InsertLeft"+i).val();
-                    iaolian1SelectRight = $("#add-iaolian1SelectRight"+i).val();
-                    jiaolian1InsertRight = $("#add-jiaolian1InsertRight"+i).val();
-                    jiaolian2SelectLeft = $("#add-jiaolian2SelectLeft"+i).val();
-                    jiaolian2InsertLeft = $("#add-jiaolian2InsertLeft"+i).val();
-                    jiaolian2SelectRight = $("#add-jiaolian2SelectRight"+i).val();
-                    jiaolian2InsertRight = $("#add-jiaolian2InsertRight"+i).val();
-                    jiaolian3SelectLeft = $("#add-jiaolian3SelectLeft"+i).val();
-                    jiaolian3InsertLeft = $("#add-jiaolian3InsertLeft"+i).val();
-                    jiaolian3SelectRight = $("#add-jiaolian3SelectRight"+i).val();
-                    jiaolian3InsertRight = $("#add-jiaolian3InsertRight"+i).val();
-                    jiaolian4SelectLeft = $("#add-jiaolian4SelectLeft"+i).val();
-                    jiaolian4InsertLeft = $("#add-jiaolian4InsertLeft"+i).val();
-                    jiaolian4SelectRight = $("#add-jiaolian4SelectRight"+i).val();
-                    jiaolian4InsertRight = $("#add-jiaolian4InsertRight"+i).val();
-                    jiaolian5SelectLeft = $("#add-jiaolian5SelectLeft"+i).val();
-                    jiaolian5InsertLeft = $("#add-jiaolian5InsertLeft"+i).val();
-                    jiaolian5SelectRight = $("#add-jiaolian5SelectRight"+i).val();
-                    jiaolian6SelectLeft = $("#add-jiaolian6SelectLeft"+i).val();
-                    jiaolian6InsertLeft = $("#add-jiaolian6InsertLeft"+i).val();
-                    jiaolian6SelectRight = $("#add-jiaolian6SelectRight"+i).val();
-                    jiaolian6InsertRight = $("#add-jiaolian6InsertRight"+i).val();
-                    fujianSelect1 = $("#add-fujianSelect1"+i).val();
-                    fujianSelect2 = $("#add-fujianSelect2"+i).val();
-                    fujianSelect3 = $("#add-fujianSelect3"+i).val();
-                    fujianSelect4 = $("#add-fujianSelect4"+i).val();
-                    pinpaiSelect1 = $("#add-pinpaiSelect1"+i).val();
-                    pinpaiSelect2 = $("#add-pinpaiSelect2"+i).val();
-                    pinpaiSelect3 = $("#add-pinpaiSelect3"+i).val();
-                    pinpaiSelect4 = $("#add-pinpaiSelect4"+i).val();
-                    fujianShuliang1 = $("#add-fujianShuliang1"+i).val();
-                    fujianShuliang2 = $("#add-fujianShuliang2"+i).val();
-                    fujianShuliang3 = $("#add-fujianShuliang3"+i).val();
-                    fujianShuliang4 = $("#add-fujianShuliang4"+i).val();
-                    qita = $("#add-qita"+i).val();
-                    sumShuliang1 = $("#add-sumShuliang1"+i).val();
-                    danjia1 = $("#add-danjia1"+i).val();
-                    sumJine1 = $("#add-sumJine1"+i).val();
-                    sumShuliang2 = $("#add-sumShuliang2"+i).val();
-                    danjia2 = $("#add-danjia2"+i).val();
-                    sumJine2 = $("#add-sumJine2"+i).val();
-                    var arr={
-                        customerName : customerName,
-                        insertDate : insertDate,
-                        orderNumber : orderNumber,
-                        shippingAddress : shippingAddress,
-                        phone : phone,
-                        shippingType : shippingType,
-                        installAddress : installAddress,
-                        customerNumber : customerNumber,
-                        pinyin : pinyin,
-                        customerNameRenyuan : customerNameRenyuan,
-                        height : height,
-                        width : width,
-                        num : num,
-                        lvxingcai : lvxingcai,
-                        lvcaiYanse : lvcaiYanse,
-                        boliShenjiagong : boliShenjiagong,
-                        boliYanse : boliYanse,
-                        lashouXinghao : lashouXinghao,
-                        jiaoliankongFangxiangLeft : jiaoliankongFangxiangLeft,
-                        jiaoliankongFangxiangRight : jiaoliankongFangxiangRight,
-                        lashouShuliangLeft : lashouShuliangLeft,
-                        lashouShuliangRight : lashouShuliangRight,
-                        lashouweiSelectLeft : lashouweiSelectLeft,
-                        lashouweiInsertLeft : lashouweiInsertLeft,
-                        lashouweiSelectRight : lashouweiSelectRight,
-                        lashouweiInsertRight : lashouweiInsertRight,
-                        zhuangsuoshuliangInsertLeft1 : zhuangsuoshuliangInsertLeft1,
-                        zhuangsuoshuliangInsertRight1 : zhuangsuoshuliangInsertRight1,
-                        zhuangsuofangweiInsertLeft1 : zhuangsuofangweiInsertLeft1,
-                        zhuangsuofangweiInsertLeft2 : zhuangsuofangweiInsertLeft2,
-                        zhuangsuofangweiInsertRight1 : zhuangsuofangweiInsertRight1,
-                        zhuangsuofangweiInsertRight2 : zhuangsuofangweiInsertRight2,
-                        kaijiaolian : kaijiaolian,
-                        jiaolian1SelectLeft : jiaolian1SelectLeft,
-                        jiaolian1InsertLeft : jiaolian1InsertLeft,
-                        iaolian1SelectRight : iaolian1SelectRight,
-                        jiaolian1InsertRight : jiaolian1InsertRight,
-                        jiaolian2SelectLeft : jiaolian2SelectLeft,
-                        jiaolian2InsertLeft : jiaolian2InsertLeft,
-                        jiaolian2SelectRight : jiaolian2SelectRight,
-                        jiaolian2InsertRight : jiaolian2InsertRight,
-                        jiaolian3SelectLeft : jiaolian3SelectLeft,
-                        jiaolian3InsertLeft : jiaolian3InsertLeft,
-                        jiaolian3SelectRight : jiaolian3SelectRight,
-                        jiaolian3InsertRight : jiaolian3InsertRight,
-                        jiaolian4SelectLeft : jiaolian4SelectLeft,
-                        jiaolian4InsertLeft : jiaolian4InsertLeft,
-                        jiaolian4SelectRight : jiaolian4SelectRight,
-                        jiaolian4InsertRight : jiaolian4InsertRight,
-                        jiaolian5SelectLeft : jiaolian5SelectLeft,
-                        jiaolian5InsertLeft : jiaolian5InsertLeft,
-                        jiaolian5SelectRight : jiaolian5SelectRight,
-                        jiaolian6SelectLeft : jiaolian6SelectLeft,
-                        jiaolian6InsertLeft : jiaolian6InsertLeft,
-                        jiaolian6SelectRight : jiaolian6SelectRight,
-                        jiaolian6InsertRight : jiaolian6InsertRight,
-                        fujianSelect1 : fujianSelect1,
-                        fujianSelect2 : fujianSelect2,
-                        fujianSelect3 : fujianSelect3,
-                        fujianSelect4 : fujianSelect4,
-                        pinpaiSelect1 : pinpaiSelect1,
-                        pinpaiSelect2 : pinpaiSelect2,
-                        pinpaiSelect3 : pinpaiSelect3,
-                        pinpaiSelect4 : pinpaiSelect4,
-                        fujianShuliang1 : fujianShuliang1,
-                        fujianShuliang2 : fujianShuliang2,
-                        fujianShuliang3 : fujianShuliang3,
-                        fujianShuliang4 : fujianShuliang4,
-                        qita : qita,
-                        sumShuliang1 : sumShuliang1,
-                        danjia1 : danjia1,
-                        sumJine1 : sumJine1,
-                        sumShuliang2 : sumShuliang2,
-                        danjia2 : danjia2,
-                        sumJine2 : sumJine2
-                    }
-                    $ajax({
-                        type: 'post',
-                        url: '/lkxd/add',
-                        data: JSON.stringify({
-                            addInfo: arr
-                        }),
-                        dataType: 'json',
-                        contentType: 'application/json;charset=utf-8'
-                    }, false, '', function (res) {
-                        if (res.code == 200) {
-                            swal("", res.msg, "success");
-                            $('#add-form')[0].reset();
-                            getList();
-                            $('#add-close-btn').click();
-                        }
-                    })
+                })
+            } else {
+                customerName = $("#add-customerName").val();
+                insertDate = $("#add-insertDate").val();
+                orderNumber = $("#add-orderNumber").val();
+                shippingAddress = $("#add-shippingAddress").val();
+                phone = $("#add-phone").val();
+                shippingType = $("#add-shippingType").val();
+                installAddress = $("#add-installAddress").val();
+                customerNumber = $("#add-customerNumber").val();
+                pinyin = $("#add-pinyin").val();
+                customerNameRenyuan = $("#add-customerNameRenyuan").val();
+                height = $("#add-height" + i).val();
+                if (height == "" || height == null) {
+                    break;
                 }
+                width = $("#add-width" + i).val();
+                num = $("#add-num" + i).val();
+                lvxingcai = $("#add-lvxingcai" + i).val();
+                lvcaiYanse = $("#add-lvcaiYanse" + i).val();
+                boliShenjiagong = $("#add-boliShenjiagong" + i).val();
+                boliYanse = $("#add-boliYanse" + i).val();
+                lashouXinghao = $("#add-lashouXinghao" + i).val();
+                jiaoliankongFangxiangLeft = $("#add-jiaoliankongFangxiangLeft" + i).val();
+                jiaoliankongFangxiangRight = $("#add-jiaoliankongFangxiangRight" + i).val();
+                lashouShuliangLeft = $("#add-lashouShuliangLeft" + i).val();
+                lashouShuliangRight = $("#add-lashouShuliangRight" + i).val();
+                lashouweiSelectLeft = $("#add-lashouweiSelectLeft" + i).val();
+                lashouweiInsertLeft = $("#add-lashouweiInsertLeft" + i).val();
+                lashouweiSelectRight = $("#add-lashouweiSelectRight" + i).val();
+                lashouweiInsertRight = $("#add-lashouweiInsertRight" + i).val();
+                zhuangsuoshuliangInsertLeft1 = $("#add-zhuangsuoshuliangInsertLeft1" + i).val();
+                zhuangsuoshuliangInsertRight1 = $("#add-zhuangsuoshuliangInsertRight1" + i).val();
+                zhuangsuofangweiInsertLeft1 = $("#add-zhuangsuofangweiInsertLeft1" + i).val();
+                zhuangsuofangweiInsertLeft2 = $("#add-zhuangsuofangweiInsertLeft2" + i).val();
+                zhuangsuofangweiInsertRight1 = $("#add-zhuangsuofangweiInsertRight1" + i).val();
+                zhuangsuofangweiInsertRight2 = $("#add-zhuangsuofangweiInsertRight2" + i).val();
+                kaijiaolian = $("#add-kaijiaolian" + i).val();
+                jiaolian1SelectLeft = $("#add-jiaolian1SelectLeft" + i).val();
+                jiaolian1InsertLeft = $("#add-jiaolian1InsertLeft" + i).val();
+                iaolian1SelectRight = $("#add-iaolian1SelectRight" + i).val();
+                jiaolian1InsertRight = $("#add-jiaolian1InsertRight" + i).val();
+                jiaolian2SelectLeft = $("#add-jiaolian2SelectLeft" + i).val();
+                jiaolian2InsertLeft = $("#add-jiaolian2InsertLeft" + i).val();
+                jiaolian2SelectRight = $("#add-jiaolian2SelectRight" + i).val();
+                jiaolian2InsertRight = $("#add-jiaolian2InsertRight" + i).val();
+                jiaolian3SelectLeft = $("#add-jiaolian3SelectLeft" + i).val();
+                jiaolian3InsertLeft = $("#add-jiaolian3InsertLeft" + i).val();
+                jiaolian3SelectRight = $("#add-jiaolian3SelectRight" + i).val();
+                jiaolian3InsertRight = $("#add-jiaolian3InsertRight" + i).val();
+                jiaolian4SelectLeft = $("#add-jiaolian4SelectLeft" + i).val();
+                jiaolian4InsertLeft = $("#add-jiaolian4InsertLeft" + i).val();
+                jiaolian4SelectRight = $("#add-jiaolian4SelectRight" + i).val();
+                jiaolian4InsertRight = $("#add-jiaolian4InsertRight" + i).val();
+                jiaolian5SelectLeft = $("#add-jiaolian5SelectLeft" + i).val();
+                jiaolian5InsertLeft = $("#add-jiaolian5InsertLeft" + i).val();
+                jiaolian5SelectRight = $("#add-jiaolian5SelectRight" + i).val();
+                jiaolian6SelectLeft = $("#add-jiaolian6SelectLeft" + i).val();
+                jiaolian6InsertLeft = $("#add-jiaolian6InsertLeft" + i).val();
+                jiaolian6SelectRight = $("#add-jiaolian6SelectRight" + i).val();
+                jiaolian6InsertRight = $("#add-jiaolian6InsertRight" + i).val();
+                fujianSelect1 = $("#add-fujianSelect1" + i).val();
+                fujianSelect2 = $("#add-fujianSelect2" + i).val();
+                fujianSelect3 = $("#add-fujianSelect3" + i).val();
+                fujianSelect4 = $("#add-fujianSelect4" + i).val();
+                pinpaiSelect1 = $("#add-pinpaiSelect1" + i).val();
+                pinpaiSelect2 = $("#add-pinpaiSelect2" + i).val();
+                pinpaiSelect3 = $("#add-pinpaiSelect3" + i).val();
+                pinpaiSelect4 = $("#add-pinpaiSelect4" + i).val();
+                fujianShuliang1 = $("#add-fujianShuliang1" + i).val();
+                fujianShuliang2 = $("#add-fujianShuliang2" + i).val();
+                fujianShuliang3 = $("#add-fujianShuliang3" + i).val();
+                fujianShuliang4 = $("#add-fujianShuliang4" + i).val();
+                qita = $("#add-qita" + i).val();
+                sumShuliang1 = $("#add-sumShuliang1" + i).val();
+                danjia1 = $("#add-danjia1" + i).val();
+                sumJine1 = $("#add-sumJine1" + i).val();
+                sumShuliang2 = $("#add-sumShuliang2" + i).val();
+                danjia2 = $("#add-danjia2" + i).val();
+                sumJine2 = $("#add-sumJine2" + i).val();
+                var arr = {
+                    customerName: customerName,
+                    insertDate: insertDate,
+                    orderNumber: orderNumber,
+                    shippingAddress: shippingAddress,
+                    phone: phone,
+                    shippingType: shippingType,
+                    installAddress: installAddress,
+                    customerNumber: customerNumber,
+                    pinyin: pinyin,
+                    customerNameRenyuan: customerNameRenyuan,
+                    height: height,
+                    width: width,
+                    num: num,
+                    lvxingcai: lvxingcai,
+                    lvcaiYanse: lvcaiYanse,
+                    boliShenjiagong: boliShenjiagong,
+                    boliYanse: boliYanse,
+                    lashouXinghao: lashouXinghao,
+                    jiaoliankongFangxiangLeft: jiaoliankongFangxiangLeft,
+                    jiaoliankongFangxiangRight: jiaoliankongFangxiangRight,
+                    lashouShuliangLeft: lashouShuliangLeft,
+                    lashouShuliangRight: lashouShuliangRight,
+                    lashouweiSelectLeft: lashouweiSelectLeft,
+                    lashouweiInsertLeft: lashouweiInsertLeft,
+                    lashouweiSelectRight: lashouweiSelectRight,
+                    lashouweiInsertRight: lashouweiInsertRight,
+                    zhuangsuoshuliangInsertLeft1: zhuangsuoshuliangInsertLeft1,
+                    zhuangsuoshuliangInsertRight1: zhuangsuoshuliangInsertRight1,
+                    zhuangsuofangweiInsertLeft1: zhuangsuofangweiInsertLeft1,
+                    zhuangsuofangweiInsertLeft2: zhuangsuofangweiInsertLeft2,
+                    zhuangsuofangweiInsertRight1: zhuangsuofangweiInsertRight1,
+                    zhuangsuofangweiInsertRight2: zhuangsuofangweiInsertRight2,
+                    kaijiaolian: kaijiaolian,
+                    jiaolian1SelectLeft: jiaolian1SelectLeft,
+                    jiaolian1InsertLeft: jiaolian1InsertLeft,
+                    iaolian1SelectRight: iaolian1SelectRight,
+                    jiaolian1InsertRight: jiaolian1InsertRight,
+                    jiaolian2SelectLeft: jiaolian2SelectLeft,
+                    jiaolian2InsertLeft: jiaolian2InsertLeft,
+                    jiaolian2SelectRight: jiaolian2SelectRight,
+                    jiaolian2InsertRight: jiaolian2InsertRight,
+                    jiaolian3SelectLeft: jiaolian3SelectLeft,
+                    jiaolian3InsertLeft: jiaolian3InsertLeft,
+                    jiaolian3SelectRight: jiaolian3SelectRight,
+                    jiaolian3InsertRight: jiaolian3InsertRight,
+                    jiaolian4SelectLeft: jiaolian4SelectLeft,
+                    jiaolian4InsertLeft: jiaolian4InsertLeft,
+                    jiaolian4SelectRight: jiaolian4SelectRight,
+                    jiaolian4InsertRight: jiaolian4InsertRight,
+                    jiaolian5SelectLeft: jiaolian5SelectLeft,
+                    jiaolian5InsertLeft: jiaolian5InsertLeft,
+                    jiaolian5SelectRight: jiaolian5SelectRight,
+                    jiaolian6SelectLeft: jiaolian6SelectLeft,
+                    jiaolian6InsertLeft: jiaolian6InsertLeft,
+                    jiaolian6SelectRight: jiaolian6SelectRight,
+                    jiaolian6InsertRight: jiaolian6InsertRight,
+                    fujianSelect1: fujianSelect1,
+                    fujianSelect2: fujianSelect2,
+                    fujianSelect3: fujianSelect3,
+                    fujianSelect4: fujianSelect4,
+                    pinpaiSelect1: pinpaiSelect1,
+                    pinpaiSelect2: pinpaiSelect2,
+                    pinpaiSelect3: pinpaiSelect3,
+                    pinpaiSelect4: pinpaiSelect4,
+                    fujianShuliang1: fujianShuliang1,
+                    fujianShuliang2: fujianShuliang2,
+                    fujianShuliang3: fujianShuliang3,
+                    fujianShuliang4: fujianShuliang4,
+                    qita: qita,
+                    sumShuliang1: sumShuliang1,
+                    danjia1: danjia1,
+                    sumJine1: sumJine1,
+                    sumShuliang2: sumShuliang2,
+                    danjia2: danjia2,
+                    sumJine2: sumJine2
+                }
+                $ajax({
+                    type: 'post',
+                    url: '/lkxd/add',
+                    data: JSON.stringify({
+                        addInfo: arr
+                    }),
+                    dataType: 'json',
+                    contentType: 'application/json;charset=utf-8'
+                }, false, '', function (res) {
+                    if (res.code == 200) {
+                        swal("", res.msg, "success");
+                        $('#add-form')[0].reset();
+                        getList();
+                        $('#add-close-btn').click();
+                    }
+                })
             }
+        }
         // }
     });
 
@@ -5741,32 +9291,64 @@ function setTable(data) {
                 align: 'center',
                 sortable: true,
                 width: 100,
-            }, {
+            }
+            , {
                 field: 'wancheng',
-                title: '订单状态',
+                title: '完成状态',
                 align: 'center',
                 sortable: true,
-                width: 100,
-            }, {
+                width: 180,
+                formatter: function (value, row, index) {
+                    if (value == null) {
+                        value = '';
+                    }
+                    $(document).ready(function() {
+                        $('#wancheng'+row.id).change(function() {
+                            var selectedValue = $(this).val();
+                            var id=document.getElementById("id2").value;
+                            $ajax({
+                                type: 'post',
+                                url: '/lkxd/updatewc',
+                                data:{
+                                    wancheng:selectedValue,
+                                    id:id
+                                }
+                            })
+                            alert("修改成功");
+                        })
+                    })
+                    return "<select id='wancheng" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"wancheng\"" + ")' placeholder='完成状态' type='text' class='form-control'  value='" + value + "'>" +
+                        "<option value=''>--请选择完成状态--</option>" +
+                        "<option value='已审验'>已审验</option>" +
+                        "<option value='未审验'>未审验</option>" +
+                        "<option value='优先处理'>优先处理</option>" +
+                        "<option value='加工完成'>加工完成</option>" +
+                        "<option value='正在加工'>正在加工</option>" +
+                        "<option value='完成'>完成</option>" +
+                        "</select>"
+                    document.getElementById("wancheng" + row.id).value=res.data[0].wancheng
+                }
+            }
+            , {
                 field: 'orderNumber',
                 title: '单据编号',
                 align: 'center',
                 sortable: true,
                 width: 100,
             }, {
-                field: '',
+                field: 'kailiao',
                 title: '开孔',
                 align: 'center',
                 sortable: true,
                 width: 100,
             }, {
-                field: '',
+                field: 'shunxu',
                 title: '铣孔',
                 align: 'center',
                 sortable: true,
                 width: 100,
             }, {
-                field: '',
+                field: 'zuzhuang',
                 title: '组装',
                 align: 'center',
                 sortable: true,
@@ -5801,6 +9383,19 @@ function setTable(data) {
                 align: 'center',
                 sortable: true,
                 width: 100,
+            }, {
+                field: 'id',
+                title: 'id',
+                align: 'center',
+                sortable: true,
+                width: 1,
+                formatter: function (value, row, index) {
+                    if (value == null) {
+                        value = '';
+                    }
+                    var c = row.id
+                    return "<input id='id2' name='id' value='" + c + "' oninput='javascript:columnUpd(" + row.id + "," + "\"id\"" + ")' placeholder='id' type='text' class='form-control'  value='" + value + "'>"
+                }
             }
         ],
         onClickRow: function (row, el) {

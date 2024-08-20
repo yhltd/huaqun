@@ -1,6 +1,7 @@
 package com.example.demo.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.example.demo.entity.blxd;
 import com.example.demo.entity.ddxd;
 import com.example.demo.entity.lkxd;
 import org.springframework.stereotype.Service;
@@ -47,6 +48,10 @@ public interface LkxdService extends IService<lkxd> {
      */
     lkxd add(lkxd lkxd);
 
+    blxd addBlxd(blxd blxd);
+
     List<lkxd> getListByKhmc(String customerName,String insertDate,String orderNumber);
+
+    boolean updatewc(String wancheng,int id);
 
 }

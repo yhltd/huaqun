@@ -16,8 +16,8 @@ public interface UserInfoMapper extends BaseMapper<UserInfo> {
     @Select("select * from userInfo")
     List<UserInfo> getList();
 
-    @Select("select * from userInfo where name like '%'+#{name}+'%' and pinyin like '%'+#{pinyin}+'%' ")
-    List<UserInfo> queryList(String name,String pinyin);
+    @Select("select * from userInfo where company like '%'+#{company}+'%' and pinyin like '%'+#{pinyin}+'%' ")
+    List<UserInfo> queryList(String company,String pinyin);
 
     @Update("update userInfo set username = #{username},password = #{password},company = #{company},name = #{name},pinyin = #{pinyin},power = #{power},quyu = #{quyu},address_name = #{addressName},money = #{money},shendan = #{shendan},pay = #{pay},kailiao = #{kailiao},zuzhuang = #{zuzhuang},baozhuang = #{baozhuang} where id = #{id}")
     boolean update(String username,String password,String company,String name,String pinyin,String power,String quyu,String addressName,String money,String shendan,String pay,String kailiao,String zuzhuang,String baozhuang,int id);

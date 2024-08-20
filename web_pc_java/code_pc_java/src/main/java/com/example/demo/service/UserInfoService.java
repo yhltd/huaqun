@@ -30,7 +30,7 @@ public interface UserInfoService extends IService<UserInfo> {
     /**
      * 根据姓名和部门查询
      */
-    List<UserInfo> queryList(String name, String pinyin);
+    List<UserInfo> queryList(String company, String pinyin);
     /**
      * 根据username 查name
      */

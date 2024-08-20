@@ -95,10 +95,13 @@ public class UserInfoController {
      * @return ResultInfo
      */
     @RequestMapping("/queryList")
-    public ResultInfo queryList(String name, String pinyin, HttpSession session) {
+    public ResultInfo queryList(String company, String pinyin, HttpSession session) {
         UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
+        if (userInfo.getPower().equals("客户")) {
+            return ResultInfo.error(401, "无权限");
+        }
         try {
-            List<UserInfo> list = userInfoService.queryList(name, pinyin);
+            List<UserInfo> list = userInfoService.queryList(company, pinyin);
             return ResultInfo.success("获取成功", list);
         } catch (Exception e) {
             e.printStackTrace();
@@ -158,7 +161,8 @@ public class UserInfoController {
     public ResultInfo add(@RequestBody HashMap map, HttpSession session) {
         UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
         GsonUtil gsonUtil = new GsonUtil(GsonUtil.toJson(map));
-        if(!userInfo.getPower().equals("超级管理员")){
+        if(!userInfo.getPower().equals("超级管理员") && !userInfo.getPower().equals("管理员")){
+            System.out.println(userInfo.getPower());
             return ResultInfo.error(401, "无权限");
         }
         try {
@@ -189,7 +193,7 @@ public class UserInfoController {
         System.out.println(userInfo);
         GsonUtil gsonUtil = new GsonUtil(GsonUtil.toJson(map));
         List<Integer> idList = GsonUtil.toList(gsonUtil.get("idList"), Integer.class);
-        if(!userInfo.getPower().equals("管理员")){
+        if(!userInfo.getPower().equals("超级管理员") || !userInfo.getPower().equals("管理员")){
             return ResultInfo.error(401, "无权限");
         }
         try {

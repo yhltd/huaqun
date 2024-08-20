@@ -29,6 +29,10 @@ function getList() {
         if (res.code == 200) {
             var power = res.data;
             if (power == "客户" ) {
+                document.getElementById("update-wancheng").disabled = true;
+                document.getElementById("update-shoukuan").disabled = true;
+                document.getElementById("update-kucun").hidden = true;
+
                 document.getElementById("a-psi1").hidden = true;
                 document.getElementById("a-phi2").hidden = true;
                 document.getElementById("a-phi1").hidden = true;
@@ -152,7 +156,7 @@ $(function () {
     var yuanvalue1 = $('#add-songhuoAddress').val();
     inp1.addEventListener('blur', function() {
         var invalue1 = $('#add-songhuoAddress').val();
-        if (invalue1 !== yuanvalue1) {
+        if (invalue1 != yuanvalue1) {
             var date = new Date();
             var day = ("0" + date.getDate()).slice(-2);
             var month = ("0" + (date.getMonth() + 1)).slice(-2);
@@ -177,7 +181,7 @@ $(function () {
     var yuanvalue2 = $('#add-hqquyu').val();
     inp2.addEventListener('blur', function() {
         var invalue2 = $('#add-hqquyu').val();
-        if (invalue2 !== yuanvalue2) {
+        if (invalue2 != yuanvalue2) {
             var date = new Date();
             var day = ("0" + date.getDate()).slice(-2);
             var month = ("0" + (date.getMonth() + 1)).slice(-2);
@@ -202,7 +206,7 @@ $(function () {
     var yuanvalue3 = $('#add-anzhuangAddress').val();
     inp3.addEventListener('blur', function() {
         var invalue3 = $('#add-anzhuangAddress').val();
-        if (invalue3 !== yuanvalue3) {
+        if (invalue3 != yuanvalue3) {
             var date = new Date();
             var day = ("0" + date.getDate()).slice(-2);
             var month = ("0" + (date.getMonth() + 1)).slice(-2);
@@ -227,7 +231,7 @@ $(function () {
     var yuanvalue4 = $('#add-phone').val();
     inp4.addEventListener('blur', function() {
         var invalue4 = $('#add-phone').val();
-        if (invalue4 !== yuanvalue4) {
+        if (invalue4 != yuanvalue4) {
             var date = new Date();
             var day = ("0" + date.getDate()).slice(-2);
             var month = ("0" + (date.getMonth() + 1)).slice(-2);
@@ -252,7 +256,7 @@ $(function () {
     var yuanvalue5 = $('#add-customerOrder').val();
     inp5.addEventListener('blur', function() {
         var invalue5 = $('#add-customerOrder').val();
-        if (invalue5 !== yuanvalue5) {
+        if (invalue5 != yuanvalue5) {
             var date = new Date();
             var day = ("0" + date.getDate()).slice(-2);
             var month = ("0" + (date.getMonth() + 1)).slice(-2);
@@ -277,7 +281,7 @@ $(function () {
     var yuanvalue6 = $('#add-customerNeedText').val();
     inp6.addEventListener('blur', function() {
         var invalue6 = $('#add-customerNeedText').val();
-        if (invalue6 !== yuanvalue6) {
+        if (invalue6 != yuanvalue6) {
             var date = new Date();
             var day = ("0" + date.getDate()).slice(-2);
             var month = ("0" + (date.getMonth() + 1)).slice(-2);
@@ -330,7 +334,7 @@ $(function () {
     var yuanvalue8 = $('#add-money').val();
     inp8.addEventListener('blur', function() {
         var invalue8 = $('#add-money').val();
-        if (invalue8 !== yuanvalue8) {
+        if (invalue8 != yuanvalue8) {
             var date = new Date();
             var day = ("0" + date.getDate()).slice(-2);
             var month = ("0" + (date.getMonth() + 1)).slice(-2);
@@ -355,7 +359,7 @@ $(function () {
     var yuanvalue9 = $('#add-shoukuan').val();
     inp9.addEventListener('blur', function() {
         var invalue9 = $('#add-shoukuan').val();
-        if (invalue9 !== yuanvalue9) {
+        if (invalue9 != yuanvalue9) {
             var date = new Date();
             var day = ("0" + date.getDate()).slice(-2);
             var month = ("0" + (date.getMonth() + 1)).slice(-2);
@@ -380,7 +384,7 @@ $(function () {
     var yuanvalue10 = $('#add-wancheng').val();
     inp10.addEventListener('blur', function() {
         var invalue10 = $('#add-wancheng').val();
-        if (invalue10 !== yuanvalue10) {
+        if (invalue10 != yuanvalue10) {
             var date = new Date();
             var day = ("0" + date.getDate()).slice(-2);
             var month = ("0" + (date.getMonth() + 1)).slice(-2);
@@ -405,7 +409,7 @@ $(function () {
     var yuanvalue11 = $('#fileInput1').val();
     inp11.addEventListener('blur', function() {
         var invalue11 = $('#fileInput1').val();
-        if (invalue11 !== yuanvalue11) {
+        if (invalue11 != yuanvalue11) {
             var date = new Date();
             var day = ("0" + date.getDate()).slice(-2);
             var month = ("0" + (date.getMonth() + 1)).slice(-2);
@@ -430,7 +434,7 @@ $(function () {
     var yuanvalue12 = $('#add-kucun').val();
     inp12.addEventListener('blur', function() {
         var invalue12 = $('#add-kucun').val();
-        if (invalue12 !== yuanvalue12) {
+        if (invalue12 != yuanvalue12) {
             var date = new Date();
             var day = ("0" + date.getDate()).slice(-2);
             var month = ("0" + (date.getMonth() + 1)).slice(-2);
@@ -456,7 +460,7 @@ $(function () {
     var yuanvalue1 = $('#add-songhuoAddress').val();
     inupd1.addEventListener('blur', function() {
         var invalue1 = $('#add-songhuoAddress').val();
-        if (invalue1 !== yuanvalue1) {
+        if (invalue1 != yuanvalue1) {
             var date = new Date();
             var day = ("0" + date.getDate()).slice(-2);
             var month = ("0" + (date.getMonth() + 1)).slice(-2);
@@ -481,7 +485,7 @@ $(function () {
     var yuanvalue2 = $('#update-hqquyu').val();
     inupd2.addEventListener('blur', function() {
         var invalue2 = $('#update-hqquyu').val();
-        if (invalue2 !== yuanvalue2) {
+        if (invalue2 != yuanvalue2) {
             var date = new Date();
             var day = ("0" + date.getDate()).slice(-2);
             var month = ("0" + (date.getMonth() + 1)).slice(-2);
@@ -506,7 +510,7 @@ $(function () {
     var yuanvalue3 = $('#update-anzhuangAddress').val();
     inupd3.addEventListener('blur', function() {
         var invalue3 = $('#update-anzhuangAddress').val();
-        if (invalue3 !== yuanvalue3) {
+        if (invalue3 != yuanvalue3) {
             var date = new Date();
             var day = ("0" + date.getDate()).slice(-2);
             var month = ("0" + (date.getMonth() + 1)).slice(-2);
@@ -531,7 +535,7 @@ $(function () {
     var yuanvalue4 = $('#update-phone').val();
     inupd4.addEventListener('blur', function() {
         var invalue4 = $('#update-phone').val();
-        if (invalue4 !== yuanvalue4) {
+        if (invalue4 != yuanvalue4) {
             var date = new Date();
             var day = ("0" + date.getDate()).slice(-2);
             var month = ("0" + (date.getMonth() + 1)).slice(-2);
@@ -556,7 +560,7 @@ $(function () {
     var yuanvalue5 = $('#update-customerOrder').val();
     inupd5.addEventListener('blur', function() {
         var invalue5 = $('#update-customerOrder').val();
-        if (invalue5 !== yuanvalue5) {
+        if (invalue5 != yuanvalue5) {
             var date = new Date();
             var day = ("0" + date.getDate()).slice(-2);
             var month = ("0" + (date.getMonth() + 1)).slice(-2);
@@ -581,7 +585,7 @@ $(function () {
     var yuanvalue6 = $('#update-customerNeedText').val();
     inupd6.addEventListener('blur', function() {
         var invalue6 = $('#update-customerNeedText').val();
-        if (invalue6 !== yuanvalue6) {
+        if (invalue6 != yuanvalue6) {
             var date = new Date();
             var day = ("0" + date.getDate()).slice(-2);
             var month = ("0" + (date.getMonth() + 1)).slice(-2);
@@ -606,7 +610,7 @@ $(function () {
     var yuanvalue7 = $('#update-customerNeedText1').val();
     inupd7.addEventListener('blur', function() {
         var invalue7 = $('#update-customerNeedText1').val();
-        if (invalue7 !== yuanvalue7) {
+        if (invalue7 != yuanvalue7) {
             var date = new Date();
             var day = ("0" + date.getDate()).slice(-2);
             var month = ("0" + (date.getMonth() + 1)).slice(-2);
@@ -631,7 +635,7 @@ $(function () {
     var yuanvalue8 = $('#update-money').val();
     inupd8.addEventListener('blur', function() {
         var invalue8 = $('#update-money').val();
-        if (invalue8 !== yuanvalue8) {
+        if (invalue8 != yuanvalue8) {
             var date = new Date();
             var day = ("0" + date.getDate()).slice(-2);
             var month = ("0" + (date.getMonth() + 1)).slice(-2);
@@ -656,7 +660,7 @@ $(function () {
     var yuanvalue9 = $('#update-shoukuan').val();
     inupd9.addEventListener('blur', function() {
         var invalue9 = $('#update-shoukuan').val();
-        if (invalue9 !== yuanvalue9) {
+        if (invalue9 != yuanvalue9) {
             var date = new Date();
             var day = ("0" + date.getDate()).slice(-2);
             var month = ("0" + (date.getMonth() + 1)).slice(-2);
@@ -681,7 +685,7 @@ $(function () {
     var yuanvalue10 = $('#update-wancheng').val();
     inupd10.addEventListener('blur', function() {
         var invalue10 = $('#update-wancheng').val();
-        if (invalue10 !== yuanvalue10) {
+        if (invalue10 != yuanvalue10) {
             var date = new Date();
             var day = ("0" + date.getDate()).slice(-2);
             var month = ("0" + (date.getMonth() + 1)).slice(-2);
@@ -706,7 +710,7 @@ $(function () {
     var yuanvalue11 = $('#fileInput43').val();
     inupd11.addEventListener('blur', function() {
         var invalue11 = $('#fileInput43').val();
-        if (invalue11 !== yuanvalue11) {
+        if (invalue11 != yuanvalue11) {
             var date = new Date();
             var day = ("0" + date.getDate()).slice(-2);
             var month = ("0" + (date.getMonth() + 1)).slice(-2);

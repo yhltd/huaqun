@@ -1,6 +1,7 @@
 package com.example.demo.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.example.demo.entity.blxd;
 import com.example.demo.entity.ddxd;
 import com.example.demo.entity.lkxd;
 import com.example.demo.mapper.LkxdMapper;
@@ -56,8 +57,16 @@ public class LkxdImpl extends ServiceImpl<LkxdMapper, lkxd> implements LkxdServi
     }
 
     @Override
+    public blxd addBlxd(blxd blxd) { return save(blxd) ? blxd : null; }
+
+    @Override
     public List<lkxd> getListByKhmc(String customerName,String insertDate,String orderNumber) {
         return lkxdMapper.getListByKhmc(customerName,insertDate,orderNumber);
+    }
+
+    @Override
+    public boolean updatewc(String wancheng, int id) {
+        return lkxdMapper.updatewc(wancheng,id);
     }
 
 }

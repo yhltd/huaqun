@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.entity.UserInfo;
+import com.example.demo.entity.blxd;
 import com.example.demo.entity.ddxd;
 import com.example.demo.entity.lkxd;
 import com.example.demo.service.LkxdService;
@@ -147,7 +148,9 @@ public class LkxdController {
         }
         try {
             lkxd lkxd = GsonUtil.toEntity(gsonUtil.get("addInfo"), lkxd.class);
+            blxd blxd = GsonUtil.toEntity(gsonUtil.get("addInfo"), blxd.class);
             lkxd = lkxdService.add(lkxd);
+            blxd = lkxdService.addBlxd(blxd);
             if (StringUtils.isNotNull(lkxd)) {
                 return ResultInfo.success("添加成功", lkxd);
             } else {
@@ -208,6 +211,24 @@ public class LkxdController {
             e.printStackTrace();
             log.error("失败：{}", e.getMessage());
             return ResultInfo.error("失败！");
+        }
+    }
+
+    @RequestMapping(value = "/updatewc", method = RequestMethod.POST)
+    public ResultInfo updatewc(HttpSession session,String wancheng ,int id) {
+        UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
+        if(userInfo.getPower().equals("玻璃厂")){
+            return ResultInfo.error(401, "无权限");
+        }
+
+        try {
+            lkxdService.updatewc(wancheng,id);
+            return ResultInfo.success("成功！",null);
+        } catch (Exception e) {
+            e.printStackTrace();
+            log.error("修改失败：{}", e.getMessage());
+            log.error("参数：{}", userInfo);
+            return ResultInfo.error("修改失败");
         }
     }
 

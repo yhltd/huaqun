@@ -1002,7 +1002,7 @@ function setTable(data) {
                 field: '',
                 title: '序号',
                 align: 'center',
-                width: 50,
+                width: 70,
                 formatter: function (value, row, index) {
                     return index + 1;
                 }
@@ -1011,63 +1011,63 @@ function setTable(data) {
                 title: '下单日期',
                 align: 'center',
                 sortable: true,
-                width: 100,
+                width: 140,
             }, {
                 field: 'khmc',
                 title: '客户名称',
                 align: 'center',
                 sortable: true,
-                width: 100,
+                width: 140,
             }, {
                 field: 'djbh',
                 title: '单据编号',
                 align: 'center',
                 sortable: true,
-                width: 100,
+                width: 140,
             }
             , {
                 field: 'wancheng',
                 title: '订单状态',
                 align: 'center',
                 sortable: true,
-                width: 100,
+                width: 140,
             }, {
                 field: 'je',
-                title: '订单总金额金额',
+                title: '订单总金额',
                 align: 'center',
                 sortable: true,
-                width: 80,
+                width: 140,
             }, {
                 field: 'azdz',
                 title: '安装地址',
                 align: 'center',
                 sortable: true,
-                width: 100,
+                width: 140,
             }, {
                 field: 'ddh',
                 title: '订单编号',
                 align: 'center',
                 sortable: true,
-                width: 100,
+                width: 140,
             }, {
                 field: 'luruyuan',
                 title: '操作员',
                 align: 'center',
                 sortable: true,
-                width: 80,
+                width: 140,
             }
             , {
                 field: 'wcsj',
                 title: '完成时间',
                 align: 'center',
                 sortable: true,
-                width: 100,
+                width: 140,
             }, {
                 field: 'shfs',
                 title: '送货方式',
                 align: 'center',
                 sortable: true,
-                width: 0,
+                width: 140,
             }
             // }, {
             //     field: 'fj',
@@ -2073,7 +2073,7 @@ function setTable3(data) {
                         "<option value='优先处理'>优先处理</option>" +
                         "<option value='加工完成'>加工完成</option>" +
                         "<option value='正在加工'>正在加工</option>" +
-                        "<option value='正在加工'>完成</option>" +
+                        "<option value='完成'>完成</option>" +
                         "</select>"
                 }
             }, {
