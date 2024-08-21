@@ -350,4 +350,23 @@ public class DdxdController {
             return ResultInfo.error("修改失败");
         }
     }
+    @RequestMapping(value = "/updatewc", method = RequestMethod.POST)
+    public ResultInfo updatewc(HttpSession session,String wancheng ,String djbh) {
+        UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
+        if(userInfo.getPower().equals("玻璃厂") || userInfo.getPower().equals("客户")){
+            return ResultInfo.error(401, "无权限");
+        }
+
+        try {
+            ddxdService.updatewc(wancheng,djbh);
+            return ResultInfo.success("成功！",null);
+        } catch (Exception e) {
+            e.printStackTrace();
+            log.error("修改失败：{}", e.getMessage());
+            log.error("参数：{}", userInfo);
+            return ResultInfo.error("修改失败");
+        }
+    }
+
+
 }

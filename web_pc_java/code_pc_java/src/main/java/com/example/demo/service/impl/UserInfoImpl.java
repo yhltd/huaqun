@@ -87,4 +87,14 @@ public class UserInfoImpl extends ServiceImpl<UserInfoMapper, UserInfo> implemen
 
     @Override
     public String getName(String username){return userInfoMapper.getName(username);}
+
+    @Override
+    public List<UserInfo> GYS() {
+        return userInfoMapper.GYS();
+    }
+
+    @Override
+    public List<UserInfo> gzry() {
+        return userInfoMapper.gzry();
+    }
 }

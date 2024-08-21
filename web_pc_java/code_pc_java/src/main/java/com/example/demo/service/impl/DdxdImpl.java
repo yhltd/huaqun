@@ -79,6 +79,10 @@ public class DdxdImpl extends ServiceImpl<DdxdMapper, ddxd> implements DdxdServi
             , String gl, String bz, String dj, String je, String chicun, String cxdkRight, String summoney, String wcsj, String luruyuan, String wancheng, int id) {
         return ddxdMapper.update1(fj, gh, ddcd, sl, cxdk, lcys, gy, gl, bz, dj, je, chicun, cxdkRight, summoney, wcsj, luruyuan, wancheng, id);
     }
+    @Override
+    public boolean updatewc(String wancheng, String djbh) {
+        return ddxdMapper.updatewc(wancheng,djbh);
+    }
 
 
 }

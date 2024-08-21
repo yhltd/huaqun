@@ -35,4 +35,9 @@ public interface BlxdService extends IService<blxd> {
      * 修改
      */
     boolean update(blxd blxd);
+
+    boolean updatesc(String shengchan,String orderNumber);
+    boolean updategys(String gongyingshang,String orderNumber);
+    blxd add(blxd blxd);
+
 }

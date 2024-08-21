@@ -148,9 +148,9 @@ public class LkxdController {
         }
         try {
             lkxd lkxd = GsonUtil.toEntity(gsonUtil.get("addInfo"), lkxd.class);
-            blxd blxd = GsonUtil.toEntity(gsonUtil.get("addInfo"), blxd.class);
+//            blxd blxd = GsonUtil.toEntity(gsonUtil.get("addInfo"), blxd.class);
             lkxd = lkxdService.add(lkxd);
-            blxd = lkxdService.addBlxd(blxd);
+//            blxd = lkxdService.addBlxd(blxd);
             if (StringUtils.isNotNull(lkxd)) {
                 return ResultInfo.success("添加成功", lkxd);
             } else {
@@ -215,14 +215,14 @@ public class LkxdController {
     }
 
     @RequestMapping(value = "/updatewc", method = RequestMethod.POST)
-    public ResultInfo updatewc(HttpSession session,String wancheng ,int id) {
+    public ResultInfo updatewc(HttpSession session,String wancheng ,String orderNumber) {
         UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
-        if(userInfo.getPower().equals("玻璃厂")){
+        if(userInfo.getPower().equals("玻璃厂") || userInfo.getPower().equals("客户")){
             return ResultInfo.error(401, "无权限");
         }
 
         try {
-            lkxdService.updatewc(wancheng,id);
+            lkxdService.updatewc(wancheng,orderNumber);
             return ResultInfo.success("成功！",null);
         } catch (Exception e) {
             e.printStackTrace();
@@ -231,5 +231,76 @@ public class LkxdController {
             return ResultInfo.error("修改失败");
         }
     }
+
+    @RequestMapping(value = "/zuzhuang", method = RequestMethod.POST)
+    public ResultInfo zuzhuang(HttpSession session,String zuzhuang ,String orderNumber) {
+        UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
+        if(userInfo.getPower().equals("玻璃厂") || userInfo.getPower().equals("客户")){
+            return ResultInfo.error(401, "无权限");
+        }
+
+        try {
+            lkxdService.zuzhuang(zuzhuang,orderNumber);
+            return ResultInfo.success("成功！",null);
+        } catch (Exception e) {
+            e.printStackTrace();
+            log.error("修改失败：{}", e.getMessage());
+            log.error("参数：{}", userInfo);
+            return ResultInfo.error("修改失败");
+        }
+    }
+    @RequestMapping(value = "/shunxu", method = RequestMethod.POST)
+    public ResultInfo shunxu(HttpSession session,String shunxu ,String orderNumber) {
+        UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
+        if(userInfo.getPower().equals("玻璃厂") || userInfo.getPower().equals("客户")){
+            return ResultInfo.error(401, "无权限");
+        }
+
+        try {
+            lkxdService.shunxu(shunxu,orderNumber);
+            return ResultInfo.success("成功！",null);
+        } catch (Exception e) {
+            e.printStackTrace();
+            log.error("修改失败：{}", e.getMessage());
+            log.error("参数：{}", userInfo);
+            return ResultInfo.error("修改失败");
+        }
+    }
+    @RequestMapping(value = "/baozhuang", method = RequestMethod.POST)
+    public ResultInfo baozhuang(HttpSession session,String baozhuang ,String orderNumber) {
+        UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
+        if(userInfo.getPower().equals("玻璃厂") || userInfo.getPower().equals("客户")){
+            return ResultInfo.error(401, "无权限");
+        }
+
+        try {
+            lkxdService.baozhuang(baozhuang,orderNumber);
+            return ResultInfo.success("成功！",null);
+        } catch (Exception e) {
+            e.printStackTrace();
+            log.error("修改失败：{}", e.getMessage());
+            log.error("参数：{}", userInfo);
+            return ResultInfo.error("修改失败");
+        }
+    }
+    @RequestMapping(value = "/kailiao", method = RequestMethod.POST)
+    public ResultInfo kailiao(HttpSession session,String kailiao ,String orderNumber) {
+        UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
+        if(userInfo.getPower().equals("玻璃厂") || userInfo.getPower().equals("客户")){
+            return ResultInfo.error(401, "无权限");
+        }
+
+        try {
+            lkxdService.kailiao(kailiao,orderNumber);
+            return ResultInfo.success("成功！",null);
+        } catch (Exception e) {
+            e.printStackTrace();
+            log.error("修改失败：{}", e.getMessage());
+            log.error("参数：{}", userInfo);
+            return ResultInfo.error("修改失败");
+        }
+    }
+
+
 
 }

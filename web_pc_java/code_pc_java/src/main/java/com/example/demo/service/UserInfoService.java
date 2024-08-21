@@ -71,4 +71,6 @@ public interface UserInfoService extends IService<UserInfo> {
     boolean glupdate(UserInfo userInfo);
 
     String getName(String username);
+    List<UserInfo> GYS();
+    List<UserInfo> gzry();
 }

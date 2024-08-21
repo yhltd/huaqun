@@ -1,5 +1,21 @@
 var idd;
-
+var num = "";
+var b="";
+var a1="";
+var a2="";
+var a3="";
+var a4 = "";
+var a5="";
+var a6="";
+var a7="";
+var select_sx=[];
+var select_zz=[];
+var select_kl=[];
+var select_baoz= [];
+var t="";
+var y="";
+var u="";
+var l="";
 function getKhmc() {
     $ajax({
         type: 'post',
@@ -11,6 +27,23 @@ function getKhmc() {
                 $("#update-customerName").append("<option>" + res.data[i].company + "</option>");
                 $("#customerName").append("<option>" + res.data[i].company + "</option>");
             }
+        }
+    })
+}
+function getgzry() {
+    $ajax({
+        type: 'post',
+        url: '/user/gzry',
+    }, false, '', function (res) {
+        if (res.code == 200) {
+            var item = "";
+            select_sx = res.data;
+            select_zz = res.data;
+            select_kl =res.data;
+            select_baoz=res.data;
+                for (var i = 0; i < res.data.length; i++) {
+                    item = "<option value=\"" + res.data[i].name + "\">" + res.data[i].name + "</option>"
+                }
         }
     })
 }
@@ -821,2161 +854,4430 @@ function getJlpp() {
 $(document).ready(function () {
     $('#add-kaijiaolian').on('change', function () {
         var selectedValue = $(this).val();
+//         if (selectedValue == '开二孔') {
+//             $("#add-jiaolian3SelectLeft").remove();
+//             $("#add-jiaolian3InsertLeft").remove();
+//             $("#add-jiaolian3SelectRight").remove();
+//             $("#add-jiaolian3InsertRight").remove();
+//
+//             $("#add-jiaolian4SelectLeft").remove();
+//             $("#add-jiaolian4InsertLeft").remove();
+//             $("#add-jiaolian4SelectRight").remove();
+//             $("#add-jiaolian4InsertRight").remove();
+//
+//             $("#add-jiaolian5SelectLeft").remove();
+//             $("#add-jiaolian5InsertLeft").remove();
+//             $("#add-jiaolian5SelectRight").remove();
+//             $("#add-jiaolian5InsertRight").remove();
+//
+//             $("#add-jiaolian6SelectLeft").remove();
+//             $("#add-jiaolian6InsertLeft").remove();
+//             $("#add-jiaolian6SelectRight").remove();
+//             $("#add-jiaolian6InsertRight").remove();
+//
+//             $("#l3sl").remove();
+//             $("#l3il").remove();
+//             $("#l3sr").remove();
+//             $("#l3ir").remove();
+//
+//             $("#l4sl").remove();
+//             $("#l4il").remove();
+//             $("#l4sr").remove();
+//             $("#l4ir").remove();
+//
+//             $("#l5sl").remove();
+//             $("#l5il").remove();
+//             $("#l5sr").remove();
+//             $("#l5ir").remove();
+//
+//             $("#l6sl").remove();
+//             $("#l6il").remove();
+//             $("#l6sr").remove();
+//             $("#l6ir").remove();
+//         }
+//         if (selectedValue == '开三孔') {
+//             $("#add-jiaolian4SelectLeft").remove();
+//             $("#add-jiaolian4InsertLeft").remove();
+//             $("#add-jiaolian4SelectRight").remove();
+//             $("#add-jiaolian4InsertRight").remove();
+//
+//             $("#add-jiaolian5SelectLeft").remove();
+//             $("#add-jiaolian5InsertLeft").remove();
+//             $("#add-jiaolian5SelectRight").remove();
+//             $("#add-jiaolian5InsertRight").remove();
+//
+//             $("#add-jiaolian6SelectLeft").remove();
+//             $("#add-jiaolian6InsertLeft").remove();
+//             $("#add-jiaolian6SelectRight").remove();
+//             $("#add-jiaolian6InsertRight").remove();
+//
+//             $("#l4sl").remove();
+//             $("#l4il").remove();
+//             $("#l4sr").remove();
+//             $("#l4ir").delete();
+//
+//             $("#l5sl").remove();
+//             $("#l5il").remove();
+//             $("#l5sr").remove();
+//             $("#l5ir").remove();
+//
+//             $("#l6sl").remove();
+//             $("#l6il").remove();
+//             $("#l6sr").remove();
+//             $("#l6ir").remove();
+//         }
+//         if (selectedValue == '开四孔') {
+//             $("#add-jiaolian5SelectLeft").remove();
+//             $("#add-jiaolian5InsertLeft").remove();
+//             $("#add-jiaolian5SelectRight").remove();
+//             $("#add-jiaolian5InsertRight").remove();
+//
+//             $("#add-jiaolian6SelectLeft").remove();
+//             $("#add-jiaolian6InsertLeft").remove();
+//             $("#add-jiaolian6SelectRight").remove();
+//             $("#add-jiaolian6InsertRight").remove();
+//
+//             $("#l5sl").remove();
+//             $("#l5il").remove();
+//             $("#l5sr").remove();
+//             $("#l5ir").remove();
+//
+//             $("#l6sl").remove();
+//             $("#l6il").remove();
+//             $("#l6sr").remove();
+//             $("#l6ir").remove();
+//         }
+//         if (selectedValue == '开五孔') {
+//             $("#add-jiaolian6SelectLeft").remove();
+//             $("#add-jiaolian6InsertLeft").remove();
+//             $("#add-jiaolian6SelectRight").remove();
+//             $("#add-jiaolian6InsertRight").remove();
+//
+//             $("#l6sl").remove();
+//             $("#l6il").remove();
+//             $("#l6sr").remove();
+//             $("#l6ir").remove();
+//         }
+//     })
+//
+//     $('#add-kaijiaolian1').on('change', function () {
+//         var selectedValue1 = $(this).val();
+//         if (selectedValue1 == '开二孔') {
+//             $("#add-jiaolian3SelectLeft1").remove();
+//             $("#add-jiaolian3InsertLeft1").remove();
+//             $("#add-jiaolian3SelectRight1").remove();
+//             $("#add-jiaolian3InsertRight1").remove();
+//
+//             $("#add-jiaolian4SelectLeft1").remove();
+//             $("#add-jiaolian4InsertLeft1").remove();
+//             $("#add-jiaolian4SelectRight1").remove();
+//             $("#add-jiaolian4InsertRight1").remove();
+//
+//             $("#add-jiaolian5SelectLeft1").remove();
+//             $("#add-jiaolian5InsertLeft1").remove();
+//             $("#add-jiaolian5SelectRight1").remove();
+//             $("#add-jiaolian5InsertRight1").remove();
+//
+//             $("#add-jiaolian6SelectLeft1").remove();
+//             $("#add-jiaolian6InsertLeft1").remove();
+//             $("#add-jiaolian6SelectRight1").remove();
+//             $("#add-jiaolian6InsertRight1").remove();
+//
+//             $("#l3sl").remove();
+//             $("#l3il").remove();
+//             $("#l3sr").remove();
+//             $("#l3ir").remove();
+//
+//             $("#l4sl").remove();
+//             $("#l4il").remove();
+//             $("#l4sr").remove();
+//             $("#l4ir").remove();
+//
+//             $("#l5sl").remove();
+//             $("#l5il").remove();
+//             $("#l5sr").remove();
+//             $("#l5ir").remove();
+//
+//             $("#l6sl").remove();
+//             $("#l6il").remove();
+//             $("#l6sr").remove();
+//             $("#l6ir").remove();
+//         }
+//         if (selectedValue1 == '开三孔') {
+//             $("#add-jiaolian4SelectLeft1").remove();
+//             $("#add-jiaolian4InsertLeft1").remove();
+//             $("#add-jiaolian4SelectRight1").remove();
+//             $("#add-jiaolian4InsertRight1").remove();
+//
+//             $("#add-jiaolian5SelectLeft1").remove();
+//             $("#add-jiaolian5InsertLeft1").remove();
+//             $("#add-jiaolian5SelectRight1").remove();
+//             $("#add-jiaolian5InsertRight1").remove();
+//
+//             $("#add-jiaolian6SelectLeft1").remove();
+//             $("#add-jiaolian6InsertLeft1").remove();
+//             $("#add-jiaolian6SelectRight1").remove();
+//             $("#add-jiaolian6InsertRight1").remove();
+//
+//             $("#l4sl").remove();
+//             $("#l4il").remove();
+//             $("#l4sr").remove();
+//             $("#l4ir").delete();
+//
+//             $("#l5sl").remove();
+//             $("#l5il").remove();
+//             $("#l5sr").remove();
+//             $("#l5ir").remove();
+//
+//             $("#l6sl").remove();
+//             $("#l6il").remove();
+//             $("#l6sr").remove();
+//             $("#l6ir").remove();
+//         }
+//         if (selectedValue1 == '开四孔') {
+//             $("#add-jiaolian5SelectLeft1").remove();
+//             $("#add-jiaolian5InsertLeft1").remove();
+//             $("#add-jiaolian5SelectRight1").remove();
+//             $("#add-jiaolian5InsertRight1").remove();
+//
+//             $("#add-jiaolian6SelectLeft1").remove();
+//             $("#add-jiaolian6InsertLeft1").remove();
+//             $("#add-jiaolian6SelectRight1").remove();
+//             $("#add-jiaolian6InsertRight1").remove();
+//
+//             $("#l5sl").remove();
+//             $("#l5il").remove();
+//             $("#l5sr").remove();
+//             $("#l5ir").remove();
+//
+//             $("#l6sl").remove();
+//             $("#l6il").remove();
+//             $("#l6sr").remove();
+//             $("#l6ir").remove();
+//         }
+//         if (selectedValue1 == '开五孔') {
+//             $("#add-jiaolian6SelectLeft1").remove();
+//             $("#add-jiaolian6InsertLeft1").remove();
+//             $("#add-jiaolian6SelectRight1").remove();
+//             $("#add-jiaolian6InsertRight1").remove();
+//
+//             $("#l6sl").remove();
+//             $("#l6il").remove();
+//             $("#l6sr").remove();
+//             $("#l6ir").remove();
+//         }
+//     })
+//
+//     $('#add-kaijiaolian2').on('change', function () {
+//         var selectedValue2 = $(this).val();
+//         if (selectedValue2 == '开二孔') {
+//             $("#add-jiaolian3SelectLeft2").remove();
+//             $("#add-jiaolian3InsertLeft2").remove();
+//             $("#add-jiaolian3SelectRight2").remove();
+//             $("#add-jiaolian3InsertRight2").remove();
+//
+//             $("#add-jiaolian4SelectLeft2").remove();
+//             $("#add-jiaolian4InsertLeft2").remove();
+//             $("#add-jiaolian4SelectRight2").remove();
+//             $("#add-jiaolian4InsertRight2").remove();
+//
+//             $("#add-jiaolian5SelectLeft2").remove();
+//             $("#add-jiaolian5InsertLeft2").remove();
+//             $("#add-jiaolian5SelectRight2").remove();
+//             $("#add-jiaolian5InsertRight2").remove();
+//
+//             $("#add-jiaolian6SelectLeft2").remove();
+//             $("#add-jiaolian6InsertLeft2").remove();
+//             $("#add-jiaolian6SelectRight2").remove();
+//             $("#add-jiaolian6InsertRight2").remove();
+//
+//             $("#l3sl").remove();
+//             $("#l3il").remove();
+//             $("#l3sr").remove();
+//             $("#l3ir").remove();
+//
+//             $("#l4sl").remove();
+//             $("#l4il").remove();
+//             $("#l4sr").remove();
+//             $("#l4ir").remove();
+//
+//             $("#l5sl").remove();
+//             $("#l5il").remove();
+//             $("#l5sr").remove();
+//             $("#l5ir").remove();
+//
+//             $("#l6sl").remove();
+//             $("#l6il").remove();
+//             $("#l6sr").remove();
+//             $("#l6ir").remove();
+//         }
+//         if (selectedValue2 == '开三孔') {
+//             $("#add-jiaolian4SelectLeft2").remove();
+//             $("#add-jiaolian4InsertLeft2").remove();
+//             $("#add-jiaolian4SelectRight2").remove();
+//             $("#add-jiaolian4InsertRight2").remove();
+//
+//             $("#add-jiaolian5SelectLeft2").remove();
+//             $("#add-jiaolian5InsertLeft2").remove();
+//             $("#add-jiaolian5SelectRight2").remove();
+//             $("#add-jiaolian5InsertRight2").remove();
+//
+//             $("#add-jiaolian6SelectLeft2").remove();
+//             $("#add-jiaolian6InsertLeft2").remove();
+//             $("#add-jiaolian6SelectRight2").remove();
+//             $("#add-jiaolian6InsertRight2").remove();
+//
+//             $("#l4sl").remove();
+//             $("#l4il").remove();
+//             $("#l4sr").remove();
+//             $("#l4ir").delete();
+//
+//             $("#l5sl").remove();
+//             $("#l5il").remove();
+//             $("#l5sr").remove();
+//             $("#l5ir").remove();
+//
+//             $("#l6sl").remove();
+//             $("#l6il").remove();
+//             $("#l6sr").remove();
+//             $("#l6ir").remove();
+//         }
+//         if (selectedValue2 == '开四孔') {
+//             $("#add-jiaolian5SelectLeft2").remove();
+//             $("#add-jiaolian5InsertLeft2").remove();
+//             $("#add-jiaolian5SelectRight2").remove();
+//             $("#add-jiaolian5InsertRight2").remove();
+//
+//             $("#add-jiaolian6SelectLeft2").remove();
+//             $("#add-jiaolian6InsertLeft2").remove();
+//             $("#add-jiaolian6SelectRight2").remove();
+//             $("#add-jiaolian6InsertRight2").remove();
+//
+//             $("#l5sl").remove();
+//             $("#l5il").remove();
+//             $("#l5sr").remove();
+//             $("#l5ir").remove();
+//
+//             $("#l6sl").remove();
+//             $("#l6il").remove();
+//             $("#l6sr").remove();
+//             $("#l6ir").remove();
+//         }
+//         if (selectedValue2 == '开五孔') {
+//             $("#add-jiaolian6SelectLeft2").remove();
+//             $("#add-jiaolian6InsertLeft2").remove();
+//             $("#add-jiaolian6SelectRight2").remove();
+//             $("#add-jiaolian6InsertRight2").remove();
+//
+//             $("#l6sl").remove();
+//             $("#l6il").remove();
+//             $("#l6sr").remove();
+//             $("#l6ir").remove();
+//         }
+//     })
+//
+//     $('#add-kaijiaolian3').on('change', function () {
+//         var selectedValue3 = $(this).val();
+//         if (selectedValue3 == '开二孔') {
+//             $("#add-jiaolian3SelectLeft3").remove();
+//             $("#add-jiaolian3InsertLeft3").remove();
+//             $("#add-jiaolian3SelectRight3").remove();
+//             $("#add-jiaolian3InsertRight3").remove();
+//
+//             $("#add-jiaolian4SelectLeft3").remove();
+//             $("#add-jiaolian4InsertLeft3").remove();
+//             $("#add-jiaolian4SelectRight3").remove();
+//             $("#add-jiaolian4InsertRight3").remove();
+//
+//             $("#add-jiaolian5SelectLeft3").remove();
+//             $("#add-jiaolian5InsertLeft3").remove();
+//             $("#add-jiaolian5SelectRight3").remove();
+//             $("#add-jiaolian5InsertRight3").remove();
+//
+//             $("#add-jiaolian6SelectLeft3").remove();
+//             $("#add-jiaolian6InsertLeft3").remove();
+//             $("#add-jiaolian6SelectRight3").remove();
+//             $("#add-jiaolian6InsertRight3").remove();
+//
+//             $("#l3sl").remove();
+//             $("#l3il").remove();
+//             $("#l3sr").remove();
+//             $("#l3ir").remove();
+//
+//             $("#l4sl").remove();
+//             $("#l4il").remove();
+//             $("#l4sr").remove();
+//             $("#l4ir").remove();
+//
+//             $("#l5sl").remove();
+//             $("#l5il").remove();
+//             $("#l5sr").remove();
+//             $("#l5ir").remove();
+//
+//             $("#l6sl").remove();
+//             $("#l6il").remove();
+//             $("#l6sr").remove();
+//             $("#l6ir").remove();
+//         }
+//         if (selectedValue3 == '开三孔') {
+//             $("#add-jiaolian4SelectLeft3").remove();
+//             $("#add-jiaolian4InsertLeft3").remove();
+//             $("#add-jiaolian4SelectRight3").remove();
+//             $("#add-jiaolian4InsertRight3").remove();
+//
+//             $("#add-jiaolian5SelectLeft3").remove();
+//             $("#add-jiaolian5InsertLeft3").remove();
+//             $("#add-jiaolian5SelectRight3").remove();
+//             $("#add-jiaolian5InsertRight3").remove();
+//
+//             $("#add-jiaolian6SelectLeft3").remove();
+//             $("#add-jiaolian6InsertLeft3").remove();
+//             $("#add-jiaolian6SelectRight3").remove();
+//             $("#add-jiaolian6InsertRight3").remove();
+//
+//             $("#l4sl").remove();
+//             $("#l4il").remove();
+//             $("#l4sr").remove();
+//             $("#l4ir").delete();
+//
+//             $("#l5sl").remove();
+//             $("#l5il").remove();
+//             $("#l5sr").remove();
+//             $("#l5ir").remove();
+//
+//             $("#l6sl").remove();
+//             $("#l6il").remove();
+//             $("#l6sr").remove();
+//             $("#l6ir").remove();
+//         }
+//         if (selectedValue3 == '开四孔') {
+//             $("#add-jiaolian5SelectLeft3").remove();
+//             $("#add-jiaolian5InsertLeft3").remove();
+//             $("#add-jiaolian5SelectRight3").remove();
+//             $("#add-jiaolian5InsertRight3").remove();
+//
+//             $("#add-jiaolian6SelectLeft3").remove();
+//             $("#add-jiaolian6InsertLeft3").remove();
+//             $("#add-jiaolian6SelectRight3").remove();
+//             $("#add-jiaolian6InsertRight3").remove();
+//
+//             $("#l5sl").remove();
+//             $("#l5il").remove();
+//             $("#l5sr").remove();
+//             $("#l5ir").remove();
+//
+//             $("#l6sl").remove();
+//             $("#l6il").remove();
+//             $("#l6sr").remove();
+//             $("#l6ir").remove();
+//         }
+//         if (selectedValue3 == '开五孔') {
+//             $("#add-jiaolian6SelectLeft3").remove();
+//             $("#add-jiaolian6InsertLeft3").remove();
+//             $("#add-jiaolian6SelectRight3").remove();
+//             $("#add-jiaolian6InsertRight3").remove();
+//
+//             $("#l6sl").remove();
+//             $("#l6il").remove();
+//             $("#l6sr").remove();
+//             $("#l6ir").remove();
+//         }
+//     })
+//
+//     $('#add-kaijiaolian4').on('change', function () {
+//         var selectedValue4 = $(this).val();
+//         if (selectedValue4 == '开二孔') {
+//             $("#add-jiaolian3SelectLeft4").remove();
+//             $("#add-jiaolian3InsertLeft4").remove();
+//             $("#add-jiaolian3SelectRight4").remove();
+//             $("#add-jiaolian3InsertRight4").remove();
+//
+//             $("#add-jiaolian4SelectLeft4").remove();
+//             $("#add-jiaolian4InsertLeft4").remove();
+//             $("#add-jiaolian4SelectRight4").remove();
+//             $("#add-jiaolian4InsertRight4").remove();
+//
+//             $("#add-jiaolian5SelectLeft4").remove();
+//             $("#add-jiaolian5InsertLeft4").remove();
+//             $("#add-jiaolian5SelectRight4").remove();
+//             $("#add-jiaolian5InsertRight4").remove();
+//
+//             $("#add-jiaolian6SelectLeft4").remove();
+//             $("#add-jiaolian6InsertLeft4").remove();
+//             $("#add-jiaolian6SelectRight4").remove();
+//             $("#add-jiaolian6InsertRight4").remove();
+//
+//             $("#l3sl").remove();
+//             $("#l3il").remove();
+//             $("#l3sr").remove();
+//             $("#l3ir").remove();
+//
+//             $("#l4sl").remove();
+//             $("#l4il").remove();
+//             $("#l4sr").remove();
+//             $("#l4ir").remove();
+//
+//             $("#l5sl").remove();
+//             $("#l5il").remove();
+//             $("#l5sr").remove();
+//             $("#l5ir").remove();
+//
+//             $("#l6sl").remove();
+//             $("#l6il").remove();
+//             $("#l6sr").remove();
+//             $("#l6ir").remove();
+//         }
+//         if (selectedValue4 == '开三孔') {
+//             $("#add-jiaolian4SelectLeft4").remove();
+//             $("#add-jiaolian4InsertLeft4").remove();
+//             $("#add-jiaolian4SelectRight4").remove();
+//             $("#add-jiaolian4InsertRight4").remove();
+//
+//             $("#add-jiaolian5SelectLeft4").remove();
+//             $("#add-jiaolian5InsertLeft4").remove();
+//             $("#add-jiaolian5SelectRight4").remove();
+//             $("#add-jiaolian5InsertRight4").remove();
+//
+//             $("#add-jiaolian6SelectLeft4").remove();
+//             $("#add-jiaolian6InsertLeft4").remove();
+//             $("#add-jiaolian6SelectRight4").remove();
+//             $("#add-jiaolian6InsertRight4").remove();
+//
+//             $("#l4sl").remove();
+//             $("#l4il").remove();
+//             $("#l4sr").remove();
+//             $("#l4ir").delete();
+//
+//             $("#l5sl").remove();
+//             $("#l5il").remove();
+//             $("#l5sr").remove();
+//             $("#l5ir").remove();
+//
+//             $("#l6sl").remove();
+//             $("#l6il").remove();
+//             $("#l6sr").remove();
+//             $("#l6ir").remove();
+//         }
+//         if (selectedValue4 == '开四孔') {
+//             $("#add-jiaolian5SelectLeft4").remove();
+//             $("#add-jiaolian5InsertLeft4").remove();
+//             $("#add-jiaolian5SelectRight4").remove();
+//             $("#add-jiaolian5InsertRight4").remove();
+//
+//             $("#add-jiaolian6SelectLeft4").remove();
+//             $("#add-jiaolian6InsertLeft4").remove();
+//             $("#add-jiaolian6SelectRight4").remove();
+//             $("#add-jiaolian6InsertRight4").remove();
+//
+//             $("#l5sl").remove();
+//             $("#l5il").remove();
+//             $("#l5sr").remove();
+//             $("#l5ir").remove();
+//
+//             $("#l6sl").remove();
+//             $("#l6il").remove();
+//             $("#l6sr").remove();
+//             $("#l6ir").remove();
+//         }
+//         if (selectedValue4 == '开五孔') {
+//             $("#add-jiaolian6SelectLeft4").remove();
+//             $("#add-jiaolian6InsertLeft4").remove();
+//             $("#add-jiaolian6SelectRight4").remove();
+//             $("#add-jiaolian6InsertRight4").remove();
+//
+//             $("#l6sl").remove();
+//             $("#l6il").remove();
+//             $("#l6sr").remove();
+//             $("#l6ir").remove();
+//         }
+//     })
+//
+//     $('#add-kaijiaolian5').on('change', function () {
+//         var selectedValue5 = $(this).val();
+//         if (selectedValue5 == '开二孔') {
+//             $("#add-jiaolian3SelectLeft5").remove();
+//             $("#add-jiaolian3InsertLeft5").remove();
+//             $("#add-jiaolian3SelectRight5").remove();
+//             $("#add-jiaolian3InsertRight5").remove();
+//
+//             $("#add-jiaolian4SelectLeft5").remove();
+//             $("#add-jiaolian4InsertLeft5").remove();
+//             $("#add-jiaolian4SelectRight5").remove();
+//             $("#add-jiaolian4InsertRight5").remove();
+//
+//             $("#add-jiaolian5SelectLeft5").remove();
+//             $("#add-jiaolian5InsertLeft5").remove();
+//             $("#add-jiaolian5SelectRight5").remove();
+//             $("#add-jiaolian5InsertRight5").remove();
+//
+//             $("#add-jiaolian6SelectLeft5").remove();
+//             $("#add-jiaolian6InsertLeft5").remove();
+//             $("#add-jiaolian6SelectRight5").remove();
+//             $("#add-jiaolian6InsertRight5").remove();
+//
+//             $("#l3sl").remove();
+//             $("#l3il").remove();
+//             $("#l3sr").remove();
+//             $("#l3ir").remove();
+//
+//             $("#l4sl").remove();
+//             $("#l4il").remove();
+//             $("#l4sr").remove();
+//             $("#l4ir").remove();
+//
+//             $("#l5sl").remove();
+//             $("#l5il").remove();
+//             $("#l5sr").remove();
+//             $("#l5ir").remove();
+//
+//             $("#l6sl").remove();
+//             $("#l6il").remove();
+//             $("#l6sr").remove();
+//             $("#l6ir").remove();
+//         }
+//         if (selectedValue5 == '开三孔') {
+//             $("#add-jiaolian4SelectLeft5").remove();
+//             $("#add-jiaolian4InsertLeft5").remove();
+//             $("#add-jiaolian4SelectRight5").remove();
+//             $("#add-jiaolian4InsertRight5").remove();
+//
+//             $("#add-jiaolian5SelectLeft5").remove();
+//             $("#add-jiaolian5InsertLeft5").remove();
+//             $("#add-jiaolian5SelectRight5").remove();
+//             $("#add-jiaolian5InsertRight5").remove();
+//
+//             $("#add-jiaolian6SelectLeft5").remove();
+//             $("#add-jiaolian6InsertLeft5").remove();
+//             $("#add-jiaolian6SelectRight5").remove();
+//             $("#add-jiaolian6InsertRight5").remove();
+//
+//             $("#l4sl").remove();
+//             $("#l4il").remove();
+//             $("#l4sr").remove();
+//             $("#l4ir").delete();
+//
+//             $("#l5sl").remove();
+//             $("#l5il").remove();
+//             $("#l5sr").remove();
+//             $("#l5ir").remove();
+//
+//             $("#l6sl").remove();
+//             $("#l6il").remove();
+//             $("#l6sr").remove();
+//             $("#l6ir").remove();
+//         }
+//         if (selectedValue5 == '开四孔') {
+//             $("#add-jiaolian5SelectLeft5").remove();
+//             $("#add-jiaolian5InsertLeft5").remove();
+//             $("#add-jiaolian5SelectRight5").remove();
+//             $("#add-jiaolian5InsertRight5").remove();
+//
+//             $("#add-jiaolian6SelectLeft5").remove();
+//             $("#add-jiaolian6InsertLeft5").remove();
+//             $("#add-jiaolian6SelectRight5").remove();
+//             $("#add-jiaolian6InsertRight5").remove();
+//
+//             $("#l5sl").remove();
+//             $("#l5il").remove();
+//             $("#l5sr").remove();
+//             $("#l5ir").remove();
+//
+//             $("#l6sl").remove();
+//             $("#l6il").remove();
+//             $("#l6sr").remove();
+//             $("#l6ir").remove();
+//         }
+//         if (selectedValue5 == '开五孔') {
+//             $("#add-jiaolian6SelectLeft5").remove();
+//             $("#add-jiaolian6InsertLeft5").remove();
+//             $("#add-jiaolian6SelectRight5").remove();
+//             $("#add-jiaolian6InsertRight5").remove();
+//
+//             $("#l6sl").remove();
+//             $("#l6il").remove();
+//             $("#l6sr").remove();
+//             $("#l6ir").remove();
+//         }
+//     })
+//
+//     $('#add-kaijiaolian6').on('change', function () {
+//         var selectedValue6 = $(this).val();
+//         if (selectedValue6 == '开二孔') {
+//             $("#add-jiaolian3SelectLeft6").remove();
+//             $("#add-jiaolian3InsertLeft6").remove();
+//             $("#add-jiaolian3SelectRight6").remove();
+//             $("#add-jiaolian3InsertRight6").remove();
+//
+//             $("#add-jiaolian4SelectLeft6").remove();
+//             $("#add-jiaolian4InsertLeft6").remove();
+//             $("#add-jiaolian4SelectRight6").remove();
+//             $("#add-jiaolian4InsertRight6").remove();
+//
+//             $("#add-jiaolian5SelectLeft6").remove();
+//             $("#add-jiaolian5InsertLeft6").remove();
+//             $("#add-jiaolian5SelectRight6").remove();
+//             $("#add-jiaolian5InsertRight6").remove();
+//
+//             $("#add-jiaolian6SelectLeft6").remove();
+//             $("#add-jiaolian6InsertLeft6").remove();
+//             $("#add-jiaolian6SelectRight6").remove();
+//             $("#add-jiaolian6InsertRight6").remove();
+//
+//             $("#l3sl").remove();
+//             $("#l3il").remove();
+//             $("#l3sr").remove();
+//             $("#l3ir").remove();
+//
+//             $("#l4sl").remove();
+//             $("#l4il").remove();
+//             $("#l4sr").remove();
+//             $("#l4ir").remove();
+//
+//             $("#l5sl").remove();
+//             $("#l5il").remove();
+//             $("#l5sr").remove();
+//             $("#l5ir").remove();
+//
+//             $("#l6sl").remove();
+//             $("#l6il").remove();
+//             $("#l6sr").remove();
+//             $("#l6ir").remove();
+//         }
+//         if (selectedValue6 == '开三孔') {
+//             $("#add-jiaolian4SelectLeft6").remove();
+//             $("#add-jiaolian4InsertLeft6").remove();
+//             $("#add-jiaolian4SelectRight6").remove();
+//             $("#add-jiaolian4InsertRight6").remove();
+//
+//             $("#add-jiaolian5SelectLeft6").remove();
+//             $("#add-jiaolian5InsertLeft6").remove();
+//             $("#add-jiaolian5SelectRight6").remove();
+//             $("#add-jiaolian5InsertRight6").remove();
+//
+//             $("#add-jiaolian6SelectLeft6").remove();
+//             $("#add-jiaolian6InsertLeft6").remove();
+//             $("#add-jiaolian6SelectRight6").remove();
+//             $("#add-jiaolian6InsertRight6").remove();
+//
+//             $("#l4sl").remove();
+//             $("#l4il").remove();
+//             $("#l4sr").remove();
+//             $("#l4ir").delete();
+//
+//             $("#l5sl").remove();
+//             $("#l5il").remove();
+//             $("#l5sr").remove();
+//             $("#l5ir").remove();
+//
+//             $("#l6sl").remove();
+//             $("#l6il").remove();
+//             $("#l6sr").remove();
+//             $("#l6ir").remove();
+//         }
+//         if (selectedValue6 == '开四孔') {
+//             $("#add-jiaolian5SelectLeft6").remove();
+//             $("#add-jiaolian5InsertLeft6").remove();
+//             $("#add-jiaolian5SelectRight6").remove();
+//             $("#add-jiaolian5InsertRight6").remove();
+//
+//             $("#add-jiaolian6SelectLeft6").remove();
+//             $("#add-jiaolian6InsertLeft6").remove();
+//             $("#add-jiaolian6SelectRight6").remove();
+//             $("#add-jiaolian6InsertRight6").remove();
+//
+//             $("#l5sl").remove();
+//             $("#l5il").remove();
+//             $("#l5sr").remove();
+//             $("#l5ir").remove();
+//
+//             $("#l6sl").remove();
+//             $("#l6il").remove();
+//             $("#l6sr").remove();
+//             $("#l6ir").remove();
+//         }
+//         if (selectedValue6 == '开五孔') {
+//             $("#add-jiaolian6SelectLeft6").remove();
+//             $("#add-jiaolian6InsertLeft6").remove();
+//             $("#add-jiaolian6SelectRight6").remove();
+//             $("#add-jiaolian6InsertRight6").remove();
+//
+//             $("#l6sl").remove();
+//             $("#l6il").remove();
+//             $("#l6sr").remove();
+//             $("#l6ir").remove();
+//         }
+//     })
+//
+//     $('#add-kaijiaolian7').on('change', function () {
+//         var selectedValue7 = $(this).val();
+//         if (selectedValue7 == '开二孔') {
+//             $("#add-jiaolian3SelectLeft7").remove();
+//             $("#add-jiaolian3InsertLeft7").remove();
+//             $("#add-jiaolian3SelectRight7").remove();
+//             $("#add-jiaolian3InsertRight7").remove();
+//
+//             $("#add-jiaolian4SelectLeft7").remove();
+//             $("#add-jiaolian4InsertLeft7").remove();
+//             $("#add-jiaolian4SelectRight7").remove();
+//             $("#add-jiaolian4InsertRight7").remove();
+//
+//             $("#add-jiaolian5SelectLeft7").remove();
+//             $("#add-jiaolian5InsertLeft7").remove();
+//             $("#add-jiaolian5SelectRight7").remove();
+//             $("#add-jiaolian5InsertRight7").remove();
+//
+//             $("#add-jiaolian6SelectLeft7").remove();
+//             $("#add-jiaolian6InsertLeft7").remove();
+//             $("#add-jiaolian6SelectRight7").remove();
+//             $("#add-jiaolian6InsertRight7").remove();
+//
+//             $("#l3sl").remove();
+//             $("#l3il").remove();
+//             $("#l3sr").remove();
+//             $("#l3ir").remove();
+//
+//             $("#l4sl").remove();
+//             $("#l4il").remove();
+//             $("#l4sr").remove();
+//             $("#l4ir").remove();
+//
+//             $("#l5sl").remove();
+//             $("#l5il").remove();
+//             $("#l5sr").remove();
+//             $("#l5ir").remove();
+//
+//             $("#l6sl").remove();
+//             $("#l6il").remove();
+//             $("#l6sr").remove();
+//             $("#l6ir").remove();
+//         }
+//         if (selectedValue7 == '开三孔') {
+//             $("#add-jiaolian4SelectLeft7").remove();
+//             $("#add-jiaolian4InsertLeft7").remove();
+//             $("#add-jiaolian4SelectRight7").remove();
+//             $("#add-jiaolian4InsertRight7").remove();
+//
+//             $("#add-jiaolian5SelectLeft7").remove();
+//             $("#add-jiaolian5InsertLeft7").remove();
+//             $("#add-jiaolian5SelectRight7").remove();
+//             $("#add-jiaolian5InsertRight7").remove();
+//
+//             $("#add-jiaolian6SelectLeft7").remove();
+//             $("#add-jiaolian6InsertLeft7").remove();
+//             $("#add-jiaolian6SelectRight7").remove();
+//             $("#add-jiaolian6InsertRight7").remove();
+//
+//             $("#l4sl").remove();
+//             $("#l4il").remove();
+//             $("#l4sr").remove();
+//             $("#l4ir").delete();
+//
+//             $("#l5sl").remove();
+//             $("#l5il").remove();
+//             $("#l5sr").remove();
+//             $("#l5ir").remove();
+//
+//             $("#l6sl").remove();
+//             $("#l6il").remove();
+//             $("#l6sr").remove();
+//             $("#l6ir").remove();
+//         }
+//         if (selectedValue7 == '开四孔') {
+//             $("#add-jiaolian5SelectLeft7").remove();
+//             $("#add-jiaolian5InsertLeft7").remove();
+//             $("#add-jiaolian5SelectRight7").remove();
+//             $("#add-jiaolian5InsertRight7").remove();
+//
+//             $("#add-jiaolian6SelectLeft7").remove();
+//             $("#add-jiaolian6InsertLeft7").remove();
+//             $("#add-jiaolian6SelectRight7").remove();
+//             $("#add-jiaolian6InsertRight7").remove();
+//
+//             $("#l5sl").remove();
+//             $("#l5il").remove();
+//             $("#l5sr").remove();
+//             $("#l5ir").remove();
+//
+//             $("#l6sl").remove();
+//             $("#l6il").remove();
+//             $("#l6sr").remove();
+//             $("#l6ir").remove();
+//         }
+//         if (selectedValue7 == '开五孔') {
+//             $("#add-jiaolian6SelectLeft7").remove();
+//             $("#add-jiaolian6InsertLeft7").remove();
+//             $("#add-jiaolian6SelectRight7").remove();
+//             $("#add-jiaolian6InsertRight7").remove();
+//
+//             $("#l6sl").remove();
+//             $("#l6il").remove();
+//             $("#l6sr").remove();
+//             $("#l6ir").remove();
+//         }
+//     })
+//
+//     $('#add-kaijiaolian8').on('change', function () {
+//         var selectedValue8 = $(this).val();
+//         if (selectedValue8 == '开二孔') {
+//             $("#add-jiaolian3SelectLeft8").remove();
+//             $("#add-jiaolian3InsertLeft8").remove();
+//             $("#add-jiaolian3SelectRight8").remove();
+//             $("#add-jiaolian3InsertRight8").remove();
+//
+//             $("#add-jiaolian4SelectLeft8").remove();
+//             $("#add-jiaolian4InsertLeft8").remove();
+//             $("#add-jiaolian4SelectRight8").remove();
+//             $("#add-jiaolian4InsertRight8").remove();
+//
+//             $("#add-jiaolian5SelectLeft8").remove();
+//             $("#add-jiaolian5InsertLeft8").remove();
+//             $("#add-jiaolian5SelectRight8").remove();
+//             $("#add-jiaolian5InsertRight8").remove();
+//
+//             $("#add-jiaolian6SelectLeft8").remove();
+//             $("#add-jiaolian6InsertLeft8").remove();
+//             $("#add-jiaolian6SelectRight8").remove();
+//             $("#add-jiaolian6InsertRight8").remove();
+//
+//             $("#l3sl").remove();
+//             $("#l3il").remove();
+//             $("#l3sr").remove();
+//             $("#l3ir").remove();
+//
+//             $("#l4sl").remove();
+//             $("#l4il").remove();
+//             $("#l4sr").remove();
+//             $("#l4ir").remove();
+//
+//             $("#l5sl").remove();
+//             $("#l5il").remove();
+//             $("#l5sr").remove();
+//             $("#l5ir").remove();
+//
+//             $("#l6sl").remove();
+//             $("#l6il").remove();
+//             $("#l6sr").remove();
+//             $("#l6ir").remove();
+//         }
+//         if (selectedValue8 == '开三孔') {
+//             $("#add-jiaolian4SelectLeft8").remove();
+//             $("#add-jiaolian4InsertLeft8").remove();
+//             $("#add-jiaolian4SelectRight8").remove();
+//             $("#add-jiaolian4InsertRight8").remove();
+//
+//             $("#add-jiaolian5SelectLeft8").remove();
+//             $("#add-jiaolian5InsertLeft8").remove();
+//             $("#add-jiaolian5SelectRight8").remove();
+//             $("#add-jiaolian5InsertRight8").remove();
+//
+//             $("#add-jiaolian6SelectLeft8").remove();
+//             $("#add-jiaolian6InsertLeft8").remove();
+//             $("#add-jiaolian6SelectRight8").remove();
+//             $("#add-jiaolian6InsertRight8").remove();
+//
+//             $("#l4sl").remove();
+//             $("#l4il").remove();
+//             $("#l4sr").remove();
+//             $("#l4ir").delete();
+//
+//             $("#l5sl").remove();
+//             $("#l5il").remove();
+//             $("#l5sr").remove();
+//             $("#l5ir").remove();
+//
+//             $("#l6sl").remove();
+//             $("#l6il").remove();
+//             $("#l6sr").remove();
+//             $("#l6ir").remove();
+//         }
+//         if (selectedValue8 == '开四孔') {
+//             $("#add-jiaolian5SelectLeft8").remove();
+//             $("#add-jiaolian5InsertLeft8").remove();
+//             $("#add-jiaolian5SelectRight8").remove();
+//             $("#add-jiaolian5InsertRight8").remove();
+//
+//             $("#add-jiaolian6SelectLeft8").remove();
+//             $("#add-jiaolian6InsertLeft8").remove();
+//             $("#add-jiaolian6SelectRight8").remove();
+//             $("#add-jiaolian6InsertRight8").remove();
+//
+//             $("#l5sl").remove();
+//             $("#l5il").remove();
+//             $("#l5sr").remove();
+//             $("#l5ir").remove();
+//
+//             $("#l6sl").remove();
+//             $("#l6il").remove();
+//             $("#l6sr").remove();
+//             $("#l6ir").remove();
+//         }
+//         if (selectedValue8 == '开五孔') {
+//             $("#add-jiaolian6SelectLeft8").remove();
+//             $("#add-jiaolian6InsertLeft8").remove();
+//             $("#add-jiaolian6SelectRight8").remove();
+//             $("#add-jiaolian6InsertRight8").remove();
+//
+//             $("#l6sl").remove();
+//             $("#l6il").remove();
+//             $("#l6sr").remove();
+//             $("#l6ir").remove();
+//         }
+//     })
+//
+//     $('#add-kaijiaolian9').on('change', function () {
+//         var selectedValue9 = $(this).val();
+//         if (selectedValue9 == '开二孔') {
+//             $("#add-jiaolian3SelectLeft9").remove();
+//             $("#add-jiaolian3InsertLeft9").remove();
+//             $("#add-jiaolian3SelectRight9").remove();
+//             $("#add-jiaolian3InsertRight9").remove();
+//
+//             $("#add-jiaolian4SelectLeft9").remove();
+//             $("#add-jiaolian4InsertLeft9").remove();
+//             $("#add-jiaolian4SelectRight9").remove();
+//             $("#add-jiaolian4InsertRight9").remove();
+//
+//             $("#add-jiaolian5SelectLeft9").remove();
+//             $("#add-jiaolian5InsertLeft9").remove();
+//             $("#add-jiaolian5SelectRight9").remove();
+//             $("#add-jiaolian5InsertRight9").remove();
+//
+//             $("#add-jiaolian6SelectLeft9").remove();
+//             $("#add-jiaolian6InsertLeft9").remove();
+//             $("#add-jiaolian6SelectRight9").remove();
+//             $("#add-jiaolian6InsertRight9").remove();
+//
+//             $("#l3sl").remove();
+//             $("#l3il").remove();
+//             $("#l3sr").remove();
+//             $("#l3ir").remove();
+//
+//             $("#l4sl").remove();
+//             $("#l4il").remove();
+//             $("#l4sr").remove();
+//             $("#l4ir").remove();
+//
+//             $("#l5sl").remove();
+//             $("#l5il").remove();
+//             $("#l5sr").remove();
+//             $("#l5ir").remove();
+//
+//             $("#l6sl").remove();
+//             $("#l6il").remove();
+//             $("#l6sr").remove();
+//             $("#l6ir").remove();
+//         }
+//         if (selectedValue9 == '开三孔') {
+//             $("#add-jiaolian4SelectLeft9").remove();
+//             $("#add-jiaolian4InsertLeft9").remove();
+//             $("#add-jiaolian4SelectRight9").remove();
+//             $("#add-jiaolian4InsertRight9").remove();
+//
+//             $("#add-jiaolian5SelectLeft9").remove();
+//             $("#add-jiaolian5InsertLeft9").remove();
+//             $("#add-jiaolian5SelectRight9").remove();
+//             $("#add-jiaolian5InsertRight9").remove();
+//
+//             $("#add-jiaolian6SelectLeft9").remove();
+//             $("#add-jiaolian6InsertLeft9").remove();
+//             $("#add-jiaolian6SelectRight9").remove();
+//             $("#add-jiaolian6InsertRight9").remove();
+//
+//             $("#l4sl").remove();
+//             $("#l4il").remove();
+//             $("#l4sr").remove();
+//             $("#l4ir").delete();
+//
+//             $("#l5sl").remove();
+//             $("#l5il").remove();
+//             $("#l5sr").remove();
+//             $("#l5ir").remove();
+//
+//             $("#l6sl").remove();
+//             $("#l6il").remove();
+//             $("#l6sr").remove();
+//             $("#l6ir").remove();
+//         }
+//         if (selectedValue9 == '开四孔') {
+//             $("#add-jiaolian5SelectLeft9").remove();
+//             $("#add-jiaolian5InsertLeft9").remove();
+//             $("#add-jiaolian5SelectRight9").remove();
+//             $("#add-jiaolian5InsertRight9").remove();
+//
+//             $("#add-jiaolian6SelectLeft9").remove();
+//             $("#add-jiaolian6InsertLeft9").remove();
+//             $("#add-jiaolian6SelectRight9").remove();
+//             $("#add-jiaolian6InsertRight9").remove();
+//
+//             $("#l5sl").remove();
+//             $("#l5il").remove();
+//             $("#l5sr").remove();
+//             $("#l5ir").remove();
+//
+//             $("#l6sl").remove();
+//             $("#l6il").remove();
+//             $("#l6sr").remove();
+//             $("#l6ir").remove();
+//         }
+//         if (selectedValue9 == '开五孔') {
+//             $("#add-jiaolian6SelectLeft9").remove();
+//             $("#add-jiaolian6InsertLeft9").remove();
+//             $("#add-jiaolian6SelectRight9").remove();
+//             $("#add-jiaolian6InsertRight9").remove();
+//
+//             $("#l6sl").remove();
+//             $("#l6il").remove();
+//             $("#l6sr").remove();
+//             $("#l6ir").remove();
+//         }
+//     })
+//
+//     $('#add-kaijiaolian10').on('change', function () {
+//         var selectedValue10 = $(this).val();
+//         if (selectedValue10 == '开二孔') {
+//             $("#add-jiaolian3SelectLeft10").remove();
+//             $("#add-jiaolian3InsertLeft10").remove();
+//             $("#add-jiaolian3SelectRight10").remove();
+//             $("#add-jiaolian3InsertRight10").remove();
+//
+//             $("#add-jiaolian4SelectLeft10").remove();
+//             $("#add-jiaolian4InsertLeft10").remove();
+//             $("#add-jiaolian4SelectRight10").remove();
+//             $("#add-jiaolian4InsertRight10").remove();
+//
+//             $("#add-jiaolian5SelectLeft10").remove();
+//             $("#add-jiaolian5InsertLeft10").remove();
+//             $("#add-jiaolian5SelectRight10").remove();
+//             $("#add-jiaolian5InsertRight10").remove();
+//
+//             $("#add-jiaolian6SelectLeft10").remove();
+//             $("#add-jiaolian6InsertLeft10").remove();
+//             $("#add-jiaolian6SelectRight10").remove();
+//             $("#add-jiaolian6InsertRight10").remove();
+//
+//             $("#l3sl").remove();
+//             $("#l3il").remove();
+//             $("#l3sr").remove();
+//             $("#l3ir").remove();
+//
+//             $("#l4sl").remove();
+//             $("#l4il").remove();
+//             $("#l4sr").remove();
+//             $("#l4ir").remove();
+//
+//             $("#l5sl").remove();
+//             $("#l5il").remove();
+//             $("#l5sr").remove();
+//             $("#l5ir").remove();
+//
+//             $("#l6sl").remove();
+//             $("#l6il").remove();
+//             $("#l6sr").remove();
+//             $("#l6ir").remove();
+//         }
+//         if (selectedValue10 == '开三孔') {
+//             $("#add-jiaolian4SelectLeft10").remove();
+//             $("#add-jiaolian4InsertLeft10").remove();
+//             $("#add-jiaolian4SelectRight10").remove();
+//             $("#add-jiaolian4InsertRight10").remove();
+//
+//             $("#add-jiaolian5SelectLeft10").remove();
+//             $("#add-jiaolian5InsertLeft10").remove();
+//             $("#add-jiaolian5SelectRight10").remove();
+//             $("#add-jiaolian5InsertRight10").remove();
+//
+//             $("#add-jiaolian6SelectLeft10").remove();
+//             $("#add-jiaolian6InsertLeft10").remove();
+//             $("#add-jiaolian6SelectRight10").remove();
+//             $("#add-jiaolian6InsertRight10").remove();
+//
+//             $("#l4sl").remove();
+//             $("#l4il").remove();
+//             $("#l4sr").remove();
+//             $("#l4ir").delete();
+//
+//             $("#l5sl").remove();
+//             $("#l5il").remove();
+//             $("#l5sr").remove();
+//             $("#l5ir").remove();
+//
+//             $("#l6sl").remove();
+//             $("#l6il").remove();
+//             $("#l6sr").remove();
+//             $("#l6ir").remove();
+//         }
+//         if (selectedValue10 == '开四孔') {
+//             $("#add-jiaolian5SelectLeft10").remove();
+//             $("#add-jiaolian5InsertLeft10").remove();
+//             $("#add-jiaolian5SelectRight10").remove();
+//             $("#add-jiaolian5InsertRight10").remove();
+//
+//             $("#add-jiaolian6SelectLeft10").remove();
+//             $("#add-jiaolian6InsertLeft10").remove();
+//             $("#add-jiaolian6SelectRight10").remove();
+//             $("#add-jiaolian6InsertRight10").remove();
+//
+//             $("#l5sl").remove();
+//             $("#l5il").remove();
+//             $("#l5sr").remove();
+//             $("#l5ir").remove();
+//
+//             $("#l6sl").remove();
+//             $("#l6il").remove();
+//             $("#l6sr").remove();
+//             $("#l6ir").remove();
+//         }
+//         if (selectedValue10 == '开五孔') {
+//             $("#add-jiaolian6SelectLeft10").remove();
+//             $("#add-jiaolian6InsertLeft10").remove();
+//             $("#add-jiaolian6SelectRight10").remove();
+//             $("#add-jiaolian6InsertRight10").remove();
+//
+//             $("#l6sl").remove();
+//             $("#l6il").remove();
+//             $("#l6sr").remove();
+//             $("#l6ir").remove();
+//         }
+//     })
+//
+//     $('#add-kaijiaolian11').on('change', function () {
+//         var selectedValue11 = $(this).val();
+//         if (selectedValue11 == '开二孔') {
+//             $("#add-jiaolian3SelectLeft11").remove();
+//             $("#add-jiaolian3InsertLeft11").remove();
+//             $("#add-jiaolian3SelectRight11").remove();
+//             $("#add-jiaolian3InsertRight11").remove();
+//
+//             $("#add-jiaolian4SelectLeft11").remove();
+//             $("#add-jiaolian4InsertLeft11").remove();
+//             $("#add-jiaolian4SelectRight11").remove();
+//             $("#add-jiaolian4InsertRight11").remove();
+//
+//             $("#add-jiaolian5SelectLeft11").remove();
+//             $("#add-jiaolian5InsertLeft11").remove();
+//             $("#add-jiaolian5SelectRight11").remove();
+//             $("#add-jiaolian5InsertRight11").remove();
+//
+//             $("#add-jiaolian6SelectLeft11").remove();
+//             $("#add-jiaolian6InsertLeft11").remove();
+//             $("#add-jiaolian6SelectRight11").remove();
+//             $("#add-jiaolian6InsertRight11").remove();
+//
+//             $("#l3sl").remove();
+//             $("#l3il").remove();
+//             $("#l3sr").remove();
+//             $("#l3ir").remove();
+//
+//             $("#l4sl").remove();
+//             $("#l4il").remove();
+//             $("#l4sr").remove();
+//             $("#l4ir").remove();
+//
+//             $("#l5sl").remove();
+//             $("#l5il").remove();
+//             $("#l5sr").remove();
+//             $("#l5ir").remove();
+//
+//             $("#l6sl").remove();
+//             $("#l6il").remove();
+//             $("#l6sr").remove();
+//             $("#l6ir").remove();
+//         }
+//         if (selectedValue11 == '开三孔') {
+//             $("#add-jiaolian4SelectLeft11").remove();
+//             $("#add-jiaolian4InsertLeft11").remove();
+//             $("#add-jiaolian4SelectRight11").remove();
+//             $("#add-jiaolian4InsertRight11").remove();
+//
+//             $("#add-jiaolian5SelectLeft11").remove();
+//             $("#add-jiaolian5InsertLeft11").remove();
+//             $("#add-jiaolian5SelectRight11").remove();
+//             $("#add-jiaolian5InsertRight11").remove();
+//
+//             $("#add-jiaolian6SelectLeft11").remove();
+//             $("#add-jiaolian6InsertLeft11").remove();
+//             $("#add-jiaolian6SelectRight11").remove();
+//             $("#add-jiaolian6InsertRight11").remove();
+//
+//             $("#l4sl").remove();
+//             $("#l4il").remove();
+//             $("#l4sr").remove();
+//             $("#l4ir").delete();
+//
+//             $("#l5sl").remove();
+//             $("#l5il").remove();
+//             $("#l5sr").remove();
+//             $("#l5ir").remove();
+//
+//             $("#l6sl").remove();
+//             $("#l6il").remove();
+//             $("#l6sr").remove();
+//             $("#l6ir").remove();
+//         }
+//         if (selectedValue11 == '开四孔') {
+//             $("#add-jiaolian5SelectLeft11").remove();
+//             $("#add-jiaolian5InsertLeft11").remove();
+//             $("#add-jiaolian5SelectRight11").remove();
+//             $("#add-jiaolian5InsertRight11").remove();
+//
+//             $("#add-jiaolian6SelectLeft11").remove();
+//             $("#add-jiaolian6InsertLeft11").remove();
+//             $("#add-jiaolian6SelectRight11").remove();
+//             $("#add-jiaolian6InsertRight11").remove();
+//
+//             $("#l5sl").remove();
+//             $("#l5il").remove();
+//             $("#l5sr").remove();
+//             $("#l5ir").remove();
+//
+//             $("#l6sl").remove();
+//             $("#l6il").remove();
+//             $("#l6sr").remove();
+//             $("#l6ir").remove();
+//         }
+//         if (selectedValue11 == '开五孔') {
+//             $("#add-jiaolian6SelectLeft11").remove();
+//             $("#add-jiaolian6InsertLeft11").remove();
+//             $("#add-jiaolian6SelectRight11").remove();
+//             $("#add-jiaolian6InsertRight11").remove();
+//
+//             $("#l6sl").remove();
+//             $("#l6il").remove();
+//             $("#l6sr").remove();
+//             $("#l6ir").remove();
+//         }
+//     })
+//
+//     $('#add-kaijiaolian12').on('change', function () {
+//         var selectedValue12 = $(this).val();
+//         if (selectedValue12 == '开二孔') {
+//             $("#add-jiaolian3SelectLeft12").remove();
+//             $("#add-jiaolian3InsertLeft12").remove();
+//             $("#add-jiaolian3SelectRight12").remove();
+//             $("#add-jiaolian3InsertRight12").remove();
+//
+//             $("#add-jiaolian4SelectLeft12").remove();
+//             $("#add-jiaolian4InsertLeft12").remove();
+//             $("#add-jiaolian4SelectRight12").remove();
+//             $("#add-jiaolian4InsertRight12").remove();
+//
+//             $("#add-jiaolian5SelectLeft12").remove();
+//             $("#add-jiaolian5InsertLeft12").remove();
+//             $("#add-jiaolian5SelectRight12").remove();
+//             $("#add-jiaolian5InsertRight12").remove();
+//
+//             $("#add-jiaolian6SelectLeft12").remove();
+//             $("#add-jiaolian6InsertLeft12").remove();
+//             $("#add-jiaolian6SelectRight12").remove();
+//             $("#add-jiaolian6InsertRight12").remove();
+//
+//             $("#l3sl").remove();
+//             $("#l3il").remove();
+//             $("#l3sr").remove();
+//             $("#l3ir").remove();
+//
+//             $("#l4sl").remove();
+//             $("#l4il").remove();
+//             $("#l4sr").remove();
+//             $("#l4ir").remove();
+//
+//             $("#l5sl").remove();
+//             $("#l5il").remove();
+//             $("#l5sr").remove();
+//             $("#l5ir").remove();
+//
+//             $("#l6sl").remove();
+//             $("#l6il").remove();
+//             $("#l6sr").remove();
+//             $("#l6ir").remove();
+//         }
+//         if (selectedValue12 == '开三孔') {
+//             $("#add-jiaolian4SelectLeft12").remove();
+//             $("#add-jiaolian4InsertLeft12").remove();
+//             $("#add-jiaolian4SelectRight12").remove();
+//             $("#add-jiaolian4InsertRight12").remove();
+//
+//             $("#add-jiaolian5SelectLeft12").remove();
+//             $("#add-jiaolian5InsertLeft12").remove();
+//             $("#add-jiaolian5SelectRight12").remove();
+//             $("#add-jiaolian5InsertRight12").remove();
+//
+//             $("#add-jiaolian6SelectLeft12").remove();
+//             $("#add-jiaolian6InsertLeft12").remove();
+//             $("#add-jiaolian6SelectRight12").remove();
+//             $("#add-jiaolian6InsertRight12").remove();
+//
+//             $("#l4sl").remove();
+//             $("#l4il").remove();
+//             $("#l4sr").remove();
+//             $("#l4ir").delete();
+//
+//             $("#l5sl").remove();
+//             $("#l5il").remove();
+//             $("#l5sr").remove();
+//             $("#l5ir").remove();
+//
+//             $("#l6sl").remove();
+//             $("#l6il").remove();
+//             $("#l6sr").remove();
+//             $("#l6ir").remove();
+//         }
+//         if (selectedValue12 == '开四孔') {
+//             $("#add-jiaolian5SelectLeft12").remove();
+//             $("#add-jiaolian5InsertLeft12").remove();
+//             $("#add-jiaolian5SelectRight12").remove();
+//             $("#add-jiaolian5InsertRight12").remove();
+//
+//             $("#add-jiaolian6SelectLeft12").remove();
+//             $("#add-jiaolian6InsertLeft12").remove();
+//             $("#add-jiaolian6SelectRight12").remove();
+//             $("#add-jiaolian6InsertRight12").remove();
+//
+//             $("#l5sl").remove();
+//             $("#l5il").remove();
+//             $("#l5sr").remove();
+//             $("#l5ir").remove();
+//
+//             $("#l6sl").remove();
+//             $("#l6il").remove();
+//             $("#l6sr").remove();
+//             $("#l6ir").remove();
+//         }
+//         if (selectedValue12 == '开五孔') {
+//             $("#add-jiaolian6SelectLeft12").remove();
+//             $("#add-jiaolian6InsertLeft12").remove();
+//             $("#add-jiaolian6SelectRight12").remove();
+//             $("#add-jiaolian6InsertRight12").remove();
+//
+//             $("#l6sl").remove();
+//             $("#l6il").remove();
+//             $("#l6sr").remove();
+//             $("#l6ir").remove();
+//         }
+//     })
+//
+//     $('#add-kaijiaolian13').on('change', function () {
+//         var selectedValue13 = $(this).val();
+//         if (selectedValue13 == '开二孔') {
+//             $("#add-jiaolian3SelectLeft13").remove();
+//             $("#add-jiaolian3InsertLeft13").remove();
+//             $("#add-jiaolian3SelectRight13").remove();
+//             $("#add-jiaolian3InsertRight13").remove();
+//
+//             $("#add-jiaolian4SelectLeft13").remove();
+//             $("#add-jiaolian4InsertLeft13").remove();
+//             $("#add-jiaolian4SelectRight13").remove();
+//             $("#add-jiaolian4InsertRight13").remove();
+//
+//             $("#add-jiaolian5SelectLeft13").remove();
+//             $("#add-jiaolian5InsertLeft13").remove();
+//             $("#add-jiaolian5SelectRight13").remove();
+//             $("#add-jiaolian5InsertRight13").remove();
+//
+//             $("#add-jiaolian6SelectLeft13").remove();
+//             $("#add-jiaolian6InsertLeft13").remove();
+//             $("#add-jiaolian6SelectRight13").remove();
+//             $("#add-jiaolian6InsertRight13").remove();
+//
+//             $("#l3sl").remove();
+//             $("#l3il").remove();
+//             $("#l3sr").remove();
+//             $("#l3ir").remove();
+//
+//             $("#l4sl").remove();
+//             $("#l4il").remove();
+//             $("#l4sr").remove();
+//             $("#l4ir").remove();
+//
+//             $("#l5sl").remove();
+//             $("#l5il").remove();
+//             $("#l5sr").remove();
+//             $("#l5ir").remove();
+//
+//             $("#l6sl").remove();
+//             $("#l6il").remove();
+//             $("#l6sr").remove();
+//             $("#l6ir").remove();
+//         }
+//         if (selectedValue13 == '开三孔') {
+//             $("#add-jiaolian4SelectLeft13").remove();
+//             $("#add-jiaolian4InsertLeft13").remove();
+//             $("#add-jiaolian4SelectRight13").remove();
+//             $("#add-jiaolian4InsertRight13").remove();
+//
+//             $("#add-jiaolian5SelectLeft13").remove();
+//             $("#add-jiaolian5InsertLeft13").remove();
+//             $("#add-jiaolian5SelectRight13").remove();
+//             $("#add-jiaolian5InsertRight13").remove();
+//
+//             $("#add-jiaolian6SelectLeft13").remove();
+//             $("#add-jiaolian6InsertLeft13").remove();
+//             $("#add-jiaolian6SelectRight13").remove();
+//             $("#add-jiaolian6InsertRight13").remove();
+//
+//             $("#l4sl").remove();
+//             $("#l4il").remove();
+//             $("#l4sr").remove();
+//             $("#l4ir").delete();
+//
+//             $("#l5sl").remove();
+//             $("#l5il").remove();
+//             $("#l5sr").remove();
+//             $("#l5ir").remove();
+//
+//             $("#l6sl").remove();
+//             $("#l6il").remove();
+//             $("#l6sr").remove();
+//             $("#l6ir").remove();
+//         }
+//         if (selectedValue13 == '开四孔') {
+//             $("#add-jiaolian5SelectLeft13").remove();
+//             $("#add-jiaolian5InsertLeft13").remove();
+//             $("#add-jiaolian5SelectRight13").remove();
+//             $("#add-jiaolian5InsertRight13").remove();
+//
+//             $("#add-jiaolian6SelectLeft13").remove();
+//             $("#add-jiaolian6InsertLeft13").remove();
+//             $("#add-jiaolian6SelectRight13").remove();
+//             $("#add-jiaolian6InsertRight13").remove();
+//
+//             $("#l5sl").remove();
+//             $("#l5il").remove();
+//             $("#l5sr").remove();
+//             $("#l5ir").remove();
+//
+//             $("#l6sl").remove();
+//             $("#l6il").remove();
+//             $("#l6sr").remove();
+//             $("#l6ir").remove();
+//         }
+//         if (selectedValue13 == '开五孔') {
+//             $("#add-jiaolian6SelectLeft13").remove();
+//             $("#add-jiaolian6InsertLeft13").remove();
+//             $("#add-jiaolian6SelectRight13").remove();
+//             $("#add-jiaolian6InsertRight13").remove();
+//
+//             $("#l6sl").remove();
+//             $("#l6il").remove();
+//             $("#l6sr").remove();
+//             $("#l6ir").remove();
+//         }
+//     })
+//
+//     $('#add-kaijiaolian14').on('change', function () {
+//         var selectedValue14 = $(this).val();
+//         if (selectedValue14 == '开二孔') {
+//             $("#add-jiaolian3SelectLeft14").remove();
+//             $("#add-jiaolian3InsertLeft14").remove();
+//             $("#add-jiaolian3SelectRight14").remove();
+//             $("#add-jiaolian3InsertRight14").remove();
+//
+//             $("#add-jiaolian4SelectLeft14").remove();
+//             $("#add-jiaolian4InsertLeft14").remove();
+//             $("#add-jiaolian4SelectRight14").remove();
+//             $("#add-jiaolian4InsertRight14").remove();
+//
+//             $("#add-jiaolian5SelectLeft14").remove();
+//             $("#add-jiaolian5InsertLeft14").remove();
+//             $("#add-jiaolian5SelectRight14").remove();
+//             $("#add-jiaolian5InsertRight14").remove();
+//
+//             $("#add-jiaolian6SelectLeft14").remove();
+//             $("#add-jiaolian6InsertLeft14").remove();
+//             $("#add-jiaolian6SelectRight14").remove();
+//             $("#add-jiaolian6InsertRight14").remove();
+//
+//             $("#l3sl").remove();
+//             $("#l3il").remove();
+//             $("#l3sr").remove();
+//             $("#l3ir").remove();
+//
+//             $("#l4sl").remove();
+//             $("#l4il").remove();
+//             $("#l4sr").remove();
+//             $("#l4ir").remove();
+//
+//             $("#l5sl").remove();
+//             $("#l5il").remove();
+//             $("#l5sr").remove();
+//             $("#l5ir").remove();
+//
+//             $("#l6sl").remove();
+//             $("#l6il").remove();
+//             $("#l6sr").remove();
+//             $("#l6ir").remove();
+//         }
+//         if (selectedValue14 == '开三孔') {
+//             $("#add-jiaolian4SelectLeft14").remove();
+//             $("#add-jiaolian4InsertLeft14").remove();
+//             $("#add-jiaolian4SelectRight14").remove();
+//             $("#add-jiaolian4InsertRight14").remove();
+//
+//             $("#add-jiaolian5SelectLeft14").remove();
+//             $("#add-jiaolian5InsertLeft14").remove();
+//             $("#add-jiaolian5SelectRight14").remove();
+//             $("#add-jiaolian5InsertRight14").remove();
+//
+//             $("#add-jiaolian6SelectLeft14").remove();
+//             $("#add-jiaolian6InsertLeft14").remove();
+//             $("#add-jiaolian6SelectRight14").remove();
+//             $("#add-jiaolian6InsertRight14").remove();
+//
+//             $("#l4sl").remove();
+//             $("#l4il").remove();
+//             $("#l4sr").remove();
+//             $("#l4ir").delete();
+//
+//             $("#l5sl").remove();
+//             $("#l5il").remove();
+//             $("#l5sr").remove();
+//             $("#l5ir").remove();
+//
+//             $("#l6sl").remove();
+//             $("#l6il").remove();
+//             $("#l6sr").remove();
+//             $("#l6ir").remove();
+//         }
+//         if (selectedValue14 == '开四孔') {
+//             $("#add-jiaolian5SelectLeft14").remove();
+//             $("#add-jiaolian5InsertLeft14").remove();
+//             $("#add-jiaolian5SelectRight14").remove();
+//             $("#add-jiaolian5InsertRight14").remove();
+//
+//             $("#add-jiaolian6SelectLeft14").remove();
+//             $("#add-jiaolian6InsertLeft14").remove();
+//             $("#add-jiaolian6SelectRight14").remove();
+//             $("#add-jiaolian6InsertRight14").remove();
+//
+//             $("#l5sl").remove();
+//             $("#l5il").remove();
+//             $("#l5sr").remove();
+//             $("#l5ir").remove();
+//
+//             $("#l6sl").remove();
+//             $("#l6il").remove();
+//             $("#l6sr").remove();
+//             $("#l6ir").remove();
+//         }
+//         if (selectedValue14 == '开五孔') {
+//             $("#add-jiaolian6SelectLeft14").remove();
+//             $("#add-jiaolian6InsertLeft14").remove();
+//             $("#add-jiaolian6SelectRight14").remove();
+//             $("#add-jiaolian6InsertRight14").remove();
+//
+//             $("#l6sl").remove();
+//             $("#l6il").remove();
+//             $("#l6sr").remove();
+//             $("#l6ir").remove();
+//         }
+//     })
+//
+//     $('#add-kaijiaolian15').on('change', function () {
+//         var selectedValue15 = $(this).val();
+//         if (selectedValue15 == '开二孔') {
+//             $("#add-jiaolian3SelectLeft15").remove();
+//             $("#add-jiaolian3InsertLeft15").remove();
+//             $("#add-jiaolian3SelectRight15").remove();
+//             $("#add-jiaolian3InsertRight15").remove();
+//
+//             $("#add-jiaolian4SelectLeft15").remove();
+//             $("#add-jiaolian4InsertLeft15").remove();
+//             $("#add-jiaolian4SelectRight15").remove();
+//             $("#add-jiaolian4InsertRight15").remove();
+//
+//             $("#add-jiaolian5SelectLeft15").remove();
+//             $("#add-jiaolian5InsertLeft15").remove();
+//             $("#add-jiaolian5SelectRight15").remove();
+//             $("#add-jiaolian5InsertRight15").remove();
+//
+//             $("#add-jiaolian6SelectLeft15").remove();
+//             $("#add-jiaolian6InsertLeft15").remove();
+//             $("#add-jiaolian6SelectRight15").remove();
+//             $("#add-jiaolian6InsertRight15").remove();
+//
+//             $("#l3sl").remove();
+//             $("#l3il").remove();
+//             $("#l3sr").remove();
+//             $("#l3ir").remove();
+//
+//             $("#l4sl").remove();
+//             $("#l4il").remove();
+//             $("#l4sr").remove();
+//             $("#l4ir").remove();
+//
+//             $("#l5sl").remove();
+//             $("#l5il").remove();
+//             $("#l5sr").remove();
+//             $("#l5ir").remove();
+//
+//             $("#l6sl").remove();
+//             $("#l6il").remove();
+//             $("#l6sr").remove();
+//             $("#l6ir").remove();
+//         }
+//         if (selectedValue15 == '开三孔') {
+//             $("#add-jiaolian4SelectLeft15").remove();
+//             $("#add-jiaolian4InsertLeft15").remove();
+//             $("#add-jiaolian4SelectRight15").remove();
+//             $("#add-jiaolian4InsertRight15").remove();
+//
+//             $("#add-jiaolian5SelectLeft15").remove();
+//             $("#add-jiaolian5InsertLeft15").remove();
+//             $("#add-jiaolian5SelectRight15").remove();
+//             $("#add-jiaolian5InsertRight15").remove();
+//
+//             $("#add-jiaolian6SelectLeft15").remove();
+//             $("#add-jiaolian6InsertLeft15").remove();
+//             $("#add-jiaolian6SelectRight15").remove();
+//             $("#add-jiaolian6InsertRight15").remove();
+//
+//             $("#l4sl").remove();
+//             $("#l4il").remove();
+//             $("#l4sr").remove();
+//             $("#l4ir").delete();
+//
+//             $("#l5sl").remove();
+//             $("#l5il").remove();
+//             $("#l5sr").remove();
+//             $("#l5ir").remove();
+//
+//             $("#l6sl").remove();
+//             $("#l6il").remove();
+//             $("#l6sr").remove();
+//             $("#l6ir").remove();
+//         }
+//         if (selectedValue15 == '开四孔') {
+//             $("#add-jiaolian5SelectLeft15").remove();
+//             $("#add-jiaolian5InsertLeft15").remove();
+//             $("#add-jiaolian5SelectRight15").remove();
+//             $("#add-jiaolian5InsertRight15").remove();
+//
+//             $("#add-jiaolian6SelectLeft15").remove();
+//             $("#add-jiaolian6InsertLeft15").remove();
+//             $("#add-jiaolian6SelectRight15").remove();
+//             $("#add-jiaolian6InsertRight15").remove();
+//
+//             $("#l5sl").remove();
+//             $("#l5il").remove();
+//             $("#l5sr").remove();
+//             $("#l5ir").remove();
+//
+//             $("#l6sl").remove();
+//             $("#l6il").remove();
+//             $("#l6sr").remove();
+//             $("#l6ir").remove();
+//         }
+//         if (selectedValue15 == '开五孔') {
+//             $("#add-jiaolian6SelectLeft15").remove();
+//             $("#add-jiaolian6InsertLeft15").remove();
+//             $("#add-jiaolian6SelectRight15").remove();
+//             $("#add-jiaolian6InsertRight15").remove();
+//
+//             $("#l6sl").remove();
+//             $("#l6il").remove();
+//             $("#l6sr").remove();
+//             $("#l6ir").remove();
+//         }
+//     })
+//
+//     $('#add-kaijiaolian16').on('change', function () {
+//         var selectedValue16 = $(this).val();
+//         if (selectedValue16 == '开二孔') {
+//             $("#add-jiaolian3SelectLeft16").remove();
+//             $("#add-jiaolian3InsertLeft16").remove();
+//             $("#add-jiaolian3SelectRight16").remove();
+//             $("#add-jiaolian3InsertRight16").remove();
+//
+//             $("#add-jiaolian4SelectLeft16").remove();
+//             $("#add-jiaolian4InsertLeft16").remove();
+//             $("#add-jiaolian4SelectRight16").remove();
+//             $("#add-jiaolian4InsertRight16").remove();
+//
+//             $("#add-jiaolian5SelectLeft16").remove();
+//             $("#add-jiaolian5InsertLeft16").remove();
+//             $("#add-jiaolian5SelectRight16").remove();
+//             $("#add-jiaolian5InsertRight16").remove();
+//
+//             $("#add-jiaolian6SelectLeft16").remove();
+//             $("#add-jiaolian6InsertLeft16").remove();
+//             $("#add-jiaolian6SelectRight16").remove();
+//             $("#add-jiaolian6InsertRight16").remove();
+//
+//             $("#l3sl").remove();
+//             $("#l3il").remove();
+//             $("#l3sr").remove();
+//             $("#l3ir").remove();
+//
+//             $("#l4sl").remove();
+//             $("#l4il").remove();
+//             $("#l4sr").remove();
+//             $("#l4ir").remove();
+//
+//             $("#l5sl").remove();
+//             $("#l5il").remove();
+//             $("#l5sr").remove();
+//             $("#l5ir").remove();
+//
+//             $("#l6sl").remove();
+//             $("#l6il").remove();
+//             $("#l6sr").remove();
+//             $("#l6ir").remove();
+//         }
+//         if (selectedValue16 == '开三孔') {
+//             $("#add-jiaolian4SelectLeft16").remove();
+//             $("#add-jiaolian4InsertLeft16").remove();
+//             $("#add-jiaolian4SelectRight16").remove();
+//             $("#add-jiaolian4InsertRight16").remove();
+//
+//             $("#add-jiaolian5SelectLeft16").remove();
+//             $("#add-jiaolian5InsertLeft16").remove();
+//             $("#add-jiaolian5SelectRight16").remove();
+//             $("#add-jiaolian5InsertRight16").remove();
+//
+//             $("#add-jiaolian6SelectLeft16").remove();
+//             $("#add-jiaolian6InsertLeft16").remove();
+//             $("#add-jiaolian6SelectRight16").remove();
+//             $("#add-jiaolian6InsertRight16").remove();
+//
+//             $("#l4sl").remove();
+//             $("#l4il").remove();
+//             $("#l4sr").remove();
+//             $("#l4ir").delete();
+//
+//             $("#l5sl").remove();
+//             $("#l5il").remove();
+//             $("#l5sr").remove();
+//             $("#l5ir").remove();
+//
+//             $("#l6sl").remove();
+//             $("#l6il").remove();
+//             $("#l6sr").remove();
+//             $("#l6ir").remove();
+//         }
+//         if (selectedValue16 == '开四孔') {
+//             $("#add-jiaolian5SelectLeft16").remove();
+//             $("#add-jiaolian5InsertLeft16").remove();
+//             $("#add-jiaolian5SelectRight16").remove();
+//             $("#add-jiaolian5InsertRight16").remove();
+//
+//             $("#add-jiaolian6SelectLeft16").remove();
+//             $("#add-jiaolian6InsertLeft16").remove();
+//             $("#add-jiaolian6SelectRight16").remove();
+//             $("#add-jiaolian6InsertRight16").remove();
+//
+//             $("#l5sl").remove();
+//             $("#l5il").remove();
+//             $("#l5sr").remove();
+//             $("#l5ir").remove();
+//
+//             $("#l6sl").remove();
+//             $("#l6il").remove();
+//             $("#l6sr").remove();
+//             $("#l6ir").remove();
+//         }
+//         if (selectedValue16 == '开五孔') {
+//             $("#add-jiaolian6SelectLeft16").remove();
+//             $("#add-jiaolian6InsertLeft16").remove();
+//             $("#add-jiaolian6SelectRight16").remove();
+//             $("#add-jiaolian6InsertRight16").remove();
+//
+//             $("#l6sl").remove();
+//             $("#l6il").remove();
+//             $("#l6sr").remove();
+//             $("#l6ir").remove();
+//         }
+//     })
+//
+//     $('#add-kaijiaolian17').on('change', function () {
+//         var selectedValue17 = $(this).val();
+//         if (selectedValue17 == '开二孔') {
+//             $("#add-jiaolian3SelectLeft17").remove();
+//             $("#add-jiaolian3InsertLeft17").remove();
+//             $("#add-jiaolian3SelectRight17").remove();
+//             $("#add-jiaolian3InsertRight17").remove();
+//
+//             $("#add-jiaolian4SelectLeft17").remove();
+//             $("#add-jiaolian4InsertLeft17").remove();
+//             $("#add-jiaolian4SelectRight17").remove();
+//             $("#add-jiaolian4InsertRight17").remove();
+//
+//             $("#add-jiaolian5SelectLeft17").remove();
+//             $("#add-jiaolian5InsertLeft17").remove();
+//             $("#add-jiaolian5SelectRight17").remove();
+//             $("#add-jiaolian5InsertRight17").remove();
+//
+//             $("#add-jiaolian6SelectLeft17").remove();
+//             $("#add-jiaolian6InsertLeft17").remove();
+//             $("#add-jiaolian6SelectRight17").remove();
+//             $("#add-jiaolian6InsertRight17").remove();
+//
+//             $("#l3sl").remove();
+//             $("#l3il").remove();
+//             $("#l3sr").remove();
+//             $("#l3ir").remove();
+//
+//             $("#l4sl").remove();
+//             $("#l4il").remove();
+//             $("#l4sr").remove();
+//             $("#l4ir").remove();
+//
+//             $("#l5sl").remove();
+//             $("#l5il").remove();
+//             $("#l5sr").remove();
+//             $("#l5ir").remove();
+//
+//             $("#l6sl").remove();
+//             $("#l6il").remove();
+//             $("#l6sr").remove();
+//             $("#l6ir").remove();
+//         }
+//         if (selectedValue17 == '开三孔') {
+//             $("#add-jiaolian4SelectLeft17").remove();
+//             $("#add-jiaolian4InsertLeft17").remove();
+//             $("#add-jiaolian4SelectRight17").remove();
+//             $("#add-jiaolian4InsertRight17").remove();
+//
+//             $("#add-jiaolian5SelectLeft17").remove();
+//             $("#add-jiaolian5InsertLeft17").remove();
+//             $("#add-jiaolian5SelectRight17").remove();
+//             $("#add-jiaolian5InsertRight17").remove();
+//
+//             $("#add-jiaolian6SelectLeft17").remove();
+//             $("#add-jiaolian6InsertLeft17").remove();
+//             $("#add-jiaolian6SelectRight17").remove();
+//             $("#add-jiaolian6InsertRight17").remove();
+//
+//             $("#l4sl").remove();
+//             $("#l4il").remove();
+//             $("#l4sr").remove();
+//             $("#l4ir").delete();
+//
+//             $("#l5sl").remove();
+//             $("#l5il").remove();
+//             $("#l5sr").remove();
+//             $("#l5ir").remove();
+//
+//             $("#l6sl").remove();
+//             $("#l6il").remove();
+//             $("#l6sr").remove();
+//             $("#l6ir").remove();
+//         }
+//         if (selectedValue17 == '开四孔') {
+//             $("#add-jiaolian5SelectLeft17").remove();
+//             $("#add-jiaolian5InsertLeft17").remove();
+//             $("#add-jiaolian5SelectRight17").remove();
+//             $("#add-jiaolian5InsertRight17").remove();
+//
+//             $("#add-jiaolian6SelectLeft17").remove();
+//             $("#add-jiaolian6InsertLeft17").remove();
+//             $("#add-jiaolian6SelectRight17").remove();
+//             $("#add-jiaolian6InsertRight17").remove();
+//
+//             $("#l5sl").remove();
+//             $("#l5il").remove();
+//             $("#l5sr").remove();
+//             $("#l5ir").remove();
+//
+//             $("#l6sl").remove();
+//             $("#l6il").remove();
+//             $("#l6sr").remove();
+//             $("#l6ir").remove();
+//         }
+//         if (selectedValue17 == '开五孔') {
+//             $("#add-jiaolian6SelectLeft17").remove();
+//             $("#add-jiaolian6InsertLeft17").remove();
+//             $("#add-jiaolian6SelectRight17").remove();
+//             $("#add-jiaolian6InsertRight17").remove();
+//
+//             $("#l6sl").remove();
+//             $("#l6il").remove();
+//             $("#l6sr").remove();
+//             $("#l6ir").remove();
+//         }
+//     })
+//
+//     $('#add-kaijiaolian18').on('change', function () {
+//         var selectedValue18 = $(this).val();
+//         if (selectedValue18 == '开二孔') {
+//             $("#add-jiaolian3SelectLeft18").remove();
+//             $("#add-jiaolian3InsertLeft18").remove();
+//             $("#add-jiaolian3SelectRight18").remove();
+//             $("#add-jiaolian3InsertRight18").remove();
+//
+//             $("#add-jiaolian4SelectLeft18").remove();
+//             $("#add-jiaolian4InsertLeft18").remove();
+//             $("#add-jiaolian4SelectRight18").remove();
+//             $("#add-jiaolian4InsertRight18").remove();
+//
+//             $("#add-jiaolian5SelectLeft18").remove();
+//             $("#add-jiaolian5InsertLeft18").remove();
+//             $("#add-jiaolian5SelectRight18").remove();
+//             $("#add-jiaolian5InsertRight18").remove();
+//
+//             $("#add-jiaolian6SelectLeft18").remove();
+//             $("#add-jiaolian6InsertLeft18").remove();
+//             $("#add-jiaolian6SelectRight18").remove();
+//             $("#add-jiaolian6InsertRight18").remove();
+//
+//             $("#l3sl").remove();
+//             $("#l3il").remove();
+//             $("#l3sr").remove();
+//             $("#l3ir").remove();
+//
+//             $("#l4sl").remove();
+//             $("#l4il").remove();
+//             $("#l4sr").remove();
+//             $("#l4ir").remove();
+//
+//             $("#l5sl").remove();
+//             $("#l5il").remove();
+//             $("#l5sr").remove();
+//             $("#l5ir").remove();
+//
+//             $("#l6sl").remove();
+//             $("#l6il").remove();
+//             $("#l6sr").remove();
+//             $("#l6ir").remove();
+//         }
+//         if (selectedValue18 == '开三孔') {
+//             $("#add-jiaolian4SelectLeft18").remove();
+//             $("#add-jiaolian4InsertLeft18").remove();
+//             $("#add-jiaolian4SelectRight18").remove();
+//             $("#add-jiaolian4InsertRight18").remove();
+//
+//             $("#add-jiaolian5SelectLeft18").remove();
+//             $("#add-jiaolian5InsertLeft18").remove();
+//             $("#add-jiaolian5SelectRight18").remove();
+//             $("#add-jiaolian5InsertRight18").remove();
+//
+//             $("#add-jiaolian6SelectLeft18").remove();
+//             $("#add-jiaolian6InsertLeft18").remove();
+//             $("#add-jiaolian6SelectRight18").remove();
+//             $("#add-jiaolian6InsertRight18").remove();
+//
+//             $("#l4sl").remove();
+//             $("#l4il").remove();
+//             $("#l4sr").remove();
+//             $("#l4ir").delete();
+//
+//             $("#l5sl").remove();
+//             $("#l5il").remove();
+//             $("#l5sr").remove();
+//             $("#l5ir").remove();
+//
+//             $("#l6sl").remove();
+//             $("#l6il").remove();
+//             $("#l6sr").remove();
+//             $("#l6ir").remove();
+//         }
+//         if (selectedValue18 == '开四孔') {
+//             $("#add-jiaolian5SelectLeft18").remove();
+//             $("#add-jiaolian5InsertLeft18").remove();
+//             $("#add-jiaolian5SelectRight18").remove();
+//             $("#add-jiaolian5InsertRight18").remove();
+//
+//             $("#add-jiaolian6SelectLeft18").remove();
+//             $("#add-jiaolian6InsertLeft18").remove();
+//             $("#add-jiaolian6SelectRight18").remove();
+//             $("#add-jiaolian6InsertRight18").remove();
+//
+//             $("#l5sl").remove();
+//             $("#l5il").remove();
+//             $("#l5sr").remove();
+//             $("#l5ir").remove();
+//
+//             $("#l6sl").remove();
+//             $("#l6il").remove();
+//             $("#l6sr").remove();
+//             $("#l6ir").remove();
+//         }
+//         if (selectedValue18 == '开五孔') {
+//             $("#add-jiaolian6SelectLeft18").remove();
+//             $("#add-jiaolian6InsertLeft18").remove();
+//             $("#add-jiaolian6SelectRight18").remove();
+//             $("#add-jiaolian6InsertRight18").remove();
+//
+//             $("#l6sl").remove();
+//             $("#l6il").remove();
+//             $("#l6sr").remove();
+//             $("#l6ir").remove();
+//         }
+//     })
+//
+//     $('#add-kaijiaolian19').on('change', function () {
+//         var selectedValue19 = $(this).val();
+//         if (selectedValue19 == '开二孔') {
+//             $("#add-jiaolian3SelectLeft19").remove();
+//             $("#add-jiaolian3InsertLeft19").remove();
+//             $("#add-jiaolian3SelectRight19").remove();
+//             $("#add-jiaolian3InsertRight19").remove();
+//
+//             $("#add-jiaolian4SelectLeft19").remove();
+//             $("#add-jiaolian4InsertLeft19").remove();
+//             $("#add-jiaolian4SelectRight19").remove();
+//             $("#add-jiaolian4InsertRight19").remove();
+//
+//             $("#add-jiaolian5SelectLeft19").remove();
+//             $("#add-jiaolian5InsertLeft19").remove();
+//             $("#add-jiaolian5SelectRight19").remove();
+//             $("#add-jiaolian5InsertRight19").remove();
+//
+//             $("#add-jiaolian6SelectLeft19").remove();
+//             $("#add-jiaolian6InsertLeft19").remove();
+//             $("#add-jiaolian6SelectRight19").remove();
+//             $("#add-jiaolian6InsertRight19").remove();
+//
+//             $("#l3sl").remove();
+//             $("#l3il").remove();
+//             $("#l3sr").remove();
+//             $("#l3ir").remove();
+//
+//             $("#l4sl").remove();
+//             $("#l4il").remove();
+//             $("#l4sr").remove();
+//             $("#l4ir").remove();
+//
+//             $("#l5sl").remove();
+//             $("#l5il").remove();
+//             $("#l5sr").remove();
+//             $("#l5ir").remove();
+//
+//             $("#l6sl").remove();
+//             $("#l6il").remove();
+//             $("#l6sr").remove();
+//             $("#l6ir").remove();
+//         }
+//         if (selectedValue19 == '开三孔') {
+//             $("#add-jiaolian4SelectLeft19").remove();
+//             $("#add-jiaolian4InsertLeft19").remove();
+//             $("#add-jiaolian4SelectRight19").remove();
+//             $("#add-jiaolian4InsertRight19").remove();
+//
+//             $("#add-jiaolian5SelectLeft19").remove();
+//             $("#add-jiaolian5InsertLeft19").remove();
+//             $("#add-jiaolian5SelectRight19").remove();
+//             $("#add-jiaolian5InsertRight19").remove();
+//
+//             $("#add-jiaolian6SelectLeft19").remove();
+//             $("#add-jiaolian6InsertLeft19").remove();
+//             $("#add-jiaolian6SelectRight19").remove();
+//             $("#add-jiaolian6InsertRight19").remove();
+//
+//             $("#l4sl").remove();
+//             $("#l4il").remove();
+//             $("#l4sr").remove();
+//             $("#l4ir").delete();
+//
+//             $("#l5sl").remove();
+//             $("#l5il").remove();
+//             $("#l5sr").remove();
+//             $("#l5ir").remove();
+//
+//             $("#l6sl").remove();
+//             $("#l6il").remove();
+//             $("#l6sr").remove();
+//             $("#l6ir").remove();
+//         }
+//         if (selectedValue19 == '开四孔') {
+//             $("#add-jiaolian5SelectLeft19").remove();
+//             $("#add-jiaolian5InsertLeft19").remove();
+//             $("#add-jiaolian5SelectRight19").remove();
+//             $("#add-jiaolian5InsertRight19").remove();
+//
+//             $("#add-jiaolian6SelectLeft19").remove();
+//             $("#add-jiaolian6InsertLeft19").remove();
+//             $("#add-jiaolian6SelectRight19").remove();
+//             $("#add-jiaolian6InsertRight19").remove();
+//
+//             $("#l5sl").remove();
+//             $("#l5il").remove();
+//             $("#l5sr").remove();
+//             $("#l5ir").remove();
+//
+//             $("#l6sl").remove();
+//             $("#l6il").remove();
+//             $("#l6sr").remove();
+//             $("#l6ir").remove();
+//         }
+//         if (selectedValue19 == '开五孔') {
+//             $("#add-jiaolian6SelectLeft19").remove();
+//             $("#add-jiaolian6InsertLeft19").remove();
+//             $("#add-jiaolian6SelectRight19").remove();
+//             $("#add-jiaolian6InsertRight19").remove();
+//
+//             $("#l6sl").remove();
+//             $("#l6il").remove();
+//             $("#l6sr").remove();
+//             $("#l6ir").remove();
+//         }
+//     })
+//
+// })
+//
+// $(document).ready(function () {
+//     $('#update-kaijiaolian').on('change', function () {
+//         // var kjlk = document.getElementById('add-kaijiaolian').value;
+//         var selectedValue = $(this).val();
+//         if (selectedValue == '开二孔') {
+//             $("#update-jiaolian3SelectLeft").remove();
+//             $("#update-jiaolian3InsertLeft").remove();
+//             $("#update-jiaolian3SelectRight").remove();
+//             $("#update-jiaolian3InsertRight").remove();
+//
+//             $("#update-jiaolian4SelectLeft").remove();
+//             $("#update-jiaolian4InsertLeft").remove();
+//             $("#update-jiaolian4SelectRight").remove();
+//             $("#update-jiaolian4InsertRight").remove();
+//
+//             $("#update-jiaolian5SelectLeft").remove();
+//             $("#update-jiaolian5InsertLeft").remove();
+//             $("#update-jiaolian5SelectRight").remove();
+//             $("#update-jiaolian5InsertRight").remove();
+//
+//             $("#update-jiaolian6SelectLeft").remove();
+//             $("#update-jiaolian6InsertLeft").remove();
+//             $("#update-jiaolian6SelectRight").remove();
+//             $("#update-jiaolian6InsertRight").remove();
+//
+//             $("#l3sl").remove();
+//             $("#l3il").remove();
+//             $("#l3sr").remove();
+//             $("#l3ir").remove();
+//
+//             $("#l4sl").remove();
+//             $("#l4il").remove();
+//             $("#l4sr").remove();
+//             $("#l4ir").remove();
+//
+//             $("#l5sl").remove();
+//             $("#l5il").remove();
+//             $("#l5sr").remove();
+//             $("#l5ir").remove();
+//
+//             $("#l6sl").remove();
+//             $("#l6il").remove();
+//             $("#l6sr").remove();
+//             $("#l6ir").remove();
+//         }
+//         if (selectedValue == '开三孔') {
+//             $("#update-jiaolian4SelectLeft").remove();
+//             $("#update-jiaolian4InsertLeft").remove();
+//             $("#update-jiaolian4SelectRight").remove();
+//             $("#update-jiaolian4InsertRight").remove();
+//
+//             $("#update-jiaolian5SelectLeft").remove();
+//             $("#update-jiaolian5InsertLeft").remove();
+//             $("#update-jiaolian5SelectRight").remove();
+//             $("#update-jiaolian5InsertRight").remove();
+//
+//             $("#update-jiaolian6SelectLeft").remove();
+//             $("#update-jiaolian6InsertLeft").remove();
+//             $("#update-jiaolian6SelectRight").remove();
+//             $("#update-jiaolian6InsertRight").remove();
+//
+//             $("#ul4sl").remove();
+//             $("#ul4il").remove();
+//             $("#ul4sr").remove();
+//             $("#ul4ir").delete();
+//
+//             $("#ul5sl").remove();
+//             $("#ul5il").remove();
+//             $("#ul5sr").remove();
+//             $("#ul5ir").remove();
+//
+//             $("#ul6sl").remove();
+//             $("#ul6il").remove();
+//             $("#ul6sr").remove();
+//             $("#ul6ir").remove();
+//         }
+//         if (selectedValue == '开四孔') {
+//             $("#update-jiaolian5SelectLeft").remove();
+//             $("#update-jiaolian5InsertLeft").remove();
+//             $("#update-jiaolian5SelectRight").remove();
+//             $("#update-jiaolian5InsertRight").remove();
+//
+//             $("#update-jiaolian6SelectLeft").remove();
+//             $("#update-jiaolian6InsertLeft").remove();
+//             $("#update-jiaolian6SelectRight").remove();
+//             $("#update-jiaolian6InsertRight").remove();
+//
+//             $("#ul5sl").remove();
+//             $("#ul5il").remove();
+//             $("#ul5sr").remove();
+//             $("#ul5ir").remove();
+//
+//             $("#ul6sl").remove();
+//             $("#ul6il").remove();
+//             $("#ul6sr").remove();
+//             $("#ul6ir").remove();
+//         }
+//         if (selectedValue == '开五孔') {
+//             $("#update-jiaolian6SelectLeft").remove();
+//             $("#update-jiaolian6InsertLeft").remove();
+//             $("#update-jiaolian6SelectRight").remove();
+//             $("#update-jiaolian6InsertRight").remove();
+//
+//             $("#ul6sl").remove();
+//             $("#ul6il").remove();
+//             $("#ul6sr").remove();
+//             $("#ul6ir").remove();
+
+
         if (selectedValue == '开二孔') {
-            $("#add-jiaolian3SelectLeft").remove();
-            $("#add-jiaolian3InsertLeft").remove();
-            $("#add-jiaolian3SelectRight").remove();
-            $("#add-jiaolian3InsertRight").remove();
+            $("#add-jiaolian3SelectLeft").hide();
+            $("#add-jiaolian3InsertLeft").hide();
+            $("#add-jiaolian3SelectRight").hide();
+            $("#add-jiaolian3InsertRight").hide();
 
-            $("#add-jiaolian4SelectLeft").remove();
-            $("#add-jiaolian4InsertLeft").remove();
-            $("#add-jiaolian4SelectRight").remove();
-            $("#add-jiaolian4InsertRight").remove();
+            $("#add-jiaolian4SelectLeft").hide();
+            $("#add-jiaolian4InsertLeft").hide();
+            $("#add-jiaolian4SelectRight").hide();
+            $("#add-jiaolian4InsertRight").hide();
 
-            $("#add-jiaolian5SelectLeft").remove();
-            $("#add-jiaolian5InsertLeft").remove();
-            $("#add-jiaolian5SelectRight").remove();
-            $("#add-jiaolian5InsertRight").remove();
+            $("#add-jiaolian5SelectLeft").hide();
+            $("#add-jiaolian5InsertLeft").hide();
+            $("#add-jiaolian5SelectRight").hide();
+            $("#add-jiaolian5InsertRight").hide();
 
-            $("#add-jiaolian6SelectLeft").remove();
-            $("#add-jiaolian6InsertLeft").remove();
-            $("#add-jiaolian6SelectRight").remove();
-            $("#add-jiaolian6InsertRight").remove();
+            $("#add-jiaolian6SelectLeft").hide();
+            $("#add-jiaolian6InsertLeft").hide();
+            $("#add-jiaolian6SelectRight").hide();
+            $("#add-jiaolian6InsertRight").hide();
 
-            $("#l3sl").remove();
-            $("#l3il").remove();
-            $("#l3sr").remove();
-            $("#l3ir").remove();
+            $("#l3sl").hide();
+            $("#l3il").hide();
+            $("#l3sr").hide();
+            $("#l3ir").hide();
 
-            $("#l4sl").remove();
-            $("#l4il").remove();
-            $("#l4sr").remove();
-            $("#l4ir").remove();
+            $("#l4sl").hide();
+            $("#l4il").hide();
+            $("#l4sr").hide();
+            $("#l4ir").hide();
 
-            $("#l5sl").remove();
-            $("#l5il").remove();
-            $("#l5sr").remove();
-            $("#l5ir").remove();
+            $("#l5sl").hide();
+            $("#l5il").hide();
+            $("#l5sr").hide();
+            $("#l5ir").hide();
 
-            $("#l6sl").remove();
-            $("#l6il").remove();
-            $("#l6sr").remove();
-            $("#l6ir").remove();
+            $("#l6sl").hide();
+            $("#l6il").hide();
+            $("#l6sr").hide();
+            $("#l6ir").hide();
         }
         if (selectedValue == '开三孔') {
-            $("#add-jiaolian4SelectLeft").remove();
-            $("#add-jiaolian4InsertLeft").remove();
-            $("#add-jiaolian4SelectRight").remove();
-            $("#add-jiaolian4InsertRight").remove();
+            $("#add-jiaolian4SelectLeft").hide();
+            $("#add-jiaolian4InsertLeft").hide();
+            $("#add-jiaolian4SelectRight").hide();
+            $("#add-jiaolian4InsertRight").hide();
 
-            $("#add-jiaolian5SelectLeft").remove();
-            $("#add-jiaolian5InsertLeft").remove();
-            $("#add-jiaolian5SelectRight").remove();
-            $("#add-jiaolian5InsertRight").remove();
+            $("#add-jiaolian5SelectLeft").hide();
+            $("#add-jiaolian5InsertLeft").hide();
+            $("#add-jiaolian5SelectRight").hide();
+            $("#add-jiaolian5InsertRight").hide();
 
-            $("#add-jiaolian6SelectLeft").remove();
-            $("#add-jiaolian6InsertLeft").remove();
-            $("#add-jiaolian6SelectRight").remove();
-            $("#add-jiaolian6InsertRight").remove();
+            $("#add-jiaolian6SelectLeft").hide();
+            $("#add-jiaolian6InsertLeft").hide();
+            $("#add-jiaolian6SelectRight").hide();
+            $("#add-jiaolian6InsertRight").hide();
 
-            $("#l4sl").remove();
-            $("#l4il").remove();
-            $("#l4sr").remove();
+            $("#l4sl").hide();
+            $("#l4il").hide();
+            $("#l4sr").hide();
             $("#l4ir").delete();
 
-            $("#l5sl").remove();
-            $("#l5il").remove();
-            $("#l5sr").remove();
-            $("#l5ir").remove();
+            $("#l5sl").hide();
+            $("#l5il").hide();
+            $("#l5sr").hide();
+            $("#l5ir").hide();
 
-            $("#l6sl").remove();
-            $("#l6il").remove();
-            $("#l6sr").remove();
-            $("#l6ir").remove();
+            $("#l6sl").hide();
+            $("#l6il").hide();
+            $("#l6sr").hide();
+            $("#l6ir").hide();
         }
         if (selectedValue == '开四孔') {
-            $("#add-jiaolian5SelectLeft").remove();
-            $("#add-jiaolian5InsertLeft").remove();
-            $("#add-jiaolian5SelectRight").remove();
-            $("#add-jiaolian5InsertRight").remove();
+            $("#add-jiaolian5SelectLeft").hide();
+            $("#add-jiaolian5InsertLeft").hide();
+            $("#add-jiaolian5SelectRight").hide();
+            $("#add-jiaolian5InsertRight").hide();
 
-            $("#add-jiaolian6SelectLeft").remove();
-            $("#add-jiaolian6InsertLeft").remove();
-            $("#add-jiaolian6SelectRight").remove();
-            $("#add-jiaolian6InsertRight").remove();
+            $("#add-jiaolian6SelectLeft").hide();
+            $("#add-jiaolian6InsertLeft").hide();
+            $("#add-jiaolian6SelectRight").hide();
+            $("#add-jiaolian6InsertRight").hide();
 
-            $("#l5sl").remove();
-            $("#l5il").remove();
-            $("#l5sr").remove();
-            $("#l5ir").remove();
+            $("#l5sl").hide();
+            $("#l5il").hide();
+            $("#l5sr").hide();
+            $("#l5ir").hide();
 
-            $("#l6sl").remove();
-            $("#l6il").remove();
-            $("#l6sr").remove();
-            $("#l6ir").remove();
+            $("#l6sl").hide();
+            $("#l6il").hide();
+            $("#l6sr").hide();
+            $("#l6ir").hide();
         }
         if (selectedValue == '开五孔') {
-            $("#add-jiaolian6SelectLeft").remove();
-            $("#add-jiaolian6InsertLeft").remove();
-            $("#add-jiaolian6SelectRight").remove();
-            $("#add-jiaolian6InsertRight").remove();
+            $("#add-jiaolian6SelectLeft").hide();
+            $("#add-jiaolian6InsertLeft").hide();
+            $("#add-jiaolian6SelectRight").hide();
+            $("#add-jiaolian6InsertRight").hide();
 
-            $("#l6sl").remove();
-            $("#l6il").remove();
-            $("#l6sr").remove();
-            $("#l6ir").remove();
+            $("#l6sl").hide();
+            $("#l6il").hide();
+            $("#l6sr").hide();
+            $("#l6ir").hide();
         }
     })
 
     $('#add-kaijiaolian1').on('change', function () {
         var selectedValue1 = $(this).val();
         if (selectedValue1 == '开二孔') {
-            $("#add-jiaolian3SelectLeft1").remove();
-            $("#add-jiaolian3InsertLeft1").remove();
-            $("#add-jiaolian3SelectRight1").remove();
-            $("#add-jiaolian3InsertRight1").remove();
+            $("#add-jiaolian3SelectLeft1").hide();
+            $("#add-jiaolian3InsertLeft1").hide();
+            $("#add-jiaolian3SelectRight1").hide();
+            $("#add-jiaolian3InsertRight1").hide();
 
-            $("#add-jiaolian4SelectLeft1").remove();
-            $("#add-jiaolian4InsertLeft1").remove();
-            $("#add-jiaolian4SelectRight1").remove();
-            $("#add-jiaolian4InsertRight1").remove();
+            $("#add-jiaolian4SelectLeft1").hide();
+            $("#add-jiaolian4InsertLeft1").hide();
+            $("#add-jiaolian4SelectRight1").hide();
+            $("#add-jiaolian4InsertRight1").hide();
 
-            $("#add-jiaolian5SelectLeft1").remove();
-            $("#add-jiaolian5InsertLeft1").remove();
-            $("#add-jiaolian5SelectRight1").remove();
-            $("#add-jiaolian5InsertRight1").remove();
+            $("#add-jiaolian5SelectLeft1").hide();
+            $("#add-jiaolian5InsertLeft1").hide();
+            $("#add-jiaolian5SelectRight1").hide();
+            $("#add-jiaolian5InsertRight1").hide();
 
-            $("#add-jiaolian6SelectLeft1").remove();
-            $("#add-jiaolian6InsertLeft1").remove();
-            $("#add-jiaolian6SelectRight1").remove();
-            $("#add-jiaolian6InsertRight1").remove();
+            $("#add-jiaolian6SelectLeft1").hide();
+            $("#add-jiaolian6InsertLeft1").hide();
+            $("#add-jiaolian6SelectRight1").hide();
+            $("#add-jiaolian6InsertRight1").hide();
 
-            $("#l3sl").remove();
-            $("#l3il").remove();
-            $("#l3sr").remove();
-            $("#l3ir").remove();
+            $("#l3sl").hide();
+            $("#l3il").hide();
+            $("#l3sr").hide();
+            $("#l3ir").hide();
 
-            $("#l4sl").remove();
-            $("#l4il").remove();
-            $("#l4sr").remove();
-            $("#l4ir").remove();
+            $("#l4sl").hide();
+            $("#l4il").hide();
+            $("#l4sr").hide();
+            $("#l4ir").hide();
 
-            $("#l5sl").remove();
-            $("#l5il").remove();
-            $("#l5sr").remove();
-            $("#l5ir").remove();
+            $("#l5sl").hide();
+            $("#l5il").hide();
+            $("#l5sr").hide();
+            $("#l5ir").hide();
 
-            $("#l6sl").remove();
-            $("#l6il").remove();
-            $("#l6sr").remove();
-            $("#l6ir").remove();
+            $("#l6sl").hide();
+            $("#l6il").hide();
+            $("#l6sr").hide();
+            $("#l6ir").hide();
         }
         if (selectedValue1 == '开三孔') {
-            $("#add-jiaolian4SelectLeft1").remove();
-            $("#add-jiaolian4InsertLeft1").remove();
-            $("#add-jiaolian4SelectRight1").remove();
-            $("#add-jiaolian4InsertRight1").remove();
+            $("#add-jiaolian4SelectLeft1").hide();
+            $("#add-jiaolian4InsertLeft1").hide();
+            $("#add-jiaolian4SelectRight1").hide();
+            $("#add-jiaolian4InsertRight1").hide();
 
-            $("#add-jiaolian5SelectLeft1").remove();
-            $("#add-jiaolian5InsertLeft1").remove();
-            $("#add-jiaolian5SelectRight1").remove();
-            $("#add-jiaolian5InsertRight1").remove();
+            $("#add-jiaolian5SelectLeft1").hide();
+            $("#add-jiaolian5InsertLeft1").hide();
+            $("#add-jiaolian5SelectRight1").hide();
+            $("#add-jiaolian5InsertRight1").hide();
 
-            $("#add-jiaolian6SelectLeft1").remove();
-            $("#add-jiaolian6InsertLeft1").remove();
-            $("#add-jiaolian6SelectRight1").remove();
-            $("#add-jiaolian6InsertRight1").remove();
+            $("#add-jiaolian6SelectLeft1").hide();
+            $("#add-jiaolian6InsertLeft1").hide();
+            $("#add-jiaolian6SelectRight1").hide();
+            $("#add-jiaolian6InsertRight1").hide();
 
-            $("#l4sl").remove();
-            $("#l4il").remove();
-            $("#l4sr").remove();
+            $("#l4sl").hide();
+            $("#l4il").hide();
+            $("#l4sr").hide();
             $("#l4ir").delete();
 
-            $("#l5sl").remove();
-            $("#l5il").remove();
-            $("#l5sr").remove();
-            $("#l5ir").remove();
+            $("#l5sl").hide();
+            $("#l5il").hide();
+            $("#l5sr").hide();
+            $("#l5ir").hide();
 
-            $("#l6sl").remove();
-            $("#l6il").remove();
-            $("#l6sr").remove();
-            $("#l6ir").remove();
+            $("#l6sl").hide();
+            $("#l6il").hide();
+            $("#l6sr").hide();
+            $("#l6ir").hide();
         }
         if (selectedValue1 == '开四孔') {
-            $("#add-jiaolian5SelectLeft1").remove();
-            $("#add-jiaolian5InsertLeft1").remove();
-            $("#add-jiaolian5SelectRight1").remove();
-            $("#add-jiaolian5InsertRight1").remove();
+            $("#add-jiaolian5SelectLeft1").hide();
+            $("#add-jiaolian5InsertLeft1").hide();
+            $("#add-jiaolian5SelectRight1").hide();
+            $("#add-jiaolian5InsertRight1").hide();
 
-            $("#add-jiaolian6SelectLeft1").remove();
-            $("#add-jiaolian6InsertLeft1").remove();
-            $("#add-jiaolian6SelectRight1").remove();
-            $("#add-jiaolian6InsertRight1").remove();
+            $("#add-jiaolian6SelectLeft1").hide();
+            $("#add-jiaolian6InsertLeft1").hide();
+            $("#add-jiaolian6SelectRight1").hide();
+            $("#add-jiaolian6InsertRight1").hide();
 
-            $("#l5sl").remove();
-            $("#l5il").remove();
-            $("#l5sr").remove();
-            $("#l5ir").remove();
+            $("#l5sl").hide();
+            $("#l5il").hide();
+            $("#l5sr").hide();
+            $("#l5ir").hide();
 
-            $("#l6sl").remove();
-            $("#l6il").remove();
-            $("#l6sr").remove();
-            $("#l6ir").remove();
+            $("#l6sl").hide();
+            $("#l6il").hide();
+            $("#l6sr").hide();
+            $("#l6ir").hide();
         }
         if (selectedValue1 == '开五孔') {
-            $("#add-jiaolian6SelectLeft1").remove();
-            $("#add-jiaolian6InsertLeft1").remove();
-            $("#add-jiaolian6SelectRight1").remove();
-            $("#add-jiaolian6InsertRight1").remove();
+            $("#add-jiaolian6SelectLeft1").hide();
+            $("#add-jiaolian6InsertLeft1").hide();
+            $("#add-jiaolian6SelectRight1").hide();
+            $("#add-jiaolian6InsertRight1").hide();
 
-            $("#l6sl").remove();
-            $("#l6il").remove();
-            $("#l6sr").remove();
-            $("#l6ir").remove();
+            $("#l6sl").hide();
+            $("#l6il").hide();
+            $("#l6sr").hide();
+            $("#l6ir").hide();
         }
     })
 
     $('#add-kaijiaolian2').on('change', function () {
         var selectedValue2 = $(this).val();
         if (selectedValue2 == '开二孔') {
-            $("#add-jiaolian3SelectLeft2").remove();
-            $("#add-jiaolian3InsertLeft2").remove();
-            $("#add-jiaolian3SelectRight2").remove();
-            $("#add-jiaolian3InsertRight2").remove();
+            $("#add-jiaolian3SelectLeft2").hide();
+            $("#add-jiaolian3InsertLeft2").hide();
+            $("#add-jiaolian3SelectRight2").hide();
+            $("#add-jiaolian3InsertRight2").hide();
 
-            $("#add-jiaolian4SelectLeft2").remove();
-            $("#add-jiaolian4InsertLeft2").remove();
-            $("#add-jiaolian4SelectRight2").remove();
-            $("#add-jiaolian4InsertRight2").remove();
+            $("#add-jiaolian4SelectLeft2").hide();
+            $("#add-jiaolian4InsertLeft2").hide();
+            $("#add-jiaolian4SelectRight2").hide();
+            $("#add-jiaolian4InsertRight2").hide();
 
-            $("#add-jiaolian5SelectLeft2").remove();
-            $("#add-jiaolian5InsertLeft2").remove();
-            $("#add-jiaolian5SelectRight2").remove();
-            $("#add-jiaolian5InsertRight2").remove();
+            $("#add-jiaolian5SelectLeft2").hide();
+            $("#add-jiaolian5InsertLeft2").hide();
+            $("#add-jiaolian5SelectRight2").hide();
+            $("#add-jiaolian5InsertRight2").hide();
 
-            $("#add-jiaolian6SelectLeft2").remove();
-            $("#add-jiaolian6InsertLeft2").remove();
-            $("#add-jiaolian6SelectRight2").remove();
-            $("#add-jiaolian6InsertRight2").remove();
+            $("#add-jiaolian6SelectLeft2").hide();
+            $("#add-jiaolian6InsertLeft2").hide();
+            $("#add-jiaolian6SelectRight2").hide();
+            $("#add-jiaolian6InsertRight2").hide();
 
-            $("#l3sl").remove();
-            $("#l3il").remove();
-            $("#l3sr").remove();
-            $("#l3ir").remove();
+            $("#l3sl").hide();
+            $("#l3il").hide();
+            $("#l3sr").hide();
+            $("#l3ir").hide();
 
-            $("#l4sl").remove();
-            $("#l4il").remove();
-            $("#l4sr").remove();
-            $("#l4ir").remove();
+            $("#l4sl").hide();
+            $("#l4il").hide();
+            $("#l4sr").hide();
+            $("#l4ir").hide();
 
-            $("#l5sl").remove();
-            $("#l5il").remove();
-            $("#l5sr").remove();
-            $("#l5ir").remove();
+            $("#l5sl").hide();
+            $("#l5il").hide();
+            $("#l5sr").hide();
+            $("#l5ir").hide();
 
-            $("#l6sl").remove();
-            $("#l6il").remove();
-            $("#l6sr").remove();
-            $("#l6ir").remove();
+            $("#l6sl").hide();
+            $("#l6il").hide();
+            $("#l6sr").hide();
+            $("#l6ir").hide();
         }
         if (selectedValue2 == '开三孔') {
-            $("#add-jiaolian4SelectLeft2").remove();
-            $("#add-jiaolian4InsertLeft2").remove();
-            $("#add-jiaolian4SelectRight2").remove();
-            $("#add-jiaolian4InsertRight2").remove();
+            $("#add-jiaolian4SelectLeft2").hide();
+            $("#add-jiaolian4InsertLeft2").hide();
+            $("#add-jiaolian4SelectRight2").hide();
+            $("#add-jiaolian4InsertRight2").hide();
 
-            $("#add-jiaolian5SelectLeft2").remove();
-            $("#add-jiaolian5InsertLeft2").remove();
-            $("#add-jiaolian5SelectRight2").remove();
-            $("#add-jiaolian5InsertRight2").remove();
+            $("#add-jiaolian5SelectLeft2").hide();
+            $("#add-jiaolian5InsertLeft2").hide();
+            $("#add-jiaolian5SelectRight2").hide();
+            $("#add-jiaolian5InsertRight2").hide();
 
-            $("#add-jiaolian6SelectLeft2").remove();
-            $("#add-jiaolian6InsertLeft2").remove();
-            $("#add-jiaolian6SelectRight2").remove();
-            $("#add-jiaolian6InsertRight2").remove();
+            $("#add-jiaolian6SelectLeft2").hide();
+            $("#add-jiaolian6InsertLeft2").hide();
+            $("#add-jiaolian6SelectRight2").hide();
+            $("#add-jiaolian6InsertRight2").hide();
 
-            $("#l4sl").remove();
-            $("#l4il").remove();
-            $("#l4sr").remove();
+            $("#l4sl").hide();
+            $("#l4il").hide();
+            $("#l4sr").hide();
             $("#l4ir").delete();
 
-            $("#l5sl").remove();
-            $("#l5il").remove();
-            $("#l5sr").remove();
-            $("#l5ir").remove();
+            $("#l5sl").hide();
+            $("#l5il").hide();
+            $("#l5sr").hide();
+            $("#l5ir").hide();
 
-            $("#l6sl").remove();
-            $("#l6il").remove();
-            $("#l6sr").remove();
-            $("#l6ir").remove();
+            $("#l6sl").hide();
+            $("#l6il").hide();
+            $("#l6sr").hide();
+            $("#l6ir").hide();
         }
         if (selectedValue2 == '开四孔') {
-            $("#add-jiaolian5SelectLeft2").remove();
-            $("#add-jiaolian5InsertLeft2").remove();
-            $("#add-jiaolian5SelectRight2").remove();
-            $("#add-jiaolian5InsertRight2").remove();
+            $("#add-jiaolian5SelectLeft2").hide();
+            $("#add-jiaolian5InsertLeft2").hide();
+            $("#add-jiaolian5SelectRight2").hide();
+            $("#add-jiaolian5InsertRight2").hide();
 
-            $("#add-jiaolian6SelectLeft2").remove();
-            $("#add-jiaolian6InsertLeft2").remove();
-            $("#add-jiaolian6SelectRight2").remove();
-            $("#add-jiaolian6InsertRight2").remove();
+            $("#add-jiaolian6SelectLeft2").hide();
+            $("#add-jiaolian6InsertLeft2").hide();
+            $("#add-jiaolian6SelectRight2").hide();
+            $("#add-jiaolian6InsertRight2").hide();
 
-            $("#l5sl").remove();
-            $("#l5il").remove();
-            $("#l5sr").remove();
-            $("#l5ir").remove();
+            $("#l5sl").hide();
+            $("#l5il").hide();
+            $("#l5sr").hide();
+            $("#l5ir").hide();
 
-            $("#l6sl").remove();
-            $("#l6il").remove();
-            $("#l6sr").remove();
-            $("#l6ir").remove();
+            $("#l6sl").hide();
+            $("#l6il").hide();
+            $("#l6sr").hide();
+            $("#l6ir").hide();
         }
         if (selectedValue2 == '开五孔') {
-            $("#add-jiaolian6SelectLeft2").remove();
-            $("#add-jiaolian6InsertLeft2").remove();
-            $("#add-jiaolian6SelectRight2").remove();
-            $("#add-jiaolian6InsertRight2").remove();
+            $("#add-jiaolian6SelectLeft2").hide();
+            $("#add-jiaolian6InsertLeft2").hide();
+            $("#add-jiaolian6SelectRight2").hide();
+            $("#add-jiaolian6InsertRight2").hide();
 
-            $("#l6sl").remove();
-            $("#l6il").remove();
-            $("#l6sr").remove();
-            $("#l6ir").remove();
+            $("#l6sl").hide();
+            $("#l6il").hide();
+            $("#l6sr").hide();
+            $("#l6ir").hide();
         }
     })
 
     $('#add-kaijiaolian3').on('change', function () {
         var selectedValue3 = $(this).val();
         if (selectedValue3 == '开二孔') {
-            $("#add-jiaolian3SelectLeft3").remove();
-            $("#add-jiaolian3InsertLeft3").remove();
-            $("#add-jiaolian3SelectRight3").remove();
-            $("#add-jiaolian3InsertRight3").remove();
+            $("#add-jiaolian3SelectLeft3").hide();
+            $("#add-jiaolian3InsertLeft3").hide();
+            $("#add-jiaolian3SelectRight3").hide();
+            $("#add-jiaolian3InsertRight3").hide();
 
-            $("#add-jiaolian4SelectLeft3").remove();
-            $("#add-jiaolian4InsertLeft3").remove();
-            $("#add-jiaolian4SelectRight3").remove();
-            $("#add-jiaolian4InsertRight3").remove();
+            $("#add-jiaolian4SelectLeft3").hide();
+            $("#add-jiaolian4InsertLeft3").hide();
+            $("#add-jiaolian4SelectRight3").hide();
+            $("#add-jiaolian4InsertRight3").hide();
 
-            $("#add-jiaolian5SelectLeft3").remove();
-            $("#add-jiaolian5InsertLeft3").remove();
-            $("#add-jiaolian5SelectRight3").remove();
-            $("#add-jiaolian5InsertRight3").remove();
+            $("#add-jiaolian5SelectLeft3").hide();
+            $("#add-jiaolian5InsertLeft3").hide();
+            $("#add-jiaolian5SelectRight3").hide();
+            $("#add-jiaolian5InsertRight3").hide();
 
-            $("#add-jiaolian6SelectLeft3").remove();
-            $("#add-jiaolian6InsertLeft3").remove();
-            $("#add-jiaolian6SelectRight3").remove();
-            $("#add-jiaolian6InsertRight3").remove();
+            $("#add-jiaolian6SelectLeft3").hide();
+            $("#add-jiaolian6InsertLeft3").hide();
+            $("#add-jiaolian6SelectRight3").hide();
+            $("#add-jiaolian6InsertRight3").hide();
 
-            $("#l3sl").remove();
-            $("#l3il").remove();
-            $("#l3sr").remove();
-            $("#l3ir").remove();
+            $("#l3sl").hide();
+            $("#l3il").hide();
+            $("#l3sr").hide();
+            $("#l3ir").hide();
 
-            $("#l4sl").remove();
-            $("#l4il").remove();
-            $("#l4sr").remove();
-            $("#l4ir").remove();
+            $("#l4sl").hide();
+            $("#l4il").hide();
+            $("#l4sr").hide();
+            $("#l4ir").hide();
 
-            $("#l5sl").remove();
-            $("#l5il").remove();
-            $("#l5sr").remove();
-            $("#l5ir").remove();
+            $("#l5sl").hide();
+            $("#l5il").hide();
+            $("#l5sr").hide();
+            $("#l5ir").hide();
 
-            $("#l6sl").remove();
-            $("#l6il").remove();
-            $("#l6sr").remove();
-            $("#l6ir").remove();
+            $("#l6sl").hide();
+            $("#l6il").hide();
+            $("#l6sr").hide();
+            $("#l6ir").hide();
         }
         if (selectedValue3 == '开三孔') {
-            $("#add-jiaolian4SelectLeft3").remove();
-            $("#add-jiaolian4InsertLeft3").remove();
-            $("#add-jiaolian4SelectRight3").remove();
-            $("#add-jiaolian4InsertRight3").remove();
+            $("#add-jiaolian4SelectLeft3").hide();
+            $("#add-jiaolian4InsertLeft3").hide();
+            $("#add-jiaolian4SelectRight3").hide();
+            $("#add-jiaolian4InsertRight3").hide();
 
-            $("#add-jiaolian5SelectLeft3").remove();
-            $("#add-jiaolian5InsertLeft3").remove();
-            $("#add-jiaolian5SelectRight3").remove();
-            $("#add-jiaolian5InsertRight3").remove();
+            $("#add-jiaolian5SelectLeft3").hide();
+            $("#add-jiaolian5InsertLeft3").hide();
+            $("#add-jiaolian5SelectRight3").hide();
+            $("#add-jiaolian5InsertRight3").hide();
 
-            $("#add-jiaolian6SelectLeft3").remove();
-            $("#add-jiaolian6InsertLeft3").remove();
-            $("#add-jiaolian6SelectRight3").remove();
-            $("#add-jiaolian6InsertRight3").remove();
+            $("#add-jiaolian6SelectLeft3").hide();
+            $("#add-jiaolian6InsertLeft3").hide();
+            $("#add-jiaolian6SelectRight3").hide();
+            $("#add-jiaolian6InsertRight3").hide();
 
-            $("#l4sl").remove();
-            $("#l4il").remove();
-            $("#l4sr").remove();
+            $("#l4sl").hide();
+            $("#l4il").hide();
+            $("#l4sr").hide();
             $("#l4ir").delete();
 
-            $("#l5sl").remove();
-            $("#l5il").remove();
-            $("#l5sr").remove();
-            $("#l5ir").remove();
+            $("#l5sl").hide();
+            $("#l5il").hide();
+            $("#l5sr").hide();
+            $("#l5ir").hide();
 
-            $("#l6sl").remove();
-            $("#l6il").remove();
-            $("#l6sr").remove();
-            $("#l6ir").remove();
+            $("#l6sl").hide();
+            $("#l6il").hide();
+            $("#l6sr").hide();
+            $("#l6ir").hide();
         }
         if (selectedValue3 == '开四孔') {
-            $("#add-jiaolian5SelectLeft3").remove();
-            $("#add-jiaolian5InsertLeft3").remove();
-            $("#add-jiaolian5SelectRight3").remove();
-            $("#add-jiaolian5InsertRight3").remove();
+            $("#add-jiaolian5SelectLeft3").hide();
+            $("#add-jiaolian5InsertLeft3").hide();
+            $("#add-jiaolian5SelectRight3").hide();
+            $("#add-jiaolian5InsertRight3").hide();
 
-            $("#add-jiaolian6SelectLeft3").remove();
-            $("#add-jiaolian6InsertLeft3").remove();
-            $("#add-jiaolian6SelectRight3").remove();
-            $("#add-jiaolian6InsertRight3").remove();
+            $("#add-jiaolian6SelectLeft3").hide();
+            $("#add-jiaolian6InsertLeft3").hide();
+            $("#add-jiaolian6SelectRight3").hide();
+            $("#add-jiaolian6InsertRight3").hide();
 
-            $("#l5sl").remove();
-            $("#l5il").remove();
-            $("#l5sr").remove();
-            $("#l5ir").remove();
+            $("#l5sl").hide();
+            $("#l5il").hide();
+            $("#l5sr").hide();
+            $("#l5ir").hide();
 
-            $("#l6sl").remove();
-            $("#l6il").remove();
-            $("#l6sr").remove();
-            $("#l6ir").remove();
+            $("#l6sl").hide();
+            $("#l6il").hide();
+            $("#l6sr").hide();
+            $("#l6ir").hide();
         }
         if (selectedValue3 == '开五孔') {
-            $("#add-jiaolian6SelectLeft3").remove();
-            $("#add-jiaolian6InsertLeft3").remove();
-            $("#add-jiaolian6SelectRight3").remove();
-            $("#add-jiaolian6InsertRight3").remove();
+            $("#add-jiaolian6SelectLeft3").hide();
+            $("#add-jiaolian6InsertLeft3").hide();
+            $("#add-jiaolian6SelectRight3").hide();
+            $("#add-jiaolian6InsertRight3").hide();
 
-            $("#l6sl").remove();
-            $("#l6il").remove();
-            $("#l6sr").remove();
-            $("#l6ir").remove();
+            $("#l6sl").hide();
+            $("#l6il").hide();
+            $("#l6sr").hide();
+            $("#l6ir").hide();
         }
     })
 
     $('#add-kaijiaolian4').on('change', function () {
         var selectedValue4 = $(this).val();
         if (selectedValue4 == '开二孔') {
-            $("#add-jiaolian3SelectLeft4").remove();
-            $("#add-jiaolian3InsertLeft4").remove();
-            $("#add-jiaolian3SelectRight4").remove();
-            $("#add-jiaolian3InsertRight4").remove();
+            $("#add-jiaolian3SelectLeft4").hide();
+            $("#add-jiaolian3InsertLeft4").hide();
+            $("#add-jiaolian3SelectRight4").hide();
+            $("#add-jiaolian3InsertRight4").hide();
 
-            $("#add-jiaolian4SelectLeft4").remove();
-            $("#add-jiaolian4InsertLeft4").remove();
-            $("#add-jiaolian4SelectRight4").remove();
-            $("#add-jiaolian4InsertRight4").remove();
+            $("#add-jiaolian4SelectLeft4").hide();
+            $("#add-jiaolian4InsertLeft4").hide();
+            $("#add-jiaolian4SelectRight4").hide();
+            $("#add-jiaolian4InsertRight4").hide();
 
-            $("#add-jiaolian5SelectLeft4").remove();
-            $("#add-jiaolian5InsertLeft4").remove();
-            $("#add-jiaolian5SelectRight4").remove();
-            $("#add-jiaolian5InsertRight4").remove();
+            $("#add-jiaolian5SelectLeft4").hide();
+            $("#add-jiaolian5InsertLeft4").hide();
+            $("#add-jiaolian5SelectRight4").hide();
+            $("#add-jiaolian5InsertRight4").hide();
 
-            $("#add-jiaolian6SelectLeft4").remove();
-            $("#add-jiaolian6InsertLeft4").remove();
-            $("#add-jiaolian6SelectRight4").remove();
-            $("#add-jiaolian6InsertRight4").remove();
+            $("#add-jiaolian6SelectLeft4").hide();
+            $("#add-jiaolian6InsertLeft4").hide();
+            $("#add-jiaolian6SelectRight4").hide();
+            $("#add-jiaolian6InsertRight4").hide();
 
-            $("#l3sl").remove();
-            $("#l3il").remove();
-            $("#l3sr").remove();
-            $("#l3ir").remove();
+            $("#l3sl").hide();
+            $("#l3il").hide();
+            $("#l3sr").hide();
+            $("#l3ir").hide();
 
-            $("#l4sl").remove();
-            $("#l4il").remove();
-            $("#l4sr").remove();
-            $("#l4ir").remove();
+            $("#l4sl").hide();
+            $("#l4il").hide();
+            $("#l4sr").hide();
+            $("#l4ir").hide();
 
-            $("#l5sl").remove();
-            $("#l5il").remove();
-            $("#l5sr").remove();
-            $("#l5ir").remove();
+            $("#l5sl").hide();
+            $("#l5il").hide();
+            $("#l5sr").hide();
+            $("#l5ir").hide();
 
-            $("#l6sl").remove();
-            $("#l6il").remove();
-            $("#l6sr").remove();
-            $("#l6ir").remove();
+            $("#l6sl").hide();
+            $("#l6il").hide();
+            $("#l6sr").hide();
+            $("#l6ir").hide();
         }
         if (selectedValue4 == '开三孔') {
-            $("#add-jiaolian4SelectLeft4").remove();
-            $("#add-jiaolian4InsertLeft4").remove();
-            $("#add-jiaolian4SelectRight4").remove();
-            $("#add-jiaolian4InsertRight4").remove();
+            $("#add-jiaolian4SelectLeft4").hide();
+            $("#add-jiaolian4InsertLeft4").hide();
+            $("#add-jiaolian4SelectRight4").hide();
+            $("#add-jiaolian4InsertRight4").hide();
 
-            $("#add-jiaolian5SelectLeft4").remove();
-            $("#add-jiaolian5InsertLeft4").remove();
-            $("#add-jiaolian5SelectRight4").remove();
-            $("#add-jiaolian5InsertRight4").remove();
+            $("#add-jiaolian5SelectLeft4").hide();
+            $("#add-jiaolian5InsertLeft4").hide();
+            $("#add-jiaolian5SelectRight4").hide();
+            $("#add-jiaolian5InsertRight4").hide();
 
-            $("#add-jiaolian6SelectLeft4").remove();
-            $("#add-jiaolian6InsertLeft4").remove();
-            $("#add-jiaolian6SelectRight4").remove();
-            $("#add-jiaolian6InsertRight4").remove();
+            $("#add-jiaolian6SelectLeft4").hide();
+            $("#add-jiaolian6InsertLeft4").hide();
+            $("#add-jiaolian6SelectRight4").hide();
+            $("#add-jiaolian6InsertRight4").hide();
 
-            $("#l4sl").remove();
-            $("#l4il").remove();
-            $("#l4sr").remove();
+            $("#l4sl").hide();
+            $("#l4il").hide();
+            $("#l4sr").hide();
             $("#l4ir").delete();
 
-            $("#l5sl").remove();
-            $("#l5il").remove();
-            $("#l5sr").remove();
-            $("#l5ir").remove();
+            $("#l5sl").hide();
+            $("#l5il").hide();
+            $("#l5sr").hide();
+            $("#l5ir").hide();
 
-            $("#l6sl").remove();
-            $("#l6il").remove();
-            $("#l6sr").remove();
-            $("#l6ir").remove();
+            $("#l6sl").hide();
+            $("#l6il").hide();
+            $("#l6sr").hide();
+            $("#l6ir").hide();
         }
         if (selectedValue4 == '开四孔') {
-            $("#add-jiaolian5SelectLeft4").remove();
-            $("#add-jiaolian5InsertLeft4").remove();
-            $("#add-jiaolian5SelectRight4").remove();
-            $("#add-jiaolian5InsertRight4").remove();
+            $("#add-jiaolian5SelectLeft4").hide();
+            $("#add-jiaolian5InsertLeft4").hide();
+            $("#add-jiaolian5SelectRight4").hide();
+            $("#add-jiaolian5InsertRight4").hide();
 
-            $("#add-jiaolian6SelectLeft4").remove();
-            $("#add-jiaolian6InsertLeft4").remove();
-            $("#add-jiaolian6SelectRight4").remove();
-            $("#add-jiaolian6InsertRight4").remove();
+            $("#add-jiaolian6SelectLeft4").hide();
+            $("#add-jiaolian6InsertLeft4").hide();
+            $("#add-jiaolian6SelectRight4").hide();
+            $("#add-jiaolian6InsertRight4").hide();
 
-            $("#l5sl").remove();
-            $("#l5il").remove();
-            $("#l5sr").remove();
-            $("#l5ir").remove();
+            $("#l5sl").hide();
+            $("#l5il").hide();
+            $("#l5sr").hide();
+            $("#l5ir").hide();
 
-            $("#l6sl").remove();
-            $("#l6il").remove();
-            $("#l6sr").remove();
-            $("#l6ir").remove();
+            $("#l6sl").hide();
+            $("#l6il").hide();
+            $("#l6sr").hide();
+            $("#l6ir").hide();
         }
         if (selectedValue4 == '开五孔') {
-            $("#add-jiaolian6SelectLeft4").remove();
-            $("#add-jiaolian6InsertLeft4").remove();
-            $("#add-jiaolian6SelectRight4").remove();
-            $("#add-jiaolian6InsertRight4").remove();
+            $("#add-jiaolian6SelectLeft4").hide();
+            $("#add-jiaolian6InsertLeft4").hide();
+            $("#add-jiaolian6SelectRight4").hide();
+            $("#add-jiaolian6InsertRight4").hide();
 
-            $("#l6sl").remove();
-            $("#l6il").remove();
-            $("#l6sr").remove();
-            $("#l6ir").remove();
+            $("#l6sl").hide();
+            $("#l6il").hide();
+            $("#l6sr").hide();
+            $("#l6ir").hide();
         }
     })
 
     $('#add-kaijiaolian5').on('change', function () {
         var selectedValue5 = $(this).val();
         if (selectedValue5 == '开二孔') {
-            $("#add-jiaolian3SelectLeft5").remove();
-            $("#add-jiaolian3InsertLeft5").remove();
-            $("#add-jiaolian3SelectRight5").remove();
-            $("#add-jiaolian3InsertRight5").remove();
+            $("#add-jiaolian3SelectLeft5").hide();
+            $("#add-jiaolian3InsertLeft5").hide();
+            $("#add-jiaolian3SelectRight5").hide();
+            $("#add-jiaolian3InsertRight5").hide();
 
-            $("#add-jiaolian4SelectLeft5").remove();
-            $("#add-jiaolian4InsertLeft5").remove();
-            $("#add-jiaolian4SelectRight5").remove();
-            $("#add-jiaolian4InsertRight5").remove();
+            $("#add-jiaolian4SelectLeft5").hide();
+            $("#add-jiaolian4InsertLeft5").hide();
+            $("#add-jiaolian4SelectRight5").hide();
+            $("#add-jiaolian4InsertRight5").hide();
 
-            $("#add-jiaolian5SelectLeft5").remove();
-            $("#add-jiaolian5InsertLeft5").remove();
-            $("#add-jiaolian5SelectRight5").remove();
-            $("#add-jiaolian5InsertRight5").remove();
+            $("#add-jiaolian5SelectLeft5").hide();
+            $("#add-jiaolian5InsertLeft5").hide();
+            $("#add-jiaolian5SelectRight5").hide();
+            $("#add-jiaolian5InsertRight5").hide();
 
-            $("#add-jiaolian6SelectLeft5").remove();
-            $("#add-jiaolian6InsertLeft5").remove();
-            $("#add-jiaolian6SelectRight5").remove();
-            $("#add-jiaolian6InsertRight5").remove();
+            $("#add-jiaolian6SelectLeft5").hide();
+            $("#add-jiaolian6InsertLeft5").hide();
+            $("#add-jiaolian6SelectRight5").hide();
+            $("#add-jiaolian6InsertRight5").hide();
 
-            $("#l3sl").remove();
-            $("#l3il").remove();
-            $("#l3sr").remove();
-            $("#l3ir").remove();
+            $("#l3sl").hide();
+            $("#l3il").hide();
+            $("#l3sr").hide();
+            $("#l3ir").hide();
 
-            $("#l4sl").remove();
-            $("#l4il").remove();
-            $("#l4sr").remove();
-            $("#l4ir").remove();
+            $("#l4sl").hide();
+            $("#l4il").hide();
+            $("#l4sr").hide();
+            $("#l4ir").hide();
 
-            $("#l5sl").remove();
-            $("#l5il").remove();
-            $("#l5sr").remove();
-            $("#l5ir").remove();
+            $("#l5sl").hide();
+            $("#l5il").hide();
+            $("#l5sr").hide();
+            $("#l5ir").hide();
 
-            $("#l6sl").remove();
-            $("#l6il").remove();
-            $("#l6sr").remove();
-            $("#l6ir").remove();
+            $("#l6sl").hide();
+            $("#l6il").hide();
+            $("#l6sr").hide();
+            $("#l6ir").hide();
         }
         if (selectedValue5 == '开三孔') {
-            $("#add-jiaolian4SelectLeft5").remove();
-            $("#add-jiaolian4InsertLeft5").remove();
-            $("#add-jiaolian4SelectRight5").remove();
-            $("#add-jiaolian4InsertRight5").remove();
+            $("#add-jiaolian4SelectLeft5").hide();
+            $("#add-jiaolian4InsertLeft5").hide();
+            $("#add-jiaolian4SelectRight5").hide();
+            $("#add-jiaolian4InsertRight5").hide();
 
-            $("#add-jiaolian5SelectLeft5").remove();
-            $("#add-jiaolian5InsertLeft5").remove();
-            $("#add-jiaolian5SelectRight5").remove();
-            $("#add-jiaolian5InsertRight5").remove();
+            $("#add-jiaolian5SelectLeft5").hide();
+            $("#add-jiaolian5InsertLeft5").hide();
+            $("#add-jiaolian5SelectRight5").hide();
+            $("#add-jiaolian5InsertRight5").hide();
 
-            $("#add-jiaolian6SelectLeft5").remove();
-            $("#add-jiaolian6InsertLeft5").remove();
-            $("#add-jiaolian6SelectRight5").remove();
-            $("#add-jiaolian6InsertRight5").remove();
+            $("#add-jiaolian6SelectLeft5").hide();
+            $("#add-jiaolian6InsertLeft5").hide();
+            $("#add-jiaolian6SelectRight5").hide();
+            $("#add-jiaolian6InsertRight5").hide();
 
-            $("#l4sl").remove();
-            $("#l4il").remove();
-            $("#l4sr").remove();
+            $("#l4sl").hide();
+            $("#l4il").hide();
+            $("#l4sr").hide();
             $("#l4ir").delete();
 
-            $("#l5sl").remove();
-            $("#l5il").remove();
-            $("#l5sr").remove();
-            $("#l5ir").remove();
+            $("#l5sl").hide();
+            $("#l5il").hide();
+            $("#l5sr").hide();
+            $("#l5ir").hide();
 
-            $("#l6sl").remove();
-            $("#l6il").remove();
-            $("#l6sr").remove();
-            $("#l6ir").remove();
+            $("#l6sl").hide();
+            $("#l6il").hide();
+            $("#l6sr").hide();
+            $("#l6ir").hide();
         }
         if (selectedValue5 == '开四孔') {
-            $("#add-jiaolian5SelectLeft5").remove();
-            $("#add-jiaolian5InsertLeft5").remove();
-            $("#add-jiaolian5SelectRight5").remove();
-            $("#add-jiaolian5InsertRight5").remove();
+            $("#add-jiaolian5SelectLeft5").hide();
+            $("#add-jiaolian5InsertLeft5").hide();
+            $("#add-jiaolian5SelectRight5").hide();
+            $("#add-jiaolian5InsertRight5").hide();
 
-            $("#add-jiaolian6SelectLeft5").remove();
-            $("#add-jiaolian6InsertLeft5").remove();
-            $("#add-jiaolian6SelectRight5").remove();
-            $("#add-jiaolian6InsertRight5").remove();
+            $("#add-jiaolian6SelectLeft5").hide();
+            $("#add-jiaolian6InsertLeft5").hide();
+            $("#add-jiaolian6SelectRight5").hide();
+            $("#add-jiaolian6InsertRight5").hide();
 
-            $("#l5sl").remove();
-            $("#l5il").remove();
-            $("#l5sr").remove();
-            $("#l5ir").remove();
+            $("#l5sl").hide();
+            $("#l5il").hide();
+            $("#l5sr").hide();
+            $("#l5ir").hide();
 
-            $("#l6sl").remove();
-            $("#l6il").remove();
-            $("#l6sr").remove();
-            $("#l6ir").remove();
+            $("#l6sl").hide();
+            $("#l6il").hide();
+            $("#l6sr").hide();
+            $("#l6ir").hide();
         }
         if (selectedValue5 == '开五孔') {
-            $("#add-jiaolian6SelectLeft5").remove();
-            $("#add-jiaolian6InsertLeft5").remove();
-            $("#add-jiaolian6SelectRight5").remove();
-            $("#add-jiaolian6InsertRight5").remove();
+            $("#add-jiaolian6SelectLeft5").hide();
+            $("#add-jiaolian6InsertLeft5").hide();
+            $("#add-jiaolian6SelectRight5").hide();
+            $("#add-jiaolian6InsertRight5").hide();
 
-            $("#l6sl").remove();
-            $("#l6il").remove();
-            $("#l6sr").remove();
-            $("#l6ir").remove();
+            $("#l6sl").hide();
+            $("#l6il").hide();
+            $("#l6sr").hide();
+            $("#l6ir").hide();
         }
     })
 
     $('#add-kaijiaolian6').on('change', function () {
         var selectedValue6 = $(this).val();
         if (selectedValue6 == '开二孔') {
-            $("#add-jiaolian3SelectLeft6").remove();
-            $("#add-jiaolian3InsertLeft6").remove();
-            $("#add-jiaolian3SelectRight6").remove();
-            $("#add-jiaolian3InsertRight6").remove();
+            $("#add-jiaolian3SelectLeft6").hide();
+            $("#add-jiaolian3InsertLeft6").hide();
+            $("#add-jiaolian3SelectRight6").hide();
+            $("#add-jiaolian3InsertRight6").hide();
 
-            $("#add-jiaolian4SelectLeft6").remove();
-            $("#add-jiaolian4InsertLeft6").remove();
-            $("#add-jiaolian4SelectRight6").remove();
-            $("#add-jiaolian4InsertRight6").remove();
+            $("#add-jiaolian4SelectLeft6").hide();
+            $("#add-jiaolian4InsertLeft6").hide();
+            $("#add-jiaolian4SelectRight6").hide();
+            $("#add-jiaolian4InsertRight6").hide();
 
-            $("#add-jiaolian5SelectLeft6").remove();
-            $("#add-jiaolian5InsertLeft6").remove();
-            $("#add-jiaolian5SelectRight6").remove();
-            $("#add-jiaolian5InsertRight6").remove();
+            $("#add-jiaolian5SelectLeft6").hide();
+            $("#add-jiaolian5InsertLeft6").hide();
+            $("#add-jiaolian5SelectRight6").hide();
+            $("#add-jiaolian5InsertRight6").hide();
 
-            $("#add-jiaolian6SelectLeft6").remove();
-            $("#add-jiaolian6InsertLeft6").remove();
-            $("#add-jiaolian6SelectRight6").remove();
-            $("#add-jiaolian6InsertRight6").remove();
+            $("#add-jiaolian6SelectLeft6").hide();
+            $("#add-jiaolian6InsertLeft6").hide();
+            $("#add-jiaolian6SelectRight6").hide();
+            $("#add-jiaolian6InsertRight6").hide();
 
-            $("#l3sl").remove();
-            $("#l3il").remove();
-            $("#l3sr").remove();
-            $("#l3ir").remove();
+            $("#l3sl").hide();
+            $("#l3il").hide();
+            $("#l3sr").hide();
+            $("#l3ir").hide();
 
-            $("#l4sl").remove();
-            $("#l4il").remove();
-            $("#l4sr").remove();
-            $("#l4ir").remove();
+            $("#l4sl").hide();
+            $("#l4il").hide();
+            $("#l4sr").hide();
+            $("#l4ir").hide();
 
-            $("#l5sl").remove();
-            $("#l5il").remove();
-            $("#l5sr").remove();
-            $("#l5ir").remove();
+            $("#l5sl").hide();
+            $("#l5il").hide();
+            $("#l5sr").hide();
+            $("#l5ir").hide();
 
-            $("#l6sl").remove();
-            $("#l6il").remove();
-            $("#l6sr").remove();
-            $("#l6ir").remove();
+            $("#l6sl").hide();
+            $("#l6il").hide();
+            $("#l6sr").hide();
+            $("#l6ir").hide();
         }
         if (selectedValue6 == '开三孔') {
-            $("#add-jiaolian4SelectLeft6").remove();
-            $("#add-jiaolian4InsertLeft6").remove();
-            $("#add-jiaolian4SelectRight6").remove();
-            $("#add-jiaolian4InsertRight6").remove();
+            $("#add-jiaolian4SelectLeft6").hide();
+            $("#add-jiaolian4InsertLeft6").hide();
+            $("#add-jiaolian4SelectRight6").hide();
+            $("#add-jiaolian4InsertRight6").hide();
 
-            $("#add-jiaolian5SelectLeft6").remove();
-            $("#add-jiaolian5InsertLeft6").remove();
-            $("#add-jiaolian5SelectRight6").remove();
-            $("#add-jiaolian5InsertRight6").remove();
+            $("#add-jiaolian5SelectLeft6").hide();
+            $("#add-jiaolian5InsertLeft6").hide();
+            $("#add-jiaolian5SelectRight6").hide();
+            $("#add-jiaolian5InsertRight6").hide();
 
-            $("#add-jiaolian6SelectLeft6").remove();
-            $("#add-jiaolian6InsertLeft6").remove();
-            $("#add-jiaolian6SelectRight6").remove();
-            $("#add-jiaolian6InsertRight6").remove();
+            $("#add-jiaolian6SelectLeft6").hide();
+            $("#add-jiaolian6InsertLeft6").hide();
+            $("#add-jiaolian6SelectRight6").hide();
+            $("#add-jiaolian6InsertRight6").hide();
 
-            $("#l4sl").remove();
-            $("#l4il").remove();
-            $("#l4sr").remove();
+            $("#l4sl").hide();
+            $("#l4il").hide();
+            $("#l4sr").hide();
             $("#l4ir").delete();
 
-            $("#l5sl").remove();
-            $("#l5il").remove();
-            $("#l5sr").remove();
-            $("#l5ir").remove();
+            $("#l5sl").hide();
+            $("#l5il").hide();
+            $("#l5sr").hide();
+            $("#l5ir").hide();
 
-            $("#l6sl").remove();
-            $("#l6il").remove();
-            $("#l6sr").remove();
-            $("#l6ir").remove();
+            $("#l6sl").hide();
+            $("#l6il").hide();
+            $("#l6sr").hide();
+            $("#l6ir").hide();
         }
         if (selectedValue6 == '开四孔') {
-            $("#add-jiaolian5SelectLeft6").remove();
-            $("#add-jiaolian5InsertLeft6").remove();
-            $("#add-jiaolian5SelectRight6").remove();
-            $("#add-jiaolian5InsertRight6").remove();
+            $("#add-jiaolian5SelectLeft6").hide();
+            $("#add-jiaolian5InsertLeft6").hide();
+            $("#add-jiaolian5SelectRight6").hide();
+            $("#add-jiaolian5InsertRight6").hide();
 
-            $("#add-jiaolian6SelectLeft6").remove();
-            $("#add-jiaolian6InsertLeft6").remove();
-            $("#add-jiaolian6SelectRight6").remove();
-            $("#add-jiaolian6InsertRight6").remove();
+            $("#add-jiaolian6SelectLeft6").hide();
+            $("#add-jiaolian6InsertLeft6").hide();
+            $("#add-jiaolian6SelectRight6").hide();
+            $("#add-jiaolian6InsertRight6").hide();
 
-            $("#l5sl").remove();
-            $("#l5il").remove();
-            $("#l5sr").remove();
-            $("#l5ir").remove();
+            $("#l5sl").hide();
+            $("#l5il").hide();
+            $("#l5sr").hide();
+            $("#l5ir").hide();
 
-            $("#l6sl").remove();
-            $("#l6il").remove();
-            $("#l6sr").remove();
-            $("#l6ir").remove();
+            $("#l6sl").hide();
+            $("#l6il").hide();
+            $("#l6sr").hide();
+            $("#l6ir").hide();
         }
         if (selectedValue6 == '开五孔') {
-            $("#add-jiaolian6SelectLeft6").remove();
-            $("#add-jiaolian6InsertLeft6").remove();
-            $("#add-jiaolian6SelectRight6").remove();
-            $("#add-jiaolian6InsertRight6").remove();
+            $("#add-jiaolian6SelectLeft6").hide();
+            $("#add-jiaolian6InsertLeft6").hide();
+            $("#add-jiaolian6SelectRight6").hide();
+            $("#add-jiaolian6InsertRight6").hide();
 
-            $("#l6sl").remove();
-            $("#l6il").remove();
-            $("#l6sr").remove();
-            $("#l6ir").remove();
+            $("#l6sl").hide();
+            $("#l6il").hide();
+            $("#l6sr").hide();
+            $("#l6ir").hide();
         }
     })
 
     $('#add-kaijiaolian7').on('change', function () {
         var selectedValue7 = $(this).val();
         if (selectedValue7 == '开二孔') {
-            $("#add-jiaolian3SelectLeft7").remove();
-            $("#add-jiaolian3InsertLeft7").remove();
-            $("#add-jiaolian3SelectRight7").remove();
-            $("#add-jiaolian3InsertRight7").remove();
+            $("#add-jiaolian3SelectLeft7").hide();
+            $("#add-jiaolian3InsertLeft7").hide();
+            $("#add-jiaolian3SelectRight7").hide();
+            $("#add-jiaolian3InsertRight7").hide();
 
-            $("#add-jiaolian4SelectLeft7").remove();
-            $("#add-jiaolian4InsertLeft7").remove();
-            $("#add-jiaolian4SelectRight7").remove();
-            $("#add-jiaolian4InsertRight7").remove();
+            $("#add-jiaolian4SelectLeft7").hide();
+            $("#add-jiaolian4InsertLeft7").hide();
+            $("#add-jiaolian4SelectRight7").hide();
+            $("#add-jiaolian4InsertRight7").hide();
 
-            $("#add-jiaolian5SelectLeft7").remove();
-            $("#add-jiaolian5InsertLeft7").remove();
-            $("#add-jiaolian5SelectRight7").remove();
-            $("#add-jiaolian5InsertRight7").remove();
+            $("#add-jiaolian5SelectLeft7").hide();
+            $("#add-jiaolian5InsertLeft7").hide();
+            $("#add-jiaolian5SelectRight7").hide();
+            $("#add-jiaolian5InsertRight7").hide();
 
-            $("#add-jiaolian6SelectLeft7").remove();
-            $("#add-jiaolian6InsertLeft7").remove();
-            $("#add-jiaolian6SelectRight7").remove();
-            $("#add-jiaolian6InsertRight7").remove();
+            $("#add-jiaolian6SelectLeft7").hide();
+            $("#add-jiaolian6InsertLeft7").hide();
+            $("#add-jiaolian6SelectRight7").hide();
+            $("#add-jiaolian6InsertRight7").hide();
 
-            $("#l3sl").remove();
-            $("#l3il").remove();
-            $("#l3sr").remove();
-            $("#l3ir").remove();
+            $("#l3sl").hide();
+            $("#l3il").hide();
+            $("#l3sr").hide();
+            $("#l3ir").hide();
 
-            $("#l4sl").remove();
-            $("#l4il").remove();
-            $("#l4sr").remove();
-            $("#l4ir").remove();
+            $("#l4sl").hide();
+            $("#l4il").hide();
+            $("#l4sr").hide();
+            $("#l4ir").hide();
 
-            $("#l5sl").remove();
-            $("#l5il").remove();
-            $("#l5sr").remove();
-            $("#l5ir").remove();
+            $("#l5sl").hide();
+            $("#l5il").hide();
+            $("#l5sr").hide();
+            $("#l5ir").hide();
 
-            $("#l6sl").remove();
-            $("#l6il").remove();
-            $("#l6sr").remove();
-            $("#l6ir").remove();
+            $("#l6sl").hide();
+            $("#l6il").hide();
+            $("#l6sr").hide();
+            $("#l6ir").hide();
         }
         if (selectedValue7 == '开三孔') {
-            $("#add-jiaolian4SelectLeft7").remove();
-            $("#add-jiaolian4InsertLeft7").remove();
-            $("#add-jiaolian4SelectRight7").remove();
-            $("#add-jiaolian4InsertRight7").remove();
+            $("#add-jiaolian4SelectLeft7").hide();
+            $("#add-jiaolian4InsertLeft7").hide();
+            $("#add-jiaolian4SelectRight7").hide();
+            $("#add-jiaolian4InsertRight7").hide();
 
-            $("#add-jiaolian5SelectLeft7").remove();
-            $("#add-jiaolian5InsertLeft7").remove();
-            $("#add-jiaolian5SelectRight7").remove();
-            $("#add-jiaolian5InsertRight7").remove();
+            $("#add-jiaolian5SelectLeft7").hide();
+            $("#add-jiaolian5InsertLeft7").hide();
+            $("#add-jiaolian5SelectRight7").hide();
+            $("#add-jiaolian5InsertRight7").hide();
 
-            $("#add-jiaolian6SelectLeft7").remove();
-            $("#add-jiaolian6InsertLeft7").remove();
-            $("#add-jiaolian6SelectRight7").remove();
-            $("#add-jiaolian6InsertRight7").remove();
+            $("#add-jiaolian6SelectLeft7").hide();
+            $("#add-jiaolian6InsertLeft7").hide();
+            $("#add-jiaolian6SelectRight7").hide();
+            $("#add-jiaolian6InsertRight7").hide();
 
-            $("#l4sl").remove();
-            $("#l4il").remove();
-            $("#l4sr").remove();
+            $("#l4sl").hide();
+            $("#l4il").hide();
+            $("#l4sr").hide();
             $("#l4ir").delete();
 
-            $("#l5sl").remove();
-            $("#l5il").remove();
-            $("#l5sr").remove();
-            $("#l5ir").remove();
+            $("#l5sl").hide();
+            $("#l5il").hide();
+            $("#l5sr").hide();
+            $("#l5ir").hide();
 
-            $("#l6sl").remove();
-            $("#l6il").remove();
-            $("#l6sr").remove();
-            $("#l6ir").remove();
+            $("#l6sl").hide();
+            $("#l6il").hide();
+            $("#l6sr").hide();
+            $("#l6ir").hide();
         }
         if (selectedValue7 == '开四孔') {
-            $("#add-jiaolian5SelectLeft7").remove();
-            $("#add-jiaolian5InsertLeft7").remove();
-            $("#add-jiaolian5SelectRight7").remove();
-            $("#add-jiaolian5InsertRight7").remove();
+            $("#add-jiaolian5SelectLeft7").hide();
+            $("#add-jiaolian5InsertLeft7").hide();
+            $("#add-jiaolian5SelectRight7").hide();
+            $("#add-jiaolian5InsertRight7").hide();
 
-            $("#add-jiaolian6SelectLeft7").remove();
-            $("#add-jiaolian6InsertLeft7").remove();
-            $("#add-jiaolian6SelectRight7").remove();
-            $("#add-jiaolian6InsertRight7").remove();
+            $("#add-jiaolian6SelectLeft7").hide();
+            $("#add-jiaolian6InsertLeft7").hide();
+            $("#add-jiaolian6SelectRight7").hide();
+            $("#add-jiaolian6InsertRight7").hide();
 
-            $("#l5sl").remove();
-            $("#l5il").remove();
-            $("#l5sr").remove();
-            $("#l5ir").remove();
+            $("#l5sl").hide();
+            $("#l5il").hide();
+            $("#l5sr").hide();
+            $("#l5ir").hide();
 
-            $("#l6sl").remove();
-            $("#l6il").remove();
-            $("#l6sr").remove();
-            $("#l6ir").remove();
+            $("#l6sl").hide();
+            $("#l6il").hide();
+            $("#l6sr").hide();
+            $("#l6ir").hide();
         }
         if (selectedValue7 == '开五孔') {
-            $("#add-jiaolian6SelectLeft7").remove();
-            $("#add-jiaolian6InsertLeft7").remove();
-            $("#add-jiaolian6SelectRight7").remove();
-            $("#add-jiaolian6InsertRight7").remove();
+            $("#add-jiaolian6SelectLeft7").hide();
+            $("#add-jiaolian6InsertLeft7").hide();
+            $("#add-jiaolian6SelectRight7").hide();
+            $("#add-jiaolian6InsertRight7").hide();
 
-            $("#l6sl").remove();
-            $("#l6il").remove();
-            $("#l6sr").remove();
-            $("#l6ir").remove();
+            $("#l6sl").hide();
+            $("#l6il").hide();
+            $("#l6sr").hide();
+            $("#l6ir").hide();
         }
     })
 
     $('#add-kaijiaolian8').on('change', function () {
         var selectedValue8 = $(this).val();
         if (selectedValue8 == '开二孔') {
-            $("#add-jiaolian3SelectLeft8").remove();
-            $("#add-jiaolian3InsertLeft8").remove();
-            $("#add-jiaolian3SelectRight8").remove();
-            $("#add-jiaolian3InsertRight8").remove();
+            $("#add-jiaolian3SelectLeft8").hide();
+            $("#add-jiaolian3InsertLeft8").hide();
+            $("#add-jiaolian3SelectRight8").hide();
+            $("#add-jiaolian3InsertRight8").hide();
 
-            $("#add-jiaolian4SelectLeft8").remove();
-            $("#add-jiaolian4InsertLeft8").remove();
-            $("#add-jiaolian4SelectRight8").remove();
-            $("#add-jiaolian4InsertRight8").remove();
+            $("#add-jiaolian4SelectLeft8").hide();
+            $("#add-jiaolian4InsertLeft8").hide();
+            $("#add-jiaolian4SelectRight8").hide();
+            $("#add-jiaolian4InsertRight8").hide();
 
-            $("#add-jiaolian5SelectLeft8").remove();
-            $("#add-jiaolian5InsertLeft8").remove();
-            $("#add-jiaolian5SelectRight8").remove();
-            $("#add-jiaolian5InsertRight8").remove();
+            $("#add-jiaolian5SelectLeft8").hide();
+            $("#add-jiaolian5InsertLeft8").hide();
+            $("#add-jiaolian5SelectRight8").hide();
+            $("#add-jiaolian5InsertRight8").hide();
 
-            $("#add-jiaolian6SelectLeft8").remove();
-            $("#add-jiaolian6InsertLeft8").remove();
-            $("#add-jiaolian6SelectRight8").remove();
-            $("#add-jiaolian6InsertRight8").remove();
+            $("#add-jiaolian6SelectLeft8").hide();
+            $("#add-jiaolian6InsertLeft8").hide();
+            $("#add-jiaolian6SelectRight8").hide();
+            $("#add-jiaolian6InsertRight8").hide();
 
-            $("#l3sl").remove();
-            $("#l3il").remove();
-            $("#l3sr").remove();
-            $("#l3ir").remove();
+            $("#l3sl").hide();
+            $("#l3il").hide();
+            $("#l3sr").hide();
+            $("#l3ir").hide();
 
-            $("#l4sl").remove();
-            $("#l4il").remove();
-            $("#l4sr").remove();
-            $("#l4ir").remove();
+            $("#l4sl").hide();
+            $("#l4il").hide();
+            $("#l4sr").hide();
+            $("#l4ir").hide();
 
-            $("#l5sl").remove();
-            $("#l5il").remove();
-            $("#l5sr").remove();
-            $("#l5ir").remove();
+            $("#l5sl").hide();
+            $("#l5il").hide();
+            $("#l5sr").hide();
+            $("#l5ir").hide();
 
-            $("#l6sl").remove();
-            $("#l6il").remove();
-            $("#l6sr").remove();
-            $("#l6ir").remove();
+            $("#l6sl").hide();
+            $("#l6il").hide();
+            $("#l6sr").hide();
+            $("#l6ir").hide();
         }
         if (selectedValue8 == '开三孔') {
-            $("#add-jiaolian4SelectLeft8").remove();
-            $("#add-jiaolian4InsertLeft8").remove();
-            $("#add-jiaolian4SelectRight8").remove();
-            $("#add-jiaolian4InsertRight8").remove();
+            $("#add-jiaolian4SelectLeft8").hide();
+            $("#add-jiaolian4InsertLeft8").hide();
+            $("#add-jiaolian4SelectRight8").hide();
+            $("#add-jiaolian4InsertRight8").hide();
 
-            $("#add-jiaolian5SelectLeft8").remove();
-            $("#add-jiaolian5InsertLeft8").remove();
-            $("#add-jiaolian5SelectRight8").remove();
-            $("#add-jiaolian5InsertRight8").remove();
+            $("#add-jiaolian5SelectLeft8").hide();
+            $("#add-jiaolian5InsertLeft8").hide();
+            $("#add-jiaolian5SelectRight8").hide();
+            $("#add-jiaolian5InsertRight8").hide();
 
-            $("#add-jiaolian6SelectLeft8").remove();
-            $("#add-jiaolian6InsertLeft8").remove();
-            $("#add-jiaolian6SelectRight8").remove();
-            $("#add-jiaolian6InsertRight8").remove();
+            $("#add-jiaolian6SelectLeft8").hide();
+            $("#add-jiaolian6InsertLeft8").hide();
+            $("#add-jiaolian6SelectRight8").hide();
+            $("#add-jiaolian6InsertRight8").hide();
 
-            $("#l4sl").remove();
-            $("#l4il").remove();
-            $("#l4sr").remove();
+            $("#l4sl").hide();
+            $("#l4il").hide();
+            $("#l4sr").hide();
             $("#l4ir").delete();
 
-            $("#l5sl").remove();
-            $("#l5il").remove();
-            $("#l5sr").remove();
-            $("#l5ir").remove();
+            $("#l5sl").hide();
+            $("#l5il").hide();
+            $("#l5sr").hide();
+            $("#l5ir").hide();
 
-            $("#l6sl").remove();
-            $("#l6il").remove();
-            $("#l6sr").remove();
-            $("#l6ir").remove();
+            $("#l6sl").hide();
+            $("#l6il").hide();
+            $("#l6sr").hide();
+            $("#l6ir").hide();
         }
         if (selectedValue8 == '开四孔') {
-            $("#add-jiaolian5SelectLeft8").remove();
-            $("#add-jiaolian5InsertLeft8").remove();
-            $("#add-jiaolian5SelectRight8").remove();
-            $("#add-jiaolian5InsertRight8").remove();
+            $("#add-jiaolian5SelectLeft8").hide();
+            $("#add-jiaolian5InsertLeft8").hide();
+            $("#add-jiaolian5SelectRight8").hide();
+            $("#add-jiaolian5InsertRight8").hide();
 
-            $("#add-jiaolian6SelectLeft8").remove();
-            $("#add-jiaolian6InsertLeft8").remove();
-            $("#add-jiaolian6SelectRight8").remove();
-            $("#add-jiaolian6InsertRight8").remove();
+            $("#add-jiaolian6SelectLeft8").hide();
+            $("#add-jiaolian6InsertLeft8").hide();
+            $("#add-jiaolian6SelectRight8").hide();
+            $("#add-jiaolian6InsertRight8").hide();
 
-            $("#l5sl").remove();
-            $("#l5il").remove();
-            $("#l5sr").remove();
-            $("#l5ir").remove();
+            $("#l5sl").hide();
+            $("#l5il").hide();
+            $("#l5sr").hide();
+            $("#l5ir").hide();
 
-            $("#l6sl").remove();
-            $("#l6il").remove();
-            $("#l6sr").remove();
-            $("#l6ir").remove();
+            $("#l6sl").hide();
+            $("#l6il").hide();
+            $("#l6sr").hide();
+            $("#l6ir").hide();
         }
         if (selectedValue8 == '开五孔') {
-            $("#add-jiaolian6SelectLeft8").remove();
-            $("#add-jiaolian6InsertLeft8").remove();
-            $("#add-jiaolian6SelectRight8").remove();
-            $("#add-jiaolian6InsertRight8").remove();
+            $("#add-jiaolian6SelectLeft8").hide();
+            $("#add-jiaolian6InsertLeft8").hide();
+            $("#add-jiaolian6SelectRight8").hide();
+            $("#add-jiaolian6InsertRight8").hide();
 
-            $("#l6sl").remove();
-            $("#l6il").remove();
-            $("#l6sr").remove();
-            $("#l6ir").remove();
+            $("#l6sl").hide();
+            $("#l6il").hide();
+            $("#l6sr").hide();
+            $("#l6ir").hide();
         }
     })
 
     $('#add-kaijiaolian9').on('change', function () {
         var selectedValue9 = $(this).val();
         if (selectedValue9 == '开二孔') {
-            $("#add-jiaolian3SelectLeft9").remove();
-            $("#add-jiaolian3InsertLeft9").remove();
-            $("#add-jiaolian3SelectRight9").remove();
-            $("#add-jiaolian3InsertRight9").remove();
+            $("#add-jiaolian3SelectLeft9").hide();
+            $("#add-jiaolian3InsertLeft9").hide();
+            $("#add-jiaolian3SelectRight9").hide();
+            $("#add-jiaolian3InsertRight9").hide();
 
-            $("#add-jiaolian4SelectLeft9").remove();
-            $("#add-jiaolian4InsertLeft9").remove();
-            $("#add-jiaolian4SelectRight9").remove();
-            $("#add-jiaolian4InsertRight9").remove();
+            $("#add-jiaolian4SelectLeft9").hide();
+            $("#add-jiaolian4InsertLeft9").hide();
+            $("#add-jiaolian4SelectRight9").hide();
+            $("#add-jiaolian4InsertRight9").hide();
 
-            $("#add-jiaolian5SelectLeft9").remove();
-            $("#add-jiaolian5InsertLeft9").remove();
-            $("#add-jiaolian5SelectRight9").remove();
-            $("#add-jiaolian5InsertRight9").remove();
+            $("#add-jiaolian5SelectLeft9").hide();
+            $("#add-jiaolian5InsertLeft9").hide();
+            $("#add-jiaolian5SelectRight9").hide();
+            $("#add-jiaolian5InsertRight9").hide();
 
-            $("#add-jiaolian6SelectLeft9").remove();
-            $("#add-jiaolian6InsertLeft9").remove();
-            $("#add-jiaolian6SelectRight9").remove();
-            $("#add-jiaolian6InsertRight9").remove();
+            $("#add-jiaolian6SelectLeft9").hide();
+            $("#add-jiaolian6InsertLeft9").hide();
+            $("#add-jiaolian6SelectRight9").hide();
+            $("#add-jiaolian6InsertRight9").hide();
 
-            $("#l3sl").remove();
-            $("#l3il").remove();
-            $("#l3sr").remove();
-            $("#l3ir").remove();
+            $("#l3sl").hide();
+            $("#l3il").hide();
+            $("#l3sr").hide();
+            $("#l3ir").hide();
 
-            $("#l4sl").remove();
-            $("#l4il").remove();
-            $("#l4sr").remove();
-            $("#l4ir").remove();
+            $("#l4sl").hide();
+            $("#l4il").hide();
+            $("#l4sr").hide();
+            $("#l4ir").hide();
 
-            $("#l5sl").remove();
-            $("#l5il").remove();
-            $("#l5sr").remove();
-            $("#l5ir").remove();
+            $("#l5sl").hide();
+            $("#l5il").hide();
+            $("#l5sr").hide();
+            $("#l5ir").hide();
 
-            $("#l6sl").remove();
-            $("#l6il").remove();
-            $("#l6sr").remove();
-            $("#l6ir").remove();
+            $("#l6sl").hide();
+            $("#l6il").hide();
+            $("#l6sr").hide();
+            $("#l6ir").hide();
         }
         if (selectedValue9 == '开三孔') {
-            $("#add-jiaolian4SelectLeft9").remove();
-            $("#add-jiaolian4InsertLeft9").remove();
-            $("#add-jiaolian4SelectRight9").remove();
-            $("#add-jiaolian4InsertRight9").remove();
+            $("#add-jiaolian4SelectLeft9").hide();
+            $("#add-jiaolian4InsertLeft9").hide();
+            $("#add-jiaolian4SelectRight9").hide();
+            $("#add-jiaolian4InsertRight9").hide();
 
-            $("#add-jiaolian5SelectLeft9").remove();
-            $("#add-jiaolian5InsertLeft9").remove();
-            $("#add-jiaolian5SelectRight9").remove();
-            $("#add-jiaolian5InsertRight9").remove();
+            $("#add-jiaolian5SelectLeft9").hide();
+            $("#add-jiaolian5InsertLeft9").hide();
+            $("#add-jiaolian5SelectRight9").hide();
+            $("#add-jiaolian5InsertRight9").hide();
 
-            $("#add-jiaolian6SelectLeft9").remove();
-            $("#add-jiaolian6InsertLeft9").remove();
-            $("#add-jiaolian6SelectRight9").remove();
-            $("#add-jiaolian6InsertRight9").remove();
+            $("#add-jiaolian6SelectLeft9").hide();
+            $("#add-jiaolian6InsertLeft9").hide();
+            $("#add-jiaolian6SelectRight9").hide();
+            $("#add-jiaolian6InsertRight9").hide();
 
-            $("#l4sl").remove();
-            $("#l4il").remove();
-            $("#l4sr").remove();
+            $("#l4sl").hide();
+            $("#l4il").hide();
+            $("#l4sr").hide();
             $("#l4ir").delete();
 
-            $("#l5sl").remove();
-            $("#l5il").remove();
-            $("#l5sr").remove();
-            $("#l5ir").remove();
+            $("#l5sl").hide();
+            $("#l5il").hide();
+            $("#l5sr").hide();
+            $("#l5ir").hide();
 
-            $("#l6sl").remove();
-            $("#l6il").remove();
-            $("#l6sr").remove();
-            $("#l6ir").remove();
+            $("#l6sl").hide();
+            $("#l6il").hide();
+            $("#l6sr").hide();
+            $("#l6ir").hide();
         }
         if (selectedValue9 == '开四孔') {
-            $("#add-jiaolian5SelectLeft9").remove();
-            $("#add-jiaolian5InsertLeft9").remove();
-            $("#add-jiaolian5SelectRight9").remove();
-            $("#add-jiaolian5InsertRight9").remove();
+            $("#add-jiaolian5SelectLeft9").hide();
+            $("#add-jiaolian5InsertLeft9").hide();
+            $("#add-jiaolian5SelectRight9").hide();
+            $("#add-jiaolian5InsertRight9").hide();
 
-            $("#add-jiaolian6SelectLeft9").remove();
-            $("#add-jiaolian6InsertLeft9").remove();
-            $("#add-jiaolian6SelectRight9").remove();
-            $("#add-jiaolian6InsertRight9").remove();
+            $("#add-jiaolian6SelectLeft9").hide();
+            $("#add-jiaolian6InsertLeft9").hide();
+            $("#add-jiaolian6SelectRight9").hide();
+            $("#add-jiaolian6InsertRight9").hide();
 
-            $("#l5sl").remove();
-            $("#l5il").remove();
-            $("#l5sr").remove();
-            $("#l5ir").remove();
+            $("#l5sl").hide();
+            $("#l5il").hide();
+            $("#l5sr").hide();
+            $("#l5ir").hide();
 
-            $("#l6sl").remove();
-            $("#l6il").remove();
-            $("#l6sr").remove();
-            $("#l6ir").remove();
+            $("#l6sl").hide();
+            $("#l6il").hide();
+            $("#l6sr").hide();
+            $("#l6ir").hide();
         }
         if (selectedValue9 == '开五孔') {
-            $("#add-jiaolian6SelectLeft9").remove();
-            $("#add-jiaolian6InsertLeft9").remove();
-            $("#add-jiaolian6SelectRight9").remove();
-            $("#add-jiaolian6InsertRight9").remove();
+            $("#add-jiaolian6SelectLeft9").hide();
+            $("#add-jiaolian6InsertLeft9").hide();
+            $("#add-jiaolian6SelectRight9").hide();
+            $("#add-jiaolian6InsertRight9").hide();
 
-            $("#l6sl").remove();
-            $("#l6il").remove();
-            $("#l6sr").remove();
-            $("#l6ir").remove();
+            $("#l6sl").hide();
+            $("#l6il").hide();
+            $("#l6sr").hide();
+            $("#l6ir").hide();
         }
     })
 
     $('#add-kaijiaolian10').on('change', function () {
         var selectedValue10 = $(this).val();
         if (selectedValue10 == '开二孔') {
-            $("#add-jiaolian3SelectLeft10").remove();
-            $("#add-jiaolian3InsertLeft10").remove();
-            $("#add-jiaolian3SelectRight10").remove();
-            $("#add-jiaolian3InsertRight10").remove();
+            $("#add-jiaolian3SelectLeft10").hide();
+            $("#add-jiaolian3InsertLeft10").hide();
+            $("#add-jiaolian3SelectRight10").hide();
+            $("#add-jiaolian3InsertRight10").hide();
 
-            $("#add-jiaolian4SelectLeft10").remove();
-            $("#add-jiaolian4InsertLeft10").remove();
-            $("#add-jiaolian4SelectRight10").remove();
-            $("#add-jiaolian4InsertRight10").remove();
+            $("#add-jiaolian4SelectLeft10").hide();
+            $("#add-jiaolian4InsertLeft10").hide();
+            $("#add-jiaolian4SelectRight10").hide();
+            $("#add-jiaolian4InsertRight10").hide();
 
-            $("#add-jiaolian5SelectLeft10").remove();
-            $("#add-jiaolian5InsertLeft10").remove();
-            $("#add-jiaolian5SelectRight10").remove();
-            $("#add-jiaolian5InsertRight10").remove();
+            $("#add-jiaolian5SelectLeft10").hide();
+            $("#add-jiaolian5InsertLeft10").hide();
+            $("#add-jiaolian5SelectRight10").hide();
+            $("#add-jiaolian5InsertRight10").hide();
 
-            $("#add-jiaolian6SelectLeft10").remove();
-            $("#add-jiaolian6InsertLeft10").remove();
-            $("#add-jiaolian6SelectRight10").remove();
-            $("#add-jiaolian6InsertRight10").remove();
+            $("#add-jiaolian6SelectLeft10").hide();
+            $("#add-jiaolian6InsertLeft10").hide();
+            $("#add-jiaolian6SelectRight10").hide();
+            $("#add-jiaolian6InsertRight10").hide();
 
-            $("#l3sl").remove();
-            $("#l3il").remove();
-            $("#l3sr").remove();
-            $("#l3ir").remove();
+            $("#l3sl").hide();
+            $("#l3il").hide();
+            $("#l3sr").hide();
+            $("#l3ir").hide();
 
-            $("#l4sl").remove();
-            $("#l4il").remove();
-            $("#l4sr").remove();
-            $("#l4ir").remove();
+            $("#l4sl").hide();
+            $("#l4il").hide();
+            $("#l4sr").hide();
+            $("#l4ir").hide();
 
-            $("#l5sl").remove();
-            $("#l5il").remove();
-            $("#l5sr").remove();
-            $("#l5ir").remove();
+            $("#l5sl").hide();
+            $("#l5il").hide();
+            $("#l5sr").hide();
+            $("#l5ir").hide();
 
-            $("#l6sl").remove();
-            $("#l6il").remove();
-            $("#l6sr").remove();
-            $("#l6ir").remove();
+            $("#l6sl").hide();
+            $("#l6il").hide();
+            $("#l6sr").hide();
+            $("#l6ir").hide();
         }
         if (selectedValue10 == '开三孔') {
-            $("#add-jiaolian4SelectLeft10").remove();
-            $("#add-jiaolian4InsertLeft10").remove();
-            $("#add-jiaolian4SelectRight10").remove();
-            $("#add-jiaolian4InsertRight10").remove();
+            $("#add-jiaolian4SelectLeft10").hide();
+            $("#add-jiaolian4InsertLeft10").hide();
+            $("#add-jiaolian4SelectRight10").hide();
+            $("#add-jiaolian4InsertRight10").hide();
 
-            $("#add-jiaolian5SelectLeft10").remove();
-            $("#add-jiaolian5InsertLeft10").remove();
-            $("#add-jiaolian5SelectRight10").remove();
-            $("#add-jiaolian5InsertRight10").remove();
+            $("#add-jiaolian5SelectLeft10").hide();
+            $("#add-jiaolian5InsertLeft10").hide();
+            $("#add-jiaolian5SelectRight10").hide();
+            $("#add-jiaolian5InsertRight10").hide();
 
-            $("#add-jiaolian6SelectLeft10").remove();
-            $("#add-jiaolian6InsertLeft10").remove();
-            $("#add-jiaolian6SelectRight10").remove();
-            $("#add-jiaolian6InsertRight10").remove();
+            $("#add-jiaolian6SelectLeft10").hide();
+            $("#add-jiaolian6InsertLeft10").hide();
+            $("#add-jiaolian6SelectRight10").hide();
+            $("#add-jiaolian6InsertRight10").hide();
 
-            $("#l4sl").remove();
-            $("#l4il").remove();
-            $("#l4sr").remove();
+            $("#l4sl").hide();
+            $("#l4il").hide();
+            $("#l4sr").hide();
             $("#l4ir").delete();
 
-            $("#l5sl").remove();
-            $("#l5il").remove();
-            $("#l5sr").remove();
-            $("#l5ir").remove();
+            $("#l5sl").hide();
+            $("#l5il").hide();
+            $("#l5sr").hide();
+            $("#l5ir").hide();
 
-            $("#l6sl").remove();
-            $("#l6il").remove();
-            $("#l6sr").remove();
-            $("#l6ir").remove();
+            $("#l6sl").hide();
+            $("#l6il").hide();
+            $("#l6sr").hide();
+            $("#l6ir").hide();
         }
         if (selectedValue10 == '开四孔') {
-            $("#add-jiaolian5SelectLeft10").remove();
-            $("#add-jiaolian5InsertLeft10").remove();
-            $("#add-jiaolian5SelectRight10").remove();
-            $("#add-jiaolian5InsertRight10").remove();
+            $("#add-jiaolian5SelectLeft10").hide();
+            $("#add-jiaolian5InsertLeft10").hide();
+            $("#add-jiaolian5SelectRight10").hide();
+            $("#add-jiaolian5InsertRight10").hide();
 
-            $("#add-jiaolian6SelectLeft10").remove();
-            $("#add-jiaolian6InsertLeft10").remove();
-            $("#add-jiaolian6SelectRight10").remove();
-            $("#add-jiaolian6InsertRight10").remove();
+            $("#add-jiaolian6SelectLeft10").hide();
+            $("#add-jiaolian6InsertLeft10").hide();
+            $("#add-jiaolian6SelectRight10").hide();
+            $("#add-jiaolian6InsertRight10").hide();
 
-            $("#l5sl").remove();
-            $("#l5il").remove();
-            $("#l5sr").remove();
-            $("#l5ir").remove();
+            $("#l5sl").hide();
+            $("#l5il").hide();
+            $("#l5sr").hide();
+            $("#l5ir").hide();
 
-            $("#l6sl").remove();
-            $("#l6il").remove();
-            $("#l6sr").remove();
-            $("#l6ir").remove();
+            $("#l6sl").hide();
+            $("#l6il").hide();
+            $("#l6sr").hide();
+            $("#l6ir").hide();
         }
         if (selectedValue10 == '开五孔') {
-            $("#add-jiaolian6SelectLeft10").remove();
-            $("#add-jiaolian6InsertLeft10").remove();
-            $("#add-jiaolian6SelectRight10").remove();
-            $("#add-jiaolian6InsertRight10").remove();
+            $("#add-jiaolian6SelectLeft10").hide();
+            $("#add-jiaolian6InsertLeft10").hide();
+            $("#add-jiaolian6SelectRight10").hide();
+            $("#add-jiaolian6InsertRight10").hide();
 
-            $("#l6sl").remove();
-            $("#l6il").remove();
-            $("#l6sr").remove();
-            $("#l6ir").remove();
+            $("#l6sl").hide();
+            $("#l6il").hide();
+            $("#l6sr").hide();
+            $("#l6ir").hide();
         }
     })
 
     $('#add-kaijiaolian11').on('change', function () {
         var selectedValue11 = $(this).val();
         if (selectedValue11 == '开二孔') {
-            $("#add-jiaolian3SelectLeft11").remove();
-            $("#add-jiaolian3InsertLeft11").remove();
-            $("#add-jiaolian3SelectRight11").remove();
-            $("#add-jiaolian3InsertRight11").remove();
+            $("#add-jiaolian3SelectLeft11").hide();
+            $("#add-jiaolian3InsertLeft11").hide();
+            $("#add-jiaolian3SelectRight11").hide();
+            $("#add-jiaolian3InsertRight11").hide();
 
-            $("#add-jiaolian4SelectLeft11").remove();
-            $("#add-jiaolian4InsertLeft11").remove();
-            $("#add-jiaolian4SelectRight11").remove();
-            $("#add-jiaolian4InsertRight11").remove();
+            $("#add-jiaolian4SelectLeft11").hide();
+            $("#add-jiaolian4InsertLeft11").hide();
+            $("#add-jiaolian4SelectRight11").hide();
+            $("#add-jiaolian4InsertRight11").hide();
 
-            $("#add-jiaolian5SelectLeft11").remove();
-            $("#add-jiaolian5InsertLeft11").remove();
-            $("#add-jiaolian5SelectRight11").remove();
-            $("#add-jiaolian5InsertRight11").remove();
+            $("#add-jiaolian5SelectLeft11").hide();
+            $("#add-jiaolian5InsertLeft11").hide();
+            $("#add-jiaolian5SelectRight11").hide();
+            $("#add-jiaolian5InsertRight11").hide();
 
-            $("#add-jiaolian6SelectLeft11").remove();
-            $("#add-jiaolian6InsertLeft11").remove();
-            $("#add-jiaolian6SelectRight11").remove();
-            $("#add-jiaolian6InsertRight11").remove();
+            $("#add-jiaolian6SelectLeft11").hide();
+            $("#add-jiaolian6InsertLeft11").hide();
+            $("#add-jiaolian6SelectRight11").hide();
+            $("#add-jiaolian6InsertRight11").hide();
 
-            $("#l3sl").remove();
-            $("#l3il").remove();
-            $("#l3sr").remove();
-            $("#l3ir").remove();
+            $("#l3sl").hide();
+            $("#l3il").hide();
+            $("#l3sr").hide();
+            $("#l3ir").hide();
 
-            $("#l4sl").remove();
-            $("#l4il").remove();
-            $("#l4sr").remove();
-            $("#l4ir").remove();
+            $("#l4sl").hide();
+            $("#l4il").hide();
+            $("#l4sr").hide();
+            $("#l4ir").hide();
 
-            $("#l5sl").remove();
-            $("#l5il").remove();
-            $("#l5sr").remove();
-            $("#l5ir").remove();
+            $("#l5sl").hide();
+            $("#l5il").hide();
+            $("#l5sr").hide();
+            $("#l5ir").hide();
 
-            $("#l6sl").remove();
-            $("#l6il").remove();
-            $("#l6sr").remove();
-            $("#l6ir").remove();
+            $("#l6sl").hide();
+            $("#l6il").hide();
+            $("#l6sr").hide();
+            $("#l6ir").hide();
         }
         if (selectedValue11 == '开三孔') {
-            $("#add-jiaolian4SelectLeft11").remove();
-            $("#add-jiaolian4InsertLeft11").remove();
-            $("#add-jiaolian4SelectRight11").remove();
-            $("#add-jiaolian4InsertRight11").remove();
+            $("#add-jiaolian4SelectLeft11").hide();
+            $("#add-jiaolian4InsertLeft11").hide();
+            $("#add-jiaolian4SelectRight11").hide();
+            $("#add-jiaolian4InsertRight11").hide();
 
-            $("#add-jiaolian5SelectLeft11").remove();
-            $("#add-jiaolian5InsertLeft11").remove();
-            $("#add-jiaolian5SelectRight11").remove();
-            $("#add-jiaolian5InsertRight11").remove();
+            $("#add-jiaolian5SelectLeft11").hide();
+            $("#add-jiaolian5InsertLeft11").hide();
+            $("#add-jiaolian5SelectRight11").hide();
+            $("#add-jiaolian5InsertRight11").hide();
 
-            $("#add-jiaolian6SelectLeft11").remove();
-            $("#add-jiaolian6InsertLeft11").remove();
-            $("#add-jiaolian6SelectRight11").remove();
-            $("#add-jiaolian6InsertRight11").remove();
+            $("#add-jiaolian6SelectLeft11").hide();
+            $("#add-jiaolian6InsertLeft11").hide();
+            $("#add-jiaolian6SelectRight11").hide();
+            $("#add-jiaolian6InsertRight11").hide();
 
-            $("#l4sl").remove();
-            $("#l4il").remove();
-            $("#l4sr").remove();
+            $("#l4sl").hide();
+            $("#l4il").hide();
+            $("#l4sr").hide();
             $("#l4ir").delete();
 
-            $("#l5sl").remove();
-            $("#l5il").remove();
-            $("#l5sr").remove();
-            $("#l5ir").remove();
+            $("#l5sl").hide();
+            $("#l5il").hide();
+            $("#l5sr").hide();
+            $("#l5ir").hide();
 
-            $("#l6sl").remove();
-            $("#l6il").remove();
-            $("#l6sr").remove();
-            $("#l6ir").remove();
+            $("#l6sl").hide();
+            $("#l6il").hide();
+            $("#l6sr").hide();
+            $("#l6ir").hide();
         }
         if (selectedValue11 == '开四孔') {
-            $("#add-jiaolian5SelectLeft11").remove();
-            $("#add-jiaolian5InsertLeft11").remove();
-            $("#add-jiaolian5SelectRight11").remove();
-            $("#add-jiaolian5InsertRight11").remove();
+            $("#add-jiaolian5SelectLeft11").hide();
+            $("#add-jiaolian5InsertLeft11").hide();
+            $("#add-jiaolian5SelectRight11").hide();
+            $("#add-jiaolian5InsertRight11").hide();
 
-            $("#add-jiaolian6SelectLeft11").remove();
-            $("#add-jiaolian6InsertLeft11").remove();
-            $("#add-jiaolian6SelectRight11").remove();
-            $("#add-jiaolian6InsertRight11").remove();
+            $("#add-jiaolian6SelectLeft11").hide();
+            $("#add-jiaolian6InsertLeft11").hide();
+            $("#add-jiaolian6SelectRight11").hide();
+            $("#add-jiaolian6InsertRight11").hide();
 
-            $("#l5sl").remove();
-            $("#l5il").remove();
-            $("#l5sr").remove();
-            $("#l5ir").remove();
+            $("#l5sl").hide();
+            $("#l5il").hide();
+            $("#l5sr").hide();
+            $("#l5ir").hide();
 
-            $("#l6sl").remove();
-            $("#l6il").remove();
-            $("#l6sr").remove();
-            $("#l6ir").remove();
+            $("#l6sl").hide();
+            $("#l6il").hide();
+            $("#l6sr").hide();
+            $("#l6ir").hide();
         }
         if (selectedValue11 == '开五孔') {
-            $("#add-jiaolian6SelectLeft11").remove();
-            $("#add-jiaolian6InsertLeft11").remove();
-            $("#add-jiaolian6SelectRight11").remove();
-            $("#add-jiaolian6InsertRight11").remove();
+            $("#add-jiaolian6SelectLeft11").hide();
+            $("#add-jiaolian6InsertLeft11").hide();
+            $("#add-jiaolian6SelectRight11").hide();
+            $("#add-jiaolian6InsertRight11").hide();
 
-            $("#l6sl").remove();
-            $("#l6il").remove();
-            $("#l6sr").remove();
-            $("#l6ir").remove();
+            $("#l6sl").hide();
+            $("#l6il").hide();
+            $("#l6sr").hide();
+            $("#l6ir").hide();
         }
     })
 
     $('#add-kaijiaolian12').on('change', function () {
         var selectedValue12 = $(this).val();
         if (selectedValue12 == '开二孔') {
-            $("#add-jiaolian3SelectLeft12").remove();
-            $("#add-jiaolian3InsertLeft12").remove();
-            $("#add-jiaolian3SelectRight12").remove();
-            $("#add-jiaolian3InsertRight12").remove();
+            $("#add-jiaolian3SelectLeft12").hide();
+            $("#add-jiaolian3InsertLeft12").hide();
+            $("#add-jiaolian3SelectRight12").hide();
+            $("#add-jiaolian3InsertRight12").hide();
 
-            $("#add-jiaolian4SelectLeft12").remove();
-            $("#add-jiaolian4InsertLeft12").remove();
-            $("#add-jiaolian4SelectRight12").remove();
-            $("#add-jiaolian4InsertRight12").remove();
+            $("#add-jiaolian4SelectLeft12").hide();
+            $("#add-jiaolian4InsertLeft12").hide();
+            $("#add-jiaolian4SelectRight12").hide();
+            $("#add-jiaolian4InsertRight12").hide();
 
-            $("#add-jiaolian5SelectLeft12").remove();
-            $("#add-jiaolian5InsertLeft12").remove();
-            $("#add-jiaolian5SelectRight12").remove();
-            $("#add-jiaolian5InsertRight12").remove();
+            $("#add-jiaolian5SelectLeft12").hide();
+            $("#add-jiaolian5InsertLeft12").hide();
+            $("#add-jiaolian5SelectRight12").hide();
+            $("#add-jiaolian5InsertRight12").hide();
 
-            $("#add-jiaolian6SelectLeft12").remove();
-            $("#add-jiaolian6InsertLeft12").remove();
-            $("#add-jiaolian6SelectRight12").remove();
-            $("#add-jiaolian6InsertRight12").remove();
+            $("#add-jiaolian6SelectLeft12").hide();
+            $("#add-jiaolian6InsertLeft12").hide();
+            $("#add-jiaolian6SelectRight12").hide();
+            $("#add-jiaolian6InsertRight12").hide();
 
-            $("#l3sl").remove();
-            $("#l3il").remove();
-            $("#l3sr").remove();
-            $("#l3ir").remove();
+            $("#l3sl").hide();
+            $("#l3il").hide();
+            $("#l3sr").hide();
+            $("#l3ir").hide();
 
-            $("#l4sl").remove();
-            $("#l4il").remove();
-            $("#l4sr").remove();
-            $("#l4ir").remove();
+            $("#l4sl").hide();
+            $("#l4il").hide();
+            $("#l4sr").hide();
+            $("#l4ir").hide();
 
-            $("#l5sl").remove();
-            $("#l5il").remove();
-            $("#l5sr").remove();
-            $("#l5ir").remove();
+            $("#l5sl").hide();
+            $("#l5il").hide();
+            $("#l5sr").hide();
+            $("#l5ir").hide();
 
-            $("#l6sl").remove();
-            $("#l6il").remove();
-            $("#l6sr").remove();
-            $("#l6ir").remove();
+            $("#l6sl").hide();
+            $("#l6il").hide();
+            $("#l6sr").hide();
+            $("#l6ir").hide();
         }
         if (selectedValue12 == '开三孔') {
-            $("#add-jiaolian4SelectLeft12").remove();
-            $("#add-jiaolian4InsertLeft12").remove();
-            $("#add-jiaolian4SelectRight12").remove();
-            $("#add-jiaolian4InsertRight12").remove();
+            $("#add-jiaolian4SelectLeft12").hide();
+            $("#add-jiaolian4InsertLeft12").hide();
+            $("#add-jiaolian4SelectRight12").hide();
+            $("#add-jiaolian4InsertRight12").hide();
 
-            $("#add-jiaolian5SelectLeft12").remove();
-            $("#add-jiaolian5InsertLeft12").remove();
-            $("#add-jiaolian5SelectRight12").remove();
-            $("#add-jiaolian5InsertRight12").remove();
+            $("#add-jiaolian5SelectLeft12").hide();
+            $("#add-jiaolian5InsertLeft12").hide();
+            $("#add-jiaolian5SelectRight12").hide();
+            $("#add-jiaolian5InsertRight12").hide();
 
-            $("#add-jiaolian6SelectLeft12").remove();
-            $("#add-jiaolian6InsertLeft12").remove();
-            $("#add-jiaolian6SelectRight12").remove();
-            $("#add-jiaolian6InsertRight12").remove();
+            $("#add-jiaolian6SelectLeft12").hide();
+            $("#add-jiaolian6InsertLeft12").hide();
+            $("#add-jiaolian6SelectRight12").hide();
+            $("#add-jiaolian6InsertRight12").hide();
 
-            $("#l4sl").remove();
-            $("#l4il").remove();
-            $("#l4sr").remove();
+            $("#l4sl").hide();
+            $("#l4il").hide();
+            $("#l4sr").hide();
             $("#l4ir").delete();
 
-            $("#l5sl").remove();
-            $("#l5il").remove();
-            $("#l5sr").remove();
-            $("#l5ir").remove();
+            $("#l5sl").hide();
+            $("#l5il").hide();
+            $("#l5sr").hide();
+            $("#l5ir").hide();
 
-            $("#l6sl").remove();
-            $("#l6il").remove();
-            $("#l6sr").remove();
-            $("#l6ir").remove();
+            $("#l6sl").hide();
+            $("#l6il").hide();
+            $("#l6sr").hide();
+            $("#l6ir").hide();
         }
         if (selectedValue12 == '开四孔') {
-            $("#add-jiaolian5SelectLeft12").remove();
-            $("#add-jiaolian5InsertLeft12").remove();
-            $("#add-jiaolian5SelectRight12").remove();
-            $("#add-jiaolian5InsertRight12").remove();
+            $("#add-jiaolian5SelectLeft12").hide();
+            $("#add-jiaolian5InsertLeft12").hide();
+            $("#add-jiaolian5SelectRight12").hide();
+            $("#add-jiaolian5InsertRight12").hide();
 
-            $("#add-jiaolian6SelectLeft12").remove();
-            $("#add-jiaolian6InsertLeft12").remove();
-            $("#add-jiaolian6SelectRight12").remove();
-            $("#add-jiaolian6InsertRight12").remove();
+            $("#add-jiaolian6SelectLeft12").hide();
+            $("#add-jiaolian6InsertLeft12").hide();
+            $("#add-jiaolian6SelectRight12").hide();
+            $("#add-jiaolian6InsertRight12").hide();
 
-            $("#l5sl").remove();
-            $("#l5il").remove();
-            $("#l5sr").remove();
-            $("#l5ir").remove();
+            $("#l5sl").hide();
+            $("#l5il").hide();
+            $("#l5sr").hide();
+            $("#l5ir").hide();
 
-            $("#l6sl").remove();
-            $("#l6il").remove();
-            $("#l6sr").remove();
-            $("#l6ir").remove();
+            $("#l6sl").hide();
+            $("#l6il").hide();
+            $("#l6sr").hide();
+            $("#l6ir").hide();
         }
         if (selectedValue12 == '开五孔') {
-            $("#add-jiaolian6SelectLeft12").remove();
-            $("#add-jiaolian6InsertLeft12").remove();
-            $("#add-jiaolian6SelectRight12").remove();
-            $("#add-jiaolian6InsertRight12").remove();
+            $("#add-jiaolian6SelectLeft12").hide();
+            $("#add-jiaolian6InsertLeft12").hide();
+            $("#add-jiaolian6SelectRight12").hide();
+            $("#add-jiaolian6InsertRight12").hide();
 
-            $("#l6sl").remove();
-            $("#l6il").remove();
-            $("#l6sr").remove();
-            $("#l6ir").remove();
+            $("#l6sl").hide();
+            $("#l6il").hide();
+            $("#l6sr").hide();
+            $("#l6ir").hide();
         }
     })
 
     $('#add-kaijiaolian13').on('change', function () {
         var selectedValue13 = $(this).val();
         if (selectedValue13 == '开二孔') {
-            $("#add-jiaolian3SelectLeft13").remove();
-            $("#add-jiaolian3InsertLeft13").remove();
-            $("#add-jiaolian3SelectRight13").remove();
-            $("#add-jiaolian3InsertRight13").remove();
+            $("#add-jiaolian3SelectLeft13").hide();
+            $("#add-jiaolian3InsertLeft13").hide();
+            $("#add-jiaolian3SelectRight13").hide();
+            $("#add-jiaolian3InsertRight13").hide();
 
-            $("#add-jiaolian4SelectLeft13").remove();
-            $("#add-jiaolian4InsertLeft13").remove();
-            $("#add-jiaolian4SelectRight13").remove();
-            $("#add-jiaolian4InsertRight13").remove();
+            $("#add-jiaolian4SelectLeft13").hide();
+            $("#add-jiaolian4InsertLeft13").hide();
+            $("#add-jiaolian4SelectRight13").hide();
+            $("#add-jiaolian4InsertRight13").hide();
 
-            $("#add-jiaolian5SelectLeft13").remove();
-            $("#add-jiaolian5InsertLeft13").remove();
-            $("#add-jiaolian5SelectRight13").remove();
-            $("#add-jiaolian5InsertRight13").remove();
+            $("#add-jiaolian5SelectLeft13").hide();
+            $("#add-jiaolian5InsertLeft13").hide();
+            $("#add-jiaolian5SelectRight13").hide();
+            $("#add-jiaolian5InsertRight13").hide();
 
-            $("#add-jiaolian6SelectLeft13").remove();
-            $("#add-jiaolian6InsertLeft13").remove();
-            $("#add-jiaolian6SelectRight13").remove();
-            $("#add-jiaolian6InsertRight13").remove();
+            $("#add-jiaolian6SelectLeft13").hide();
+            $("#add-jiaolian6InsertLeft13").hide();
+            $("#add-jiaolian6SelectRight13").hide();
+            $("#add-jiaolian6InsertRight13").hide();
 
-            $("#l3sl").remove();
-            $("#l3il").remove();
-            $("#l3sr").remove();
-            $("#l3ir").remove();
+            $("#l3sl").hide();
+            $("#l3il").hide();
+            $("#l3sr").hide();
+            $("#l3ir").hide();
 
-            $("#l4sl").remove();
-            $("#l4il").remove();
-            $("#l4sr").remove();
-            $("#l4ir").remove();
+            $("#l4sl").hide();
+            $("#l4il").hide();
+            $("#l4sr").hide();
+            $("#l4ir").hide();
 
-            $("#l5sl").remove();
-            $("#l5il").remove();
-            $("#l5sr").remove();
-            $("#l5ir").remove();
+            $("#l5sl").hide();
+            $("#l5il").hide();
+            $("#l5sr").hide();
+            $("#l5ir").hide();
 
-            $("#l6sl").remove();
-            $("#l6il").remove();
-            $("#l6sr").remove();
-            $("#l6ir").remove();
+            $("#l6sl").hide();
+            $("#l6il").hide();
+            $("#l6sr").hide();
+            $("#l6ir").hide();
         }
         if (selectedValue13 == '开三孔') {
-            $("#add-jiaolian4SelectLeft13").remove();
-            $("#add-jiaolian4InsertLeft13").remove();
-            $("#add-jiaolian4SelectRight13").remove();
-            $("#add-jiaolian4InsertRight13").remove();
+            $("#add-jiaolian4SelectLeft13").hide();
+            $("#add-jiaolian4InsertLeft13").hide();
+            $("#add-jiaolian4SelectRight13").hide();
+            $("#add-jiaolian4InsertRight13").hide();
 
-            $("#add-jiaolian5SelectLeft13").remove();
-            $("#add-jiaolian5InsertLeft13").remove();
-            $("#add-jiaolian5SelectRight13").remove();
-            $("#add-jiaolian5InsertRight13").remove();
+            $("#add-jiaolian5SelectLeft13").hide();
+            $("#add-jiaolian5InsertLeft13").hide();
+            $("#add-jiaolian5SelectRight13").hide();
+            $("#add-jiaolian5InsertRight13").hide();
 
-            $("#add-jiaolian6SelectLeft13").remove();
-            $("#add-jiaolian6InsertLeft13").remove();
-            $("#add-jiaolian6SelectRight13").remove();
-            $("#add-jiaolian6InsertRight13").remove();
+            $("#add-jiaolian6SelectLeft13").hide();
+            $("#add-jiaolian6InsertLeft13").hide();
+            $("#add-jiaolian6SelectRight13").hide();
+            $("#add-jiaolian6InsertRight13").hide();
 
-            $("#l4sl").remove();
-            $("#l4il").remove();
-            $("#l4sr").remove();
+            $("#l4sl").hide();
+            $("#l4il").hide();
+            $("#l4sr").hide();
             $("#l4ir").delete();
 
-            $("#l5sl").remove();
-            $("#l5il").remove();
-            $("#l5sr").remove();
-            $("#l5ir").remove();
+            $("#l5sl").hide();
+            $("#l5il").hide();
+            $("#l5sr").hide();
+            $("#l5ir").hide();
 
-            $("#l6sl").remove();
-            $("#l6il").remove();
-            $("#l6sr").remove();
-            $("#l6ir").remove();
+            $("#l6sl").hide();
+            $("#l6il").hide();
+            $("#l6sr").hide();
+            $("#l6ir").hide();
         }
         if (selectedValue13 == '开四孔') {
-            $("#add-jiaolian5SelectLeft13").remove();
-            $("#add-jiaolian5InsertLeft13").remove();
-            $("#add-jiaolian5SelectRight13").remove();
-            $("#add-jiaolian5InsertRight13").remove();
+            $("#add-jiaolian5SelectLeft13").hide();
+            $("#add-jiaolian5InsertLeft13").hide();
+            $("#add-jiaolian5SelectRight13").hide();
+            $("#add-jiaolian5InsertRight13").hide();
 
-            $("#add-jiaolian6SelectLeft13").remove();
-            $("#add-jiaolian6InsertLeft13").remove();
-            $("#add-jiaolian6SelectRight13").remove();
-            $("#add-jiaolian6InsertRight13").remove();
+            $("#add-jiaolian6SelectLeft13").hide();
+            $("#add-jiaolian6InsertLeft13").hide();
+            $("#add-jiaolian6SelectRight13").hide();
+            $("#add-jiaolian6InsertRight13").hide();
 
-            $("#l5sl").remove();
-            $("#l5il").remove();
-            $("#l5sr").remove();
-            $("#l5ir").remove();
+            $("#l5sl").hide();
+            $("#l5il").hide();
+            $("#l5sr").hide();
+            $("#l5ir").hide();
 
-            $("#l6sl").remove();
-            $("#l6il").remove();
-            $("#l6sr").remove();
-            $("#l6ir").remove();
+            $("#l6sl").hide();
+            $("#l6il").hide();
+            $("#l6sr").hide();
+            $("#l6ir").hide();
         }
         if (selectedValue13 == '开五孔') {
-            $("#add-jiaolian6SelectLeft13").remove();
-            $("#add-jiaolian6InsertLeft13").remove();
-            $("#add-jiaolian6SelectRight13").remove();
-            $("#add-jiaolian6InsertRight13").remove();
+            $("#add-jiaolian6SelectLeft13").hide();
+            $("#add-jiaolian6InsertLeft13").hide();
+            $("#add-jiaolian6SelectRight13").hide();
+            $("#add-jiaolian6InsertRight13").hide();
 
-            $("#l6sl").remove();
-            $("#l6il").remove();
-            $("#l6sr").remove();
-            $("#l6ir").remove();
+            $("#l6sl").hide();
+            $("#l6il").hide();
+            $("#l6sr").hide();
+            $("#l6ir").hide();
         }
     })
 
     $('#add-kaijiaolian14').on('change', function () {
         var selectedValue14 = $(this).val();
         if (selectedValue14 == '开二孔') {
-            $("#add-jiaolian3SelectLeft14").remove();
-            $("#add-jiaolian3InsertLeft14").remove();
-            $("#add-jiaolian3SelectRight14").remove();
-            $("#add-jiaolian3InsertRight14").remove();
+            $("#add-jiaolian3SelectLeft14").hide();
+            $("#add-jiaolian3InsertLeft14").hide();
+            $("#add-jiaolian3SelectRight14").hide();
+            $("#add-jiaolian3InsertRight14").hide();
 
-            $("#add-jiaolian4SelectLeft14").remove();
-            $("#add-jiaolian4InsertLeft14").remove();
-            $("#add-jiaolian4SelectRight14").remove();
-            $("#add-jiaolian4InsertRight14").remove();
+            $("#add-jiaolian4SelectLeft14").hide();
+            $("#add-jiaolian4InsertLeft14").hide();
+            $("#add-jiaolian4SelectRight14").hide();
+            $("#add-jiaolian4InsertRight14").hide();
 
-            $("#add-jiaolian5SelectLeft14").remove();
-            $("#add-jiaolian5InsertLeft14").remove();
-            $("#add-jiaolian5SelectRight14").remove();
-            $("#add-jiaolian5InsertRight14").remove();
+            $("#add-jiaolian5SelectLeft14").hide();
+            $("#add-jiaolian5InsertLeft14").hide();
+            $("#add-jiaolian5SelectRight14").hide();
+            $("#add-jiaolian5InsertRight14").hide();
 
-            $("#add-jiaolian6SelectLeft14").remove();
-            $("#add-jiaolian6InsertLeft14").remove();
-            $("#add-jiaolian6SelectRight14").remove();
-            $("#add-jiaolian6InsertRight14").remove();
+            $("#add-jiaolian6SelectLeft14").hide();
+            $("#add-jiaolian6InsertLeft14").hide();
+            $("#add-jiaolian6SelectRight14").hide();
+            $("#add-jiaolian6InsertRight14").hide();
 
-            $("#l3sl").remove();
-            $("#l3il").remove();
-            $("#l3sr").remove();
-            $("#l3ir").remove();
+            $("#l3sl").hide();
+            $("#l3il").hide();
+            $("#l3sr").hide();
+            $("#l3ir").hide();
 
-            $("#l4sl").remove();
-            $("#l4il").remove();
-            $("#l4sr").remove();
-            $("#l4ir").remove();
+            $("#l4sl").hide();
+            $("#l4il").hide();
+            $("#l4sr").hide();
+            $("#l4ir").hide();
 
-            $("#l5sl").remove();
-            $("#l5il").remove();
-            $("#l5sr").remove();
-            $("#l5ir").remove();
+            $("#l5sl").hide();
+            $("#l5il").hide();
+            $("#l5sr").hide();
+            $("#l5ir").hide();
 
-            $("#l6sl").remove();
-            $("#l6il").remove();
-            $("#l6sr").remove();
-            $("#l6ir").remove();
+            $("#l6sl").hide();
+            $("#l6il").hide();
+            $("#l6sr").hide();
+            $("#l6ir").hide();
         }
         if (selectedValue14 == '开三孔') {
-            $("#add-jiaolian4SelectLeft14").remove();
-            $("#add-jiaolian4InsertLeft14").remove();
-            $("#add-jiaolian4SelectRight14").remove();
-            $("#add-jiaolian4InsertRight14").remove();
+            $("#add-jiaolian4SelectLeft14").hide();
+            $("#add-jiaolian4InsertLeft14").hide();
+            $("#add-jiaolian4SelectRight14").hide();
+            $("#add-jiaolian4InsertRight14").hide();
 
-            $("#add-jiaolian5SelectLeft14").remove();
-            $("#add-jiaolian5InsertLeft14").remove();
-            $("#add-jiaolian5SelectRight14").remove();
-            $("#add-jiaolian5InsertRight14").remove();
+            $("#add-jiaolian5SelectLeft14").hide();
+            $("#add-jiaolian5InsertLeft14").hide();
+            $("#add-jiaolian5SelectRight14").hide();
+            $("#add-jiaolian5InsertRight14").hide();
 
-            $("#add-jiaolian6SelectLeft14").remove();
-            $("#add-jiaolian6InsertLeft14").remove();
-            $("#add-jiaolian6SelectRight14").remove();
-            $("#add-jiaolian6InsertRight14").remove();
+            $("#add-jiaolian6SelectLeft14").hide();
+            $("#add-jiaolian6InsertLeft14").hide();
+            $("#add-jiaolian6SelectRight14").hide();
+            $("#add-jiaolian6InsertRight14").hide();
 
-            $("#l4sl").remove();
-            $("#l4il").remove();
-            $("#l4sr").remove();
+            $("#l4sl").hide();
+            $("#l4il").hide();
+            $("#l4sr").hide();
             $("#l4ir").delete();
 
-            $("#l5sl").remove();
-            $("#l5il").remove();
-            $("#l5sr").remove();
-            $("#l5ir").remove();
+            $("#l5sl").hide();
+            $("#l5il").hide();
+            $("#l5sr").hide();
+            $("#l5ir").hide();
 
-            $("#l6sl").remove();
-            $("#l6il").remove();
-            $("#l6sr").remove();
-            $("#l6ir").remove();
+            $("#l6sl").hide();
+            $("#l6il").hide();
+            $("#l6sr").hide();
+            $("#l6ir").hide();
         }
         if (selectedValue14 == '开四孔') {
-            $("#add-jiaolian5SelectLeft14").remove();
-            $("#add-jiaolian5InsertLeft14").remove();
-            $("#add-jiaolian5SelectRight14").remove();
-            $("#add-jiaolian5InsertRight14").remove();
+            $("#add-jiaolian5SelectLeft14").hide();
+            $("#add-jiaolian5InsertLeft14").hide();
+            $("#add-jiaolian5SelectRight14").hide();
+            $("#add-jiaolian5InsertRight14").hide();
 
-            $("#add-jiaolian6SelectLeft14").remove();
-            $("#add-jiaolian6InsertLeft14").remove();
-            $("#add-jiaolian6SelectRight14").remove();
-            $("#add-jiaolian6InsertRight14").remove();
+            $("#add-jiaolian6SelectLeft14").hide();
+            $("#add-jiaolian6InsertLeft14").hide();
+            $("#add-jiaolian6SelectRight14").hide();
+            $("#add-jiaolian6InsertRight14").hide();
 
-            $("#l5sl").remove();
-            $("#l5il").remove();
-            $("#l5sr").remove();
-            $("#l5ir").remove();
+            $("#l5sl").hide();
+            $("#l5il").hide();
+            $("#l5sr").hide();
+            $("#l5ir").hide();
 
-            $("#l6sl").remove();
-            $("#l6il").remove();
-            $("#l6sr").remove();
-            $("#l6ir").remove();
+            $("#l6sl").hide();
+            $("#l6il").hide();
+            $("#l6sr").hide();
+            $("#l6ir").hide();
         }
         if (selectedValue14 == '开五孔') {
-            $("#add-jiaolian6SelectLeft14").remove();
-            $("#add-jiaolian6InsertLeft14").remove();
-            $("#add-jiaolian6SelectRight14").remove();
-            $("#add-jiaolian6InsertRight14").remove();
+            $("#add-jiaolian6SelectLeft14").hide();
+            $("#add-jiaolian6InsertLeft14").hide();
+            $("#add-jiaolian6SelectRight14").hide();
+            $("#add-jiaolian6InsertRight14").hide();
 
-            $("#l6sl").remove();
-            $("#l6il").remove();
-            $("#l6sr").remove();
-            $("#l6ir").remove();
+            $("#l6sl").hide();
+            $("#l6il").hide();
+            $("#l6sr").hide();
+            $("#l6ir").hide();
         }
     })
 
     $('#add-kaijiaolian15').on('change', function () {
         var selectedValue15 = $(this).val();
         if (selectedValue15 == '开二孔') {
-            $("#add-jiaolian3SelectLeft15").remove();
-            $("#add-jiaolian3InsertLeft15").remove();
-            $("#add-jiaolian3SelectRight15").remove();
-            $("#add-jiaolian3InsertRight15").remove();
+            $("#add-jiaolian3SelectLeft15").hide();
+            $("#add-jiaolian3InsertLeft15").hide();
+            $("#add-jiaolian3SelectRight15").hide();
+            $("#add-jiaolian3InsertRight15").hide();
 
-            $("#add-jiaolian4SelectLeft15").remove();
-            $("#add-jiaolian4InsertLeft15").remove();
-            $("#add-jiaolian4SelectRight15").remove();
-            $("#add-jiaolian4InsertRight15").remove();
+            $("#add-jiaolian4SelectLeft15").hide();
+            $("#add-jiaolian4InsertLeft15").hide();
+            $("#add-jiaolian4SelectRight15").hide();
+            $("#add-jiaolian4InsertRight15").hide();
 
-            $("#add-jiaolian5SelectLeft15").remove();
-            $("#add-jiaolian5InsertLeft15").remove();
-            $("#add-jiaolian5SelectRight15").remove();
-            $("#add-jiaolian5InsertRight15").remove();
+            $("#add-jiaolian5SelectLeft15").hide();
+            $("#add-jiaolian5InsertLeft15").hide();
+            $("#add-jiaolian5SelectRight15").hide();
+            $("#add-jiaolian5InsertRight15").hide();
 
-            $("#add-jiaolian6SelectLeft15").remove();
-            $("#add-jiaolian6InsertLeft15").remove();
-            $("#add-jiaolian6SelectRight15").remove();
-            $("#add-jiaolian6InsertRight15").remove();
+            $("#add-jiaolian6SelectLeft15").hide();
+            $("#add-jiaolian6InsertLeft15").hide();
+            $("#add-jiaolian6SelectRight15").hide();
+            $("#add-jiaolian6InsertRight15").hide();
 
-            $("#l3sl").remove();
-            $("#l3il").remove();
-            $("#l3sr").remove();
-            $("#l3ir").remove();
+            $("#l3sl").hide();
+            $("#l3il").hide();
+            $("#l3sr").hide();
+            $("#l3ir").hide();
 
-            $("#l4sl").remove();
-            $("#l4il").remove();
-            $("#l4sr").remove();
-            $("#l4ir").remove();
+            $("#l4sl").hide();
+            $("#l4il").hide();
+            $("#l4sr").hide();
+            $("#l4ir").hide();
 
-            $("#l5sl").remove();
-            $("#l5il").remove();
-            $("#l5sr").remove();
-            $("#l5ir").remove();
+            $("#l5sl").hide();
+            $("#l5il").hide();
+            $("#l5sr").hide();
+            $("#l5ir").hide();
 
-            $("#l6sl").remove();
-            $("#l6il").remove();
-            $("#l6sr").remove();
-            $("#l6ir").remove();
+            $("#l6sl").hide();
+            $("#l6il").hide();
+            $("#l6sr").hide();
+            $("#l6ir").hide();
         }
         if (selectedValue15 == '开三孔') {
-            $("#add-jiaolian4SelectLeft15").remove();
-            $("#add-jiaolian4InsertLeft15").remove();
-            $("#add-jiaolian4SelectRight15").remove();
-            $("#add-jiaolian4InsertRight15").remove();
+            $("#add-jiaolian4SelectLeft15").hide();
+            $("#add-jiaolian4InsertLeft15").hide();
+            $("#add-jiaolian4SelectRight15").hide();
+            $("#add-jiaolian4InsertRight15").hide();
 
-            $("#add-jiaolian5SelectLeft15").remove();
-            $("#add-jiaolian5InsertLeft15").remove();
-            $("#add-jiaolian5SelectRight15").remove();
-            $("#add-jiaolian5InsertRight15").remove();
+            $("#add-jiaolian5SelectLeft15").hide();
+            $("#add-jiaolian5InsertLeft15").hide();
+            $("#add-jiaolian5SelectRight15").hide();
+            $("#add-jiaolian5InsertRight15").hide();
 
-            $("#add-jiaolian6SelectLeft15").remove();
-            $("#add-jiaolian6InsertLeft15").remove();
-            $("#add-jiaolian6SelectRight15").remove();
-            $("#add-jiaolian6InsertRight15").remove();
+            $("#add-jiaolian6SelectLeft15").hide();
+            $("#add-jiaolian6InsertLeft15").hide();
+            $("#add-jiaolian6SelectRight15").hide();
+            $("#add-jiaolian6InsertRight15").hide();
 
-            $("#l4sl").remove();
-            $("#l4il").remove();
-            $("#l4sr").remove();
+            $("#l4sl").hide();
+            $("#l4il").hide();
+            $("#l4sr").hide();
             $("#l4ir").delete();
 
-            $("#l5sl").remove();
-            $("#l5il").remove();
-            $("#l5sr").remove();
-            $("#l5ir").remove();
+            $("#l5sl").hide();
+            $("#l5il").hide();
+            $("#l5sr").hide();
+            $("#l5ir").hide();
 
-            $("#l6sl").remove();
-            $("#l6il").remove();
-            $("#l6sr").remove();
-            $("#l6ir").remove();
+            $("#l6sl").hide();
+            $("#l6il").hide();
+            $("#l6sr").hide();
+            $("#l6ir").hide();
         }
         if (selectedValue15 == '开四孔') {
-            $("#add-jiaolian5SelectLeft15").remove();
-            $("#add-jiaolian5InsertLeft15").remove();
-            $("#add-jiaolian5SelectRight15").remove();
-            $("#add-jiaolian5InsertRight15").remove();
+            $("#add-jiaolian5SelectLeft15").hide();
+            $("#add-jiaolian5InsertLeft15").hide();
+            $("#add-jiaolian5SelectRight15").hide();
+            $("#add-jiaolian5InsertRight15").hide();
 
-            $("#add-jiaolian6SelectLeft15").remove();
-            $("#add-jiaolian6InsertLeft15").remove();
-            $("#add-jiaolian6SelectRight15").remove();
-            $("#add-jiaolian6InsertRight15").remove();
+            $("#add-jiaolian6SelectLeft15").hide();
+            $("#add-jiaolian6InsertLeft15").hide();
+            $("#add-jiaolian6SelectRight15").hide();
+            $("#add-jiaolian6InsertRight15").hide();
 
-            $("#l5sl").remove();
-            $("#l5il").remove();
-            $("#l5sr").remove();
-            $("#l5ir").remove();
+            $("#l5sl").hide();
+            $("#l5il").hide();
+            $("#l5sr").hide();
+            $("#l5ir").hide();
 
-            $("#l6sl").remove();
-            $("#l6il").remove();
-            $("#l6sr").remove();
-            $("#l6ir").remove();
+            $("#l6sl").hide();
+            $("#l6il").hide();
+            $("#l6sr").hide();
+            $("#l6ir").hide();
         }
         if (selectedValue15 == '开五孔') {
-            $("#add-jiaolian6SelectLeft15").remove();
-            $("#add-jiaolian6InsertLeft15").remove();
-            $("#add-jiaolian6SelectRight15").remove();
-            $("#add-jiaolian6InsertRight15").remove();
+            $("#add-jiaolian6SelectLeft15").hide();
+            $("#add-jiaolian6InsertLeft15").hide();
+            $("#add-jiaolian6SelectRight15").hide();
+            $("#add-jiaolian6InsertRight15").hide();
 
-            $("#l6sl").remove();
-            $("#l6il").remove();
-            $("#l6sr").remove();
-            $("#l6ir").remove();
+            $("#l6sl").hide();
+            $("#l6il").hide();
+            $("#l6sr").hide();
+            $("#l6ir").hide();
         }
     })
 
     $('#add-kaijiaolian16').on('change', function () {
         var selectedValue16 = $(this).val();
         if (selectedValue16 == '开二孔') {
-            $("#add-jiaolian3SelectLeft16").remove();
-            $("#add-jiaolian3InsertLeft16").remove();
-            $("#add-jiaolian3SelectRight16").remove();
-            $("#add-jiaolian3InsertRight16").remove();
+            $("#add-jiaolian3SelectLeft16").hide();
+            $("#add-jiaolian3InsertLeft16").hide();
+            $("#add-jiaolian3SelectRight16").hide();
+            $("#add-jiaolian3InsertRight16").hide();
 
-            $("#add-jiaolian4SelectLeft16").remove();
-            $("#add-jiaolian4InsertLeft16").remove();
-            $("#add-jiaolian4SelectRight16").remove();
-            $("#add-jiaolian4InsertRight16").remove();
+            $("#add-jiaolian4SelectLeft16").hide();
+            $("#add-jiaolian4InsertLeft16").hide();
+            $("#add-jiaolian4SelectRight16").hide();
+            $("#add-jiaolian4InsertRight16").hide();
 
-            $("#add-jiaolian5SelectLeft16").remove();
-            $("#add-jiaolian5InsertLeft16").remove();
-            $("#add-jiaolian5SelectRight16").remove();
-            $("#add-jiaolian5InsertRight16").remove();
+            $("#add-jiaolian5SelectLeft16").hide();
+            $("#add-jiaolian5InsertLeft16").hide();
+            $("#add-jiaolian5SelectRight16").hide();
+            $("#add-jiaolian5InsertRight16").hide();
 
-            $("#add-jiaolian6SelectLeft16").remove();
-            $("#add-jiaolian6InsertLeft16").remove();
-            $("#add-jiaolian6SelectRight16").remove();
-            $("#add-jiaolian6InsertRight16").remove();
+            $("#add-jiaolian6SelectLeft16").hide();
+            $("#add-jiaolian6InsertLeft16").hide();
+            $("#add-jiaolian6SelectRight16").hide();
+            $("#add-jiaolian6InsertRight16").hide();
 
-            $("#l3sl").remove();
-            $("#l3il").remove();
-            $("#l3sr").remove();
-            $("#l3ir").remove();
+            $("#l3sl").hide();
+            $("#l3il").hide();
+            $("#l3sr").hide();
+            $("#l3ir").hide();
 
-            $("#l4sl").remove();
-            $("#l4il").remove();
-            $("#l4sr").remove();
-            $("#l4ir").remove();
+            $("#l4sl").hide();
+            $("#l4il").hide();
+            $("#l4sr").hide();
+            $("#l4ir").hide();
 
-            $("#l5sl").remove();
-            $("#l5il").remove();
-            $("#l5sr").remove();
-            $("#l5ir").remove();
+            $("#l5sl").hide();
+            $("#l5il").hide();
+            $("#l5sr").hide();
+            $("#l5ir").hide();
 
-            $("#l6sl").remove();
-            $("#l6il").remove();
-            $("#l6sr").remove();
-            $("#l6ir").remove();
+            $("#l6sl").hide();
+            $("#l6il").hide();
+            $("#l6sr").hide();
+            $("#l6ir").hide();
         }
         if (selectedValue16 == '开三孔') {
-            $("#add-jiaolian4SelectLeft16").remove();
-            $("#add-jiaolian4InsertLeft16").remove();
-            $("#add-jiaolian4SelectRight16").remove();
-            $("#add-jiaolian4InsertRight16").remove();
+            $("#add-jiaolian4SelectLeft16").hide();
+            $("#add-jiaolian4InsertLeft16").hide();
+            $("#add-jiaolian4SelectRight16").hide();
+            $("#add-jiaolian4InsertRight16").hide();
 
-            $("#add-jiaolian5SelectLeft16").remove();
-            $("#add-jiaolian5InsertLeft16").remove();
-            $("#add-jiaolian5SelectRight16").remove();
-            $("#add-jiaolian5InsertRight16").remove();
+            $("#add-jiaolian5SelectLeft16").hide();
+            $("#add-jiaolian5InsertLeft16").hide();
+            $("#add-jiaolian5SelectRight16").hide();
+            $("#add-jiaolian5InsertRight16").hide();
 
-            $("#add-jiaolian6SelectLeft16").remove();
-            $("#add-jiaolian6InsertLeft16").remove();
-            $("#add-jiaolian6SelectRight16").remove();
-            $("#add-jiaolian6InsertRight16").remove();
+            $("#add-jiaolian6SelectLeft16").hide();
+            $("#add-jiaolian6InsertLeft16").hide();
+            $("#add-jiaolian6SelectRight16").hide();
+            $("#add-jiaolian6InsertRight16").hide();
 
-            $("#l4sl").remove();
-            $("#l4il").remove();
-            $("#l4sr").remove();
-            $("#l4ir").delete();
+            $("#l4sl").hide();
+            $("#l4il").hide();
+            $("#l4sr").hide();
+            $("#l4ir").hide();
 
-            $("#l5sl").remove();
-            $("#l5il").remove();
-            $("#l5sr").remove();
-            $("#l5ir").remove();
+            $("#l5sl").hide();
+            $("#l5il").hide();
+            $("#l5sr").hide();
+            $("#l5ir").hide();
 
-            $("#l6sl").remove();
-            $("#l6il").remove();
-            $("#l6sr").remove();
-            $("#l6ir").remove();
+            $("#l6sl").hide();
+            $("#l6il").hide();
+            $("#l6sr").hide();
+            $("#l6ir").hide();
         }
         if (selectedValue16 == '开四孔') {
-            $("#add-jiaolian5SelectLeft16").remove();
-            $("#add-jiaolian5InsertLeft16").remove();
-            $("#add-jiaolian5SelectRight16").remove();
-            $("#add-jiaolian5InsertRight16").remove();
+            $("#add-jiaolian5SelectLeft16").hide();
+            $("#add-jiaolian5InsertLeft16").hide();
+            $("#add-jiaolian5SelectRight16").hide();
+            $("#add-jiaolian5InsertRight16").hide();
 
-            $("#add-jiaolian6SelectLeft16").remove();
-            $("#add-jiaolian6InsertLeft16").remove();
-            $("#add-jiaolian6SelectRight16").remove();
-            $("#add-jiaolian6InsertRight16").remove();
+            $("#add-jiaolian6SelectLeft16").hide();
+            $("#add-jiaolian6InsertLeft16").hide();
+            $("#add-jiaolian6SelectRight16").hide();
+            $("#add-jiaolian6InsertRight16").hide();
 
-            $("#l5sl").remove();
-            $("#l5il").remove();
-            $("#l5sr").remove();
-            $("#l5ir").remove();
+            $("#l5sl").hide();
+            $("#l5il").hide();
+            $("#l5sr").hide();
+            $("#l5ir").hide();
 
-            $("#l6sl").remove();
-            $("#l6il").remove();
-            $("#l6sr").remove();
-            $("#l6ir").remove();
+            $("#l6sl").hide();
+            $("#l6il").hide();
+            $("#l6sr").hide();
+            $("#l6ir").hide();
         }
         if (selectedValue16 == '开五孔') {
-            $("#add-jiaolian6SelectLeft16").remove();
-            $("#add-jiaolian6InsertLeft16").remove();
-            $("#add-jiaolian6SelectRight16").remove();
-            $("#add-jiaolian6InsertRight16").remove();
+            $("#add-jiaolian6SelectLeft16").hide();
+            $("#add-jiaolian6InsertLeft16").hide();
+            $("#add-jiaolian6SelectRight16").hide();
+            $("#add-jiaolian6InsertRight16").hide();
 
-            $("#l6sl").remove();
-            $("#l6il").remove();
-            $("#l6sr").remove();
-            $("#l6ir").remove();
+            $("#l6sl").hide();
+            $("#l6il").hide();
+            $("#l6sr").hide();
+            $("#l6ir").hide();
         }
     })
 
     $('#add-kaijiaolian17').on('change', function () {
         var selectedValue17 = $(this).val();
         if (selectedValue17 == '开二孔') {
-            $("#add-jiaolian3SelectLeft17").remove();
-            $("#add-jiaolian3InsertLeft17").remove();
-            $("#add-jiaolian3SelectRight17").remove();
-            $("#add-jiaolian3InsertRight17").remove();
+            $("#add-jiaolian3SelectLeft17").hide();
+            $("#add-jiaolian3InsertLeft17").hide();
+            $("#add-jiaolian3SelectRight17").hide();
+            $("#add-jiaolian3InsertRight17").hide();
 
-            $("#add-jiaolian4SelectLeft17").remove();
-            $("#add-jiaolian4InsertLeft17").remove();
-            $("#add-jiaolian4SelectRight17").remove();
-            $("#add-jiaolian4InsertRight17").remove();
+            $("#add-jiaolian4SelectLeft17").hide();
+            $("#add-jiaolian4InsertLeft17").hide();
+            $("#add-jiaolian4SelectRight17").hide();
+            $("#add-jiaolian4InsertRight17").hide();
 
-            $("#add-jiaolian5SelectLeft17").remove();
-            $("#add-jiaolian5InsertLeft17").remove();
-            $("#add-jiaolian5SelectRight17").remove();
-            $("#add-jiaolian5InsertRight17").remove();
+            $("#add-jiaolian5SelectLeft17").hide();
+            $("#add-jiaolian5InsertLeft17").hide();
+            $("#add-jiaolian5SelectRight17").hide();
+            $("#add-jiaolian5InsertRight17").hide();
 
-            $("#add-jiaolian6SelectLeft17").remove();
-            $("#add-jiaolian6InsertLeft17").remove();
-            $("#add-jiaolian6SelectRight17").remove();
-            $("#add-jiaolian6InsertRight17").remove();
+            $("#add-jiaolian6SelectLeft17").hide();
+            $("#add-jiaolian6InsertLeft17").hide();
+            $("#add-jiaolian6SelectRight17").hide();
+            $("#add-jiaolian6InsertRight17").hide();
 
-            $("#l3sl").remove();
-            $("#l3il").remove();
-            $("#l3sr").remove();
-            $("#l3ir").remove();
+            $("#l3sl").hide();
+            $("#l3il").hide();
+            $("#l3sr").hide();
+            $("#l3ir").hide();
 
-            $("#l4sl").remove();
-            $("#l4il").remove();
-            $("#l4sr").remove();
-            $("#l4ir").remove();
+            $("#l4sl").hide();
+            $("#l4il").hide();
+            $("#l4sr").hide();
+            $("#l4ir").hide();
 
-            $("#l5sl").remove();
-            $("#l5il").remove();
-            $("#l5sr").remove();
-            $("#l5ir").remove();
+            $("#l5sl").hide();
+            $("#l5il").hide();
+            $("#l5sr").hide();
+            $("#l5ir").hide();
 
-            $("#l6sl").remove();
-            $("#l6il").remove();
-            $("#l6sr").remove();
-            $("#l6ir").remove();
+            $("#l6sl").hide();
+            $("#l6il").hide();
+            $("#l6sr").hide();
+            $("#l6ir").hide();
         }
         if (selectedValue17 == '开三孔') {
-            $("#add-jiaolian4SelectLeft17").remove();
-            $("#add-jiaolian4InsertLeft17").remove();
-            $("#add-jiaolian4SelectRight17").remove();
-            $("#add-jiaolian4InsertRight17").remove();
+            $("#add-jiaolian4SelectLeft17").hide();
+            $("#add-jiaolian4InsertLeft17").hide();
+            $("#add-jiaolian4SelectRight17").hide();
+            $("#add-jiaolian4InsertRight17").hide();
 
-            $("#add-jiaolian5SelectLeft17").remove();
-            $("#add-jiaolian5InsertLeft17").remove();
-            $("#add-jiaolian5SelectRight17").remove();
-            $("#add-jiaolian5InsertRight17").remove();
+            $("#add-jiaolian5SelectLeft17").hide();
+            $("#add-jiaolian5InsertLeft17").hide();
+            $("#add-jiaolian5SelectRight17").hide();
+            $("#add-jiaolian5InsertRight17").hide();
 
-            $("#add-jiaolian6SelectLeft17").remove();
-            $("#add-jiaolian6InsertLeft17").remove();
-            $("#add-jiaolian6SelectRight17").remove();
-            $("#add-jiaolian6InsertRight17").remove();
+            $("#add-jiaolian6SelectLeft17").hide();
+            $("#add-jiaolian6InsertLeft17").hide();
+            $("#add-jiaolian6SelectRight17").hide();
+            $("#add-jiaolian6InsertRight17").hide();
 
-            $("#l4sl").remove();
-            $("#l4il").remove();
-            $("#l4sr").remove();
-            $("#l4ir").delete();
+            $("#l4sl").hide();
+            $("#l4il").hide();
+            $("#l4sr").hide();
+            $("#l4ir").hide();
 
-            $("#l5sl").remove();
-            $("#l5il").remove();
-            $("#l5sr").remove();
-            $("#l5ir").remove();
+            $("#l5sl").hide();
+            $("#l5il").hide();
+            $("#l5sr").hide();
+            $("#l5ir").hide();
 
-            $("#l6sl").remove();
-            $("#l6il").remove();
-            $("#l6sr").remove();
-            $("#l6ir").remove();
+            $("#l6sl").hide();
+            $("#l6il").hide();
+            $("#l6sr").hide();
+            $("#l6ir").hide();
         }
         if (selectedValue17 == '开四孔') {
-            $("#add-jiaolian5SelectLeft17").remove();
-            $("#add-jiaolian5InsertLeft17").remove();
-            $("#add-jiaolian5SelectRight17").remove();
-            $("#add-jiaolian5InsertRight17").remove();
+            $("#add-jiaolian5SelectLeft17").hide();
+            $("#add-jiaolian5InsertLeft17").hide();
+            $("#add-jiaolian5SelectRight17").hide();
+            $("#add-jiaolian5InsertRight17").hide();
 
-            $("#add-jiaolian6SelectLeft17").remove();
-            $("#add-jiaolian6InsertLeft17").remove();
-            $("#add-jiaolian6SelectRight17").remove();
-            $("#add-jiaolian6InsertRight17").remove();
+            $("#add-jiaolian6SelectLeft17").hide();
+            $("#add-jiaolian6InsertLeft17").hide();
+            $("#add-jiaolian6SelectRight17").hide();
+            $("#add-jiaolian6InsertRight17").hide();
 
-            $("#l5sl").remove();
-            $("#l5il").remove();
-            $("#l5sr").remove();
-            $("#l5ir").remove();
+            $("#l5sl").hide();
+            $("#l5il").hide();
+            $("#l5sr").hide();
+            $("#l5ir").hide();
 
-            $("#l6sl").remove();
-            $("#l6il").remove();
-            $("#l6sr").remove();
-            $("#l6ir").remove();
+            $("#l6sl").hide();
+            $("#l6il").hide();
+            $("#l6sr").hide();
+            $("#l6ir").hide();
         }
         if (selectedValue17 == '开五孔') {
-            $("#add-jiaolian6SelectLeft17").remove();
-            $("#add-jiaolian6InsertLeft17").remove();
-            $("#add-jiaolian6SelectRight17").remove();
-            $("#add-jiaolian6InsertRight17").remove();
+            $("#add-jiaolian6SelectLeft17").hide();
+            $("#add-jiaolian6InsertLeft17").hide();
+            $("#add-jiaolian6SelectRight17").hide();
+            $("#add-jiaolian6InsertRight17").hide();
 
-            $("#l6sl").remove();
-            $("#l6il").remove();
-            $("#l6sr").remove();
-            $("#l6ir").remove();
+            $("#l6sl").hide();
+            $("#l6il").hide();
+            $("#l6sr").hide();
+            $("#l6ir").hide();
         }
     })
 
     $('#add-kaijiaolian18').on('change', function () {
         var selectedValue18 = $(this).val();
         if (selectedValue18 == '开二孔') {
-            $("#add-jiaolian3SelectLeft18").remove();
-            $("#add-jiaolian3InsertLeft18").remove();
-            $("#add-jiaolian3SelectRight18").remove();
-            $("#add-jiaolian3InsertRight18").remove();
+            $("#add-jiaolian3SelectLeft18").hide();
+            $("#add-jiaolian3InsertLeft18").hide();
+            $("#add-jiaolian3SelectRight18").hide();
+            $("#add-jiaolian3InsertRight18").hide();
 
-            $("#add-jiaolian4SelectLeft18").remove();
-            $("#add-jiaolian4InsertLeft18").remove();
-            $("#add-jiaolian4SelectRight18").remove();
-            $("#add-jiaolian4InsertRight18").remove();
+            $("#add-jiaolian4SelectLeft18").hide();
+            $("#add-jiaolian4InsertLeft18").hide();
+            $("#add-jiaolian4SelectRight18").hide();
+            $("#add-jiaolian4InsertRight18").hide();
 
-            $("#add-jiaolian5SelectLeft18").remove();
-            $("#add-jiaolian5InsertLeft18").remove();
-            $("#add-jiaolian5SelectRight18").remove();
-            $("#add-jiaolian5InsertRight18").remove();
+            $("#add-jiaolian5SelectLeft18").hide();
+            $("#add-jiaolian5InsertLeft18").hide();
+            $("#add-jiaolian5SelectRight18").hide();
+            $("#add-jiaolian5InsertRight18").hide();
 
-            $("#add-jiaolian6SelectLeft18").remove();
-            $("#add-jiaolian6InsertLeft18").remove();
-            $("#add-jiaolian6SelectRight18").remove();
-            $("#add-jiaolian6InsertRight18").remove();
+            $("#add-jiaolian6SelectLeft18").hide();
+            $("#add-jiaolian6InsertLeft18").hide();
+            $("#add-jiaolian6SelectRight18").hide();
+            $("#add-jiaolian6InsertRight18").hide();
 
-            $("#l3sl").remove();
-            $("#l3il").remove();
-            $("#l3sr").remove();
-            $("#l3ir").remove();
+            $("#l3sl").hide();
+            $("#l3il").hide();
+            $("#l3sr").hide();
+            $("#l3ir").hide();
 
-            $("#l4sl").remove();
-            $("#l4il").remove();
-            $("#l4sr").remove();
-            $("#l4ir").remove();
+            $("#l4sl").hide();
+            $("#l4il").hide();
+            $("#l4sr").hide();
+            $("#l4ir").hide();
 
-            $("#l5sl").remove();
-            $("#l5il").remove();
-            $("#l5sr").remove();
-            $("#l5ir").remove();
+            $("#l5sl").hide();
+            $("#l5il").hide();
+            $("#l5sr").hide();
+            $("#l5ir").hide();
 
-            $("#l6sl").remove();
-            $("#l6il").remove();
-            $("#l6sr").remove();
-            $("#l6ir").remove();
+            $("#l6sl").hide();
+            $("#l6il").hide();
+            $("#l6sr").hide();
+            $("#l6ir").hide();
         }
         if (selectedValue18 == '开三孔') {
-            $("#add-jiaolian4SelectLeft18").remove();
-            $("#add-jiaolian4InsertLeft18").remove();
-            $("#add-jiaolian4SelectRight18").remove();
-            $("#add-jiaolian4InsertRight18").remove();
+            $("#add-jiaolian4SelectLeft18").hide();
+            $("#add-jiaolian4InsertLeft18").hide();
+            $("#add-jiaolian4SelectRight18").hide();
+            $("#add-jiaolian4InsertRight18").hide();
 
-            $("#add-jiaolian5SelectLeft18").remove();
-            $("#add-jiaolian5InsertLeft18").remove();
-            $("#add-jiaolian5SelectRight18").remove();
-            $("#add-jiaolian5InsertRight18").remove();
+            $("#add-jiaolian5SelectLeft18").hide();
+            $("#add-jiaolian5InsertLeft18").hide();
+            $("#add-jiaolian5SelectRight18").hide();
+            $("#add-jiaolian5InsertRight18").hide();
 
-            $("#add-jiaolian6SelectLeft18").remove();
-            $("#add-jiaolian6InsertLeft18").remove();
-            $("#add-jiaolian6SelectRight18").remove();
-            $("#add-jiaolian6InsertRight18").remove();
+            $("#add-jiaolian6SelectLeft18").hide();
+            $("#add-jiaolian6InsertLeft18").hide();
+            $("#add-jiaolian6SelectRight18").hide();
+            $("#add-jiaolian6InsertRight18").hide();
 
-            $("#l4sl").remove();
-            $("#l4il").remove();
-            $("#l4sr").remove();
-            $("#l4ir").delete();
+            $("#l4sl").hide();
+            $("#l4il").hide();
+            $("#l4sr").hide();
+            $("#l4ir").hide();
 
-            $("#l5sl").remove();
-            $("#l5il").remove();
-            $("#l5sr").remove();
-            $("#l5ir").remove();
+            $("#l5sl").hide();
+            $("#l5il").hide();
+            $("#l5sr").hide();
+            $("#l5ir").hide();
 
-            $("#l6sl").remove();
-            $("#l6il").remove();
-            $("#l6sr").remove();
-            $("#l6ir").remove();
+            $("#l6sl").hide();
+            $("#l6il").hide();
+            $("#l6sr").hide();
+            $("#l6ir").hide();
         }
         if (selectedValue18 == '开四孔') {
-            $("#add-jiaolian5SelectLeft18").remove();
-            $("#add-jiaolian5InsertLeft18").remove();
-            $("#add-jiaolian5SelectRight18").remove();
-            $("#add-jiaolian5InsertRight18").remove();
+            $("#add-jiaolian5SelectLeft18").hide();
+            $("#add-jiaolian5InsertLeft18").hide();
+            $("#add-jiaolian5SelectRight18").hide();
+            $("#add-jiaolian5InsertRight18").hide();
 
-            $("#add-jiaolian6SelectLeft18").remove();
-            $("#add-jiaolian6InsertLeft18").remove();
-            $("#add-jiaolian6SelectRight18").remove();
-            $("#add-jiaolian6InsertRight18").remove();
+            $("#add-jiaolian6SelectLeft18").hide();
+            $("#add-jiaolian6InsertLeft18").hide();
+            $("#add-jiaolian6SelectRight18").hide();
+            $("#add-jiaolian6InsertRight18").hide();
 
-            $("#l5sl").remove();
-            $("#l5il").remove();
-            $("#l5sr").remove();
-            $("#l5ir").remove();
+            $("#l5sl").hide();
+            $("#l5il").hide();
+            $("#l5sr").hide();
+            $("#l5ir").hide();
 
-            $("#l6sl").remove();
-            $("#l6il").remove();
-            $("#l6sr").remove();
-            $("#l6ir").remove();
+            $("#l6sl").hide();
+            $("#l6il").hide();
+            $("#l6sr").hide();
+            $("#l6ir").hide();
         }
         if (selectedValue18 == '开五孔') {
-            $("#add-jiaolian6SelectLeft18").remove();
-            $("#add-jiaolian6InsertLeft18").remove();
-            $("#add-jiaolian6SelectRight18").remove();
-            $("#add-jiaolian6InsertRight18").remove();
+            $("#add-jiaolian6SelectLeft18").hide();
+            $("#add-jiaolian6InsertLeft18").hide();
+            $("#add-jiaolian6SelectRight18").hide();
+            $("#add-jiaolian6InsertRight18").hide();
 
-            $("#l6sl").remove();
-            $("#l6il").remove();
-            $("#l6sr").remove();
-            $("#l6ir").remove();
+            $("#l6sl").hide();
+            $("#l6il").hide();
+            $("#l6sr").hide();
+            $("#l6ir").hide();
         }
     })
 
     $('#add-kaijiaolian19').on('change', function () {
         var selectedValue19 = $(this).val();
         if (selectedValue19 == '开二孔') {
-            $("#add-jiaolian3SelectLeft19").remove();
-            $("#add-jiaolian3InsertLeft19").remove();
-            $("#add-jiaolian3SelectRight19").remove();
-            $("#add-jiaolian3InsertRight19").remove();
+            $("#add-jiaolian3SelectLeft19").hide();
+            $("#add-jiaolian3InsertLeft19").hide();
+            $("#add-jiaolian3SelectRight19").hide();
+            $("#add-jiaolian3InsertRight19").hide();
 
-            $("#add-jiaolian4SelectLeft19").remove();
-            $("#add-jiaolian4InsertLeft19").remove();
-            $("#add-jiaolian4SelectRight19").remove();
-            $("#add-jiaolian4InsertRight19").remove();
+            $("#add-jiaolian4SelectLeft19").hide();
+            $("#add-jiaolian4InsertLeft19").hide();
+            $("#add-jiaolian4SelectRight19").hide();
+            $("#add-jiaolian4InsertRight19").hide();
 
-            $("#add-jiaolian5SelectLeft19").remove();
-            $("#add-jiaolian5InsertLeft19").remove();
-            $("#add-jiaolian5SelectRight19").remove();
-            $("#add-jiaolian5InsertRight19").remove();
+            $("#add-jiaolian5SelectLeft19").hide();
+            $("#add-jiaolian5InsertLeft19").hide();
+            $("#add-jiaolian5SelectRight19").hide();
+            $("#add-jiaolian5InsertRight19").hide();
 
-            $("#add-jiaolian6SelectLeft19").remove();
-            $("#add-jiaolian6InsertLeft19").remove();
-            $("#add-jiaolian6SelectRight19").remove();
-            $("#add-jiaolian6InsertRight19").remove();
+            $("#add-jiaolian6SelectLeft19").hide();
+            $("#add-jiaolian6InsertLeft19").hide();
+            $("#add-jiaolian6SelectRight19").hide();
+            $("#add-jiaolian6InsertRight19").hide();
 
-            $("#l3sl").remove();
-            $("#l3il").remove();
-            $("#l3sr").remove();
-            $("#l3ir").remove();
+            $("#l3sl").hide();
+            $("#l3il").hide();
+            $("#l3sr").hide();
+            $("#l3ir").hide();
 
-            $("#l4sl").remove();
-            $("#l4il").remove();
-            $("#l4sr").remove();
-            $("#l4ir").remove();
+            $("#l4sl").hide();
+            $("#l4il").hide();
+            $("#l4sr").hide();
+            $("#l4ir").hide();
 
-            $("#l5sl").remove();
-            $("#l5il").remove();
-            $("#l5sr").remove();
-            $("#l5ir").remove();
+            $("#l5sl").hide();
+            $("#l5il").hide();
+            $("#l5sr").hide();
+            $("#l5ir").hide();
 
-            $("#l6sl").remove();
-            $("#l6il").remove();
-            $("#l6sr").remove();
-            $("#l6ir").remove();
+            $("#l6sl").hide();
+            $("#l6il").hide();
+            $("#l6sr").hide();
+            $("#l6ir").hide();
         }
         if (selectedValue19 == '开三孔') {
-            $("#add-jiaolian4SelectLeft19").remove();
-            $("#add-jiaolian4InsertLeft19").remove();
-            $("#add-jiaolian4SelectRight19").remove();
-            $("#add-jiaolian4InsertRight19").remove();
+            $("#add-jiaolian4SelectLeft19").hide();
+            $("#add-jiaolian4InsertLeft19").hide();
+            $("#add-jiaolian4SelectRight19").hide();
+            $("#add-jiaolian4InsertRight19").hide();
 
-            $("#add-jiaolian5SelectLeft19").remove();
-            $("#add-jiaolian5InsertLeft19").remove();
-            $("#add-jiaolian5SelectRight19").remove();
-            $("#add-jiaolian5InsertRight19").remove();
+            $("#add-jiaolian5SelectLeft19").hide();
+            $("#add-jiaolian5InsertLeft19").hide();
+            $("#add-jiaolian5SelectRight19").hide();
+            $("#add-jiaolian5InsertRight19").hide();
 
-            $("#add-jiaolian6SelectLeft19").remove();
-            $("#add-jiaolian6InsertLeft19").remove();
-            $("#add-jiaolian6SelectRight19").remove();
-            $("#add-jiaolian6InsertRight19").remove();
+            $("#add-jiaolian6SelectLeft19").hide();
+            $("#add-jiaolian6InsertLeft19").hide();
+            $("#add-jiaolian6SelectRight19").hide();
+            $("#add-jiaolian6InsertRight19").hide();
 
-            $("#l4sl").remove();
-            $("#l4il").remove();
-            $("#l4sr").remove();
-            $("#l4ir").delete();
+            $("#l4sl").hide();
+            $("#l4il").hide();
+            $("#l4sr").hide();
+            $("#l4ir").hide();
 
-            $("#l5sl").remove();
-            $("#l5il").remove();
-            $("#l5sr").remove();
-            $("#l5ir").remove();
+            $("#l5sl").hide();
+            $("#l5il").hide();
+            $("#l5sr").hide();
+            $("#l5ir").hide();
 
-            $("#l6sl").remove();
-            $("#l6il").remove();
-            $("#l6sr").remove();
-            $("#l6ir").remove();
+            $("#l6sl").hide();
+            $("#l6il").hide();
+            $("#l6sr").hide();
+            $("#l6ir").hide();
         }
         if (selectedValue19 == '开四孔') {
-            $("#add-jiaolian5SelectLeft19").remove();
-            $("#add-jiaolian5InsertLeft19").remove();
-            $("#add-jiaolian5SelectRight19").remove();
-            $("#add-jiaolian5InsertRight19").remove();
+            $("#add-jiaolian5SelectLeft19").hide();
+            $("#add-jiaolian5InsertLeft19").hide();
+            $("#add-jiaolian5SelectRight19").hide();
+            $("#add-jiaolian5InsertRight19").hide();
 
-            $("#add-jiaolian6SelectLeft19").remove();
-            $("#add-jiaolian6InsertLeft19").remove();
-            $("#add-jiaolian6SelectRight19").remove();
-            $("#add-jiaolian6InsertRight19").remove();
+            $("#add-jiaolian6SelectLeft19").hide();
+            $("#add-jiaolian6InsertLeft19").hide();
+            $("#add-jiaolian6SelectRight19").hide();
+            $("#add-jiaolian6InsertRight19").hide();
 
-            $("#l5sl").remove();
-            $("#l5il").remove();
-            $("#l5sr").remove();
-            $("#l5ir").remove();
+            $("#l5sl").hide();
+            $("#l5il").hide();
+            $("#l5sr").hide();
+            $("#l5ir").hide();
 
-            $("#l6sl").remove();
-            $("#l6il").remove();
-            $("#l6sr").remove();
-            $("#l6ir").remove();
+            $("#l6sl").hide();
+            $("#l6il").hide();
+            $("#l6sr").hide();
+            $("#l6ir").hide();
         }
         if (selectedValue19 == '开五孔') {
-            $("#add-jiaolian6SelectLeft19").remove();
-            $("#add-jiaolian6InsertLeft19").remove();
-            $("#add-jiaolian6SelectRight19").remove();
-            $("#add-jiaolian6InsertRight19").remove();
+            $("#add-jiaolian6SelectLeft19").hide();
+            $("#add-jiaolian6InsertLeft19").hide();
+            $("#add-jiaolian6SelectRight19").hide();
+            $("#add-jiaolian6InsertRight19").hide();
 
-            $("#l6sl").remove();
-            $("#l6il").remove();
-            $("#l6sr").remove();
-            $("#l6ir").remove();
+            $("#l6sl").hide();
+            $("#l6il").hide();
+            $("#l6sr").hide();
+            $("#l6ir").hide();
         }
     })
 
@@ -2986,108 +5288,108 @@ $(document).ready(function () {
         // var kjlk = document.getElementById('add-kaijiaolian').value;
         var selectedValue = $(this).val();
         if (selectedValue == '开二孔') {
-            $("#update-jiaolian3SelectLeft").remove();
-            $("#update-jiaolian3InsertLeft").remove();
-            $("#update-jiaolian3SelectRight").remove();
-            $("#update-jiaolian3InsertRight").remove();
+            $("#update-jiaolian3SelectLeft").hide();
+            $("#update-jiaolian3InsertLeft").hide();
+            $("#update-jiaolian3SelectRight").hide();
+            $("#update-jiaolian3InsertRight").hide();
 
-            $("#update-jiaolian4SelectLeft").remove();
-            $("#update-jiaolian4InsertLeft").remove();
-            $("#update-jiaolian4SelectRight").remove();
-            $("#update-jiaolian4InsertRight").remove();
+            $("#update-jiaolian4SelectLeft").hide();
+            $("#update-jiaolian4InsertLeft").hide();
+            $("#update-jiaolian4SelectRight").hide();
+            $("#update-jiaolian4InsertRight").hide();
 
-            $("#update-jiaolian5SelectLeft").remove();
-            $("#update-jiaolian5InsertLeft").remove();
-            $("#update-jiaolian5SelectRight").remove();
-            $("#update-jiaolian5InsertRight").remove();
+            $("#update-jiaolian5SelectLeft").hide();
+            $("#update-jiaolian5InsertLeft").hide();
+            $("#update-jiaolian5SelectRight").hide();
+            $("#update-jiaolian5InsertRight").hide();
 
-            $("#update-jiaolian6SelectLeft").remove();
-            $("#update-jiaolian6InsertLeft").remove();
-            $("#update-jiaolian6SelectRight").remove();
-            $("#update-jiaolian6InsertRight").remove();
+            $("#update-jiaolian6SelectLeft").hide();
+            $("#update-jiaolian6InsertLeft").hide();
+            $("#update-jiaolian6SelectRight").hide();
+            $("#update-jiaolian6InsertRight").hide();
 
-            $("#l3sl").remove();
-            $("#l3il").remove();
-            $("#l3sr").remove();
-            $("#l3ir").remove();
+            $("#l3sl").hide();
+            $("#l3il").hide();
+            $("#l3sr").hide();
+            $("#l3ir").hide();
 
-            $("#l4sl").remove();
-            $("#l4il").remove();
-            $("#l4sr").remove();
-            $("#l4ir").remove();
+            $("#l4sl").hide();
+            $("#l4il").hide();
+            $("#l4sr").hide();
+            $("#l4ir").hide();
 
-            $("#l5sl").remove();
-            $("#l5il").remove();
-            $("#l5sr").remove();
-            $("#l5ir").remove();
+            $("#l5sl").hide();
+            $("#l5il").hide();
+            $("#l5sr").hide();
+            $("#l5ir").hide();
 
-            $("#l6sl").remove();
-            $("#l6il").remove();
-            $("#l6sr").remove();
-            $("#l6ir").remove();
+            $("#l6sl").hide();
+            $("#l6il").hide();
+            $("#l6sr").hide();
+            $("#l6ir").hide();
         }
         if (selectedValue == '开三孔') {
-            $("#update-jiaolian4SelectLeft").remove();
-            $("#update-jiaolian4InsertLeft").remove();
-            $("#update-jiaolian4SelectRight").remove();
-            $("#update-jiaolian4InsertRight").remove();
+            $("#update-jiaolian4SelectLeft").hide();
+            $("#update-jiaolian4InsertLeft").hide();
+            $("#update-jiaolian4SelectRight").hide();
+            $("#update-jiaolian4InsertRight").hide();
 
-            $("#update-jiaolian5SelectLeft").remove();
-            $("#update-jiaolian5InsertLeft").remove();
-            $("#update-jiaolian5SelectRight").remove();
-            $("#update-jiaolian5InsertRight").remove();
+            $("#update-jiaolian5SelectLeft").hide();
+            $("#update-jiaolian5InsertLeft").hide();
+            $("#update-jiaolian5SelectRight").hide();
+            $("#update-jiaolian5InsertRight").hide();
 
-            $("#update-jiaolian6SelectLeft").remove();
-            $("#update-jiaolian6InsertLeft").remove();
-            $("#update-jiaolian6SelectRight").remove();
-            $("#update-jiaolian6InsertRight").remove();
+            $("#update-jiaolian6SelectLeft").hide();
+            $("#update-jiaolian6InsertLeft").hide();
+            $("#update-jiaolian6SelectRight").hide();
+            $("#update-jiaolian6InsertRight").hide();
 
-            $("#ul4sl").remove();
-            $("#ul4il").remove();
-            $("#ul4sr").remove();
-            $("#ul4ir").delete();
+            $("#ul4sl").hide();
+            $("#ul4il").hide();
+            $("#ul4sr").hide();
+            $("#ul4ir").hide();
 
-            $("#ul5sl").remove();
-            $("#ul5il").remove();
-            $("#ul5sr").remove();
-            $("#ul5ir").remove();
+            $("#ul5sl").hide();
+            $("#ul5il").hide();
+            $("#ul5sr").hide();
+            $("#ul5ir").hide();
 
-            $("#ul6sl").remove();
-            $("#ul6il").remove();
-            $("#ul6sr").remove();
-            $("#ul6ir").remove();
+            $("#ul6sl").hide();
+            $("#ul6il").hide();
+            $("#ul6sr").hide();
+            $("#ul6ir").hide();
         }
         if (selectedValue == '开四孔') {
-            $("#update-jiaolian5SelectLeft").remove();
-            $("#update-jiaolian5InsertLeft").remove();
-            $("#update-jiaolian5SelectRight").remove();
-            $("#update-jiaolian5InsertRight").remove();
+            $("#update-jiaolian5SelectLeft").hide();
+            $("#update-jiaolian5InsertLeft").hide();
+            $("#update-jiaolian5SelectRight").hide();
+            $("#update-jiaolian5InsertRight").hide();
 
-            $("#update-jiaolian6SelectLeft").remove();
-            $("#update-jiaolian6InsertLeft").remove();
-            $("#update-jiaolian6SelectRight").remove();
-            $("#update-jiaolian6InsertRight").remove();
+            $("#update-jiaolian6SelectLeft").hide();
+            $("#update-jiaolian6InsertLeft").hide();
+            $("#update-jiaolian6SelectRight").hide();
+            $("#update-jiaolian6InsertRight").hide();
 
-            $("#ul5sl").remove();
-            $("#ul5il").remove();
-            $("#ul5sr").remove();
-            $("#ul5ir").remove();
+            $("#ul5sl").hide();
+            $("#ul5il").hide();
+            $("#ul5sr").hide();
+            $("#ul5ir").hide();
 
-            $("#ul6sl").remove();
-            $("#ul6il").remove();
-            $("#ul6sr").remove();
-            $("#ul6ir").remove();
+            $("#ul6sl").hide();
+            $("#ul6il").hide();
+            $("#ul6sr").hide();
+            $("#ul6ir").hide();
         }
         if (selectedValue == '开五孔') {
-            $("#update-jiaolian6SelectLeft").remove();
-            $("#update-jiaolian6InsertLeft").remove();
-            $("#update-jiaolian6SelectRight").remove();
-            $("#update-jiaolian6InsertRight").remove();
+            $("#update-jiaolian6SelectLeft").hide();
+            $("#update-jiaolian6InsertLeft").hide();
+            $("#update-jiaolian6SelectRight").hide();
+            $("#update-jiaolian6InsertRight").hide();
 
-            $("#ul6sl").remove();
-            $("#ul6il").remove();
-            $("#ul6sr").remove();
-            $("#ul6ir").remove();
+            $("#ul6sl").hide();
+            $("#ul6il").hide();
+            $("#ul6sr").hide();
+            $("#ul6ir").hide();
         }
     })
 })
@@ -5137,6 +7439,36 @@ function getList() {
     }, false, '', function (res) {
         if (res.code == 200) {
             setTable(res.data);
+            b=res.data.length;
+            for (n = 0; n < res.data.length; n++) {
+                document.getElementById("wancheng" + n).value = res.data[n].wancheng;
+                t=res.data[n].kailiao;
+                y=res.data[n].zuzhuang;
+                u=res.data[n].shunxu;
+                l=res.data[n].baozhuang;
+                if (t == null || t == undefined) {
+                    document.getElementById("kailiao" + n).value = "请选择";
+                } else {
+                    document.getElementById("kailiao" + n).value = t;
+                }
+                if (y == null || y == undefined) {
+                    document.getElementById("zuzhuang" + n).value = "请选择";
+                } else {
+                    document.getElementById("zuzhuang" + n).value = y;
+                }
+                if (u == null || u == undefined) {
+                    document.getElementById("shunxu" + n).value = "请选择";
+                } else {
+                    document.getElementById("shunxu" + n).value = u;
+                }
+                if (l == null || l == undefined) {
+                    document.getElementById("baozhuang" + n).value = "请选择";
+                } else {
+                    document.getElementById("baozhuang" + n).value = l;
+                }
+
+            }
+
             $("#lkxdTable").colResizable({
                 liveDrag: true,
                 gripInnerHtml: "<div class='grip'></div>",
@@ -5175,9 +7507,12 @@ function getList() {
                     if (res.code == 200) {
                         var this_name = res.data;
                         document.getElementById("add-customerName").value = this_name;
-                        document.getElementById("op1").value = this_name;
+                        document.getElementById("customerName").value = this_name;
                     }
                 })
+
+
+
             }
         }
     })
@@ -5185,7 +7520,7 @@ function getList() {
 }
 
 $(function () {
-    getList();
+
     getKhmc();
     getShfs();
     getLvxingcai();
@@ -5197,7 +7532,3577 @@ $(function () {
     getJlkw();
     getFjpz();
     getJlpp();
+    getgzry();
+    getList();
     // document.getElementById("dlm").innerText = ($.session.get('username'));
+
+    // var inp1 = document.getElementById('add-jiaoliankongFangxiangLeft');
+    // inp1.addEventListener('blur', function () {
+    //     var xdsl = document.getElementById('add-num').value;
+    //     var jlkfxl = document.getElementById('add-jiaoliankongFangxiangLeft').value;
+    //     var jlkfxr = xdsl - jlkfxl;
+    //     document.getElementById('add-jiaoliankongFangxiangRight').value = jlkfxr;
+    // })
+    //
+    // var inp2 = document.getElementById('add-lashouShuliangLeft');
+    // inp2.addEventListener('blur', function () {
+    //     var xdsl1 = document.getElementById('add-num').value;
+    //     var lssll = document.getElementById('add-lashouShuliangLeft').value;
+    //     var lsslr = xdsl1 - lssll;
+    //     document.getElementById('add-lashouShuliangRight').value = lsslr;
+    // })
+    // // ------------------1
+    // var inp3 = document.getElementById('add-jiaolian1SelectLeft');
+    // inp3.addEventListener('blur', function () {
+    //     var jl1sl = document.getElementById('add-jiaolian1SelectLeft').value;
+    //     document.getElementById('add-jiaolian1SelectRight').value = jl1sl;
+    // })
+    //
+    // var inp4 = document.getElementById('add-jiaolian2SelectLeft');
+    // inp4.addEventListener('blur', function () {
+    //     var jl2sl = document.getElementById('add-jiaolian2SelectLeft').value;
+    //     document.getElementById('add-jiaolian2SelectRight').value = jl2sl;
+    // })
+    //
+    // var inp5 = document.getElementById('add-jiaolian3SelectLeft');
+    // inp5.addEventListener('blur', function () {
+    //     var jl3sl = document.getElementById('add-jiaolian3SelectLeft').value;
+    //     document.getElementById('add-jiaolian3SelectRight').value = jl3sl;
+    // })
+    //
+    // var inp6 = document.getElementById('add-jiaolian4SelectLeft');
+    // inp6.addEventListener('blur', function () {
+    //     var jl4sl = document.getElementById('add-jiaolian4SelectLeft').value;
+    //     document.getElementById('add-jiaolian4SelectRight').value = jl4sl;
+    // })
+    //
+    // var inp7 = document.getElementById('add-jiaolian5SelectLeft');
+    // inp7.addEventListener('blur', function () {
+    //     var jl5sl = document.getElementById('add-jiaolian5SelectLeft').value;
+    //     document.getElementById('add-jiaolian5SelectRight').value = jl5sl;
+    // })
+    //
+    // var inp8 = document.getElementById('add-jiaolian6SelectLeft');
+    // inp8.addEventListener('blur', function () {
+    //     var jl6sl = document.getElementById('add-jiaolian6SelectLeft').value;
+    //     document.getElementById('add-jiaolian6SelectRight').value = jl6sl;
+    // })
+    //
+    // var jl1inp = document.getElementById('add-jiaolian1SelectLeft');
+    // jl1inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft').value;
+    //     var height = parseFloat(document.getElementById('add-height').value);
+    //     if (jl1 == '距中') {
+    //         var jiaolian1Insert = height / 2;
+    //         document.getElementById("add-jiaolian1SelectRight").value = jl1
+    //
+    //         document.getElementById("add-jiaolian1InsertLeft").value = jiaolian1Insert;
+    //
+    //         document.getElementById("add-jiaolian1InsertRight").value = jiaolian1Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl1inp = document.getElementById('add-jiaolian2SelectLeft');
+    // jl1inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft').value;
+    //     var height = parseFloat(document.getElementById('add-height').value);
+    //     if (jl2 == '距中') {
+    //         var jiaolian2Insert = height / 2;
+    //         document.getElementById("add-jiaolian2SelectRight").value = jl2
+    //
+    //         document.getElementById("add-jiaolian2InsertLeft").value = jiaolian2Insert;
+    //
+    //         document.getElementById("add-jiaolian2InsertRight").value = jiaolian2Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl1inp = document.getElementById('add-jiaolian3SelectLeft');
+    // jl1inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft').value;
+    //     var height = parseFloat(document.getElementById('add-height').value);
+    //     if (jl3 == '距中') {
+    //         var jiaolian3Insert = height / 2;
+    //         document.getElementById("add-jiaolian3SelectRight").value = jl3
+    //
+    //         document.getElementById("add-jiaolian3InsertLeft").value = jiaolian3Insert;
+    //
+    //         document.getElementById("add-jiaolian3InsertRight").value = jiaolian3Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl1inp = document.getElementById('add-jiaolian4SelectLeft');
+    // jl1inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft').value;
+    //     var height = parseFloat(document.getElementById('add-height').value);
+    //     if (jl4 == '距中') {
+    //         var jiaolian4Insert = height / 2;
+    //         document.getElementById("add-jiaolian4SelectRight").value = jl4
+    //
+    //         document.getElementById("add-jiaolian4InsertLeft").value = jiaolian4Insert;
+    //
+    //         document.getElementById("add-jiaolian4InsertRight").value = jiaolian4Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl5inp = document.getElementById('add-jiaolian5SelectLeft');
+    // jl5inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft').value;
+    //     var height = parseFloat(document.getElementById('add-height').value);
+    //     if (jl5 == '距中') {
+    //         var jiaolian5Insert = height / 2;
+    //         document.getElementById("add-jiaolian5SelectRight").value = jl5
+    //
+    //         document.getElementById("add-jiaolian5InsertLeft").value = jiaolian5Insert;
+    //
+    //         document.getElementById("add-jiaolian5InsertRight").value = jiaolian5Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl6inp = document.getElementById('add-jiaolian6SelectLeft');
+    // jl6inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft').value;
+    //     var height = parseFloat(document.getElementById('add-height').value);
+    //     if (jl6 == '距中') {
+    //         var jiaolian6Insert = height / 2;
+    //         document.getElementById("add-jiaolian6SelectRight").value = jl6
+    //
+    //         document.getElementById("add-jiaolian6InsertLeft").value = jiaolian6Insert;
+    //
+    //         document.getElementById("add-jiaolian6InsertRight").value = jiaolian6Insert;
+    //
+    //     }
+    // })
+    //
+    // // ----------2
+    // var inp11 = document.getElementById('add-jiaoliankongFangxiangLeft1');
+    // inp11.addEventListener('blur', function () {
+    //     var xdsl1 = document.getElementById('add-num1').value;
+    //     var jlkfxl1 = document.getElementById('add-jiaoliankongFangxiangLeft1').value;
+    //     var jlkfxr1 = xdsl1 - jlkfxl1;
+    //     document.getElementById('add-jiaoliankongFangxiangRight1').value = jlkfxr1;
+    // })
+    //
+    // var inp22 = document.getElementById('add-lashouShuliangLeft1');
+    // inp22.addEventListener('blur', function () {
+    //     var xdsl1 = document.getElementById('add-num1').value;
+    //     var lssll1 = document.getElementById('add-lashouShuliangLeft1').value;
+    //     var lsslr1 = xdsl1 - lssll1;
+    //     document.getElementById('add-lashouShuliangRight1').value = lsslr1;
+    // })
+    //
+    // var inp3 = document.getElementById('add-jiaolian1SelectLeft1');
+    // inp3.addEventListener('blur', function () {
+    //     var jl1sl1 = document.getElementById('add-jiaolian1SelectLeft1').value;
+    //     document.getElementById('add-jiaolian1SelectRight1').value = jl1sl1;
+    // })
+    //
+    // var inp4 = document.getElementById('add-jiaolian2SelectLeft1');
+    // inp4.addEventListener('blur', function () {
+    //     var jl2sl1 = document.getElementById('add-jiaolian2SelectLeft1').value;
+    //     document.getElementById('add-jiaolian2SelectRight1').value = jl2sl1;
+    // })
+    //
+    // var inp5 = document.getElementById('add-jiaolian3SelectLeft1');
+    // inp5.addEventListener('blur', function () {
+    //     var jl3sl1 = document.getElementById('add-jiaolian3SelectLeft1').value;
+    //     document.getElementById('add-jiaolian3SelectRight1').value = jl3sl1;
+    // })
+    //
+    // var inp6 = document.getElementById('add-jiaolian4SelectLeft1');
+    // inp6.addEventListener('blur', function () {
+    //     var jl4sl1 = document.getElementById('add-jiaolian4SelectLeft1').value;
+    //     document.getElementById('add-jiaolian4SelectRight1').value = jl4sl1;
+    // })
+    //
+    // var inp7 = document.getElementById('add-jiaolian5SelectLeft1');
+    // inp7.addEventListener('blur', function () {
+    //     var jl5sl1 = document.getElementById('add-jiaolian5SelectLeft1').value;
+    //     document.getElementById('add-jiaolian5SelectRight1').value = jl5sl1;
+    // })
+    //
+    // var inp8 = document.getElementById('add-jiaolian6SelectLeft1');
+    // inp8.addEventListener('blur', function () {
+    //     var jl6sl1 = document.getElementById('add-jiaolian6SelectLeft1').value;
+    //     document.getElementById('add-jiaolian6SelectRight1').value = jl6sl1;
+    // })
+    //
+    // var jl1inp = document.getElementById('add-jiaolian1SelectLeft1');
+    // jl1inp.addEventListener('blur', function () {
+    // var jl1 = document.getElementById('add-jiaolian1SelectLeft1').value;
+    // var jl2 = document.getElementById('add-jiaolian2SelectLeft1').value;
+    // var jl3 = document.getElementById('add-jiaolian3SelectLeft1').value;
+    // var jl4 = document.getElementById('add-jiaolian4SelectLeft1').value;
+    // var jl5 = document.getElementById('add-jiaolian5SelectLeft1').value;
+    // var jl6 = document.getElementById('add-jiaolian6SelectLeft1').value;
+    // var height = parseFloat(document.getElementById('add-height1').value);
+    //     if (jl1 == '距中') {
+    //         var jiaolian1Insert = height / 2;
+    //         document.getElementById("add-jiaolian1SelectRight1").value = jl1
+    //
+    //         document.getElementById("add-jiaolian1InsertLeft1").value = jiaolian1Insert;
+    //
+    //         document.getElementById("add-jiaolian1InsertRight1").value = jiaolian1Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl1inp = document.getElementById('add-jiaolian2SelectLeft1');
+    // jl1inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft1').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft1').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft1').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft1').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft1').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft1').value;
+    //     var height = parseFloat(document.getElementById('add-height1').value);
+    //     if (jl2 == '距中') {
+    //         var jiaolian2Insert = height / 2;
+    //         document.getElementById("add-jiaolian2SelectRight1").value = jl2
+    //
+    //         document.getElementById("add-jiaolian2InsertLeft1").value = jiaolian2Insert;
+    //
+    //         document.getElementById("add-jiaolian2InsertRight1").value = jiaolian2Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl2inp = document.getElementById('add-jiaolian3SelectLeft1');
+    // jl2inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft1').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft1').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft1').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft1').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft1').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft1').value;
+    //     var height = parseFloat(document.getElementById('add-height1').value);
+    //     if (jl3 == '距中') {
+    //         var jiaolian3Insert = height / 2;
+    //         document.getElementById("add-jiaolian3SelectRight1").value = jl3
+    //
+    //         document.getElementById("add-jiaolian3InsertLeft1").value = jiaolian3Insert;
+    //
+    //         document.getElementById("add-jiaolian3InsertRight1").value = jiaolian3Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian4SelectLeft1');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft1').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft1').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft1').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft1').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft1').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft1').value;
+    //     var height = parseFloat(document.getElementById('add-height1').value);
+    //     if (jl4 == '距中') {
+    //         var jiaolian4Insert = height / 2;
+    //         document.getElementById("add-jiaolian4SelectRight1").value = jl4
+    //
+    //         document.getElementById("add-jiaolian4InsertLeft1").value = jiaolian4Insert;
+    //
+    //         document.getElementById("add-jiaolian4InsertRight1").value = jiaolian4Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian5SelectLeft1');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft1').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft1').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft1').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft1').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft1').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft1').value;
+    //     var height = parseFloat(document.getElementById('add-height1').value);
+    //     if (jl5 == '距中') {
+    //         var jiaolian5Insert = height / 2;
+    //         document.getElementById("add-jiaolian5SelectRight1").value = jl5
+    //
+    //         document.getElementById("add-jiaolian5InsertLeft1").value = jiaolian5Insert;
+    //
+    //         document.getElementById("add-jiaolian5InsertRight1").value = jiaolian5Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian6SelectLeft1');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft1').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft1').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft1').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft1').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft1').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft1').value;
+    //     var height = parseFloat(document.getElementById('add-height1').value);
+    //     if (jl6 == '距中') {
+    //         var jiaolian6Insert = height / 2;
+    //         document.getElementById("add-jiaolian6SelectRight1").value = jl6
+    //
+    //         document.getElementById("add-jiaolian6InsertLeft1").value = jiaolian6Insert;
+    //
+    //         document.getElementById("add-jiaolian6InsertRight1").value = jiaolian6Insert;
+    //
+    //     }
+    // })
+    //
+    // // --------------------3
+    // var inp12 = document.getElementById('add-jiaoliankongFangxiangLeft2');
+    // inp12.addEventListener('blur', function () {
+    //     var xdsl2 = document.getElementById('add-num2').value;
+    //     var jlkfxl2 = document.getElementById('add-jiaoliankongFangxiangLeft2').value;
+    //     var jlkfxr2 = xdsl2 - jlkfxl2;
+    //     document.getElementById('add-jiaoliankongFangxiangRight2').value = jlkfxr2;
+    // })
+    //
+    // var inp2 = document.getElementById('add-lashouShuliangLeft2');
+    // inp2.addEventListener('blur', function () {
+    //     var xdsl = document.getElementById('add-num2').value;
+    //     var lssll = document.getElementById('add-lashouShuliangLeft2').value;
+    //     var lsslr = xdsl - lssll;
+    //     document.getElementById('add-lashouShuliangRight2').value = lsslr;
+    // })
+    //
+    // var inp3 = document.getElementById('add-jiaolian1SelectLeft2');
+    // inp3.addEventListener('blur', function () {
+    //     var jl1sl = document.getElementById('add-jiaolian1SelectLeft2').value;
+    //     document.getElementById('add-jiaolian1SelectRight2').value = jl1sl;
+    // })
+    //
+    // var inp4 = document.getElementById('add-jiaolian2SelectLeft2');
+    // inp4.addEventListener('blur', function () {
+    //     var jl2sl = document.getElementById('add-jiaolian2SelectLeft2').value;
+    //     document.getElementById('add-jiaolian2SelectRight2').value = jl2sl;
+    // })
+    //
+    // var inp5 = document.getElementById('add-jiaolian3SelectLeft2');
+    // inp5.addEventListener('blur', function () {
+    //     var jl3sl = document.getElementById('add-jiaolian3SelectLeft2').value;
+    //     document.getElementById('add-jiaolian3SelectRight2').value = jl3sl;
+    // })
+    //
+    // var inp6 = document.getElementById('add-jiaolian4SelectLeft2');
+    // inp6.addEventListener('blur', function () {
+    //     var jl4sl = document.getElementById('add-jiaolian4SelectLeft2').value;
+    //     document.getElementById('add-jiaolian4SelectRight2').value = jl4sl;
+    // })
+    //
+    // var inp7 = document.getElementById('add-jiaolian5SelectLeft2');
+    // inp7.addEventListener('blur', function () {
+    //     var jl5sl = document.getElementById('add-jiaolian5SelectLeft2').value;
+    //     document.getElementById('add-jiaolian5SelectRight2').value = jl5sl;
+    // })
+    //
+    // var inp8 = document.getElementById('add-jiaolian6SelectLeft2');
+    // inp8.addEventListener('blur', function () {
+    //     var jl6sl = document.getElementById('add-jiaolian6SelectLeft2').value;
+    //     document.getElementById('add-jiaolian6SelectRight2').value = jl6sl;
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian1SelectLeft2');
+    // jl3inp.addEventListener('blur', function () {
+    // var jl1 = document.getElementById('add-jiaolian1SelectLeft2').value;
+    // var jl2 = document.getElementById('add-jiaolian2SelectLeft2').value;
+    // var jl3 = document.getElementById('add-jiaolian3SelectLeft2').value;
+    // var jl4 = document.getElementById('add-jiaolian4SelectLeft2').value;
+    // var jl5 = document.getElementById('add-jiaolian5SelectLeft2').value;
+    // var jl6 = document.getElementById('add-jiaolian6SelectLeft2').value;
+    // var height = parseFloat(document.getElementById('add-height2').value);
+    //     if (jl1 == '距中') {
+    //         var jiaolian1Insert = height / 2;
+    //         document.getElementById("add-jiaolian1SelectRight2").value = jl1
+    //
+    //         document.getElementById("add-jiaolian1InsertLeft2").value = jiaolian1Insert;
+    //
+    //         document.getElementById("add-jiaolian1InsertRight2").value = jiaolian1Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian2SelectLeft2');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft2').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft2').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft2').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft2').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft2').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft2').value;
+    //     var height = parseFloat(document.getElementById('add-height2').value);
+    //     if (jl2 == '距中') {
+    //         var jiaolian2Insert = height / 2;
+    //         document.getElementById("add-jiaolian2SelectRight2").value = jl2
+    //
+    //         document.getElementById("add-jiaolian2InsertLeft2").value = jiaolian2Insert;
+    //
+    //         document.getElementById("add-jiaolian2InsertRight2").value = jiaolian2Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian3SelectLeft2');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft2').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft2').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft2').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft2').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft2').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft2').value;
+    //     var height = parseFloat(document.getElementById('add-height2').value);
+    //     if (jl3 == '距中') {
+    //         var jiaolian3Insert = height / 2;
+    //         document.getElementById("add-jiaolian3SelectRight2").value = jl3
+    //
+    //         document.getElementById("add-jiaolian3InsertLeft2").value = jiaolian3Insert;
+    //
+    //         document.getElementById("add-jiaolian3InsertRight2").value = jiaolian3Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian4SelectLeft2');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft2').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft2').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft2').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft2').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft2').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft2').value;
+    //     var height = parseFloat(document.getElementById('add-height2').value);
+    //     if (jl4 == '距中') {
+    //         var jiaolian4Insert = height / 2;
+    //         document.getElementById("add-jiaolian4SelectRight2").value = jl4
+    //
+    //         document.getElementById("add-jiaolian4InsertLeft2").value = jiaolian4Insert;
+    //
+    //         document.getElementById("add-jiaolian4InsertRight2").value = jiaolian4Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian5SelectLeft2');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft2').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft2').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft2').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft2').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft2').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft2').value;
+    //     var height = parseFloat(document.getElementById('add-height2').value);
+    //     if (jl5 == '距中') {
+    //         var jiaolian5Insert = height / 2;
+    //         document.getElementById("add-jiaolian5SelectRight2").value = jl5
+    //
+    //         document.getElementById("add-jiaolian5InsertLeft2").value = jiaolian5Insert;
+    //
+    //         document.getElementById("add-jiaolian5InsertRight2").value = jiaolian5Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian6SelectLeft2');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft2').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft2').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft2').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft2').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft2').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft2').value;
+    //     var height = parseFloat(document.getElementById('add-height2').value);
+    //     if (jl6 == '距中') {
+    //         var jiaolian6Insert = height / 2;
+    //         document.getElementById("add-jiaolian6SelectRight2").value = jl6
+    //
+    //         document.getElementById("add-jiaolian6InsertLeft2").value = jiaolian6Insert;
+    //
+    //         document.getElementById("add-jiaolian6InsertRight2").value = jiaolian6Insert;
+    //
+    //     }
+    // })
+    //
+    // // -------4
+    // var inp2 = document.getElementById('add-jiaoliankongFangxiangLeft3');
+    // inp2.addEventListener('blur', function () {
+    //     var xdsl = document.getElementById('add-num3').value;
+    //     var jlkfxl = document.getElementById('add-jiaoliankongFangxiangLeft3').value;
+    //     var jlkfxr = xdsl - jlkfxl;
+    //     document.getElementById('add-jiaoliankongFangxiangRight3').value = jlkfxr;
+    // })
+    //
+    // var inp2 = document.getElementById('add-lashouShuliangLeft3');
+    // inp2.addEventListener('blur', function () {
+    //     var xdsl = document.getElementById('add-num3').value;
+    //     var lssll = document.getElementById('add-lashouShuliangLeft3').value;
+    //     var lsslr = xdsl - lssll;
+    //     document.getElementById('add-lashouShuliangRight3').value = lsslr;
+    // })
+    //
+    // var inp3 = document.getElementById('add-jiaolian1SelectLeft3');
+    // inp3.addEventListener('blur', function () {
+    //     var jl1sl = document.getElementById('add-jiaolian1SelectLeft3').value;
+    //     document.getElementById('add-jiaolian1SelectRight3').value = jl1sl;
+    // })
+    //
+    // var inp4 = document.getElementById('add-jiaolian2SelectLeft3');
+    // inp4.addEventListener('blur', function () {
+    //     var jl2sl = document.getElementById('add-jiaolian2SelectLeft3').value;
+    //     document.getElementById('add-jiaolian2SelectRight3').value = jl2sl;
+    // })
+    //
+    // var inp5 = document.getElementById('add-jiaolian3SelectLeft3');
+    // inp5.addEventListener('blur', function () {
+    //     var jl3sl = document.getElementById('add-jiaolian3SelectLeft3').value;
+    //     document.getElementById('add-jiaolian3SelectRight3').value = jl3sl;
+    // })
+    //
+    // var inp6 = document.getElementById('add-jiaolian4SelectLeft3');
+    // inp6.addEventListener('blur', function () {
+    //     var jl4sl = document.getElementById('add-jiaolian4SelectLeft3').value;
+    //     document.getElementById('add-jiaolian4SelectRight3').value = jl4sl;
+    // })
+    //
+    // var inp7 = document.getElementById('add-jiaolian5SelectLeft3');
+    // inp7.addEventListener('blur', function () {
+    //     var jl5sl = document.getElementById('add-jiaolian5SelectLeft3').value;
+    //     document.getElementById('add-jiaolian5SelectRight3').value = jl5sl;
+    // })
+    //
+    // var inp8 = document.getElementById('add-jiaolian6SelectLeft3');
+    // inp8.addEventListener('blur', function () {
+    //     var jl6sl = document.getElementById('add-jiaolian6SelectLeft3').value;
+    //     document.getElementById('add-jiaolian6SelectRight3').value = jl6sl;
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian1SelectLeft3');
+    // jl3inp.addEventListener('blur', function () {
+    // var jl1 = document.getElementById('add-jiaolian1SelectLeft3').value;
+    // var jl2 = document.getElementById('add-jiaolian2SelectLeft3').value;
+    // var jl3 = document.getElementById('add-jiaolian3SelectLeft3').value;
+    // var jl4 = document.getElementById('add-jiaolian4SelectLeft3').value;
+    // var jl5 = document.getElementById('add-jiaolian5SelectLeft3').value;
+    // var jl6 = document.getElementById('add-jiaolian6SelectLeft3').value;
+    // var height = parseFloat(document.getElementById('add-height3').value);
+    //     if (jl1 == '距中') {
+    //         var jiaolian1Insert = height / 2;
+    //         document.getElementById("add-jiaolian1SelectRight3").value = jl1
+    //         document.getElementById("add-jiaolian1SelectRight3").value = jl1
+    //
+    //         document.getElementById("add-jiaolian1InsertLeft3").value = jiaolian1Insert;
+    //
+    //         document.getElementById("add-jiaolian1InsertRight3").value = jiaolian1Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian2SelectLeft3');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft3').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft3').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft3').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft3').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft3').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft3').value;
+    //     var height = parseFloat(document.getElementById('add-height3').value);
+    //     if (jl2 == '距中') {
+    //         var jiaolian2Insert = height / 2;
+    //         document.getElementById("add-jiaolian2SelectRight3").value = jl2
+    //
+    //         document.getElementById("add-jiaolian2InsertLeft3").value = jiaolian2Insert;
+    //
+    //         document.getElementById("add-jiaolian2InsertRight3").value = jiaolian2Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian3SelectLeft3');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft3').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft3').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft3').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft3').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft3').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft3').value;
+    //     var height = parseFloat(document.getElementById('add-height3').value);
+    //     if (jl3 == '距中') {
+    //         var jiaolian3Insert = height / 2;
+    //         document.getElementById("add-jiaolian3SelectRight3").value = jl3
+    //
+    //         document.getElementById("add-jiaolian3InsertLeft3").value = jiaolian3Insert;
+    //
+    //         document.getElementById("add-jiaolian3InsertRight3").value = jiaolian3Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian4SelectLeft3');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft3').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft3').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft3').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft3').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft3').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft3').value;
+    //     var height = parseFloat(document.getElementById('add-height3').value);
+    //     if (jl4 == '距中') {
+    //         var jiaolian4Insert = height / 2;
+    //         document.getElementById("add-jiaolian4SelectRight3").value = jl4
+    //
+    //         document.getElementById("add-jiaolian4InsertLeft3").value = jiaolian4Insert;
+    //
+    //         document.getElementById("add-jiaolian4InsertRight3").value = jiaolian4Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian5SelectLeft3');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft3').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft3').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft3').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft3').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft3').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft3').value;
+    //     var height = parseFloat(document.getElementById('add-height3').value);
+    //     if (jl5 == '距中') {
+    //         var jiaolian5Insert = height / 2;
+    //         document.getElementById("add-jiaolian5SelectRight3").value = jl5
+    //
+    //         document.getElementById("add-jiaolian5InsertLeft3").value = jiaolian5Insert;
+    //
+    //         document.getElementById("add-jiaolian5InsertRight3").value = jiaolian5Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian6SelectLeft3');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft3').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft3').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft3').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft3').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft3').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft3').value;
+    //     var height = parseFloat(document.getElementById('add-height3').value);
+    //     if (jl6 == '距中') {
+    //         var jiaolian6Insert = height / 2;
+    //         document.getElementById("add-jiaolian6SelectRight3").value = jl6
+    //
+    //         document.getElementById("add-jiaolian6InsertLeft3").value = jiaolian6Insert;
+    //
+    //         document.getElementById("add-jiaolian6InsertRight3").value = jiaolian6Insert;
+    //
+    //     }
+    // })
+    //
+    // // ----------------5
+    // var inp2 = document.getElementById('add-jiaoliankongFangxiangLeft4');
+    // inp2.addEventListener('blur', function () {
+    //     var xdsl = document.getElementById('add-num4').value;
+    //     var jlkfxl = document.getElementById('add-jiaoliankongFangxiangLeft4').value;
+    //     var jlkfxr = xdsl - jlkfxl;
+    //     document.getElementById('add-jiaoliankongFangxiangRight4').value = jlkfxr;
+    // })
+    //
+    // var inp2 = document.getElementById('add-lashouShuliangLeft4');
+    // inp2.addEventListener('blur', function () {
+    //     var xdsl = document.getElementById('add-num4').value;
+    //     var lssll = document.getElementById('add-lashouShuliangLeft4').value;
+    //     var lsslr = xdsl - lssll;
+    //     document.getElementById('add-lashouShuliangRight4').value = lsslr;
+    // })
+    //
+    // var inp3 = document.getElementById('add-jiaolian1SelectLeft4');
+    // inp3.addEventListener('blur', function () {
+    //     var jl1sl = document.getElementById('add-jiaolian1SelectLeft4').value;
+    //     document.getElementById('add-jiaolian1SelectRight4').value = jl1sl;
+    // })
+    //
+    // var inp4 = document.getElementById('add-jiaolian2SelectLeft4');
+    // inp4.addEventListener('blur', function () {
+    //     var jl2sl = document.getElementById('add-jiaolian2SelectLeft4').value;
+    //     document.getElementById('add-jiaolian2SelectRight4').value = jl2sl;
+    // })
+    //
+    // var inp5 = document.getElementById('add-jiaolian3SelectLeft4');
+    // inp5.addEventListener('blur', function () {
+    //     var jl3sl = document.getElementById('add-jiaolian3SelectLeft4').value;
+    //     document.getElementById('add-jiaolian3SelectRight4').value = jl3sl;
+    // })
+    //
+    // var inp6 = document.getElementById('add-jiaolian4SelectLeft4');
+    // inp6.addEventListener('blur', function () {
+    //     var jl4sl = document.getElementById('add-jiaolian4SelectLeft4').value;
+    //     document.getElementById('add-jiaolian4SelectRight4').value = jl4sl;
+    // })
+    //
+    // var inp7 = document.getElementById('add-jiaolian5SelectLeft4');
+    // inp7.addEventListener('blur', function () {
+    //     var jl5sl = document.getElementById('add-jiaolian5SelectLeft4').value;
+    //     document.getElementById('add-jiaolian5SelectRight4').value = jl5sl;
+    // })
+    //
+    // var inp8 = document.getElementById('add-jiaolian6SelectLeft4');
+    // inp8.addEventListener('blur', function () {
+    //     var jl6sl = document.getElementById('add-jiaolian6SelectLeft4').value;
+    //     document.getElementById('add-jiaolian6SelectRight4').value = jl6sl;
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian1SelectLeft4');
+    // jl3inp.addEventListener('blur', function () {
+    // var jl1 = document.getElementById('add-jiaolian1SelectLeft4').value;
+    // var jl2 = document.getElementById('add-jiaolian2SelectLeft4').value;
+    // var jl3 = document.getElementById('add-jiaolian3SelectLeft4').value;
+    // var jl4 = document.getElementById('add-jiaolian4SelectLeft4').value;
+    // var jl5 = document.getElementById('add-jiaolian5SelectLeft4').value;
+    // var jl6 = document.getElementById('add-jiaolian6SelectLeft4').value;
+    // var height = parseFloat(document.getElementById('add-height4').value);
+    //     if (jl1 == '距中') {
+    //         var jiaolian1Insert = height / 2;
+    //         document.getElementById("add-jiaolian1SelectRight4").value = jl1
+    //         document.getElementById("add-jiaolian1SelectRight4").value = jl1
+    //
+    //         document.getElementById("add-jiaolian1InsertLeft4").value = jiaolian1Insert;
+    //
+    //         document.getElementById("add-jiaolian1InsertRight4").value = jiaolian1Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian2SelectLeft4');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft4').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft4').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft4').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft4').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft4').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft4').value;
+    //     var height = parseFloat(document.getElementById('add-height4').value);
+    //     if (jl2 == '距中') {
+    //         var jiaolian2Insert = height / 2;
+    //         document.getElementById("add-jiaolian2SelectRight4").value = jl2
+    //
+    //         document.getElementById("add-jiaolian2InsertLeft4").value = jiaolian2Insert;
+    //
+    //         document.getElementById("add-jiaolian2InsertRight4").value = jiaolian2Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian3SelectLeft4');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft4').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft4').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft4').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft4').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft4').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft4').value;
+    //     var height = parseFloat(document.getElementById('add-height4').value);
+    //     if (jl3 == '距中') {
+    //         var jiaolian3Insert = height / 2;
+    //         document.getElementById("add-jiaolian3SelectRight4").value = jl3
+    //
+    //         document.getElementById("add-jiaolian3InsertLeft4").value = jiaolian3Insert;
+    //
+    //         document.getElementById("add-jiaolian3InsertRight4").value = jiaolian3Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian4SelectLeft4');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft4').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft4').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft4').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft4').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft4').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft4').value;
+    //     var height = parseFloat(document.getElementById('add-height4').value);
+    //     if (jl4 == '距中') {
+    //         var jiaolian4Insert = height / 2;
+    //         document.getElementById("add-jiaolian4SelectRight4").value = jl4
+    //
+    //         document.getElementById("add-jiaolian4InsertLeft4").value = jiaolian4Insert;
+    //
+    //         document.getElementById("add-jiaolian4InsertRight4").value = jiaolian4Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian5SelectLeft4');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft4').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft4').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft4').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft4').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft4').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft4').value;
+    //     var height = parseFloat(document.getElementById('add-height4').value);
+    //     if (jl5 == '距中') {
+    //         var jiaolian5Insert = height / 2;
+    //         document.getElementById("add-jiaolian5SelectRight4").value = jl5
+    //
+    //         document.getElementById("add-jiaolian5InsertLeft4").value = jiaolian5Insert;
+    //
+    //         document.getElementById("add-jiaolian5InsertRight4").value = jiaolian5Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian6SelectLeft4');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft4').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft4').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft4').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft4').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft4').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft4').value;
+    //     var height = parseFloat(document.getElementById('add-height4').value);
+    //     if (jl6 == '距中') {
+    //         var jiaolian6Insert = height / 2;
+    //         document.getElementById("add-jiaolian6SelectRight4").value = jl6
+    //
+    //         document.getElementById("add-jiaolian6InsertLeft4").value = jiaolian6Insert;
+    //
+    //         document.getElementById("add-jiaolian6InsertRight4").value = jiaolian6Insert;
+    //
+    //     }
+    // })
+    //
+    // // -----------6
+    // var inp2 = document.getElementById('add-jiaoliankongFangxiangLeft5');
+    // inp2.addEventListener('blur', function () {
+    //     var xdsl = document.getElementById('add-num5').value;
+    //     var jlkfxl = document.getElementById('add-jiaoliankongFangxiangLeft5').value;
+    //     var jlkfxr = xdsl - jlkfxl;
+    //     document.getElementById('add-jiaoliankongFangxiangRight5').value = jlkfxr;
+    // })
+    //
+    // var inp2 = document.getElementById('add-lashouShuliangLeft5');
+    // inp2.addEventListener('blur', function () {
+    //     var xdsl = document.getElementById('add-num5').value;
+    //     var lssll = document.getElementById('add-lashouShuliangLeft5').value;
+    //     var lsslr = xdsl - lssll;
+    //     document.getElementById('add-lashouShuliangRight5').value = lsslr;
+    // })
+    //
+    // var inp3 = document.getElementById('add-jiaolian1SelectLeft5');
+    // inp3.addEventListener('blur', function () {
+    //     var jl1sl = document.getElementById('add-jiaolian1SelectLeft5').value;
+    //     document.getElementById('add-jiaolian1SelectRight5').value = jl1sl;
+    // })
+    //
+    // var inp4 = document.getElementById('add-jiaolian2SelectLeft5');
+    // inp4.addEventListener('blur', function () {
+    //     var jl2sl = document.getElementById('add-jiaolian2SelectLeft5').value;
+    //     document.getElementById('add-jiaolian2SelectRight5').value = jl2sl;
+    // })
+    //
+    // var inp5 = document.getElementById('add-jiaolian3SelectLeft5');
+    // inp5.addEventListener('blur', function () {
+    //     var jl3sl = document.getElementById('add-jiaolian3SelectLeft5').value;
+    //     document.getElementById('add-jiaolian3SelectRight5').value = jl3sl;
+    // })
+    //
+    // var inp6 = document.getElementById('add-jiaolian4SelectLeft5');
+    // inp6.addEventListener('blur', function () {
+    //     var jl4sl = document.getElementById('add-jiaolian4SelectLeft5').value;
+    //     document.getElementById('add-jiaolian4SelectRight5').value = jl4sl;
+    // })
+    //
+    // var inp7 = document.getElementById('add-jiaolian5SelectLeft5');
+    // inp7.addEventListener('blur', function () {
+    //     var jl5sl = document.getElementById('add-jiaolian5SelectLeft5').value;
+    //     document.getElementById('add-jiaolian5SelectRight5').value = jl5sl;
+    // })
+    //
+    // var inp8 = document.getElementById('add-jiaolian6SelectLeft5');
+    // inp8.addEventListener('blur', function () {
+    //     var jl6sl = document.getElementById('add-jiaolian6SelectLeft5').value;
+    //     document.getElementById('add-jiaolian6SelectRight5').value = jl6sl;
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian1SelectLeft5');
+    // jl3inp.addEventListener('blur', function () {
+    // var jl1 = document.getElementById('add-jiaolian1SelectLeft5').value;
+    // var jl2 = document.getElementById('add-jiaolian2SelectLeft5').value;
+    // var jl3 = document.getElementById('add-jiaolian3SelectLeft5').value;
+    // var jl4 = document.getElementById('add-jiaolian4SelectLeft5').value;
+    // var jl5 = document.getElementById('add-jiaolian5SelectLeft5').value;
+    // var jl6 = document.getElementById('add-jiaolian6SelectLeft5').value;
+    // var height = parseFloat(document.getElementById('add-height5').value);
+    //     if (jl1 == '距中') {
+    //         var jiaolian1Insert = height / 2;
+    //         document.getElementById("add-jiaolian1SelectRight5").value = jl1
+    //
+    //         document.getElementById("add-jiaolian1InsertLeft5").value = jiaolian1Insert;
+    //
+    //         document.getElementById("add-jiaolian1InsertRight5").value = jiaolian1Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian2SelectLeft5');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft5').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft5').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft5').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft5').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft5').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft5').value;
+    //     var height = parseFloat(document.getElementById('add-height5').value);
+    //     if (jl2 == '距中') {
+    //         var jiaolian2Insert = height / 2;
+    //         document.getElementById("add-jiaolian2SelectRight5").value = jl2
+    //
+    //         document.getElementById("add-jiaolian2InsertLeft5").value = jiaolian2Insert;
+    //
+    //         document.getElementById("add-jiaolian2InsertRight5").value = jiaolian2Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian3SelectLeft5');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft5').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft5').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft5').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft5').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft5').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft5').value;
+    //     var height = parseFloat(document.getElementById('add-height5').value);
+    //     if (jl3 == '距中') {
+    //         var jiaolian3Insert = height / 2;
+    //         document.getElementById("add-jiaolian3SelectRight5").value = jl3
+    //
+    //         document.getElementById("add-jiaolian3InsertLeft5").value = jiaolian3Insert;
+    //
+    //         document.getElementById("add-jiaolian3InsertRight5").value = jiaolian3Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian4SelectLeft5');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft5').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft5').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft5').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft5').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft5').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft5').value;
+    //     var height = parseFloat(document.getElementById('add-height5').value);
+    //     if (jl4 == '距中') {
+    //         var jiaolian4Insert = height / 2;
+    //         document.getElementById("add-jiaolian4SelectRight5").value = jl4
+    //
+    //         document.getElementById("add-jiaolian4InsertLeft5").value = jiaolian4Insert;
+    //
+    //         document.getElementById("add-jiaolian4InsertRight5").value = jiaolian4Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian5SelectLeft5');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft5').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft5').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft5').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft5').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft5').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft5').value;
+    //     var height = parseFloat(document.getElementById('add-height5').value);
+    //     if (jl5 == '距中') {
+    //         var jiaolian5Insert = height / 2;
+    //         document.getElementById("add-jiaolian5SelectRight5").value = jl5
+    //
+    //         document.getElementById("add-jiaolian5InsertLeft5").value = jiaolian5Insert;
+    //
+    //         document.getElementById("add-jiaolian5InsertRight5").value = jiaolian5Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian6SelectLeft5');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft5').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft5').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft5').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft5').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft5').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft5').value;
+    //     var height = parseFloat(document.getElementById('add-height5').value);
+    //     if (jl6 == '距中') {
+    //         var jiaolian6Insert = height / 2;
+    //         document.getElementById("add-jiaolian6SelectRight5").value = jl6
+    //
+    //         document.getElementById("add-jiaolian6InsertLeft5").value = jiaolian6Insert;
+    //
+    //         document.getElementById("add-jiaolian6InsertRight5").value = jiaolian6Insert;
+    //
+    //     }
+    // })
+    //
+    // // -------7
+    // var inp2 = document.getElementById('add-jiaoliankongFangxiangLeft6');
+    // inp2.addEventListener('blur', function () {
+    //     var xdsl = document.getElementById('add-num6').value;
+    //     var jlkfxl = document.getElementById('add-jiaoliankongFangxiangLeft6').value;
+    //     var jlkfxr = xdsl - jlkfxl;
+    //     document.getElementById('add-jiaoliankongFangxiangRight6').value = jlkfxr;
+    // })
+    //
+    // var inp2 = document.getElementById('add-lashouShuliangLeft6');
+    // inp2.addEventListener('blur', function () {
+    //     var xdsl = document.getElementById('add-num6').value;
+    //     var lssll = document.getElementById('add-lashouShuliangLeft6').value;
+    //     var lsslr = xdsl - lssll;
+    //     document.getElementById('add-lashouShuliangRight6').value = lsslr;
+    // })
+    //
+    // var inp3 = document.getElementById('add-jiaolian1SelectLeft6');
+    // inp3.addEventListener('blur', function () {
+    //     var jl1sl = document.getElementById('add-jiaolian1SelectLeft6').value;
+    //     document.getElementById('add-jiaolian1SelectRight6').value = jl1sl;
+    // })
+    //
+    // var inp4 = document.getElementById('add-jiaolian2SelectLeft6');
+    // inp4.addEventListener('blur', function () {
+    //     var jl2sl = document.getElementById('add-jiaolian2SelectLeft6').value;
+    //     document.getElementById('add-jiaolian2SelectRight6').value = jl2sl;
+    // })
+    //
+    // var inp5 = document.getElementById('add-jiaolian3SelectLeft6');
+    // inp5.addEventListener('blur', function () {
+    //     var jl3sl = document.getElementById('add-jiaolian3SelectLeft6').value;
+    //     document.getElementById('add-jiaolian3SelectRight6').value = jl3sl;
+    // })
+    //
+    // var inp6 = document.getElementById('add-jiaolian4SelectLeft6');
+    // inp6.addEventListener('blur', function () {
+    //     var jl4sl = document.getElementById('add-jiaolian4SelectLeft6').value;
+    //     document.getElementById('add-jiaolian4SelectRight6').value = jl4sl;
+    // })
+    //
+    // var inp7 = document.getElementById('add-jiaolian5SelectLeft6');
+    // inp7.addEventListener('blur', function () {
+    //     var jl5sl = document.getElementById('add-jiaolian5SelectLeft6').value;
+    //     document.getElementById('add-jiaolian5SelectRight6').value = jl5sl;
+    // })
+    //
+    // var inp8 = document.getElementById('add-jiaolian6SelectLeft6');
+    // inp8.addEventListener('blur', function () {
+    //     var jl6sl = document.getElementById('add-jiaolian6SelectLeft6').value;
+    //     document.getElementById('add-jiaolian6SelectRight6').value = jl6sl;
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian1SelectLeft6');
+    // jl3inp.addEventListener('blur', function () {
+    // var jl1 = document.getElementById('add-jiaolian1SelectLeft6').value;
+    // var jl2 = document.getElementById('add-jiaolian2SelectLeft6').value;
+    // var jl3 = document.getElementById('add-jiaolian3SelectLeft6').value;
+    // var jl4 = document.getElementById('add-jiaolian4SelectLeft6').value;
+    // var jl5 = document.getElementById('add-jiaolian5SelectLeft6').value;
+    // var jl6 = document.getElementById('add-jiaolian6SelectLeft6').value;
+    // var height = parseFloat(document.getElementById('add-height6').value);
+    //     if (jl1 == '距中') {
+    //         var jiaolian1Insert = height / 2;
+    //         document.getElementById("add-jiaolian1SelectRight6").value = jl1
+    //
+    //         document.getElementById("add-jiaolian1InsertLeft6").value = jiaolian1Insert;
+    //
+    //         document.getElementById("add-jiaolian1InsertRight6").value = jiaolian1Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian2SelectLeft6');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft6').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft6').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft6').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft6').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft6').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft6').value;
+    //     var height = parseFloat(document.getElementById('add-height6').value);
+    //     if (jl2 == '距中') {
+    //         var jiaolian2Insert = height / 2;
+    //         document.getElementById("add-jiaolian2SelectRight6").value = jl2
+    //
+    //         document.getElementById("add-jiaolian2InsertLeft6").value = jiaolian2Insert;
+    //
+    //         document.getElementById("add-jiaolian2InsertRight6").value = jiaolian2Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian3SelectLeft6');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft6').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft6').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft6').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft6').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft6').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft6').value;
+    //     var height = parseFloat(document.getElementById('add-height6').value);
+    //     if (jl3 == '距中') {
+    //         var jiaolian3Insert = height / 2;
+    //         document.getElementById("add-jiaolian3SelectRight6").value = jl3
+    //
+    //         document.getElementById("add-jiaolian3InsertLeft6").value = jiaolian3Insert;
+    //
+    //         document.getElementById("add-jiaolian3InsertRight6").value = jiaolian3Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian4SelectLeft6');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft6').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft6').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft6').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft6').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft6').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft6').value;
+    //     var height = parseFloat(document.getElementById('add-height6').value);
+    //     if (jl4 == '距中') {
+    //         var jiaolian4Insert = height / 2;
+    //         document.getElementById("add-jiaolian4SelectRight6").value = jl4
+    //
+    //         document.getElementById("add-jiaolian4InsertLeft6").value = jiaolian4Insert;
+    //
+    //         document.getElementById("add-jiaolian4InsertRight6").value = jiaolian4Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian5SelectLeft6');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft6').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft6').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft6').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft6').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft6').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft6').value;
+    //     var height = parseFloat(document.getElementById('add-height6').value);
+    //     if (jl5 == '距中') {
+    //         var jiaolian5Insert = height / 2;
+    //         document.getElementById("add-jiaolian5SelectRight6").value = jl5
+    //
+    //         document.getElementById("add-jiaolian5InsertLeft6").value = jiaolian5Insert;
+    //
+    //         document.getElementById("add-jiaolian5InsertRight6").value = jiaolian5Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian6SelectLeft6');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft6').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft6').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft6').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft6').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft6').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft6').value;
+    //     var height = parseFloat(document.getElementById('add-height6').value);
+    //     if (jl6 == '距中') {
+    //         var jiaolian6Insert = height / 2;
+    //         document.getElementById("add-jiaolian6SelectRight6").value = jl6
+    //
+    //         document.getElementById("add-jiaolian6InsertLeft6").value = jiaolian6Insert;
+    //
+    //         document.getElementById("add-jiaolian6InsertRight6").value = jiaolian6Insert;
+    //
+    //     }
+    // })
+    //
+    // // ------8
+    // var inp2 = document.getElementById('add-jiaoliankongFangxiangLeft7');
+    // inp2.addEventListener('blur', function () {
+    //     var xdsl = document.getElementById('add-num7').value;
+    //     var jlkfxl = document.getElementById('add-jiaoliankongFangxiangLeft7').value;
+    //     var jlkfxr = xdsl - jlkfxl;
+    //     document.getElementById('add-jiaoliankongFangxiangRight7').value = jlkfxr;
+    // })
+    //
+    // var inp2 = document.getElementById('add-lashouShuliangLeft7');
+    // inp2.addEventListener('blur', function () {
+    //     var xdsl = document.getElementById('add-num7').value;
+    //     var lssll = document.getElementById('add-lashouShuliangLeft7').value;
+    //     var lsslr = xdsl - lssll;
+    //     document.getElementById('add-lashouShuliangRight7').value = lsslr;
+    // })
+    //
+    // var inp3 = document.getElementById('add-jiaolian1SelectLeft7');
+    // inp3.addEventListener('blur', function () {
+    //     var jl1sl = document.getElementById('add-jiaolian1SelectLeft7').value;
+    //     document.getElementById('add-jiaolian1SelectRight7').value = jl1sl;
+    // })
+    //
+    // var inp4 = document.getElementById('add-jiaolian2SelectLeft7');
+    // inp4.addEventListener('blur', function () {
+    //     var jl2sl = document.getElementById('add-jiaolian2SelectLeft7').value;
+    //     document.getElementById('add-jiaolian2SelectRight7').value = jl2sl;
+    // })
+    //
+    // var inp5 = document.getElementById('add-jiaolian3SelectLeft6');
+    // inp5.addEventListener('blur', function () {
+    //     var jl3sl = document.getElementById('add-jiaolian3SelectLeft6').value;
+    //     document.getElementById('add-jiaolian3SelectRight6').value = jl3sl;
+    // })
+    //
+    // var inp6 = document.getElementById('add-jiaolian4SelectLeft7');
+    // inp6.addEventListener('blur', function () {
+    //     var jl4sl = document.getElementById('add-jiaolian4SelectLeft7').value;
+    //     document.getElementById('add-jiaolian4SelectRight7').value = jl4sl;
+    // })
+    //
+    // var inp7 = document.getElementById('add-jiaolian5SelectLeft7');
+    // inp7.addEventListener('blur', function () {
+    //     var jl5sl = document.getElementById('add-jiaolian5SelectLeft7').value;
+    //     document.getElementById('add-jiaolian5SelectRight7').value = jl5sl;
+    // })
+    //
+    // var inp8 = document.getElementById('add-jiaolian6SelectLeft7');
+    // inp8.addEventListener('blur', function () {
+    //     var jl6sl = document.getElementById('add-jiaolian6SelectLeft7').value;
+    //     document.getElementById('add-jiaolian6SelectRight7').value = jl6sl;
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian1SelectLeft7');
+    // jl3inp.addEventListener('blur', function () {
+    // var jl1 = document.getElementById('add-jiaolian1SelectLeft7').value;
+    // var jl2 = document.getElementById('add-jiaolian2SelectLeft7').value;
+    // var jl3 = document.getElementById('add-jiaolian3SelectLeft7').value;
+    // var jl4 = document.getElementById('add-jiaolian4SelectLeft7').value;
+    // var jl5 = document.getElementById('add-jiaolian5SelectLeft7').value;
+    // var jl6 = document.getElementById('add-jiaolian6SelectLeft7').value;
+    // var height = parseFloat(document.getElementById('add-height7').value);
+    //     if (jl1 == '距中') {
+    //         var jiaolian1Insert = height / 2;
+    //         document.getElementById("add-jiaolian1SelectRight7").value = jl1
+    //
+    //         document.getElementById("add-jiaolian1InsertLeft7").value = jiaolian1Insert;
+    //
+    //         document.getElementById("add-jiaolian1InsertRight7").value = jiaolian1Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian2SelectLeft7');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft7').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft7').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft7').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft7').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft7').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft7').value;
+    //     var height = parseFloat(document.getElementById('add-height7').value);
+    //     if (jl2 == '距中') {
+    //         var jiaolian2Insert = height / 2;
+    //         document.getElementById("add-jiaolian2SelectRight7").value = jl2
+    //
+    //         document.getElementById("add-jiaolian2InsertLeft7").value = jiaolian2Insert;
+    //
+    //         document.getElementById("add-jiaolian2InsertRight7").value = jiaolian2Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian3SelectLeft7');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft7').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft7').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft7').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft7').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft7').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft7').value;
+    //     var height = parseFloat(document.getElementById('add-height7').value);
+    //     if (jl3 == '距中') {
+    //         var jiaolian3Insert = height / 2;
+    //         document.getElementById("add-jiaolian3SelectRight7").value = jl3
+    //
+    //         document.getElementById("add-jiaolian3InsertLeft7").value = jiaolian3Insert;
+    //
+    //         document.getElementById("add-jiaolian3InsertRight7").value = jiaolian3Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian4SelectLeft7');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft7').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft7').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft7').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft7').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft7').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft7').value;
+    //     var height = parseFloat(document.getElementById('add-height7').value);
+    //     if (jl4 == '距中') {
+    //         var jiaolian4Insert = height / 2;
+    //         document.getElementById("add-jiaolian4SelectRight7").value = jl4
+    //
+    //         document.getElementById("add-jiaolian4InsertLeft7").value = jiaolian4Insert;
+    //
+    //         document.getElementById("add-jiaolian4InsertRight7").value = jiaolian4Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian5SelectLeft7');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft7').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft7').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft7').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft7').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft7').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft7').value;
+    //     var height = parseFloat(document.getElementById('add-height7').value);
+    //     if (jl5 == '距中') {
+    //         var jiaolian5Insert = height / 2;
+    //         document.getElementById("add-jiaolian5SelectRight7").value = jl5
+    //
+    //         document.getElementById("add-jiaolian5InsertLeft7").value = jiaolian5Insert;
+    //
+    //         document.getElementById("add-jiaolian5InsertRight7").value = jiaolian5Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian6SelectLeft7');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft7').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft7').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft7').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft7').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft7').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft7').value;
+    //     var height = parseFloat(document.getElementById('add-height7').value);
+    //     if (jl6 == '距中') {
+    //         var jiaolian6Insert = height / 2;
+    //         document.getElementById("add-jiaolian6SelectRight7").value = jl6
+    //
+    //         document.getElementById("add-jiaolian6InsertLeft7").value = jiaolian6Insert;
+    //
+    //         document.getElementById("add-jiaolian6InsertRight7").value = jiaolian6Insert;
+    //
+    //     }
+    // })
+    //
+    // // ------9
+    // var inp2 = document.getElementById('add-jiaoliankongFangxiangLeft8');
+    // inp2.addEventListener('blur', function () {
+    //     var xdsl = document.getElementById('add-num8').value;
+    //     var jlkfxl = document.getElementById('add-jiaoliankongFangxiangLeft8').value;
+    //     var jlkfxr = xdsl - jlkfxl;
+    //     document.getElementById('add-jiaoliankongFangxiangRight8').value = jlkfxr;
+    // })
+    //
+    // var inp2 = document.getElementById('add-lashouShuliangLeft8');
+    // inp2.addEventListener('blur', function () {
+    //     var xdsl = document.getElementById('add-num8').value;
+    //     var lssll = document.getElementById('add-lashouShuliangLeft8').value;
+    //     var lsslr = xdsl - lssll;
+    //     document.getElementById('add-lashouShuliangRight8').value = lsslr;
+    // })
+    //
+    // var inp3 = document.getElementById('add-jiaolian1SelectLeft8');
+    // inp3.addEventListener('blur', function () {
+    //     var jl1sl = document.getElementById('add-jiaolian1SelectLeft8').value;
+    //     document.getElementById('add-jiaolian1SelectRight8').value = jl1sl;
+    // })
+    //
+    // var inp4 = document.getElementById('add-jiaolian2SelectLeft8');
+    // inp4.addEventListener('blur', function () {
+    //     var jl2sl = document.getElementById('add-jiaolian2SelectLeft8').value;
+    //     document.getElementById('add-jiaolian2SelectRight8').value = jl2sl;
+    // })
+    //
+    // var inp5 = document.getElementById('add-jiaolian3SelectLeft8');
+    // inp5.addEventListener('blur', function () {
+    //     var jl3sl = document.getElementById('add-jiaolian3SelectLeft8').value;
+    //     document.getElementById('add-jiaolian3SelectRight8').value = jl3sl;
+    // })
+    //
+    // var inp6 = document.getElementById('add-jiaolian4SelectLeft8');
+    // inp6.addEventListener('blur', function () {
+    //     var jl4sl = document.getElementById('add-jiaolian4SelectLeft8').value;
+    //     document.getElementById('add-jiaolian4SelectRight8').value = jl4sl;
+    // })
+    //
+    // var inp7 = document.getElementById('add-jiaolian5SelectLeft8');
+    // inp7.addEventListener('blur', function () {
+    //     var jl5sl = document.getElementById('add-jiaolian5SelectLeft8').value;
+    //     document.getElementById('add-jiaolian5SelectRight8').value = jl5sl;
+    // })
+    //
+    // var inp8 = document.getElementById('add-jiaolian6SelectLeft8');
+    // inp8.addEventListener('blur', function () {
+    //     var jl6sl = document.getElementById('add-jiaolian6SelectLeft8').value;
+    //     document.getElementById('add-jiaolian6SelectRight8').value = jl6sl;
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian1SelectLeft8');
+    // jl3inp.addEventListener('blur', function () {
+    // var jl1 = document.getElementById('add-jiaolian1SelectLeft8').value;
+    // var jl2 = document.getElementById('add-jiaolian2SelectLeft8').value;
+    // var jl3 = document.getElementById('add-jiaolian3SelectLeft8').value;
+    // var jl4 = document.getElementById('add-jiaolian4SelectLeft8').value;
+    // var jl5 = document.getElementById('add-jiaolian5SelectLeft8').value;
+    // var jl6 = document.getElementById('add-jiaolian6SelectLeft8').value;
+    // var height = parseFloat(document.getElementById('add-height8').value);
+    //     if (jl1 == '距中') {
+    //         var jiaolian1Insert = height / 2;
+    //         document.getElementById("add-jiaolian1SelectRight8").value = jl1
+    //
+    //         document.getElementById("add-jiaolian1InsertLeft8").value = jiaolian1Insert;
+    //
+    //         document.getElementById("add-jiaolian1InsertRight8").value = jiaolian1Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian2SelectLeft8');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft8').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft8').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft8').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft8').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft8').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft8').value;
+    //     var height = parseFloat(document.getElementById('add-height8').value);
+    //     if (jl2 == '距中') {
+    //         var jiaolian2Insert = height / 2;
+    //         document.getElementById("add-jiaolian2SelectRight8").value = jl2
+    //
+    //         document.getElementById("add-jiaolian2InsertLeft8").value = jiaolian2Insert;
+    //
+    //         document.getElementById("add-jiaolian2InsertRight8").value = jiaolian2Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian3SelectLeft8');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft8').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft8').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft8').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft8').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft8').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft8').value;
+    //     var height = parseFloat(document.getElementById('add-height8').value);
+    //     if (jl3 == '距中') {
+    //         var jiaolian3Insert = height / 2;
+    //         document.getElementById("add-jiaolian3SelectRight8").value = jl3
+    //
+    //         document.getElementById("add-jiaolian3InsertLeft8").value = jiaolian3Insert;
+    //
+    //         document.getElementById("add-jiaolian3InsertRight8").value = jiaolian3Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian4SelectLeft8');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft8').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft8').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft8').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft8').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft8').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft8').value;
+    //     var height = parseFloat(document.getElementById('add-height8').value);
+    //     if (jl4 == '距中') {
+    //         var jiaolian4Insert = height / 2;
+    //         document.getElementById("add-jiaolian4SelectRight8").value = jl4
+    //
+    //         document.getElementById("add-jiaolian4InsertLeft8").value = jiaolian4Insert;
+    //
+    //         document.getElementById("add-jiaolian4InsertRight8").value = jiaolian4Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian5SelectLeft8');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft8').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft8').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft8').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft8').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft8').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft8').value;
+    //     var height = parseFloat(document.getElementById('add-height8').value);
+    //     if (jl5 == '距中') {
+    //         var jiaolian5Insert = height / 2;
+    //         document.getElementById("add-jiaolian5SelectRight8").value = jl5
+    //
+    //         document.getElementById("add-jiaolian5InsertLeft8").value = jiaolian5Insert;
+    //
+    //         document.getElementById("add-jiaolian5InsertRight8").value = jiaolian5Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian6SelectLeft8');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft8').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft8').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft8').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft8').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft8').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft8').value;
+    //     var height = parseFloat(document.getElementById('add-height8').value);
+    //     if (jl6 == '距中') {
+    //         var jiaolian6Insert = height / 2;
+    //         document.getElementById("add-jiaolian6SelectRight8").value = jl6
+    //
+    //         document.getElementById("add-jiaolian6InsertLeft8").value = jiaolian6Insert;
+    //
+    //         document.getElementById("add-jiaolian6InsertRight8").value = jiaolian6Insert;
+    //
+    //     }
+    // })
+    //
+    // // ----------10
+    // var inp2 = document.getElementById('add-jiaoliankongFangxiangLeft9');
+    // inp2.addEventListener('blur', function () {
+    //     var xdsl = document.getElementById('add-num9').value;
+    //     var jlkfxl = document.getElementById('add-jiaoliankongFangxiangLeft9').value;
+    //     var jlkfxr = xdsl - jlkfxl;
+    //     document.getElementById('add-jiaoliankongFangxiangRight9').value = jlkfxr;
+    // })
+    //
+    // var inp2 = document.getElementById('add-lashouShuliangLeft9');
+    // inp2.addEventListener('blur', function () {
+    //     var xdsl = document.getElementById('add-num9').value;
+    //     var lssll = document.getElementById('add-lashouShuliangLeft9').value;
+    //     var lsslr = xdsl - lssll;
+    //     document.getElementById('add-lashouShuliangRight9').value = lsslr;
+    // })
+    //
+    // var inp3 = document.getElementById('add-jiaolian1SelectLeft9');
+    // inp3.addEventListener('blur', function () {
+    //     var jl1sl = document.getElementById('add-jiaolian1SelectLeft9').value;
+    //     document.getElementById('add-jiaolian1SelectRight9').value = jl1sl;
+    // })
+    //
+    // var inp4 = document.getElementById('add-jiaolian2SelectLeft9');
+    // inp4.addEventListener('blur', function () {
+    //     var jl2sl = document.getElementById('add-jiaolian2SelectLeft9').value;
+    //     document.getElementById('add-jiaolian2SelectRight9').value = jl2sl;
+    // })
+    //
+    // var inp5 = document.getElementById('add-jiaolian3SelectLeft9');
+    // inp5.addEventListener('blur', function () {
+    //     var jl3sl = document.getElementById('add-jiaolian3SelectLeft9').value;
+    //     document.getElementById('add-jiaolian3SelectRight9').value = jl3sl;
+    // })
+    //
+    // var inp6 = document.getElementById('add-jiaolian4SelectLeft9');
+    // inp6.addEventListener('blur', function () {
+    //     var jl4sl = document.getElementById('add-jiaolian4SelectLeft9').value;
+    //     document.getElementById('add-jiaolian4SelectRight9').value = jl4sl;
+    // })
+    //
+    // var inp7 = document.getElementById('add-jiaolian5SelectLeft9');
+    // inp7.addEventListener('blur', function () {
+    //     var jl5sl = document.getElementById('add-jiaolian5SelectLeft9').value;
+    //     document.getElementById('add-jiaolian5SelectRight9').value = jl5sl;
+    // })
+    //
+    // var inp8 = document.getElementById('add-jiaolian6SelectLeft9');
+    // inp8.addEventListener('blur', function () {
+    //     var jl6sl = document.getElementById('add-jiaolian6SelectLeft9').value;
+    //     document.getElementById('add-jiaolian6SelectRight9').value = jl6sl;
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian1SelectLeft9');
+    // jl3inp.addEventListener('blur', function () {
+    // var jl1 = document.getElementById('add-jiaolian1SelectLeft9').value;
+    // var jl2 = document.getElementById('add-jiaolian2SelectLeft9').value;
+    // var jl3 = document.getElementById('add-jiaolian3SelectLeft9').value;
+    // var jl4 = document.getElementById('add-jiaolian4SelectLeft9').value;
+    // var jl5 = document.getElementById('add-jiaolian5SelectLeft9').value;
+    // var jl6 = document.getElementById('add-jiaolian6SelectLeft9').value;
+    // var height = parseFloat(document.getElementById('add-height9').value);
+    //     if (jl1 == '距中') {
+    //         var jiaolian1Insert = height / 2;
+    //         document.getElementById("add-jiaolian1SelectRight9").value = jl1
+    //
+    //         document.getElementById("add-jiaolian1InsertLeft9").value = jiaolian1Insert;
+    //
+    //         document.getElementById("add-jiaolian1InsertRight9").value = jiaolian1Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian2SelectLeft9');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft9').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft9').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft9').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft9').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft9').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft9').value;
+    //     var height = parseFloat(document.getElementById('add-height9').value);
+    //     if (jl2 == '距中') {
+    //         var jiaolian2Insert = height / 2;
+    //         document.getElementById("add-jiaolian2SelectRight9").value = jl2
+    //
+    //         document.getElementById("add-jiaolian2InsertLeft9").value = jiaolian2Insert;
+    //
+    //         document.getElementById("add-jiaolian2InsertRight9").value = jiaolian2Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian3SelectLeft9');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft9').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft9').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft9').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft9').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft9').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft9').value;
+    //     var height = parseFloat(document.getElementById('add-height9').value);
+    //     if (jl3 == '距中') {
+    //         var jiaolian3Insert = height / 2;
+    //         document.getElementById("add-jiaolian3SelectRight9").value = jl3
+    //
+    //         document.getElementById("add-jiaolian3InsertLeft9").value = jiaolian3Insert;
+    //
+    //         document.getElementById("add-jiaolian3InsertRight9").value = jiaolian3Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian4SelectLeft9');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft9').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft9').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft9').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft9').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft9').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft9').value;
+    //     var height = parseFloat(document.getElementById('add-height9').value);
+    //     if (jl4 == '距中') {
+    //         var jiaolian4Insert = height / 2;
+    //         document.getElementById("add-jiaolian4SelectRight9").value = jl4
+    //
+    //         document.getElementById("add-jiaolian4InsertLeft9").value = jiaolian4Insert;
+    //
+    //         document.getElementById("add-jiaolian4InsertRight9").value = jiaolian4Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian5SelectLeft9');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft9').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft9').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft9').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft9').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft9').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft9').value;
+    //     var height = parseFloat(document.getElementById('add-height9').value);
+    //     if (jl5 == '距中') {
+    //         var jiaolian5Insert = height / 2;
+    //         document.getElementById("add-jiaolian5SelectRight9").value = jl5
+    //
+    //         document.getElementById("add-jiaolian5InsertLeft9").value = jiaolian5Insert;
+    //
+    //         document.getElementById("add-jiaolian5InsertRight9").value = jiaolian5Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian6SelectLeft9');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft9').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft9').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft9').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft9').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft9').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft9').value;
+    //     var height = parseFloat(document.getElementById('add-height9').value);
+    //     if (jl6 == '距中') {
+    //         var jiaolian6Insert = height / 2;
+    //         document.getElementById("add-jiaolian6SelectRight9").value = jl6
+    //
+    //         document.getElementById("add-jiaolian6InsertLeft9").value = jiaolian6Insert;
+    //
+    //         document.getElementById("add-jiaolian6InsertRight9").value = jiaolian6Insert;
+    //
+    //     }
+    // })
+    //
+    // // -----------11
+    // var inp2 = document.getElementById('add-jiaoliankongFangxiangLeft10');
+    // inp2.addEventListener('blur', function () {
+    //     var xdsl = document.getElementById('add-num10').value;
+    //     var jlkfxl = document.getElementById('add-jiaoliankongFangxiangLeft10').value;
+    //     var jlkfxr = xdsl - jlkfxl;
+    //     document.getElementById('add-jiaoliankongFangxiangRight10').value = jlkfxr;
+    // })
+    //
+    // var inp2 = document.getElementById('add-lashouShuliangLeft10');
+    // inp2.addEventListener('blur', function () {
+    //     var xdsl = document.getElementById('add-num10').value;
+    //     var lssll = document.getElementById('add-lashouShuliangLeft10').value;
+    //     var lsslr = xdsl - lssll;
+    //     document.getElementById('add-lashouShuliangRight10').value = lsslr;
+    // })
+    //
+    // var inp3 = document.getElementById('add-jiaolian1SelectLeft10');
+    // inp3.addEventListener('blur', function () {
+    //     var jl1sl = document.getElementById('add-jiaolian1SelectLeft10').value;
+    //     document.getElementById('add-jiaolian1SelectRight10').value = jl1sl;
+    // })
+    //
+    // var inp4 = document.getElementById('add-jiaolian2SelectLeft10');
+    // inp4.addEventListener('blur', function () {
+    //     var jl2sl = document.getElementById('add-jiaolian2SelectLeft10').value;
+    //     document.getElementById('add-jiaolian2SelectRight10').value = jl2sl;
+    // })
+    //
+    // var inp5 = document.getElementById('add-jiaolian3SelectLeft10');
+    // inp5.addEventListener('blur', function () {
+    //     var jl3sl = document.getElementById('add-jiaolian3SelectLeft10').value;
+    //     document.getElementById('add-jiaolian3SelectRight10').value = jl3sl;
+    // })
+    //
+    // var inp6 = document.getElementById('add-jiaolian4SelectLeft10');
+    // inp6.addEventListener('blur', function () {
+    //     var jl4sl = document.getElementById('add-jiaolian4SelectLeft10').value;
+    //     document.getElementById('add-jiaolian4SelectRight10').value = jl4sl;
+    // })
+    //
+    // var inp7 = document.getElementById('add-jiaolian5SelectLeft10');
+    // inp7.addEventListener('blur', function () {
+    //     var jl5sl = document.getElementById('add-jiaolian5SelectLeft10').value;
+    //     document.getElementById('add-jiaolian5SelectRight10').value = jl5sl;
+    // })
+    //
+    // var inp8 = document.getElementById('add-jiaolian6SelectLeft10');
+    // inp8.addEventListener('blur', function () {
+    //     var jl6sl = document.getElementById('add-jiaolian6SelectLeft10').value;
+    //     document.getElementById('add-jiaolian6SelectRight10').value = jl6sl;
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian1SelectLeft10');
+    // jl3inp.addEventListener('blur', function () {
+    // var jl1 = document.getElementById('add-jiaolian1SelectLeft10').value;
+    // var jl2 = document.getElementById('add-jiaolian2SelectLeft10').value;
+    // var jl3 = document.getElementById('add-jiaolian3SelectLeft10').value;
+    // var jl4 = document.getElementById('add-jiaolian4SelectLeft10').value;
+    // var jl5 = document.getElementById('add-jiaolian5SelectLeft10').value;
+    // var jl6 = document.getElementById('add-jiaolian6SelectLeft10').value;
+    // var height = parseFloat(document.getElementById('add-height10').value);
+    //     if (jl1 == '距中') {
+    //         var jiaolian1Insert = height / 2;
+    //         document.getElementById("add-jiaolian1SelectRight10").value = jl1
+    //
+    //         document.getElementById("add-jiaolian1InsertLeft10").value = jiaolian1Insert;
+    //
+    //         document.getElementById("add-jiaolian1InsertRight10").value = jiaolian1Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian2SelectLeft10');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft10').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft10').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft10').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft10').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft10').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft10').value;
+    //     var height = parseFloat(document.getElementById('add-height10').value);
+    //     if (jl2 == '距中') {
+    //         var jiaolian2Insert = height / 2;
+    //         document.getElementById("add-jiaolian2SelectRight10").value = jl2
+    //
+    //         document.getElementById("add-jiaolian2InsertLeft10").value = jiaolian2Insert;
+    //
+    //         document.getElementById("add-jiaolian2InsertRight10").value = jiaolian2Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian3SelectLeft10');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft10').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft10').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft10').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft10').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft10').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft10').value;
+    //     var height = parseFloat(document.getElementById('add-height10').value);
+    //     if (jl3 == '距中') {
+    //         var jiaolian3Insert = height / 2;
+    //         document.getElementById("add-jiaolian3SelectRight10").value = jl3
+    //
+    //         document.getElementById("add-jiaolian3InsertLeft10").value = jiaolian3Insert;
+    //
+    //         document.getElementById("add-jiaolian3InsertRight10").value = jiaolian3Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian4SelectLeft10');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft10').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft10').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft10').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft10').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft10').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft10').value;
+    //     var height = parseFloat(document.getElementById('add-height10').value);
+    //     if (jl4 == '距中') {
+    //         var jiaolian4Insert = height / 2;
+    //         document.getElementById("add-jiaolian4SelectRight10").value = jl4
+    //
+    //         document.getElementById("add-jiaolian4InsertLeft10").value = jiaolian4Insert;
+    //
+    //         document.getElementById("add-jiaolian4InsertRight10").value = jiaolian4Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian5SelectLeft10');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft10').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft10').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft10').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft10').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft10').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft10').value;
+    //     var height = parseFloat(document.getElementById('add-height10').value);
+    //     if (jl5 == '距中') {
+    //         var jiaolian5Insert = height / 2;
+    //         document.getElementById("add-jiaolian5SelectRight10").value = jl5
+    //
+    //         document.getElementById("add-jiaolian5InsertLeft10").value = jiaolian5Insert;
+    //
+    //         document.getElementById("add-jiaolian5InsertRight10").value = jiaolian5Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian6SelectLeft10');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft10').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft10').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft10').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft10').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft10').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft10').value;
+    //     var height = parseFloat(document.getElementById('add-height10').value);
+    //     if (jl6 == '距中') {
+    //         var jiaolian6Insert = height / 2;
+    //         document.getElementById("add-jiaolian6SelectRight10").value = jl6
+    //
+    //         document.getElementById("add-jiaolian6InsertLeft10").value = jiaolian6Insert;
+    //
+    //         document.getElementById("add-jiaolian6InsertRight10").value = jiaolian6Insert;
+    //
+    //     }
+    // })
+    //
+    // // --------------12
+    // var inp2 = document.getElementById('add-jiaoliankongFangxiangLeft11');
+    // inp2.addEventListener('blur', function () {
+    //     var xdsl = document.getElementById('add-num11').value;
+    //     var jlkfxl = document.getElementById('add-jiaoliankongFangxiangLeft11').value;
+    //     var jlkfxr = xdsl - jlkfxl;
+    //     document.getElementById('add-jiaoliankongFangxiangRight11').value = jlkfxr;
+    // })
+    //
+    // var inp2 = document.getElementById('add-lashouShuliangLeft11');
+    // inp2.addEventListener('blur', function () {
+    //     var xdsl = document.getElementById('add-num11').value;
+    //     var lssll = document.getElementById('add-lashouShuliangLeft11').value;
+    //     var lsslr = xdsl - lssll;
+    //     document.getElementById('add-lashouShuliangRight11').value = lsslr;
+    // })
+    //
+    // var inp3 = document.getElementById('add-jiaolian1SelectLeft11');
+    // inp3.addEventListener('blur', function () {
+    //     var jl1sl = document.getElementById('add-jiaolian1SelectLeft11').value;
+    //     document.getElementById('add-jiaolian1SelectRight11').value = jl1sl;
+    // })
+    //
+    // var inp4 = document.getElementById('add-jiaolian2SelectLeft11');
+    // inp4.addEventListener('blur', function () {
+    //     var jl2sl = document.getElementById('add-jiaolian2SelectLeft11').value;
+    //     document.getElementById('add-jiaolian2SelectRight11').value = jl2sl;
+    // })
+    //
+    // var inp5 = document.getElementById('add-jiaolian3SelectLeft11');
+    // inp5.addEventListener('blur', function () {
+    //     var jl3sl = document.getElementById('add-jiaolian3SelectLeft11').value;
+    //     document.getElementById('add-jiaolian3SelectRight11').value = jl3sl;
+    // })
+    //
+    // var inp6 = document.getElementById('add-jiaolian4SelectLeft11');
+    // inp6.addEventListener('blur', function () {
+    //     var jl4sl = document.getElementById('add-jiaolian4SelectLeft11').value;
+    //     document.getElementById('add-jiaolian4SelectRight11').value = jl4sl;
+    // })
+    //
+    // var inp7 = document.getElementById('add-jiaolian5SelectLeft11');
+    // inp7.addEventListener('blur', function () {
+    //     var jl5sl = document.getElementById('add-jiaolian5SelectLeft11').value;
+    //     document.getElementById('add-jiaolian5SelectRight11').value = jl5sl;
+    // })
+    //
+    // var inp8 = document.getElementById('add-jiaolian6SelectLeft11');
+    // inp8.addEventListener('blur', function () {
+    //     var jl6sl = document.getElementById('add-jiaolian6SelectLeft11').value;
+    //     document.getElementById('add-jiaolian6SelectRight11').value = jl6sl;
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian1SelectLeft11');
+    // jl3inp.addEventListener('blur', function () {
+    // var jl1 = document.getElementById('add-jiaolian1SelectLeft11').value;
+    // var jl2 = document.getElementById('add-jiaolian2SelectLeft11').value;
+    // var jl3 = document.getElementById('add-jiaolian3SelectLeft11').value;
+    // var jl4 = document.getElementById('add-jiaolian4SelectLeft11').value;
+    // var jl5 = document.getElementById('add-jiaolian5SelectLeft11').value;
+    // var jl6 = document.getElementById('add-jiaolian6SelectLeft11').value;
+    // var height = parseFloat(document.getElementById('add-height11').value);
+    //     if (jl1 == '距中') {
+    //         var jiaolian1Insert = height / 2;
+    //         document.getElementById("add-jiaolian1SelectRight11").value = jl1
+    //
+    //         document.getElementById("add-jiaolian1InsertLeft11").value = jiaolian1Insert;
+    //
+    //         document.getElementById("add-jiaolian1InsertRight11").value = jiaolian1Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian2SelectLeft11');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft11').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft11').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft11').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft11').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft11').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft11').value;
+    //     var height = parseFloat(document.getElementById('add-height11').value);
+    //     if (jl2 == '距中') {
+    //         var jiaolian2Insert = height / 2;
+    //         document.getElementById("add-jiaolian2SelectRight11").value = jl2
+    //
+    //         document.getElementById("add-jiaolian2InsertLeft11").value = jiaolian2Insert;
+    //
+    //         document.getElementById("add-jiaolian2InsertRight11").value = jiaolian2Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian3SelectLeft11');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft11').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft11').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft11').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft11').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft11').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft11').value;
+    //     var height = parseFloat(document.getElementById('add-height11').value);
+    //     if (jl3 == '距中') {
+    //         var jiaolian3Insert = height / 2;
+    //         document.getElementById("add-jiaolian3SelectRight11").value = jl3
+    //
+    //         document.getElementById("add-jiaolian3InsertLeft11").value = jiaolian3Insert;
+    //
+    //         document.getElementById("add-jiaolian3InsertRight11").value = jiaolian3Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian4SelectLeft11');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft11').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft11').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft11').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft11').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft11').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft11').value;
+    //     var height = parseFloat(document.getElementById('add-height11').value);
+    //     if (jl4 == '距中') {
+    //         var jiaolian4Insert = height / 2;
+    //         document.getElementById("add-jiaolian4SelectRight11").value = jl4
+    //
+    //         document.getElementById("add-jiaolian4InsertLeft11").value = jiaolian4Insert;
+    //
+    //         document.getElementById("add-jiaolian4InsertRight11").value = jiaolian4Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian5SelectLeft11');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft11').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft11').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft11').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft11').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft11').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft11').value;
+    //     var height = parseFloat(document.getElementById('add-height11').value);
+    //     if (jl5 == '距中') {
+    //         var jiaolian5Insert = height / 2;
+    //         document.getElementById("add-jiaolian5SelectRight11").value = jl5
+    //
+    //         document.getElementById("add-jiaolian5InsertLeft11").value = jiaolian5Insert;
+    //
+    //         document.getElementById("add-jiaolian5InsertRight11").value = jiaolian5Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian6SelectLeft11');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft11').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft11').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft11').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft11').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft11').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft11').value;
+    //     var height = parseFloat(document.getElementById('add-height11').value);
+    //     if (jl6 == '距中') {
+    //         var jiaolian6Insert = height / 2;
+    //         document.getElementById("add-jiaolian6SelectRight11").value = jl6
+    //
+    //         document.getElementById("add-jiaolian6InsertLeft11").value = jiaolian6Insert;
+    //
+    //         document.getElementById("add-jiaolian6InsertRight11").value = jiaolian6Insert;
+    //
+    //     }
+    // })
+    //
+    // // --------------13
+    // var inp2 = document.getElementById('add-jiaoliankongFangxiangLeft12');
+    // inp2.addEventListener('blur', function () {
+    //     var xdsl = document.getElementById('add-num12').value;
+    //     var jlkfxl = document.getElementById('add-jiaoliankongFangxiangLeft12').value;
+    //     var jlkfxr = xdsl - jlkfxl;
+    //     document.getElementById('add-jiaoliankongFangxiangRight12').value = jlkfxr;
+    // })
+    //
+    // var inp2 = document.getElementById('add-lashouShuliangLeft12');
+    // inp2.addEventListener('blur', function () {
+    //     var xdsl = document.getElementById('add-num12').value;
+    //     var lssll = document.getElementById('add-lashouShuliangLeft12').value;
+    //     var lsslr = xdsl - lssll;
+    //     document.getElementById('add-lashouShuliangRight12').value = lsslr;
+    // })
+    //
+    // var inp3 = document.getElementById('add-jiaolian1SelectLeft12');
+    // inp3.addEventListener('blur', function () {
+    //     var jl1sl = document.getElementById('add-jiaolian1SelectLeft12').value;
+    //     document.getElementById('add-jiaolian1SelectRight12').value = jl1sl;
+    // })
+    //
+    // var inp4 = document.getElementById('add-jiaolian2SelectLeft12');
+    // inp4.addEventListener('blur', function () {
+    //     var jl2sl = document.getElementById('add-jiaolian2SelectLeft12').value;
+    //     document.getElementById('add-jiaolian2SelectRight12').value = jl2sl;
+    // })
+    //
+    // var inp5 = document.getElementById('add-jiaolian3SelectLeft12');
+    // inp5.addEventListener('blur', function () {
+    //     var jl3sl = document.getElementById('add-jiaolian3SelectLeft12').value;
+    //     document.getElementById('add-jiaolian3SelectRight12').value = jl3sl;
+    // })
+    //
+    // var inp6 = document.getElementById('add-jiaolian4SelectLeft12');
+    // inp6.addEventListener('blur', function () {
+    //     var jl4sl = document.getElementById('add-jiaolian4SelectLeft12').value;
+    //     document.getElementById('add-jiaolian4SelectRight12').value = jl4sl;
+    // })
+    //
+    // var inp7 = document.getElementById('add-jiaolian5SelectLeft12');
+    // inp7.addEventListener('blur', function () {
+    //     var jl5sl = document.getElementById('add-jiaolian5SelectLeft12').value;
+    //     document.getElementById('add-jiaolian5SelectRight12').value = jl5sl;
+    // })
+    //
+    // var inp8 = document.getElementById('add-jiaolian6SelectLeft12');
+    // inp8.addEventListener('blur', function () {
+    //     var jl6sl = document.getElementById('add-jiaolian6SelectLeft12').value;
+    //     document.getElementById('add-jiaolian6SelectRight12').value = jl6sl;
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian1SelectLeft12');
+    // jl3inp.addEventListener('blur', function () {
+    // var jl1 = document.getElementById('add-jiaolian1SelectLeft12').value;
+    // var jl2 = document.getElementById('add-jiaolian2SelectLeft12').value;
+    // var jl3 = document.getElementById('add-jiaolian3SelectLeft12').value;
+    // var jl4 = document.getElementById('add-jiaolian4SelectLeft12').value;
+    // var jl5 = document.getElementById('add-jiaolian5SelectLeft12').value;
+    // var jl6 = document.getElementById('add-jiaolian6SelectLeft12').value;
+    // var height = parseFloat(document.getElementById('add-height12').value);
+    //     if (jl1 == '距中') {
+    //         var jiaolian1Insert = height / 2;
+    //         document.getElementById("add-jiaolian1SelectRight12").value = jl1
+    //
+    //         document.getElementById("add-jiaolian1InsertLeft12").value = jiaolian1Insert;
+    //
+    //         document.getElementById("add-jiaolian1InsertRight12").value = jiaolian1Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian2SelectLeft12');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft12').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft12').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft12').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft12').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft12').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft12').value;
+    //     var height = parseFloat(document.getElementById('add-height12').value);
+    //     if (jl2 == '距中') {
+    //         var jiaolian2Insert = height / 2;
+    //         document.getElementById("add-jiaolian2SelectRight12").value = jl2
+    //
+    //         document.getElementById("add-jiaolian2InsertLeft12").value = jiaolian2Insert;
+    //
+    //         document.getElementById("add-jiaolian2InsertRight12").value = jiaolian2Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian3SelectLeft12');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft12').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft12').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft12').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft12').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft12').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft12').value;
+    //     var height = parseFloat(document.getElementById('add-height12').value);
+    //     if (jl3 == '距中') {
+    //         var jiaolian3Insert = height / 2;
+    //         document.getElementById("add-jiaolian3SelectRight12").value = jl3
+    //
+    //         document.getElementById("add-jiaolian3InsertLeft12").value = jiaolian3Insert;
+    //
+    //         document.getElementById("add-jiaolian3InsertRight12").value = jiaolian3Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian4SelectLeft12');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft12').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft12').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft12').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft12').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft12').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft12').value;
+    //     var height = parseFloat(document.getElementById('add-height12').value);
+    //     if (jl4 == '距中') {
+    //         var jiaolian4Insert = height / 2;
+    //         document.getElementById("add-jiaolian4SelectRight12").value = jl4
+    //
+    //         document.getElementById("add-jiaolian4InsertLeft12").value = jiaolian4Insert;
+    //
+    //         document.getElementById("add-jiaolian4InsertRight12").value = jiaolian4Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian5SelectLeft12');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft12').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft12').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft12').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft12').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft12').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft12').value;
+    //     var height = parseFloat(document.getElementById('add-height12').value);
+    //     if (jl5 == '距中') {
+    //         var jiaolian5Insert = height / 2;
+    //         document.getElementById("add-jiaolian5SelectRight12").value = jl5
+    //
+    //         document.getElementById("add-jiaolian5InsertLeft12").value = jiaolian5Insert;
+    //
+    //         document.getElementById("add-jiaolian5InsertRight12").value = jiaolian5Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian6SelectLeft12');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft12').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft12').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft12').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft12').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft12').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft12').value;
+    //     var height = parseFloat(document.getElementById('add-height12').value);
+    //     if (jl6 == '距中') {
+    //         var jiaolian6Insert = height / 2;
+    //         document.getElementById("add-jiaolian6SelectRight12").value = jl6
+    //
+    //         document.getElementById("add-jiaolian6InsertLeft12").value = jiaolian6Insert;
+    //
+    //         document.getElementById("add-jiaolian6InsertRight12").value = jiaolian6Insert;
+    //
+    //     }
+    // })
+    //
+    // // -------14
+    // var inp2 = document.getElementById('add-jiaoliankongFangxiangLeft13');
+    // inp2.addEventListener('blur', function () {
+    //     var xdsl = document.getElementById('add-num13').value;
+    //     var jlkfxl = document.getElementById('add-jiaoliankongFangxiangLeft13').value;
+    //     var jlkfxr = xdsl - jlkfxl;
+    //     document.getElementById('add-jiaoliankongFangxiangRight13').value = jlkfxr;
+    // })
+    //
+    // var inp2 = document.getElementById('add-lashouShuliangLeft13');
+    // inp2.addEventListener('blur', function () {
+    //     var xdsl = document.getElementById('add-num13').value;
+    //     var lssll = document.getElementById('add-lashouShuliangLeft13').value;
+    //     var lsslr = xdsl - lssll;
+    //     document.getElementById('add-lashouShuliangRight13').value = lsslr;
+    // })
+    //
+    // var inp3 = document.getElementById('add-jiaolian1SelectLeft13');
+    // inp3.addEventListener('blur', function () {
+    //     var jl1sl = document.getElementById('add-jiaolian1SelectLeft13').value;
+    //     document.getElementById('add-jiaolian1SelectRight13').value = jl1sl;
+    // })
+    //
+    // var inp4 = document.getElementById('add-jiaolian2SelectLeft13');
+    // inp4.addEventListener('blur', function () {
+    //     var jl2sl = document.getElementById('add-jiaolian2SelectLeft13').value;
+    //     document.getElementById('add-jiaolian2SelectRight13').value = jl2sl;
+    // })
+    //
+    // var inp5 = document.getElementById('add-jiaolian3SelectLeft13');
+    // inp5.addEventListener('blur', function () {
+    //     var jl3sl = document.getElementById('add-jiaolian3SelectLeft13').value;
+    //     document.getElementById('add-jiaolian3SelectRight13').value = jl3sl;
+    // })
+    //
+    // var inp6 = document.getElementById('add-jiaolian4SelectLeft13');
+    // inp6.addEventListener('blur', function () {
+    //     var jl4sl = document.getElementById('add-jiaolian4SelectLeft13').value;
+    //     document.getElementById('add-jiaolian4SelectRight13').value = jl4sl;
+    // })
+    //
+    // var inp7 = document.getElementById('add-jiaolian5SelectLeft13');
+    // inp7.addEventListener('blur', function () {
+    //     var jl5sl = document.getElementById('add-jiaolian5SelectLeft13').value;
+    //     document.getElementById('add-jiaolian5SelectRight13').value = jl5sl;
+    // })
+    //
+    // var inp8 = document.getElementById('add-jiaolian6SelectLeft13');
+    // inp8.addEventListener('blur', function () {
+    //     var jl6sl = document.getElementById('add-jiaolian6SelectLeft13').value;
+    //     document.getElementById('add-jiaolian6SelectRight13').value = jl6sl;
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian1SelectLeft13');
+    // jl3inp.addEventListener('blur', function () {
+    // var jl1 = document.getElementById('add-jiaolian1SelectLeft13').value;
+    // var jl2 = document.getElementById('add-jiaolian2SelectLeft13').value;
+    // var jl3 = document.getElementById('add-jiaolian3SelectLeft13').value;
+    // var jl4 = document.getElementById('add-jiaolian4SelectLeft13').value;
+    // var jl5 = document.getElementById('add-jiaolian5SelectLeft13').value;
+    // var jl6 = document.getElementById('add-jiaolian6SelectLeft13').value;
+    // var height = parseFloat(document.getElementById('add-height13').value);
+    //     if (jl1 == '距中') {
+    //         var jiaolian1Insert = height / 2;
+    //         document.getElementById("add-jiaolian1SelectRight13").value = jl1
+    //
+    //         document.getElementById("add-jiaolian1InsertLeft13").value = jiaolian1Insert;
+    //
+    //         document.getElementById("add-jiaolian1InsertRight13").value = jiaolian1Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian2SelectLeft13');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft13').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft13').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft13').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft13').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft13').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft13').value;
+    //     var height = parseFloat(document.getElementById('add-height13').value);
+    //     if (jl2 == '距中') {
+    //         var jiaolian2Insert = height / 2;
+    //         document.getElementById("add-jiaolian2SelectRight13").value = jl2
+    //
+    //         document.getElementById("add-jiaolian2InsertLeft13").value = jiaolian2Insert;
+    //
+    //         document.getElementById("add-jiaolian2InsertRight13").value = jiaolian2Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian3SelectLeft13');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft13').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft13').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft13').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft13').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft13').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft13').value;
+    //     var height = parseFloat(document.getElementById('add-height13').value);
+    //     if (jl3 == '距中') {
+    //         var jiaolian3Insert = height / 2;
+    //         document.getElementById("add-jiaolian3SelectRight13").value = jl3
+    //
+    //         document.getElementById("add-jiaolian3InsertLeft13").value = jiaolian3Insert;
+    //
+    //         document.getElementById("add-jiaolian3InsertRight13").value = jiaolian3Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian4SelectLeft13');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft13').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft13').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft13').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft13').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft13').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft13').value;
+    //     var height = parseFloat(document.getElementById('add-height13').value);
+    //     if (jl4 == '距中') {
+    //         var jiaolian4Insert = height / 2;
+    //         document.getElementById("add-jiaolian4SelectRight13").value = jl4
+    //
+    //         document.getElementById("add-jiaolian4InsertLeft13").value = jiaolian4Insert;
+    //
+    //         document.getElementById("add-jiaolian4InsertRight13").value = jiaolian4Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian5SelectLeft13');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft13').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft13').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft13').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft13').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft13').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft13').value;
+    //     var height = parseFloat(document.getElementById('add-height13').value);
+    //     if (jl5 == '距中') {
+    //         var jiaolian5Insert = height / 2;
+    //         document.getElementById("add-jiaolian5SelectRight13").value = jl5
+    //
+    //         document.getElementById("add-jiaolian5InsertLeft13").value = jiaolian5Insert;
+    //
+    //         document.getElementById("add-jiaolian5InsertRight13").value = jiaolian5Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian6SelectLeft13');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft13').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft13').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft13').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft13').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft13').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft13').value;
+    //     var height = parseFloat(document.getElementById('add-height13').value);
+    //     if (jl6 == '距中') {
+    //         var jiaolian6Insert = height / 2;
+    //         document.getElementById("add-jiaolian6SelectRight13").value = jl6
+    //
+    //         document.getElementById("add-jiaolian6InsertLeft13").value = jiaolian6Insert;
+    //
+    //         document.getElementById("add-jiaolian6InsertRight13").value = jiaolian6Insert;
+    //
+    //     }
+    // })
+    //
+    // // -------15
+    // var inp2 = document.getElementById('add-jiaoliankongFangxiangLeft14');
+    // inp2.addEventListener('blur', function () {
+    //     var xdsl = document.getElementById('add-num14').value;
+    //     var jlkfxl = document.getElementById('add-jiaoliankongFangxiangLeft14').value;
+    //     var jlkfxr = xdsl - jlkfxl;
+    //     document.getElementById('add-jiaoliankongFangxiangRight14').value = jlkfxr;
+    // })
+    //
+    // var inp2 = document.getElementById('add-lashouShuliangLeft14');
+    // inp2.addEventListener('blur', function () {
+    //     var xdsl = document.getElementById('add-num14').value;
+    //     var lssll = document.getElementById('add-lashouShuliangLeft14').value;
+    //     var lsslr = xdsl - lssll;
+    //     document.getElementById('add-lashouShuliangRight14').value = lsslr;
+    // })
+    //
+    // var inp3 = document.getElementById('add-jiaolian1SelectLeft14');
+    // inp3.addEventListener('blur', function () {
+    //     var jl1sl = document.getElementById('add-jiaolian1SelectLeft14').value;
+    //     document.getElementById('add-jiaolian1SelectRight14').value = jl1sl;
+    // })
+    //
+    // var inp4 = document.getElementById('add-jiaolian2SelectLeft14');
+    // inp4.addEventListener('blur', function () {
+    //     var jl2sl = document.getElementById('add-jiaolian2SelectLeft14').value;
+    //     document.getElementById('add-jiaolian2SelectRight14').value = jl2sl;
+    // })
+    //
+    // var inp5 = document.getElementById('add-jiaolian3SelectLeft14');
+    // inp5.addEventListener('blur', function () {
+    //     var jl3sl = document.getElementById('add-jiaolian3SelectLeft14').value;
+    //     document.getElementById('add-jiaolian3SelectRight14').value = jl3sl;
+    // })
+    //
+    // var inp6 = document.getElementById('add-jiaolian4SelectLeft14');
+    // inp6.addEventListener('blur', function () {
+    //     var jl4sl = document.getElementById('add-jiaolian4SelectLeft14').value;
+    //     document.getElementById('add-jiaolian4SelectRight14').value = jl4sl;
+    // })
+    //
+    // var inp7 = document.getElementById('add-jiaolian5SelectLeft14');
+    // inp7.addEventListener('blur', function () {
+    //     var jl5sl = document.getElementById('add-jiaolian5SelectLeft14').value;
+    //     document.getElementById('add-jiaolian5SelectRight14').value = jl5sl;
+    // })
+    //
+    // var inp8 = document.getElementById('add-jiaolian6SelectLeft14');
+    // inp8.addEventListener('blur', function () {
+    //     var jl6sl = document.getElementById('add-jiaolian6SelectLeft14').value;
+    //     document.getElementById('add-jiaolian6SelectRight14').value = jl6sl;
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian1SelectLeft14');
+    // jl3inp.addEventListener('blur', function () {
+    // var jl1 = document.getElementById('add-jiaolian1SelectLeft14').value;
+    // var jl2 = document.getElementById('add-jiaolian2SelectLeft14').value;
+    // var jl3 = document.getElementById('add-jiaolian3SelectLeft14').value;
+    // var jl4 = document.getElementById('add-jiaolian4SelectLeft14').value;
+    // var jl5 = document.getElementById('add-jiaolian5SelectLeft14').value;
+    // var jl6 = document.getElementById('add-jiaolian6SelectLeft14').value;
+    // var height = parseFloat(document.getElementById('add-height14').value);
+    //     if (jl1 == '距中') {
+    //         var jiaolian1Insert = height / 2;
+    //         document.getElementById("add-jiaolian1SelectRight14").value = jl1
+    //
+    //         document.getElementById("add-jiaolian1InsertLeft14").value = jiaolian1Insert;
+    //
+    //         document.getElementById("add-jiaolian1InsertRight14").value = jiaolian1Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian2SelectLeft14');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft14').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft14').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft14').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft14').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft14').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft14').value;
+    //     var height = parseFloat(document.getElementById('add-height14').value);
+    //     if (jl2 == '距中') {
+    //         var jiaolian2Insert = height / 2;
+    //         document.getElementById("add-jiaolian2SelectRight14").value = jl2
+    //
+    //         document.getElementById("add-jiaolian2InsertLeft14").value = jiaolian2Insert;
+    //
+    //         document.getElementById("add-jiaolian2InsertRight14").value = jiaolian2Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian3SelectLeft14');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft14').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft14').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft14').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft14').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft14').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft14').value;
+    //     var height = parseFloat(document.getElementById('add-height14').value);
+    //     if (jl3 == '距中') {
+    //         var jiaolian3Insert = height / 2;
+    //         document.getElementById("add-jiaolian3SelectRight14").value = jl3
+    //
+    //         document.getElementById("add-jiaolian3InsertLeft14").value = jiaolian3Insert;
+    //
+    //         document.getElementById("add-jiaolian3InsertRight14").value = jiaolian3Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian4SelectLeft14');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft14').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft14').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft14').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft14').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft14').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft14').value;
+    //     var height = parseFloat(document.getElementById('add-height14').value);
+    //     if (jl4 == '距中') {
+    //         var jiaolian4Insert = height / 2;
+    //         document.getElementById("add-jiaolian4SelectRight14").value = jl4
+    //
+    //         document.getElementById("add-jiaolian4InsertLeft14").value = jiaolian4Insert;
+    //
+    //         document.getElementById("add-jiaolian4InsertRight14").value = jiaolian4Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian5SelectLeft14');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft14').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft14').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft14').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft14').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft14').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft14').value;
+    //     var height = parseFloat(document.getElementById('add-height14').value);
+    //     if (jl5 == '距中') {
+    //         var jiaolian5Insert = height / 2;
+    //         document.getElementById("add-jiaolian5SelectRight14").value = jl5
+    //
+    //         document.getElementById("add-jiaolian5InsertLeft14").value = jiaolian5Insert;
+    //
+    //         document.getElementById("add-jiaolian5InsertRight14").value = jiaolian5Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian6SelectLeft14');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft14').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft14').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft14').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft14').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft14').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft14').value;
+    //     var height = parseFloat(document.getElementById('add-height14').value);
+    //     if (jl6 == '距中') {
+    //         var jiaolian6Insert = height / 2;
+    //         document.getElementById("add-jiaolian6SelectRight14").value = jl6
+    //
+    //         document.getElementById("add-jiaolian6InsertLeft14").value = jiaolian6Insert;
+    //
+    //         document.getElementById("add-jiaolian6InsertRight14").value = jiaolian6Insert;
+    //
+    //     }
+    // })
+    //
+    // // ---------16
+    // var inp2 = document.getElementById('add-jiaoliankongFangxiangLeft15');
+    // inp2.addEventListener('blur', function () {
+    //     var xdsl = document.getElementById('add-num15').value;
+    //     var jlkfxl = document.getElementById('add-jiaoliankongFangxiangLeft15').value;
+    //     var jlkfxr = xdsl - jlkfxl;
+    //     document.getElementById('add-jiaoliankongFangxiangRight15').value = jlkfxr;
+    // })
+    //
+    // var inp2 = document.getElementById('add-lashouShuliangLeft15');
+    // inp2.addEventListener('blur', function () {
+    //     var xdsl = document.getElementById('add-num15').value;
+    //     var lssll = document.getElementById('add-lashouShuliangLeft15').value;
+    //     var lsslr = xdsl - lssll;
+    //     document.getElementById('add-lashouShuliangRight15').value = lsslr;
+    // })
+    //
+    // var inp3 = document.getElementById('add-jiaolian1SelectLeft15');
+    // inp3.addEventListener('blur', function () {
+    //     var jl1sl = document.getElementById('add-jiaolian1SelectLeft15').value;
+    //     document.getElementById('add-jiaolian1SelectRight15').value = jl1sl;
+    // })
+    //
+    // var inp4 = document.getElementById('add-jiaolian2SelectLeft15');
+    // inp4.addEventListener('blur', function () {
+    //     var jl2sl = document.getElementById('add-jiaolian2SelectLeft15').value;
+    //     document.getElementById('add-jiaolian2SelectRight15').value = jl2sl;
+    // })
+    //
+    // var inp5 = document.getElementById('add-jiaolian3SelectLeft15');
+    // inp5.addEventListener('blur', function () {
+    //     var jl3sl = document.getElementById('add-jiaolian3SelectLeft15').value;
+    //     document.getElementById('add-jiaolian3SelectRight15').value = jl3sl;
+    // })
+    //
+    // var inp6 = document.getElementById('add-jiaolian4SelectLeft15');
+    // inp6.addEventListener('blur', function () {
+    //     var jl4sl = document.getElementById('add-jiaolian4SelectLeft15').value;
+    //     document.getElementById('add-jiaolian4SelectRight15').value = jl4sl;
+    // })
+    //
+    // var inp7 = document.getElementById('add-jiaolian5SelectLeft15');
+    // inp7.addEventListener('blur', function () {
+    //     var jl5sl = document.getElementById('add-jiaolian5SelectLeft15').value;
+    //     document.getElementById('add-jiaolian5SelectRight15').value = jl5sl;
+    // })
+    //
+    // var inp8 = document.getElementById('add-jiaolian6SelectLeft15');
+    // inp8.addEventListener('blur', function () {
+    //     var jl6sl = document.getElementById('add-jiaolian6SelectLeft15').value;
+    //     document.getElementById('add-jiaolian6SelectRight15').value = jl6sl;
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian1SelectLeft15');
+    // jl3inp.addEventListener('blur', function () {
+    // var jl1 = document.getElementById('add-jiaolian1SelectLeft15').value;
+    // var jl2 = document.getElementById('add-jiaolian2SelectLeft15').value;
+    // var jl3 = document.getElementById('add-jiaolian3SelectLeft15').value;
+    // var jl4 = document.getElementById('add-jiaolian4SelectLeft15').value;
+    // var jl5 = document.getElementById('add-jiaolian5SelectLeft15').value;
+    // var jl6 = document.getElementById('add-jiaolian6SelectLeft15').value;
+    // var height = parseFloat(document.getElementById('add-height15').value);
+    //     if (jl1 == '距中') {
+    //         var jiaolian1Insert = height / 2;
+    //         document.getElementById("add-jiaolian1SelectRight15").value = jl1
+    //
+    //         document.getElementById("add-jiaolian1InsertLeft15").value = jiaolian1Insert;
+    //
+    //         document.getElementById("add-jiaolian1InsertRight15").value = jiaolian1Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian2SelectLeft15');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft15').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft15').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft15').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft15').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft15').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft15').value;
+    //     var height = parseFloat(document.getElementById('add-height15').value);
+    //     if (jl2 == '距中') {
+    //         var jiaolian2Insert = height / 2;
+    //         document.getElementById("add-jiaolian2SelectRight15").value = jl2
+    //
+    //         document.getElementById("add-jiaolian2InsertLeft15").value = jiaolian2Insert;
+    //
+    //         document.getElementById("add-jiaolian2InsertRight15").value = jiaolian2Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian3SelectLeft15');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft15').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft15').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft15').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft15').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft15').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft15').value;
+    //     var height = parseFloat(document.getElementById('add-height15').value);
+    //     if (jl3 == '距中') {
+    //         var jiaolian3Insert = height / 2;
+    //         document.getElementById("add-jiaolian3SelectRight15").value = jl3
+    //
+    //         document.getElementById("add-jiaolian3InsertLeft15").value = jiaolian3Insert;
+    //
+    //         document.getElementById("add-jiaolian3InsertRight15").value = jiaolian3Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian4SelectLeft15');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft15').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft15').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft15').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft15').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft15').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft15').value;
+    //     var height = parseFloat(document.getElementById('add-height15').value);
+    //     if (jl4 == '距中') {
+    //         var jiaolian4Insert = height / 2;
+    //         document.getElementById("add-jiaolian4SelectRight15").value = jl4
+    //
+    //         document.getElementById("add-jiaolian4InsertLeft15").value = jiaolian4Insert;
+    //
+    //         document.getElementById("add-jiaolian4InsertRight15").value = jiaolian4Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian5SelectLeft15');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft15').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft15').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft15').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft15').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft15').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft15').value;
+    //     var height = parseFloat(document.getElementById('add-height15').value);
+    //     if (jl5 == '距中') {
+    //         var jiaolian5Insert = height / 2;
+    //         document.getElementById("add-jiaolian5SelectRight15").value = jl5
+    //
+    //         document.getElementById("add-jiaolian5InsertLeft15").value = jiaolian5Insert;
+    //
+    //         document.getElementById("add-jiaolian5InsertRight15").value = jiaolian5Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian6SelectLeft15');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft15').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft15').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft15').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft15').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft15').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft15').value;
+    //     var height = parseFloat(document.getElementById('add-height15').value);
+    //     if (jl6 == '距中') {
+    //         var jiaolian6Insert = height / 2;
+    //         document.getElementById("add-jiaolian6SelectRight15").value = jl6
+    //
+    //         document.getElementById("add-jiaolian6InsertLeft15").value = jiaolian6Insert;
+    //
+    //         document.getElementById("add-jiaolian6InsertRight15").value = jiaolian6Insert;
+    //
+    //     }
+    // })
+    //
+    // // ---------17
+    // var inp2 = document.getElementById('add-jiaoliankongFangxiangLeft16');
+    // inp2.addEventListener('blur', function () {
+    //     var xdsl = document.getElementById('add-num16').value;
+    //     var jlkfxl = document.getElementById('add-jiaoliankongFangxiangLeft16').value;
+    //     var jlkfxr = xdsl - jlkfxl;
+    //     document.getElementById('add-jiaoliankongFangxiangRight16').value = jlkfxr;
+    // })
+    //
+    // var inp2 = document.getElementById('add-lashouShuliangLeft16');
+    // inp2.addEventListener('blur', function () {
+    //     var xdsl = document.getElementById('add-num16').value;
+    //     var lssll = document.getElementById('add-lashouShuliangLeft16').value;
+    //     var lsslr = xdsl - lssll;
+    //     document.getElementById('add-lashouShuliangRight16').value = lsslr;
+    // })
+    //
+    // var inp3 = document.getElementById('add-jiaolian1SelectLeft16');
+    // inp3.addEventListener('blur', function () {
+    //     var jl1sl = document.getElementById('add-jiaolian1SelectLeft16').value;
+    //     document.getElementById('add-jiaolian1SelectRight16').value = jl1sl;
+    // })
+    //
+    // var inp4 = document.getElementById('add-jiaolian2SelectLeft16');
+    // inp4.addEventListener('blur', function () {
+    //     var jl2sl = document.getElementById('add-jiaolian2SelectLeft16').value;
+    //     document.getElementById('add-jiaolian2SelectRight16').value = jl2sl;
+    // })
+    //
+    // var inp5 = document.getElementById('add-jiaolian3SelectLeft16');
+    // inp5.addEventListener('blur', function () {
+    //     var jl3sl = document.getElementById('add-jiaolian3SelectLeft16').value;
+    //     document.getElementById('add-jiaolian3SelectRight16').value = jl3sl;
+    // })
+    //
+    // var inp6 = document.getElementById('add-jiaolian4SelectLeft16');
+    // inp6.addEventListener('blur', function () {
+    //     var jl4sl = document.getElementById('add-jiaolian4SelectLeft16').value;
+    //     document.getElementById('add-jiaolian4SelectRight16').value = jl4sl;
+    // })
+    //
+    // var inp7 = document.getElementById('add-jiaolian5SelectLeft16');
+    // inp7.addEventListener('blur', function () {
+    //     var jl5sl = document.getElementById('add-jiaolian5SelectLeft16').value;
+    //     document.getElementById('add-jiaolian5SelectRight16').value = jl5sl;
+    // })
+    //
+    // var inp8 = document.getElementById('add-jiaolian6SelectLeft16');
+    // inp8.addEventListener('blur', function () {
+    //     var jl6sl = document.getElementById('add-jiaolian6SelectLeft16').value;
+    //     document.getElementById('add-jiaolian6SelectRight16').value = jl6sl;
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian1SelectLeft16');
+    // jl3inp.addEventListener('blur', function () {
+    // var jl1 = document.getElementById('add-jiaolian1SelectLeft16').value;
+    // var jl2 = document.getElementById('add-jiaolian2SelectLeft16').value;
+    // var jl3 = document.getElementById('add-jiaolian3SelectLeft16').value;
+    // var jl4 = document.getElementById('add-jiaolian4SelectLeft16').value;
+    // var jl5 = document.getElementById('add-jiaolian5SelectLeft16').value;
+    // var jl6 = document.getElementById('add-jiaolian6SelectLeft16').value;
+    // var height = parseFloat(document.getElementById('add-height16').value);
+    //     if (jl1 == '距中') {
+    //         var jiaolian1Insert = height / 2;
+    //         document.getElementById("add-jiaolian1SelectRight16").value = jl1
+    //
+    //         document.getElementById("add-jiaolian1InsertLeft16").value = jiaolian1Insert;
+    //
+    //         document.getElementById("add-jiaolian1InsertRight16").value = jiaolian1Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian2SelectLeft16');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft16').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft16').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft16').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft16').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft16').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft16').value;
+    //     var height = parseFloat(document.getElementById('add-height16').value);
+    //     if (jl2 == '距中') {
+    //         var jiaolian2Insert = height / 2;
+    //         document.getElementById("add-jiaolian2SelectRight16").value = jl2
+    //
+    //         document.getElementById("add-jiaolian2InsertLeft16").value = jiaolian2Insert;
+    //
+    //         document.getElementById("add-jiaolian2InsertRight16").value = jiaolian2Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian3SelectLeft16');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft16').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft16').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft16').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft16').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft16').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft16').value;
+    //     var height = parseFloat(document.getElementById('add-height16').value);
+    //     if (jl3 == '距中') {
+    //         var jiaolian3Insert = height / 2;
+    //         document.getElementById("add-jiaolian3SelectRight16").value = jl3
+    //
+    //         document.getElementById("add-jiaolian3InsertLeft16").value = jiaolian3Insert;
+    //
+    //         document.getElementById("add-jiaolian3InsertRight16").value = jiaolian3Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian4SelectLeft16');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft16').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft16').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft16').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft16').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft16').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft16').value;
+    //     var height = parseFloat(document.getElementById('add-height16').value);
+    //     if (jl4 == '距中') {
+    //         var jiaolian4Insert = height / 2;
+    //         document.getElementById("add-jiaolian4SelectRight16").value = jl4
+    //
+    //         document.getElementById("add-jiaolian4InsertLeft16").value = jiaolian4Insert;
+    //
+    //         document.getElementById("add-jiaolian4InsertRight16").value = jiaolian4Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian5SelectLeft16');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft16').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft16').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft16').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft16').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft16').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft16').value;
+    //     var height = parseFloat(document.getElementById('add-height16').value);
+    //     if (jl5 == '距中') {
+    //         var jiaolian5Insert = height / 2;
+    //         document.getElementById("add-jiaolian5SelectRight16").value = jl5
+    //
+    //         document.getElementById("add-jiaolian5InsertLeft16").value = jiaolian5Insert;
+    //
+    //         document.getElementById("add-jiaolian5InsertRight16").value = jiaolian5Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian6SelectLeft16');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft16').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft16').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft16').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft16').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft16').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft16').value;
+    //     var height = parseFloat(document.getElementById('add-height16').value);
+    //     if (jl6 == '距中') {
+    //         var jiaolian6Insert = height / 2;
+    //         document.getElementById("add-jiaolian6SelectRight16").value = jl6
+    //
+    //         document.getElementById("add-jiaolian6InsertLeft16").value = jiaolian6Insert;
+    //
+    //         document.getElementById("add-jiaolian6InsertRight16").value = jiaolian6Insert;
+    //
+    //     }
+    // })
+    //
+    // // ---------18
+    // var inp2 = document.getElementById('add-jiaoliankongFangxiangLeft17');
+    // inp2.addEventListener('blur', function () {
+    //     var xdsl = document.getElementById('add-num17').value;
+    //     var jlkfxl = document.getElementById('add-jiaoliankongFangxiangLeft17').value;
+    //     var jlkfxr = xdsl - jlkfxl;
+    //     document.getElementById('add-jiaoliankongFangxiangRight17').value = jlkfxr;
+    // })
+    //
+    // var inp2 = document.getElementById('add-lashouShuliangLeft17');
+    // inp2.addEventListener('blur', function () {
+    //     var xdsl = document.getElementById('add-num17').value;
+    //     var lssll = document.getElementById('add-lashouShuliangLeft17').value;
+    //     var lsslr = xdsl - lssll;
+    //     document.getElementById('add-lashouShuliangRight17').value = lsslr;
+    // })
+    //
+    // var inp3 = document.getElementById('add-jiaolian1SelectLeft17');
+    // inp3.addEventListener('blur', function () {
+    //     var jl1sl = document.getElementById('add-jiaolian1SelectLeft17').value;
+    //     document.getElementById('add-jiaolian1SelectRight17').value = jl1sl;
+    // })
+    //
+    // var inp4 = document.getElementById('add-jiaolian2SelectLeft17');
+    // inp4.addEventListener('blur', function () {
+    //     var jl2sl = document.getElementById('add-jiaolian2SelectLeft17').value;
+    //     document.getElementById('add-jiaolian2SelectRight17').value = jl2sl;
+    // })
+    //
+    // var inp5 = document.getElementById('add-jiaolian3SelectLeft17');
+    // inp5.addEventListener('blur', function () {
+    //     var jl3sl = document.getElementById('add-jiaolian3SelectLeft17').value;
+    //     document.getElementById('add-jiaolian3SelectRight17').value = jl3sl;
+    // })
+    //
+    // var inp6 = document.getElementById('add-jiaolian4SelectLeft17');
+    // inp6.addEventListener('blur', function () {
+    //     var jl4sl = document.getElementById('add-jiaolian4SelectLeft17').value;
+    //     document.getElementById('add-jiaolian4SelectRight17').value = jl4sl;
+    // })
+    //
+    // var inp7 = document.getElementById('add-jiaolian5SelectLeft17');
+    // inp7.addEventListener('blur', function () {
+    //     var jl5sl = document.getElementById('add-jiaolian5SelectLeft17').value;
+    //     document.getElementById('add-jiaolian5SelectRight17').value = jl5sl;
+    // })
+    //
+    // var inp8 = document.getElementById('add-jiaolian6SelectLeft17');
+    // inp8.addEventListener('blur', function () {
+    //     var jl6sl = document.getElementById('add-jiaolian6SelectLeft17').value;
+    //     document.getElementById('add-jiaolian6SelectRight17').value = jl6sl;
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian1SelectLeft17');
+    // jl3inp.addEventListener('blur', function () {
+    // var jl1 = document.getElementById('add-jiaolian1SelectLeft17').value;
+    // var jl2 = document.getElementById('add-jiaolian2SelectLeft17').value;
+    // var jl3 = document.getElementById('add-jiaolian3SelectLeft17').value;
+    // var jl4 = document.getElementById('add-jiaolian4SelectLeft17').value;
+    // var jl5 = document.getElementById('add-jiaolian5SelectLeft17').value;
+    // var jl6 = document.getElementById('add-jiaolian6SelectLeft17').value;
+    // var height = parseFloat(document.getElementById('add-height17').value);
+    //     if (jl1 == '距中') {
+    //         var jiaolian1Insert = height / 2;
+    //         document.getElementById("add-jiaolian1SelectRight17").value = jl1
+    //
+    //         document.getElementById("add-jiaolian1InsertLeft17").value = jiaolian1Insert;
+    //
+    //         document.getElementById("add-jiaolian1InsertRight17").value = jiaolian1Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian2SelectLeft17');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft17').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft17').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft17').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft17').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft17').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft17').value;
+    //     var height = parseFloat(document.getElementById('add-height17').value);
+    //     if (jl2 == '距中') {
+    //         var jiaolian2Insert = height / 2;
+    //         document.getElementById("add-jiaolian2SelectRight17").value = jl2
+    //
+    //         document.getElementById("add-jiaolian2InsertLeft17").value = jiaolian2Insert;
+    //
+    //         document.getElementById("add-jiaolian2InsertRight17").value = jiaolian2Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian3SelectLeft17');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft17').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft17').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft17').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft17').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft17').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft17').value;
+    //     var height = parseFloat(document.getElementById('add-height17').value);
+    //     if (jl3 == '距中') {
+    //         var jiaolian3Insert = height / 2;
+    //         document.getElementById("add-jiaolian3SelectRight17").value = jl3
+    //
+    //         document.getElementById("add-jiaolian3InsertLeft17").value = jiaolian3Insert;
+    //
+    //         document.getElementById("add-jiaolian3InsertRight17").value = jiaolian3Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian4SelectLeft17');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft17').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft17').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft17').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft17').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft17').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft17').value;
+    //     var height = parseFloat(document.getElementById('add-height17').value);
+    //     if (jl4 == '距中') {
+    //         var jiaolian4Insert = height / 2;
+    //         document.getElementById("add-jiaolian4SelectRight17").value = jl4
+    //
+    //         document.getElementById("add-jiaolian4InsertLeft17").value = jiaolian4Insert;
+    //
+    //         document.getElementById("add-jiaolian4InsertRight17").value = jiaolian4Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian5SelectLeft17');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft17').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft17').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft17').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft17').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft17').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft17').value;
+    //     var height = parseFloat(document.getElementById('add-height17').value);
+    //     if (jl5 == '距中') {
+    //         var jiaolian5Insert = height / 2;
+    //         document.getElementById("add-jiaolian5SelectRight17").value = jl5
+    //
+    //         document.getElementById("add-jiaolian5InsertLeft17").value = jiaolian5Insert;
+    //
+    //         document.getElementById("add-jiaolian5InsertRight17").value = jiaolian5Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian6SelectLeft17');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft17').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft17').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft17').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft17').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft17').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft17').value;
+    //     var height = parseFloat(document.getElementById('add-height17').value);
+    //     if (jl6 == '距中') {
+    //         var jiaolian6Insert = height / 2;
+    //         document.getElementById("add-jiaolian6SelectRight17").value = jl6
+    //
+    //         document.getElementById("add-jiaolian6InsertLeft17").value = jiaolian6Insert;
+    //
+    //         document.getElementById("add-jiaolian6InsertRight17").value = jiaolian6Insert;
+    //
+    //     }
+    // })
+    //
+    // // ------------19
+    // var inp2 = document.getElementById('add-jiaoliankongFangxiangLeft18');
+    // inp2.addEventListener('blur', function () {
+    //     var xdsl = document.getElementById('add-num18').value;
+    //     var jlkfxl = document.getElementById('add-jiaoliankongFangxiangLeft18').value;
+    //     var jlkfxr = xdsl - jlkfxl;
+    //     document.getElementById('add-jiaoliankongFangxiangRight18').value = jlkfxr;
+    // })
+    //
+    // var inp2 = document.getElementById('add-lashouShuliangLeft18');
+    // inp2.addEventListener('blur', function () {
+    //     var xdsl = document.getElementById('add-num18').value;
+    //     var lssll = document.getElementById('add-lashouShuliangLeft18').value;
+    //     var lsslr = xdsl - lssll;
+    //     document.getElementById('add-lashouShuliangRight18').value = lsslr;
+    // })
+    //
+    // var inp3 = document.getElementById('add-jiaolian1SelectLeft18');
+    // inp3.addEventListener('blur', function () {
+    //     var jl1sl = document.getElementById('add-jiaolian1SelectLeft18').value;
+    //     document.getElementById('add-jiaolian1SelectRight18').value = jl1sl;
+    // })
+    //
+    // var inp4 = document.getElementById('add-jiaolian2SelectLeft18');
+    // inp4.addEventListener('blur', function () {
+    //     var jl2sl = document.getElementById('add-jiaolian2SelectLeft18').value;
+    //     document.getElementById('add-jiaolian2SelectRight18').value = jl2sl;
+    // })
+    //
+    // var inp5 = document.getElementById('add-jiaolian3SelectLeft18');
+    // inp5.addEventListener('blur', function () {
+    //     var jl3sl = document.getElementById('add-jiaolian3SelectLeft18').value;
+    //     document.getElementById('add-jiaolian3SelectRight18').value = jl3sl;
+    // })
+    //
+    // var inp6 = document.getElementById('add-jiaolian4SelectLeft18');
+    // inp6.addEventListener('blur', function () {
+    //     var jl4sl = document.getElementById('add-jiaolian4SelectLeft18').value;
+    //     document.getElementById('add-jiaolian4SelectRight18').value = jl4sl;
+    // })
+    //
+    // var inp7 = document.getElementById('add-jiaolian5SelectLeft18');
+    // inp7.addEventListener('blur', function () {
+    //     var jl5sl = document.getElementById('add-jiaolian5SelectLeft18').value;
+    //     document.getElementById('add-jiaolian5SelectRight18').value = jl5sl;
+    // })
+    //
+    // var inp8 = document.getElementById('add-jiaolian6SelectLeft18');
+    // inp8.addEventListener('blur', function () {
+    //     var jl6sl = document.getElementById('add-jiaolian6SelectLeft18').value;
+    //     document.getElementById('add-jiaolian6SelectRight18').value = jl6sl;
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian1SelectLeft18');
+    // jl3inp.addEventListener('blur', function () {
+    // var jl1 = document.getElementById('add-jiaolian1SelectLeft18').value;
+    // var jl2 = document.getElementById('add-jiaolian2SelectLeft18').value;
+    // var jl3 = document.getElementById('add-jiaolian3SelectLeft18').value;
+    // var jl4 = document.getElementById('add-jiaolian4SelectLeft18').value;
+    // var jl5 = document.getElementById('add-jiaolian5SelectLeft18').value;
+    // var jl6 = document.getElementById('add-jiaolian6SelectLeft18').value;
+    // var height = parseFloat(document.getElementById('add-height18').value);
+    //     if (jl1 == '距中') {
+    //         var jiaolian1Insert = height / 2;
+    //         document.getElementById("add-jiaolian1SelectRight18").value = jl1
+    //
+    //         document.getElementById("add-jiaolian1InsertLeft18").value = jiaolian1Insert;
+    //
+    //         document.getElementById("add-jiaolian1InsertRight18").value = jiaolian1Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian2SelectLeft18');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft18').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft18').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft18').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft18').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft18').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft18').value;
+    //     var height = parseFloat(document.getElementById('add-height18').value);
+    //     if (jl2 == '距中') {
+    //         var jiaolian2Insert = height / 2;
+    //         document.getElementById("add-jiaolian2SelectRight18").value = jl2
+    //
+    //         document.getElementById("add-jiaolian2InsertLeft18").value = jiaolian2Insert;
+    //
+    //         document.getElementById("add-jiaolian2InsertRight18").value = jiaolian2Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian3SelectLeft18');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft18').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft18').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft18').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft18').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft18').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft18').value;
+    //     var height = parseFloat(document.getElementById('add-height18').value);
+    //     if (jl3 == '距中') {
+    //         var jiaolian3Insert = height / 2;
+    //         document.getElementById("add-jiaolian3SelectRight18").value = jl3
+    //
+    //         document.getElementById("add-jiaolian3InsertLeft18").value = jiaolian3Insert;
+    //
+    //         document.getElementById("add-jiaolian3InsertRight18").value = jiaolian3Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian4SelectLeft18');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft18').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft18').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft18').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft18').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft18').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft18').value;
+    //     var height = parseFloat(document.getElementById('add-height18').value);
+    //     if (jl4 == '距中') {
+    //         var jiaolian4Insert = height / 2;
+    //         document.getElementById("add-jiaolian4SelectRight18").value = jl4
+    //
+    //         document.getElementById("add-jiaolian4InsertLeft18").value = jiaolian4Insert;
+    //
+    //         document.getElementById("add-jiaolian4InsertRight18").value = jiaolian4Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian5SelectLeft18');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft18').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft18').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft18').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft18').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft18').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft18').value;
+    //     var height = parseFloat(document.getElementById('add-height18').value);
+    //     if (jl5 == '距中') {
+    //         var jiaolian5Insert = height / 2;
+    //         document.getElementById("add-jiaolian5SelectRight18").value = jl5
+    //
+    //         document.getElementById("add-jiaolian5InsertLeft18").value = jiaolian5Insert;
+    //
+    //         document.getElementById("add-jiaolian5InsertRight18").value = jiaolian5Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian6SelectLeft18');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft18').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft18').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft18').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft18').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft18').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft18').value;
+    //     var height = parseFloat(document.getElementById('add-height18').value);
+    //     if (jl6 == '距中') {
+    //         var jiaolian6Insert = height / 2;
+    //         document.getElementById("add-jiaolian6SelectRight18").value = jl6
+    //
+    //         document.getElementById("add-jiaolian6InsertLeft18").value = jiaolian6Insert;
+    //
+    //         document.getElementById("add-jiaolian6InsertRight18").value = jiaolian6Insert;
+    //
+    //     }
+    // })
+    //
+    // // --------20
+    // var inp2 = document.getElementById('add-jiaoliankongFangxiangLeft19');
+    // inp2.addEventListener('blur', function () {
+    //     var xdsl = document.getElementById('add-num19').value;
+    //     var jlkfxl = document.getElementById('add-jiaoliankongFangxiangLeft19').value;
+    //     var jlkfxr = xdsl - jlkfxl;
+    //     document.getElementById('add-jiaoliankongFangxiangRight19').value = jlkfxr;
+    // })
+    //
+    // var inp2 = document.getElementById('add-lashouShuliangLeft19');
+    // inp2.addEventListener('blur', function () {
+    //     var xdsl = document.getElementById('add-num19').value;
+    //     var lssll = document.getElementById('add-lashouShuliangLeft19').value;
+    //     var lsslr = xdsl - lssll;
+    //     document.getElementById('add-lashouShuliangRight19').value = lsslr;
+    // })
+    //
+    // var inp3 = document.getElementById('add-jiaolian1SelectLeft19');
+    // inp3.addEventListener('blur', function () {
+    //     var jl1sl = document.getElementById('add-jiaolian1SelectLeft19').value;
+    //     document.getElementById('add-jiaolian1SelectRight19').value = jl1sl;
+    // })
+    //
+    // var inp4 = document.getElementById('add-jiaolian2SelectLeft19');
+    // inp4.addEventListener('blur', function () {
+    //     var jl2sl = document.getElementById('add-jiaolian2SelectLeft19').value;
+    //     document.getElementById('add-jiaolian2SelectRight19').value = jl2sl;
+    // })
+    //
+    // var inp5 = document.getElementById('add-jiaolian3SelectLeft19');
+    // inp5.addEventListener('blur', function () {
+    //     var jl3sl = document.getElementById('add-jiaolian3SelectLeft19').value;
+    //     document.getElementById('add-jiaolian3SelectRight19').value = jl3sl;
+    // })
+    //
+    // var inp6 = document.getElementById('add-jiaolian4SelectLeft19');
+    // inp6.addEventListener('blur', function () {
+    //     var jl4sl = document.getElementById('add-jiaolian4SelectLeft19').value;
+    //     document.getElementById('add-jiaolian4SelectRight19').value = jl4sl;
+    // })
+    //
+    // var inp7 = document.getElementById('add-jiaolian5SelectLeft19');
+    // inp7.addEventListener('blur', function () {
+    //     var jl5sl = document.getElementById('add-jiaolian5SelectLeft19').value;
+    //     document.getElementById('add-jiaolian5SelectRight19').value = jl5sl;
+    // })
+    //
+    // var inp8 = document.getElementById('add-jiaolian6SelectLeft19');
+    // inp8.addEventListener('blur', function () {
+    //     var jl6sl = document.getElementById('add-jiaolian6SelectLeft19').value;
+    //     document.getElementById('add-jiaolian6SelectRight19').value = jl6sl;
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian1SelectLeft19');
+    // jl3inp.addEventListener('blur', function () {
+    // var jl1 = document.getElementById('add-jiaolian1SelectLeft19').value;
+    // var jl2 = document.getElementById('add-jiaolian2SelectLeft19').value;
+    // var jl3 = document.getElementById('add-jiaolian3SelectLeft19').value;
+    // var jl4 = document.getElementById('add-jiaolian4SelectLeft19').value;
+    // var jl5 = document.getElementById('add-jiaolian5SelectLeft19').value;
+    // var jl6 = document.getElementById('add-jiaolian6SelectLeft19').value;
+    // var height = parseFloat(document.getElementById('add-height19').value);
+    //     if (jl1 == '距中') {
+    //         var jiaolian1Insert = height / 2;
+    //         document.getElementById("add-jiaolian1SelectRight19").value = jl1
+    //
+    //         document.getElementById("add-jiaolian1InsertLeft19").value = jiaolian1Insert;
+    //
+    //         document.getElementById("add-jiaolian1InsertRight19").value = jiaolian1Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian2SelectLeft19');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft19').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft19').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft19').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft19').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft19').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft19').value;
+    //     var height = parseFloat(document.getElementById('add-height19').value);
+    //     if (jl2 == '距中') {
+    //         var jiaolian2Insert = height / 2;
+    //         document.getElementById("add-jiaolian2SelectRight19").value = jl2
+    //
+    //         document.getElementById("add-jiaolian2InsertLeft19").value = jiaolian2Insert;
+    //
+    //         document.getElementById("add-jiaolian2InsertRight19").value = jiaolian2Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian3SelectLeft19');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft19').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft19').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft19').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft19').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft19').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft19').value;
+    //     var height = parseFloat(document.getElementById('add-height19').value);
+    //     if (jl3 == '距中') {
+    //         var jiaolian3Insert = height / 2;
+    //         document.getElementById("add-jiaolian3SelectRight19").value = jl3
+    //
+    //         document.getElementById("add-jiaolian3InsertLeft19").value = jiaolian3Insert;
+    //
+    //         document.getElementById("add-jiaolian3InsertRight19").value = jiaolian3Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian4SelectLeft19');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft19').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft19').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft19').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft19').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft19').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft19').value;
+    //     var height = parseFloat(document.getElementById('add-height19').value);
+    //     if (jl4 == '距中') {
+    //         var jiaolian4Insert = height / 2;
+    //         document.getElementById("add-jiaolian4SelectRight19").value = jl4
+    //
+    //         document.getElementById("add-jiaolian4InsertLeft19").value = jiaolian4Insert;
+    //
+    //         document.getElementById("add-jiaolian4InsertRight19").value = jiaolian4Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian5SelectLeft19');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft19').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft19').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft19').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft19').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft19').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft19').value;
+    //     var height = parseFloat(document.getElementById('add-height19').value);
+    //     if (jl5 == '距中') {
+    //         var jiaolian5Insert = height / 2;
+    //         document.getElementById("add-jiaolian5SelectRight19").value = jl5
+    //
+    //         document.getElementById("add-jiaolian5InsertLeft19").value = jiaolian5Insert;
+    //
+    //         document.getElementById("add-jiaolian5InsertRight19").value = jiaolian5Insert;
+    //
+    //     }
+    // })
+    //
+    // var jl3inp = document.getElementById('add-jiaolian6SelectLeft19');
+    // jl3inp.addEventListener('blur', function () {
+    //     var jl1 = document.getElementById('add-jiaolian1SelectLeft19').value;
+    //     var jl2 = document.getElementById('add-jiaolian2SelectLeft19').value;
+    //     var jl3 = document.getElementById('add-jiaolian3SelectLeft19').value;
+    //     var jl4 = document.getElementById('add-jiaolian4SelectLeft19').value;
+    //     var jl5 = document.getElementById('add-jiaolian5SelectLeft19').value;
+    //     var jl6 = document.getElementById('add-jiaolian6SelectLeft19').value;
+    //     var height = parseFloat(document.getElementById('add-height19').value);
+    //     if (jl6 == '距中') {
+    //         var jiaolian6Insert = height / 2;
+    //         document.getElementById("add-jiaolian6SelectRight19").value = jl6
+    //
+    //         document.getElementById("add-jiaolian6InsertLeft19").value = jiaolian6Insert;
+    //
+    //         document.getElementById("add-jiaolian6InsertRight19").value = jiaolian6Insert;
+    //
+    //     }
+    // })
+    //
+    // // -------拉手位
+    // var inp1 = document.getElementById('add-lashouweiSelectLeft');
+    // inp1.addEventListener('blur', function () {
+    //     var lswsl = document.getElementById('add-lashouweiSelectLeft').value;
+    //     document.getElementById('add-lashouweiSelectRight').value = lswsl;
+    // })
+    //
+    // var inp1 = document.getElementById('add-lashouweiInsertLeft');
+    // inp1.addEventListener('blur', function () {
+    //     var lswsr = document.getElementById('add-lashouweiInsertLeft').value;
+    //     document.getElementById('add-lashouweiInsertRight').value = lswsr;
+    // })
+    var upd = document.getElementById('update-jiaoliankongFangxiangLeft');
+    upd.addEventListener('blur', function () {
+        var updxdsl = document.getElementById('update-num').value;
+        var updjlkfxl = document.getElementById('update-jiaoliankongFangxiangLeft').value;
+        var updjlkfxr = updxdsl - updjlkfxl;
+        document.getElementById('update-jiaoliankongFangxiangRight').value = updjlkfxr;
+    })
+
+    var upd = document.getElementById('update-lashouShuliangLeft');
+    upd.addEventListener('blur', function () {
+        var updxdsl = document.getElementById('update-num').value;
+        var updlssll = document.getElementById('update-lashouShuliangLeft').value;
+        var updlsslr = updxdsl - updlssll;
+        document.getElementById('update-lashouShuliangRight').value = updlsslr;
+    })
+
+    var upd = document.getElementById('update-jiaolian1SelectLeft');
+    upd.addEventListener('blur', function () {
+        var updjl1sl = document.getElementById('update-jiaolian1SelectLeft').value;
+        document.getElementById('update-jiaolian1SelectRight').value = updjl1sl;
+    })
+
+    var upd = document.getElementById('update-jiaolian2SelectLeft');
+    upd.addEventListener('blur', function () {
+        var updjl2sl = document.getElementById('update-jiaolian2SelectLeft').value;
+        document.getElementById('update-jiaolian2SelectRight').value = updjl2sl;
+    })
+
+    var upd = document.getElementById('update-jiaolian3SelectLeft');
+    upd.addEventListener('blur', function () {
+        var updjl3sl = document.getElementById('update-jiaolian3SelectLeft').value;
+        document.getElementById('update-jiaolian3SelectRight').value = updjl3sl;
+    })
+
+    var upd = document.getElementById('update-jiaolian4SelectLeft');
+    upd.addEventListener('blur', function () {
+        var updjl4sl = document.getElementById('update-jiaolian4SelectLeft').value;
+        document.getElementById('update-jiaolian4SelectRight').value = updjl4sl;
+    })
+
+    var upd = document.getElementById('update-jiaolian5SelectLeft');
+    upd.addEventListener('blur', function () {
+        var updjl5sl = document.getElementById('update-jiaolian5SelectLeft').value;
+        document.getElementById('update-jiaolian5SelectRight').value = updjl5sl;
+    })
+
+    var upd = document.getElementById('update-jiaolian6SelectLeft');
+    upd.addEventListener('blur', function () {
+        var updjl6sl = document.getElementById('update-jiaolian6SelectLeft').value;
+        document.getElementById('update-jiaolian6SelectRight').value = updjl6sl;
+    })
+
+    var updjl1inp = document.getElementById('update-jiaolian1InsertLeft');
+    updjl1inp.addEventListener('blur', function () {
+
+        var a = document.getElementById("update-jiaolian1InsertLeft").value;
+
+        document.getElementById("update-jiaolian1InsertRight").value = a;
+    })
+
+    var updjl1inp = document.getElementById('update-jiaolian2InsertLeft');
+    updjl1inp.addEventListener('blur', function () {
+        var a = document.getElementById("update-jiaolian2InsertLeft").value;
+
+        document.getElementById("update-jiaolian2InsertRight").value = a;
+    })
+
+    var updjl1inp = document.getElementById('update-jiaolian3InsertLeft');
+    updjl1inp.addEventListener('blur', function () {
+        var a = document.getElementById("update-jiaolian3InsertLeft").value;
+
+        document.getElementById("update-jiaolian3InsertRight").value = a;
+    })
+
+    var updjl1inp = document.getElementById('update-jiaolian4InsertLeft');
+    updjl1inp.addEventListener('blur', function () {
+        var a = document.getElementById("update-jiaolian4InsertLeft").value;
+
+        document.getElementById("update-jiaolian4InsertRight").value = a;
+    })
+
+    var updjl1inp = document.getElementById('update-jiaolian5InsertLeft');
+    updjl1inp.addEventListener('blur', function () {
+        var a = document.getElementById("update-jiaolian5InsertLeft").value;
+
+        document.getElementById("update-jiaolian5InsertRight").value = a;
+    })
+
+    var updjl1inp = document.getElementById('update-jiaolian6InsertLeft');
+    updjl1inp.addEventListener('blur', function () {
+        var a = document.getElementById("update-jiaolian6InsertLeft").value;
+
+        document.getElementById("update-jiaolian6InsertRight").value = a;
+    })
 
     var inp1 = document.getElementById('add-jiaoliankongFangxiangLeft');
     inp1.addEventListener('blur', function () {
@@ -5271,6 +11176,13 @@ $(function () {
         }
     })
 
+    var jl1inp = document.getElementById('add-jiaolian1InsertLeft');
+    jl1inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian1InsertLeft").value;
+
+        document.getElementById("add-jiaolian1InsertRight").value = a;
+    })
+
     var jl1inp = document.getElementById('add-jiaolian2SelectLeft');
     jl1inp.addEventListener('blur', function () {
         var jl1 = document.getElementById('add-jiaolian1SelectLeft').value;
@@ -5289,6 +11201,13 @@ $(function () {
             document.getElementById("add-jiaolian2InsertRight").value = jiaolian2Insert;
 
         }
+    })
+
+    var jl1inp = document.getElementById('add-jiaolian2InsertLeft');
+    jl1inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian2InsertLeft").value;
+
+        document.getElementById("add-jiaolian2InsertRight").value = a;
     })
 
     var jl1inp = document.getElementById('add-jiaolian3SelectLeft');
@@ -5311,6 +11230,13 @@ $(function () {
         }
     })
 
+    var jl1inp = document.getElementById('add-jiaolian3InsertLeft');
+    jl1inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian3InsertLeft").value;
+
+        document.getElementById("add-jiaolian3InsertRight").value = a;
+    })
+
     var jl1inp = document.getElementById('add-jiaolian4SelectLeft');
     jl1inp.addEventListener('blur', function () {
         var jl1 = document.getElementById('add-jiaolian1SelectLeft').value;
@@ -5329,6 +11255,13 @@ $(function () {
             document.getElementById("add-jiaolian4InsertRight").value = jiaolian4Insert;
 
         }
+    })
+
+    var jl1inp = document.getElementById('add-jiaolian4InsertLeft');
+    jl1inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian4InsertLeft").value;
+
+        document.getElementById("add-jiaolian4InsertRight").value = a;
     })
 
     var jl5inp = document.getElementById('add-jiaolian5SelectLeft');
@@ -5351,6 +11284,13 @@ $(function () {
         }
     })
 
+    var jl5inp = document.getElementById('add-jiaolian5InsertLeft');
+    jl5inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian5InsertLeft").value;
+
+        document.getElementById("add-jiaolian5InsertRight").value = a;
+    })
+
     var jl6inp = document.getElementById('add-jiaolian6SelectLeft');
     jl6inp.addEventListener('blur', function () {
         var jl1 = document.getElementById('add-jiaolian1SelectLeft').value;
@@ -5369,6 +11309,13 @@ $(function () {
             document.getElementById("add-jiaolian6InsertRight").value = jiaolian6Insert;
 
         }
+    })
+
+    var jl6inp = document.getElementById('add-jiaolian6InsertLeft');
+    jl6inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian6InsertLeft").value;
+
+        document.getElementById("add-jiaolian6InsertRight").value = a;
     })
 
     // ----------2
@@ -5426,13 +11373,13 @@ $(function () {
 
     var jl1inp = document.getElementById('add-jiaolian1SelectLeft1');
     jl1inp.addEventListener('blur', function () {
-    var jl1 = document.getElementById('add-jiaolian1SelectLeft1').value;
-    var jl2 = document.getElementById('add-jiaolian2SelectLeft1').value;
-    var jl3 = document.getElementById('add-jiaolian3SelectLeft1').value;
-    var jl4 = document.getElementById('add-jiaolian4SelectLeft1').value;
-    var jl5 = document.getElementById('add-jiaolian5SelectLeft1').value;
-    var jl6 = document.getElementById('add-jiaolian6SelectLeft1').value;
-    var height = parseFloat(document.getElementById('add-height1').value);
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft1').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft1').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft1').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft1').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft1').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft1').value;
+        var height = parseFloat(document.getElementById('add-height1').value);
         if (jl1 == '距中') {
             var jiaolian1Insert = height / 2;
             document.getElementById("add-jiaolian1SelectRight1").value = jl1
@@ -5442,6 +11389,14 @@ $(function () {
             document.getElementById("add-jiaolian1InsertRight1").value = jiaolian1Insert;
 
         }
+    })
+
+    var jl1inp = document.getElementById('add-jiaolian1InsertLeft1');
+    jl1inp.addEventListener('blur', function () {
+
+        var a = document.getElementById("add-jiaolian1InsertLeft1").value;
+
+        document.getElementById("add-jiaolian1InsertRight1").value = a;
     })
 
     var jl1inp = document.getElementById('add-jiaolian2SelectLeft1');
@@ -5464,6 +11419,13 @@ $(function () {
         }
     })
 
+    var jl1inp = document.getElementById('add-jiaolian2InsertLeft1');
+    jl1inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian2InsertLeft1").value;
+
+        document.getElementById("add-jiaolian2InsertRight1").value = a;
+    })
+
     var jl2inp = document.getElementById('add-jiaolian3SelectLeft1');
     jl2inp.addEventListener('blur', function () {
         var jl1 = document.getElementById('add-jiaolian1SelectLeft1').value;
@@ -5482,6 +11444,13 @@ $(function () {
             document.getElementById("add-jiaolian3InsertRight1").value = jiaolian3Insert;
 
         }
+    })
+
+    var jl2inp = document.getElementById('add-jiaolian3InsertLeft1');
+    jl2inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian3InsertLeft1").value;
+
+        document.getElementById("add-jiaolian3InsertRight1").value = a;
     })
 
     var jl3inp = document.getElementById('add-jiaolian4SelectLeft1');
@@ -5504,6 +11473,13 @@ $(function () {
         }
     })
 
+    var jl3inp = document.getElementById('add-jiaolian4InsertLeft1');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian4InsertLeft1").value;
+
+        document.getElementById("add-jiaolian4InsertRight1").value = a;
+    })
+
     var jl3inp = document.getElementById('add-jiaolian5SelectLeft1');
     jl3inp.addEventListener('blur', function () {
         var jl1 = document.getElementById('add-jiaolian1SelectLeft1').value;
@@ -5524,6 +11500,13 @@ $(function () {
         }
     })
 
+    var jl3inp = document.getElementById('add-jiaolian5InsertLeft1');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian5InsertLeft1").value;
+
+        document.getElementById("add-jiaolian5InsertRight1").value = a;
+    })
+
     var jl3inp = document.getElementById('add-jiaolian6SelectLeft1');
     jl3inp.addEventListener('blur', function () {
         var jl1 = document.getElementById('add-jiaolian1SelectLeft1').value;
@@ -5542,6 +11525,13 @@ $(function () {
             document.getElementById("add-jiaolian6InsertRight1").value = jiaolian6Insert;
 
         }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian6InsertLeft1');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian6InsertLeft1").value;
+
+        document.getElementById("add-jiaolian6InsertRight1").value = a;
     })
 
     // --------------------3
@@ -5599,13 +11589,13 @@ $(function () {
 
     var jl3inp = document.getElementById('add-jiaolian1SelectLeft2');
     jl3inp.addEventListener('blur', function () {
-    var jl1 = document.getElementById('add-jiaolian1SelectLeft2').value;
-    var jl2 = document.getElementById('add-jiaolian2SelectLeft2').value;
-    var jl3 = document.getElementById('add-jiaolian3SelectLeft2').value;
-    var jl4 = document.getElementById('add-jiaolian4SelectLeft2').value;
-    var jl5 = document.getElementById('add-jiaolian5SelectLeft2').value;
-    var jl6 = document.getElementById('add-jiaolian6SelectLeft2').value;
-    var height = parseFloat(document.getElementById('add-height2').value);
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft2').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft2').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft2').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft2').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft2').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft2').value;
+        var height = parseFloat(document.getElementById('add-height2').value);
         if (jl1 == '距中') {
             var jiaolian1Insert = height / 2;
             document.getElementById("add-jiaolian1SelectRight2").value = jl1
@@ -5615,6 +11605,13 @@ $(function () {
             document.getElementById("add-jiaolian1InsertRight2").value = jiaolian1Insert;
 
         }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian1InsertLeft2');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian1InsertLeft2").value;
+
+        document.getElementById("add-jiaolian1InsertRight2").value = a;
     })
 
     var jl3inp = document.getElementById('add-jiaolian2SelectLeft2');
@@ -5637,6 +11634,13 @@ $(function () {
         }
     })
 
+    var jl3inp = document.getElementById('add-jiaolian2InsertLeft2');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian2InsertLeft2").value;
+
+        document.getElementById("add-jiaolian2InsertRight2").value = a;
+    })
+
     var jl3inp = document.getElementById('add-jiaolian3SelectLeft2');
     jl3inp.addEventListener('blur', function () {
         var jl1 = document.getElementById('add-jiaolian1SelectLeft2').value;
@@ -5655,6 +11659,13 @@ $(function () {
             document.getElementById("add-jiaolian3InsertRight2").value = jiaolian3Insert;
 
         }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian3InsertLeft2');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian3InsertLeft2").value;
+
+        document.getElementById("add-jiaolian3InsertRight2").value = a;
     })
 
     var jl3inp = document.getElementById('add-jiaolian4SelectLeft2');
@@ -5677,6 +11688,13 @@ $(function () {
         }
     })
 
+    var jl3inp = document.getElementById('add-jiaolian4InsertLeft2');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian4InsertLeft2").value;
+
+        document.getElementById("add-jiaolian4InsertRight2").value = a;
+    })
+
     var jl3inp = document.getElementById('add-jiaolian5SelectLeft2');
     jl3inp.addEventListener('blur', function () {
         var jl1 = document.getElementById('add-jiaolian1SelectLeft2').value;
@@ -5697,6 +11715,13 @@ $(function () {
         }
     })
 
+    var jl3inp = document.getElementById('add-jiaolian5InsertLeft2');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian5InsertLeft2").value;
+
+        document.getElementById("add-jiaolian5InsertRight2").value = a;
+    })
+
     var jl3inp = document.getElementById('add-jiaolian6SelectLeft2');
     jl3inp.addEventListener('blur', function () {
         var jl1 = document.getElementById('add-jiaolian1SelectLeft2').value;
@@ -5715,6 +11740,13 @@ $(function () {
             document.getElementById("add-jiaolian6InsertRight2").value = jiaolian6Insert;
 
         }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian6InsertLeft2');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian6InsertLeft2").value;
+
+        document.getElementById("add-jiaolian6InsertRight2").value = a;
     })
 
     // -------4
@@ -5772,13 +11804,13 @@ $(function () {
 
     var jl3inp = document.getElementById('add-jiaolian1SelectLeft3');
     jl3inp.addEventListener('blur', function () {
-    var jl1 = document.getElementById('add-jiaolian1SelectLeft3').value;
-    var jl2 = document.getElementById('add-jiaolian2SelectLeft3').value;
-    var jl3 = document.getElementById('add-jiaolian3SelectLeft3').value;
-    var jl4 = document.getElementById('add-jiaolian4SelectLeft3').value;
-    var jl5 = document.getElementById('add-jiaolian5SelectLeft3').value;
-    var jl6 = document.getElementById('add-jiaolian6SelectLeft3').value;
-    var height = parseFloat(document.getElementById('add-height3').value);
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft3').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft3').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft3').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft3').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft3').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft3').value;
+        var height = parseFloat(document.getElementById('add-height3').value);
         if (jl1 == '距中') {
             var jiaolian1Insert = height / 2;
             document.getElementById("add-jiaolian1SelectRight3").value = jl1
@@ -5789,6 +11821,13 @@ $(function () {
             document.getElementById("add-jiaolian1InsertRight3").value = jiaolian1Insert;
 
         }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian1InsertLeft3');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian1InsertLeft3").value;
+
+        document.getElementById("add-jiaolian1InsertRight3").value = a;
     })
 
     var jl3inp = document.getElementById('add-jiaolian2SelectLeft3');
@@ -5811,6 +11850,13 @@ $(function () {
         }
     })
 
+    var jl3inp = document.getElementById('add-jiaolian2InsertLeft3');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian2InsertLeft3").value;
+
+        document.getElementById("add-jiaolian2InsertRight3").value = a;
+    })
+
     var jl3inp = document.getElementById('add-jiaolian3SelectLeft3');
     jl3inp.addEventListener('blur', function () {
         var jl1 = document.getElementById('add-jiaolian1SelectLeft3').value;
@@ -5829,6 +11875,13 @@ $(function () {
             document.getElementById("add-jiaolian3InsertRight3").value = jiaolian3Insert;
 
         }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian3InsertLeft3');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian3InsertLeft3").value;
+
+        document.getElementById("add-jiaolian3InsertRight3").value = a;
     })
 
     var jl3inp = document.getElementById('add-jiaolian4SelectLeft3');
@@ -5851,6 +11904,13 @@ $(function () {
         }
     })
 
+    var jl3inp = document.getElementById('add-jiaolian4InsertLeft3');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian4InsertLeft3").value;
+
+        document.getElementById("add-jiaolian4InsertRight3").value = a;
+    })
+
     var jl3inp = document.getElementById('add-jiaolian5SelectLeft3');
     jl3inp.addEventListener('blur', function () {
         var jl1 = document.getElementById('add-jiaolian1SelectLeft3').value;
@@ -5871,6 +11931,13 @@ $(function () {
         }
     })
 
+    var jl3inp = document.getElementById('add-jiaolian5InsertLeft3');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian5InsertLeft3").value;
+
+        document.getElementById("add-jiaolian5InsertRight3").value = a;
+    })
+
     var jl3inp = document.getElementById('add-jiaolian6SelectLeft3');
     jl3inp.addEventListener('blur', function () {
         var jl1 = document.getElementById('add-jiaolian1SelectLeft3').value;
@@ -5889,6 +11956,13 @@ $(function () {
             document.getElementById("add-jiaolian6InsertRight3").value = jiaolian6Insert;
 
         }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian6InsertLeft3');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian6InsertLeft3").value;
+
+        document.getElementById("add-jiaolian6InsertRight3").value = a;
     })
 
     // ----------------5
@@ -5946,16 +12020,15 @@ $(function () {
 
     var jl3inp = document.getElementById('add-jiaolian1SelectLeft4');
     jl3inp.addEventListener('blur', function () {
-    var jl1 = document.getElementById('add-jiaolian1SelectLeft4').value;
-    var jl2 = document.getElementById('add-jiaolian2SelectLeft4').value;
-    var jl3 = document.getElementById('add-jiaolian3SelectLeft4').value;
-    var jl4 = document.getElementById('add-jiaolian4SelectLeft4').value;
-    var jl5 = document.getElementById('add-jiaolian5SelectLeft4').value;
-    var jl6 = document.getElementById('add-jiaolian6SelectLeft4').value;
-    var height = parseFloat(document.getElementById('add-height4').value);
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft4').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft4').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft4').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft4').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft4').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft4').value;
+        var height = parseFloat(document.getElementById('add-height4').value);
         if (jl1 == '距中') {
             var jiaolian1Insert = height / 2;
-            document.getElementById("add-jiaolian1SelectRight4").value = jl1
             document.getElementById("add-jiaolian1SelectRight4").value = jl1
 
             document.getElementById("add-jiaolian1InsertLeft4").value = jiaolian1Insert;
@@ -5963,6 +12036,13 @@ $(function () {
             document.getElementById("add-jiaolian1InsertRight4").value = jiaolian1Insert;
 
         }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian1InsertLeft4');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian1InsertLeft4").value;
+
+        document.getElementById("add-jiaolian1InsertRight4").value = a;
     })
 
     var jl3inp = document.getElementById('add-jiaolian2SelectLeft4');
@@ -5985,6 +12065,13 @@ $(function () {
         }
     })
 
+    var jl3inp = document.getElementById('add-jiaolian2InsertLeft4');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian2InsertLeft4").value;
+
+        document.getElementById("add-jiaolian2InsertRight4").value = a;
+    })
+
     var jl3inp = document.getElementById('add-jiaolian3SelectLeft4');
     jl3inp.addEventListener('blur', function () {
         var jl1 = document.getElementById('add-jiaolian1SelectLeft4').value;
@@ -6003,6 +12090,13 @@ $(function () {
             document.getElementById("add-jiaolian3InsertRight4").value = jiaolian3Insert;
 
         }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian3InsertLeft4');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian3InsertLeft4").value;
+
+        document.getElementById("add-jiaolian3InsertRight4").value = a;
     })
 
     var jl3inp = document.getElementById('add-jiaolian4SelectLeft4');
@@ -6025,6 +12119,13 @@ $(function () {
         }
     })
 
+    var jl3inp = document.getElementById('add-jiaolian4InsertLeft4');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian4InsertLeft4").value;
+
+        document.getElementById("add-jiaolian4InsertRight4").value = a;
+    })
+
     var jl3inp = document.getElementById('add-jiaolian5SelectLeft4');
     jl3inp.addEventListener('blur', function () {
         var jl1 = document.getElementById('add-jiaolian1SelectLeft4').value;
@@ -6045,6 +12146,13 @@ $(function () {
         }
     })
 
+    var jl3inp = document.getElementById('add-jiaolian5InsertLeft4');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian5InsertLeft4").value;
+
+        document.getElementById("add-jiaolian5InsertRight4").value = a;
+    })
+
     var jl3inp = document.getElementById('add-jiaolian6SelectLeft4');
     jl3inp.addEventListener('blur', function () {
         var jl1 = document.getElementById('add-jiaolian1SelectLeft4').value;
@@ -6063,6 +12171,13 @@ $(function () {
             document.getElementById("add-jiaolian6InsertRight4").value = jiaolian6Insert;
 
         }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian6InsertLeft4');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian6InsertLeft4").value;
+
+        document.getElementById("add-jiaolian6InsertRight4").value = a;
     })
 
     // -----------6
@@ -6120,13 +12235,13 @@ $(function () {
 
     var jl3inp = document.getElementById('add-jiaolian1SelectLeft5');
     jl3inp.addEventListener('blur', function () {
-    var jl1 = document.getElementById('add-jiaolian1SelectLeft5').value;
-    var jl2 = document.getElementById('add-jiaolian2SelectLeft5').value;
-    var jl3 = document.getElementById('add-jiaolian3SelectLeft5').value;
-    var jl4 = document.getElementById('add-jiaolian4SelectLeft5').value;
-    var jl5 = document.getElementById('add-jiaolian5SelectLeft5').value;
-    var jl6 = document.getElementById('add-jiaolian6SelectLeft5').value;
-    var height = parseFloat(document.getElementById('add-height5').value);
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft5').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft5').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft5').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft5').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft5').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft5').value;
+        var height = parseFloat(document.getElementById('add-height5').value);
         if (jl1 == '距中') {
             var jiaolian1Insert = height / 2;
             document.getElementById("add-jiaolian1SelectRight5").value = jl1
@@ -6136,6 +12251,13 @@ $(function () {
             document.getElementById("add-jiaolian1InsertRight5").value = jiaolian1Insert;
 
         }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian1InsertLeft5');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian1InsertLeft5").value;
+
+        document.getElementById("add-jiaolian1InsertRight5").value = a;
     })
 
     var jl3inp = document.getElementById('add-jiaolian2SelectLeft5');
@@ -6158,6 +12280,13 @@ $(function () {
         }
     })
 
+    var jl3inp = document.getElementById('add-jiaolian2InsertLeft5');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian2InsertLeft5").value;
+
+        document.getElementById("add-jiaolian2InsertRight5").value = a;
+    })
+
     var jl3inp = document.getElementById('add-jiaolian3SelectLeft5');
     jl3inp.addEventListener('blur', function () {
         var jl1 = document.getElementById('add-jiaolian1SelectLeft5').value;
@@ -6176,6 +12305,13 @@ $(function () {
             document.getElementById("add-jiaolian3InsertRight5").value = jiaolian3Insert;
 
         }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian3InsertLeft5');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian3InsertLeft5").value;
+
+        document.getElementById("add-jiaolian3InsertRight5").value = a;
     })
 
     var jl3inp = document.getElementById('add-jiaolian4SelectLeft5');
@@ -6198,6 +12334,13 @@ $(function () {
         }
     })
 
+    var jl3inp = document.getElementById('add-jiaolian4InsertLeft5');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian4InsertLeft5").value;
+
+        document.getElementById("add-jiaolian4InsertRight5").value = a;
+    })
+
     var jl3inp = document.getElementById('add-jiaolian5SelectLeft5');
     jl3inp.addEventListener('blur', function () {
         var jl1 = document.getElementById('add-jiaolian1SelectLeft5').value;
@@ -6218,6 +12361,13 @@ $(function () {
         }
     })
 
+    var jl3inp = document.getElementById('add-jiaolian5InsertLeft5');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian5InsertLeft5").value;
+
+        document.getElementById("add-jiaolian5InsertRight5").value = a;
+    })
+
     var jl3inp = document.getElementById('add-jiaolian6SelectLeft5');
     jl3inp.addEventListener('blur', function () {
         var jl1 = document.getElementById('add-jiaolian1SelectLeft5').value;
@@ -6236,6 +12386,13 @@ $(function () {
             document.getElementById("add-jiaolian6InsertRight5").value = jiaolian6Insert;
 
         }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian6InsertLeft5');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian6InsertLeft5").value;
+
+        document.getElementById("add-jiaolian6InsertRight5").value = a;
     })
 
     // -------7
@@ -6293,13 +12450,13 @@ $(function () {
 
     var jl3inp = document.getElementById('add-jiaolian1SelectLeft6');
     jl3inp.addEventListener('blur', function () {
-    var jl1 = document.getElementById('add-jiaolian1SelectLeft6').value;
-    var jl2 = document.getElementById('add-jiaolian2SelectLeft6').value;
-    var jl3 = document.getElementById('add-jiaolian3SelectLeft6').value;
-    var jl4 = document.getElementById('add-jiaolian4SelectLeft6').value;
-    var jl5 = document.getElementById('add-jiaolian5SelectLeft6').value;
-    var jl6 = document.getElementById('add-jiaolian6SelectLeft6').value;
-    var height = parseFloat(document.getElementById('add-height6').value);
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft6').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft6').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft6').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft6').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft6').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft6').value;
+        var height = parseFloat(document.getElementById('add-height6').value);
         if (jl1 == '距中') {
             var jiaolian1Insert = height / 2;
             document.getElementById("add-jiaolian1SelectRight6").value = jl1
@@ -6309,6 +12466,13 @@ $(function () {
             document.getElementById("add-jiaolian1InsertRight6").value = jiaolian1Insert;
 
         }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian1InsertLeft6');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian1InsertLeft6").value;
+
+        document.getElementById("add-jiaolian1InsertRight6").value = a;
     })
 
     var jl3inp = document.getElementById('add-jiaolian2SelectLeft6');
@@ -6331,6 +12495,13 @@ $(function () {
         }
     })
 
+    var jl3inp = document.getElementById('add-jiaolian2InsertLeft6');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian2InsertLeft6").value;
+
+        document.getElementById("add-jiaolian2InsertRight6").value = a;
+    })
+
     var jl3inp = document.getElementById('add-jiaolian3SelectLeft6');
     jl3inp.addEventListener('blur', function () {
         var jl1 = document.getElementById('add-jiaolian1SelectLeft6').value;
@@ -6349,6 +12520,13 @@ $(function () {
             document.getElementById("add-jiaolian3InsertRight6").value = jiaolian3Insert;
 
         }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian3InsertLeft6');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian3InsertLeft6").value;
+
+        document.getElementById("add-jiaolian3InsertRight6").value = a;
     })
 
     var jl3inp = document.getElementById('add-jiaolian4SelectLeft6');
@@ -6371,6 +12549,13 @@ $(function () {
         }
     })
 
+    var jl3inp = document.getElementById('add-jiaolian4InsertLeft6');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian4InsertLeft6").value;
+
+        document.getElementById("add-jiaolian4InsertRight6").value = a;
+    })
+
     var jl3inp = document.getElementById('add-jiaolian5SelectLeft6');
     jl3inp.addEventListener('blur', function () {
         var jl1 = document.getElementById('add-jiaolian1SelectLeft6').value;
@@ -6391,6 +12576,13 @@ $(function () {
         }
     })
 
+    var jl3inp = document.getElementById('add-jiaolian5InsertLeft6');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian5InsertLeft6").value;
+
+        document.getElementById("add-jiaolian5InsertRight6").value = a;
+    })
+
     var jl3inp = document.getElementById('add-jiaolian6SelectLeft6');
     jl3inp.addEventListener('blur', function () {
         var jl1 = document.getElementById('add-jiaolian1SelectLeft6').value;
@@ -6409,6 +12601,13 @@ $(function () {
             document.getElementById("add-jiaolian6InsertRight6").value = jiaolian6Insert;
 
         }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian6InsertLeft6');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian6InsertLeft6").value;
+
+        document.getElementById("add-jiaolian6InsertRight6").value = a;
     })
 
     // ------8
@@ -6466,13 +12665,13 @@ $(function () {
 
     var jl3inp = document.getElementById('add-jiaolian1SelectLeft7');
     jl3inp.addEventListener('blur', function () {
-    var jl1 = document.getElementById('add-jiaolian1SelectLeft7').value;
-    var jl2 = document.getElementById('add-jiaolian2SelectLeft7').value;
-    var jl3 = document.getElementById('add-jiaolian3SelectLeft7').value;
-    var jl4 = document.getElementById('add-jiaolian4SelectLeft7').value;
-    var jl5 = document.getElementById('add-jiaolian5SelectLeft7').value;
-    var jl6 = document.getElementById('add-jiaolian6SelectLeft7').value;
-    var height = parseFloat(document.getElementById('add-height7').value);
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft7').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft7').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft7').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft7').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft7').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft7').value;
+        var height = parseFloat(document.getElementById('add-height7').value);
         if (jl1 == '距中') {
             var jiaolian1Insert = height / 2;
             document.getElementById("add-jiaolian1SelectRight7").value = jl1
@@ -6482,6 +12681,13 @@ $(function () {
             document.getElementById("add-jiaolian1InsertRight7").value = jiaolian1Insert;
 
         }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian1InsertLeft7');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian1InsertLeft7").value;
+
+        document.getElementById("add-jiaolian1InsertRight7").value = a;
     })
 
     var jl3inp = document.getElementById('add-jiaolian2SelectLeft7');
@@ -6504,6 +12710,13 @@ $(function () {
         }
     })
 
+    var jl3inp = document.getElementById('add-jiaolian2InsertLeft7');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian2InsertLeft7").value;
+
+        document.getElementById("add-jiaolian2InsertRight7").value = a;
+    })
+
     var jl3inp = document.getElementById('add-jiaolian3SelectLeft7');
     jl3inp.addEventListener('blur', function () {
         var jl1 = document.getElementById('add-jiaolian1SelectLeft7').value;
@@ -6522,6 +12735,13 @@ $(function () {
             document.getElementById("add-jiaolian3InsertRight7").value = jiaolian3Insert;
 
         }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian3InsertLeft7');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian3InsertLeft7").value;
+
+        document.getElementById("add-jiaolian3InsertRight7").value = a;
     })
 
     var jl3inp = document.getElementById('add-jiaolian4SelectLeft7');
@@ -6544,6 +12764,13 @@ $(function () {
         }
     })
 
+    var jl3inp = document.getElementById('add-jiaolian4InsertLeft7');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian4InsertLeft7").value;
+
+        document.getElementById("add-jiaolian4InsertRight7").value = a;
+    })
+
     var jl3inp = document.getElementById('add-jiaolian5SelectLeft7');
     jl3inp.addEventListener('blur', function () {
         var jl1 = document.getElementById('add-jiaolian1SelectLeft7').value;
@@ -6564,6 +12791,13 @@ $(function () {
         }
     })
 
+    var jl3inp = document.getElementById('add-jiaolian5InsertLeft7');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian5InsertLeft7").value;
+
+        document.getElementById("add-jiaolian5InsertRight7").value = a;
+    })
+
     var jl3inp = document.getElementById('add-jiaolian6SelectLeft7');
     jl3inp.addEventListener('blur', function () {
         var jl1 = document.getElementById('add-jiaolian1SelectLeft7').value;
@@ -6582,6 +12816,13 @@ $(function () {
             document.getElementById("add-jiaolian6InsertRight7").value = jiaolian6Insert;
 
         }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian6InsertLeft7');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian6InsertLeft7").value;
+
+        document.getElementById("add-jiaolian6InsertRight7").value = a;
     })
 
     // ------9
@@ -6639,13 +12880,13 @@ $(function () {
 
     var jl3inp = document.getElementById('add-jiaolian1SelectLeft8');
     jl3inp.addEventListener('blur', function () {
-    var jl1 = document.getElementById('add-jiaolian1SelectLeft8').value;
-    var jl2 = document.getElementById('add-jiaolian2SelectLeft8').value;
-    var jl3 = document.getElementById('add-jiaolian3SelectLeft8').value;
-    var jl4 = document.getElementById('add-jiaolian4SelectLeft8').value;
-    var jl5 = document.getElementById('add-jiaolian5SelectLeft8').value;
-    var jl6 = document.getElementById('add-jiaolian6SelectLeft8').value;
-    var height = parseFloat(document.getElementById('add-height8').value);
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft8').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft8').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft8').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft8').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft8').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft8').value;
+        var height = parseFloat(document.getElementById('add-height8').value);
         if (jl1 == '距中') {
             var jiaolian1Insert = height / 2;
             document.getElementById("add-jiaolian1SelectRight8").value = jl1
@@ -6655,6 +12896,13 @@ $(function () {
             document.getElementById("add-jiaolian1InsertRight8").value = jiaolian1Insert;
 
         }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian1InsertLeft8');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian1InsertLeft8").value;
+
+        document.getElementById("add-jiaolian1InsertRight8").value = a;
     })
 
     var jl3inp = document.getElementById('add-jiaolian2SelectLeft8');
@@ -6677,6 +12925,13 @@ $(function () {
         }
     })
 
+    var jl3inp = document.getElementById('add-jiaolian2InsertLeft8');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian2InsertLeft8").value;
+
+        document.getElementById("add-jiaolian2InsertRight8").value = a;
+    })
+
     var jl3inp = document.getElementById('add-jiaolian3SelectLeft8');
     jl3inp.addEventListener('blur', function () {
         var jl1 = document.getElementById('add-jiaolian1SelectLeft8').value;
@@ -6695,6 +12950,13 @@ $(function () {
             document.getElementById("add-jiaolian3InsertRight8").value = jiaolian3Insert;
 
         }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian3InsertLeft8');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian3InsertLeft8").value;
+
+        document.getElementById("add-jiaolian3InsertRight8").value = a;
     })
 
     var jl3inp = document.getElementById('add-jiaolian4SelectLeft8');
@@ -6717,6 +12979,13 @@ $(function () {
         }
     })
 
+    var jl3inp = document.getElementById('add-jiaolian4InsertLeft8');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian4InsertLeft8").value;
+
+        document.getElementById("add-jiaolian4InsertRight8").value = a;
+    })
+
     var jl3inp = document.getElementById('add-jiaolian5SelectLeft8');
     jl3inp.addEventListener('blur', function () {
         var jl1 = document.getElementById('add-jiaolian1SelectLeft8').value;
@@ -6737,6 +13006,13 @@ $(function () {
         }
     })
 
+    var jl3inp = document.getElementById('add-jiaolian5InsertLeft8');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian5InsertLeft8").value;
+
+        document.getElementById("add-jiaolian5InsertRight8").value = a;
+    })
+
     var jl3inp = document.getElementById('add-jiaolian6SelectLeft8');
     jl3inp.addEventListener('blur', function () {
         var jl1 = document.getElementById('add-jiaolian1SelectLeft8').value;
@@ -6755,6 +13031,13 @@ $(function () {
             document.getElementById("add-jiaolian6InsertRight8").value = jiaolian6Insert;
 
         }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian6InsertLeft8');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian6InsertLeft8").value;
+
+        document.getElementById("add-jiaolian6InsertRight8").value = jiaolian6Insert;
     })
 
     // ----------10
@@ -6812,13 +13095,13 @@ $(function () {
 
     var jl3inp = document.getElementById('add-jiaolian1SelectLeft9');
     jl3inp.addEventListener('blur', function () {
-    var jl1 = document.getElementById('add-jiaolian1SelectLeft9').value;
-    var jl2 = document.getElementById('add-jiaolian2SelectLeft9').value;
-    var jl3 = document.getElementById('add-jiaolian3SelectLeft9').value;
-    var jl4 = document.getElementById('add-jiaolian4SelectLeft9').value;
-    var jl5 = document.getElementById('add-jiaolian5SelectLeft9').value;
-    var jl6 = document.getElementById('add-jiaolian6SelectLeft9').value;
-    var height = parseFloat(document.getElementById('add-height9').value);
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft9').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft9').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft9').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft9').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft9').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft9').value;
+        var height = parseFloat(document.getElementById('add-height9').value);
         if (jl1 == '距中') {
             var jiaolian1Insert = height / 2;
             document.getElementById("add-jiaolian1SelectRight9").value = jl1
@@ -6828,6 +13111,13 @@ $(function () {
             document.getElementById("add-jiaolian1InsertRight9").value = jiaolian1Insert;
 
         }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian1InsertLeft9');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian1InsertLeft9").value;
+
+        document.getElementById("add-jiaolian1InsertRight9").value = a;
     })
 
     var jl3inp = document.getElementById('add-jiaolian2SelectLeft9');
@@ -6850,6 +13140,13 @@ $(function () {
         }
     })
 
+    var jl3inp = document.getElementById('add-jiaolian2InsertLeft9');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian2InsertLeft9").value;
+
+        document.getElementById("add-jiaolian2InsertRight9").value = a;
+    })
+
     var jl3inp = document.getElementById('add-jiaolian3SelectLeft9');
     jl3inp.addEventListener('blur', function () {
         var jl1 = document.getElementById('add-jiaolian1SelectLeft9').value;
@@ -6868,6 +13165,13 @@ $(function () {
             document.getElementById("add-jiaolian3InsertRight9").value = jiaolian3Insert;
 
         }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian3InsertLeft9');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian3InsertLeft9").value;
+
+        document.getElementById("add-jiaolian3InsertRight9").value = a;
     })
 
     var jl3inp = document.getElementById('add-jiaolian4SelectLeft9');
@@ -6890,6 +13194,13 @@ $(function () {
         }
     })
 
+    var jl3inp = document.getElementById('add-jiaolian4InsertLeft9');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian4InsertLeft9").value;
+
+        document.getElementById("add-jiaolian4InsertRight9").value = a;
+    })
+
     var jl3inp = document.getElementById('add-jiaolian5SelectLeft9');
     jl3inp.addEventListener('blur', function () {
         var jl1 = document.getElementById('add-jiaolian1SelectLeft9').value;
@@ -6910,6 +13221,13 @@ $(function () {
         }
     })
 
+    var jl3inp = document.getElementById('add-jiaolian5InsertLeft9');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian5InsertLeft9").value;
+
+        document.getElementById("add-jiaolian5InsertRight9").value = a;
+    })
+
     var jl3inp = document.getElementById('add-jiaolian6SelectLeft9');
     jl3inp.addEventListener('blur', function () {
         var jl1 = document.getElementById('add-jiaolian1SelectLeft9').value;
@@ -6928,6 +13246,13 @@ $(function () {
             document.getElementById("add-jiaolian6InsertRight9").value = jiaolian6Insert;
 
         }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian6InsertLeft9');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian6InsertLeft9").value;
+
+        document.getElementById("add-jiaolian6InsertRight9").value = a;
     })
 
     // -----------11
@@ -6985,13 +13310,13 @@ $(function () {
 
     var jl3inp = document.getElementById('add-jiaolian1SelectLeft10');
     jl3inp.addEventListener('blur', function () {
-    var jl1 = document.getElementById('add-jiaolian1SelectLeft10').value;
-    var jl2 = document.getElementById('add-jiaolian2SelectLeft10').value;
-    var jl3 = document.getElementById('add-jiaolian3SelectLeft10').value;
-    var jl4 = document.getElementById('add-jiaolian4SelectLeft10').value;
-    var jl5 = document.getElementById('add-jiaolian5SelectLeft10').value;
-    var jl6 = document.getElementById('add-jiaolian6SelectLeft10').value;
-    var height = parseFloat(document.getElementById('add-height10').value);
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft10').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft10').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft10').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft10').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft10').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft10').value;
+        var height = parseFloat(document.getElementById('add-height10').value);
         if (jl1 == '距中') {
             var jiaolian1Insert = height / 2;
             document.getElementById("add-jiaolian1SelectRight10").value = jl1
@@ -7001,6 +13326,13 @@ $(function () {
             document.getElementById("add-jiaolian1InsertRight10").value = jiaolian1Insert;
 
         }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian1InsertLeft10');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian1InsertLeft10").value;
+
+        document.getElementById("add-jiaolian1InsertRight10").value = a;
     })
 
     var jl3inp = document.getElementById('add-jiaolian2SelectLeft10');
@@ -7023,6 +13355,13 @@ $(function () {
         }
     })
 
+    var jl3inp = document.getElementById('add-jiaolian2InsertLeft10');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian2InsertLeft10").value;
+
+        document.getElementById("add-jiaolian2InsertRight10").value = a;
+    })
+
     var jl3inp = document.getElementById('add-jiaolian3SelectLeft10');
     jl3inp.addEventListener('blur', function () {
         var jl1 = document.getElementById('add-jiaolian1SelectLeft10').value;
@@ -7041,6 +13380,13 @@ $(function () {
             document.getElementById("add-jiaolian3InsertRight10").value = jiaolian3Insert;
 
         }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian3InsertLeft10');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian3InsertLeft10").value;
+
+        document.getElementById("add-jiaolian3InsertRight10").value = a;
     })
 
     var jl3inp = document.getElementById('add-jiaolian4SelectLeft10');
@@ -7063,6 +13409,13 @@ $(function () {
         }
     })
 
+    var jl3inp = document.getElementById('add-jiaolian4InsertLeft10');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian4InsertLeft10").value;
+
+        document.getElementById("add-jiaolian4InsertRight10").value = a;
+    })
+
     var jl3inp = document.getElementById('add-jiaolian5SelectLeft10');
     jl3inp.addEventListener('blur', function () {
         var jl1 = document.getElementById('add-jiaolian1SelectLeft10').value;
@@ -7083,6 +13436,13 @@ $(function () {
         }
     })
 
+    var jl3inp = document.getElementById('add-jiaolian5InsertLeft10');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian5InsertLeft10").value;
+
+        document.getElementById("add-jiaolian5InsertRight10").value = a;
+    })
+
     var jl3inp = document.getElementById('add-jiaolian6SelectLeft10');
     jl3inp.addEventListener('blur', function () {
         var jl1 = document.getElementById('add-jiaolian1SelectLeft10').value;
@@ -7101,6 +13461,13 @@ $(function () {
             document.getElementById("add-jiaolian6InsertRight10").value = jiaolian6Insert;
 
         }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian6InsertLeft10');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian6InsertLeft10").value;
+
+        document.getElementById("add-jiaolian6InsertRight10").value = a;
     })
 
     // --------------12
@@ -7158,13 +13525,13 @@ $(function () {
 
     var jl3inp = document.getElementById('add-jiaolian1SelectLeft11');
     jl3inp.addEventListener('blur', function () {
-    var jl1 = document.getElementById('add-jiaolian1SelectLeft11').value;
-    var jl2 = document.getElementById('add-jiaolian2SelectLeft11').value;
-    var jl3 = document.getElementById('add-jiaolian3SelectLeft11').value;
-    var jl4 = document.getElementById('add-jiaolian4SelectLeft11').value;
-    var jl5 = document.getElementById('add-jiaolian5SelectLeft11').value;
-    var jl6 = document.getElementById('add-jiaolian6SelectLeft11').value;
-    var height = parseFloat(document.getElementById('add-height11').value);
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft11').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft11').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft11').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft11').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft11').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft11').value;
+        var height = parseFloat(document.getElementById('add-height11').value);
         if (jl1 == '距中') {
             var jiaolian1Insert = height / 2;
             document.getElementById("add-jiaolian1SelectRight11").value = jl1
@@ -7174,6 +13541,13 @@ $(function () {
             document.getElementById("add-jiaolian1InsertRight11").value = jiaolian1Insert;
 
         }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian1InsertLeft11');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian1InsertLeft11").value;
+
+        document.getElementById("add-jiaolian1InsertRight11").value = a;
     })
 
     var jl3inp = document.getElementById('add-jiaolian2SelectLeft11');
@@ -7196,6 +13570,13 @@ $(function () {
         }
     })
 
+    var jl3inp = document.getElementById('add-jiaolian2InsertLeft11');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian2InsertLeft11").value;
+
+        document.getElementById("add-jiaolian2InsertRight11").value = a;
+    })
+
     var jl3inp = document.getElementById('add-jiaolian3SelectLeft11');
     jl3inp.addEventListener('blur', function () {
         var jl1 = document.getElementById('add-jiaolian1SelectLeft11').value;
@@ -7214,6 +13595,13 @@ $(function () {
             document.getElementById("add-jiaolian3InsertRight11").value = jiaolian3Insert;
 
         }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian3InsertLeft11');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian3InsertLeft11").value;
+
+        document.getElementById("add-jiaolian3InsertRight11").value = a;
     })
 
     var jl3inp = document.getElementById('add-jiaolian4SelectLeft11');
@@ -7236,6 +13624,13 @@ $(function () {
         }
     })
 
+    var jl3inp = document.getElementById('add-jiaolian4InsertLeft11');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian4InsertLeft11").value;
+
+        document.getElementById("add-jiaolian4InsertRight11").value = a;
+    })
+
     var jl3inp = document.getElementById('add-jiaolian5SelectLeft11');
     jl3inp.addEventListener('blur', function () {
         var jl1 = document.getElementById('add-jiaolian1SelectLeft11').value;
@@ -7256,6 +13651,13 @@ $(function () {
         }
     })
 
+    var jl3inp = document.getElementById('add-jiaolian5InsertLeft11');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian5InsertLeft11").value;
+
+        document.getElementById("add-jiaolian5InsertRight11").value = a;
+    })
+
     var jl3inp = document.getElementById('add-jiaolian6SelectLeft11');
     jl3inp.addEventListener('blur', function () {
         var jl1 = document.getElementById('add-jiaolian1SelectLeft11').value;
@@ -7274,6 +13676,13 @@ $(function () {
             document.getElementById("add-jiaolian6InsertRight11").value = jiaolian6Insert;
 
         }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian6InsertLeft11');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian6InsertLeft11").value;
+
+        document.getElementById("add-jiaolian6InsertRight11").value = a;
     })
 
     // --------------13
@@ -7331,13 +13740,13 @@ $(function () {
 
     var jl3inp = document.getElementById('add-jiaolian1SelectLeft12');
     jl3inp.addEventListener('blur', function () {
-    var jl1 = document.getElementById('add-jiaolian1SelectLeft12').value;
-    var jl2 = document.getElementById('add-jiaolian2SelectLeft12').value;
-    var jl3 = document.getElementById('add-jiaolian3SelectLeft12').value;
-    var jl4 = document.getElementById('add-jiaolian4SelectLeft12').value;
-    var jl5 = document.getElementById('add-jiaolian5SelectLeft12').value;
-    var jl6 = document.getElementById('add-jiaolian6SelectLeft12').value;
-    var height = parseFloat(document.getElementById('add-height12').value);
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft12').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft12').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft12').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft12').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft12').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft12').value;
+        var height = parseFloat(document.getElementById('add-height12').value);
         if (jl1 == '距中') {
             var jiaolian1Insert = height / 2;
             document.getElementById("add-jiaolian1SelectRight12").value = jl1
@@ -7347,6 +13756,13 @@ $(function () {
             document.getElementById("add-jiaolian1InsertRight12").value = jiaolian1Insert;
 
         }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian1InsertLeft12');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian1InsertLeft12").value;
+
+        document.getElementById("add-jiaolian1InsertRight12").value = a;
     })
 
     var jl3inp = document.getElementById('add-jiaolian2SelectLeft12');
@@ -7369,6 +13785,13 @@ $(function () {
         }
     })
 
+    var jl3inp = document.getElementById('add-jiaolian2InsertLeft12');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian2InsertLeft12").value;
+
+        document.getElementById("add-jiaolian2InsertRight12").value = a;
+    })
+
     var jl3inp = document.getElementById('add-jiaolian3SelectLeft12');
     jl3inp.addEventListener('blur', function () {
         var jl1 = document.getElementById('add-jiaolian1SelectLeft12').value;
@@ -7387,6 +13810,13 @@ $(function () {
             document.getElementById("add-jiaolian3InsertRight12").value = jiaolian3Insert;
 
         }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian3InsertLeft12');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian3InsertLeft12").value;
+
+        document.getElementById("add-jiaolian3InsertRight12").value = a;
     })
 
     var jl3inp = document.getElementById('add-jiaolian4SelectLeft12');
@@ -7409,6 +13839,13 @@ $(function () {
         }
     })
 
+    var jl3inp = document.getElementById('add-jiaolian4InsertLeft12');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian4InsertLeft12").value;
+
+        document.getElementById("add-jiaolian4InsertRight12").value = a;
+    })
+
     var jl3inp = document.getElementById('add-jiaolian5SelectLeft12');
     jl3inp.addEventListener('blur', function () {
         var jl1 = document.getElementById('add-jiaolian1SelectLeft12').value;
@@ -7429,6 +13866,13 @@ $(function () {
         }
     })
 
+    var jl3inp = document.getElementById('add-jiaolian5InsertLeft12');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian5InsertLeft12").value;
+
+        document.getElementById("add-jiaolian5InsertRight12").value = a;
+    })
+
     var jl3inp = document.getElementById('add-jiaolian6SelectLeft12');
     jl3inp.addEventListener('blur', function () {
         var jl1 = document.getElementById('add-jiaolian1SelectLeft12').value;
@@ -7447,6 +13891,13 @@ $(function () {
             document.getElementById("add-jiaolian6InsertRight12").value = jiaolian6Insert;
 
         }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian6InsertLeft12');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian6InsertLeft12").value;
+
+        document.getElementById("add-jiaolian6InsertRight12").value = a;
     })
 
     // -------14
@@ -7504,13 +13955,13 @@ $(function () {
 
     var jl3inp = document.getElementById('add-jiaolian1SelectLeft13');
     jl3inp.addEventListener('blur', function () {
-    var jl1 = document.getElementById('add-jiaolian1SelectLeft13').value;
-    var jl2 = document.getElementById('add-jiaolian2SelectLeft13').value;
-    var jl3 = document.getElementById('add-jiaolian3SelectLeft13').value;
-    var jl4 = document.getElementById('add-jiaolian4SelectLeft13').value;
-    var jl5 = document.getElementById('add-jiaolian5SelectLeft13').value;
-    var jl6 = document.getElementById('add-jiaolian6SelectLeft13').value;
-    var height = parseFloat(document.getElementById('add-height13').value);
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft13').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft13').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft13').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft13').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft13').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft13').value;
+        var height = parseFloat(document.getElementById('add-height13').value);
         if (jl1 == '距中') {
             var jiaolian1Insert = height / 2;
             document.getElementById("add-jiaolian1SelectRight13").value = jl1
@@ -7520,6 +13971,13 @@ $(function () {
             document.getElementById("add-jiaolian1InsertRight13").value = jiaolian1Insert;
 
         }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian1InsertLeft13');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian1InsertLeft13").value;
+
+        document.getElementById("add-jiaolian1InsertRight13").value = a;
     })
 
     var jl3inp = document.getElementById('add-jiaolian2SelectLeft13');
@@ -7542,6 +14000,13 @@ $(function () {
         }
     })
 
+    var jl3inp = document.getElementById('add-jiaolian2InsertLeft13');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian2InsertLeft13").value;
+
+        document.getElementById("add-jiaolian2InsertRight13").value = a;
+    })
+
     var jl3inp = document.getElementById('add-jiaolian3SelectLeft13');
     jl3inp.addEventListener('blur', function () {
         var jl1 = document.getElementById('add-jiaolian1SelectLeft13').value;
@@ -7560,6 +14025,13 @@ $(function () {
             document.getElementById("add-jiaolian3InsertRight13").value = jiaolian3Insert;
 
         }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian3InsertLeft13');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian3InsertLeft13").value;
+
+        document.getElementById("add-jiaolian3InsertRight13").value = a;
     })
 
     var jl3inp = document.getElementById('add-jiaolian4SelectLeft13');
@@ -7582,6 +14054,13 @@ $(function () {
         }
     })
 
+    var jl3inp = document.getElementById('add-jiaolian4InsertLeft13');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian4InsertLeft13").value;
+
+        document.getElementById("add-jiaolian4InsertRight13").value = a;
+    })
+
     var jl3inp = document.getElementById('add-jiaolian5SelectLeft13');
     jl3inp.addEventListener('blur', function () {
         var jl1 = document.getElementById('add-jiaolian1SelectLeft13').value;
@@ -7602,6 +14081,13 @@ $(function () {
         }
     })
 
+    var jl3inp = document.getElementById('add-jiaolian5InsertLeft13');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian5InsertLeft13").value;
+
+        document.getElementById("add-jiaolian5InsertRight13").value = a;
+    })
+
     var jl3inp = document.getElementById('add-jiaolian6SelectLeft13');
     jl3inp.addEventListener('blur', function () {
         var jl1 = document.getElementById('add-jiaolian1SelectLeft13').value;
@@ -7620,6 +14106,13 @@ $(function () {
             document.getElementById("add-jiaolian6InsertRight13").value = jiaolian6Insert;
 
         }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian6InsertLeft13');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian6InsertLeft13").value;
+
+        document.getElementById("add-jiaolian6InsertRight13").value = a;
     })
 
     // -------15
@@ -7677,13 +14170,13 @@ $(function () {
 
     var jl3inp = document.getElementById('add-jiaolian1SelectLeft14');
     jl3inp.addEventListener('blur', function () {
-    var jl1 = document.getElementById('add-jiaolian1SelectLeft14').value;
-    var jl2 = document.getElementById('add-jiaolian2SelectLeft14').value;
-    var jl3 = document.getElementById('add-jiaolian3SelectLeft14').value;
-    var jl4 = document.getElementById('add-jiaolian4SelectLeft14').value;
-    var jl5 = document.getElementById('add-jiaolian5SelectLeft14').value;
-    var jl6 = document.getElementById('add-jiaolian6SelectLeft14').value;
-    var height = parseFloat(document.getElementById('add-height14').value);
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft14').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft14').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft14').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft14').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft14').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft14').value;
+        var height = parseFloat(document.getElementById('add-height14').value);
         if (jl1 == '距中') {
             var jiaolian1Insert = height / 2;
             document.getElementById("add-jiaolian1SelectRight14").value = jl1
@@ -7693,6 +14186,13 @@ $(function () {
             document.getElementById("add-jiaolian1InsertRight14").value = jiaolian1Insert;
 
         }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian1InsertLeft14');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian1InsertLeft14").value;
+
+        document.getElementById("add-jiaolian1InsertRight14").value = a;
     })
 
     var jl3inp = document.getElementById('add-jiaolian2SelectLeft14');
@@ -7715,6 +14215,13 @@ $(function () {
         }
     })
 
+    var jl3inp = document.getElementById('add-jiaolian2InsertLeft14');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian2InsertLeft14").value;
+
+        document.getElementById("add-jiaolian2InsertRight14").value = a;
+    })
+
     var jl3inp = document.getElementById('add-jiaolian3SelectLeft14');
     jl3inp.addEventListener('blur', function () {
         var jl1 = document.getElementById('add-jiaolian1SelectLeft14').value;
@@ -7733,6 +14240,13 @@ $(function () {
             document.getElementById("add-jiaolian3InsertRight14").value = jiaolian3Insert;
 
         }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian3InsertLeft14');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian3InsertLeft14").value;
+
+        document.getElementById("add-jiaolian3InsertRight14").value = a;
     })
 
     var jl3inp = document.getElementById('add-jiaolian4SelectLeft14');
@@ -7755,6 +14269,13 @@ $(function () {
         }
     })
 
+    var jl3inp = document.getElementById('add-jiaolian4InsertLeft14');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian4InsertLeft14").value;
+
+        document.getElementById("add-jiaolian4InsertRight14").value = a;
+    })
+
     var jl3inp = document.getElementById('add-jiaolian5SelectLeft14');
     jl3inp.addEventListener('blur', function () {
         var jl1 = document.getElementById('add-jiaolian1SelectLeft14').value;
@@ -7775,6 +14296,13 @@ $(function () {
         }
     })
 
+    var jl3inp = document.getElementById('add-jiaolian5InsertLeft14');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian5InsertLeft14").value;
+
+        document.getElementById("add-jiaolian5InsertRight14").value = a;
+    })
+
     var jl3inp = document.getElementById('add-jiaolian6SelectLeft14');
     jl3inp.addEventListener('blur', function () {
         var jl1 = document.getElementById('add-jiaolian1SelectLeft14').value;
@@ -7793,6 +14321,13 @@ $(function () {
             document.getElementById("add-jiaolian6InsertRight14").value = jiaolian6Insert;
 
         }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian6InsertLeft14');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian6InsertLeft14").value;
+
+        document.getElementById("add-jiaolian6InsertRight14").value = a;
     })
 
     // ---------16
@@ -7850,13 +14385,13 @@ $(function () {
 
     var jl3inp = document.getElementById('add-jiaolian1SelectLeft15');
     jl3inp.addEventListener('blur', function () {
-    var jl1 = document.getElementById('add-jiaolian1SelectLeft15').value;
-    var jl2 = document.getElementById('add-jiaolian2SelectLeft15').value;
-    var jl3 = document.getElementById('add-jiaolian3SelectLeft15').value;
-    var jl4 = document.getElementById('add-jiaolian4SelectLeft15').value;
-    var jl5 = document.getElementById('add-jiaolian5SelectLeft15').value;
-    var jl6 = document.getElementById('add-jiaolian6SelectLeft15').value;
-    var height = parseFloat(document.getElementById('add-height15').value);
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft15').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft15').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft15').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft15').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft15').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft15').value;
+        var height = parseFloat(document.getElementById('add-height15').value);
         if (jl1 == '距中') {
             var jiaolian1Insert = height / 2;
             document.getElementById("add-jiaolian1SelectRight15").value = jl1
@@ -7866,6 +14401,13 @@ $(function () {
             document.getElementById("add-jiaolian1InsertRight15").value = jiaolian1Insert;
 
         }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian1InsertLeft15');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian1InsertLeft15").value;
+
+        document.getElementById("add-jiaolian1InsertRight15").value = a;
     })
 
     var jl3inp = document.getElementById('add-jiaolian2SelectLeft15');
@@ -7888,6 +14430,13 @@ $(function () {
         }
     })
 
+    var jl3inp = document.getElementById('add-jiaolian2InsertLeft15');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian2InsertLeft15").value;
+
+        document.getElementById("add-jiaolian2InsertRight15").value = a;
+    })
+
     var jl3inp = document.getElementById('add-jiaolian3SelectLeft15');
     jl3inp.addEventListener('blur', function () {
         var jl1 = document.getElementById('add-jiaolian1SelectLeft15').value;
@@ -7906,6 +14455,13 @@ $(function () {
             document.getElementById("add-jiaolian3InsertRight15").value = jiaolian3Insert;
 
         }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian3InsertLeft15');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian3InsertLeft15").value;
+
+        document.getElementById("add-jiaolian3InsertRight15").value = a;
     })
 
     var jl3inp = document.getElementById('add-jiaolian4SelectLeft15');
@@ -7928,6 +14484,13 @@ $(function () {
         }
     })
 
+    var jl3inp = document.getElementById('add-jiaolian4InsertLeft15');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian4InsertLeft15").value;
+
+        document.getElementById("add-jiaolian4InsertRight15").value = a;
+    })
+
     var jl3inp = document.getElementById('add-jiaolian5SelectLeft15');
     jl3inp.addEventListener('blur', function () {
         var jl1 = document.getElementById('add-jiaolian1SelectLeft15').value;
@@ -7948,6 +14511,13 @@ $(function () {
         }
     })
 
+    var jl3inp = document.getElementById('add-jiaolian5InsertLeft15');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian5InsertLeft15").value;
+
+        document.getElementById("add-jiaolian5InsertRight15").value = a;
+    })
+
     var jl3inp = document.getElementById('add-jiaolian6SelectLeft15');
     jl3inp.addEventListener('blur', function () {
         var jl1 = document.getElementById('add-jiaolian1SelectLeft15').value;
@@ -7966,6 +14536,13 @@ $(function () {
             document.getElementById("add-jiaolian6InsertRight15").value = jiaolian6Insert;
 
         }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian6InsertLeft15');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian6InsertLeft15").value;
+
+        document.getElementById("add-jiaolian6InsertRight15").value = a;
     })
 
     // ---------17
@@ -8023,13 +14600,13 @@ $(function () {
 
     var jl3inp = document.getElementById('add-jiaolian1SelectLeft16');
     jl3inp.addEventListener('blur', function () {
-    var jl1 = document.getElementById('add-jiaolian1SelectLeft16').value;
-    var jl2 = document.getElementById('add-jiaolian2SelectLeft16').value;
-    var jl3 = document.getElementById('add-jiaolian3SelectLeft16').value;
-    var jl4 = document.getElementById('add-jiaolian4SelectLeft16').value;
-    var jl5 = document.getElementById('add-jiaolian5SelectLeft16').value;
-    var jl6 = document.getElementById('add-jiaolian6SelectLeft16').value;
-    var height = parseFloat(document.getElementById('add-height16').value);
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft16').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft16').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft16').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft16').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft16').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft16').value;
+        var height = parseFloat(document.getElementById('add-height16').value);
         if (jl1 == '距中') {
             var jiaolian1Insert = height / 2;
             document.getElementById("add-jiaolian1SelectRight16").value = jl1
@@ -8039,6 +14616,13 @@ $(function () {
             document.getElementById("add-jiaolian1InsertRight16").value = jiaolian1Insert;
 
         }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian1InsertLeft16');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian1InsertLeft16").value;
+
+        document.getElementById("add-jiaolian1InsertRight16").value = a;
     })
 
     var jl3inp = document.getElementById('add-jiaolian2SelectLeft16');
@@ -8061,6 +14645,13 @@ $(function () {
         }
     })
 
+    var jl3inp = document.getElementById('add-jiaolian2InsertLeft16');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian2InsertLeft16").value;
+
+        document.getElementById("add-jiaolian2InsertRight16").value = a;
+    })
+
     var jl3inp = document.getElementById('add-jiaolian3SelectLeft16');
     jl3inp.addEventListener('blur', function () {
         var jl1 = document.getElementById('add-jiaolian1SelectLeft16').value;
@@ -8079,6 +14670,13 @@ $(function () {
             document.getElementById("add-jiaolian3InsertRight16").value = jiaolian3Insert;
 
         }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian3InsertLeft16');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian3InsertLeft16").value;
+
+        document.getElementById("add-jiaolian3InsertRight16").value = a;
     })
 
     var jl3inp = document.getElementById('add-jiaolian4SelectLeft16');
@@ -8101,6 +14699,13 @@ $(function () {
         }
     })
 
+    var jl3inp = document.getElementById('add-jiaolian4InsertLeft16');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian4InsertLeft16").value;
+
+        document.getElementById("add-jiaolian4InsertRight16").value = a;
+    })
+
     var jl3inp = document.getElementById('add-jiaolian5SelectLeft16');
     jl3inp.addEventListener('blur', function () {
         var jl1 = document.getElementById('add-jiaolian1SelectLeft16').value;
@@ -8121,6 +14726,13 @@ $(function () {
         }
     })
 
+    var jl3inp = document.getElementById('add-jiaolian5InsertLeft16');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian5InsertLeft16").value;
+
+        document.getElementById("add-jiaolian5InsertRight16").value = a;
+    })
+
     var jl3inp = document.getElementById('add-jiaolian6SelectLeft16');
     jl3inp.addEventListener('blur', function () {
         var jl1 = document.getElementById('add-jiaolian1SelectLeft16').value;
@@ -8139,6 +14751,13 @@ $(function () {
             document.getElementById("add-jiaolian6InsertRight16").value = jiaolian6Insert;
 
         }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian6InsertLeft16');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian6InsertLeft16").value;
+
+        document.getElementById("add-jiaolian6InsertRight16").value = a;
     })
 
     // ---------18
@@ -8196,13 +14815,13 @@ $(function () {
 
     var jl3inp = document.getElementById('add-jiaolian1SelectLeft17');
     jl3inp.addEventListener('blur', function () {
-    var jl1 = document.getElementById('add-jiaolian1SelectLeft17').value;
-    var jl2 = document.getElementById('add-jiaolian2SelectLeft17').value;
-    var jl3 = document.getElementById('add-jiaolian3SelectLeft17').value;
-    var jl4 = document.getElementById('add-jiaolian4SelectLeft17').value;
-    var jl5 = document.getElementById('add-jiaolian5SelectLeft17').value;
-    var jl6 = document.getElementById('add-jiaolian6SelectLeft17').value;
-    var height = parseFloat(document.getElementById('add-height17').value);
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft17').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft17').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft17').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft17').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft17').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft17').value;
+        var height = parseFloat(document.getElementById('add-height17').value);
         if (jl1 == '距中') {
             var jiaolian1Insert = height / 2;
             document.getElementById("add-jiaolian1SelectRight17").value = jl1
@@ -8212,6 +14831,13 @@ $(function () {
             document.getElementById("add-jiaolian1InsertRight17").value = jiaolian1Insert;
 
         }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian1InsertLeft17');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian1InsertLeft17").value;
+
+        document.getElementById("add-jiaolian1InsertRight17").value = a;
     })
 
     var jl3inp = document.getElementById('add-jiaolian2SelectLeft17');
@@ -8234,6 +14860,13 @@ $(function () {
         }
     })
 
+    var jl3inp = document.getElementById('add-jiaolian2InsertLeft17');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian2InsertLeft17").value;
+
+        document.getElementById("add-jiaolian2InsertRight17").value = a;
+    })
+
     var jl3inp = document.getElementById('add-jiaolian3SelectLeft17');
     jl3inp.addEventListener('blur', function () {
         var jl1 = document.getElementById('add-jiaolian1SelectLeft17').value;
@@ -8252,6 +14885,13 @@ $(function () {
             document.getElementById("add-jiaolian3InsertRight17").value = jiaolian3Insert;
 
         }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian3InsertLeft17');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian3InsertLeft17").value;
+
+        document.getElementById("add-jiaolian3InsertRight17").value = a;
     })
 
     var jl3inp = document.getElementById('add-jiaolian4SelectLeft17');
@@ -8274,6 +14914,13 @@ $(function () {
         }
     })
 
+    var jl3inp = document.getElementById('add-jiaolian4InsertLeft17');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian4InsertLeft17").value;
+
+        document.getElementById("add-jiaolian4InsertRight17").value = a;
+    })
+
     var jl3inp = document.getElementById('add-jiaolian5SelectLeft17');
     jl3inp.addEventListener('blur', function () {
         var jl1 = document.getElementById('add-jiaolian1SelectLeft17').value;
@@ -8294,6 +14941,13 @@ $(function () {
         }
     })
 
+    var jl3inp = document.getElementById('add-jiaolian5InsertLeft17');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian5InsertLeft17").value;
+
+        document.getElementById("add-jiaolian5InsertRight17").value = a;
+    })
+
     var jl3inp = document.getElementById('add-jiaolian6SelectLeft17');
     jl3inp.addEventListener('blur', function () {
         var jl1 = document.getElementById('add-jiaolian1SelectLeft17').value;
@@ -8312,6 +14966,12 @@ $(function () {
             document.getElementById("add-jiaolian6InsertRight17").value = jiaolian6Insert;
 
         }
+    })
+    var jl3inp = document.getElementById('add-jiaolian6InsertLeft17');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian6InsertLeft17").value;
+
+        document.getElementById("add-jiaolian6InsertRight17").value = a;
     })
 
     // ------------19
@@ -8369,13 +15029,13 @@ $(function () {
 
     var jl3inp = document.getElementById('add-jiaolian1SelectLeft18');
     jl3inp.addEventListener('blur', function () {
-    var jl1 = document.getElementById('add-jiaolian1SelectLeft18').value;
-    var jl2 = document.getElementById('add-jiaolian2SelectLeft18').value;
-    var jl3 = document.getElementById('add-jiaolian3SelectLeft18').value;
-    var jl4 = document.getElementById('add-jiaolian4SelectLeft18').value;
-    var jl5 = document.getElementById('add-jiaolian5SelectLeft18').value;
-    var jl6 = document.getElementById('add-jiaolian6SelectLeft18').value;
-    var height = parseFloat(document.getElementById('add-height18').value);
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft18').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft18').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft18').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft18').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft18').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft18').value;
+        var height = parseFloat(document.getElementById('add-height18').value);
         if (jl1 == '距中') {
             var jiaolian1Insert = height / 2;
             document.getElementById("add-jiaolian1SelectRight18").value = jl1
@@ -8385,6 +15045,13 @@ $(function () {
             document.getElementById("add-jiaolian1InsertRight18").value = jiaolian1Insert;
 
         }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian1InsertLeft18');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian1InsertLeft18").value;
+
+        document.getElementById("add-jiaolian1InsertRight18").value = a;
     })
 
     var jl3inp = document.getElementById('add-jiaolian2SelectLeft18');
@@ -8407,6 +15074,13 @@ $(function () {
         }
     })
 
+    var jl3inp = document.getElementById('add-jiaolian2InsertLeft18');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian2InsertLeft18").value;
+
+        document.getElementById("add-jiaolian2InsertRight18").value = a;
+    })
+
     var jl3inp = document.getElementById('add-jiaolian3SelectLeft18');
     jl3inp.addEventListener('blur', function () {
         var jl1 = document.getElementById('add-jiaolian1SelectLeft18').value;
@@ -8425,6 +15099,13 @@ $(function () {
             document.getElementById("add-jiaolian3InsertRight18").value = jiaolian3Insert;
 
         }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian3InsertLeft18');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian3InsertLeft18").value;
+
+        document.getElementById("add-jiaolian3InsertRight18").value = a;
     })
 
     var jl3inp = document.getElementById('add-jiaolian4SelectLeft18');
@@ -8447,6 +15128,13 @@ $(function () {
         }
     })
 
+    var jl3inp = document.getElementById('add-jiaolian4InsertLeft18');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian4InsertLeft18").value;
+
+        document.getElementById("add-jiaolian4InsertRight18").value = a;
+    })
+
     var jl3inp = document.getElementById('add-jiaolian5SelectLeft18');
     jl3inp.addEventListener('blur', function () {
         var jl1 = document.getElementById('add-jiaolian1SelectLeft18').value;
@@ -8467,6 +15155,13 @@ $(function () {
         }
     })
 
+    var jl3inp = document.getElementById('add-jiaolian5InsertLeft18');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian5InsertLeft18").value;
+
+        document.getElementById("add-jiaolian5InsertRight18").value = a;
+    })
+
     var jl3inp = document.getElementById('add-jiaolian6SelectLeft18');
     jl3inp.addEventListener('blur', function () {
         var jl1 = document.getElementById('add-jiaolian1SelectLeft18').value;
@@ -8485,6 +15180,13 @@ $(function () {
             document.getElementById("add-jiaolian6InsertRight18").value = jiaolian6Insert;
 
         }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian6InsertLeft18');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian6InsertLeft18").value;
+
+        document.getElementById("add-jiaolian6InsertRight18").value = a;
     })
 
     // --------20
@@ -8542,13 +15244,13 @@ $(function () {
 
     var jl3inp = document.getElementById('add-jiaolian1SelectLeft19');
     jl3inp.addEventListener('blur', function () {
-    var jl1 = document.getElementById('add-jiaolian1SelectLeft19').value;
-    var jl2 = document.getElementById('add-jiaolian2SelectLeft19').value;
-    var jl3 = document.getElementById('add-jiaolian3SelectLeft19').value;
-    var jl4 = document.getElementById('add-jiaolian4SelectLeft19').value;
-    var jl5 = document.getElementById('add-jiaolian5SelectLeft19').value;
-    var jl6 = document.getElementById('add-jiaolian6SelectLeft19').value;
-    var height = parseFloat(document.getElementById('add-height19').value);
+        var jl1 = document.getElementById('add-jiaolian1SelectLeft19').value;
+        var jl2 = document.getElementById('add-jiaolian2SelectLeft19').value;
+        var jl3 = document.getElementById('add-jiaolian3SelectLeft19').value;
+        var jl4 = document.getElementById('add-jiaolian4SelectLeft19').value;
+        var jl5 = document.getElementById('add-jiaolian5SelectLeft19').value;
+        var jl6 = document.getElementById('add-jiaolian6SelectLeft19').value;
+        var height = parseFloat(document.getElementById('add-height19').value);
         if (jl1 == '距中') {
             var jiaolian1Insert = height / 2;
             document.getElementById("add-jiaolian1SelectRight19").value = jl1
@@ -8558,6 +15260,13 @@ $(function () {
             document.getElementById("add-jiaolian1InsertRight19").value = jiaolian1Insert;
 
         }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian1InsertLeft19');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian1InsertLeft19").value;
+
+        document.getElementById("add-jiaolian1InsertRight19").value = a;
     })
 
     var jl3inp = document.getElementById('add-jiaolian2SelectLeft19');
@@ -8580,6 +15289,13 @@ $(function () {
         }
     })
 
+    var jl3inp = document.getElementById('add-jiaolian2InsertLeft19');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian2InsertLeft19").value;
+
+        document.getElementById("add-jiaolian2InsertRight19").value = a;
+    })
+
     var jl3inp = document.getElementById('add-jiaolian3SelectLeft19');
     jl3inp.addEventListener('blur', function () {
         var jl1 = document.getElementById('add-jiaolian1SelectLeft19').value;
@@ -8598,6 +15314,13 @@ $(function () {
             document.getElementById("add-jiaolian3InsertRight19").value = jiaolian3Insert;
 
         }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian3InsertLeft19');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian3InsertLeft19").value;
+
+        document.getElementById("add-jiaolian3InsertRight19").value = a;
     })
 
     var jl3inp = document.getElementById('add-jiaolian4SelectLeft19');
@@ -8620,6 +15343,13 @@ $(function () {
         }
     })
 
+    var jl3inp = document.getElementById('add-jiaolian4InsertLeft19');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian4InsertLeft19").value;
+
+        document.getElementById("add-jiaolian4InsertRight19").value = a;
+    })
+
     var jl3inp = document.getElementById('add-jiaolian5SelectLeft19');
     jl3inp.addEventListener('blur', function () {
         var jl1 = document.getElementById('add-jiaolian1SelectLeft19').value;
@@ -8638,6 +15368,13 @@ $(function () {
             document.getElementById("add-jiaolian5InsertRight19").value = jiaolian5Insert;
 
         }
+    })
+
+    var jl3inp = document.getElementById('add-jiaolian5InsertLeft19');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian5InsertLeft19").value;
+
+        document.getElementById("add-jiaolian5InsertRight19").value = a;
     })
 
     var jl3inp = document.getElementById('add-jiaolian6SelectLeft19');
@@ -8660,6 +15397,13 @@ $(function () {
         }
     })
 
+    var jl3inp = document.getElementById('add-jiaolian6InsertLeft19');
+    jl3inp.addEventListener('blur', function () {
+        var a = document.getElementById("add-jiaolian6InsertLeft19").value;
+
+        document.getElementById("add-jiaolian6InsertRight19").value = a;
+    })
+
     // -------拉手位
     var inp1 = document.getElementById('add-lashouweiSelectLeft');
     inp1.addEventListener('blur', function () {
@@ -8672,6 +15416,8 @@ $(function () {
         var lswsr = document.getElementById('add-lashouweiInsertLeft').value;
         document.getElementById('add-lashouweiInsertRight').value = lswsr;
     })
+
+
 
     $ajax({
         type: 'post',
@@ -8709,9 +15455,36 @@ $(function () {
             true, '', function (res) {
                 if (res.code == 200) {
                     setTable(res.data);
+                    for (n = 0; n < res.data.length; n++) {
+                        document.getElementById("wancheng" + n).value = res.data[n].wancheng;
+                        t=res.data[n].kailiao;
+                        y=res.data[n].zuzhuang;
+                        u=res.data[n].shunxu;
+                        l=res.data[n].baozhuang;
+                        if (t == null || t == undefined) {
+                            document.getElementById("kailiao" + n).value = "请选择";
+                        } else {
+                            document.getElementById("kailiao" + n).value = t;
+                        }
+                        if (y == null || y == undefined) {
+                            document.getElementById("zuzhuang" + n).value = "请选择";
+                        } else {
+                            document.getElementById("zuzhuang" + n).value = y;
+                        }
+                        if (u == null || u == undefined) {
+                            document.getElementById("shunxu" + n).value = "请选择";
+                        } else {
+                            document.getElementById("shunxu" + n).value = u;
+                        }
+                        if (l == null || l == undefined) {
+                            document.getElementById("baozhuang" + n).value = "请选择";
+                        } else {
+                            document.getElementById("baozhuang" + n).value = l;
+                        }
+                    }
+
                 }
-            }
-        )
+            })
     });
 
     //刷新
@@ -8742,6 +15515,354 @@ $(function () {
 
 
         // if (checkForm('#add-form')) {
+    //     for (i = 0; i < 20; i++) {
+    //         if (i == 0) {
+    //             customerName = $("#add-customerName").val();
+    //             insertDate = $("#add-insertDate").val();
+    //             orderNumber = $("#add-orderNumber").val();
+    //             shippingAddress = $("#add-shippingAddress").val();
+    //             phone = $("#add-phone").val();
+    //             shippingType = $("#add-shippingType").val();
+    //             installAddress = $("#add-installAddress").val();
+    //             customerNumber = $("#add-customerNumber").val();
+    //             pinyin = $("#add-pinyin").val();
+    //             customerNameRenyuan = $("#add-customerNameRenyuan").val();
+    //             height = $("#add-height").val();
+    //             width = $("#add-width").val();
+    //             num = $("#add-num").val();
+    //             lvxingcai = $("#add-lvxingcai").val();
+    //             lvcaiYanse = $("#add-lvcaiYanse").val();
+    //             boliShenjiagong = $("#add-boliShenjiagong").val();
+    //             boliYanse = $("#add-boliYanse").val();
+    //             lashouXinghao = $("#add-lashouXinghao").val();
+    //             jiaoliankongFangxiangLeft = $("#add-jiaoliankongFangxiangLeft").val();
+    //             jiaoliankongFangxiangRight = $("#add-jiaoliankongFangxiangRight").val();
+    //             lashouShuliangLeft = $("#add-lashouShuliangLeft").val();
+    //             lashouShuliangRight = $("#add-lashouShuliangRight").val();
+    //             lashouweiSelectLeft = $("#add-lashouweiSelectLeft").val();
+    //             lashouweiInsertLeft = $("#add-lashouweiInsertLeft").val();
+    //             lashouweiSelectRight = $("#add-lashouweiSelectRight").val();
+    //             lashouweiInsertRight = $("#add-lashouweiInsertRight").val();
+    //             zhuangsuoshuliangInsertLeft1 = $("#add-zhuangsuoshuliangInsertLeft1").val();
+    //             zhuangsuoshuliangInsertRight1 = $("#add-zhuangsuoshuliangInsertRight1").val();
+    //             zhuangsuofangweiInsertLeft1 = $("#add-zhuangsuofangweiInsertLeft1").val();
+    //             zhuangsuofangweiInsertLeft2 = $("#add-zhuangsuofangweiInsertLeft2").val();
+    //             zhuangsuofangweiInsertRight1 = $("#add-zhuangsuofangweiInsertRight1").val();
+    //             zhuangsuofangweiInsertRight2 = $("#add-zhuangsuofangweiInsertRight2").val();
+    //             kaijiaolian = $("#add-kaijiaolian").val();
+    //             jiaolian1SelectLeft = $("#add-jiaolian1SelectLeft").val();
+    //             jiaolian1InsertLeft = $("#add-jiaolian1InsertLeft").val();
+    //             iaolian1SelectRight = $("#add-iaolian1SelectRight").val();
+    //             jiaolian1InsertRight = $("#add-jiaolian1InsertRight").val();
+    //             jiaolian2SelectLeft = $("#add-jiaolian2SelectLeft").val();
+    //             jiaolian2InsertLeft = $("#add-jiaolian2InsertLeft").val();
+    //             jiaolian2SelectRight = $("#add-jiaolian2SelectRight").val();
+    //             jiaolian2InsertRight = $("#add-jiaolian2InsertRight").val();
+    //             jiaolian3SelectLeft = $("#add-jiaolian3SelectLeft").val();
+    //             jiaolian3InsertLeft = $("#add-jiaolian3InsertLeft").val();
+    //             jiaolian3SelectRight = $("#add-jiaolian3SelectRight").val();
+    //             jiaolian3InsertRight = $("#add-jiaolian3InsertRight").val();
+    //             jiaolian4SelectLeft = $("#add-jiaolian4SelectLeft").val();
+    //             jiaolian4InsertLeft = $("#add-jiaolian4InsertLeft").val();
+    //             jiaolian4SelectRight = $("#add-jiaolian4SelectRight").val();
+    //             jiaolian4InsertRight = $("#add-jiaolian4InsertRight").val();
+    //             jiaolian5SelectLeft = $("#add-jiaolian5SelectLeft").val();
+    //             jiaolian5InsertLeft = $("#add-jiaolian5InsertLeft").val();
+    //             jiaolian5SelectRight = $("#add-jiaolian5SelectRight").val();
+    //             jiaolian6SelectLeft = $("#add-jiaolian6SelectLeft").val();
+    //             jiaolian6InsertLeft = $("#add-jiaolian6InsertLeft").val();
+    //             jiaolian6SelectRight = $("#add-jiaolian6SelectRight").val();
+    //             jiaolian6InsertRight = $("#add-jiaolian6InsertRight").val();
+    //             fujianSelect1 = $("#add-fujianSelect1").val();
+    //             fujianSelect2 = $("#add-fujianSelect2").val();
+    //             fujianSelect3 = $("#add-fujianSelect3").val();
+    //             fujianSelect4 = $("#add-fujianSelect4").val();
+    //             pinpaiSelect1 = $("#add-pinpaiSelect1").val();
+    //             pinpaiSelect2 = $("#add-pinpaiSelect2").val();
+    //             pinpaiSelect3 = $("#add-pinpaiSelect3").val();
+    //             pinpaiSelect4 = $("#add-pinpaiSelect4").val();
+    //             fujianShuliang1 = $("#add-fujianShuliang1").val();
+    //             fujianShuliang2 = $("#add-fujianShuliang2").val();
+    //             fujianShuliang3 = $("#add-fujianShuliang3").val();
+    //             fujianShuliang4 = $("#add-fujianShuliang4").val();
+    //             qita = $("#add-qita").val();
+    //             sumShuliang1 = $("#add-sumShuliang1").val();
+    //             danjia1 = $("#add-danjia1").val();
+    //             sumJine1 = $("#add-sumJine1").val();
+    //             sumShuliang2 = $("#add-sumShuliang2").val();
+    //             danjia2 = $("#add-danjia2").val();
+    //             sumJine2 = $("#add-sumJine2").val();
+    //             wancheng = $("#add-wancheng").val();
+    //             var arr = {
+    //                 customerName: customerName,
+    //                 insertDate: insertDate,
+    //                 orderNumber: orderNumber,
+    //                 shippingAddress: shippingAddress,
+    //                 phone: phone,
+    //                 shippingType: shippingType,
+    //                 installAddress: installAddress,
+    //                 customerNumber: customerNumber,
+    //                 pinyin: pinyin,
+    //                 customerNameRenyuan: customerNameRenyuan,
+    //                 height: height,
+    //                 width: width,
+    //                 num: num,
+    //                 lvxingcai: lvxingcai,
+    //                 lvcaiYanse: lvcaiYanse,
+    //                 boliShenjiagong: boliShenjiagong,
+    //                 boliYanse: boliYanse,
+    //                 lashouXinghao: lashouXinghao,
+    //                 jiaoliankongFangxiangLeft: jiaoliankongFangxiangLeft,
+    //                 jiaoliankongFangxiangRight: jiaoliankongFangxiangRight,
+    //                 lashouShuliangLeft: lashouShuliangLeft,
+    //                 lashouShuliangRight: lashouShuliangRight,
+    //                 lashouweiSelectLeft: lashouweiSelectLeft,
+    //                 lashouweiInsertLeft: lashouweiInsertLeft,
+    //                 lashouweiSelectRight: lashouweiSelectRight,
+    //                 lashouweiInsertRight: lashouweiInsertRight,
+    //                 zhuangsuoshuliangInsertLeft1: zhuangsuoshuliangInsertLeft1,
+    //                 zhuangsuoshuliangInsertRight1: zhuangsuoshuliangInsertRight1,
+    //                 zhuangsuofangweiInsertLeft1: zhuangsuofangweiInsertLeft1,
+    //                 zhuangsuofangweiInsertLeft2: zhuangsuofangweiInsertLeft2,
+    //                 zhuangsuofangweiInsertRight1: zhuangsuofangweiInsertRight1,
+    //                 zhuangsuofangweiInsertRight2: zhuangsuofangweiInsertRight2,
+    //                 kaijiaolian: kaijiaolian,
+    //                 jiaolian1SelectLeft: jiaolian1SelectLeft,
+    //                 jiaolian1InsertLeft: jiaolian1InsertLeft,
+    //                 iaolian1SelectRight: iaolian1SelectRight,
+    //                 jiaolian1InsertRight: jiaolian1InsertRight,
+    //                 jiaolian2SelectLeft: jiaolian2SelectLeft,
+    //                 jiaolian2InsertLeft: jiaolian2InsertLeft,
+    //                 jiaolian2SelectRight: jiaolian2SelectRight,
+    //                 jiaolian2InsertRight: jiaolian2InsertRight,
+    //                 jiaolian3SelectLeft: jiaolian3SelectLeft,
+    //                 jiaolian3InsertLeft: jiaolian3InsertLeft,
+    //                 jiaolian3SelectRight: jiaolian3SelectRight,
+    //                 jiaolian3InsertRight: jiaolian3InsertRight,
+    //                 jiaolian4SelectLeft: jiaolian4SelectLeft,
+    //                 jiaolian4InsertLeft: jiaolian4InsertLeft,
+    //                 jiaolian4SelectRight: jiaolian4SelectRight,
+    //                 jiaolian4InsertRight: jiaolian4InsertRight,
+    //                 jiaolian5SelectLeft: jiaolian5SelectLeft,
+    //                 jiaolian5InsertLeft: jiaolian5InsertLeft,
+    //                 jiaolian5SelectRight: jiaolian5SelectRight,
+    //                 jiaolian6SelectLeft: jiaolian6SelectLeft,
+    //                 jiaolian6InsertLeft: jiaolian6InsertLeft,
+    //                 jiaolian6SelectRight: jiaolian6SelectRight,
+    //                 jiaolian6InsertRight: jiaolian6InsertRight,
+    //                 fujianSelect1: fujianSelect1,
+    //                 fujianSelect2: fujianSelect2,
+    //                 fujianSelect3: fujianSelect3,
+    //                 fujianSelect4: fujianSelect4,
+    //                 pinpaiSelect1: pinpaiSelect1,
+    //                 pinpaiSelect2: pinpaiSelect2,
+    //                 pinpaiSelect3: pinpaiSelect3,
+    //                 pinpaiSelect4: pinpaiSelect4,
+    //                 fujianShuliang1: fujianShuliang1,
+    //                 fujianShuliang2: fujianShuliang2,
+    //                 fujianShuliang3: fujianShuliang3,
+    //                 fujianShuliang4: fujianShuliang4,
+    //                 qita: qita,
+    //                 sumShuliang1: sumShuliang1,
+    //                 danjia1: danjia1,
+    //                 sumJine1: sumJine1,
+    //                 sumShuliang2: sumShuliang2,
+    //                 danjia2: danjia2,
+    //                 sumJine2: sumJine2,
+    //                 wancheng: wancheng
+    //             }
+    //             $ajax({
+    //                 type: 'post',
+    //                 url: '/lkxd/add',
+    //                 data: JSON.stringify({
+    //                     addInfo: arr
+    //                 }),
+    //                 dataType: 'json',
+    //                 contentType: 'application/json;charset=utf-8'
+    //             }, false, '', function (res) {
+    //                 if (res.code == 200) {
+    //                     swal("", res.msg, "success");
+    //                     $('#add-form')[0].reset();
+    //                     getList();
+    //                     $('#add-close-btn').click();
+    //                 }
+    //             })
+    //         } else {
+    //             customerName = $("#add-customerName").val();
+    //             insertDate = $("#add-insertDate").val();
+    //             orderNumber = $("#add-orderNumber").val();
+    //             shippingAddress = $("#add-shippingAddress").val();
+    //             phone = $("#add-phone").val();
+    //             shippingType = $("#add-shippingType").val();
+    //             installAddress = $("#add-installAddress").val();
+    //             customerNumber = $("#add-customerNumber").val();
+    //             pinyin = $("#add-pinyin").val();
+    //             customerNameRenyuan = $("#add-customerNameRenyuan").val();
+    //             height = $("#add-height" + i).val();
+    //             if (height == "" || height == null) {
+    //                 break;
+    //             }
+    //             width = $("#add-width" + i).val();
+    //             num = $("#add-num" + i).val();
+    //             lvxingcai = $("#add-lvxingcai" + i).val();
+    //             lvcaiYanse = $("#add-lvcaiYanse" + i).val();
+    //             boliShenjiagong = $("#add-boliShenjiagong" + i).val();
+    //             boliYanse = $("#add-boliYanse" + i).val();
+    //             lashouXinghao = $("#add-lashouXinghao" + i).val();
+    //             jiaoliankongFangxiangLeft = $("#add-jiaoliankongFangxiangLeft" + i).val();
+    //             jiaoliankongFangxiangRight = $("#add-jiaoliankongFangxiangRight" + i).val();
+    //             lashouShuliangLeft = $("#add-lashouShuliangLeft" + i).val();
+    //             lashouShuliangRight = $("#add-lashouShuliangRight" + i).val();
+    //             lashouweiSelectLeft = $("#add-lashouweiSelectLeft" + i).val();
+    //             lashouweiInsertLeft = $("#add-lashouweiInsertLeft" + i).val();
+    //             lashouweiSelectRight = $("#add-lashouweiSelectRight" + i).val();
+    //             lashouweiInsertRight = $("#add-lashouweiInsertRight" + i).val();
+    //             zhuangsuoshuliangInsertLeft1 = $("#add-zhuangsuoshuliangInsertLeft1" + i).val();
+    //             zhuangsuoshuliangInsertRight1 = $("#add-zhuangsuoshuliangInsertRight1" + i).val();
+    //             zhuangsuofangweiInsertLeft1 = $("#add-zhuangsuofangweiInsertLeft1" + i).val();
+    //             zhuangsuofangweiInsertLeft2 = $("#add-zhuangsuofangweiInsertLeft2" + i).val();
+    //             zhuangsuofangweiInsertRight1 = $("#add-zhuangsuofangweiInsertRight1" + i).val();
+    //             zhuangsuofangweiInsertRight2 = $("#add-zhuangsuofangweiInsertRight2" + i).val();
+    //             kaijiaolian = $("#add-kaijiaolian" + i).val();
+    //             jiaolian1SelectLeft = $("#add-jiaolian1SelectLeft" + i).val();
+    //             jiaolian1InsertLeft = $("#add-jiaolian1InsertLeft" + i).val();
+    //             iaolian1SelectRight = $("#add-iaolian1SelectRight" + i).val();
+    //             jiaolian1InsertRight = $("#add-jiaolian1InsertRight" + i).val();
+    //             jiaolian2SelectLeft = $("#add-jiaolian2SelectLeft" + i).val();
+    //             jiaolian2InsertLeft = $("#add-jiaolian2InsertLeft" + i).val();
+    //             jiaolian2SelectRight = $("#add-jiaolian2SelectRight" + i).val();
+    //             jiaolian2InsertRight = $("#add-jiaolian2InsertRight" + i).val();
+    //             jiaolian3SelectLeft = $("#add-jiaolian3SelectLeft" + i).val();
+    //             jiaolian3InsertLeft = $("#add-jiaolian3InsertLeft" + i).val();
+    //             jiaolian3SelectRight = $("#add-jiaolian3SelectRight" + i).val();
+    //             jiaolian3InsertRight = $("#add-jiaolian3InsertRight" + i).val();
+    //             jiaolian4SelectLeft = $("#add-jiaolian4SelectLeft" + i).val();
+    //             jiaolian4InsertLeft = $("#add-jiaolian4InsertLeft" + i).val();
+    //             jiaolian4SelectRight = $("#add-jiaolian4SelectRight" + i).val();
+    //             jiaolian4InsertRight = $("#add-jiaolian4InsertRight" + i).val();
+    //             jiaolian5SelectLeft = $("#add-jiaolian5SelectLeft" + i).val();
+    //             jiaolian5InsertLeft = $("#add-jiaolian5InsertLeft" + i).val();
+    //             jiaolian5SelectRight = $("#add-jiaolian5SelectRight" + i).val();
+    //             jiaolian6SelectLeft = $("#add-jiaolian6SelectLeft" + i).val();
+    //             jiaolian6InsertLeft = $("#add-jiaolian6InsertLeft" + i).val();
+    //             jiaolian6SelectRight = $("#add-jiaolian6SelectRight" + i).val();
+    //             jiaolian6InsertRight = $("#add-jiaolian6InsertRight" + i).val();
+    //             fujianSelect1 = $("#add-fujianSelect1" + i).val();
+    //             fujianSelect2 = $("#add-fujianSelect2" + i).val();
+    //             fujianSelect3 = $("#add-fujianSelect3" + i).val();
+    //             fujianSelect4 = $("#add-fujianSelect4" + i).val();
+    //             pinpaiSelect1 = $("#add-pinpaiSelect1" + i).val();
+    //             pinpaiSelect2 = $("#add-pinpaiSelect2" + i).val();
+    //             pinpaiSelect3 = $("#add-pinpaiSelect3" + i).val();
+    //             pinpaiSelect4 = $("#add-pinpaiSelect4" + i).val();
+    //             fujianShuliang1 = $("#add-fujianShuliang1" + i).val();
+    //             fujianShuliang2 = $("#add-fujianShuliang2" + i).val();
+    //             fujianShuliang3 = $("#add-fujianShuliang3" + i).val();
+    //             fujianShuliang4 = $("#add-fujianShuliang4" + i).val();
+    //             qita = $("#add-qita" + i).val();
+    //             sumShuliang1 = $("#add-sumShuliang1" + i).val();
+    //             danjia1 = $("#add-danjia1" + i).val();
+    //             sumJine1 = $("#add-sumJine1" + i).val();
+    //             sumShuliang2 = $("#add-sumShuliang2" + i).val();
+    //             danjia2 = $("#add-danjia2" + i).val();
+    //             sumJine2 = $("#add-sumJine2" + i).val();
+    //             var arr = {
+    //                 customerName: customerName,
+    //                 insertDate: insertDate,
+    //                 orderNumber: orderNumber,
+    //                 shippingAddress: shippingAddress,
+    //                 phone: phone,
+    //                 shippingType: shippingType,
+    //                 installAddress: installAddress,
+    //                 customerNumber: customerNumber,
+    //                 pinyin: pinyin,
+    //                 customerNameRenyuan: customerNameRenyuan,
+    //                 height: height,
+    //                 width: width,
+    //                 num: num,
+    //                 lvxingcai: lvxingcai,
+    //                 lvcaiYanse: lvcaiYanse,
+    //                 boliShenjiagong: boliShenjiagong,
+    //                 boliYanse: boliYanse,
+    //                 lashouXinghao: lashouXinghao,
+    //                 jiaoliankongFangxiangLeft: jiaoliankongFangxiangLeft,
+    //                 jiaoliankongFangxiangRight: jiaoliankongFangxiangRight,
+    //                 lashouShuliangLeft: lashouShuliangLeft,
+    //                 lashouShuliangRight: lashouShuliangRight,
+    //                 lashouweiSelectLeft: lashouweiSelectLeft,
+    //                 lashouweiInsertLeft: lashouweiInsertLeft,
+    //                 lashouweiSelectRight: lashouweiSelectRight,
+    //                 lashouweiInsertRight: lashouweiInsertRight,
+    //                 zhuangsuoshuliangInsertLeft1: zhuangsuoshuliangInsertLeft1,
+    //                 zhuangsuoshuliangInsertRight1: zhuangsuoshuliangInsertRight1,
+    //                 zhuangsuofangweiInsertLeft1: zhuangsuofangweiInsertLeft1,
+    //                 zhuangsuofangweiInsertLeft2: zhuangsuofangweiInsertLeft2,
+    //                 zhuangsuofangweiInsertRight1: zhuangsuofangweiInsertRight1,
+    //                 zhuangsuofangweiInsertRight2: zhuangsuofangweiInsertRight2,
+    //                 kaijiaolian: kaijiaolian,
+    //                 jiaolian1SelectLeft: jiaolian1SelectLeft,
+    //                 jiaolian1InsertLeft: jiaolian1InsertLeft,
+    //                 iaolian1SelectRight: iaolian1SelectRight,
+    //                 jiaolian1InsertRight: jiaolian1InsertRight,
+    //                 jiaolian2SelectLeft: jiaolian2SelectLeft,
+    //                 jiaolian2InsertLeft: jiaolian2InsertLeft,
+    //                 jiaolian2SelectRight: jiaolian2SelectRight,
+    //                 jiaolian2InsertRight: jiaolian2InsertRight,
+    //                 jiaolian3SelectLeft: jiaolian3SelectLeft,
+    //                 jiaolian3InsertLeft: jiaolian3InsertLeft,
+    //                 jiaolian3SelectRight: jiaolian3SelectRight,
+    //                 jiaolian3InsertRight: jiaolian3InsertRight,
+    //                 jiaolian4SelectLeft: jiaolian4SelectLeft,
+    //                 jiaolian4InsertLeft: jiaolian4InsertLeft,
+    //                 jiaolian4SelectRight: jiaolian4SelectRight,
+    //                 jiaolian4InsertRight: jiaolian4InsertRight,
+    //                 jiaolian5SelectLeft: jiaolian5SelectLeft,
+    //                 jiaolian5InsertLeft: jiaolian5InsertLeft,
+    //                 jiaolian5SelectRight: jiaolian5SelectRight,
+    //                 jiaolian6SelectLeft: jiaolian6SelectLeft,
+    //                 jiaolian6InsertLeft: jiaolian6InsertLeft,
+    //                 jiaolian6SelectRight: jiaolian6SelectRight,
+    //                 jiaolian6InsertRight: jiaolian6InsertRight,
+    //                 fujianSelect1: fujianSelect1,
+    //                 fujianSelect2: fujianSelect2,
+    //                 fujianSelect3: fujianSelect3,
+    //                 fujianSelect4: fujianSelect4,
+    //                 pinpaiSelect1: pinpaiSelect1,
+    //                 pinpaiSelect2: pinpaiSelect2,
+    //                 pinpaiSelect3: pinpaiSelect3,
+    //                 pinpaiSelect4: pinpaiSelect4,
+    //                 fujianShuliang1: fujianShuliang1,
+    //                 fujianShuliang2: fujianShuliang2,
+    //                 fujianShuliang3: fujianShuliang3,
+    //                 fujianShuliang4: fujianShuliang4,
+    //                 qita: qita,
+    //                 sumShuliang1: sumShuliang1,
+    //                 danjia1: danjia1,
+    //                 sumJine1: sumJine1,
+    //                 sumShuliang2: sumShuliang2,
+    //                 danjia2: danjia2,
+    //                 sumJine2: sumJine2
+    //             }
+    //             $ajax({
+    //                 type: 'post',
+    //                 url: '/lkxd/add',
+    //                 data: JSON.stringify({
+    //                     addInfo: arr
+    //                 }),
+    //                 dataType: 'json',
+    //                 contentType: 'application/json;charset=utf-8'
+    //             }, false, '', function (res) {
+    //                 if (res.code == 200) {
+    //                     swal("", res.msg, "success");
+    //                     $('#add-form')[0].reset();
+    //                     getList();
+    //                     $('#add-close-btn').click();
+    //                 }
+    //             })
+    //         }
+    //     }
+    //     // }
+    // });
         for (i = 0; i < 20; i++) {
             if (i == 0) {
                 customerName = $("#add-customerName").val();
@@ -8820,6 +15941,7 @@ $(function () {
                 danjia2 = $("#add-danjia2").val();
                 sumJine2 = $("#add-sumJine2").val();
                 wancheng = $("#add-wancheng").val();
+                guanlian = i;
                 var arr = {
                     customerName: customerName,
                     insertDate: insertDate,
@@ -8896,11 +16018,13 @@ $(function () {
                     sumShuliang2: sumShuliang2,
                     danjia2: danjia2,
                     sumJine2: sumJine2,
-                    wancheng: wancheng
+                    wancheng: wancheng,
+                    guanlian: guanlian,
                 }
                 $ajax({
                     type: 'post',
                     url: '/lkxd/add',
+                    // url: '/blxd/add',
                     data: JSON.stringify({
                         addInfo: arr
                     }),
@@ -8914,6 +16038,43 @@ $(function () {
                         $('#add-close-btn').click();
                     }
                 })
+                if($("add-wancheng").val("已审验")) {
+                    orderNumber = $("#add-orderNumber").val();
+                    pinyin = $("#add-pinyin").val();
+                    boliYanse = $("#add-boliYanse").val();
+                    boliShenjiagong = $("#add-boliShenjiagong").val();
+                    num = $("#add-num").val();
+                    height = $("#add-height").val();
+                    width = $("#add-width").val();
+                    gl = $("#add-orderNumber").val();
+                    guanlian = gl + i
+                    var arrbl = {
+                        orderNumber: orderNumber,
+                        pinyin: pinyin,
+                        boliYanse: boliYanse,
+                        boliShenjiagong: boliShenjiagong,
+                        num: num,
+                        height: height,
+                        width: width,
+                        guanlian: guanlian,
+                    }
+                    $ajax({
+                        type: 'post',
+                        url: '/blxd/add',
+                        data: JSON.stringify({
+                            addInfo: arrbl
+                        }),
+                        dataType: 'json',
+                        contentType: 'application/json;charset=utf-8'
+                    }, false, '', function (res) {
+                        if (res.code == 200) {
+                            swal("", res.msg, "success");
+                            $('#add-form')[0].reset();
+                            getList();
+                            $('#add-close-btn').click();
+                        }
+                    })
+                }
             } else {
                 customerName = $("#add-customerName").val();
                 insertDate = $("#add-insertDate").val();
@@ -8993,6 +16154,8 @@ $(function () {
                 sumShuliang2 = $("#add-sumShuliang2" + i).val();
                 danjia2 = $("#add-danjia2" + i).val();
                 sumJine2 = $("#add-sumJine2" + i).val();
+                gl = $("#add-orderNumber" + i).val();
+                guanlian = gl + i
                 var arr = {
                     customerName: customerName,
                     insertDate: insertDate,
@@ -9068,11 +16231,13 @@ $(function () {
                     sumJine1: sumJine1,
                     sumShuliang2: sumShuliang2,
                     danjia2: danjia2,
-                    sumJine2: sumJine2
+                    sumJine2: sumJine2,
+                    guanlian: guanlian,
                 }
                 $ajax({
                     type: 'post',
                     url: '/lkxd/add',
+                    // url: '/blxd/add',
                     data: JSON.stringify({
                         addInfo: arr
                     }),
@@ -9262,8 +16427,8 @@ function setTable(data) {
         sortStable: true,
         classes: 'table table-hover text-nowrap table table-bordered',
         idField: 'id',
-        pagination: true,
-        pageSize: 15,//单页记录数
+        pagination: false,
+        // pageSize: 20,//单页记录数
         clickToSelect: true,
         locale: 'zh-CN',
         toolbar: '#table-toolbar',
@@ -9303,21 +16468,61 @@ function setTable(data) {
                         value = '';
                     }
                     $(document).ready(function() {
-                        $('#wancheng'+row.id).change(function() {
+                        $('#wancheng'+index).change(function() {
                             var selectedValue = $(this).val();
-                            var id=document.getElementById("id2").value;
+                            let rows = getTableSelection("#lkxdTable");
+
+                            $.each(rows, function (index, row) {
+                               num = row.data.orderNumber;
+                               a1= row.data.pinyin;
+                               a2 =  row.data.boliYanse;
+                                a3= row.data.boliShenjiagong;
+                                    a4 =  row.data.num;
+                                a5= row.data.height;
+                                    a6 =  row.data.width;
+                                a7= row.data.guanlian;
+
+                            })
+                            var arrbl = {
+                                orderNumber: num,
+                                pinyin: a1,
+                                boliYanse: a2,
+                                boliShenjiagong: a3,
+                                num: a4,
+                                height: a5,
+                                width: a6,
+                                guanlian: a7,
+                            }
+                            if(selectedValue=="已审验") {
+                                $ajax({
+                                    type: 'post',
+                                    url: '/blxd/add',
+                                    data: JSON.stringify({
+                                        addInfo: arrbl
+                                    }),
+                                    dataType: 'json',
+                                    contentType: 'application/json;charset=utf-8'
+                                }, false, '', function (res) {
+                                    if (res.code == 200) {
+                                        swal("", res.msg, "success");
+                                        $('#add-form')[0].reset();
+                                        getList();
+                                        $('#add-close-btn').click();
+                                    }
+                                })
+                            }
                             $ajax({
                                 type: 'post',
                                 url: '/lkxd/updatewc',
                                 data:{
                                     wancheng:selectedValue,
-                                    id:id
+                                    orderNumber:num
                                 }
                             })
                             alert("修改成功");
                         })
                     })
-                    return "<select id='wancheng" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"wancheng\"" + ")' placeholder='完成状态' type='text' class='form-control'  value='" + value + "'>" +
+                    return "<select id='wancheng" + index + "' oninput='javascript:columnUpd(" + index + "," + "\"wancheng\"" + ")' placeholder='完成状态' type='text' class='form-control'  value='" + value + "'>" +
                         "<option value=''>--请选择完成状态--</option>" +
                         "<option value='已审验'>已审验</option>" +
                         "<option value='未审验'>未审验</option>" +
@@ -9326,7 +16531,7 @@ function setTable(data) {
                         "<option value='正在加工'>正在加工</option>" +
                         "<option value='完成'>完成</option>" +
                         "</select>"
-                    document.getElementById("wancheng" + row.id).value=res.data[0].wancheng
+                    document.getElementById("wancheng" +index).value=res.data[0].wancheng
                 }
             }
             , {
@@ -9341,24 +16546,160 @@ function setTable(data) {
                 align: 'center',
                 sortable: true,
                 width: 100,
+                formatter: function (value, row, index) {
+                    if (value == null) {
+                        value = '';
+                    }
+                    $(document).ready(function() {
+                        $('#kailiao' + index).change(function () {
+                            var selectedValue = $(this).val();
+                            let rows = getTableSelection("#lkxdTable");
+                            $.each(rows, function (index, row) {
+                                num = row.data.orderNumber;
+                            })
+                            $ajax({
+                                type: 'post',
+                                url: '/lkxd/kailiao',
+                                data: {
+                                    kailiao: selectedValue,
+                                    orderNumber: num
+                                }
+                            })
+                            alert("修改成功");
+                        })
+                    })
+                    var this_kl = ""
+                    var select2 = ""
+                    for (var i = 0; i < select_kl.length; i++) {
+                        this_kl = this_kl + "<option value=\"" + select_kl[i].name + "\" selected=\"selected\">" + select_kl[i].name + "</option>"
+                        select2 = "<select id='kailiao" + index + "' oninput='javascript:columnUpd(" + index + "," + "\"index\"" + ")' placeholder='开料' type='text' class='form-control'  value='" + value + "'>"
+                        select2 = select2 + this_kl;
+                        select2 = select2 + "<select/>"
+
+                    }
+                    return select2;
+                }
             }, {
                 field: 'shunxu',
                 title: '铣孔',
                 align: 'center',
                 sortable: true,
                 width: 100,
+                formatter: function (value, row, index) {
+                    if (value == null) {
+                        value = '';
+                    }
+                    $(document).ready(function() {
+                        $('#shunxu' + index).change(function () {
+                            var selectedValue = $(this).val();
+                            let rows = getTableSelection("#lkxdTable");
+
+                            $.each(rows, function (index, row) {
+                                num = row.data.orderNumber;
+                            })
+                            $ajax({
+                                type: 'post',
+                                url: '/lkxd/shunxu',
+                                data: {
+                                    shunxu: selectedValue,
+                                    orderNumber: num
+                                }
+                            })
+                            alert("修改成功");
+                        })
+                    })
+                    var this_sx = ""
+                    var select3 = ""
+                    for (var i = 0; i < select_sx.length; i++) {
+                        this_sx = this_sx + "<option value=\"" + select_sx[i].name + "\" selected=\"selected\">" + select_sx[i].name + "</option>"
+                        select3 = "<select id='shunxu" + index + "' oninput='javascript:columnUpd(" + index + "," + "\"shunxu\"" + ")' placeholder='铣孔' type='text' class='form-control'  value='" + value + "'>"
+                        select3 = select3 + this_sx;
+                        select3 = select3 + "<select/>"
+
+                    }
+                    return select3;
+                }
             }, {
                 field: 'zuzhuang',
                 title: '组装',
                 align: 'center',
                 sortable: true,
                 width: 100,
+                formatter: function (value, row, index) {
+                    if (value == null) {
+                        value = '';
+                    }
+                    $(document).ready(function() {
+                        $('#zuzhuang' + index).change(function () {
+                            var selectedValue = $(this).val();
+                            let rows = getTableSelection("#lkxdTable");
+
+                            $.each(rows, function (index, row) {
+                                num = row.data.orderNumber;
+                            })
+                            $ajax({
+                                type: 'post',
+                                url: '/lkxd/zuzhuang',
+                                data: {
+                                    zuzhuang: selectedValue,
+                                    orderNumber: num
+                                }
+                            })
+                            alert("修改成功");
+                        })
+                    })
+                    var this_zz = ""
+                    var select4 = ""
+                    for (var i = 0; i < select_zz.length; i++) {
+                        this_zz = this_zz + "<option value=\"" + select_zz[i].name + "\" selected=\"selected\">" + select_zz[i].name + "</option>"
+                        select4 = "<select id='zuzhuang" + index + "' oninput='javascript:columnUpd(" + index + "," + "\"zuzhuang\"" + ")' placeholder='组装' type='text' class='form-control'  value='" + value + "'>"
+                        select4 = select4 + this_zz;
+                        select4 = select4 + "<select/>"
+
+                    }
+                    return select4;
+                }
+
             }, {
                 field: 'baozhuang',
                 title: '包装',
                 align: 'center',
                 sortable: true,
                 width: 100,
+                formatter: function (value, row, index) {
+                    if (value == null) {
+                        value = '';
+                    }
+                    $(document).ready(function() {
+                        $('#baozhuang' + index).change(function () {
+                            var selectedValue = $(this).val();
+                            let rows = getTableSelection("#lkxdTable");
+
+                            $.each(rows, function (index, row) {
+                                num = row.data.orderNumber;
+                            })
+                            $ajax({
+                                type: 'post',
+                                url: '/lkxd/baozhuang',
+                                data: {
+                                    baozhuang: selectedValue,
+                                    orderNumber: num
+                                }
+                            })
+                            alert("修改成功");
+                        })
+                    })
+                    var this_baoz = ""
+                    var select5 = ""
+                    for (var i = 0; i < select_baoz.length; i++) {
+                        this_baoz = this_baoz + "<option value=\"" + select_baoz[i].name + "\" selected=\"selected\">" + select_baoz[i].name + "</option>"
+                        select5 = "<select id='baozhuang" + index + "' oninput='javascript:columnUpd(" + index + "," + "\"baozhuang\"" + ")' placeholder='包装' type='text' class='form-control'  value='" + value + "'>"
+                        select5 = select5 + this_baoz;
+                        select5 = select5 + "<select/>"
+
+                    }
+                    return select5;
+                }
             }, {
                 field: 'installAddress',
                 title: '安装地址',
@@ -9663,6 +17004,9 @@ function getToken() {
             })
             console.log(djbh)
             setForm(res.data, '#add-form');
+            for(n=0;n<res.data.length;n++) {
+                document.getElementById("wancheng" + n).value = res.data[n].wancheng;
+            }
             $('#add-customerNameRenyuan').val(res.data.name);
             $('#add-insertDate').val(xdrq);
             $('#add-orderNumber').val(djbh);

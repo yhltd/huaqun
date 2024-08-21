@@ -39,4 +39,15 @@ public class BlxdImpl extends ServiceImpl<BlxdMapper, blxd> implements BlxdServi
     @Override
     public boolean update(blxd blxd) { return updateById(blxd);}
 
+    @Override
+    public boolean updatesc(String shengchan, String orderNumber) {
+        return blxdMapper.updatesc(shengchan,orderNumber);
+    }
+
+    @Override
+    public boolean updategys(String gongyingshang, String orderNumber) {
+        return blxdMapper.updategys(gongyingshang,orderNumber);
+    }
+    @Override
+    public blxd add(blxd blxd) { return save(blxd) ? blxd : null; }
 }

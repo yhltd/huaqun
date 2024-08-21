@@ -48,10 +48,14 @@ public interface LkxdService extends IService<lkxd> {
      */
     lkxd add(lkxd lkxd);
 
-    blxd addBlxd(blxd blxd);
+//    blxd addBlxd(blxd blxd);
 
     List<lkxd> getListByKhmc(String customerName,String insertDate,String orderNumber);
 
-    boolean updatewc(String wancheng,int id);
+    boolean updatewc(String wancheng,String orderNumber);
+    boolean kailiao(String kailiao,String orderNumber);
+    boolean zuzhuang(String zuzhuang,String orderNumber);
+    boolean baozhuang(String baozhuang,String orderNumber);
+    boolean shunxu(String shunxu,String orderNumber);
 
 }

@@ -1,5 +1,27 @@
 var idd;
+var num = "";
+let select_gys = [];
+var j="";
+function getgys() {
+    $ajax({
+        type: 'post',
+        url: '/user/gys',
+    }, false, '', function (res) {
+        if (res.code == 200) {
+            for (var i = 0; i < res.data.length; i++) {
+                var item = "";
+                select_gys = res.data;
+                item = "<option value=\"" + res.data[i].name + "\">" + res.data[i].name + "</option>"
+
+            }
+        }
+
+    })
+}
+
+
 function getList() {
+    getgys();
     $('#pinyin').val("");
     $('#shengchan').val("");
     $ajax({
@@ -8,14 +30,29 @@ function getList() {
     }, false, '', function (res) {
         if (res.code == 200) {
             setTable(res.data);
-            $("#blxdTable").colResizable({
-                liveDrag: true,
-                gripInnerHtml: "<div class='grip'></div>",
-                draggingClass: "dragging",
-                resizeMode: 'fit'
-            });
-            for (i=0;i<=res.data.id;i++){
-                idd=i;
+            for (n = 0; n < res.data.length; n++) {
+                if (res.code == 200) {
+                    setTable(res.data);
+                    for (n = 0; n < res.data.length; n++) {
+                        document.getElementById("shengchan" + n).value = res.data[n].shengchan;
+                        j = res.data[n].gongyingshang;
+                        if (j == null || j == undefined) {
+                            j = "请选择供应商";
+                            document.getElementById("gongyingshang" + n).value = j;
+                        } else {
+                            document.getElementById("gongyingshang" + n).value = j;
+                        }
+                    }
+                    $("#blxdTable").colResizable({
+                        liveDrag: true,
+                        gripInnerHtml: "<div class='grip'></div>",
+                        draggingClass: "dragging",
+                        resizeMode: 'fit'
+                    });
+                    for (i = 0; i <= res.data.id; i++) {
+                        idd = i;
+                    }
+                }
             }
         }
     })
@@ -57,6 +94,16 @@ $(function () {
         }, true, '', function (res) {
             if (res.code == 200) {
                 setTable(res.data);
+                for (n = 0; n < res.data.length; n++) {
+                    document.getElementById("shengchan" + n).value = res.data[n].shengchan;
+                    j = res.data[n].gongyingshang;
+                    if (j == null || j == undefined) {
+                        j = "请选择供应商";
+                        document.getElementById("gongyingshang" + n).value = j;
+                    } else {
+                        document.getElementById("gongyingshang" + n).value = j;
+                    }
+                }
             }
         })
     });
@@ -144,14 +191,14 @@ function setTable(data) {
         sortStable: true,
         classes: 'table table-hover text-nowrap table table-bordered',
         idField: 'id',
-        pagination: true,
-        pageSize: 15,//单页记录数
+        pagination: false,
+        // pageSize: 15,//单页记录数
         clickToSelect: true,
         locale: 'zh-CN',
         toolbar: '#table-toolbar',
         toolbarAlign: 'left',
         theadClasses: "thead-light",//这里设置表头样式
-        style:'table-layout:fixed',
+        style: 'table-layout:fixed',
         columns: [
             {
                 field: '',
@@ -186,14 +233,85 @@ function setTable(data) {
                 title: '生产状态',
                 align: 'center',
                 sortable: true,
-                width: 100,
+                width: 180,
+                formatter: function (value, row, index) {
+                    if (value == null) {
+                        value = '';
+                    }
+                    $(document).ready(function () {
+                        $('#shengchan' + index).change(function () {
+                            var selectedValue = $(this).val();
+                            let rows = getTableSelection("#blxdTable");
+                            $.each(rows, function (index, row) {
+                                num = row.data.orderNumber
+                            })
+                            $ajax({
+                                type: 'post',
+                                url: '/blxd/updatesc',
+                                data: {
+                                    shengchan: selectedValue,
+                                    orderNumber: num
+                                }
+                            })
+                            alert("修改成功");
+                        })
+                    })
+                    return "<select id='shengchan" + index + "' oninput='javascript:columnUpd(" + index + "," + "\"shengchan\"" + ")' placeholder='完成状态' type='text' class='form-control'  value='" + value + "'>" +
+                        "<option value=''>--请生产状态--</option>" +
+                        "<option value='加工完成'>加工完成</option>" +
+                        "<option value='正在加工'>正在加工</option>" +
+                        "<option value='配送少数'>配送少数</option>" +
+                        "<option value='完成'>完成</option>" +
+                        "</select>"
+                    document.getElementById("wancheng" + index).value = res.data[0].wancheng
+                }
+
             }, {
                 field: 'gongyingshang',
                 title: '所属供应商',
                 align: 'center',
                 sortable: true,
                 width: 130,
-            }, {
+                formatter: function (value, row, index) {
+                    if (value == null) {
+                        value = '';
+                    }
+
+                        $(document).ready(function () {
+                            $('#gongyingshang' + index).change(function () {
+                                var selectedValue = $(this).val();
+                                let rows = getTableSelection("#blxdTable");
+                                $.each(rows, function (index, row) {
+                                    num = row.data.orderNumber
+                                })
+                                $ajax({
+                                    type: 'post',
+                                    url: '/blxd/updategys',
+                                    data: {
+                                        gongyingshang: selectedValue,
+                                        orderNumber: num
+                                    }
+                                })
+                                alert("修改成功");
+                            })
+                        })
+
+                    var this_gys = ""
+                    var this_gys1 = ""
+                    var select2 = ""
+                    for (var i = 0; i < select_gys.length; i++) {
+                        this_gys = this_gys + "<option value=\"" + select_gys[i].name + "\" selected=\"selected\">" + select_gys[i].name + "</option>"
+                        this_gys1 = this_gys1 + "\"<option value=''>--请选择供应商--</option>\" +"
+                        select2 = "<select id='gongyingshang" + index + "' oninput='javascript:columnUpd(" + index + "," + "\"gongyingshang\"" + ")' placeholder='供应商' type='text' class='form-control'  value='" + value + "'>"
+                        select2 = select2 + this_gys1 + this_gys;
+                        select2 = select2 + "<select/>"
+
+                    }
+                    return select2;
+
+                }
+            }
+            , {
                 field: 'boliYanse',
                 title: '玻璃颜色',
                 align: 'center',
@@ -298,14 +416,14 @@ function toExcel() {
             var header = []
             for (var i = 0; i < array.length; i++) {
                 var body = {
-                    customerName:array[i].customerName,
+                    customerName: array[i].customerName,
                     pinyin: array[i].pinyin,
-                    shengchan:array[i].shengchan,
+                    shengchan: array[i].shengchan,
                     gongyingshang: array[i].gongyingshang,
                     boliYanse: array[i].boliYanse,
                     boliShenjiagong: array[i].boliShenjiagong,
                     num: array[i].num,
-                    height:array[i].height,
+                    height: array[i].height,
                     width: array[i].width,
                     shuoming1: array[i].shuoming1,
                     shuoming2: array[i].shuoming2,
@@ -317,7 +435,7 @@ function toExcel() {
                 header.push(body)
             }
             console.log(header)
-            title = ['客户名称','简码','生产状态', '所属供应商', '玻璃颜色', '玻璃深加工', '数量', '高度','宽度','开拉孔数量','开锁孔数量','开特殊孔数量','单据编号','完成时间']
+            title = ['客户名称', '简码', '生产状态', '所属供应商', '玻璃颜色', '玻璃深加工', '数量', '高度', '宽度', '开拉孔数量', '开锁孔数量', '开特殊孔数量', '单据编号', '完成时间']
             JSONToExcelConvertor(header, "玻璃下单", title)
 
         }
@@ -343,8 +461,7 @@ function JSONToExcelConvertor(JSONData, FileName, title, filter) {
             row += "<th align='center'>" + title[i] + '</th>';
         }
 
-    }
-    else {
+    } else {
         //不使用标题项
         for (var i in arrData[0]) {
             row += "<th align='center'>" + i + '</th>';
@@ -364,8 +481,7 @@ function JSONToExcelConvertor(JSONData, FileName, title, filter) {
                     var value = arrData[i][index] == null ? "" : arrData[i][index];
                     row += '<td>' + value + '</td>';
                 }
-            }
-            else {
+            } else {
                 var value = arrData[i][index] == null ? "" : arrData[i][index];
                 row += "<td align='center'>" + value + "</td>";
             }

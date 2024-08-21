@@ -362,6 +362,9 @@ function getList() {
     }, false, '', function (res) {
         if (res.code == 200) {
             setTable(res.data);
+            for(n=0;n<res.data.length;n++) {
+                document.getElementById("wancheng" + n).value = res.data[n].wancheng;
+            }
             $("#ddxdTable").colResizable({
                 liveDrag: true,
                 gripInnerHtml: "<div class='grip'></div>",
@@ -374,6 +377,35 @@ function getList() {
         }
     })
 
+//     $ajax({
+//         type: 'post',
+//         url: '/user/getPower'
+//     }, false, '', function (res) {
+//         if (res.code == 200) {
+//             var power = res.data;
+//             if (power == "客户") {
+//                 document.getElementById("add-khmc").remove();
+//                 var div = document.getElementById('d-khmc');
+//                 var textBox = document.createElement('input');
+//                 textBox.id='add-khmc';
+//                 textBox.type='text';
+//                 textBox.name='khmc';
+//                 textBox.class='form-control';
+//                 textBox.autocomplete='off';
+//                 div.appendChild(textBox);
+//                 $ajax({
+//                     type: 'post',
+//                     url: '/psd/getloginname',
+//                 }, false, '', function (res) {
+//                     if (res.code == 200) {
+//                         var this_name = res.data;
+//                         document.getElementById("add-khmc").value = this_name;
+//                     }
+//                 })
+//             }
+//         }
+//     })
+// }
     $ajax({
         type: 'post',
         url: '/user/getPower'
@@ -390,6 +422,7 @@ function getList() {
                 textBox.class='form-control';
                 textBox.autocomplete='off';
                 div.appendChild(textBox);
+                document.getElementById("khmc").disabled=true;
                 $ajax({
                     type: 'post',
                     url: '/psd/getloginname',
@@ -397,6 +430,7 @@ function getList() {
                     if (res.code == 200) {
                         var this_name = res.data;
                         document.getElementById("add-khmc").value = this_name;
+                        document.getElementById("khmc").value = this_name;
                     }
                 })
             }
@@ -477,7 +511,7 @@ $(function () {
         const year = today.getFullYear();
         const month = ("0" + (today.getMonth() + 1)).slice(-2);
         const day = ('0' + today.getDate()).slice(-2);
-        // const orderNumber = year + month + day + ('000').slice(-3);
+        // const djbh = year + month + day + ('000').slice(-3);
         const bianhao = orderCount.toString().padStart(3, '0');
         orderCount += 1;
         $ajax({
@@ -529,6 +563,9 @@ $(function () {
         }, true, '', function (res) {
             if (res.code == 200) {
                 setTable(res.data);
+                for(n=0;n<res.data.length;n++) {
+                    document.getElementById("wancheng" + n).value = res.data[n].wancheng;
+                }
             }
         })
     });
@@ -1027,10 +1064,44 @@ function setTable(data) {
             }
             , {
                 field: 'wancheng',
-                title: '订单状态',
+                title: '完成状态',
                 align: 'center',
                 sortable: true,
-                width: 140,
+                width: 180,
+                formatter: function (value, row, index) {
+                    if (value == null) {
+                        value = '';
+                    }
+                    $(document).ready(function() {
+                        $('#wancheng'+index).change(function() {
+                            var selectedValue = $(this).val();
+                            let rows = getTableSelection("#ddxdTable");
+
+                            $.each(rows, function (index, row) {
+                                num = row.data.djbh;
+                            })
+                            $ajax({
+                                type: 'post',
+                                url: '/ddxd/updatewc',
+                                data:{
+                                    wancheng:selectedValue,
+                                    djbh:num
+                                }
+                            })
+                            alert("修改成功");
+                        })
+                    })
+                    return "<select id='wancheng" + index + "' oninput='javascript:columnUpd(" + index + "," + "\"wancheng\"" + ")' placeholder='完成状态' type='text' class='form-control'  value='" + value + "'>" +
+                        "<option value=''>--请选择完成状态--</option>" +
+                        "<option value='已审验'>已审验</option>" +
+                        "<option value='未审验'>未审验</option>" +
+                        "<option value='优先处理'>优先处理</option>" +
+                        "<option value='加工完成'>加工完成</option>" +
+                        "<option value='正在加工'>正在加工</option>" +
+                        "<option value='完成'>完成</option>" +
+                        "</select>"
+                    document.getElementById("wancheng" +index).value=res.data[0].wancheng
+                }
             }, {
                 field: 'je',
                 title: '订单总金额',

@@ -306,4 +306,28 @@ public class UserInfoController {
             return ResultInfo.error("错误!");
         }
     }
+
+
+    @RequestMapping("/gys")
+    public ResultInfo gys() {
+        try {
+            List<UserInfo> gys = userInfoService.GYS();
+            return ResultInfo.success("获取成功", gys);
+        } catch (Exception e) {
+            e.printStackTrace();
+            log.error("获取失败：{}", e.getMessage());
+            return ResultInfo.error("错误!");
+        }
+    }
+    @RequestMapping("/gzry")
+    public ResultInfo gzry() {
+        try {
+            List<UserInfo> gzry = userInfoService.gzry();
+            return ResultInfo.success("获取成功", gzry);
+        } catch (Exception e) {
+            e.printStackTrace();
+            log.error("获取失败：{}", e.getMessage());
+            return ResultInfo.error("错误!");
+        }
+    }
 }

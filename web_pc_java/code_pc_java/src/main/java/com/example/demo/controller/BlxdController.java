@@ -4,10 +4,7 @@ import com.example.demo.entity.UserInfo;
 import com.example.demo.entity.blxd;
 import com.example.demo.service.BlxdService;
 import com.example.demo.service.UserInfoService;
-import com.example.demo.util.DecodeUtil;
-import com.example.demo.util.GsonUtil;
-import com.example.demo.util.ResultInfo;
-import com.example.demo.util.SessionUtil;
+import com.example.demo.util.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -16,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpSession;
+import java.util.HashMap;
 import java.util.List;
 
 @Slf4j
@@ -109,5 +107,63 @@ public class BlxdController {
             return ResultInfo.error("修改失败");
         }
     }
+    @RequestMapping(value = "/updatesc", method = RequestMethod.POST)
+    public ResultInfo updatesc(HttpSession session,String shengchan ,String orderNumber) {
+        UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
+        if(userInfo.getPower().equals("玻璃厂") || userInfo.getPower().equals("客户")){
+            return ResultInfo.error(401, "无权限");
+        }
+
+        try {
+            blxdService.updatesc(shengchan,orderNumber);
+            return ResultInfo.success("成功！",null);
+        } catch (Exception e) {
+            e.printStackTrace();
+            log.error("修改失败：{}", e.getMessage());
+            log.error("参数：{}", userInfo);
+            return ResultInfo.error("修改失败");
+        }
+    }
+
+    @RequestMapping(value = "/updategys", method = RequestMethod.POST)
+    public ResultInfo updategys(HttpSession session,String gongyingshang ,String orderNumber) {
+        UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
+        if(userInfo.getPower().equals("玻璃厂") || userInfo.getPower().equals("客户")){
+            return ResultInfo.error(401, "无权限");
+        }
+
+        try {
+            blxdService.updategys(gongyingshang,orderNumber);
+            return ResultInfo.success("成功！",null);
+        } catch (Exception e) {
+            e.printStackTrace();
+            log.error("修改失败：{}", e.getMessage());
+            log.error("参数：{}", userInfo);
+            return ResultInfo.error("修改失败");
+        }
+    }
+
+    @RequestMapping("/add")
+    public ResultInfo add(@RequestBody HashMap map, HttpSession session) {
+        UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
+        GsonUtil gsonUtil = new GsonUtil(GsonUtil.toJson(map));
+        try {
+//            lkxd lkxd = GsonUtil.toEntity(gsonUtil.get("addInfo"), lkxd.class);
+            blxd blxd = GsonUtil.toEntity(gsonUtil.get("addInfo"), blxd.class);
+//            lkxd = lkxdService.add(lkxd);
+            blxd = blxdService.add(blxd);
+            if (StringUtils.isNotNull(blxd)) {
+                return ResultInfo.success("添加成功", blxd);
+            } else {
+                return ResultInfo.success("添加失败", null);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            log.error("添加失败：{}", e.getMessage());
+            log.error("参数：{}", map);
+            return ResultInfo.error("添加失败");
+        }
+    }
+
 
 }

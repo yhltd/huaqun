@@ -13,7 +13,7 @@ import java.util.List;
 public interface LkxdMapper extends BaseMapper<lkxd> {
 
 //    @Select("select * from lvkuang_xiadan order by order_number DESC")
-    @Select("select customer_name_renyuan,insert_date,customer_name,case when isnull(wancheng,'未审验') = '' then '未审验' else isnull(wancheng,'未审验') end as wancheng,order_number,kailiao,shunxu,zuzhuang,baozhuang,customer_number,install_address,phone,shipping_address,pinyin,shendan,case case when isnull(wancheng,'未审验') = '' then '未审验' else isnull(wancheng,'未审验') end when '未审验' then '1' when '优先处理' then '2' when '已审验' then '3' when '正在加工' then '4' when '加工完成' then '5' when '完成' then '6' else shunxu end as paixu from lvkuang_xiadan group by customer_name_renyuan,insert_date,customer_name,wancheng,order_number,kailiao,shunxu,zuzhuang,baozhuang,customer_number,install_address,phone,shipping_address,pinyin,shendan order by paixu,order_number desc")
+    @Select("select customer_name_renyuan,insert_date,customer_name,case when isnull(wancheng,'未审验') = '' then '未审验' else isnull(wancheng,'未审验') end as wancheng,order_number,kailiao,shunxu,zuzhuang,baozhuang,customer_number,install_address,phone,shipping_address,pinyin,shendan,case case when isnull(wancheng,'未审验') = '' then '未审验' else isnull(wancheng,'未审验') end when '未审验' then '1' when '优先处理' then '2' when '已审验' then '3' when '正在加工' then '4' when '加工完成' then '5' when '完成' then '6' else shunxu end as paixu from lvkuang_xiadan group by customer_name_renyuan,insert_date,customer_name,wancheng,order_number,kailiao,shunxu,zuzhuang,baozhuang,customer_number,install_address,phone,shipping_address,pinyin,shendan,id order by paixu,order_number desc")
 //    @Select("select customer_name_renyuan,insert_date,customer_name,wancheng,order_number,kailiao,shunxu,zuzhuang,baozhuang,customer_number,install_address,phone,shipping_address,pinyin,shendan,wancheng,shunxu as paixu from lvkuang_xiadan group by customer_name_renyuan,insert_date,customer_name,wancheng,order_number,kailiao,shunxu,zuzhuang,baozhuang,customer_number,install_address,phone,shipping_address,pinyin,shendan order by paixu,order_number desc;select insert_date,order_number,customer_name,num,'' as num,height,width,'正在加工' as jiagong,'' as shendan from lvkuang_xiadan where height != ''")
     List<lkxd> getList();
 
@@ -45,7 +45,15 @@ public interface LkxdMapper extends BaseMapper<lkxd> {
     @Select("select * from lvkuang_xiadan where customer_name=#{customerName} and insert_date=#{insertDate} and order_number=#{orderNumber}")
     List<lkxd> getListByKhmc(String customerName,String insertDate,String orderNumber);
 
-    @Update("update lvkuang_xiadan set wancheng = #{wancheng} where id=#{id}")
-    boolean updatewc(String wancheng,int id);
+    @Update("update lvkuang_xiadan set wancheng = #{wancheng} where order_number=#{orderNumber}")
+    boolean updatewc(String wancheng,String orderNumber);
+    @Update("update lvkuang_xiadan set shunxu = #{shunxu} where order_number=#{orderNumber}")
+    boolean shunxu(String shunxu,String orderNumber);
+    @Update("update lvkuang_xiadan set kailiao = #{kailiao} where order_number=#{orderNumber}")
+    boolean kailiao(String kailiao,String orderNumber);
+    @Update("update lvkuang_xiadan set zuzhuang = #{zuzhuang} where order_number=#{orderNumber}")
+    boolean zuzhuang(String zuzhuang,String orderNumber);
+    @Update("update lvkuang_xiadan set baozhuang = #{baozhuang} where order_number=#{orderNumber}")
+    boolean baozhuang(String baozhuang,String orderNumber);
 
 }

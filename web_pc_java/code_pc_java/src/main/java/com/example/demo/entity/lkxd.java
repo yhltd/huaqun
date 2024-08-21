@@ -328,7 +328,7 @@ public class lkxd {
     /***
      * 包装
      */
-    private String baoZhuang;
+    private String baozhuang;
     /**
      * 完成状态
      */
@@ -337,4 +337,7 @@ public class lkxd {
      * 组装
      */
     private String zuzhuang;
+
+    private String shunxu;
+    private String kailiao;
 }

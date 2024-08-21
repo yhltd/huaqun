@@ -60,7 +60,8 @@ public interface DdxdMapper extends BaseMapper<ddxd> {
     @Update("update lightbelt set fj = #{fj},gh = #{gh},ddcd = #{ddcd},sl = #{sl},cxdk = #{cxdk},lcys = #{lcys},gy = #{gy},gl = #{gl},bz = #{bz},dj = #{dj},je = #{je},chicun = #{chicun},cxdk_right = #{cxdkRight},sum_money = #{summoney},wcsj = #{wcsj},luruyuan = #{luruyuan},wancheng = #{wancheng} where id=#{id}")
     boolean update1(String fj, String gh, String ddcd, String sl, String cxdk, String lcys, String gy, String gl, String bz, String dj, String je, String chicun, String cxdkRight, String summoney, String wcsj, String luruyuan, String wancheng, int id);
 
-
+    @Update("update lightbelt set wancheng = #{wancheng} where djbh=#{djbh}")
+    boolean updatewc(String wancheng,String djbh);
 
 
 

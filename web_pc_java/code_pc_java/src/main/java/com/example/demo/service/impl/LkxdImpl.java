@@ -56,8 +56,8 @@ public class LkxdImpl extends ServiceImpl<LkxdMapper, lkxd> implements LkxdServi
         return save(lkxd) ? lkxd : null;
     }
 
-    @Override
-    public blxd addBlxd(blxd blxd) { return save(blxd) ? blxd : null; }
+//    @Override
+//    public blxd addBlxd(blxd blxd) { return save(lkxd) ? blxd : null; }
 
     @Override
     public List<lkxd> getListByKhmc(String customerName,String insertDate,String orderNumber) {
@@ -65,8 +65,28 @@ public class LkxdImpl extends ServiceImpl<LkxdMapper, lkxd> implements LkxdServi
     }
 
     @Override
-    public boolean updatewc(String wancheng, int id) {
-        return lkxdMapper.updatewc(wancheng,id);
+    public boolean updatewc(String wancheng, String orderNumber) {
+        return lkxdMapper.updatewc(wancheng,orderNumber);
+    }
+
+    @Override
+    public boolean kailiao(String kailiao, String orderNumber) {
+        return lkxdMapper.kailiao(kailiao,orderNumber);
+    }
+
+    @Override
+    public boolean zuzhuang(String zuzhuang, String orderNumber) {
+        return lkxdMapper.zuzhuang(zuzhuang,orderNumber);
+    }
+
+    @Override
+    public boolean baozhuang(String baozhuang, String orderNumber) {
+        return lkxdMapper.baozhuang(baozhuang,orderNumber);
+    }
+
+    @Override
+    public boolean shunxu(String shunxu, String orderNumber) {
+        return lkxdMapper.shunxu(shunxu,orderNumber);
     }
 
 }
