@@ -343,15 +343,15 @@ public class XlpzController {
             return ResultInfo.error("错误!");
         }
     }
-    @RequestMapping("/ghxl")
-    public ResultInfo ghxl() {
-        try {
-            List<xlpz> ghxl = xlpzService.ghxl();
-            return ResultInfo.success("获取成功", ghxl);
-        } catch (Exception e) {
-            e.printStackTrace();
-            log.error("获取失败：{}", e.getMessage());
-            return ResultInfo.error("错误!");
-        }
-    }
+//    @RequestMapping("/ghxl")
+//    public ResultInfo ghxl() {
+//        try {
+//            List<xlpz> ghxl = xlpzService.ghxl();
+//            return ResultInfo.success("获取成功", ghxl);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            log.error("获取失败：{}", e.getMessage());
+//            return ResultInfo.error("错误!");
+//        }
+//    }
 }

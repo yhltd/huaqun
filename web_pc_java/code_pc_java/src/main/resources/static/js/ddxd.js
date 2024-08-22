@@ -62,22 +62,22 @@ function getLxc() {
         }
     })
 }
-function getGh() {
-    $ajax({
-        type: 'post',
-        url: '/xlpz/ghxl',
-    }, false, '', function (res) {
-        if (res.code == 200) {
-            var item = "";
-            select_gh = res.data
-            for (var i = 0; i < res.data.length; i++) {
-                // $("#add-gh").append("<option>" + res.data[i].lxc + "</option>");
-                $("#update-gh").append("<option>" + res.data[i].ghxl + "</option>");
-                item = "<option value=\"" + res.data[i].ghxl + "\">" + res.data[i].ghxl + "</option>"
-            }
-        }
-    })
-}
+// function getGh() {
+//     $ajax({
+//         type: 'post',
+//         url: '/xlpz/ghxl',
+//     }, false, '', function (res) {
+//         if (res.code == 200) {
+//             var item = "";
+//             select_gh = res.data
+//             for (var i = 0; i < res.data.length; i++) {
+//                 // $("#add-gh").append("<option>" + res.data[i].lxc + "</option>");
+//                 $("#update-gh").append("<option>" + res.data[i].ghxl + "</option>");
+//                 item = "<option value=\"" + res.data[i].ghxl + "\">" + res.data[i].ghxl + "</option>"
+//             }
+//         }
+//     })
+// }
 
 function getDy() {
     $ajax({
@@ -471,7 +471,7 @@ $(function () {
     getLcys();
     getDy();
     hqxlGy();
-    getGh();
+    // getGh();
     getKg();
     getPj();
     // this_kuan = $('table').width();
@@ -1026,8 +1026,8 @@ function setTable(data) {
         sortStable: true,
         classes: 'table table-hover text-nowrap table table-bordered',
         idField: 'id',
-        pagination: true,
-        pageSize: 15,//单页记录数
+        pagination: false,
+        // pageSize: 15,//单页记录数
         clickToSelect: true,
         locale: 'zh-CN',
         toolbar: '#table-toolbar',
@@ -1366,8 +1366,8 @@ function setTable2(data) {
         sortStable: true,
         classes: 'table table-striped table-hover',
         idField: 'id',
-        pagination: true,
-        pageSize: 15,//单页记录数
+        pagination: false,
+        // pageSize: 15,//单页记录数
         clickToSelect: true,
         locale: 'zh-CN',
         toolbarAlign: 'left',

@@ -2816,6 +2816,21 @@ function setTable(data) {
                 align: 'center',
                 sortable: true,
                 width: 130,
+                // formatter: function (value, row, index) {
+                //     if (value == null) {
+                //         value = '';
+                //     }
+                //     var this_lcys = ""
+                //     var select2 = ""
+                //     for (var i = 0; i < select_lcys.length; i++) {
+                //         this_lcys = this_lcys + "<option value=\"" + select_lcys[i].lcys + "\" selected=\"selected\">" + select_lcys[i].lcys + "</option>"
+                //         select2 = "<select id='lcys" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"lcys\"" + ")' placeholder='铝材颜色' type='text' class='form-control'  value='" + value + "'>"
+                //         select2 = select2 + this_lcys;
+                //         select2 = select2 + "<select/>"
+                //
+                //     }
+                //     return select2;
+                // }
             },
             {
                 field: 'orderNumber',
