@@ -65,7 +65,7 @@ public interface UserInfoMapper extends BaseMapper<UserInfo> {
     @Select("selcect name from userInfo where username=#{username}")
     String getName(String username);
 
-    @Select("select name from userInfo where power='玻璃厂' ")
+    @Select("select company from userInfo where power='玻璃厂' ")
             List<UserInfo> GYS();
     @Select("select name from userInfo where power='管理员' or power='操作员' or power='超级管理员' ")
     List<UserInfo> gzry();

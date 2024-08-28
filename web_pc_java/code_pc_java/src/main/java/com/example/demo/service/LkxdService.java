@@ -57,5 +57,7 @@ public interface LkxdService extends IService<lkxd> {
     boolean zuzhuang(String zuzhuang,String orderNumber);
     boolean baozhuang(String baozhuang,String orderNumber);
     boolean shunxu(String shunxu,String orderNumber);
-
+    boolean deletedh(String orderNumber);
+    List<lkxd> getListON(String orderNumber);
+    String getListbyon(String orderNumber);
 }

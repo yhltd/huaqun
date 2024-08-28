@@ -32,10 +32,10 @@ public class LkxdImpl extends ServiceImpl<LkxdMapper, lkxd> implements LkxdServi
     }
 
     @Override
-    public List<lkxd> queryList(String customerNumber, String customerName,String installAddress,String wancheng,String ksinsertDate,
+    public List<lkxd> queryList(String customerNumber, String customerName, String installAddress, String wancheng, String ksinsertDate,
                                 String jsinsertDate) {
         return lkxdMapper.queryList(customerNumber, customerName, installAddress, wancheng, ksinsertDate,
-                 jsinsertDate);
+                jsinsertDate);
     }
 
     @Override
@@ -44,7 +44,9 @@ public class LkxdImpl extends ServiceImpl<LkxdMapper, lkxd> implements LkxdServi
     }
 
     @Override
-    public boolean update(lkxd lkxd) { return updateById(lkxd); }
+    public boolean update(lkxd lkxd) {
+        return updateById(lkxd);
+    }
 
     @Override
     public boolean delete(List<Integer> idList) {
@@ -60,33 +62,48 @@ public class LkxdImpl extends ServiceImpl<LkxdMapper, lkxd> implements LkxdServi
 //    public blxd addBlxd(blxd blxd) { return save(lkxd) ? blxd : null; }
 
     @Override
-    public List<lkxd> getListByKhmc(String customerName,String insertDate,String orderNumber) {
-        return lkxdMapper.getListByKhmc(customerName,insertDate,orderNumber);
+    public List<lkxd> getListByKhmc(String customerName, String insertDate, String orderNumber) {
+        return lkxdMapper.getListByKhmc(customerName, insertDate, orderNumber);
     }
 
     @Override
     public boolean updatewc(String wancheng, String orderNumber) {
-        return lkxdMapper.updatewc(wancheng,orderNumber);
+        return lkxdMapper.updatewc(wancheng, orderNumber);
     }
 
     @Override
     public boolean kailiao(String kailiao, String orderNumber) {
-        return lkxdMapper.kailiao(kailiao,orderNumber);
+        return lkxdMapper.kailiao(kailiao, orderNumber);
     }
 
     @Override
     public boolean zuzhuang(String zuzhuang, String orderNumber) {
-        return lkxdMapper.zuzhuang(zuzhuang,orderNumber);
+        return lkxdMapper.zuzhuang(zuzhuang, orderNumber);
     }
 
     @Override
     public boolean baozhuang(String baozhuang, String orderNumber) {
-        return lkxdMapper.baozhuang(baozhuang,orderNumber);
+        return lkxdMapper.baozhuang(baozhuang, orderNumber);
     }
 
     @Override
     public boolean shunxu(String shunxu, String orderNumber) {
-        return lkxdMapper.shunxu(shunxu,orderNumber);
+        return lkxdMapper.shunxu(shunxu, orderNumber);
+    }
+
+    @Override
+    public boolean deletedh(String orderNumber) {
+        return lkxdMapper.deletedh(orderNumber);
+    }
+
+    @Override
+    public List<lkxd> getListON(String orderNumber) {
+        return lkxdMapper.getListON(orderNumber);
+    }
+
+    @Override
+    public String getListbyon(String orderNumber) {
+        return lkxdMapper.getListbyon(orderNumber);
     }
 
 }

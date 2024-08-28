@@ -109,7 +109,7 @@ public class LkxdController {
      * 修改
      */
     @RequestMapping(value = "/update", method = RequestMethod.POST)
-    public ResultInfo update(@RequestBody String updateJson, HttpSession session) {
+    public ResultInfo update(@RequestBody  String updateJson, HttpSession session) {
         UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
         if(userInfo.getPower().equals("玻璃厂")){
             return ResultInfo.error(401, "无权限");
@@ -117,12 +117,12 @@ public class LkxdController {
         lkxd lkxd = null;
         try {
             lkxd = DecodeUtil.decodeToJson(updateJson, lkxd.class);
-            String wancheng=lkxdService.getListOrderNumber(lkxd.getId());
+            String wancheng=lkxdService.getListbyon(lkxd.getOrderNumber());
             if(!wancheng.equals("已审验") && !wancheng.equals("完成") || userInfo.getPower().equals("超级管理员") || userInfo.getPower().equals("管理员")) {
                 if (lkxdService.update(lkxd)) {
-                    return ResultInfo.success("修改成功", lkxd);
+                    return ResultInfo.success("修改成功", null);
                 } else {
-                    return ResultInfo.success("修改失败", lkxd);
+                    return ResultInfo.success("修改失败", null);
                 }
             }else{
             return ResultInfo.error("修改失败订单状态已完成或已审验");
@@ -301,6 +301,33 @@ public class LkxdController {
         }
     }
 
+    @RequestMapping(value = "/deletedh")
+    public ResultInfo deletedh(HttpSession session,String orderNumber) {
+        UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
+        if (!(userInfo.getPower().equals("管理员") || userInfo.getPower().equals("超级管理员"))) {
+            return ResultInfo.error(401, "无权限");
+        }
+        try {
+            lkxdService.deletedh(orderNumber);
+            return ResultInfo.success("删除成功", null);
+        }catch (Exception e) {
+            e.printStackTrace();
+            log.error("删除失败：{}", e.getMessage());
+            return ResultInfo.error("删除失败");
+        }
+    }
+    @RequestMapping(value = "/geton")
+    public ResultInfo geton(HttpSession session,String orderNumber) {
+        UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
 
+        try {
+            List<lkxd> getList =lkxdService.getListON(orderNumber);
+            return ResultInfo.success("成功", getList);
+        }catch (Exception e) {
+            e.printStackTrace();
+            log.error("删除失败：{}", e.getMessage());
+            return ResultInfo.error("删除失败");
+        }
+    }
 
 }

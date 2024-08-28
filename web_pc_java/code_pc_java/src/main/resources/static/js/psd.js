@@ -35,7 +35,9 @@ function getList() {
                 document.getElementById("update-wancheng").disabled = true;
                 document.getElementById("update-shoukuan").disabled = true;
                 document.getElementById("update-kucun").hidden = true;
-
+                document.getElementById("add-shoukuan").disabled = true;
+                document.getElementById("add-wancheng").disabled = true;
+                document.getElementById("ukc").hidden = true;
                 document.getElementById("a-psi1").hidden = true;
                 document.getElementById("a-phi2").hidden = true;
                 document.getElementById("a-phi1").hidden = true;
@@ -3048,7 +3050,8 @@ function getNumbern() {
             length = (length + 1);
         }
         console.log(length)
-        djbh = "LK" + date.getFullYear() + (month) + (day) + length;
+        // djbh = "LK" + date.getFullYear() + (month) + (day) + length;
+        djbh = "PS" + date.getFullYear() + (month) + (day) + length;
         console.log(djbh)
     })
     console.log(djbh)

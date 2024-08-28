@@ -11,7 +11,7 @@ function getgys() {
             for (var i = 0; i < res.data.length; i++) {
                 var item = "";
                 select_gys = res.data;
-                item = "<option value=\"" + res.data[i].name + "\">" + res.data[i].name + "</option>"
+                item = "<option value=\"" + res.data[i].company + "\">" + res.data[i].company + "</option>"
 
             }
         }
@@ -299,11 +299,13 @@ function setTable(data) {
                     var this_gys = ""
                     var this_gys1 = ""
                     var select2 = ""
+                    // this_gys1 = this_gys1 + "\"<option value=''>--请选择供应商--</option>\" +"
                     for (var i = 0; i < select_gys.length; i++) {
-                        this_gys = this_gys + "<option value=\"" + select_gys[i].name + "\" selected=\"selected\">" + select_gys[i].name + "</option>"
-                        this_gys1 = this_gys1 + "\"<option value=''>--请选择供应商--</option>\" +"
+                        this_gys = this_gys + "<option value=\"" + select_gys[i].company + "\" selected=\"selected\">" + select_gys[i].company + "</option>"
+
                         select2 = "<select id='gongyingshang" + index + "' oninput='javascript:columnUpd(" + index + "," + "\"gongyingshang\"" + ")' placeholder='供应商' type='text' class='form-control'  value='" + value + "'>"
-                        select2 = select2 + this_gys1 + this_gys;
+                        select2 = select2 + this_gys;
+                        // +this_gys1
                         select2 = select2 + "<select/>"
 
                     }
