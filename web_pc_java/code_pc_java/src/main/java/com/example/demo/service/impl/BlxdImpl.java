@@ -19,8 +19,11 @@ public class BlxdImpl extends ServiceImpl<BlxdMapper, blxd> implements BlxdServi
     @Override
     public List<blxd> getList() { return blxdMapper.getList(); }
 
-    @Override
-    public List<blxd> getListByBoli() { return blxdMapper.getListByBoli(); }
+//    @Override
+//    public List<blxd> getListByBoli() { return blxdMapper.getListByBoli(); }
+@Override
+public List<blxd> getListByBoli(String gongyingshang) { return blxdMapper.getListByBoli(gongyingshang); }
+
 
     @Override
     public List<blxd> getQita() { return blxdMapper.getQita(); }
@@ -28,6 +31,10 @@ public class BlxdImpl extends ServiceImpl<BlxdMapper, blxd> implements BlxdServi
     @Override
     public List<blxd> queryList(String pinyin, String shengchan,String ksxdrq,String jsxdrq) {
         return blxdMapper.queryList(pinyin, shengchan,ksxdrq,jsxdrq);
+    }
+    @Override
+    public List<blxd> queryByBoli(String pinyin, String shengchan,String ksxdrq,String jsxdrq,String gongyingshang) {
+        return blxdMapper.queryByBoli(pinyin, shengchan,ksxdrq,jsxdrq,gongyingshang);
     }
 
 //    @Override

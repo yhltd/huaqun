@@ -46,8 +46,13 @@ public class DdxdImpl extends ServiceImpl<DdxdMapper, ddxd> implements DdxdServi
 
     @Override
     public List<ddxd> queryList(String khmc, String ddh, String ksxdrq, String jsxdrq, String azdz) {
+        return ddxdMapper.queryList1(khmc, ddh, ksxdrq, jsxdrq, azdz);
+    }
+    @Override
+    public List<ddxd> queryList1(String khmc, String ddh, String ksxdrq, String jsxdrq, String azdz) {
         return ddxdMapper.queryList(khmc, ddh, ksxdrq, jsxdrq, azdz);
     }
+
 
     @Override
     public boolean update(ddxd ddxd) {
@@ -82,6 +87,11 @@ public class DdxdImpl extends ServiceImpl<DdxdMapper, ddxd> implements DdxdServi
     @Override
     public boolean updatewc(String wancheng, String djbh) {
         return ddxdMapper.updatewc(wancheng,djbh);
+    }
+
+    @Override
+    public void delete1(int id11) {
+        ddxdMapper.delete1(id11);
     }
 
 

@@ -209,8 +209,10 @@ List<xlpz> hqxllxc();
     @Select("select DISTINCT jlpp from dropdowntable where jlpp != ''")
     List<xlpz> hqxlJlpp();
 
-    @Select("select DISTINCT gy from dropdowntablewhere gy != ''")
-    List<xlpz> hqxlgy();
+//    @Select("select DISTINCT gy from dropdowntablewhere gy != ''")
+//    List<xlpz> hqxlgy();
+@Select("select DISTINCT gy from dropdowntable where gy != ''")
+List<xlpz> hqxlgy();
 
     @Select("select DISTINCT quyu from dropdowntable where quyu != ''")
     List<xlpz> hqquyu();

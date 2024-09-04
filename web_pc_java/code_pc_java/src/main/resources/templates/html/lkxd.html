@@ -2399,11 +2399,19 @@
 
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/table.css">
+    <link rel="stylesheet" href="../css/jindutiao.css">
     <script type="text/javascript" src="../js/main.js"></script>
     <script type="text/javascript" src="../js/lkxd.js"></script>
+    <style>
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
 </head>
 
 <body class="pt-2">
+
 <div class="background-image">
     <img src="../img/时间.png" class="img1">
     <span style="color: black; font-size: 20px;margin-left: 20px" id="now_time"></span>
@@ -2494,6 +2502,7 @@
             <i class="bi bi-pencil-square icon"></i>
             查看修改
         </button>
+
         <span style="border-right: 20px solid white"></span>
         <button id="delete-btn" class="btn btn-primary"
                 style="border-radius:5px;background-color: #ff0000;border: 1px solid #ff0000">
@@ -2507,6 +2516,9 @@
         </button>
         <span style="border-right: 20px solid white"></span>
         <a class="btn btn-primary" style="color: white;padding-top: 8px;border-radius:5px;">当前页：铝框下单</a>
+        <div id="loading-overlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); display: none; justify-content: center; align-items: center;">
+            <div style="border: 4px solid #f3f3f3; border-radius: 50%; border-top: 4px solid #3498db; width: 50px; height: 50px; animation: spin 2s linear infinite;"></div>
+        </div>
     </div>
 </div>
 

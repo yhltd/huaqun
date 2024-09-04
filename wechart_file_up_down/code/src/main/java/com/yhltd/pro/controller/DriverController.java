@@ -44,25 +44,74 @@ public class DriverController {
     }
 
     /**
-     * 上传
+     * 上传因图片名称不匹配注释
+     *
+     * @return ResultInfo
+     */
+//    @RequestMapping("/upload")
+//    @PostMapping("/upload")
+////    @CrossOrigin
+//    public ResultInfo upload(HttpServletRequest request, MultipartFile file) throws IOException {
+////        System.out.println("-------" + file);
+////        System.out.println("/////////////////" + request);
+//        //获取原始名称
+//        long kongjian = Long.parseLong(request.getParameter("kongjian"));
+//        String thisPath = request.getParameter("path");
+//        String fileName = file.getOriginalFilename();
+//        //文件保存路径
+////        String filePath = "D:/coach" + thisPath;
+//        String filePath = "C:/iis_jxc/sharepic_path" + thisPath;
+//        //文件重命名,防止重复
+//        filePath = filePath + fileName;
+//        //文件对象
+//        File dest = new File(filePath);
+//        //判断路径是否存在,如果不存在则创建
+//        if (!dest.getParentFile().exists()) {
+//            dest.getParentFile().mkdir();
+//        }
+//        try {
+////            Path folder = Paths.get("D:/coach" + thisPath);
+//            Path folder = Paths.get("C:/iis_jxc/sharepic_path" + thisPath);
+//            long size = Files.walk(folder)
+//                    .filter(path -> path.toFile().isFile())
+//                    .mapToLong(path -> path.toFile().length())
+//                    .sum();
+//            size = size / 1073741824;
+//            if(size >= kongjian){
+//                return ResultInfo.success("存储空间不足", filePath);
+//            }else{
+//                //保存到服务器中
+//                file.transferTo(dest);
+//                return ResultInfo.success("上传成功", filePath);
+//            }
+//        } catch (IOException e) {
+//            throw new RuntimeException(e);
+//        }
+//    }
+
+
+
+
+
+    /**
+     * 上传图片名称匹配修改20240904
      *
      * @return ResultInfo
      */
 //    @RequestMapping("/upload")
     @PostMapping("/upload")
 //    @CrossOrigin
-    public ResultInfo upload(HttpServletRequest request, MultipartFile file) throws IOException {
-//        System.out.println("-------" + file);
-//        System.out.println("/////////////////" + request);
+    public ResultInfo upload(HttpServletRequest request, @RequestParam("file") MultipartFile file) throws IOException {
         //获取原始名称
         long kongjian = Long.parseLong(request.getParameter("kongjian"));
         String thisPath = request.getParameter("path");
         String fileName = file.getOriginalFilename();
+        String newFileName = request.getParameter("name");
         //文件保存路径
-//        String filePath = "D:/coach" + thisPath;
         String filePath = "C:/iis_jxc/sharepic_path" + thisPath;
         //文件重命名,防止重复
-        filePath = filePath + fileName;
+//        filePath = filePath + fileName;
+        filePath = filePath + newFileName;
         //文件对象
         File dest = new File(filePath);
         //判断路径是否存在,如果不存在则创建
@@ -88,6 +137,7 @@ public class DriverController {
             throw new RuntimeException(e);
         }
     }
+
 
 
     /**

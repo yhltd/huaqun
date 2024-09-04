@@ -3,6 +3,7 @@ package com.example.demo.service;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.example.demo.entity.ddxd;
 import com.example.demo.entity.psd;
+import org.apache.ibatis.annotations.Update;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -19,7 +20,7 @@ public interface PsdService extends IService<psd> {
     /**
      * 根据姓名和部门查询
      */
-    List<psd> queryList(String ordernumber, String customername, String quyu, String anzhuangaddress, String customerorder, String songhuodanhao,String ksinsertDate,
+    List<psd> queryList(String ordernumber, String customername, String quyu, String anzhuangaddress, String customerorder,String ksinsertDate,
                         String jsinsertDate,
                         String wancheng,
                         String kucun);
@@ -50,5 +51,13 @@ public interface PsdService extends IService<psd> {
     List<psd> queryList1(String ksinsertDate,String jsinsertDate);
 
     List<psd> getListByPsd(String customerName);
+
+    boolean upwc(String wancheng, String orderNumber);
+
+    boolean upsk(String shoukuan, String orderNumber);
+
+    boolean upqy(String quyu, String orderNumber);
+
+    boolean upmy(String money, String orderNumber);
 
 }

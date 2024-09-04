@@ -31,11 +31,11 @@ public class PsdImpl extends ServiceImpl<PsdMapper, psd> implements PsdService {
     }
 
     @Override
-    public List<psd> queryList(String orderNumber, String customerName, String quyu, String anzhuangAddress, String customerOrder, String songhuoDanhao, String ksinsertDate,
+    public List<psd> queryList(String orderNumber, String customerName, String quyu, String anzhuangAddress, String customerOrder, String ksinsertDate,
                                String jsinsertDate,
                                String wancheng,
                                String kucun) {
-        return psdMapper.queryList(orderNumber, customerName, quyu, anzhuangAddress, customerOrder, songhuoDanhao,
+        return psdMapper.queryList(orderNumber, customerName, quyu, anzhuangAddress, customerOrder,
                 ksinsertDate,
                 jsinsertDate,
                 wancheng,
@@ -64,5 +64,25 @@ public class PsdImpl extends ServiceImpl<PsdMapper, psd> implements PsdService {
 
     @Override
     public List<psd> getListByPsd(String customerName) {return psdMapper.getListByPsd(customerName);}
+
+    @Override
+    public boolean upwc(String wancheng, String orderNumber) {
+        return psdMapper.upwc(wancheng, orderNumber);
+    }
+
+    @Override
+    public boolean upsk(String shoukuan, String orderNumber) {
+        return psdMapper.upsk(shoukuan, orderNumber);
+    }
+
+    @Override
+    public boolean upqy(String quyu, String orderNumber) {
+        return psdMapper.upqy(quyu, orderNumber);
+    }
+
+    @Override
+    public boolean upmy(String money, String orderNumber) {
+        return psdMapper.upmy(money, orderNumber);
+    }
 
 }

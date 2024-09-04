@@ -55,8 +55,12 @@ public class DdxdController {
 //                List<ddxd> getListByKeHu = ddxdService.getListByKeHu(khmc);
 //                return ResultInfo.success("获取成功", getListByKeHu);
 //            }else{
+//            if (userInfo.getPower().equals("客户")) {
+//                List<ddxd> getList = ddxdService.getListByName(userInfo.getName());
+//                return ResultInfo.success("获取成功", getList);
+//            }
             if (userInfo.getPower().equals("客户")) {
-                List<ddxd> getList = ddxdService.getListByName(userInfo.getName());
+                List<ddxd> getList = ddxdService.getListByName(userInfo.getCompany());
                 return ResultInfo.success("获取成功", getList);
             }
             List<ddxd> getList = ddxdService.getList();
@@ -111,6 +115,21 @@ public class DdxdController {
         }
         try {
             List<ddxd> list = ddxdService.queryList(khmc, ddh, ksxdrq, jsxdrq, azdz);
+            return ResultInfo.success("获取成功", list);
+        } catch (Exception e) {
+            e.printStackTrace();
+            log.error("获取失败：{}", e.getMessage());
+            return ResultInfo.error("错误!");
+        }
+    }
+    @RequestMapping("/queryList1")
+    public ResultInfo queryList1(String khmc, String ddh, String ksxdrq, String jsxdrq, String azdz, HttpSession session) {
+        UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
+        if (userInfo.getPower().equals("玻璃厂")) {
+            return ResultInfo.error(401, "无权限");
+        }
+        try {
+            List<ddxd> list = ddxdService.queryList1(khmc, ddh, ksxdrq, jsxdrq, azdz);
             return ResultInfo.success("获取成功", list);
         } catch (Exception e) {
             e.printStackTrace();
@@ -333,7 +352,7 @@ public class DdxdController {
 
     @RequestMapping(value = "/update1", method = RequestMethod.POST)
     public ResultInfo update1(HttpSession session,  String fj, String gh, String ddcd, String sl, String cxdk, String lcys, String gy
-            , String gl, String bz, String dj, String je, String chicun, String cxdkRight, String summoney, String wcsj, String luruyuan,String wancheng, int id) {
+            , String gl, String bz, String dj, String je, String chicun, String cxdkRight, String summoney, String wcsj, String luruyuan,String wancheng,int id11, int id) {
         UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
 //        --------------权限判断有问题
 //        ddxd ddxd = null;
@@ -342,8 +361,16 @@ public class DdxdController {
 //            return ResultInfo.error(401, "无权限");
 //        }
         try {
-            ddxdService.update1(fj, gh, ddcd, sl, cxdk, lcys, gy, gl, bz, dj, je, chicun, cxdkRight, summoney, wcsj, luruyuan, wancheng, id);
-            return ResultInfo.success("添加成功", null);
+            if(id11==1){
+                ddxdService.update1(fj, gh, ddcd, sl, cxdk, lcys, gy, gl, bz, dj, je, chicun, cxdkRight, summoney, wcsj, luruyuan, wancheng, id);
+                return ResultInfo.success("添加成功", null);
+            }else{
+                ddxdService.delete1(id11);
+                System.out.println(id11);
+                return ResultInfo.success("shanchu", null);
+            }
+
+
         }catch (Exception e) {
             e.printStackTrace();
             log.error("修改失败：{}", e.getMessage());

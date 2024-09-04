@@ -17,9 +17,11 @@ public interface LkxdMapper extends BaseMapper<lkxd> {
 //    @Select("select customer_name_renyuan,insert_date,customer_name,wancheng,order_number,kailiao,shunxu,zuzhuang,baozhuang,customer_number,install_address,phone,shipping_address,pinyin,shendan,wancheng,shunxu as paixu from lvkuang_xiadan group by customer_name_renyuan,insert_date,customer_name,wancheng,order_number,kailiao,shunxu,zuzhuang,baozhuang,customer_number,install_address,phone,shipping_address,pinyin,shendan order by paixu,order_number desc;select insert_date,order_number,customer_name,num,'' as num,height,width,'正在加工' as jiagong,'' as shendan from lvkuang_xiadan where height != ''")
     List<lkxd> getList();
 
-    @Select("select * from lvkuang_xiadan where customer_name=#{customerName} order by order_number DESC")
-//    @Select("select customer_name_renyuan,insert_date,customer_name,wancheng,order_number,kailiao,shunxu,zuzhuang,baozhuang,customer_number,install_address,phone,shipping_address,pinyin,shendan,wancheng,shunxu as paixu from lvkuang_xiadan group by customer_name_renyuan,insert_date,customer_name,wancheng,order_number,kailiao,shunxu,zuzhuang,baozhuang,customer_number,install_address,phone,shipping_address,pinyin,shendan order by paixu,order_number desc;select insert_date,order_number,customer_name,num,'' as num,height,width,'正在加工' as jiagong,'' as shendan from lvkuang_xiadan where height != ''")
-    List<lkxd> getListName(String customerName);
+//    @Select("select * from lvkuang_xiadan where customer_name=#{customerName} order by order_number DESC")
+////    @Select("select customer_name_renyuan,insert_date,customer_name,wancheng,order_number,kailiao,shunxu,zuzhuang,baozhuang,customer_number,install_address,phone,shipping_address,pinyin,shendan,wancheng,shunxu as paixu from lvkuang_xiadan group by customer_name_renyuan,insert_date,customer_name,wancheng,order_number,kailiao,shunxu,zuzhuang,baozhuang,customer_number,install_address,phone,shipping_address,pinyin,shendan order by paixu,order_number desc;select insert_date,order_number,customer_name,num,'' as num,height,width,'正在加工' as jiagong,'' as shendan from lvkuang_xiadan where height != ''")
+//    List<lkxd> getListName(String customerName);
+@Select("select DISTINCT order_number, customer_name_renyuan,insert_date,customer_name,case when isnull(wancheng,'未审验') = '' then '未审验' else isnull(wancheng,'未审验') end as wancheng,kailiao,shunxu,zuzhuang,baozhuang,customer_number,install_address,phone,shipping_address,pinyin,shendan,case case when isnull(wancheng,'未审验') = '' then '未审验' else isnull(wancheng,'未审验') end when '未审验' then '1' when '优先处理' then '2' when '已审验' then '3' when '正在加工' then '4' when '加工完成' then '5' when '完成' then '6' else shunxu end as paixu from lvkuang_xiadan where customer_name = #{customerName} group by customer_name_renyuan,insert_date,customer_name,wancheng,order_number,kailiao,shunxu,zuzhuang,baozhuang,customer_number,install_address,phone,shipping_address,pinyin,shendan,id order by paixu,order_number desc")
+List<lkxd> getListName(String customerName);
 
     @Select("select wancheng from lvkuang_xiadan where id=#{id} order by order_number DESC")
     String getListOrderNumber(int id);
@@ -30,9 +32,11 @@ public interface LkxdMapper extends BaseMapper<lkxd> {
     @Select("select * from lvkuang_xiadan where order_number=#{orderNumber} order by order_number DESC")
     List<lkxd> getListON(String orderNumber);
 
-    @Select("select * from lvkuang_xiadan where customer_number like '%'+#{customerNumber}+'%' and customer_name like '%'+#{customerName}+'%'  and install_address like '%'+#{installAddress}+'%' and wancheng like'%'+#{wancheng}+'%' and insert_date >= #{ksinsertDate} and insert_date <= #{jsinsertDate} ")
-    List<lkxd> queryList(String customerNumber, String customerName, String installAddress, String wancheng, String ksinsertDate, String jsinsertDate);
+//    @Select("select * from lvkuang_xiadan where customer_number like '%'+#{customerNumber}+'%' and customer_name like '%'+#{customerName}+'%'  and install_address like '%'+#{installAddress}+'%' and wancheng like'%'+#{wancheng}+'%' and insert_date >= #{ksinsertDate} and insert_date <= #{jsinsertDate} ")
+//    List<lkxd> queryList(String customerNumber, String customerName, String installAddress, String wancheng, String ksinsertDate, String jsinsertDate);
 
+    @Select("select DISTINCT order_number, customer_name_renyuan,insert_date,customer_name,case when isnull(wancheng,'未审验') = '' then '未审验' else isnull(wancheng,'未审验') end as wancheng,kailiao,shunxu,zuzhuang,baozhuang,customer_number,install_address,phone,shipping_address,pinyin,shendan,case case when isnull(wancheng,'未审验') = '' then '未审验' else isnull(wancheng,'未审验') end when '未审验' then '1' when '优先处理' then '2' when '已审验' then '3' when '正在加工' then '4' when '加工完成' then '5' when '完成' then '6' else shunxu end as paixu from lvkuang_xiadan where customer_number like '%'+#{customerNumber}+'%' and customer_name = #{customerName} and install_address like '%'+#{installAddress}+'%' and wancheng like'%'+#{wancheng}+'%' and insert_date >= #{ksinsertDate} and insert_date <= #{jsinsertDate} group by customer_name_renyuan,insert_date,customer_name,wancheng,order_number,kailiao,shunxu,zuzhuang,baozhuang,customer_number,install_address,phone,shipping_address,pinyin,shendan,id order by paixu,order_number desc")
+    List<lkxd> queryList(String customerNumber, String customerName, String installAddress, String wancheng, String ksinsertDate, String jsinsertDate);
     @Select("select pinyin from userInfo where company like '%'+#{customerName}+'%' ")
     List<lkxd> queryPinYin(String customerName);
 

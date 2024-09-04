@@ -1,6 +1,7 @@
 var idd;
 var num = "";
 let select_gys = [];
+var gongyingshang = "";
 var j="";
 function getgys() {
     $ajax({
@@ -57,6 +58,112 @@ function getList() {
         }
     })
 }
+// function getList() {
+//     getgys();
+//     $('#pinyin').val("");
+//     $('#shengchan').val("");
+//     $ajax({
+//         type: 'post',
+//         url: '/user/getPower'
+//     }, false, '', function (res) {
+//         if (res.code == 200) {
+//             var power = res.data;
+//             if (power == "玻璃厂") {
+//                 $ajax({
+//                     type: 'post',
+//                     url: '/blxd/getListByBoli',
+//                     async: false,
+//                     data:{
+//                         gongyingshang: gongyingshang
+//                     }
+//                 }, false, '', function (res) {
+//                     if (res.code == 200) {
+//                         setTable(res.data);
+//                         for (n = 0; n < res.data.length; n++) {
+//                             if (res.code == 200) {
+//                                 setTable(res.data);
+//                                 for (n = 0; n < res.data.length; n++) {
+//                                     document.getElementById("shengchan" + n).value = res.data[n].shengchan;
+//                                     j = res.data[n].gongyingshang;
+//                                     if (j == null || j == undefined) {
+//                                         j = "请选择供应商";
+//                                         document.getElementById("gongyingshang" + n).value = j;
+//                                     } else {
+//                                         document.getElementById("gongyingshang" + n).value = j;
+//                                     }
+//                                 }
+//                                 $("#blxdTable").colResizable({
+//                                     liveDrag: true,
+//                                     gripInnerHtml: "<div class='grip'></div>",
+//                                     draggingClass: "dragging",
+//                                     resizeMode: 'fit'
+//                                 });
+//                                 for (i = 0; i <= res.data.id; i++) {
+//                                     idd = i;
+//                                 }
+//                             }
+//                         }
+//                     }
+//                 })
+//             } else {
+//                 $ajax({
+//                     type: 'post',
+//                     url: '/blxd/getList',
+//                 }, false, '', function (res) {
+//                     if (res.code == 200) {
+//                         setTable(res.data);
+//                         for (n = 0; n < res.data.length; n++) {
+//                             if (res.code == 200) {
+//                                 setTable(res.data);
+//                                 for (n = 0; n < res.data.length; n++) {
+//                                     document.getElementById("shengchan" + n).value = res.data[n].shengchan;
+//                                     j = res.data[n].gongyingshang;
+//                                     if (j == null || j == undefined) {
+//                                         j = "请选择供应商";
+//                                         document.getElementById("gongyingshang" + n).value = j;
+//                                     } else {
+//                                         document.getElementById("gongyingshang" + n).value = j;
+//                                     }
+//                                 }
+//                                 $("#blxdTable").colResizable({
+//                                     liveDrag: true,
+//                                     gripInnerHtml: "<div class='grip'></div>",
+//                                     draggingClass: "dragging",
+//                                     resizeMode: 'fit'
+//                                 });
+//                                 for (i = 0; i <= res.data.id; i++) {
+//                                     idd = i;
+//                                 }
+//                             }
+//                         }
+//                     }
+//                 })
+//             }
+//         }
+//     })
+//
+//     $ajax({
+//         type: 'post',
+//         url: '/user/getPower'
+//     }, false, '', function (res) {
+//         if (res.code == 200) {
+//             var power = res.data;
+//             if (power == "玻璃厂") {
+//                 $ajax({
+//                     type: 'post',
+//                     url: '/psd/getloginname',
+//                 }, false, '', function (res) {
+//                     if (res.code == 200) {
+//                         var this_name = res.data;
+//                         gongyingshang = this_name;
+//                     }
+//                 })
+//             }
+//         }
+//     })
+// }
+
+
 
 $(function () {
     getList();
@@ -85,11 +192,18 @@ $(function () {
         $ajax({
             type: 'post',
             url: '/blxd/queryList',
+            // data: {
+            //     pinyin: pinyin,
+            //     shengchan: shengchan,
+            //     ksxdrq: ksxdrq,
+            //     jsxdrq: jsxdrq,
+            // }
             data: {
                 pinyin: pinyin,
                 shengchan: shengchan,
                 ksxdrq: ksxdrq,
                 jsxdrq: jsxdrq,
+                gongyingshang: gongyingshang
             }
         }, true, '', function (res) {
             if (res.code == 200) {
@@ -199,6 +313,7 @@ function setTable(data) {
         toolbarAlign: 'left',
         theadClasses: "thead-light",//这里设置表头样式
         style: 'table-layout:fixed',
+        height: document.body.clientHeight * 0.60,
         columns: [
             {
                 field: '',
@@ -253,7 +368,7 @@ function setTable(data) {
                                     orderNumber: num
                                 }
                             })
-                            alert("修改成功");
+
                         })
                     })
                     return "<select id='shengchan" + index + "' oninput='javascript:columnUpd(" + index + "," + "\"shengchan\"" + ")' placeholder='完成状态' type='text' class='form-control'  value='" + value + "'>" +

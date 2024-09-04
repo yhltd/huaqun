@@ -46,9 +46,12 @@ public class LkxdController {
 //               userInfo1.setCompany(khmc);
 //               List<lkxd> getListByKeHU = lkxdService.queryPinYin(khmc);
 //               return  ResultInfo.success("获取成功",getListByKeHU);
-//            }
+////            }
+//            if(userInfo.getPower().equals("客户")) {
+//                List<lkxd> getList = lkxdService.getListName(userInfo.getName());
+//                return ResultInfo.success("获取成功", getList);
             if(userInfo.getPower().equals("客户")) {
-                List<lkxd> getList = lkxdService.getListName(userInfo.getName());
+                List<lkxd> getList = lkxdService.getListName(userInfo.getCompany());
                 return ResultInfo.success("获取成功", getList);
             } else {
                 List<lkxd> getList = lkxdService.getList();

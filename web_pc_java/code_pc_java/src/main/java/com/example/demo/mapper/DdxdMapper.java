@@ -20,8 +20,10 @@ public interface DdxdMapper extends BaseMapper<ddxd> {
     @Select("select * from lightbelt where djbh=#{djbh} order by djbh DESC")
     List<ddxd> getListdjbh(String djbh);
 
-    @Select("select * from lightbelt where khmc=#{khmc} order by djbh DESC")
-    List<ddxd> getListByName(String khmc);
+//    @Select("select * from lightbelt where khmc=#{khmc} order by djbh DESC")
+//    List<ddxd> getListByName(String khmc);
+@Select("select distinct ddh,luruyuan,xdrq,djbh,shouhuo,lxdh,shfs,azdz,khmc from lightbelt where khmc =#{khmc} order by djbh DESC")
+List<ddxd> getListByName(String khmc);
 
     @Select("select wancheng from lightbelt where id=#{id} order by djbh DESC")
     String getListBydjbh(int id);
@@ -37,6 +39,8 @@ public interface DdxdMapper extends BaseMapper<ddxd> {
 
     @Select("select * from lightbelt where khmc like '%'+#{khmc}+'%' and ddh like '%'+#{ddh}+'%' and azdz like '%'+#{azdz}+'%' and xdrq >= #{ksxdrq} and xdrq <= #{jsxdrq}")
     List<ddxd> queryList(String khmc, String ddh,String ksxdrq ,String jsxdrq , String azdz );
+@Select("select distinct ddh,luruyuan,xdrq,djbh,shouhuo,lxdh,shfs,azdz,khmc from lightbelt where khmc =#{khmc} and ddh like '%'+#{ddh}+'%' and azdz like '%'+#{azdz}+'%' order by djbh DESC")
+List<ddxd> queryList1(String khmc, String ddh, String ksxdrq, String jsxdrq, String azdz);
 
     @Delete("delete from lightbelt where djbh=#{djbh}")
     boolean delete(String djbh);
@@ -62,6 +66,8 @@ public interface DdxdMapper extends BaseMapper<ddxd> {
 
     @Update("update lightbelt set wancheng = #{wancheng} where djbh=#{djbh}")
     boolean updatewc(String wancheng,String djbh);
+    @Delete("delete from lightbelt where id = #{id11}")
+    void delete1(int id11);
 
 
 

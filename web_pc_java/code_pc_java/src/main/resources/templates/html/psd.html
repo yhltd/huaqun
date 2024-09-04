@@ -114,9 +114,9 @@
     <div class="col-md-3 mb-2">
         <input id="customerOrder" type="text" class="form-control" placeholder="客户订单号" autocomplete="off">
     </div>
-    <div class="col-md-3 mb-2">
-        <input id="songhuoDanhao" type="text" class="form-control" placeholder="送货单号" autocomplete="off">
-    </div>
+<!--    <div class="col-md-3 mb-2">-->
+<!--        <input id="songhuoDanhao" type="text" class="form-control" placeholder="送货单号" autocomplete="off">-->
+<!--    </div>-->
     <div class="col-md-3 mb-2">
         <input id="ksinsertDate" type="date" class="form-control" placeholder="开始时间" autocomplete="off">
     </div>
@@ -280,7 +280,7 @@
                             <div class="form-group">
                                 <label for="add-hqquyu">配送区域</label>
                                 <select id="add-hqquyu" name="quyu" class="form-control">
-                                    <option>--请选择--</option>
+                                    <option value="">--请选择--</option>
                                 </select>
                                 <div class="invalid-feedback">
                                     请选择配送区域！
@@ -747,7 +747,7 @@
                             <div class="form-group">
                                 <label for="add-kucun" id="kc">库存</label>
                                 <select id="add-kucun" name="kucun" class="form-control">
-                                    <option>--请选择--</option>
+                                    <option value = "">--请选择--</option>
                                     <option>安排处理</option>
                                     <option>处理当中</option>
                                     <option>处理完成</option>
@@ -1391,29 +1391,29 @@
                         </div>
                     </div>
 
-                    <div class="row justify-content-evenly">
-                        <div class="col-4">
-                            <div class="form-group">
-                                <label for="update-songhuoDanhao">送货单号</label>
-                                <input id="update-songhuoDanhao" name="songhuoDanhao" type="text"
-                                       class="form-control" autocomplete="off" data-required="1">
-                            </div>
-                        </div>
-                        <div class="col-4">
-                            <div class="form-group">
-                                <label for="update-songhuoDanhaoRenyuan">录入员</label>
-                                <input id="update-songhuoDanhaoRenyuan" name="songhuoDanhaoRenyuan" type="text"
-                                       class="form-control" autocomplete="off" data-required="1">
-                            </div>
-                        </div>
-                        <div class="col-4">
-                            <div class="form-group">
-                                <label for="update-songhuoDanhaoRiqi">完成时间</label>
-                                <input id="update-songhuoDanhaoRiqi" name="songhuoDanhaoRiqi" type="text"
-                                       class="form-control" autocomplete="off" data-required="1">
-                            </div>
-                        </div>
-                    </div>
+<!--                    <div class="row justify-content-evenly">-->
+<!--                        <div class="col-4">-->
+<!--                            <div class="form-group">-->
+<!--                                <label for="update-songhuoDanhao">送货单号</label>-->
+<!--                                <input id="update-songhuoDanhao" name="songhuoDanhao" type="text"-->
+<!--                                       class="form-control" autocomplete="off" data-required="1">-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="col-4">-->
+<!--                            <div class="form-group">-->
+<!--                                <label for="update-songhuoDanhaoRenyuan">录入员</label>-->
+<!--                                <input id="update-songhuoDanhaoRenyuan" name="songhuoDanhaoRenyuan" type="text"-->
+<!--                                       class="form-control" autocomplete="off" data-required="1">-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="col-4">-->
+<!--                            <div class="form-group">-->
+<!--                                <label for="update-songhuoDanhaoRiqi">完成时间</label>-->
+<!--                                <input id="update-songhuoDanhaoRiqi" name="songhuoDanhaoRiqi" type="text"-->
+<!--                                       class="form-control" autocomplete="off" data-required="1">-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
 
                     <div class="row justify-content-evenly">
                     </div>
@@ -1531,7 +1531,7 @@
                             <div class="form-group">
                                 <label for="update-kucun" id="ukc">库存</label>
                                 <select id="update-kucun" name="kucun" class="form-control">
-                                    <option>--请选择--</option>
+                                    <option value = "">--请选择--</option>
                                     <option>安排处理</option>
                                     <option>处理当中</option>
                                     <option>处理完成</option>
@@ -1559,7 +1559,7 @@
                             <div class="form-group">
                                 <label for="update-hqquyu">配送区域</label>
                                 <select id="update-hqquyu" name="quyu" class="form-control">
-                                    <option>--请选择--</option>
+                                    <option value = "">--请选择--</option>
                                 </select>
                                 <div class="invalid-feedback">
                                     请选择配送区域！

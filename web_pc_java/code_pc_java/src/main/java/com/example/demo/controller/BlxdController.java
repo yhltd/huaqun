@@ -29,6 +29,29 @@ public class BlxdController {
      *
      * @return ResultInfo
      */
+//    @RequestMapping("/getList")
+//    public ResultInfo getList(HttpSession session) {
+//        UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
+//        if(userInfo.getPower().equals("客户")){
+//            return ResultInfo.error(401, "无权限");
+//        }
+//        try {
+//            if(userInfo.getPower().equals("管理员")||userInfo.getPower().equals("超级管理员")){
+//                List<blxd> getList = blxdService.getList();
+//                return ResultInfo.success("获取成功", getList);
+//            }else if (userInfo.getPower().equals("玻璃厂")){
+//                List<blxd> getListByBoli = blxdService.getListByBoli();
+//                return ResultInfo.success("获取成功", getListByBoli);
+//            }else {
+//                List<blxd> getQita = blxdService.getQita();
+//                return ResultInfo.success("获取成功", getQita);
+//            }
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            log.error("获取失败：{}", e.getMessage());
+//            return ResultInfo.error("错误!");
+//        }
+//    }
     @RequestMapping("/getList")
     public ResultInfo getList(HttpSession session) {
         UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
@@ -40,9 +63,10 @@ public class BlxdController {
                 List<blxd> getList = blxdService.getList();
                 return ResultInfo.success("获取成功", getList);
             }else if (userInfo.getPower().equals("玻璃厂")){
-                List<blxd> getListByBoli = blxdService.getListByBoli();
+               String gongyingshang=userInfo.getCompany();
+                List<blxd> getListByBoli = blxdService.getListByBoli(gongyingshang);
                 return ResultInfo.success("获取成功", getListByBoli);
-            }else {
+            } else {
                 List<blxd> getQita = blxdService.getQita();
                 return ResultInfo.success("获取成功", getQita);
             }
@@ -53,23 +77,53 @@ public class BlxdController {
         }
     }
 
+//    /**
+//     * 根据简码和生产状态查询
+//     *
+//     * @return ResultInfo
+//     */
+//    @RequestMapping("/queryList")
+//    public ResultInfo queryList(String pinyin, String shengchan,String ksxdrq,String jsxdrq, HttpSession session) {
+//        UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
+//        try {
+//            List<blxd> list = blxdService.queryList(pinyin, shengchan,ksxdrq,jsxdrq);
+//            return ResultInfo.success("获取成功", list);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            log.error("获取失败：{}", e.getMessage());
+//            return ResultInfo.error("错误!");
+//        }
+//    }
     /**
      * 根据简码和生产状态查询
      *
      * @return ResultInfo
      */
     @RequestMapping("/queryList")
-    public ResultInfo queryList(String pinyin, String shengchan,String ksxdrq,String jsxdrq, HttpSession session) {
+    public ResultInfo queryList(String pinyin,String shengchan,String ksxdrq,String jsxdrq, HttpSession session) {
         UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
+        if(userInfo.getPower().equals("客户")){
+            return ResultInfo.error(401, "无权限");
+        }
         try {
-            List<blxd> list = blxdService.queryList(pinyin, shengchan,ksxdrq,jsxdrq);
-            return ResultInfo.success("获取成功", list);
+            if (userInfo.getPower().equals("玻璃厂")){
+                System.out.println("===============");
+                String gongyingshang = userInfo.getCompany();
+                System.out.println(gongyingshang);
+
+                List<blxd> getListByBoli = blxdService.queryByBoli(pinyin, shengchan, ksxdrq, jsxdrq,gongyingshang);
+                return ResultInfo.success("获取成功", getListByBoli);
+            }else {
+                List<blxd> list = blxdService.queryList(pinyin, shengchan, ksxdrq, jsxdrq);
+                return ResultInfo.success("获取成功", list);
+            }
         } catch (Exception e) {
             e.printStackTrace();
             log.error("获取失败：{}", e.getMessage());
             return ResultInfo.error("错误!");
         }
     }
+
 //    @RequestMapping("/queryList1")
 //    public ResultInfo queryList1(String pinyin,String shengchan,String ksxdrq,String jsxdrq, HttpSession session) {
 //        UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
@@ -116,7 +170,7 @@ public class BlxdController {
 
         try {
             blxdService.updatesc(shengchan,orderNumber);
-            return ResultInfo.success("成功！",null);
+            return ResultInfo.success("修改成功",null);
         } catch (Exception e) {
             e.printStackTrace();
             log.error("修改失败：{}", e.getMessage());
@@ -164,6 +218,29 @@ public class BlxdController {
             return ResultInfo.error("添加失败");
         }
     }
+    /**
+     * 玻璃厂刷新
+     *
+     * @return ResultInfo
+     */
+//    @RequestMapping("/getListByBoli")
+//    public ResultInfo getListByBoli(String gongyingshang,HttpSession session) {
+//        UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
+//        if(userInfo.getPower().equals("客户")){
+//            return ResultInfo.error(401, "无权限");
+//        }
+//        try {
+//            System.out.println("++++++++++++");
+//            System.out.println(gongyingshang);
+//            List<blxd> getListByBoli = blxdService.getListByBoli(gongyingshang);
+//            return ResultInfo.success("获取成功", getListByBoli);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            log.error("获取失败：{}", e.getMessage());
+//            return ResultInfo.error("错误!");
+//        }
+//    }
+
 
 
 }

@@ -32,6 +32,7 @@ public interface DdxdService extends IService<ddxd> {
     /**
      * 根据客户名称和订单号查询
      */
+    List<ddxd> queryList1(String khmc, String ddh,String ksxdrq ,String jsxdrq,String azdz );
     List<ddxd> queryList(String khmc, String ddh,String ksxdrq ,String jsxdrq,String azdz );
 
     /**
@@ -60,4 +61,5 @@ public interface DdxdService extends IService<ddxd> {
             , String gl, String bz, String dj, String je, String chicun, String cxdkRight, String summoney, String wcsj, String luruyuan, String wancheng, int id);
 
     boolean updatewc(String wancheng,String djbh);
+    void delete1(int id11);
 }

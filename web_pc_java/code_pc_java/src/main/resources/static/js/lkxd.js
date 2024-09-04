@@ -16,7 +16,7 @@ var t = "";
 var y = "";
 var u = "";
 var l = "";
-
+var power1;
 function getKhmc() {
     $ajax({
         type: 'post',
@@ -712,145 +712,145 @@ function getJlkw() {
                     $("#add-jiaolian5SelectRight19").append("<option>" + res.data[i].jlkw + "</option>");
                     $("#add-jiaolian6SelectRight19").append("<option>" + res.data[i].jlkw + "</option>");
 
-                    $("#add-jiaolian1SelectLeft").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian2SelectLeft").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian3SelectLeft").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian4SelectLeft").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian5SelectLeft").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian6SelectLeft").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian1SelectLeft").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian2SelectLeft").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian3SelectLeft").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian4SelectLeft").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian5SelectLeft").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian6SelectLeft").append("<option>" + res.data[i].jlkw + "</option>");
 
-                    $("#add-jiaolian1SelectLeft1").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian2SelectLeft1").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian3SelectLeft1").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian4SelectLeft1").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian5SelectLeft1").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian6SelectLeft1").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian1SelectLeft1").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian2SelectLeft1").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian3SelectLeft1").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian4SelectLeft1").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian5SelectLeft1").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian6SelectLeft1").append("<option>" + res.data[i].jlkw + "</option>");
 
-                    $("#add-jiaolian1SelectLeft2").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian2SelectLeft2").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian3SelectLeft2").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian4SelectLeft2").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian5SelectLeft2").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian6SelectLeft2").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian1SelectLeft2").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian2SelectLeft2").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian3SelectLeft2").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian4SelectLeft2").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian5SelectLeft2").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian6SelectLeft2").append("<option>" + res.data[i].jlkw + "</option>");
 
-                    $("#add-jiaolian1SelectLeft3").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian2SelectLeft3").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian3SelectLeft3").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian4SelectLeft3").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian5SelectLeft3").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian6SelectLeft3").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian1SelectLeft3").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian2SelectLeft3").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian3SelectLeft3").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian4SelectLeft3").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian5SelectLeft3").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian6SelectLeft3").append("<option>" + res.data[i].jlkw + "</option>");
 
-                    $("#add-jiaolian1SelectLeft4").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian2SelectLeft4").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian3SelectLeft4").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian4SelectLeft4").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian5SelectLeft4").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian6SelectLeft4").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian1SelectLeft4").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian2SelectLeft4").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian3SelectLeft4").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian4SelectLeft4").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian5SelectLeft4").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian6SelectLeft4").append("<option>" + res.data[i].jlkw + "</option>");
 
-                    $("#add-jiaolian1SelectLeft5").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian2SelectLeft5").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian3SelectLeft5").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian4SelectLeft5").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian5SelectLeft5").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian6SelectLeft5").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian1SelectLeft5").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian2SelectLeft5").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian3SelectLeft5").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian4SelectLeft5").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian5SelectLeft5").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian6SelectLeft5").append("<option>" + res.data[i].jlkw + "</option>");
 
-                    $("#add-jiaolian1SelectLeft6").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian2SelectLeft6").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian3SelectLeft6").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian4SelectLeft6").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian5SelectLeft6").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian6SelectLeft6").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian1SelectLeft6").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian2SelectLeft6").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian3SelectLeft6").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian4SelectLeft6").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian5SelectLeft6").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian6SelectLeft6").append("<option>" + res.data[i].jlkw + "</option>");
 
-                    $("#add-jiaolian1SelectLeft7").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian2SelectLeft7").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian3SelectLeft7").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian4SelectLeft7").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian5SelectLeft7").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian6SelectLeft7").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian1SelectLeft7").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian2SelectLeft7").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian3SelectLeft7").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian4SelectLeft7").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian5SelectLeft7").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian6SelectLeft7").append("<option>" + res.data[i].jlkw + "</option>");
 
-                    $("#add-jiaolian1SelectLeft8").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian2SelectLeft8").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian3SelectLeft8").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian4SelectLeft8").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian5SelectLeft8").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian6SelectLeft8").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian1SelectLeft8").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian2SelectLeft8").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian3SelectLeft8").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian4SelectLeft8").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian5SelectLeft8").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian6SelectLeft8").append("<option>" + res.data[i].jlkw + "</option>");
 
-                    $("#add-jiaolian1SelectLeft9").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian2SelectLeft9").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian3SelectLeft9").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian4SelectLeft9").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian5SelectLeft9").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian6SelectLeft9").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian1SelectLeft9").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian2SelectLeft9").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian3SelectLeft9").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian4SelectLeft9").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian5SelectLeft9").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian6SelectLeft9").append("<option>" + res.data[i].jlkw + "</option>");
 
-                    $("#add-jiaolian1SelectLeft10").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian2SelectLeft10").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian3SelectLeft10").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian4SelectLeft10").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian5SelectLeft10").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian6SelectLeft10").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian1SelectLeft10").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian2SelectLeft10").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian3SelectLeft10").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian4SelectLeft10").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian5SelectLeft10").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian6SelectLeft10").append("<option>" + res.data[i].jlkw + "</option>");
 
-                    $("#add-jiaolian1SelectLeft11").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian2SelectLeft11").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian3SelectLeft11").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian4SelectLeft11").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian5SelectLeft11").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian6SelectLeft11").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian1SelectLeft11").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian2SelectLeft11").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian3SelectLeft11").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian4SelectLeft11").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian5SelectLeft11").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian6SelectLeft11").append("<option>" + res.data[i].jlkw + "</option>");
 
-                    $("#add-jiaolian1SelectLeft12").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian2SelectLeft12").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian3SelectLeft12").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian4SelectLeft12").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian5SelectLeft12").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian6SelectLeft12").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian1SelectLeft12").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian2SelectLeft12").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian3SelectLeft12").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian4SelectLeft12").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian5SelectLeft12").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian6SelectLeft12").append("<option>" + res.data[i].jlkw + "</option>");
 
-                    $("#add-jiaolian1SelectLeft13").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian2SelectLeft13").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian3SelectLeft13").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian4SelectLeft13").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian5SelectLeft13").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian6SelectLeft13").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian1SelectLeft13").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian2SelectLeft13").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian3SelectLeft13").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian4SelectLeft13").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian5SelectLeft13").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian6SelectLeft13").append("<option>" + res.data[i].jlkw + "</option>");
 
-                    $("#add-jiaolian1SelectLeft14").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian2SelectLeft14").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian3SelectLeft14").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian4SelectLeft14").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian5SelectLeft14").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian6SelectLeft14").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian1SelectLeft14").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian2SelectLeft14").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian3SelectLeft14").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian4SelectLeft14").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian5SelectLeft14").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian6SelectLeft14").append("<option>" + res.data[i].jlkw + "</option>");
 
-                    $("#add-jiaolian1SelectLeft15").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian2SelectLeft15").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian3SelectLeft15").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian4SelectLeft15").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian5SelectLeft15").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian6SelectLeft15").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian1SelectLeft15").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian2SelectLeft15").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian3SelectLeft15").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian4SelectLeft15").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian5SelectLeft15").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian6SelectLeft15").append("<option>" + res.data[i].jlkw + "</option>");
 
-                    $("#add-jiaolian1SelectLeft16").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian2SelectLeft16").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian3SelectLeft16").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian4SelectLeft16").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian5SelectLeft16").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian6SelectLeft16").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian1SelectLeft16").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian2SelectLeft16").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian3SelectLeft16").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian4SelectLeft16").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian5SelectLeft16").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian6SelectLeft16").append("<option>" + res.data[i].jlkw + "</option>");
 
-                    $("#add-jiaolian1SelectLeft17").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian2SelectLeft17").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian3SelectLeft17").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian4SelectLeft17").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian5SelectLeft17").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian6SelectLeft17").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian1SelectLeft17").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian2SelectLeft17").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian3SelectLeft17").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian4SelectLeft17").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian5SelectLeft17").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian6SelectLeft17").append("<option>" + res.data[i].jlkw + "</option>");
 
-                    $("#add-jiaolian1SelectLeft18").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian2SelectLeft18").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian3SelectLeft18").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian4SelectLeft18").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian5SelectLeft18").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian6SelectLeft18").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian1SelectLeft18").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian2SelectLeft18").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian3SelectLeft18").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian4SelectLeft18").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian5SelectLeft18").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian6SelectLeft18").append("<option>" + res.data[i].jlkw + "</option>");
 
-                    $("#add-jiaolian1SelectLeft19").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian2SelectLeft19").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian3SelectLeft19").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian4SelectLeft19").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian5SelectLeft19").append("<option>" + res.data[i].jlkw + "</option>");
-                    $("#add-jiaolian6SelectLeft19").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian1SelectLeft19").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian2SelectLeft19").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian3SelectLeft19").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian4SelectLeft19").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian5SelectLeft19").append("<option>" + res.data[i].jlkw + "</option>");
+                    $("#update-jiaolian6SelectLeft19").append("<option>" + res.data[i].jlkw + "</option>");
 
                     $("#update-jiaolian1SelectRight").append("<option>" + res.data[i].jlkw + "</option>");
                     $("#update-jiaolian2SelectRight").append("<option>" + res.data[i].jlkw + "</option>");
@@ -8032,7 +8032,7 @@ function getPfje() {
         $('#add-danjia12').on('change', function () {
             var sum_sl2 = parseFloat(document.getElementById('add-sumShuliang12').value);
             var pfdj2 = parseFloat(document.getElementById('add-danjia12').value);
-            var sum_je2 = Math.round(sum_sl1 * pfdj1 * 100) / 100
+            var sum_je2 = Math.round(sum_sl2 * pfdj2 * 100) / 100
             document.getElementById("add-sumJine12").value = sum_je2
         })
         $('#add-danjia13').on('change', function () {
@@ -8969,6 +8969,7 @@ function getList() {
     }, false, '', function (res) {
         if (res.code == 200) {
             var power = res.data;
+            power1 = res.data;
             if (power == "客户") {
 
                 document.getElementById("customerName").disabled = true;
@@ -18583,15 +18584,13 @@ $(function () {
 
     //点击修改按钮显示弹窗
     $('#update-btn').click(function () {
-
+        $('#loading-overlay').show();
         getPfsl();
         getPfje();
         getZcsl();
         getZcje();
         getUpdJe();
         getToken();
-
-        alert("正在加载")
         let rows = getTableSelection('#lkxdTable');
         if (rows.length > 1 || rows.length == 0) {
             swal('请选择一条数据修改!');
@@ -18756,6 +18755,8 @@ $(function () {
                 }
             }
             $('#update-modal').modal('show');
+            $('#loading-overlay').hide();
+
         })
 
 
@@ -19094,6 +19095,7 @@ function setTable(data) {
         toolbarAlign: 'left',
         theadClasses: "thead-light",//这里设置表头样式
         style: 'table-layout:fixed',
+        height: document.body.clientHeight * 0.60,
         columns: [
             {
                 field: '',
@@ -19126,6 +19128,7 @@ function setTable(data) {
                     if (value == null) {
                         value = '';
                     }
+
                     $(document).ready(function () {
                         $('#wancheng' + index).change(function () {
                             var selectedValue = $(this).val();
@@ -19178,7 +19181,7 @@ function setTable(data) {
                                     orderNumber: num
                                 }
                             })
-                            alert("修改成功");
+
                         })
                     })
                     return "<select id='wancheng" + index + "' oninput='javascript:columnUpd(" + index + "," + "\"wancheng\"" + ")' placeholder='完成状态' type='text' class='form-control'  value='" + value + "'>" +
@@ -19209,6 +19212,7 @@ function setTable(data) {
                     if (value == null) {
                         value = '';
                     }
+
                     $(document).ready(function () {
                         $('#kailiao' + index).change(function () {
                             var selectedValue = $(this).val();
@@ -19224,7 +19228,7 @@ function setTable(data) {
                                     orderNumber: num
                                 }
                             })
-                            alert("修改成功");
+
                         })
                     })
                     var this_kl = ""
@@ -19234,6 +19238,7 @@ function setTable(data) {
                         select2 = "<select id='kailiao" + index + "' oninput='javascript:columnUpd(" + index + "," + "\"index\"" + ")' placeholder='开料' type='text' class='form-control'  value='" + value + "'>"
                         select2 = select2 + this_kl;
                         select2 = select2 + "<select/>"
+
 
                     }
                     return select2;
@@ -19248,6 +19253,7 @@ function setTable(data) {
                     if (value == null) {
                         value = '';
                     }
+
                     $(document).ready(function () {
                         $('#shunxu' + index).change(function () {
                             var selectedValue = $(this).val();
@@ -19264,7 +19270,7 @@ function setTable(data) {
                                     orderNumber: num
                                 }
                             })
-                            alert("修改成功");
+
                         })
                     })
                     var this_sx = ""
@@ -19288,6 +19294,7 @@ function setTable(data) {
                     if (value == null) {
                         value = '';
                     }
+
                     $(document).ready(function () {
                         $('#zuzhuang' + index).change(function () {
                             var selectedValue = $(this).val();
@@ -19304,7 +19311,7 @@ function setTable(data) {
                                     orderNumber: num
                                 }
                             })
-                            alert("修改成功");
+
                         })
                     })
                     var this_zz = ""
@@ -19314,6 +19321,8 @@ function setTable(data) {
                         select4 = "<select id='zuzhuang" + index + "' oninput='javascript:columnUpd(" + index + "," + "\"zuzhuang\"" + ")' placeholder='组装' type='text' class='form-control'  value='" + value + "'>"
                         select4 = select4 + this_zz;
                         select4 = select4 + "<select/>"
+
+
 
                     }
                     return select4;
@@ -19329,6 +19338,7 @@ function setTable(data) {
                     if (value == null) {
                         value = '';
                     }
+
                     $(document).ready(function () {
                         $('#baozhuang' + index).change(function () {
                             var selectedValue = $(this).val();
@@ -19345,7 +19355,7 @@ function setTable(data) {
                                     orderNumber: num
                                 }
                             })
-                            alert("修改成功");
+
                         })
                     })
                     var this_baoz = ""

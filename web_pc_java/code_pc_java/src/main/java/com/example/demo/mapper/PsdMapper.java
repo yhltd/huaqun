@@ -21,8 +21,8 @@ public interface PsdMapper extends BaseMapper<psd> {
     @Select("select wancheng from erqi_peisongdan where id=#{id}")
     String getListBydjbh(int id);
 
-    @Select("select * from erqi_peisongdan where order_number like '%'+#{orderNumber}+'%' and customer_name like '%'+#{customerName}+'%' and quyu like '%'+#{quyu}+'%' and anzhuang_address like '%'+#{anzhuangAddress}+'%' and customer_order like '%'+#{customerOrder}+'%' and songhuo_danhao like '%'+#{songhuoDanhao}+'%' and wancheng like '%'+#{wancheng}+'%' and kucun like '%'+#{kucun}+'%' and insert_date >= #{ksinsertDate} and insert_date <= #{jsinsertDate}")
-    List<psd> queryList(String orderNumber, String customerName, String quyu, String anzhuangAddress, String customerOrder, String songhuoDanhao,String ksinsertDate, String jsinsertDate, String wancheng, String kucun);
+    @Select("select * from erqi_peisongdan where order_number like '%'+#{orderNumber}+'%' and customer_name like '%'+#{customerName}+'%' and quyu like '%'+#{quyu}+'%' and anzhuang_address like '%'+#{anzhuangAddress}+'%' and customer_order like '%'+#{customerOrder}+'%' and isnull(wancheng,'') like '%'+#{wancheng}+'%' and kucun like '%'+#{kucun}+'%' and insert_date >= #{ksinsertDate} and insert_date <= #{jsinsertDate}")
+    List<psd> queryList(String orderNumber, String customerName, String quyu, String anzhuangAddress, String customerOrder,String ksinsertDate, String jsinsertDate, String wancheng, String kucun);
 
     @Delete("delete from erqi_peisongdan where id=#{id}")
     boolean deleteid(int id);
@@ -39,5 +39,12 @@ public interface PsdMapper extends BaseMapper<psd> {
 
     @Select("select * from erqi_peisongdan where customer_name=#{customerName}")
     List<psd> getListByPsd(String customerName);
-
+    @Update("update erqi_peisongdan set wancheng = #{wancheng} where order_number=#{orderNumber}")
+    boolean upwc(String wancheng, String orderNumber);
+    @Update("update erqi_peisongdan set shoukuan = #{shoukuan} where order_number=#{orderNumber}")
+    boolean upsk(String shoukuan, String orderNumber);
+    @Update("update erqi_peisongdan set quyu = #{quyu} where order_number=#{orderNumber}")
+    boolean upqy(String quyu, String orderNumber);
+    @Update("update erqi_peisongdan set money = #{money} where order_number=#{orderNumber}")
+    boolean upmy(String money, String orderNumber);
 }

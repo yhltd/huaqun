@@ -36,9 +36,13 @@ public class PsdController {
     @RequestMapping("/getloginname")
     public ResultInfo loginname(HttpSession session) {
         UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
+//        try {
+//            String name = userInfo.getName();
+//            return ResultInfo.success("获取成功", name);
         try {
             String name = userInfo.getName();
-            return ResultInfo.success("获取成功", name);
+            String company = userInfo.getCompany();
+            return ResultInfo.success("获取成功", company);
         } catch (Exception e) {
             e.printStackTrace();
             log.error("获取失败：{}", e.getMessage());
@@ -52,8 +56,12 @@ public class PsdController {
             return ResultInfo.error(401, "无权限");
         }
         try {
+//            if(userInfo.getPower().equals("客户")) {
+//                List<psd> getList=psdService.getListByName(userInfo.getName());
+//                return ResultInfo.success("获取成功",getList);
+//            }
             if(userInfo.getPower().equals("客户")) {
-                List<psd> getList=psdService.getListByName(userInfo.getName());
+                List<psd> getList=psdService.getListByName(userInfo.getCompany());
                 return ResultInfo.success("获取成功",getList);
             }
             List<psd> getList = psdService.getList();
@@ -70,9 +78,12 @@ public class PsdController {
         if(userInfo.getPower().equals("玻璃厂")){
             return ResultInfo.error(401, "无权限");
         }
+//        try {
+//            List<psd> getList = psdService.getListByName(userInfo.getName());
         try {
-            List<psd> getList = psdService.getListByName(userInfo.getName());
+            List<psd> getList = psdService.getListByName(userInfo.getCompany());
             return ResultInfo.success("获取成功", getList);
+//            return ResultInfo.success("获取成功", getList);
         } catch (Exception e) {
             e.printStackTrace();
             log.error("获取失败：{}", e.getMessage());
@@ -87,7 +98,7 @@ public class PsdController {
      */
     @RequestMapping("/queryList")
     public ResultInfo queryList(String orderNumber, String customerName, String quyu, String anzhuangAddress,
-                                String customerOrder, String songhuoDanhao,
+                                String customerOrder,
                                 String ksinsertDate,
                                 String jsinsertDate,
                                 String wancheng,
@@ -95,7 +106,7 @@ public class PsdController {
                                 HttpSession session) {
         UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
         try {
-            List<psd> list = psdService.queryList(orderNumber, customerName, quyu, anzhuangAddress, customerOrder, songhuoDanhao,ksinsertDate,
+            List<psd> list = psdService.queryList(orderNumber, customerName, quyu, anzhuangAddress, customerOrder,ksinsertDate,
                      jsinsertDate,
                      wancheng,
                      kucun);
@@ -213,52 +224,93 @@ public class PsdController {
         if (userInfo.getPower().equals("玻璃厂")) {
             return ResultInfo.error(401, "无权限");
         }
+
         try {
             psd psd = GsonUtil.toEntity(gsonUtil.get("addInfo"), psd.class);
 //            System.out.println("===============");
 //            System.out.println(psd);
-            psd.setCustomerNeedImg1("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-01.jpg");
-            psd.setCustomerNeedImg2("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-02.jpg");
-            psd.setCustomerNeedImg3("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-03.jpg");
-            psd.setCustomerNeedImg4("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-04.jpg");
-            psd.setCustomerNeedImg5("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-05.jpg");
-            psd.setCustomerNeedImg6("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-06.jpg");
-            psd.setCustomerNeedImg7("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-07.jpg");
-            psd.setCustomerNeedImg8("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-08.jpg");
-            psd.setCustomerNeedText2("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-09.jpg");
+//            psd.setCustomerNeedImg1("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-01.jpg");
+//            psd.setCustomerNeedImg2("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-02.jpg");
+//            psd.setCustomerNeedImg3("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-03.jpg");
+//            psd.setCustomerNeedImg4("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-04.jpg");
+//            psd.setCustomerNeedImg5("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-05.jpg");
+//            psd.setCustomerNeedImg6("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-06.jpg");
+//            psd.setCustomerNeedImg7("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-07.jpg");
+//            psd.setCustomerNeedImg8("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-08.jpg");
+//            psd.setCustomerNeedText2("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-09.jpg");
+//            psd.setPeihuoImg1("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-10.jpg");
+//            psd.setPeihuoImg2("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-11.jpg");
+//            psd.setPeihuoImg3("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-12.jpg");
+//            psd.setPeihuoImg4("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-13.jpg");
+//            psd.setPeihuoImg5("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-14.jpg");
+//            psd.setPeihuoImg6("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-15.jpg");
+//            psd.setPeihuoImg7("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-16.jpg");
+//            psd.setPeihuoImg8("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-17.jpg");
+//            psd.setPeisongImg1("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-18.jpg");
+//            psd.setPeisongImg2("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-19.jpg");
+//            psd.setPeisongImg3("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-20.jpg");
+//            psd.setPeisongImg4("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-21.jpg");
+//            psd.setPeisongImg5("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-22.jpg");
+//            psd.setPeisongImg6("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-23.jpg");
+//            psd.setPeisongImg7("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-24.jpg");
+//            psd.setPeisongImg8("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-25.jpg");
+//            psd.setKucunImg1("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-26.jpg");
+//            psd.setKucunImg2("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-27.jpg");
+//            psd.setKucunImg3("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-28.jpg");
+//            psd.setKucunImg4("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-29.jpg");
+//            psd.setKucunImg5("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-30.jpg");
+//            psd.setKucunImg6("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-31.jpg");
+//            psd.setKucunImg7("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-32.jpg");
+//            psd.setKucunImg8("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-33.jpg");
+//            psd.setWenjianImg1("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-34.jpg");
+//            psd.setWenjianImg2("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-35.jpg");
+//            psd.setWenjianImg3("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-36.jpg");
+//            psd.setWenjianImg4("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-37.jpg");
+//            psd.setWenjianImg5("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-38.jpg");
+//            psd.setWenjianImg6("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-39.jpg");
+//            psd.setWenjianImg7("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-40.jpg");
+//            psd.setWenjianImg8("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-41.jpg");
+//            psd.setCustomerNeedImg1("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-01.jpg");
+//            psd.setCustomerNeedImg2("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-02.jpg");
+//            psd.setCustomerNeedImg3("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-03.jpg");
+//            psd.setCustomerNeedImg4("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-04.jpg");
+//            psd.setCustomerNeedImg5("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-05.jpg");
+//            psd.setCustomerNeedImg6("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-06.jpg");
+//            psd.setCustomerNeedImg7("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-07.jpg");
+//            psd.setCustomerNeedImg8("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-08.jpg");
+//            psd.setCustomerNeedText2("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-09.jpg");
             psd.setPeihuoImg1("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-10.jpg");
             psd.setPeihuoImg2("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-11.jpg");
             psd.setPeihuoImg3("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-12.jpg");
             psd.setPeihuoImg4("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-13.jpg");
             psd.setPeihuoImg5("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-14.jpg");
-            psd.setPeihuoImg6("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-15.jpg");
-            psd.setPeihuoImg7("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-16.jpg");
-            psd.setPeihuoImg8("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-17.jpg");
+//            psd.setPeihuoImg6("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-15.jpg");
+//            psd.setPeihuoImg7("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-16.jpg");
+//            psd.setPeihuoImg8("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-17.jpg");
             psd.setPeisongImg1("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-18.jpg");
             psd.setPeisongImg2("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-19.jpg");
             psd.setPeisongImg3("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-20.jpg");
-            psd.setPeisongImg4("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-21.jpg");
-            psd.setPeisongImg5("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-22.jpg");
-            psd.setPeisongImg6("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-23.jpg");
-            psd.setPeisongImg7("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-24.jpg");
-            psd.setPeisongImg8("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-25.jpg");
-            psd.setKucunImg1("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-26.jpg");
-            psd.setKucunImg2("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-27.jpg");
-            psd.setKucunImg3("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-28.jpg");
-            psd.setKucunImg4("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-29.jpg");
-            psd.setKucunImg5("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-30.jpg");
-            psd.setKucunImg6("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-31.jpg");
-            psd.setKucunImg7("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-32.jpg");
-            psd.setKucunImg8("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-33.jpg");
-            psd.setWenjianImg1("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-34.jpg");
-            psd.setWenjianImg2("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-35.jpg");
-            psd.setWenjianImg3("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-36.jpg");
-            psd.setWenjianImg4("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-37.jpg");
-            psd.setWenjianImg5("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-38.jpg");
-            psd.setWenjianImg6("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-39.jpg");
-            psd.setWenjianImg7("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-40.jpg");
-            psd.setWenjianImg8("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-41.jpg");
-
+//            psd.setPeisongImg4("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-21.jpg");
+//            psd.setPeisongImg5("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-22.jpg");
+//            psd.setPeisongImg6("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-23.jpg");
+//            psd.setPeisongImg7("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-24.jpg");
+//            psd.setPeisongImg8("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-25.jpg");
+//            psd.setKucunImg1("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-26.jpg");
+//            psd.setKucunImg2("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-27.jpg");
+//            psd.setKucunImg3("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-28.jpg");
+//            psd.setKucunImg4("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-29.jpg");
+//            psd.setKucunImg5("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-30.jpg");
+//            psd.setKucunImg6("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-31.jpg");
+//            psd.setKucunImg7("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-32.jpg");
+//            psd.setKucunImg8("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-33.jpg");
+//            psd.setWenjianImg1("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-34.jpg");
+//            psd.setWenjianImg2("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-35.jpg");
+//            psd.setWenjianImg3("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-36.jpg");
+//            psd.setWenjianImg4("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-37.jpg");
+//            psd.setWenjianImg5("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-38.jpg");
+//            psd.setWenjianImg6("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-39.jpg");
+//            psd.setWenjianImg7("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-40.jpg");
+//            psd.setWenjianImg8("http://huaqunwechar.com:9088/huaqun_erqi/" + psd.getOrderNumber()+ "-41.jpg");
             psd = psdService.add(psd);
             if (StringUtils.isNotNull(psd)) {
                 return ResultInfo.success("添加成功", psd);
@@ -336,6 +388,74 @@ public class PsdController {
             e.printStackTrace();
             log.error("失败：{}", e.getMessage());
             return ResultInfo.error("失败！");
+        }
+    }
+    @RequestMapping(value = "/updatesk", method = RequestMethod.POST)
+    public ResultInfo upsk(HttpSession session,String shoukuan ,String orderNumber) {
+        UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
+        if( userInfo.getPower().equals("客户")){
+            return ResultInfo.error(401, "无权限");
+        }
+
+        try {
+            psdService.upsk(shoukuan,orderNumber);
+            return ResultInfo.success("成功！",null);
+        } catch (Exception e) {
+            e.printStackTrace();
+            log.error("修改失败：{}", e.getMessage());
+            log.error("参数：{}", userInfo);
+            return ResultInfo.error("修改失败");
+        }
+    }
+    @RequestMapping(value = "/updatewc", method = RequestMethod.POST)
+    public ResultInfo upwc(HttpSession session,String wancheng ,String orderNumber) {
+        UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
+        if( userInfo.getPower().equals("客户")){
+            return ResultInfo.error(401, "无权限");
+        }
+
+        try {
+            psdService.upwc(wancheng,orderNumber);
+            return ResultInfo.success("成功！",null);
+        } catch (Exception e) {
+            e.printStackTrace();
+            log.error("修改失败：{}", e.getMessage());
+            log.error("参数：{}", userInfo);
+            return ResultInfo.error("修改失败");
+        }
+    }
+    @RequestMapping(value = "/updatemy", method = RequestMethod.POST)
+    public ResultInfo upmy(HttpSession session,String money ,String orderNumber) {
+        UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
+        if(userInfo.getPower().equals("客户")){
+            return ResultInfo.error(401, "无权限");
+        }
+
+        try {
+            psdService.upmy(money,orderNumber);
+            return ResultInfo.success("成功！",null);
+        } catch (Exception e) {
+            e.printStackTrace();
+            log.error("修改失败：{}", e.getMessage());
+            log.error("参数：{}", userInfo);
+            return ResultInfo.error("修改失败");
+        }
+    }
+    @RequestMapping(value = "/updateqy", method = RequestMethod.POST)
+    public ResultInfo upqy(HttpSession session,String quyu ,String orderNumber) {
+        UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
+        if( userInfo.getPower().equals("客户")){
+            return ResultInfo.error(401, "无权限");
+        }
+
+        try {
+            psdService.upqy(quyu,orderNumber);
+            return ResultInfo.success("成功！",null);
+        } catch (Exception e) {
+            e.printStackTrace();
+            log.error("修改失败：{}", e.getMessage());
+            log.error("参数：{}", userInfo);
+            return ResultInfo.error("修改失败");
         }
     }
 

@@ -12,6 +12,9 @@ let n = 0;
 let tbl = 0;
 let r=0;
 let select8="";
+var power1;
+var cishu;
+var id11;
 function getKhmc() {
     $ajax({
         type: 'post',
@@ -140,7 +143,30 @@ function getLcys() {
     }, false, '', function (res) {
         if (res.code == 200) {
             var item = "";
-            select_lcys = res.data;
+            var arr = {
+                blsjg:null,
+            blys:null,
+            cxdk:null,
+            dy:null,
+            fjpz:null,
+            ghxl:null,
+            gy:null,
+            id:null,
+            jlkw:null,
+            jlpp:null,
+            kg:null,
+            kjlk:null,
+            lcys:" ",
+            lcysLk:null,
+            lsw:null,
+            lsxh:null,
+            lxc:null,
+            lxcLk:null,
+            pj:null,
+            quyu:null,
+            shfs:null};
+            var arr1 = res.data.concat(arr)
+            select_lcys = arr1;
             for (var i = 0; i < res.data.length; i++) {
                 // $("#add-lcys").append("<option>" + res.data[i].lcys + "</option>");
                 // $("#update-lcys").append("<option>" + res.data[i].lcys + "</option>");
@@ -412,6 +438,7 @@ function getList() {
     }, false, '', function (res) {
         if (res.code == 200) {
             var power = res.data;
+            power1 = res.data;
             if (power == "客户") {
                 document.getElementById("add-khmc").remove();
                 var div = document.getElementById('d-khmc');
@@ -573,7 +600,19 @@ $(function () {
 
     $('#add-up-btn').click(function () {
         // alert("请先填入上方数据，点击加一行数据再点击提交");
-        for (i = 0; i < n; i = i + 1) {
+        var djbh = document.getElementById("add-djbh").value;
+        $ajax({
+            type: 'post',
+            url: '/ddxd/getListdjbh',
+            async:false,
+            data: {
+                djbh: djbh
+            }
+        }, false, '', function (res) {
+
+                    cishu = res.data.length
+        })
+        for (i = 0; i < cishu; i = i + 1) {
             let c = parseFloat($('#id1').val()) + i
             var q = c.toString();
             var fj = $('#fj' + q).val();
@@ -595,6 +634,11 @@ $(function () {
             var dj = $('#dj' + q).val();
             var j = d * 1 / 1000 * s;
             var je = j.toString();
+            if(je==null||je==undefined||je==""||isNaN(je)){
+                id11=q
+            }else{
+                id11="1"
+            }
             var chicun = $('#chicun' + q).val();
             var cxdkRight = $('#cxdkRight' + q).val();
             var sumMoney = $('#sumMoney' + q).val();
@@ -622,18 +666,21 @@ $(function () {
                     wcsj: wcsj,
                     luruyuan: luruyuan,
                     id: q,
+                    id11:id11
                 },
 
             }, false, '', function (res) {
-                swal("", res.msg, "success");
+                // swal("", res.msg, "success");
                 // $('#update-form').reset();
                 // document.getElementById('add-shouhuo').value = "";
                 // document.getElementById('add-lxdh').value = "";
                 $('#add-modal').modal('hide');
-                getList();
+
             })
 
         }
+        getList();
+        // alert("添加成功")
     })
 
 
@@ -662,6 +709,7 @@ $(function () {
         })
 
         getToken();
+        // getNumbern();
         // getInputGh();
         // getInputLcys();
         // getInputGy();
@@ -674,7 +722,7 @@ $(function () {
 
         $('#add-form')[0].reset();
         $('#add-modal').modal('hide');
-        document.getElementById("cishu").value = 0;
+        // document.getElementById("cishu").value = 0;
         getList();
     });
 
@@ -750,7 +798,7 @@ $(function () {
                     }, false, '', function (res) {
 
                         setTable2(res.data)
-                        addcishu();
+                        // addcishu();
                         getList();
 
                     })
@@ -770,13 +818,52 @@ $(function () {
         //         setTable2(res.data)
         //     })
 
-        function addcishu() {
-            var spanElement = document.getElementById("cishu");
-            var currentCount = parseInt(spanElement.innerText);
-            spanElement.innerText = currentCount + 1;
-        }
+        // function addcishu() {
+        //     var spanElement = document.getElementById("cishu");
+        //     var currentCount = parseInt(spanElement.innerText);
+        //     spanElement.innerText = currentCount + 1;
+        // }
 
     });
+    $('#add-btn3').click(function () {
+        if($('#shdw').prop("disabled") == false){
+            alert("未点击固定条件，不可以增行！")
+            return;
+        }
+        let params = formToJson("#add-form");
+    for(i=0;i<10;i++) {
+        $ajax({
+                type: 'post',
+                url: '/ddxd/add1',
+                data: JSON.stringify({
+                    addInfo: params
+                }),
+                dataType: 'json',
+                contentType: 'application/json;charset=utf-8'
+            }
+            , false, '', function (res) {
+                if (res.code == 200) {
+                    // swal("", res.msg, "success");
+
+                    var djbh = document.getElementById("add-djbh").value;
+                    $ajax({
+                        type: 'post',
+                        url: '/ddxd/getListdjbh',
+                        data: {
+                            djbh: djbh
+                        }
+                    }, false, '', function (res) {
+
+                        setTable2(res.data)
+                        addcishu();
+                        getList();
+
+                    })
+
+                }
+            })
+    }
+        })
     //点击修改按钮显示弹窗
     $('#update-btn').click(function () {
 
@@ -1034,6 +1121,7 @@ function setTable(data) {
         toolbarAlign: 'left',
         theadClasses: "thead-light",//这里设置表头样式
         style: 'table-layout:fixed',
+        height: document.body.clientHeight * 0.60,
         columns: [
             {
                 field: '',
@@ -1072,6 +1160,7 @@ function setTable(data) {
                     if (value == null) {
                         value = '';
                     }
+
                     $(document).ready(function() {
                         $('#wancheng'+index).change(function() {
                             var selectedValue = $(this).val();
@@ -1373,13 +1462,13 @@ function setTable2(data) {
         toolbarAlign: 'left',
         theadClasses: "thead-light",//这里设置表头样式
         style: 'table-layout:fixed',
-        height: document.body.clientHeight * 0.85,
+        height: document.body.clientHeight * 0.40,
         columns: [
             {
                 field: '',
                 title: '序号',
                 align: 'center',
-                width: 50,
+                width: 100,
                 formatter: function (value, row, index) {
                     return index + 1;
                 }
@@ -1388,7 +1477,7 @@ function setTable2(data) {
                 title: '项目类别',
                 align: 'center',
                 sortable: true,
-                width: 100,
+                width: 200,
                 formatter: function (value, row, index) {
                     if (value == null) {
                         value = '';
@@ -1490,7 +1579,7 @@ function setTable2(data) {
                 title: '项目名称',
                 align: 'center',
                 sortable: true,
-                width: 100,
+                width: 200,
                 formatter: function (value, row, index) {
                     if (value == null) {
                         value = '';
@@ -1509,7 +1598,7 @@ function setTable2(data) {
                 title: '房间柜号',
                 align: 'center',
                 sortable: true,
-                width: 130,
+                width: 200,
                 formatter: function (value, row, index) {
                     if (value == null) {
                         value = '';
@@ -1522,20 +1611,21 @@ function setTable2(data) {
                 title: '铝型材颜色',
                 align: 'center',
                 sortable: true,
-                width: 100,
+                width: 200,
                 formatter: function (value, row, index) {
                     if (value == null) {
                         value = '';
                     }
                     var this_lcys = ""
                     var select2 = ""
+
                     for (var i = 0; i < select_lcys.length; i++) {
                         this_lcys = this_lcys + "<option value=\"" + select_lcys[i].lcys + "\" selected=\"selected\">" + select_lcys[i].lcys + "</option>"
                         select2 = "<select id='lcys" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"lcys\"" + ")' placeholder='铝材颜色' type='text' class='form-control'  value='" + value + "'>"
                         select2 = select2 + this_lcys;
                         select2 = select2 + "<select/>"
-
                     }
+                    // $("#lcys"+row.id).append("<option selected='selected'>" +"--请选择--" + "</option>");
                     return select2;
                 }
             }, {
@@ -1543,7 +1633,7 @@ function setTable2(data) {
                 title: '灯带长度mm',
                 align: 'center',
                 sortable: true,
-                width: 130,
+                width: 200,
                 formatter: function (value, row, index) {
                     if (value == null) {
                         value = '';
@@ -1556,7 +1646,7 @@ function setTable2(data) {
                 title: '数量(支)',
                 align: 'center',
                 sortable: true,
-                width: 100,
+                width: 200,
                 formatter: function (value, row, index) {
                     if (value == null) {
                         value = '';
@@ -1569,7 +1659,7 @@ function setTable2(data) {
                 title: '出线端口左出线',
                 align: 'center',
                 sortable: true,
-                width: 140,
+                width: 200,
                 formatter: function (value, row, index) {
                     if (value == null) {
                         value = '';
@@ -1582,7 +1672,7 @@ function setTable2(data) {
                 title: '出线端口右出线',
                 align: 'center',
                 sortable: true,
-                width: 140,
+                width: 200,
                 formatter: function (value, row, index) {
                     if (value == null) {
                         value = '';
@@ -1594,7 +1684,7 @@ function setTable2(data) {
                 title: '光源',
                 align: 'center',
                 sortable: true,
-                width: 80,
+                width: 150,
                 formatter: function (value, row, index) {
                     if (value == null) {
                         value = '';
@@ -1617,7 +1707,7 @@ function setTable2(data) {
                 title: '功率W',
                 align: 'center',
                 sortable: true,
-                width: 80,
+                width: 150,
                 formatter: function (value, row, index) {
                     if (value == null) {
                         value = '';
@@ -1629,7 +1719,7 @@ function setTable2(data) {
                 title: '备注',
                 align: 'center',
                 sortable: true,
-                width: 80,
+                width: 150,
                 formatter: function (value, row, index) {
                     if (value == null) {
                         value = '';
@@ -1641,7 +1731,7 @@ function setTable2(data) {
                 title: '单价',
                 align: 'center',
                 sortable: true,
-                width: 80,
+                width: 150,
                 formatter: function (value, row, index) {
                     if (value == null) {
                         value = '';
@@ -1653,7 +1743,7 @@ function setTable2(data) {
                 title: '金额',
                 align: 'center',
                 sortable: true,
-                width: 80,
+                width: 150,
                 formatter: function (value, row, index) {
                     if (value == null) {
                         value = '';
@@ -1665,7 +1755,7 @@ function setTable2(data) {
                 title: '开料尺寸',
                 align: 'center',
                 sortable: true,
-                width: 100,
+                width: 200,
                 formatter: function (value, row, index) {
                     if (value == null) {
                         value = '';
@@ -1686,19 +1776,19 @@ function setTable2(data) {
             //         return "<input id='shouhuo" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"shouhuo\" " + ")' placeholder='收货地址' type='text' class='form-control'  value='" + value + "'>"
             //     }
             // }
-            , {
-                field: 'lxdh',
-                title: '联系电话',
-                align: 'center',
-                sortable: true,
-                width: 100,
-                formatter: function (value, row, index) {
-                    if (value == null) {
-                        value = '';
-                    }
-                    return "<input id='lxdh" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"lxdh\" " + ")' placeholder='联系电话' type='text' class='form-control'  value='" + value + "'>"
-                }
-            }
+            // , {
+            //     field: 'lxdh',
+            //     title: '联系电话',
+            //     align: 'center',
+            //     sortable: true,
+            //     width: 200,
+            //     formatter: function (value, row, index) {
+            //         if (value == null) {
+            //             value = '';
+            //         }
+            //         return "<input id='lxdh" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"lxdh\" " + ")' placeholder='联系电话' type='text' class='form-control'  value='" + value + "'>"
+            //     }
+            // }
             // , {
             //     field: 'wancheng',
             //     title: '完成状态',
@@ -1743,7 +1833,7 @@ function setTable2(data) {
                 align: 'center',
                 sortable: true,
                 hidden:true,
-                width: 0,
+                width: 1,
                 formatter: function (value, row, index) {
                     if (value == null) {
                         value = '';
@@ -1801,13 +1891,13 @@ function setTable3(data) {
         toolbarAlign: 'left',
         theadClasses: "thead-light",//这里设置表头样式
         style: 'table-layout:fixed',
-        height: document.body.clientHeight * 0.85,
+        height: document.body.clientHeight *  0.40,
         columns: [
             {
                 field: '',
                 title: '序号',
                 align: 'center',
-                width: 50,
+                width: 150,
                 formatter: function (value, row, index) {
                     return index + 1;
                 }
@@ -1816,7 +1906,7 @@ function setTable3(data) {
                 title: '项目类别',
                 align: 'center',
                 sortable: true,
-                width: 100,
+                width: 200,
                 formatter: function (value, row, index) {
                     if (value == null) {
                         value = '';
@@ -1926,7 +2016,7 @@ function setTable3(data) {
                 title: '项目名称',
                 align: 'center',
                 sortable: true,
-                width: 100,
+                width: 200,
                 formatter: function (value, row, index) {
                     if (value == null) {
                         value = '';
@@ -1954,7 +2044,7 @@ function setTable3(data) {
                 title: '房间柜号',
                 align: 'center',
                 sortable: true,
-                width: 130,
+                width: 200,
                 formatter: function (value, row, index) {
                     if (value == null) {
                         value = '';
@@ -1967,7 +2057,7 @@ function setTable3(data) {
                 title: '铝型材颜色',
                 align: 'center',
                 sortable: true,
-                width: 100,
+                width: 200,
                 formatter: function (value, row, index) {
                     if (value == null) {
                         value = '';
@@ -1981,6 +2071,7 @@ function setTable3(data) {
                         select2 = select2 + "<select/>"
 
                     }
+                    $("#lcys"+row.id).append("<option selected='selected'>" +"--请选择--" + "</option>");
                     return select2;
                 }
             }, {
@@ -1988,7 +2079,7 @@ function setTable3(data) {
                 title: '灯带长度mm',
                 align: 'center',
                 sortable: true,
-                width: 130,
+                width: 200,
                 formatter: function (value, row, index) {
                     if (value == null) {
                         value = '';
@@ -2001,7 +2092,7 @@ function setTable3(data) {
                 title: '数量(支)',
                 align: 'center',
                 sortable: true,
-                width: 100,
+                width: 200,
                 formatter: function (value, row, index) {
                     if (value == null) {
                         value = '';
@@ -2014,7 +2105,7 @@ function setTable3(data) {
                 title: '出线端口左出线',
                 align: 'center',
                 sortable: true,
-                width: 140,
+                width: 200,
                 formatter: function (value, row, index) {
                     if (value == null) {
                         value = '';
@@ -2027,7 +2118,7 @@ function setTable3(data) {
                 title: '出线端口右出线',
                 align: 'center',
                 sortable: true,
-                width: 140,
+                width: 200,
                 formatter: function (value, row, index) {
                     if (value == null) {
                         value = '';
@@ -2039,7 +2130,7 @@ function setTable3(data) {
                 title: '光源',
                 align: 'center',
                 sortable: true,
-                width: 80,
+                width: 150,
                 formatter: function (value, row, index) {
                     if (value == null) {
                         value = '';
@@ -2060,7 +2151,7 @@ function setTable3(data) {
                 title: '功率W',
                 align: 'center',
                 sortable: true,
-                width: 80,
+                width: 150,
                 formatter: function (value, row, index) {
                     if (value == null) {
                         value = '';
@@ -2072,7 +2163,7 @@ function setTable3(data) {
                 title: '备注',
                 align: 'center',
                 sortable: true,
-                width: 80,
+                width: 150,
                 formatter: function (value, row, index) {
                     if (value == null) {
                         value = '';
@@ -2084,7 +2175,7 @@ function setTable3(data) {
                 title: '单价',
                 align: 'center',
                 sortable: true,
-                width: 80,
+                width: 150,
                 formatter: function (value, row, index) {
                     if (value == null) {
                         value = '';
@@ -2096,7 +2187,7 @@ function setTable3(data) {
                 title: '金额',
                 align: 'center',
                 sortable: true,
-                width: 80,
+                width: 150,
                 formatter: function (value, row, index) {
                     if (value == null) {
                         value = '';
@@ -2108,26 +2199,28 @@ function setTable3(data) {
                 title: '开料尺寸',
                 align: 'center',
                 sortable: true,
-                width: 100,
+                width: 200,
                 formatter: function (value, row, index) {
                     if (value == null) {
                         value = '';
                     }
                     return "<input id='chicun" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"chicun\" " + ")' placeholder='尺寸' type='text' class='form-control'  value='" + value + "'>"
                 }
-            }, {
-                field: 'lxdh',
-                title: '联系电话',
-                align: 'center',
-                sortable: true,
-                width: 130,
-                formatter: function (value, row, index) {
-                    if (value == null) {
-                        value = '';
-                    }
-                    return "<input id='lxdh" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"lxdh\" " + ")' placeholder='联系电话' type='text' class='form-control'  value='" + value + "'>"
-                }
-            }, {
+            }
+            // , {
+            //     field: 'lxdh',
+            //     title: '联系电话',
+            //     align: 'center',
+            //     sortable: true,
+            //     width: 130,
+            //     formatter: function (value, row, index) {
+            //         if (value == null) {
+            //             value = '';
+            //         }
+            //         return "<input id='lxdh" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"lxdh\" " + ")' placeholder='联系电话' type='text' class='form-control'  value='" + value + "'>"
+            //     }
+            // }
+            , {
                 field: 'wancheng',
                 title: '完成状态',
                 align: 'center',
@@ -2152,7 +2245,7 @@ function setTable3(data) {
                 title: 'id',
                 align: 'center',
                 sortable: true,
-                width: 0,
+                width: 1,
                 formatter: function (value, row, index) {
                     if (value == null) {
                         value = '';
@@ -2346,7 +2439,7 @@ function getToken() {
             var azdz = "";
             $ajax({
                 type: 'post',
-                url: '/ddxd/queryList',
+                url: '/ddxd/queryList1',
                 data: {
                     ksxdrq: ksxdrq,
                     jsxdrq: jsxdrq,
@@ -2385,7 +2478,60 @@ function getToken() {
         }
     })
 }
-
+// function getNumbern() {
+//     //默认当前日期
+//     //默认当前日期
+//     var date = new Date();
+//     var day = ("0" + date.getDate()).slice(-2);
+//     var month = ("0" + (date.getMonth() + 1)).slice(-2);
+//     //拼接成yyyy-MM-dd的形式
+//     var xdrq = date.getFullYear() + "-" + (month) + "-" + (day);
+//     var djbh = "";
+//     var ksxdrq = date.getFullYear() + "-" + (month) + "-" + (day);
+//     var jsxdrq = date.getFullYear() + "-" + (month) + "-" + ("0" + (date.getDate() + 1)).slice(-2);
+//     var khmc = "";
+//     var ddh = "";
+//     var azdz = "";
+//     $ajax({
+//         type: 'post',
+//         url: '/ddxd/queryList1',
+//         data: {
+//             ksxdrq: ksxdrq,
+//             jsxdrq: jsxdrq,
+//             khmc: khmc,
+//             ddh: ddh,
+//             azdz: azdz
+//         },
+//         async: false,
+//     }, false, '', function (res) {
+//         var length;
+//
+//         length = 0;
+//         if (res.data != undefined) {
+//             length = res.data.length
+//         }
+//         console.log(length)
+//         if (Math.floor((length + 1) / 10) === 0) {
+//             length = "000" + (length + 1);
+//         } else if (Math.floor((length + 1) / 100) === 0) {
+//             length = "00" + (length + 1);
+//         } else if (Math.floor((length + 1) / 1000) === 0) {
+//             length = "0" + (length + 1);
+//         } else if (Math.floor((length + 1) / 10000) === 0) {
+//             length = (length + 1);
+//         }
+//         console.log(length)
+//         djbh = "DD" + date.getFullYear() + (month) + (day) + length;
+//         console.log(djbh)
+//     })
+//     console.log(djbh)
+//     setForm(res.data, '#add-form');
+//     $('#add-luruyuan').val(res.data.name);
+//     $('#add-xdrq').val(xdrq);
+//     $('#add-djbh').val(djbh);
+//
+//
+// }
 
 $('#add-comeAgain-btn').click(function () {
 
@@ -2415,6 +2561,7 @@ $('#add-comeAgain-btn').click(function () {
 
     // $('#add-modal').modal('show');
     getToken()
+    // getNumbern()
     // getInputGh()
     getInputLcys()
     getInputGy()

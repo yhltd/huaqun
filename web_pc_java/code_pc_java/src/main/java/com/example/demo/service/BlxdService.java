@@ -17,7 +17,8 @@ public interface BlxdService extends IService<blxd> {
     /**
      * 玻璃厂查询
      */
-    List<blxd> getListByBoli();
+//    List<blxd> getListByBoli();
+    List<blxd> getListByBoli(String gongyingshang);
 
     /**
      * 其他查询
@@ -39,5 +40,6 @@ public interface BlxdService extends IService<blxd> {
     boolean updatesc(String shengchan,String orderNumber);
     boolean updategys(String gongyingshang,String orderNumber);
     blxd add(blxd blxd);
+    List<blxd> queryByBoli(String pinyin, String shengchan,String ksxdrq,String jsxdrq,String gongyingshang);
 
 }
