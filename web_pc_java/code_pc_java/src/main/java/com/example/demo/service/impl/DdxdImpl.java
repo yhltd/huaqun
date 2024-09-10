@@ -80,10 +80,13 @@ public class DdxdImpl extends ServiceImpl<DdxdMapper, ddxd> implements DdxdServi
     }
 
 
-    public boolean update1(String fj, String gh, String ddcd, String sl, String cxdk, String lcys, String gy
-            , String gl, String bz, String dj, String je, String chicun, String cxdkRight, String summoney, String wcsj, String luruyuan, String wancheng, int id) {
-        return ddxdMapper.update1(fj, gh, ddcd, sl, cxdk, lcys, gy, gl, bz, dj, je, chicun, cxdkRight, summoney, wcsj, luruyuan, wancheng, id);
-    }
+//    public boolean update1(String fj, String gh, String ddcd, String sl, String cxdk, String lcys, String gy
+//            , String gl, String bz, String dj, String je, String chicun, String cxdkRight, String summoney, String wcsj, String wancheng, int id) {
+//        return ddxdMapper.update1(fj, gh, ddcd, sl, cxdk, lcys, gy, gl, bz, dj, je, chicun, cxdkRight, summoney, wcsj, wancheng, id);
+//    }
+public boolean update1(String khmc,String xdrq,String djbh,String shouhuo,String lxdh,String shfs,String azdz,String ddh,String luruyuan,String fj, String gh, String ddcd, String sl, String cxdk, String lcys, String gy, String gl, String bz, String dj, String je, String chicun, String cxdkRight, String summoney, String wcsj, int id) {
+    return ddxdMapper.update1(khmc,xdrq,djbh,shouhuo,lxdh,shfs,azdz,ddh,luruyuan,fj, gh, ddcd, sl, cxdk, lcys, gy, gl, bz, dj, je, chicun, cxdkRight, summoney, wcsj, id);
+}
     @Override
     public boolean updatewc(String wancheng, String djbh) {
         return ddxdMapper.updatewc(wancheng,djbh);

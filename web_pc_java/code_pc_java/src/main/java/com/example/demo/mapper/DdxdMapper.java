@@ -61,9 +61,10 @@ List<ddxd> queryList1(String khmc, String ddh, String ksxdrq, String jsxdrq, Str
 
 
 
-    @Update("update lightbelt set fj = #{fj},gh = #{gh},ddcd = #{ddcd},sl = #{sl},cxdk = #{cxdk},lcys = #{lcys},gy = #{gy},gl = #{gl},bz = #{bz},dj = #{dj},je = #{je},chicun = #{chicun},cxdk_right = #{cxdkRight},sum_money = #{summoney},wcsj = #{wcsj},luruyuan = #{luruyuan},wancheng = #{wancheng} where id=#{id}")
-    boolean update1(String fj, String gh, String ddcd, String sl, String cxdk, String lcys, String gy, String gl, String bz, String dj, String je, String chicun, String cxdkRight, String summoney, String wcsj, String luruyuan, String wancheng, int id);
-
+//    @Update("update lightbelt set fj = #{fj},gh = #{gh},ddcd = #{ddcd},sl = #{sl},cxdk = #{cxdk},lcys = #{lcys},gy = #{gy},gl = #{gl},bz = #{bz},dj = #{dj},je = #{je},chicun = #{chicun},cxdk_right = #{cxdkRight},sum_money = #{summoney},wcsj = #{wcsj},wancheng = #{wancheng} where id=#{id}")
+//    boolean update1(String fj, String gh, String ddcd, String sl, String cxdk, String lcys, String gy, String gl, String bz, String dj, String je, String chicun, String cxdkRight, String summoney, String wcsj, String wancheng, int id);
+@Update("update lightbelt set khmc=#{khmc},xdrq=#{xdrq},djbh=#{djbh},shouhuo=#{shouhuo},lxdh=#{lxdh},shfs=#{shfs},azdz=#{azdz},ddh=#{ddh},luruyuan=#{luruyuan}, fj = #{fj},gh = #{gh},ddcd = #{ddcd},sl = #{sl},cxdk = #{cxdk},lcys = #{lcys},gy = #{gy},gl = #{gl},bz = #{bz},dj = #{dj},je = #{je},chicun = #{chicun},cxdk_right = #{cxdkRight},sum_money = #{summoney},wcsj = #{wcsj} where id=#{id}")
+boolean update1(String khmc,String xdrq,String djbh,String shouhuo,String lxdh,String shfs,String azdz,String ddh,String luruyuan,String fj, String gh, String ddcd, String sl, String cxdk, String lcys, String gy, String gl, String bz, String dj, String je, String chicun, String cxdkRight, String summoney, String wcsj, int id);
     @Update("update lightbelt set wancheng = #{wancheng} where djbh=#{djbh}")
     boolean updatewc(String wancheng,String djbh);
     @Delete("delete from lightbelt where id = #{id11}")

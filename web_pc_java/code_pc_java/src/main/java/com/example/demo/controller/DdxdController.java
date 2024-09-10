@@ -350,33 +350,61 @@ public class DdxdController {
         }
     }
 
-    @RequestMapping(value = "/update1", method = RequestMethod.POST)
-    public ResultInfo update1(HttpSession session,  String fj, String gh, String ddcd, String sl, String cxdk, String lcys, String gy
-            , String gl, String bz, String dj, String je, String chicun, String cxdkRight, String summoney, String wcsj, String luruyuan,String wancheng,int id11, int id) {
-        UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
+//    @RequestMapping(value = "/update1", method = RequestMethod.POST)
+//    public ResultInfo update1(HttpSession session,  String fj, String gh, String ddcd, String sl, String cxdk, String lcys, String gy
+//            , String gl, String bz, String dj, String je, String chicun, String cxdkRight, String summoney, String wcsj,String wancheng,int id11, int id) {
+//        UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
+////        --------------权限判断有问题
+////        ddxd ddxd = null;
+////        String wancheng1 = ddxdService.getListBydjbh(ddxd.getId());
+////        if (userInfo.getPower().equals("客户") && userInfo.getPower().equals("玻璃厂") || wancheng1.equals("已审验") && wancheng1.equals("完成")) {
+////            return ResultInfo.error(401, "无权限");
+////        }
+//        try {
+//            if(id11==1){
+//                ddxdService.update1(fj, gh, ddcd, sl, cxdk, lcys, gy, gl, bz, dj, je, chicun, cxdkRight, summoney, wcsj, wancheng, id);
+//                return ResultInfo.success("添加成功", null);
+//            }else{
+//                ddxdService.delete1(id11);
+//                System.out.println(id11);
+//                return ResultInfo.success("shanchu", null);
+//            }
+//
+//
+//        }catch (Exception e) {
+//            e.printStackTrace();
+//            log.error("修改失败：{}", e.getMessage());
+//            return ResultInfo.error("修改失败");
+//        }
+//    }
+@RequestMapping(value = "/update1", method = RequestMethod.POST)
+public ResultInfo update1(HttpSession session,String khmc,String xdrq,String djbh,String shouhuo,String lxdh,String shfs,String azdz,String ddh,String luruyuan,String fj, String gh, String ddcd, String sl, String cxdk, String lcys, String gy
+        , String gl, String bz, String dj, String je, String chicun, String cxdkRight, String summoney, String wcsj, int id11, int id) {
+    UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
 //        --------------权限判断有问题
 //        ddxd ddxd = null;
 //        String wancheng1 = ddxdService.getListBydjbh(ddxd.getId());
 //        if (userInfo.getPower().equals("客户") && userInfo.getPower().equals("玻璃厂") || wancheng1.equals("已审验") && wancheng1.equals("完成")) {
 //            return ResultInfo.error(401, "无权限");
 //        }
-        try {
-            if(id11==1){
-                ddxdService.update1(fj, gh, ddcd, sl, cxdk, lcys, gy, gl, bz, dj, je, chicun, cxdkRight, summoney, wcsj, luruyuan, wancheng, id);
-                return ResultInfo.success("添加成功", null);
-            }else{
-                ddxdService.delete1(id11);
-                System.out.println(id11);
-                return ResultInfo.success("shanchu", null);
-            }
-
-
-        }catch (Exception e) {
-            e.printStackTrace();
-            log.error("修改失败：{}", e.getMessage());
-            return ResultInfo.error("修改失败");
+    try {
+        if(id11==1){
+            ddxdService.update1(khmc,xdrq,djbh,shouhuo,lxdh,shfs,azdz,ddh,luruyuan,fj, gh, ddcd, sl, cxdk, lcys, gy, gl, bz, dj, je, chicun, cxdkRight, summoney, wcsj, id);
+            return ResultInfo.success("添加成功", null);
+        }else{
+            ddxdService.delete1(id11);
+            System.out.println(id11);
+            return ResultInfo.success("shanchu", null);
         }
+
+
+    }catch (Exception e) {
+        e.printStackTrace();
+        log.error("修改失败：{}", e.getMessage());
+        return ResultInfo.error("修改失败");
     }
+}
+
     @RequestMapping(value = "/updatewc", method = RequestMethod.POST)
     public ResultInfo updatewc(HttpSession session,String wancheng ,String djbh) {
         UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);

@@ -1423,3035 +1423,6 @@ function getJlpp() {
 }
 
 $(document).ready(function () {
-    $('#update-kaijiaolian').on('change', function () {
-        var selectedValue = $(this).val();
-
-
-
-        if (selectedValue == '开二孔') {
-            $("#add-jiaolian3SelectLeft").hide();
-            $("#add-jiaolian3InsertLeft").hide();
-            $("#add-jiaolian3SelectRight").hide();
-            $("#add-jiaolian3InsertRight").hide();
-
-            $("#add-jiaolian4SelectLeft").hide();
-            $("#add-jiaolian4InsertLeft").hide();
-            $("#add-jiaolian4SelectRight").hide();
-            $("#add-jiaolian4InsertRight").hide();
-
-            $("#add-jiaolian5SelectLeft").hide();
-            $("#add-jiaolian5InsertLeft").hide();
-            $("#add-jiaolian5SelectRight").hide();
-            $("#add-jiaolian5InsertRight").hide();
-
-            $("#add-jiaolian6SelectLeft").hide();
-            $("#add-jiaolian6InsertLeft").hide();
-            $("#add-jiaolian6SelectRight").hide();
-            $("#add-jiaolian6InsertRight").hide();
-            $("#update-jiaolian3SelectLeft").hide();
-            $("#update-jiaolian3InsertLeft").hide();
-            $("#update-jiaolian3SelectRight").hide();
-            $("#update-jiaolian3InsertRight").hide();
-
-            $("#update-jiaolian4SelectLeft").hide();
-            $("#update-jiaolian4InsertLeft").hide();
-            $("#update-jiaolian4SelectRight").hide();
-            $("#update-jiaolian4InsertRight").hide();
-
-            $("#update-jiaolian5SelectLeft").hide();
-            $("#update-jiaolian5InsertLeft").hide();
-            $("#update-jiaolian5SelectRight").hide();
-            $("#update-jiaolian5InsertRight").hide();
-
-            $("#update-jiaolian6SelectLeft").hide();
-            $("#update-jiaolian6InsertLeft").hide();
-            $("#update-jiaolian6SelectRight").hide();
-            $("#update-jiaolian6InsertRight").hide();
-
-            $("#l3sl").hide();
-            $("#l3il").hide();
-            $("#l3sr").hide();
-            $("#l3ir").hide();
-
-            $("#l4sl").hide();
-            $("#l4il").hide();
-            $("#l4sr").hide();
-            $("#l4ir").hide();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
-        }
-        if (selectedValue == '开三孔') {
-            $("#add-jiaolian4SelectLeft").hide();
-            $("#add-jiaolian4InsertLeft").hide();
-            $("#add-jiaolian4SelectRight").hide();
-            $("#add-jiaolian4InsertRight").hide();
-
-            $("#add-jiaolian5SelectLeft").hide();
-            $("#add-jiaolian5InsertLeft").hide();
-            $("#add-jiaolian5SelectRight").hide();
-            $("#add-jiaolian5InsertRight").hide();
-
-            $("#add-jiaolian6SelectLeft").hide();
-            $("#add-jiaolian6InsertLeft").hide();
-            $("#add-jiaolian6SelectRight").hide();
-            $("#add-jiaolian6InsertRight").hide();
-            $("#update-jiaolian4SelectLeft").hide();
-            $("#update-jiaolian4InsertLeft").hide();
-            $("#update-jiaolian4SelectRight").hide();
-            $("#update-jiaolian4InsertRight").hide();
-
-            $("#update-jiaolian5SelectLeft").hide();
-            $("#update-jiaolian5InsertLeft").hide();
-            $("#update-jiaolian5SelectRight").hide();
-            $("#update-jiaolian5InsertRight").hide();
-
-            $("#update-jiaolian6SelectLeft").hide();
-            $("#update-jiaolian6InsertLeft").hide();
-            $("#update-jiaolian6SelectRight").hide();
-            $("#update-jiaolian6InsertRight").hide();
-            $("#l4sl").hide();
-            $("#l4il").hide();
-            $("#l4sr").hide();
-            $("#l4ir").delete();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
-        }
-        if (selectedValue == '开四孔') {
-            $("#add-jiaolian5SelectLeft").hide();
-            $("#add-jiaolian5InsertLeft").hide();
-            $("#add-jiaolian5SelectRight").hide();
-            $("#add-jiaolian5InsertRight").hide();
-
-            $("#add-jiaolian6SelectLeft").hide();
-            $("#add-jiaolian6InsertLeft").hide();
-            $("#add-jiaolian6SelectRight").hide();
-            $("#add-jiaolian6InsertRight").hide();
-            $("#update-jiaolian5SelectLeft").hide();
-            $("#update-jiaolian5InsertLeft").hide();
-            $("#update-jiaolian5SelectRight").hide();
-            $("#update-jiaolian5InsertRight").hide();
-
-            $("#update-jiaolian6SelectLeft").hide();
-            $("#update-jiaolian6InsertLeft").hide();
-            $("#update-jiaolian6SelectRight").hide();
-            $("#update-jiaolian6InsertRight").hide();
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
-        }
-        if (selectedValue == '开五孔') {
-            $("#add-jiaolian6SelectLeft").hide();
-            $("#add-jiaolian6InsertLeft").hide();
-            $("#add-jiaolian6SelectRight").hide();
-            $("#add-jiaolian6InsertRight").hide();
-            $("#update-jiaolian6SelectLeft").hide();
-            $("#update-jiaolian6InsertLeft").hide();
-            $("#update-jiaolian6SelectRight").hide();
-            $("#update-jiaolian6InsertRight").hide();
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
-        }
-    })
-
-    $('#add-kaijiaolian1').on('change', function () {
-        var selectedValue1 = $(this).val();
-        if (selectedValue1 == '开二孔') {
-            $("#add-jiaolian3SelectLeft1").hide();
-            $("#add-jiaolian3InsertLeft1").hide();
-            $("#add-jiaolian3SelectRight1").hide();
-            $("#add-jiaolian3InsertRight1").hide();
-
-            $("#add-jiaolian4SelectLeft1").hide();
-            $("#add-jiaolian4InsertLeft1").hide();
-            $("#add-jiaolian4SelectRight1").hide();
-            $("#add-jiaolian4InsertRight1").hide();
-
-            $("#add-jiaolian5SelectLeft1").hide();
-            $("#add-jiaolian5InsertLeft1").hide();
-            $("#add-jiaolian5SelectRight1").hide();
-            $("#add-jiaolian5InsertRight1").hide();
-
-            $("#add-jiaolian6SelectLeft1").hide();
-            $("#add-jiaolian6InsertLeft1").hide();
-            $("#add-jiaolian6SelectRight1").hide();
-            $("#add-jiaolian6InsertRight1").hide();
-            $("#update-jiaolian3SelectLeft1").hide();
-            $("#update-jiaolian3InsertLeft1").hide();
-            $("#update-jiaolian3SelectRight1").hide();
-            $("#update-jiaolian3InsertRight1").hide();
-
-            $("#update-jiaolian4SelectLeft1").hide();
-            $("#update-jiaolian4InsertLeft1").hide();
-            $("#update-jiaolian4SelectRight1").hide();
-            $("#update-jiaolian4InsertRight1").hide();
-
-            $("#update-jiaolian5SelectLeft1").hide();
-            $("#update-jiaolian5InsertLeft1").hide();
-            $("#update-jiaolian5SelectRight1").hide();
-            $("#update-jiaolian5InsertRight1").hide();
-
-            $("#update-jiaolian6SelectLeft1").hide();
-            $("#update-jiaolian6InsertLeft1").hide();
-            $("#update-jiaolian6SelectRight1").hide();
-            $("#update-jiaolian6InsertRight1").hide();
-            $("#l3sl").hide();
-            $("#l3il").hide();
-            $("#l3sr").hide();
-            $("#l3ir").hide();
-
-            $("#l4sl").hide();
-            $("#l4il").hide();
-            $("#l4sr").hide();
-            $("#l4ir").hide();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
-        }
-        if (selectedValue1 == '开三孔') {
-            $("#add-jiaolian4SelectLeft1").hide();
-            $("#add-jiaolian4InsertLeft1").hide();
-            $("#add-jiaolian4SelectRight1").hide();
-            $("#add-jiaolian4InsertRight1").hide();
-
-            $("#add-jiaolian5SelectLeft1").hide();
-            $("#add-jiaolian5InsertLeft1").hide();
-            $("#add-jiaolian5SelectRight1").hide();
-            $("#add-jiaolian5InsertRight1").hide();
-
-            $("#add-jiaolian6SelectLeft1").hide();
-            $("#add-jiaolian6InsertLeft1").hide();
-            $("#add-jiaolian6SelectRight1").hide();
-            $("#add-jiaolian6InsertRight1").hide();
-            $("#update-jiaolian4SelectLeft1").hide();
-            $("#update-jiaolian4InsertLeft1").hide();
-            $("#update-jiaolian4SelectRight1").hide();
-            $("#update-jiaolian4InsertRight1").hide();
-
-            $("#update-jiaolian5SelectLeft1").hide();
-            $("#update-jiaolian5InsertLeft1").hide();
-            $("#update-jiaolian5SelectRight1").hide();
-            $("#update-jiaolian5InsertRight1").hide();
-
-            $("#update-jiaolian6SelectLeft1").hide();
-            $("#update-jiaolian6InsertLeft1").hide();
-            $("#update-jiaolian6SelectRight1").hide();
-            $("#update-jiaolian6InsertRight1").hide();
-            $("#l4sl").hide();
-            $("#l4il").hide();
-            $("#l4sr").hide();
-            $("#l4ir").delete();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
-        }
-        if (selectedValue1 == '开四孔') {
-            $("#add-jiaolian5SelectLeft1").hide();
-            $("#add-jiaolian5InsertLeft1").hide();
-            $("#add-jiaolian5SelectRight1").hide();
-            $("#add-jiaolian5InsertRight1").hide();
-
-            $("#add-jiaolian6SelectLeft1").hide();
-            $("#add-jiaolian6InsertLeft1").hide();
-            $("#add-jiaolian6SelectRight1").hide();
-            $("#add-jiaolian6InsertRight1").hide();
-            $("#update-jiaolian5SelectLeft1").hide();
-            $("#update-jiaolian5InsertLeft1").hide();
-            $("#update-jiaolian5SelectRight1").hide();
-            $("#update-jiaolian5InsertRight1").hide();
-
-            $("#update-jiaolian6SelectLeft1").hide();
-            $("#update-jiaolian6InsertLeft1").hide();
-            $("#update-jiaolian6SelectRight1").hide();
-            $("#update-jiaolian6InsertRight1").hide();
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
-        }
-        if (selectedValue1 == '开五孔') {
-            $("#add-jiaolian6SelectLeft1").hide();
-            $("#add-jiaolian6InsertLeft1").hide();
-            $("#add-jiaolian6SelectRight1").hide();
-            $("#add-jiaolian6InsertRight1").hide();
-            $("#update-jiaolian6SelectLeft1").hide();
-            $("#update-jiaolian6InsertLeft1").hide();
-            $("#update-jiaolian6SelectRight1").hide();
-            $("#update-jiaolian6InsertRight1").hide();
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
-        }
-    })
-
-    $('#add-kaijiaolian2').on('change', function () {
-        var selectedValue2 = $(this).val();
-        if (selectedValue2 == '开二孔') {
-            $("#add-jiaolian3SelectLeft2").hide();
-            $("#add-jiaolian3InsertLeft2").hide();
-            $("#add-jiaolian3SelectRight2").hide();
-            $("#add-jiaolian3InsertRight2").hide();
-
-            $("#add-jiaolian4SelectLeft2").hide();
-            $("#add-jiaolian4InsertLeft2").hide();
-            $("#add-jiaolian4SelectRight2").hide();
-            $("#add-jiaolian4InsertRight2").hide();
-
-            $("#add-jiaolian5SelectLeft2").hide();
-            $("#add-jiaolian5InsertLeft2").hide();
-            $("#add-jiaolian5SelectRight2").hide();
-            $("#add-jiaolian5InsertRight2").hide();
-
-            $("#add-jiaolian6SelectLeft2").hide();
-            $("#add-jiaolian6InsertLeft2").hide();
-            $("#add-jiaolian6SelectRight2").hide();
-            $("#add-jiaolian6InsertRight2").hide();
-            $("#update-jiaolian3SelectLeft2").hide();
-            $("#update-jiaolian3InsertLeft2").hide();
-            $("#update-jiaolian3SelectRight2").hide();
-            $("#update-jiaolian3InsertRight2").hide();
-
-            $("#update-jiaolian4SelectLeft2").hide();
-            $("#update-jiaolian4InsertLeft2").hide();
-            $("#update-jiaolian4SelectRight2").hide();
-            $("#update-jiaolian4InsertRight2").hide();
-
-            $("#update-jiaolian5SelectLeft2").hide();
-            $("#update-jiaolian5InsertLeft2").hide();
-            $("#update-jiaolian5SelectRight2").hide();
-            $("#update-jiaolian5InsertRight2").hide();
-
-            $("#update-jiaolian6SelectLeft2").hide();
-            $("#update-jiaolian6InsertLeft2").hide();
-            $("#update-jiaolian6SelectRight2").hide();
-            $("#update-jiaolian6InsertRight2").hide();
-            $("#l3sl").hide();
-            $("#l3il").hide();
-            $("#l3sr").hide();
-            $("#l3ir").hide();
-
-            $("#l4sl").hide();
-            $("#l4il").hide();
-            $("#l4sr").hide();
-            $("#l4ir").hide();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
-        }
-        if (selectedValue2 == '开三孔') {
-            $("#add-jiaolian4SelectLeft2").hide();
-            $("#add-jiaolian4InsertLeft2").hide();
-            $("#add-jiaolian4SelectRight2").hide();
-            $("#add-jiaolian4InsertRight2").hide();
-
-            $("#add-jiaolian5SelectLeft2").hide();
-            $("#add-jiaolian5InsertLeft2").hide();
-            $("#add-jiaolian5SelectRight2").hide();
-            $("#add-jiaolian5InsertRight2").hide();
-
-            $("#add-jiaolian6SelectLeft2").hide();
-            $("#add-jiaolian6InsertLeft2").hide();
-            $("#add-jiaolian6SelectRight2").hide();
-            $("#add-jiaolian6InsertRight2").hide();
-            $("#update-jiaolian4SelectLeft2").hide();
-            $("#update-jiaolian4InsertLeft2").hide();
-            $("#update-jiaolian4SelectRight2").hide();
-            $("#update-jiaolian4InsertRight2").hide();
-
-            $("#update-jiaolian5SelectLeft2").hide();
-            $("#update-jiaolian5InsertLeft2").hide();
-            $("#update-jiaolian5SelectRight2").hide();
-            $("#update-jiaolian5InsertRight2").hide();
-
-            $("#update-jiaolian6SelectLeft2").hide();
-            $("#update-jiaolian6InsertLeft2").hide();
-            $("#update-jiaolian6SelectRight2").hide();
-            $("#update-jiaolian6InsertRight2").hide();
-            $("#l4sl").hide();
-            $("#l4il").hide();
-            $("#l4sr").hide();
-            $("#l4ir").delete();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
-        }
-        if (selectedValue2 == '开四孔') {
-            $("#add-jiaolian5SelectLeft2").hide();
-            $("#add-jiaolian5InsertLeft2").hide();
-            $("#add-jiaolian5SelectRight2").hide();
-            $("#add-jiaolian5InsertRight2").hide();
-
-            $("#add-jiaolian6SelectLeft2").hide();
-            $("#add-jiaolian6InsertLeft2").hide();
-            $("#add-jiaolian6SelectRight2").hide();
-            $("#add-jiaolian6InsertRight2").hide();
-            $("#update-jiaolian5SelectLeft2").hide();
-            $("#update-jiaolian5InsertLeft2").hide();
-            $("#update-jiaolian5SelectRight2").hide();
-            $("#update-jiaolian5InsertRight2").hide();
-
-            $("#update-jiaolian6SelectLeft2").hide();
-            $("#update-jiaolian6InsertLeft2").hide();
-            $("#update-jiaolian6SelectRight2").hide();
-            $("#update-jiaolian6InsertRight2").hide();
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
-        }
-        if (selectedValue2 == '开五孔') {
-            $("#add-jiaolian6SelectLeft2").hide();
-            $("#add-jiaolian6InsertLeft2").hide();
-            $("#add-jiaolian6SelectRight2").hide();
-            $("#add-jiaolian6InsertRight2").hide();
-            $("#update-jiaolian6SelectLeft2").hide();
-            $("#update-jiaolian6InsertLeft2").hide();
-            $("#update-jiaolian6SelectRight2").hide();
-            $("#update-jiaolian6InsertRight2").hide();
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
-        }
-    })
-
-    $('#add-kaijiaolian3').on('change', function () {
-        var selectedValue3 = $(this).val();
-        if (selectedValue3 == '开二孔') {
-            $("#add-jiaolian3SelectLeft3").hide();
-            $("#add-jiaolian3InsertLeft3").hide();
-            $("#add-jiaolian3SelectRight3").hide();
-            $("#add-jiaolian3InsertRight3").hide();
-
-            $("#add-jiaolian4SelectLeft3").hide();
-            $("#add-jiaolian4InsertLeft3").hide();
-            $("#add-jiaolian4SelectRight3").hide();
-            $("#add-jiaolian4InsertRight3").hide();
-
-            $("#add-jiaolian5SelectLeft3").hide();
-            $("#add-jiaolian5InsertLeft3").hide();
-            $("#add-jiaolian5SelectRight3").hide();
-            $("#add-jiaolian5InsertRight3").hide();
-
-            $("#add-jiaolian6SelectLeft3").hide();
-            $("#add-jiaolian6InsertLeft3").hide();
-            $("#add-jiaolian6SelectRight3").hide();
-            $("#add-jiaolian6InsertRight3").hide();
-            $("#update-jiaolian3SelectLeft3").hide();
-            $("#update-jiaolian3InsertLeft3").hide();
-            $("#update-jiaolian3SelectRight3").hide();
-            $("#update-jiaolian3InsertRight3").hide();
-
-            $("#update-jiaolian4SelectLeft3").hide();
-            $("#update-jiaolian4InsertLeft3").hide();
-            $("#update-jiaolian4SelectRight3").hide();
-            $("#update-jiaolian4InsertRight3").hide();
-
-            $("#update-jiaolian5SelectLeft3").hide();
-            $("#update-jiaolian5InsertLeft3").hide();
-            $("#update-jiaolian5SelectRight3").hide();
-            $("#update-jiaolian5InsertRight3").hide();
-
-            $("#update-jiaolian6SelectLeft3").hide();
-            $("#update-jiaolian6InsertLeft3").hide();
-            $("#update-jiaolian6SelectRight3").hide();
-            $("#update-jiaolian6InsertRight3").hide();
-            $("#l3sl").hide();
-            $("#l3il").hide();
-            $("#l3sr").hide();
-            $("#l3ir").hide();
-
-            $("#l4sl").hide();
-            $("#l4il").hide();
-            $("#l4sr").hide();
-            $("#l4ir").hide();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
-        }
-        if (selectedValue3 == '开三孔') {
-            $("#add-jiaolian4SelectLeft3").hide();
-            $("#add-jiaolian4InsertLeft3").hide();
-            $("#add-jiaolian4SelectRight3").hide();
-            $("#add-jiaolian4InsertRight3").hide();
-
-            $("#add-jiaolian5SelectLeft3").hide();
-            $("#add-jiaolian5InsertLeft3").hide();
-            $("#add-jiaolian5SelectRight3").hide();
-            $("#add-jiaolian5InsertRight3").hide();
-
-            $("#add-jiaolian6SelectLeft3").hide();
-            $("#add-jiaolian6InsertLeft3").hide();
-            $("#add-jiaolian6SelectRight3").hide();
-            $("#add-jiaolian6InsertRight3").hide();
-            $("#update-jiaolian4SelectLeft3").hide();
-            $("#update-jiaolian4InsertLeft3").hide();
-            $("#update-jiaolian4SelectRight3").hide();
-            $("#update-jiaolian4InsertRight3").hide();
-
-            $("#update-jiaolian5SelectLeft3").hide();
-            $("#update-jiaolian5InsertLeft3").hide();
-            $("#update-jiaolian5SelectRight3").hide();
-            $("#update-jiaolian5InsertRight3").hide();
-
-            $("#update-jiaolian6SelectLeft3").hide();
-            $("#update-jiaolian6InsertLeft3").hide();
-            $("#update-jiaolian6SelectRight3").hide();
-            $("#update-jiaolian6InsertRight3").hide();
-
-            $("#l4sl").hide();
-            $("#l4il").hide();
-            $("#l4sr").hide();
-            $("#l4ir").delete();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
-        }
-        if (selectedValue3 == '开四孔') {
-            $("#add-jiaolian5SelectLeft3").hide();
-            $("#add-jiaolian5InsertLeft3").hide();
-            $("#add-jiaolian5SelectRight3").hide();
-            $("#add-jiaolian5InsertRight3").hide();
-
-            $("#add-jiaolian6SelectLeft3").hide();
-            $("#add-jiaolian6InsertLeft3").hide();
-            $("#add-jiaolian6SelectRight3").hide();
-            $("#add-jiaolian6InsertRight3").hide();
-            $("#update-jiaolian5SelectLeft3").hide();
-            $("#update-jiaolian5InsertLeft3").hide();
-            $("#update-jiaolian5SelectRight3").hide();
-            $("#update-jiaolian5InsertRight3").hide();
-
-            $("#update-jiaolian6SelectLeft3").hide();
-            $("#update-jiaolian6InsertLeft3").hide();
-            $("#update-jiaolian6SelectRight3").hide();
-            $("#update-jiaolian6InsertRight3").hide();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
-        }
-        if (selectedValue3 == '开五孔') {
-            $("#add-jiaolian6SelectLeft3").hide();
-            $("#add-jiaolian6InsertLeft3").hide();
-            $("#add-jiaolian6SelectRight3").hide();
-            $("#add-jiaolian6InsertRight3").hide();
-            $("#update-jiaolian6SelectLeft3").hide();
-            $("#update-jiaolian6InsertLeft3").hide();
-            $("#update-jiaolian6SelectRight3").hide();
-            $("#update-jiaolian6InsertRight3").hide();
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
-        }
-    })
-
-    $('#add-kaijiaolian4').on('change', function () {
-        var selectedValue4 = $(this).val();
-        if (selectedValue4 == '开二孔') {
-            $("#add-jiaolian3SelectLeft4").hide();
-            $("#add-jiaolian3InsertLeft4").hide();
-            $("#add-jiaolian3SelectRight4").hide();
-            $("#add-jiaolian3InsertRight4").hide();
-
-            $("#add-jiaolian4SelectLeft4").hide();
-            $("#add-jiaolian4InsertLeft4").hide();
-            $("#add-jiaolian4SelectRight4").hide();
-            $("#add-jiaolian4InsertRight4").hide();
-
-            $("#add-jiaolian5SelectLeft4").hide();
-            $("#add-jiaolian5InsertLeft4").hide();
-            $("#add-jiaolian5SelectRight4").hide();
-            $("#add-jiaolian5InsertRight4").hide();
-
-            $("#add-jiaolian6SelectLeft4").hide();
-            $("#add-jiaolian6InsertLeft4").hide();
-            $("#add-jiaolian6SelectRight4").hide();
-            $("#add-jiaolian6InsertRight4").hide();
-            $("#update-jiaolian3SelectLeft4").hide();
-            $("#update-jiaolian3InsertLeft4").hide();
-            $("#update-jiaolian3SelectRight4").hide();
-            $("#update-jiaolian3InsertRight4").hide();
-
-            $("#update-jiaolian4SelectLeft4").hide();
-            $("#update-jiaolian4InsertLeft4").hide();
-            $("#update-jiaolian4SelectRight4").hide();
-            $("#update-jiaolian4InsertRight4").hide();
-
-            $("#update-jiaolian5SelectLeft4").hide();
-            $("#update-jiaolian5InsertLeft4").hide();
-            $("#update-jiaolian5SelectRight4").hide();
-            $("#update-jiaolian5InsertRight4").hide();
-
-            $("#update-jiaolian6SelectLeft4").hide();
-            $("#update-jiaolian6InsertLeft4").hide();
-            $("#update-jiaolian6SelectRight4").hide();
-            $("#update-jiaolian6InsertRight4").hide();
-
-            $("#l3sl").hide();
-            $("#l3il").hide();
-            $("#l3sr").hide();
-            $("#l3ir").hide();
-
-            $("#l4sl").hide();
-            $("#l4il").hide();
-            $("#l4sr").hide();
-            $("#l4ir").hide();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
-        }
-        if (selectedValue4 == '开三孔') {
-            $("#add-jiaolian4SelectLeft4").hide();
-            $("#add-jiaolian4InsertLeft4").hide();
-            $("#add-jiaolian4SelectRight4").hide();
-            $("#add-jiaolian4InsertRight4").hide();
-
-            $("#add-jiaolian5SelectLeft4").hide();
-            $("#add-jiaolian5InsertLeft4").hide();
-            $("#add-jiaolian5SelectRight4").hide();
-            $("#add-jiaolian5InsertRight4").hide();
-
-            $("#add-jiaolian6SelectLeft4").hide();
-            $("#add-jiaolian6InsertLeft4").hide();
-            $("#add-jiaolian6SelectRight4").hide();
-            $("#add-jiaolian6InsertRight4").hide();
-            $("#update-jiaolian4SelectLeft4").hide();
-            $("#update-jiaolian4InsertLeft4").hide();
-            $("#update-jiaolian4SelectRight4").hide();
-            $("#update-jiaolian4InsertRight4").hide();
-
-            $("#update-jiaolian5SelectLeft4").hide();
-            $("#update-jiaolian5InsertLeft4").hide();
-            $("#update-jiaolian5SelectRight4").hide();
-            $("#update-jiaolian5InsertRight4").hide();
-
-            $("#update-jiaolian6SelectLeft4").hide();
-            $("#update-jiaolian6InsertLeft4").hide();
-            $("#update-jiaolian6SelectRight4").hide();
-            $("#update-jiaolian6InsertRight4").hide();
-
-            $("#l4sl").hide();
-            $("#l4il").hide();
-            $("#l4sr").hide();
-            $("#l4ir").delete();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
-        }
-        if (selectedValue4 == '开四孔') {
-            $("#add-jiaolian5SelectLeft4").hide();
-            $("#add-jiaolian5InsertLeft4").hide();
-            $("#add-jiaolian5SelectRight4").hide();
-            $("#add-jiaolian5InsertRight4").hide();
-
-            $("#add-jiaolian6SelectLeft4").hide();
-            $("#add-jiaolian6InsertLeft4").hide();
-            $("#add-jiaolian6SelectRight4").hide();
-            $("#add-jiaolian6InsertRight4").hide();
-            $("#update-jiaolian5SelectLeft4").hide();
-            $("#update-jiaolian5InsertLeft4").hide();
-            $("#update-jiaolian5SelectRight4").hide();
-            $("#update-jiaolian5InsertRight4").hide();
-
-            $("#update-jiaolian6SelectLeft4").hide();
-            $("#update-jiaolian6InsertLeft4").hide();
-            $("#update-jiaolian6SelectRight4").hide();
-            $("#update-jiaolian6InsertRight4").hide();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
-        }
-        if (selectedValue4 == '开五孔') {
-            $("#add-jiaolian6SelectLeft4").hide();
-            $("#add-jiaolian6InsertLeft4").hide();
-            $("#add-jiaolian6SelectRight4").hide();
-            $("#add-jiaolian6InsertRight4").hide();
-            $("#update-jiaolian6SelectLeft4").hide();
-            $("#update-jiaolian6InsertLeft4").hide();
-            $("#update-jiaolian6SelectRight4").hide();
-            $("#update-jiaolian6InsertRight4").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
-        }
-    })
-
-    $('#add-kaijiaolian5').on('change', function () {
-        var selectedValue5 = $(this).val();
-        if (selectedValue5 == '开二孔') {
-            $("#add-jiaolian3SelectLeft5").hide();
-            $("#add-jiaolian3InsertLeft5").hide();
-            $("#add-jiaolian3SelectRight5").hide();
-            $("#add-jiaolian3InsertRight5").hide();
-
-            $("#add-jiaolian4SelectLeft5").hide();
-            $("#add-jiaolian4InsertLeft5").hide();
-            $("#add-jiaolian4SelectRight5").hide();
-            $("#add-jiaolian4InsertRight5").hide();
-
-            $("#add-jiaolian5SelectLeft5").hide();
-            $("#add-jiaolian5InsertLeft5").hide();
-            $("#add-jiaolian5SelectRight5").hide();
-            $("#add-jiaolian5InsertRight5").hide();
-
-            $("#add-jiaolian6SelectLeft5").hide();
-            $("#add-jiaolian6InsertLeft5").hide();
-            $("#add-jiaolian6SelectRight5").hide();
-            $("#add-jiaolian6InsertRight5").hide();
-            $("#update-jiaolian3SelectLeft5").hide();
-            $("#update-jiaolian3InsertLeft5").hide();
-            $("#update-jiaolian3SelectRight5").hide();
-            $("#update-jiaolian3InsertRight5").hide();
-
-            $("#update-jiaolian4SelectLeft5").hide();
-            $("#update-jiaolian4InsertLeft5").hide();
-            $("#update-jiaolian4SelectRight5").hide();
-            $("#update-jiaolian4InsertRight5").hide();
-
-            $("#update-jiaolian5SelectLeft5").hide();
-            $("#update-jiaolian5InsertLeft5").hide();
-            $("#update-jiaolian5SelectRight5").hide();
-            $("#update-jiaolian5InsertRight5").hide();
-
-            $("#update-jiaolian6SelectLeft5").hide();
-            $("#update-jiaolian6InsertLeft5").hide();
-            $("#update-jiaolian6SelectRight5").hide();
-            $("#update-jiaolian6InsertRight5").hide();
-            $("#l3sl").hide();
-            $("#l3il").hide();
-            $("#l3sr").hide();
-            $("#l3ir").hide();
-
-            $("#l4sl").hide();
-            $("#l4il").hide();
-            $("#l4sr").hide();
-            $("#l4ir").hide();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
-        }
-        if (selectedValue5 == '开三孔') {
-            $("#add-jiaolian4SelectLeft5").hide();
-            $("#add-jiaolian4InsertLeft5").hide();
-            $("#add-jiaolian4SelectRight5").hide();
-            $("#add-jiaolian4InsertRight5").hide();
-
-            $("#add-jiaolian5SelectLeft5").hide();
-            $("#add-jiaolian5InsertLeft5").hide();
-            $("#add-jiaolian5SelectRight5").hide();
-            $("#add-jiaolian5InsertRight5").hide();
-
-            $("#add-jiaolian6SelectLeft5").hide();
-            $("#add-jiaolian6InsertLeft5").hide();
-            $("#add-jiaolian6SelectRight5").hide();
-            $("#add-jiaolian6InsertRight5").hide();
-            $("#update-jiaolian4SelectLeft5").hide();
-            $("#update-jiaolian4InsertLeft5").hide();
-            $("#update-jiaolian4SelectRight5").hide();
-            $("#update-jiaolian4InsertRight5").hide();
-
-            $("#update-jiaolian5SelectLeft5").hide();
-            $("#update-jiaolian5InsertLeft5").hide();
-            $("#update-jiaolian5SelectRight5").hide();
-            $("#update-jiaolian5InsertRight5").hide();
-
-            $("#update-jiaolian6SelectLeft5").hide();
-            $("#update-jiaolian6InsertLeft5").hide();
-            $("#update-jiaolian6SelectRight5").hide();
-            $("#update-jiaolian6InsertRight5").hide();
-            $("#l4sl").hide();
-            $("#l4il").hide();
-            $("#l4sr").hide();
-            $("#l4ir").delete();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
-        }
-        if (selectedValue5 == '开四孔') {
-            $("#update-jiaolian5SelectLeft5").hide();
-            $("#update-jiaolian5InsertLeft5").hide();
-            $("#update-jiaolian5SelectRight5").hide();
-            $("#update-jiaolian5InsertRight5").hide();
-
-            $("#update-jiaolian6SelectLeft5").hide();
-            $("#update-jiaolian6InsertLeft5").hide();
-            $("#update-jiaolian6SelectRight5").hide();
-            $("#update-jiaolian6InsertRight5").hide();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
-        }
-        if (selectedValue5 == '开五孔') {
-            $("#add-jiaolian6SelectLeft5").hide();
-            $("#add-jiaolian6InsertLeft5").hide();
-            $("#add-jiaolian6SelectRight5").hide();
-            $("#add-jiaolian6InsertRight5").hide();
-            $("#update-jiaolian6SelectLeft5").hide();
-            $("#update-jiaolian6InsertLeft5").hide();
-            $("#update-jiaolian6SelectRight5").hide();
-            $("#update-jiaolian6InsertRight5").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
-        }
-    })
-
-    $('#add-kaijiaolian6').on('change', function () {
-        var selectedValue6 = $(this).val();
-        if (selectedValue6 == '开二孔') {
-            $("#add-jiaolian3SelectLeft6").hide();
-            $("#add-jiaolian3InsertLeft6").hide();
-            $("#add-jiaolian3SelectRight6").hide();
-            $("#add-jiaolian3InsertRight6").hide();
-
-            $("#add-jiaolian4SelectLeft6").hide();
-            $("#add-jiaolian4InsertLeft6").hide();
-            $("#add-jiaolian4SelectRight6").hide();
-            $("#add-jiaolian4InsertRight6").hide();
-
-            $("#add-jiaolian5SelectLeft6").hide();
-            $("#add-jiaolian5InsertLeft6").hide();
-            $("#add-jiaolian5SelectRight6").hide();
-            $("#add-jiaolian5InsertRight6").hide();
-
-            $("#add-jiaolian6SelectLeft6").hide();
-            $("#add-jiaolian6InsertLeft6").hide();
-            $("#add-jiaolian6SelectRight6").hide();
-            $("#add-jiaolian6InsertRight6").hide();
-            $("#update-jiaolian3SelectLeft6").hide();
-            $("#update-jiaolian3InsertLeft6").hide();
-            $("#update-jiaolian3SelectRight6").hide();
-            $("#update-jiaolian3InsertRight6").hide();
-
-            $("#update-jiaolian4SelectLeft6").hide();
-            $("#update-jiaolian4InsertLeft6").hide();
-            $("#update-jiaolian4SelectRight6").hide();
-            $("#update-jiaolian4InsertRight6").hide();
-
-            $("#update-jiaolian5SelectLeft6").hide();
-            $("#update-jiaolian5InsertLeft6").hide();
-            $("#update-jiaolian5SelectRight6").hide();
-            $("#update-jiaolian5InsertRight6").hide();
-
-            $("#update-jiaolian6SelectLeft6").hide();
-            $("#update-jiaolian6InsertLeft6").hide();
-            $("#update-jiaolian6SelectRight6").hide();
-            $("#update-jiaolian6InsertRight6").hide();
-
-            $("#l3sl").hide();
-            $("#l3il").hide();
-            $("#l3sr").hide();
-            $("#l3ir").hide();
-
-            $("#l4sl").hide();
-            $("#l4il").hide();
-            $("#l4sr").hide();
-            $("#l4ir").hide();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
-        }
-        if (selectedValue6 == '开三孔') {
-            $("#add-jiaolian4SelectLeft6").hide();
-            $("#add-jiaolian4InsertLeft6").hide();
-            $("#add-jiaolian4SelectRight6").hide();
-            $("#add-jiaolian4InsertRight6").hide();
-
-            $("#add-jiaolian5SelectLeft6").hide();
-            $("#add-jiaolian5InsertLeft6").hide();
-            $("#add-jiaolian5SelectRight6").hide();
-            $("#add-jiaolian5InsertRight6").hide();
-
-            $("#add-jiaolian6SelectLeft6").hide();
-            $("#add-jiaolian6InsertLeft6").hide();
-            $("#add-jiaolian6SelectRight6").hide();
-            $("#add-jiaolian6InsertRight6").hide();
-            $("#update-jiaolian4SelectLeft6").hide();
-            $("#update-jiaolian4InsertLeft6").hide();
-            $("#update-jiaolian4SelectRight6").hide();
-            $("#update-jiaolian4InsertRight6").hide();
-
-            $("#update-jiaolian5SelectLeft6").hide();
-            $("#update-jiaolian5InsertLeft6").hide();
-            $("#update-jiaolian5SelectRight6").hide();
-            $("#update-jiaolian5InsertRight6").hide();
-
-            $("#update-jiaolian6SelectLeft6").hide();
-            $("#update-jiaolian6InsertLeft6").hide();
-            $("#update-jiaolian6SelectRight6").hide();
-            $("#update-jiaolian6InsertRight6").hide();
-
-            $("#l4sl").hide();
-            $("#l4il").hide();
-            $("#l4sr").hide();
-            $("#l4ir").delete();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
-        }
-        if (selectedValue6 == '开四孔') {
-            $("#add-jiaolian5SelectLeft6").hide();
-            $("#add-jiaolian5InsertLeft6").hide();
-            $("#add-jiaolian5SelectRight6").hide();
-            $("#add-jiaolian5InsertRight6").hide();
-
-            $("#add-jiaolian6SelectLeft6").hide();
-            $("#add-jiaolian6InsertLeft6").hide();
-            $("#add-jiaolian6SelectRight6").hide();
-            $("#add-jiaolian6InsertRight6").hide();
-            $("#update-jiaolian5SelectLeft6").hide();
-            $("#update-jiaolian5InsertLeft6").hide();
-            $("#update-jiaolian5SelectRight6").hide();
-            $("#update-jiaolian5InsertRight6").hide();
-
-            $("#update-jiaolian6SelectLeft6").hide();
-            $("#update-jiaolian6InsertLeft6").hide();
-            $("#update-jiaolian6SelectRight6").hide();
-            $("#update-jiaolian6InsertRight6").hide();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
-        }
-        if (selectedValue6 == '开五孔') {
-            $("#add-jiaolian6SelectLeft6").hide();
-            $("#add-jiaolian6InsertLeft6").hide();
-            $("#add-jiaolian6SelectRight6").hide();
-            $("#add-jiaolian6InsertRight6").hide();
-            $("#update-jiaolian6SelectLeft6").hide();
-            $("#update-jiaolian6InsertLeft6").hide();
-            $("#update-jiaolian6SelectRight6").hide();
-            $("#update-jiaolian6InsertRight6").hide();
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
-        }
-    })
-
-    $('#add-kaijiaolian7').on('change', function () {
-        var selectedValue7 = $(this).val();
-        if (selectedValue7 == '开二孔') {
-            $("#add-jiaolian3SelectLeft7").hide();
-            $("#add-jiaolian3InsertLeft7").hide();
-            $("#add-jiaolian3SelectRight7").hide();
-            $("#add-jiaolian3InsertRight7").hide();
-
-            $("#add-jiaolian4SelectLeft7").hide();
-            $("#add-jiaolian4InsertLeft7").hide();
-            $("#add-jiaolian4SelectRight7").hide();
-            $("#add-jiaolian4InsertRight7").hide();
-
-            $("#add-jiaolian5SelectLeft7").hide();
-            $("#add-jiaolian5InsertLeft7").hide();
-            $("#add-jiaolian5SelectRight7").hide();
-            $("#add-jiaolian5InsertRight7").hide();
-
-            $("#add-jiaolian6SelectLeft7").hide();
-            $("#add-jiaolian6InsertLeft7").hide();
-            $("#add-jiaolian6SelectRight7").hide();
-            $("#add-jiaolian6InsertRight7").hide();
-            $("#update-jiaolian3SelectLeft7").hide();
-            $("#update-jiaolian3InsertLeft7").hide();
-            $("#update-jiaolian3SelectRight7").hide();
-            $("#update-jiaolian3InsertRight7").hide();
-
-            $("#update-jiaolian4SelectLeft7").hide();
-            $("#update-jiaolian4InsertLeft7").hide();
-            $("#update-jiaolian4SelectRight7").hide();
-            $("#update-jiaolian4InsertRight7").hide();
-
-            $("#update-jiaolian5SelectLeft7").hide();
-            $("#update-jiaolian5InsertLeft7").hide();
-            $("#update-jiaolian5SelectRight7").hide();
-            $("#update-jiaolian5InsertRight7").hide();
-
-            $("#update-jiaolian6SelectLeft7").hide();
-            $("#update-jiaolian6InsertLeft7").hide();
-            $("#update-jiaolian6SelectRight7").hide();
-            $("#update-jiaolian6InsertRight7").hide();
-            $("#l3sl").hide();
-            $("#l3il").hide();
-            $("#l3sr").hide();
-            $("#l3ir").hide();
-
-            $("#l4sl").hide();
-            $("#l4il").hide();
-            $("#l4sr").hide();
-            $("#l4ir").hide();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
-        }
-        if (selectedValue7 == '开三孔') {
-            $("#add-jiaolian4SelectLeft7").hide();
-            $("#add-jiaolian4InsertLeft7").hide();
-            $("#add-jiaolian4SelectRight7").hide();
-            $("#add-jiaolian4InsertRight7").hide();
-
-            $("#add-jiaolian5SelectLeft7").hide();
-            $("#add-jiaolian5InsertLeft7").hide();
-            $("#add-jiaolian5SelectRight7").hide();
-            $("#add-jiaolian5InsertRight7").hide();
-
-            $("#add-jiaolian6SelectLeft7").hide();
-            $("#add-jiaolian6InsertLeft7").hide();
-            $("#add-jiaolian6SelectRight7").hide();
-            $("#add-jiaolian6InsertRight7").hide();
-            $("#update-jiaolian4SelectLeft7").hide();
-            $("#update-jiaolian4InsertLeft7").hide();
-            $("#update-jiaolian4SelectRight7").hide();
-            $("#update-jiaolian4InsertRight7").hide();
-
-            $("#update-jiaolian5SelectLeft7").hide();
-            $("#update-jiaolian5InsertLeft7").hide();
-            $("#update-jiaolian5SelectRight7").hide();
-            $("#update-jiaolian5InsertRight7").hide();
-
-            $("#update-jiaolian6SelectLeft7").hide();
-            $("#update-jiaolian6InsertLeft7").hide();
-            $("#update-jiaolian6SelectRight7").hide();
-            $("#update-jiaolian6InsertRight7").hide();
-
-            $("#l4sl").hide();
-            $("#l4il").hide();
-            $("#l4sr").hide();
-            $("#l4ir").delete();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
-        }
-        if (selectedValue7 == '开四孔') {
-            $("#add-jiaolian5SelectLeft7").hide();
-            $("#add-jiaolian5InsertLeft7").hide();
-            $("#add-jiaolian5SelectRight7").hide();
-            $("#add-jiaolian5InsertRight7").hide();
-
-            $("#add-jiaolian6SelectLeft7").hide();
-            $("#add-jiaolian6InsertLeft7").hide();
-            $("#add-jiaolian6SelectRight7").hide();
-            $("#add-jiaolian6InsertRight7").hide();
-            $("#update-jiaolian5SelectLeft7").hide();
-            $("#update-jiaolian5InsertLeft7").hide();
-            $("#update-jiaolian5SelectRight7").hide();
-            $("#update-jiaolian5InsertRight7").hide();
-
-            $("#update-jiaolian6SelectLeft7").hide();
-            $("#update-jiaolian6InsertLeft7").hide();
-            $("#update-jiaolian6SelectRight7").hide();
-            $("#update-jiaolian6InsertRight7").hide();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
-        }
-        if (selectedValue7 == '开五孔') {
-            $("#add-jiaolian6SelectLeft7").hide();
-            $("#add-jiaolian6InsertLeft7").hide();
-            $("#add-jiaolian6SelectRight7").hide();
-            $("#add-jiaolian6InsertRight7").hide();
-            $("#update-jiaolian6SelectLeft7").hide();
-            $("#update-jiaolian6InsertLeft7").hide();
-            $("#update-jiaolian6SelectRight7").hide();
-            $("#update-jiaolian6InsertRight7").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
-        }
-    })
-
-    $('#add-kaijiaolian8').on('change', function () {
-        var selectedValue8 = $(this).val();
-        if (selectedValue8 == '开二孔') {
-            $("#add-jiaolian3SelectLeft8").hide();
-            $("#add-jiaolian3InsertLeft8").hide();
-            $("#add-jiaolian3SelectRight8").hide();
-            $("#add-jiaolian3InsertRight8").hide();
-
-            $("#add-jiaolian4SelectLeft8").hide();
-            $("#add-jiaolian4InsertLeft8").hide();
-            $("#add-jiaolian4SelectRight8").hide();
-            $("#add-jiaolian4InsertRight8").hide();
-
-            $("#add-jiaolian5SelectLeft8").hide();
-            $("#add-jiaolian5InsertLeft8").hide();
-            $("#add-jiaolian5SelectRight8").hide();
-            $("#add-jiaolian5InsertRight8").hide();
-
-            $("#add-jiaolian6SelectLeft8").hide();
-            $("#add-jiaolian6InsertLeft8").hide();
-            $("#add-jiaolian6SelectRight8").hide();
-            $("#add-jiaolian6InsertRight8").hide();
-            $("#update-jiaolian3SelectLeft8").hide();
-            $("#update-jiaolian3InsertLeft8").hide();
-            $("#update-jiaolian3SelectRight8").hide();
-            $("#update-jiaolian3InsertRight8").hide();
-
-            $("#update-jiaolian4SelectLeft8").hide();
-            $("#update-jiaolian4InsertLeft8").hide();
-            $("#update-jiaolian4SelectRight8").hide();
-            $("#update-jiaolian4InsertRight8").hide();
-
-            $("#update-jiaolian5SelectLeft8").hide();
-            $("#update-jiaolian5InsertLeft8").hide();
-            $("#update-jiaolian5SelectRight8").hide();
-            $("#update-jiaolian5InsertRight8").hide();
-
-            $("#update-jiaolian6SelectLeft8").hide();
-            $("#update-jiaolian6InsertLeft8").hide();
-            $("#update-jiaolian6SelectRight8").hide();
-            $("#update-jiaolian6InsertRight8").hide();
-
-            $("#l3sl").hide();
-            $("#l3il").hide();
-            $("#l3sr").hide();
-            $("#l3ir").hide();
-
-            $("#l4sl").hide();
-            $("#l4il").hide();
-            $("#l4sr").hide();
-            $("#l4ir").hide();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
-        }
-        if (selectedValue8 == '开三孔') {
-            $("#add-jiaolian4SelectLeft8").hide();
-            $("#add-jiaolian4InsertLeft8").hide();
-            $("#add-jiaolian4SelectRight8").hide();
-            $("#add-jiaolian4InsertRight8").hide();
-
-            $("#add-jiaolian5SelectLeft8").hide();
-            $("#add-jiaolian5InsertLeft8").hide();
-            $("#add-jiaolian5SelectRight8").hide();
-            $("#add-jiaolian5InsertRight8").hide();
-
-            $("#add-jiaolian6SelectLeft8").hide();
-            $("#add-jiaolian6InsertLeft8").hide();
-            $("#add-jiaolian6SelectRight8").hide();
-            $("#add-jiaolian6InsertRight8").hide();
-            $("#update-jiaolian4SelectLeft8").hide();
-            $("#update-jiaolian4InsertLeft8").hide();
-            $("#update-jiaolian4SelectRight8").hide();
-            $("#update-jiaolian4InsertRight8").hide();
-
-            $("#update-jiaolian5SelectLeft8").hide();
-            $("#update-jiaolian5InsertLeft8").hide();
-            $("#update-jiaolian5SelectRight8").hide();
-            $("#update-jiaolian5InsertRight8").hide();
-
-            $("#update-jiaolian6SelectLeft8").hide();
-            $("#update-jiaolian6InsertLeft8").hide();
-            $("#update-jiaolian6SelectRight8").hide();
-            $("#update-jiaolian6InsertRight8").hide();
-
-            $("#l4sl").hide();
-            $("#l4il").hide();
-            $("#l4sr").hide();
-            $("#l4ir").delete();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
-        }
-        if (selectedValue8 == '开四孔') {
-            $("#add-jiaolian5SelectLeft8").hide();
-            $("#add-jiaolian5InsertLeft8").hide();
-            $("#add-jiaolian5SelectRight8").hide();
-            $("#add-jiaolian5InsertRight8").hide();
-
-            $("#add-jiaolian6SelectLeft8").hide();
-            $("#add-jiaolian6InsertLeft8").hide();
-            $("#add-jiaolian6SelectRight8").hide();
-            $("#add-jiaolian6InsertRight8").hide();
-            $("#update-jiaolian5SelectLeft8").hide();
-            $("#update-jiaolian5InsertLeft8").hide();
-            $("#update-jiaolian5SelectRight8").hide();
-            $("#update-jiaolian5InsertRight8").hide();
-
-            $("#update-jiaolian6SelectLeft8").hide();
-            $("#update-jiaolian6InsertLeft8").hide();
-            $("#update-jiaolian6SelectRight8").hide();
-            $("#update-jiaolian6InsertRight8").hide();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
-        }
-        if (selectedValue8 == '开五孔') {
-            $("#add-jiaolian6SelectLeft8").hide();
-            $("#add-jiaolian6InsertLeft8").hide();
-            $("#add-jiaolian6SelectRight8").hide();
-            $("#add-jiaolian6InsertRight8").hide();
-            $("#update-jiaolian6SelectLeft8").hide();
-            $("#update-jiaolian6InsertLeft8").hide();
-            $("#update-jiaolian6SelectRight8").hide();
-            $("#update-jiaolian6InsertRight8").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
-        }
-    })
-
-    $('#add-kaijiaolian9').on('change', function () {
-        var selectedValue9 = $(this).val();
-        if (selectedValue9 == '开二孔') {
-            $("#add-jiaolian3SelectLeft9").hide();
-            $("#add-jiaolian3InsertLeft9").hide();
-            $("#add-jiaolian3SelectRight9").hide();
-            $("#add-jiaolian3InsertRight9").hide();
-
-            $("#add-jiaolian4SelectLeft9").hide();
-            $("#add-jiaolian4InsertLeft9").hide();
-            $("#add-jiaolian4SelectRight9").hide();
-            $("#add-jiaolian4InsertRight9").hide();
-
-            $("#add-jiaolian5SelectLeft9").hide();
-            $("#add-jiaolian5InsertLeft9").hide();
-            $("#add-jiaolian5SelectRight9").hide();
-            $("#add-jiaolian5InsertRight9").hide();
-
-            $("#add-jiaolian6SelectLeft9").hide();
-            $("#add-jiaolian6InsertLeft9").hide();
-            $("#add-jiaolian6SelectRight9").hide();
-            $("#add-jiaolian6InsertRight9").hide();
-            $("#update-jiaolian3SelectLeft9").hide();
-            $("#update-jiaolian3InsertLeft9").hide();
-            $("#update-jiaolian3SelectRight9").hide();
-            $("#update-jiaolian3InsertRight9").hide();
-
-            $("#update-jiaolian4SelectLeft9").hide();
-            $("#update-jiaolian4InsertLeft9").hide();
-            $("#update-jiaolian4SelectRight9").hide();
-            $("#update-jiaolian4InsertRight9").hide();
-
-            $("#update-jiaolian5SelectLeft9").hide();
-            $("#update-jiaolian5InsertLeft9").hide();
-            $("#update-jiaolian5SelectRight9").hide();
-            $("#update-jiaolian5InsertRight9").hide();
-
-            $("#update-jiaolian6SelectLeft9").hide();
-            $("#update-jiaolian6InsertLeft9").hide();
-            $("#update-jiaolian6SelectRight9").hide();
-            $("#update-jiaolian6InsertRight9").hide();
-
-
-            $("#l3sl").hide();
-            $("#l3il").hide();
-            $("#l3sr").hide();
-            $("#l3ir").hide();
-
-            $("#l4sl").hide();
-            $("#l4il").hide();
-            $("#l4sr").hide();
-            $("#l4ir").hide();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
-        }
-        if (selectedValue9 == '开三孔') {
-            $("#add-jiaolian4SelectLeft9").hide();
-            $("#add-jiaolian4InsertLeft9").hide();
-            $("#add-jiaolian4SelectRight9").hide();
-            $("#add-jiaolian4InsertRight9").hide();
-
-            $("#add-jiaolian5SelectLeft9").hide();
-            $("#add-jiaolian5InsertLeft9").hide();
-            $("#add-jiaolian5SelectRight9").hide();
-            $("#add-jiaolian5InsertRight9").hide();
-
-            $("#add-jiaolian6SelectLeft9").hide();
-            $("#add-jiaolian6InsertLeft9").hide();
-            $("#add-jiaolian6SelectRight9").hide();
-            $("#add-jiaolian6InsertRight9").hide();
-            $("#update-jiaolian4SelectLeft9").hide();
-            $("#update-jiaolian4InsertLeft9").hide();
-            $("#update-jiaolian4SelectRight9").hide();
-            $("#update-jiaolian4InsertRight9").hide();
-
-            $("#update-jiaolian5SelectLeft9").hide();
-            $("#update-jiaolian5InsertLeft9").hide();
-            $("#update-jiaolian5SelectRight9").hide();
-            $("#update-jiaolian5InsertRight9").hide();
-
-            $("#update-jiaolian6SelectLeft9").hide();
-            $("#update-jiaolian6InsertLeft9").hide();
-            $("#update-jiaolian6SelectRight9").hide();
-            $("#update-jiaolian6InsertRight9").hide();
-
-            $("#l4sl").hide();
-            $("#l4il").hide();
-            $("#l4sr").hide();
-            $("#l4ir").delete();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
-        }
-        if (selectedValue9 == '开四孔') {
-            $("#add-jiaolian5SelectLeft9").hide();
-            $("#add-jiaolian5InsertLeft9").hide();
-            $("#add-jiaolian5SelectRight9").hide();
-            $("#add-jiaolian5InsertRight9").hide();
-
-            $("#add-jiaolian6SelectLeft9").hide();
-            $("#add-jiaolian6InsertLeft9").hide();
-            $("#add-jiaolian6SelectRight9").hide();
-            $("#add-jiaolian6InsertRight9").hide();
-            $("#update-jiaolian5SelectLeft9").hide();
-            $("#update-jiaolian5InsertLeft9").hide();
-            $("#update-jiaolian5SelectRight9").hide();
-            $("#update-jiaolian5InsertRight9").hide();
-
-            $("#update-jiaolian6SelectLeft9").hide();
-            $("#update-jiaolian6InsertLeft9").hide();
-            $("#update-jiaolian6SelectRight9").hide();
-            $("#update-jiaolian6InsertRight9").hide();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
-        }
-        if (selectedValue9 == '开五孔') {
-            $("#add-jiaolian6SelectLeft9").hide();
-            $("#add-jiaolian6InsertLeft9").hide();
-            $("#add-jiaolian6SelectRight9").hide();
-            $("#add-jiaolian6InsertRight9").hide();
-            $("#update-jiaolian6SelectLeft9").hide();
-            $("#update-jiaolian6InsertLeft9").hide();
-            $("#update-jiaolian6SelectRight9").hide();
-            $("#update-jiaolian6InsertRight9").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
-        }
-    })
-
-    $('#add-kaijiaolian10').on('change', function () {
-        var selectedValue10 = $(this).val();
-        if (selectedValue10 == '开二孔') {
-            $("#add-jiaolian3SelectLeft10").hide();
-            $("#add-jiaolian3InsertLeft10").hide();
-            $("#add-jiaolian3SelectRight10").hide();
-            $("#add-jiaolian3InsertRight10").hide();
-
-            $("#add-jiaolian4SelectLeft10").hide();
-            $("#add-jiaolian4InsertLeft10").hide();
-            $("#add-jiaolian4SelectRight10").hide();
-            $("#add-jiaolian4InsertRight10").hide();
-
-            $("#add-jiaolian5SelectLeft10").hide();
-            $("#add-jiaolian5InsertLeft10").hide();
-            $("#add-jiaolian5SelectRight10").hide();
-            $("#add-jiaolian5InsertRight10").hide();
-
-            $("#add-jiaolian6SelectLeft10").hide();
-            $("#add-jiaolian6InsertLeft10").hide();
-            $("#add-jiaolian6SelectRight10").hide();
-            $("#add-jiaolian6InsertRight10").hide();
-            $("#update-jiaolian3SelectLeft10").hide();
-            $("#update-jiaolian3InsertLeft10").hide();
-            $("#update-jiaolian3SelectRight10").hide();
-            $("#update-jiaolian3InsertRight10").hide();
-
-            $("#update-jiaolian4SelectLeft10").hide();
-            $("#update-jiaolian4InsertLeft10").hide();
-            $("#update-jiaolian4SelectRight10").hide();
-            $("#update-jiaolian4InsertRight10").hide();
-
-            $("#update-jiaolian5SelectLeft10").hide();
-            $("#update-jiaolian5InsertLeft10").hide();
-            $("#update-jiaolian5SelectRight10").hide();
-            $("#update-jiaolian5InsertRight10").hide();
-
-            $("#update-jiaolian6SelectLeft10").hide();
-            $("#update-jiaolian6InsertLeft10").hide();
-            $("#update-jiaolian6SelectRight10").hide();
-            $("#update-jiaolian6InsertRight10").hide();
-
-            $("#l3sl").hide();
-            $("#l3il").hide();
-            $("#l3sr").hide();
-            $("#l3ir").hide();
-
-            $("#l4sl").hide();
-            $("#l4il").hide();
-            $("#l4sr").hide();
-            $("#l4ir").hide();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
-        }
-        if (selectedValue10 == '开三孔') {
-            $("#add-jiaolian4SelectLeft10").hide();
-            $("#add-jiaolian4InsertLeft10").hide();
-            $("#add-jiaolian4SelectRight10").hide();
-            $("#add-jiaolian4InsertRight10").hide();
-
-            $("#add-jiaolian5SelectLeft10").hide();
-            $("#add-jiaolian5InsertLeft10").hide();
-            $("#add-jiaolian5SelectRight10").hide();
-            $("#add-jiaolian5InsertRight10").hide();
-
-            $("#add-jiaolian6SelectLeft10").hide();
-            $("#add-jiaolian6InsertLeft10").hide();
-            $("#add-jiaolian6SelectRight10").hide();
-            $("#add-jiaolian6InsertRight10").hide();
-            $("#update-jiaolian4SelectLeft10").hide();
-            $("#update-jiaolian4InsertLeft10").hide();
-            $("#update-jiaolian4SelectRight10").hide();
-            $("#update-jiaolian4InsertRight10").hide();
-
-            $("#update-jiaolian5SelectLeft10").hide();
-            $("#update-jiaolian5InsertLeft10").hide();
-            $("#update-jiaolian5SelectRight10").hide();
-            $("#update-jiaolian5InsertRight10").hide();
-
-            $("#update-jiaolian6SelectLeft10").hide();
-            $("#update-jiaolian6InsertLeft10").hide();
-            $("#update-jiaolian6SelectRight10").hide();
-            $("#update-jiaolian6InsertRight10").hide();
-
-            $("#l4sl").hide();
-            $("#l4il").hide();
-            $("#l4sr").hide();
-            $("#l4ir").delete();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
-        }
-        if (selectedValue10 == '开四孔') {
-            $("#update-jiaolian5SelectLeft10").hide();
-            $("#update-jiaolian5InsertLeft10").hide();
-            $("#update-jiaolian5SelectRight10").hide();
-            $("#update-jiaolian5InsertRight10").hide();
-
-            $("#update-jiaolian6SelectLeft10").hide();
-            $("#update-jiaolian6InsertLeft10").hide();
-            $("#update-jiaolian6SelectRight10").hide();
-            $("#update-jiaolian6InsertRight10").hide();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
-        }
-        if (selectedValue10 == '开五孔') {
-            $("#add-jiaolian6SelectLeft10").hide();
-            $("#add-jiaolian6InsertLeft10").hide();
-            $("#add-jiaolian6SelectRight10").hide();
-            $("#add-jiaolian6InsertRight10").hide();
-            $("#update-jiaolian6SelectLeft10").hide();
-            $("#update-jiaolian6InsertLeft10").hide();
-            $("#update-jiaolian6SelectRight10").hide();
-            $("#update-jiaolian6InsertRight10").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
-        }
-    })
-
-    $('#add-kaijiaolian11').on('change', function () {
-        var selectedValue11 = $(this).val();
-        if (selectedValue11 == '开二孔') {
-            $("#add-jiaolian3SelectLeft11").hide();
-            $("#add-jiaolian3InsertLeft11").hide();
-            $("#add-jiaolian3SelectRight11").hide();
-            $("#add-jiaolian3InsertRight11").hide();
-
-            $("#add-jiaolian4SelectLeft11").hide();
-            $("#add-jiaolian4InsertLeft11").hide();
-            $("#add-jiaolian4SelectRight11").hide();
-            $("#add-jiaolian4InsertRight11").hide();
-
-            $("#add-jiaolian5SelectLeft11").hide();
-            $("#add-jiaolian5InsertLeft11").hide();
-            $("#add-jiaolian5SelectRight11").hide();
-            $("#add-jiaolian5InsertRight11").hide();
-
-            $("#add-jiaolian6SelectLeft11").hide();
-            $("#add-jiaolian6InsertLeft11").hide();
-            $("#add-jiaolian6SelectRight11").hide();
-            $("#add-jiaolian6InsertRight11").hide();
-            $("#update-jiaolian3SelectLeft11").hide();
-            $("#update-jiaolian3InsertLeft11").hide();
-            $("#update-jiaolian3SelectRight11").hide();
-            $("#update-jiaolian3InsertRight11").hide();
-
-            $("#update-jiaolian4SelectLeft11").hide();
-            $("#update-jiaolian4InsertLeft11").hide();
-            $("#update-jiaolian4SelectRight11").hide();
-            $("#update-jiaolian4InsertRight11").hide();
-
-            $("#update-jiaolian5SelectLeft11").hide();
-            $("#update-jiaolian5InsertLeft11").hide();
-            $("#update-jiaolian5SelectRight11").hide();
-            $("#update-jiaolian5InsertRight11").hide();
-
-            $("#update-jiaolian6SelectLeft11").hide();
-            $("#update-jiaolian6InsertLeft11").hide();
-            $("#update-jiaolian6SelectRight11").hide();
-            $("#update-jiaolian6InsertRight11").hide();
-            $("#l3sl").hide();
-            $("#l3il").hide();
-            $("#l3sr").hide();
-            $("#l3ir").hide();
-
-            $("#l4sl").hide();
-            $("#l4il").hide();
-            $("#l4sr").hide();
-            $("#l4ir").hide();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
-        }
-        if (selectedValue11 == '开三孔') {
-            $("#add-jiaolian4SelectLeft11").hide();
-            $("#add-jiaolian4InsertLeft11").hide();
-            $("#add-jiaolian4SelectRight11").hide();
-            $("#add-jiaolian4InsertRight11").hide();
-
-            $("#add-jiaolian5SelectLeft11").hide();
-            $("#add-jiaolian5InsertLeft11").hide();
-            $("#add-jiaolian5SelectRight11").hide();
-            $("#add-jiaolian5InsertRight11").hide();
-
-            $("#add-jiaolian6SelectLeft11").hide();
-            $("#add-jiaolian6InsertLeft11").hide();
-            $("#add-jiaolian6SelectRight11").hide();
-            $("#add-jiaolian6InsertRight11").hide();
-            $("#update-jiaolian4SelectLeft11").hide();
-            $("#update-jiaolian4InsertLeft11").hide();
-            $("#update-jiaolian4SelectRight11").hide();
-            $("#update-jiaolian4InsertRight11").hide();
-
-            $("#update-jiaolian5SelectLeft11").hide();
-            $("#update-jiaolian5InsertLeft11").hide();
-            $("#update-jiaolian5SelectRight11").hide();
-            $("#update-jiaolian5InsertRight11").hide();
-
-            $("#update-jiaolian6SelectLeft11").hide();
-            $("#update-jiaolian6InsertLeft11").hide();
-            $("#update-jiaolian6SelectRight11").hide();
-            $("#update-jiaolian6InsertRight11").hide();
-
-            $("#l4sl").hide();
-            $("#l4il").hide();
-            $("#l4sr").hide();
-            $("#l4ir").delete();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
-        }
-        if (selectedValue11 == '开四孔') {
-            $("#update-jiaolian5SelectLeft11").hide();
-            $("#update-jiaolian5InsertLeft11").hide();
-            $("#update-jiaolian5SelectRight11").hide();
-            $("#update-jiaolian5InsertRight11").hide();
-
-            $("#update-jiaolian6SelectLeft11").hide();
-            $("#update-jiaolian6InsertLeft11").hide();
-            $("#update-jiaolian6SelectRight11").hide();
-            $("#update-jiaolian6InsertRight11").hide();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
-        }
-        if (selectedValue11 == '开五孔') {
-            $("#update-jiaolian6SelectLeft11").hide();
-            $("#update-jiaolian6InsertLeft11").hide();
-            $("#update-jiaolian6SelectRight11").hide();
-            $("#update-jiaolian6InsertRight11").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
-        }
-    })
-
-    $('#add-kaijiaolian12').on('change', function () {
-        var selectedValue12 = $(this).val();
-        if (selectedValue12 == '开二孔') {
-            $("#add-jiaolian3SelectLeft12").hide();
-            $("#add-jiaolian3InsertLeft12").hide();
-            $("#add-jiaolian3SelectRight12").hide();
-            $("#add-jiaolian3InsertRight12").hide();
-
-            $("#add-jiaolian4SelectLeft12").hide();
-            $("#add-jiaolian4InsertLeft12").hide();
-            $("#add-jiaolian4SelectRight12").hide();
-            $("#add-jiaolian4InsertRight12").hide();
-
-            $("#add-jiaolian5SelectLeft12").hide();
-            $("#add-jiaolian5InsertLeft12").hide();
-            $("#add-jiaolian5SelectRight12").hide();
-            $("#add-jiaolian5InsertRight12").hide();
-
-            $("#add-jiaolian6SelectLeft12").hide();
-            $("#add-jiaolian6InsertLeft12").hide();
-            $("#add-jiaolian6SelectRight12").hide();
-            $("#add-jiaolian6InsertRight12").hide();
-            $("#update-jiaolian3SelectLeft12").hide();
-            $("#update-jiaolian3InsertLeft12").hide();
-            $("#update-jiaolian3SelectRight12").hide();
-            $("#update-jiaolian3InsertRight12").hide();
-
-            $("#update-jiaolian4SelectLeft12").hide();
-            $("#update-jiaolian4InsertLeft12").hide();
-            $("#update-jiaolian4SelectRight12").hide();
-            $("#update-jiaolian4InsertRight12").hide();
-
-            $("#update-jiaolian5SelectLeft12").hide();
-            $("#update-jiaolian5InsertLeft12").hide();
-            $("#update-jiaolian5SelectRight12").hide();
-            $("#update-jiaolian5InsertRight12").hide();
-
-            $("#update-jiaolian6SelectLeft12").hide();
-            $("#update-jiaolian6InsertLeft12").hide();
-            $("#update-jiaolian6SelectRight12").hide();
-            $("#update-jiaolian6InsertRight12").hide();
-
-            $("#l3sl").hide();
-            $("#l3il").hide();
-            $("#l3sr").hide();
-            $("#l3ir").hide();
-
-            $("#l4sl").hide();
-            $("#l4il").hide();
-            $("#l4sr").hide();
-            $("#l4ir").hide();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
-        }
-        if (selectedValue12 == '开三孔') {
-            $("#add-jiaolian4SelectLeft12").hide();
-            $("#add-jiaolian4InsertLeft12").hide();
-            $("#add-jiaolian4SelectRight12").hide();
-            $("#add-jiaolian4InsertRight12").hide();
-
-            $("#add-jiaolian5SelectLeft12").hide();
-            $("#add-jiaolian5InsertLeft12").hide();
-            $("#add-jiaolian5SelectRight12").hide();
-            $("#add-jiaolian5InsertRight12").hide();
-
-            $("#add-jiaolian6SelectLeft12").hide();
-            $("#add-jiaolian6InsertLeft12").hide();
-            $("#add-jiaolian6SelectRight12").hide();
-            $("#add-jiaolian6InsertRight12").hide();
-            $("#update-jiaolian4SelectLeft12").hide();
-            $("#update-jiaolian4InsertLeft12").hide();
-            $("#update-jiaolian4SelectRight12").hide();
-            $("#update-jiaolian4InsertRight12").hide();
-
-            $("#update-jiaolian5SelectLeft12").hide();
-            $("#update-jiaolian5InsertLeft12").hide();
-            $("#update-jiaolian5SelectRight12").hide();
-            $("#update-jiaolian5InsertRight12").hide();
-
-            $("#update-jiaolian6SelectLeft12").hide();
-            $("#update-jiaolian6InsertLeft12").hide();
-            $("#update-jiaolian6SelectRight12").hide();
-            $("#update-jiaolian6InsertRight12").hide();
-
-            $("#l4sl").hide();
-            $("#l4il").hide();
-            $("#l4sr").hide();
-            $("#l4ir").delete();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
-        }
-        if (selectedValue12 == '开四孔') {
-            $("#add-jiaolian5SelectLeft12").hide();
-            $("#add-jiaolian5InsertLeft12").hide();
-            $("#add-jiaolian5SelectRight12").hide();
-            $("#add-jiaolian5InsertRight12").hide();
-
-            $("#add-jiaolian6SelectLeft12").hide();
-            $("#add-jiaolian6InsertLeft12").hide();
-            $("#add-jiaolian6SelectRight12").hide();
-            $("#add-jiaolian6InsertRight12").hide();
-            $("#update-jiaolian5SelectLeft12").hide();
-            $("#update-jiaolian5InsertLeft12").hide();
-            $("#update-jiaolian5SelectRight12").hide();
-            $("#update-jiaolian5InsertRight12").hide();
-
-            $("#update-jiaolian6SelectLeft12").hide();
-            $("#update-jiaolian6InsertLeft12").hide();
-            $("#update-jiaolian6SelectRight12").hide();
-            $("#update-jiaolian6InsertRight12").hide();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
-        }
-        if (selectedValue12 == '开五孔') {
-            $("#add-jiaolian6SelectLeft12").hide();
-            $("#add-jiaolian6InsertLeft12").hide();
-            $("#add-jiaolian6SelectRight12").hide();
-            $("#add-jiaolian6InsertRight12").hide();
-            $("#update-jiaolian6SelectLeft12").hide();
-            $("#update-jiaolian6InsertLeft12").hide();
-            $("#update-jiaolian6SelectRight12").hide();
-            $("#update-jiaolian6InsertRight12").hide();
-
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
-        }
-    })
-
-    $('#add-kaijiaolian13').on('change', function () {
-        var selectedValue13 = $(this).val();
-        if (selectedValue13 == '开二孔') {
-            $("#add-jiaolian3SelectLeft13").hide();
-            $("#add-jiaolian3InsertLeft13").hide();
-            $("#add-jiaolian3SelectRight13").hide();
-            $("#add-jiaolian3InsertRight13").hide();
-
-            $("#add-jiaolian4SelectLeft13").hide();
-            $("#add-jiaolian4InsertLeft13").hide();
-            $("#add-jiaolian4SelectRight13").hide();
-            $("#add-jiaolian4InsertRight13").hide();
-
-            $("#add-jiaolian5SelectLeft13").hide();
-            $("#add-jiaolian5InsertLeft13").hide();
-            $("#add-jiaolian5SelectRight13").hide();
-            $("#add-jiaolian5InsertRight13").hide();
-
-            $("#add-jiaolian6SelectLeft13").hide();
-            $("#add-jiaolian6InsertLeft13").hide();
-            $("#add-jiaolian6SelectRight13").hide();
-            $("#add-jiaolian6InsertRight13").hide();
-            $("#update-jiaolian3SelectLeft13").hide();
-            $("#update-jiaolian3InsertLeft13").hide();
-            $("#update-jiaolian3SelectRight13").hide();
-            $("#update-jiaolian3InsertRight13").hide();
-
-            $("#update-jiaolian4SelectLeft13").hide();
-            $("#update-jiaolian4InsertLeft13").hide();
-            $("#update-jiaolian4SelectRight13").hide();
-            $("#update-jiaolian4InsertRight13").hide();
-
-            $("#update-jiaolian5SelectLeft13").hide();
-            $("#update-jiaolian5InsertLeft13").hide();
-            $("#update-jiaolian5SelectRight13").hide();
-            $("#update-jiaolian5InsertRight13").hide();
-
-            $("#update-jiaolian6SelectLeft13").hide();
-            $("#update-jiaolian6InsertLeft13").hide();
-            $("#update-jiaolian6SelectRight13").hide();
-            $("#update-jiaolian6InsertRight13").hide();
-
-            $("#l3sl").hide();
-            $("#l3il").hide();
-            $("#l3sr").hide();
-            $("#l3ir").hide();
-
-            $("#l4sl").hide();
-            $("#l4il").hide();
-            $("#l4sr").hide();
-            $("#l4ir").hide();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
-        }
-        if (selectedValue13 == '开三孔') {
-            $("#add-jiaolian4SelectLeft13").hide();
-            $("#add-jiaolian4InsertLeft13").hide();
-            $("#add-jiaolian4SelectRight13").hide();
-            $("#add-jiaolian4InsertRight13").hide();
-
-            $("#add-jiaolian5SelectLeft13").hide();
-            $("#add-jiaolian5InsertLeft13").hide();
-            $("#add-jiaolian5SelectRight13").hide();
-            $("#add-jiaolian5InsertRight13").hide();
-
-            $("#add-jiaolian6SelectLeft13").hide();
-            $("#add-jiaolian6InsertLeft13").hide();
-            $("#add-jiaolian6SelectRight13").hide();
-            $("#add-jiaolian6InsertRight13").hide();
-            $("#update-jiaolian4SelectLeft13").hide();
-            $("#update-jiaolian4InsertLeft13").hide();
-            $("#update-jiaolian4SelectRight13").hide();
-            $("#update-jiaolian4InsertRight13").hide();
-
-            $("#update-jiaolian5SelectLeft13").hide();
-            $("#update-jiaolian5InsertLeft13").hide();
-            $("#update-jiaolian5SelectRight13").hide();
-            $("#update-jiaolian5InsertRight13").hide();
-
-            $("#update-jiaolian6SelectLeft13").hide();
-            $("#update-jiaolian6InsertLeft13").hide();
-            $("#update-jiaolian6SelectRight13").hide();
-            $("#update-jiaolian6InsertRight13").hide();
-
-            $("#l4sl").hide();
-            $("#l4il").hide();
-            $("#l4sr").hide();
-            $("#l4ir").delete();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
-        }
-        if (selectedValue13 == '开四孔') {
-            $("#add-jiaolian5SelectLeft13").hide();
-            $("#add-jiaolian5InsertLeft13").hide();
-            $("#add-jiaolian5SelectRight13").hide();
-            $("#add-jiaolian5InsertRight13").hide();
-
-            $("#add-jiaolian6SelectLeft13").hide();
-            $("#add-jiaolian6InsertLeft13").hide();
-            $("#add-jiaolian6SelectRight13").hide();
-            $("#add-jiaolian6InsertRight13").hide();
-            $("#update-jiaolian5SelectLeft13").hide();
-            $("#update-jiaolian5InsertLeft13").hide();
-            $("#update-jiaolian5SelectRight13").hide();
-            $("#update-jiaolian5InsertRight13").hide();
-
-            $("#update-jiaolian6SelectLeft13").hide();
-            $("#update-jiaolian6InsertLeft13").hide();
-            $("#update-jiaolian6SelectRight13").hide();
-            $("#update-jiaolian6InsertRight13").hide();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
-        }
-        if (selectedValue13 == '开五孔') {
-            $("#update-jiaolian6SelectLeft13").hide();
-            $("#update-jiaolian6InsertLeft13").hide();
-            $("#update-jiaolian6SelectRight13").hide();
-            $("#update-jiaolian6InsertRight13").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
-        }
-    })
-
-    $('#add-kaijiaolian14').on('change', function () {
-        var selectedValue14 = $(this).val();
-        if (selectedValue14 == '开二孔') {
-            $("#add-jiaolian3SelectLeft14").hide();
-            $("#add-jiaolian3InsertLeft14").hide();
-            $("#add-jiaolian3SelectRight14").hide();
-            $("#add-jiaolian3InsertRight14").hide();
-
-            $("#add-jiaolian4SelectLeft14").hide();
-            $("#add-jiaolian4InsertLeft14").hide();
-            $("#add-jiaolian4SelectRight14").hide();
-            $("#add-jiaolian4InsertRight14").hide();
-
-            $("#add-jiaolian5SelectLeft14").hide();
-            $("#add-jiaolian5InsertLeft14").hide();
-            $("#add-jiaolian5SelectRight14").hide();
-            $("#add-jiaolian5InsertRight14").hide();
-
-            $("#add-jiaolian6SelectLeft14").hide();
-            $("#add-jiaolian6InsertLeft14").hide();
-            $("#add-jiaolian6SelectRight14").hide();
-            $("#add-jiaolian6InsertRight14").hide();
-            $("#update-jiaolian3SelectLeft14").hide();
-            $("#update-jiaolian3InsertLeft14").hide();
-            $("#update-jiaolian3SelectRight14").hide();
-            $("#update-jiaolian3InsertRight14").hide();
-
-            $("#update-jiaolian4SelectLeft14").hide();
-            $("#update-jiaolian4InsertLeft14").hide();
-            $("#update-jiaolian4SelectRight14").hide();
-            $("#update-jiaolian4InsertRight14").hide();
-
-            $("#update-jiaolian5SelectLeft14").hide();
-            $("#update-jiaolian5InsertLeft14").hide();
-            $("#update-jiaolian5SelectRight14").hide();
-            $("#update-jiaolian5InsertRight14").hide();
-
-            $("#update-jiaolian6SelectLeft14").hide();
-            $("#update-jiaolian6InsertLeft14").hide();
-            $("#update-jiaolian6SelectRight14").hide();
-            $("#update-jiaolian6InsertRight14").hide();
-
-            $("#l3sl").hide();
-            $("#l3il").hide();
-            $("#l3sr").hide();
-            $("#l3ir").hide();
-
-            $("#l4sl").hide();
-            $("#l4il").hide();
-            $("#l4sr").hide();
-            $("#l4ir").hide();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
-        }
-        if (selectedValue14 == '开三孔') {
-            $("#add-jiaolian4SelectLeft14").hide();
-            $("#add-jiaolian4InsertLeft14").hide();
-            $("#add-jiaolian4SelectRight14").hide();
-            $("#add-jiaolian4InsertRight14").hide();
-
-            $("#add-jiaolian5SelectLeft14").hide();
-            $("#add-jiaolian5InsertLeft14").hide();
-            $("#add-jiaolian5SelectRight14").hide();
-            $("#add-jiaolian5InsertRight14").hide();
-
-            $("#add-jiaolian6SelectLeft14").hide();
-            $("#add-jiaolian6InsertLeft14").hide();
-            $("#add-jiaolian6SelectRight14").hide();
-            $("#add-jiaolian6InsertRight14").hide();
-            $("#update-jiaolian4SelectLeft14").hide();
-            $("#update-jiaolian4InsertLeft14").hide();
-            $("#update-jiaolian4SelectRight14").hide();
-            $("#update-jiaolian4InsertRight14").hide();
-
-            $("#update-jiaolian5SelectLeft14").hide();
-            $("#update-jiaolian5InsertLeft14").hide();
-            $("#update-jiaolian5SelectRight14").hide();
-            $("#update-jiaolian5InsertRight14").hide();
-
-            $("#update-jiaolian6SelectLeft14").hide();
-            $("#update-jiaolian6InsertLeft14").hide();
-            $("#update-jiaolian6SelectRight14").hide();
-            $("#update-jiaolian6InsertRight14").hide();
-
-
-            $("#l4sl").hide();
-            $("#l4il").hide();
-            $("#l4sr").hide();
-            $("#l4ir").delete();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
-        }
-        if (selectedValue14 == '开四孔') {
-            $("#add-jiaolian5SelectLeft14").hide();
-            $("#add-jiaolian5InsertLeft14").hide();
-            $("#add-jiaolian5SelectRight14").hide();
-            $("#add-jiaolian5InsertRight14").hide();
-
-            $("#add-jiaolian6SelectLeft14").hide();
-            $("#add-jiaolian6InsertLeft14").hide();
-            $("#add-jiaolian6SelectRight14").hide();
-            $("#add-jiaolian6InsertRight14").hide();
-            $("#update-jiaolian5SelectLeft14").hide();
-            $("#update-jiaolian5InsertLeft14").hide();
-            $("#update-jiaolian5SelectRight14").hide();
-            $("#update-jiaolian5InsertRight14").hide();
-
-            $("#update-jiaolian6SelectLeft14").hide();
-            $("#update-jiaolian6InsertLeft14").hide();
-            $("#update-jiaolian6SelectRight14").hide();
-            $("#update-jiaolian6InsertRight14").hide();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
-        }
-        if (selectedValue14 == '开五孔') {
-            $("#add-jiaolian6SelectLeft14").hide();
-            $("#add-jiaolian6InsertLeft14").hide();
-            $("#add-jiaolian6SelectRight14").hide();
-            $("#add-jiaolian6InsertRight14").hide();
-            $("#update-jiaolian6SelectLeft14").hide();
-            $("#update-jiaolian6InsertLeft14").hide();
-            $("#update-jiaolian6SelectRight14").hide();
-            $("#update-jiaolian6InsertRight14").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
-        }
-    })
-
-    $('#add-kaijiaolian15').on('change', function () {
-        var selectedValue15 = $(this).val();
-        if (selectedValue15 == '开二孔') {
-            $("#add-jiaolian3SelectLeft15").hide();
-            $("#add-jiaolian3InsertLeft15").hide();
-            $("#add-jiaolian3SelectRight15").hide();
-            $("#add-jiaolian3InsertRight15").hide();
-
-            $("#add-jiaolian4SelectLeft15").hide();
-            $("#add-jiaolian4InsertLeft15").hide();
-            $("#add-jiaolian4SelectRight15").hide();
-            $("#add-jiaolian4InsertRight15").hide();
-
-            $("#add-jiaolian5SelectLeft15").hide();
-            $("#add-jiaolian5InsertLeft15").hide();
-            $("#add-jiaolian5SelectRight15").hide();
-            $("#add-jiaolian5InsertRight15").hide();
-
-            $("#add-jiaolian6SelectLeft15").hide();
-            $("#add-jiaolian6InsertLeft15").hide();
-            $("#add-jiaolian6SelectRight15").hide();
-            $("#add-jiaolian6InsertRight15").hide();
-            $("#update-jiaolian3SelectLeft15").hide();
-            $("#update-jiaolian3InsertLeft15").hide();
-            $("#update-jiaolian3SelectRight15").hide();
-            $("#update-jiaolian3InsertRight15").hide();
-
-            $("#update-jiaolian4SelectLeft15").hide();
-            $("#update-jiaolian4InsertLeft15").hide();
-            $("#update-jiaolian4SelectRight15").hide();
-            $("#update-jiaolian4InsertRight15").hide();
-
-            $("#update-jiaolian5SelectLeft15").hide();
-            $("#update-jiaolian5InsertLeft15").hide();
-            $("#update-jiaolian5SelectRight15").hide();
-            $("#update-jiaolian5InsertRight15").hide();
-
-            $("#update-jiaolian6SelectLeft15").hide();
-            $("#update-jiaolian6InsertLeft15").hide();
-            $("#update-jiaolian6SelectRight15").hide();
-            $("#update-jiaolian6InsertRight15").hide();
-
-            $("#l3sl").hide();
-            $("#l3il").hide();
-            $("#l3sr").hide();
-            $("#l3ir").hide();
-
-            $("#l4sl").hide();
-            $("#l4il").hide();
-            $("#l4sr").hide();
-            $("#l4ir").hide();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
-        }
-        if (selectedValue15 == '开三孔') {
-            $("#add-jiaolian4SelectLeft15").hide();
-            $("#add-jiaolian4InsertLeft15").hide();
-            $("#add-jiaolian4SelectRight15").hide();
-            $("#add-jiaolian4InsertRight15").hide();
-
-            $("#add-jiaolian5SelectLeft15").hide();
-            $("#add-jiaolian5InsertLeft15").hide();
-            $("#add-jiaolian5SelectRight15").hide();
-            $("#add-jiaolian5InsertRight15").hide();
-
-            $("#add-jiaolian6SelectLeft15").hide();
-            $("#add-jiaolian6InsertLeft15").hide();
-            $("#add-jiaolian6SelectRight15").hide();
-            $("#add-jiaolian6InsertRight15").hide();
-            $("#update-jiaolian4SelectLeft15").hide();
-            $("#update-jiaolian4InsertLeft15").hide();
-            $("#update-jiaolian4SelectRight15").hide();
-            $("#update-jiaolian4InsertRight15").hide();
-
-            $("#update-jiaolian5SelectLeft15").hide();
-            $("#update-jiaolian5InsertLeft15").hide();
-            $("#update-jiaolian5SelectRight15").hide();
-            $("#update-jiaolian5InsertRight15").hide();
-
-            $("#update-jiaolian6SelectLeft15").hide();
-            $("#update-jiaolian6InsertLeft15").hide();
-            $("#update-jiaolian6SelectRight15").hide();
-            $("#update-jiaolian6InsertRight15").hide();
-
-            $("#l4sl").hide();
-            $("#l4il").hide();
-            $("#l4sr").hide();
-            $("#l4ir").delete();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
-        }
-        if (selectedValue15 == '开四孔') {
-            $("#add-jiaolian5SelectLeft15").hide();
-            $("#add-jiaolian5InsertLeft15").hide();
-            $("#add-jiaolian5SelectRight15").hide();
-            $("#add-jiaolian5InsertRight15").hide();
-
-            $("#add-jiaolian6SelectLeft15").hide();
-            $("#add-jiaolian6InsertLeft15").hide();
-            $("#add-jiaolian6SelectRight15").hide();
-            $("#add-jiaolian6InsertRight15").hide();
-            $("#update-jiaolian5SelectLeft15").hide();
-            $("#update-jiaolian5InsertLeft15").hide();
-            $("#update-jiaolian5SelectRight15").hide();
-            $("#update-jiaolian5InsertRight15").hide();
-
-            $("#update-jiaolian6SelectLeft15").hide();
-            $("#update-jiaolian6InsertLeft15").hide();
-            $("#update-jiaolian6SelectRight15").hide();
-            $("#update-jiaolian6InsertRight15").hide();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
-        }
-        if (selectedValue15 == '开五孔') {
-            $("#add-jiaolian6SelectLeft15").hide();
-            $("#add-jiaolian6InsertLeft15").hide();
-            $("#add-jiaolian6SelectRight15").hide();
-            $("#add-jiaolian6InsertRight15").hide();
-            $("#update-jiaolian6SelectLeft15").hide();
-            $("#update-jiaolian6InsertLeft15").hide();
-            $("#update-jiaolian6SelectRight15").hide();
-            $("#update-jiaolian6InsertRight15").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
-        }
-    })
-
-    $('#add-kaijiaolian16').on('change', function () {
-        var selectedValue16 = $(this).val();
-        if (selectedValue16 == '开二孔') {
-            $("#add-jiaolian3SelectLeft16").hide();
-            $("#add-jiaolian3InsertLeft16").hide();
-            $("#add-jiaolian3SelectRight16").hide();
-            $("#add-jiaolian3InsertRight16").hide();
-
-            $("#add-jiaolian4SelectLeft16").hide();
-            $("#add-jiaolian4InsertLeft16").hide();
-            $("#add-jiaolian4SelectRight16").hide();
-            $("#add-jiaolian4InsertRight16").hide();
-
-            $("#add-jiaolian5SelectLeft16").hide();
-            $("#add-jiaolian5InsertLeft16").hide();
-            $("#add-jiaolian5SelectRight16").hide();
-            $("#add-jiaolian5InsertRight16").hide();
-
-            $("#add-jiaolian6SelectLeft16").hide();
-            $("#add-jiaolian6InsertLeft16").hide();
-            $("#add-jiaolian6SelectRight16").hide();
-            $("#add-jiaolian6InsertRight16").hide();
-            $("#update-jiaolian3SelectLeft16").hide();
-            $("#update-jiaolian3InsertLeft16").hide();
-            $("#update-jiaolian3SelectRight16").hide();
-            $("#update-jiaolian3InsertRight16").hide();
-
-            $("#update-jiaolian4SelectLeft16").hide();
-            $("#update-jiaolian4InsertLeft16").hide();
-            $("#update-jiaolian4SelectRight16").hide();
-            $("#update-jiaolian4InsertRight16").hide();
-
-            $("#update-jiaolian5SelectLeft16").hide();
-            $("#update-jiaolian5InsertLeft16").hide();
-            $("#update-jiaolian5SelectRight16").hide();
-            $("#update-jiaolian5InsertRight16").hide();
-
-            $("#update-jiaolian6SelectLeft16").hide();
-            $("#update-jiaolian6InsertLeft16").hide();
-            $("#update-jiaolian6SelectRight16").hide();
-            $("#update-jiaolian6InsertRight16").hide();
-
-            $("#l3sl").hide();
-            $("#l3il").hide();
-            $("#l3sr").hide();
-            $("#l3ir").hide();
-
-            $("#l4sl").hide();
-            $("#l4il").hide();
-            $("#l4sr").hide();
-            $("#l4ir").hide();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
-        }
-        if (selectedValue16 == '开三孔') {
-            $("#add-jiaolian4SelectLeft16").hide();
-            $("#add-jiaolian4InsertLeft16").hide();
-            $("#add-jiaolian4SelectRight16").hide();
-            $("#add-jiaolian4InsertRight16").hide();
-
-            $("#add-jiaolian5SelectLeft16").hide();
-            $("#add-jiaolian5InsertLeft16").hide();
-            $("#add-jiaolian5SelectRight16").hide();
-            $("#add-jiaolian5InsertRight16").hide();
-
-            $("#add-jiaolian6SelectLeft16").hide();
-            $("#add-jiaolian6InsertLeft16").hide();
-            $("#add-jiaolian6SelectRight16").hide();
-            $("#add-jiaolian6InsertRight16").hide();
-            $("#update-jiaolian4SelectLeft16").hide();
-            $("#update-jiaolian4InsertLeft16").hide();
-            $("#update-jiaolian4SelectRight16").hide();
-            $("#update-jiaolian4InsertRight16").hide();
-
-            $("#update-jiaolian5SelectLeft16").hide();
-            $("#update-jiaolian5InsertLeft16").hide();
-            $("#update-jiaolian5SelectRight16").hide();
-            $("#update-jiaolian5InsertRight16").hide();
-
-            $("#update-jiaolian6SelectLeft16").hide();
-            $("#update-jiaolian6InsertLeft16").hide();
-            $("#update-jiaolian6SelectRight16").hide();
-            $("#update-jiaolian6InsertRight16").hide();
-
-            $("#l4sl").hide();
-            $("#l4il").hide();
-            $("#l4sr").hide();
-            $("#l4ir").hide();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
-        }
-        if (selectedValue16 == '开四孔') {
-            $("#add-jiaolian5SelectLeft16").hide();
-            $("#add-jiaolian5InsertLeft16").hide();
-            $("#add-jiaolian5SelectRight16").hide();
-            $("#add-jiaolian5InsertRight16").hide();
-
-            $("#add-jiaolian6SelectLeft16").hide();
-            $("#add-jiaolian6InsertLeft16").hide();
-            $("#add-jiaolian6SelectRight16").hide();
-            $("#add-jiaolian6InsertRight16").hide();
-            $("#update-jiaolian5SelectLeft16").hide();
-            $("#update-jiaolian5InsertLeft16").hide();
-            $("#update-jiaolian5SelectRight16").hide();
-            $("#update-jiaolian5InsertRight16").hide();
-
-            $("#update-jiaolian6SelectLeft16").hide();
-            $("#update-jiaolian6InsertLeft16").hide();
-            $("#update-jiaolian6SelectRight16").hide();
-            $("#update-jiaolian6InsertRight16").hide();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
-        }
-        if (selectedValue16 == '开五孔') {
-            $("#update-jiaolian6SelectLeft16").hide();
-            $("#update-jiaolian6InsertLeft16").hide();
-            $("#update-jiaolian6SelectRight16").hide();
-            $("#update-jiaolian6InsertRight16").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
-        }
-    })
-
-    $('#add-kaijiaolian17').on('change', function () {
-        var selectedValue17 = $(this).val();
-        if (selectedValue17 == '开二孔') {
-            $("#add-jiaolian3SelectLeft17").hide();
-            $("#add-jiaolian3InsertLeft17").hide();
-            $("#add-jiaolian3SelectRight17").hide();
-            $("#add-jiaolian3InsertRight17").hide();
-
-            $("#add-jiaolian4SelectLeft17").hide();
-            $("#add-jiaolian4InsertLeft17").hide();
-            $("#add-jiaolian4SelectRight17").hide();
-            $("#add-jiaolian4InsertRight17").hide();
-
-            $("#add-jiaolian5SelectLeft17").hide();
-            $("#add-jiaolian5InsertLeft17").hide();
-            $("#add-jiaolian5SelectRight17").hide();
-            $("#add-jiaolian5InsertRight17").hide();
-
-            $("#add-jiaolian6SelectLeft17").hide();
-            $("#add-jiaolian6InsertLeft17").hide();
-            $("#add-jiaolian6SelectRight17").hide();
-            $("#add-jiaolian6InsertRight17").hide();
-            $("#update-jiaolian3SelectLeft17").hide();
-            $("#update-jiaolian3InsertLeft17").hide();
-            $("#update-jiaolian3SelectRight17").hide();
-            $("#update-jiaolian3InsertRight17").hide();
-
-            $("#update-jiaolian4SelectLeft17").hide();
-            $("#update-jiaolian4InsertLeft17").hide();
-            $("#update-jiaolian4SelectRight17").hide();
-            $("#update-jiaolian4InsertRight17").hide();
-
-            $("#update-jiaolian5SelectLeft17").hide();
-            $("#update-jiaolian5InsertLeft17").hide();
-            $("#update-jiaolian5SelectRight17").hide();
-            $("#update-jiaolian5InsertRight17").hide();
-
-            $("#update-jiaolian6SelectLeft17").hide();
-            $("#update-jiaolian6InsertLeft17").hide();
-            $("#update-jiaolian6SelectRight17").hide();
-            $("#update-jiaolian6InsertRight17").hide();
-
-            $("#l3sl").hide();
-            $("#l3il").hide();
-            $("#l3sr").hide();
-            $("#l3ir").hide();
-
-            $("#l4sl").hide();
-            $("#l4il").hide();
-            $("#l4sr").hide();
-            $("#l4ir").hide();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
-        }
-        if (selectedValue17 == '开三孔') {
-            $("#add-jiaolian4SelectLeft17").hide();
-            $("#add-jiaolian4InsertLeft17").hide();
-            $("#add-jiaolian4SelectRight17").hide();
-            $("#add-jiaolian4InsertRight17").hide();
-
-            $("#add-jiaolian5SelectLeft17").hide();
-            $("#add-jiaolian5InsertLeft17").hide();
-            $("#add-jiaolian5SelectRight17").hide();
-            $("#add-jiaolian5InsertRight17").hide();
-
-            $("#add-jiaolian6SelectLeft17").hide();
-            $("#add-jiaolian6InsertLeft17").hide();
-            $("#add-jiaolian6SelectRight17").hide();
-            $("#add-jiaolian6InsertRight17").hide();
-            $("#update-jiaolian4SelectLeft17").hide();
-            $("#update-jiaolian4InsertLeft17").hide();
-            $("#update-jiaolian4SelectRight17").hide();
-            $("#update-jiaolian4InsertRight17").hide();
-
-            $("#update-jiaolian5SelectLeft17").hide();
-            $("#update-jiaolian5InsertLeft17").hide();
-            $("#update-jiaolian5SelectRight17").hide();
-            $("#update-jiaolian5InsertRight17").hide();
-
-            $("#update-jiaolian6SelectLeft17").hide();
-            $("#update-jiaolian6InsertLeft17").hide();
-            $("#update-jiaolian6SelectRight17").hide();
-            $("#update-jiaolian6InsertRight17").hide();
-
-            $("#l4sl").hide();
-            $("#l4il").hide();
-            $("#l4sr").hide();
-            $("#l4ir").hide();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
-        }
-        if (selectedValue17 == '开四孔') {
-            $("#add-jiaolian5SelectLeft17").hide();
-            $("#add-jiaolian5InsertLeft17").hide();
-            $("#add-jiaolian5SelectRight17").hide();
-            $("#add-jiaolian5InsertRight17").hide();
-
-            $("#add-jiaolian6SelectLeft17").hide();
-            $("#add-jiaolian6InsertLeft17").hide();
-            $("#add-jiaolian6SelectRight17").hide();
-            $("#add-jiaolian6InsertRight17").hide();
-            $("#update-jiaolian5SelectLeft17").hide();
-            $("#update-jiaolian5InsertLeft17").hide();
-            $("#update-jiaolian5SelectRight17").hide();
-            $("#update-jiaolian5InsertRight17").hide();
-
-            $("#update-jiaolian6SelectLeft17").hide();
-            $("#update-jiaolian6InsertLeft17").hide();
-            $("#update-jiaolian6SelectRight17").hide();
-            $("#update-jiaolian6InsertRight17").hide();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
-        }
-        if (selectedValue17 == '开五孔') {
-            $("#add-jiaolian6SelectLeft17").hide();
-            $("#add-jiaolian6InsertLeft17").hide();
-            $("#add-jiaolian6SelectRight17").hide();
-            $("#add-jiaolian6InsertRight17").hide();
-            $("#update-jiaolian6SelectLeft17").hide();
-            $("#update-jiaolian6InsertLeft17").hide();
-            $("#update-jiaolian6SelectRight17").hide();
-            $("#update-jiaolian6InsertRight17").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
-        }
-    })
-
-    $('#add-kaijiaolian18').on('change', function () {
-        var selectedValue18 = $(this).val();
-        if (selectedValue18 == '开二孔') {
-            $("#add-jiaolian3SelectLeft18").hide();
-            $("#add-jiaolian3InsertLeft18").hide();
-            $("#add-jiaolian3SelectRight18").hide();
-            $("#add-jiaolian3InsertRight18").hide();
-
-            $("#add-jiaolian4SelectLeft18").hide();
-            $("#add-jiaolian4InsertLeft18").hide();
-            $("#add-jiaolian4SelectRight18").hide();
-            $("#add-jiaolian4InsertRight18").hide();
-
-            $("#add-jiaolian5SelectLeft18").hide();
-            $("#add-jiaolian5InsertLeft18").hide();
-            $("#add-jiaolian5SelectRight18").hide();
-            $("#add-jiaolian5InsertRight18").hide();
-
-            $("#add-jiaolian6SelectLeft18").hide();
-            $("#add-jiaolian6InsertLeft18").hide();
-            $("#add-jiaolian6SelectRight18").hide();
-            $("#add-jiaolian6InsertRight18").hide();
-            $("#update-jiaolian3SelectLeft18").hide();
-            $("#update-jiaolian3InsertLeft18").hide();
-            $("#update-jiaolian3SelectRight18").hide();
-            $("#update-jiaolian3InsertRight18").hide();
-
-            $("#update-jiaolian4SelectLeft18").hide();
-            $("#update-jiaolian4InsertLeft18").hide();
-            $("#update-jiaolian4SelectRight18").hide();
-            $("#update-jiaolian4InsertRight18").hide();
-
-            $("#update-jiaolian5SelectLeft18").hide();
-            $("#update-jiaolian5InsertLeft18").hide();
-            $("#update-jiaolian5SelectRight18").hide();
-            $("#update-jiaolian5InsertRight18").hide();
-
-            $("#update-jiaolian6SelectLeft18").hide();
-            $("#update-jiaolian6InsertLeft18").hide();
-            $("#update-jiaolian6SelectRight18").hide();
-            $("#update-jiaolian6InsertRight18").hide();
-
-            $("#l3sl").hide();
-            $("#l3il").hide();
-            $("#l3sr").hide();
-            $("#l3ir").hide();
-
-            $("#l4sl").hide();
-            $("#l4il").hide();
-            $("#l4sr").hide();
-            $("#l4ir").hide();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
-        }
-        if (selectedValue18 == '开三孔') {
-            $("#add-jiaolian4SelectLeft18").hide();
-            $("#add-jiaolian4InsertLeft18").hide();
-            $("#add-jiaolian4SelectRight18").hide();
-            $("#add-jiaolian4InsertRight18").hide();
-
-            $("#add-jiaolian5SelectLeft18").hide();
-            $("#add-jiaolian5InsertLeft18").hide();
-            $("#add-jiaolian5SelectRight18").hide();
-            $("#add-jiaolian5InsertRight18").hide();
-
-            $("#add-jiaolian6SelectLeft18").hide();
-            $("#add-jiaolian6InsertLeft18").hide();
-            $("#add-jiaolian6SelectRight18").hide();
-            $("#add-jiaolian6InsertRight18").hide();
-            $("#update-jiaolian4SelectLeft18").hide();
-            $("#update-jiaolian4InsertLeft18").hide();
-            $("#update-jiaolian4SelectRight18").hide();
-            $("#update-jiaolian4InsertRight18").hide();
-
-            $("#update-jiaolian5SelectLeft18").hide();
-            $("#update-jiaolian5InsertLeft18").hide();
-            $("#update-jiaolian5SelectRight18").hide();
-            $("#update-jiaolian5InsertRight18").hide();
-
-            $("#update-jiaolian6SelectLeft18").hide();
-            $("#update-jiaolian6InsertLeft18").hide();
-            $("#update-jiaolian6SelectRight18").hide();
-            $("#update-jiaolian6InsertRight18").hide();
-
-
-
-            $("#l4sl").hide();
-            $("#l4il").hide();
-            $("#l4sr").hide();
-            $("#l4ir").hide();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
-        }
-        if (selectedValue18 == '开四孔') {
-            $("#add-jiaolian5SelectLeft18").hide();
-            $("#add-jiaolian5InsertLeft18").hide();
-            $("#add-jiaolian5SelectRight18").hide();
-            $("#add-jiaolian5InsertRight18").hide();
-
-            $("#add-jiaolian6SelectLeft18").hide();
-            $("#add-jiaolian6InsertLeft18").hide();
-            $("#add-jiaolian6SelectRight18").hide();
-            $("#add-jiaolian6InsertRight18").hide();
-            $("#update-jiaolian5SelectLeft18").hide();
-            $("#update-jiaolian5InsertLeft18").hide();
-            $("#update-jiaolian5SelectRight18").hide();
-            $("#update-jiaolian5InsertRight18").hide();
-
-            $("#update-jiaolian6SelectLeft18").hide();
-            $("#update-jiaolian6InsertLeft18").hide();
-            $("#update-jiaolian6SelectRight18").hide();
-            $("#update-jiaolian6InsertRight18").hide();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
-        }
-        if (selectedValue18 == '开五孔') {
-            $("#add-jiaolian6SelectLeft18").hide();
-            $("#add-jiaolian6InsertLeft18").hide();
-            $("#add-jiaolian6SelectRight18").hide();
-            $("#add-jiaolian6InsertRight18").hide();
-            $("#update-jiaolian6SelectLeft18").hide();
-            $("#update-jiaolian6InsertLeft18").hide();
-            $("#update-jiaolian6SelectRight18").hide();
-            $("#update-jiaolian6InsertRight18").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
-        }
-    })
-
-    $('#add-kaijiaolian19').on('change', function () {
-        var selectedValue19 = $(this).val();
-        if (selectedValue19 == '开二孔') {
-            $("#add-jiaolian3SelectLeft19").hide();
-            $("#add-jiaolian3InsertLeft19").hide();
-            $("#add-jiaolian3SelectRight19").hide();
-            $("#add-jiaolian3InsertRight19").hide();
-
-            $("#add-jiaolian4SelectLeft19").hide();
-            $("#add-jiaolian4InsertLeft19").hide();
-            $("#add-jiaolian4SelectRight19").hide();
-            $("#add-jiaolian4InsertRight19").hide();
-
-            $("#add-jiaolian5SelectLeft19").hide();
-            $("#add-jiaolian5InsertLeft19").hide();
-            $("#add-jiaolian5SelectRight19").hide();
-            $("#add-jiaolian5InsertRight19").hide();
-
-            $("#add-jiaolian6SelectLeft19").hide();
-            $("#add-jiaolian6InsertLeft19").hide();
-            $("#add-jiaolian6SelectRight19").hide();
-            $("#add-jiaolian6InsertRight19").hide();
-            $("#update-jiaolian3SelectLeft19").hide();
-            $("#update-jiaolian3InsertLeft19").hide();
-            $("#update-jiaolian3SelectRight19").hide();
-            $("#update-jiaolian3InsertRight19").hide();
-
-            $("#update-jiaolian4SelectLeft19").hide();
-            $("#update-jiaolian4InsertLeft19").hide();
-            $("#update-jiaolian4SelectRight19").hide();
-            $("#update-jiaolian4InsertRight19").hide();
-
-            $("#update-jiaolian5SelectLeft19").hide();
-            $("#update-jiaolian5InsertLeft19").hide();
-            $("#update-jiaolian5SelectRight19").hide();
-            $("#update-jiaolian5InsertRight19").hide();
-
-            $("#update-jiaolian6SelectLeft19").hide();
-            $("#update-jiaolian6InsertLeft19").hide();
-            $("#update-jiaolian6SelectRight19").hide();
-            $("#update-jiaolian6InsertRight19").hide();
-
-            $("#l3sl").hide();
-            $("#l3il").hide();
-            $("#l3sr").hide();
-            $("#l3ir").hide();
-
-            $("#l4sl").hide();
-            $("#l4il").hide();
-            $("#l4sr").hide();
-            $("#l4ir").hide();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
-        }
-        if (selectedValue19 == '开三孔') {
-            $("#add-jiaolian4SelectLeft19").hide();
-            $("#add-jiaolian4InsertLeft19").hide();
-            $("#add-jiaolian4SelectRight19").hide();
-            $("#add-jiaolian4InsertRight19").hide();
-
-            $("#add-jiaolian5SelectLeft19").hide();
-            $("#add-jiaolian5InsertLeft19").hide();
-            $("#add-jiaolian5SelectRight19").hide();
-            $("#add-jiaolian5InsertRight19").hide();
-
-            $("#add-jiaolian6SelectLeft19").hide();
-            $("#add-jiaolian6InsertLeft19").hide();
-            $("#add-jiaolian6SelectRight19").hide();
-            $("#add-jiaolian6InsertRight19").hide();
-            $("#update-jiaolian4SelectLeft19").hide();
-            $("#update-jiaolian4InsertLeft19").hide();
-            $("#update-jiaolian4SelectRight19").hide();
-            $("#update-jiaolian4InsertRight19").hide();
-
-            $("#update-jiaolian5SelectLeft19").hide();
-            $("#update-jiaolian5InsertLeft19").hide();
-            $("#update-jiaolian5SelectRight19").hide();
-            $("#update-jiaolian5InsertRight19").hide();
-
-            $("#update-jiaolian6SelectLeft19").hide();
-            $("#update-jiaolian6InsertLeft19").hide();
-            $("#update-jiaolian6SelectRight19").hide();
-            $("#update-jiaolian6InsertRight19").hide();
-
-            $("#l4sl").hide();
-            $("#l4il").hide();
-            $("#l4sr").hide();
-            $("#l4ir").hide();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
-        }
-        if (selectedValue19 == '开四孔') {
-            $("#add-jiaolian5SelectLeft19").hide();
-            $("#add-jiaolian5InsertLeft19").hide();
-            $("#add-jiaolian5SelectRight19").hide();
-            $("#add-jiaolian5InsertRight19").hide();
-
-            $("#add-jiaolian6SelectLeft19").hide();
-            $("#add-jiaolian6InsertLeft19").hide();
-            $("#add-jiaolian6SelectRight19").hide();
-            $("#add-jiaolian6InsertRight19").hide();
-            $("#update-jiaolian5SelectLeft19").hide();
-            $("#update-jiaolian5InsertLeft19").hide();
-            $("#update-jiaolian5SelectRight19").hide();
-            $("#update-jiaolian5InsertRight19").hide();
-
-            $("#update-jiaolian6SelectLeft19").hide();
-            $("#update-jiaolian6InsertLeft19").hide();
-            $("#update-jiaolian6SelectRight19").hide();
-            $("#update-jiaolian6InsertRight19").hide();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
-        }
-        if (selectedValue19 == '开五孔') {
-            $("#update-jiaolian6SelectLeft19").hide();
-            $("#update-jiaolian6InsertLeft19").hide();
-            $("#update-jiaolian6SelectRight19").hide();
-            $("#update-jiaolian6InsertRight19").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
-        }
-    })
-
-})
-$(document).ready(function () {
     $('#add-kaijiaolian').on('change', function () {
         var selectedValue = $(this).val();
 
@@ -4477,47 +1448,14 @@ $(document).ready(function () {
             $("#add-jiaolian6InsertLeft").hide();
             $("#add-jiaolian6SelectRight").hide();
             $("#add-jiaolian6InsertRight").hide();
-            $("#update-jiaolian3SelectLeft").hide();
-            $("#update-jiaolian3InsertLeft").hide();
-            $("#update-jiaolian3SelectRight").hide();
-            $("#update-jiaolian3InsertRight").hide();
 
-            $("#update-jiaolian4SelectLeft").hide();
-            $("#update-jiaolian4InsertLeft").hide();
-            $("#update-jiaolian4SelectRight").hide();
-            $("#update-jiaolian4InsertRight").hide();
-
-            $("#update-jiaolian5SelectLeft").hide();
-            $("#update-jiaolian5InsertLeft").hide();
-            $("#update-jiaolian5SelectRight").hide();
-            $("#update-jiaolian5InsertRight").hide();
-
-            $("#update-jiaolian6SelectLeft").hide();
-            $("#update-jiaolian6InsertLeft").hide();
-            $("#update-jiaolian6SelectRight").hide();
-            $("#update-jiaolian6InsertRight").hide();
-
-            $("#l3sl").hide();
-            $("#l3il").hide();
-            $("#l3sr").hide();
-            $("#l3ir").hide();
-
-            $("#l4sl").hide();
-            $("#l4il").hide();
-            $("#l4sr").hide();
-            $("#l4ir").hide();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
         }
         if (selectedValue == '开三孔') {
+            $("#add-jiaolian3SelectLeft").show();
+            $("#add-jiaolian3InsertLeft").show();
+            $("#add-jiaolian3SelectRight").show();
+            $("#add-jiaolian3InsertRight").show();
+
             $("#add-jiaolian4SelectLeft").hide();
             $("#add-jiaolian4InsertLeft").hide();
             $("#add-jiaolian4SelectRight").hide();
@@ -4532,36 +1470,20 @@ $(document).ready(function () {
             $("#add-jiaolian6InsertLeft").hide();
             $("#add-jiaolian6SelectRight").hide();
             $("#add-jiaolian6InsertRight").hide();
-            $("#update-jiaolian4SelectLeft").hide();
-            $("#update-jiaolian4InsertLeft").hide();
-            $("#update-jiaolian4SelectRight").hide();
-            $("#update-jiaolian4InsertRight").hide();
 
-            $("#update-jiaolian5SelectLeft").hide();
-            $("#update-jiaolian5InsertLeft").hide();
-            $("#update-jiaolian5SelectRight").hide();
-            $("#update-jiaolian5InsertRight").hide();
 
-            $("#update-jiaolian6SelectLeft").hide();
-            $("#update-jiaolian6InsertLeft").hide();
-            $("#update-jiaolian6SelectRight").hide();
-            $("#update-jiaolian6InsertRight").hide();
-            $("#l4sl").hide();
-            $("#l4il").hide();
-            $("#l4sr").hide();
-            $("#l4ir").delete();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
         }
         if (selectedValue == '开四孔') {
+            $("#add-jiaolian3SelectLeft").show();
+            $("#add-jiaolian3InsertLeft").show();
+            $("#add-jiaolian3SelectRight").show();
+            $("#add-jiaolian3InsertRight").show();
+
+            $("#add-jiaolian4SelectLeft").show();
+            $("#add-jiaolian4InsertLeft").show();
+            $("#add-jiaolian4SelectRight").show();
+            $("#add-jiaolian4InsertRight").show();
+
             $("#add-jiaolian5SelectLeft").hide();
             $("#add-jiaolian5InsertLeft").hide();
             $("#add-jiaolian5SelectRight").hide();
@@ -4571,38 +1493,48 @@ $(document).ready(function () {
             $("#add-jiaolian6InsertLeft").hide();
             $("#add-jiaolian6SelectRight").hide();
             $("#add-jiaolian6InsertRight").hide();
-            $("#update-jiaolian5SelectLeft").hide();
-            $("#update-jiaolian5InsertLeft").hide();
-            $("#update-jiaolian5SelectRight").hide();
-            $("#update-jiaolian5InsertRight").hide();
-
-            $("#update-jiaolian6SelectLeft").hide();
-            $("#update-jiaolian6InsertLeft").hide();
-            $("#update-jiaolian6SelectRight").hide();
-            $("#update-jiaolian6InsertRight").hide();
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
         }
         if (selectedValue == '开五孔') {
+            $("#add-jiaolian3SelectLeft").show();
+            $("#add-jiaolian3InsertLeft").show();
+            $("#add-jiaolian3SelectRight").show();
+            $("#add-jiaolian3InsertRight").show();
+
+            $("#add-jiaolian4SelectLeft").show();
+            $("#add-jiaolian4InsertLeft").show();
+            $("#add-jiaolian4SelectRight").show();
+            $("#add-jiaolian4InsertRight").show();
+
+            $("#add-jiaolian5SelectLeft").show();
+            $("#add-jiaolian5InsertLeft").show();
+            $("#add-jiaolian5SelectRight").show();
+            $("#add-jiaolian5InsertRight").show();
+
             $("#add-jiaolian6SelectLeft").hide();
             $("#add-jiaolian6InsertLeft").hide();
             $("#add-jiaolian6SelectRight").hide();
             $("#add-jiaolian6InsertRight").hide();
-            $("#update-jiaolian6SelectLeft").hide();
-            $("#update-jiaolian6InsertLeft").hide();
-            $("#update-jiaolian6SelectRight").hide();
-            $("#update-jiaolian6InsertRight").hide();
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
+        }
+        if (selectedValue == '开六孔') {
+            $("#add-jiaolian3SelectLeft").show();
+            $("#add-jiaolian3InsertLeft").show();
+            $("#add-jiaolian3SelectRight").show();
+            $("#add-jiaolian3InsertRight").show();
+
+            $("#add-jiaolian4SelectLeft").show();
+            $("#add-jiaolian4InsertLeft").show();
+            $("#add-jiaolian4SelectRight").show();
+            $("#add-jiaolian4InsertRight").show();
+
+            $("#add-jiaolian5SelectLeft").show();
+            $("#add-jiaolian5InsertLeft").show();
+            $("#add-jiaolian5SelectRight").show();
+            $("#add-jiaolian5InsertRight").show();
+
+            $("#add-jiaolian6SelectLeft").show();
+            $("#add-jiaolian6InsertLeft").show();
+            $("#add-jiaolian6SelectRight").show();
+            $("#add-jiaolian6InsertRight").show();
         }
     })
 
@@ -4628,46 +1560,14 @@ $(document).ready(function () {
             $("#add-jiaolian6InsertLeft1").hide();
             $("#add-jiaolian6SelectRight1").hide();
             $("#add-jiaolian6InsertRight1").hide();
-            $("#update-jiaolian3SelectLeft1").hide();
-            $("#update-jiaolian3InsertLeft1").hide();
-            $("#update-jiaolian3SelectRight1").hide();
-            $("#update-jiaolian3InsertRight1").hide();
-
-            $("#update-jiaolian4SelectLeft1").hide();
-            $("#update-jiaolian4InsertLeft1").hide();
-            $("#update-jiaolian4SelectRight1").hide();
-            $("#update-jiaolian4InsertRight1").hide();
-
-            $("#update-jiaolian5SelectLeft1").hide();
-            $("#update-jiaolian5InsertLeft1").hide();
-            $("#update-jiaolian5SelectRight1").hide();
-            $("#update-jiaolian5InsertRight1").hide();
-
-            $("#update-jiaolian6SelectLeft1").hide();
-            $("#update-jiaolian6InsertLeft1").hide();
-            $("#update-jiaolian6SelectRight1").hide();
-            $("#update-jiaolian6InsertRight1").hide();
-            $("#l3sl").hide();
-            $("#l3il").hide();
-            $("#l3sr").hide();
-            $("#l3ir").hide();
-
-            $("#l4sl").hide();
-            $("#l4il").hide();
-            $("#l4sr").hide();
-            $("#l4ir").hide();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
+           
         }
         if (selectedValue1 == '开三孔') {
+            $("#add-jiaolian3SelectLeft1").show();
+            $("#add-jiaolian3InsertLeft1").show();
+            $("#add-jiaolian3SelectRight1").show();
+            $("#add-jiaolian3InsertRight1").show();
+
             $("#add-jiaolian4SelectLeft1").hide();
             $("#add-jiaolian4InsertLeft1").hide();
             $("#add-jiaolian4SelectRight1").hide();
@@ -4682,36 +1582,18 @@ $(document).ready(function () {
             $("#add-jiaolian6InsertLeft1").hide();
             $("#add-jiaolian6SelectRight1").hide();
             $("#add-jiaolian6InsertRight1").hide();
-            $("#update-jiaolian4SelectLeft1").hide();
-            $("#update-jiaolian4InsertLeft1").hide();
-            $("#update-jiaolian4SelectRight1").hide();
-            $("#update-jiaolian4InsertRight1").hide();
-
-            $("#update-jiaolian5SelectLeft1").hide();
-            $("#update-jiaolian5InsertLeft1").hide();
-            $("#update-jiaolian5SelectRight1").hide();
-            $("#update-jiaolian5InsertRight1").hide();
-
-            $("#update-jiaolian6SelectLeft1").hide();
-            $("#update-jiaolian6InsertLeft1").hide();
-            $("#update-jiaolian6SelectRight1").hide();
-            $("#update-jiaolian6InsertRight1").hide();
-            $("#l4sl").hide();
-            $("#l4il").hide();
-            $("#l4sr").hide();
-            $("#l4ir").delete();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
         }
         if (selectedValue1 == '开四孔') {
+            $("#add-jiaolian3SelectLeft1").show();
+            $("#add-jiaolian3InsertLeft1").show();
+            $("#add-jiaolian3SelectRight1").show();
+            $("#add-jiaolian3InsertRight1").show();
+
+            $("#add-jiaolian4SelectLeft1").show();
+            $("#add-jiaolian4InsertLeft1").show();
+            $("#add-jiaolian4SelectRight1").show();
+            $("#add-jiaolian4InsertRight1").show();
+
             $("#add-jiaolian5SelectLeft1").hide();
             $("#add-jiaolian5InsertLeft1").hide();
             $("#add-jiaolian5SelectRight1").hide();
@@ -4721,38 +1603,48 @@ $(document).ready(function () {
             $("#add-jiaolian6InsertLeft1").hide();
             $("#add-jiaolian6SelectRight1").hide();
             $("#add-jiaolian6InsertRight1").hide();
-            $("#update-jiaolian5SelectLeft1").hide();
-            $("#update-jiaolian5InsertLeft1").hide();
-            $("#update-jiaolian5SelectRight1").hide();
-            $("#update-jiaolian5InsertRight1").hide();
-
-            $("#update-jiaolian6SelectLeft1").hide();
-            $("#update-jiaolian6InsertLeft1").hide();
-            $("#update-jiaolian6SelectRight1").hide();
-            $("#update-jiaolian6InsertRight1").hide();
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
         }
         if (selectedValue1 == '开五孔') {
+            $("#add-jiaolian3SelectLeft1").show();
+            $("#add-jiaolian3InsertLeft1").show();
+            $("#add-jiaolian3SelectRight1").show();
+            $("#add-jiaolian3InsertRight1").show();
+
+            $("#add-jiaolian4SelectLeft1").show();
+            $("#add-jiaolian4InsertLeft1").show();
+            $("#add-jiaolian4SelectRight1").show();
+            $("#add-jiaolian4InsertRight1").show();
+
+            $("#add-jiaolian5SelectLeft1").show();
+            $("#add-jiaolian5InsertLeft1").show();
+            $("#add-jiaolian5SelectRight1").show();
+            $("#add-jiaolian5InsertRight1").show();
+
             $("#add-jiaolian6SelectLeft1").hide();
             $("#add-jiaolian6InsertLeft1").hide();
             $("#add-jiaolian6SelectRight1").hide();
             $("#add-jiaolian6InsertRight1").hide();
-            $("#update-jiaolian6SelectLeft1").hide();
-            $("#update-jiaolian6InsertLeft1").hide();
-            $("#update-jiaolian6SelectRight1").hide();
-            $("#update-jiaolian6InsertRight1").hide();
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
+        }
+        if (selectedValue1 == '开六孔') {
+            $("#add-jiaolian3SelectLeft1").show();
+            $("#add-jiaolian3InsertLeft1").show();
+            $("#add-jiaolian3SelectRight1").show();
+            $("#add-jiaolian3InsertRight1").show();
+
+            $("#add-jiaolian4SelectLeft1").show();
+            $("#add-jiaolian4InsertLeft1").show();
+            $("#add-jiaolian4SelectRight1").show();
+            $("#add-jiaolian4InsertRight1").show();
+
+            $("#add-jiaolian5SelectLeft1").show();
+            $("#add-jiaolian5InsertLeft1").show();
+            $("#add-jiaolian5SelectRight1").show();
+            $("#add-jiaolian5InsertRight1").show();
+
+            $("#add-jiaolian6SelectLeft1").show();
+            $("#add-jiaolian6InsertLeft1").show();
+            $("#add-jiaolian6SelectRight1").show();
+            $("#add-jiaolian6InsertRight1").show();
         }
     })
 
@@ -4778,46 +1670,14 @@ $(document).ready(function () {
             $("#add-jiaolian6InsertLeft2").hide();
             $("#add-jiaolian6SelectRight2").hide();
             $("#add-jiaolian6InsertRight2").hide();
-            $("#update-jiaolian3SelectLeft2").hide();
-            $("#update-jiaolian3InsertLeft2").hide();
-            $("#update-jiaolian3SelectRight2").hide();
-            $("#update-jiaolian3InsertRight2").hide();
 
-            $("#update-jiaolian4SelectLeft2").hide();
-            $("#update-jiaolian4InsertLeft2").hide();
-            $("#update-jiaolian4SelectRight2").hide();
-            $("#update-jiaolian4InsertRight2").hide();
-
-            $("#update-jiaolian5SelectLeft2").hide();
-            $("#update-jiaolian5InsertLeft2").hide();
-            $("#update-jiaolian5SelectRight2").hide();
-            $("#update-jiaolian5InsertRight2").hide();
-
-            $("#update-jiaolian6SelectLeft2").hide();
-            $("#update-jiaolian6InsertLeft2").hide();
-            $("#update-jiaolian6SelectRight2").hide();
-            $("#update-jiaolian6InsertRight2").hide();
-            $("#l3sl").hide();
-            $("#l3il").hide();
-            $("#l3sr").hide();
-            $("#l3ir").hide();
-
-            $("#l4sl").hide();
-            $("#l4il").hide();
-            $("#l4sr").hide();
-            $("#l4ir").hide();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
         }
         if (selectedValue2 == '开三孔') {
+            $("#add-jiaolian3SelectLeft2").show();
+            $("#add-jiaolian3InsertLeft2").show();
+            $("#add-jiaolian3SelectRight2").show();
+            $("#add-jiaolian3InsertRight2").show();
+
             $("#add-jiaolian4SelectLeft2").hide();
             $("#add-jiaolian4InsertLeft2").hide();
             $("#add-jiaolian4SelectRight2").hide();
@@ -4832,36 +1692,18 @@ $(document).ready(function () {
             $("#add-jiaolian6InsertLeft2").hide();
             $("#add-jiaolian6SelectRight2").hide();
             $("#add-jiaolian6InsertRight2").hide();
-            $("#update-jiaolian4SelectLeft2").hide();
-            $("#update-jiaolian4InsertLeft2").hide();
-            $("#update-jiaolian4SelectRight2").hide();
-            $("#update-jiaolian4InsertRight2").hide();
-
-            $("#update-jiaolian5SelectLeft2").hide();
-            $("#update-jiaolian5InsertLeft2").hide();
-            $("#update-jiaolian5SelectRight2").hide();
-            $("#update-jiaolian5InsertRight2").hide();
-
-            $("#update-jiaolian6SelectLeft2").hide();
-            $("#update-jiaolian6InsertLeft2").hide();
-            $("#update-jiaolian6SelectRight2").hide();
-            $("#update-jiaolian6InsertRight2").hide();
-            $("#l4sl").hide();
-            $("#l4il").hide();
-            $("#l4sr").hide();
-            $("#l4ir").delete();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
         }
         if (selectedValue2 == '开四孔') {
+            $("#add-jiaolian3SelectLeft2").show();
+            $("#add-jiaolian3InsertLeft2").show();
+            $("#add-jiaolian3SelectRight2").show();
+            $("#add-jiaolian3InsertRight2").show();
+
+            $("#add-jiaolian4SelectLeft2").show();
+            $("#add-jiaolian4InsertLeft2").show();
+            $("#add-jiaolian4SelectRight2").show();
+            $("#add-jiaolian4InsertRight2").show();
+
             $("#add-jiaolian5SelectLeft2").hide();
             $("#add-jiaolian5InsertLeft2").hide();
             $("#add-jiaolian5SelectRight2").hide();
@@ -4871,38 +1713,48 @@ $(document).ready(function () {
             $("#add-jiaolian6InsertLeft2").hide();
             $("#add-jiaolian6SelectRight2").hide();
             $("#add-jiaolian6InsertRight2").hide();
-            $("#update-jiaolian5SelectLeft2").hide();
-            $("#update-jiaolian5InsertLeft2").hide();
-            $("#update-jiaolian5SelectRight2").hide();
-            $("#update-jiaolian5InsertRight2").hide();
-
-            $("#update-jiaolian6SelectLeft2").hide();
-            $("#update-jiaolian6InsertLeft2").hide();
-            $("#update-jiaolian6SelectRight2").hide();
-            $("#update-jiaolian6InsertRight2").hide();
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
         }
         if (selectedValue2 == '开五孔') {
+            $("#add-jiaolian3SelectLeft2").show();
+            $("#add-jiaolian3InsertLeft2").show();
+            $("#add-jiaolian3SelectRight2").show();
+            $("#add-jiaolian3InsertRight2").show();
+
+            $("#add-jiaolian4SelectLeft2").show();
+            $("#add-jiaolian4InsertLeft2").show();
+            $("#add-jiaolian4SelectRight2").show();
+            $("#add-jiaolian4InsertRight2").show();
+
+            $("#add-jiaolian5SelectLeft2").show();
+            $("#add-jiaolian5InsertLeft2").show();
+            $("#add-jiaolian5SelectRight2").show();
+            $("#add-jiaolian5InsertRight2").show();
+
             $("#add-jiaolian6SelectLeft2").hide();
             $("#add-jiaolian6InsertLeft2").hide();
             $("#add-jiaolian6SelectRight2").hide();
             $("#add-jiaolian6InsertRight2").hide();
-            $("#update-jiaolian6SelectLeft2").hide();
-            $("#update-jiaolian6InsertLeft2").hide();
-            $("#update-jiaolian6SelectRight2").hide();
-            $("#update-jiaolian6InsertRight2").hide();
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
+        }
+        if (selectedValue2 == '开六孔') {
+            $("#add-jiaolian3SelectLeft2").show();
+            $("#add-jiaolian3InsertLeft2").show();
+            $("#add-jiaolian3SelectRight2").show();
+            $("#add-jiaolian3InsertRight2").show();
+
+            $("#add-jiaolian4SelectLeft2").show();
+            $("#add-jiaolian4InsertLeft2").show();
+            $("#add-jiaolian4SelectRight2").show();
+            $("#add-jiaolian4InsertRight2").show();
+
+            $("#add-jiaolian5SelectLeft2").show();
+            $("#add-jiaolian5InsertLeft2").show();
+            $("#add-jiaolian5SelectRight2").show();
+            $("#add-jiaolian5InsertRight2").show();
+
+            $("#add-jiaolian6SelectLeft2").show();
+            $("#add-jiaolian6InsertLeft2").show();
+            $("#add-jiaolian6SelectRight2").show();
+            $("#add-jiaolian6InsertRight2").show();
         }
     })
 
@@ -4928,46 +1780,14 @@ $(document).ready(function () {
             $("#add-jiaolian6InsertLeft3").hide();
             $("#add-jiaolian6SelectRight3").hide();
             $("#add-jiaolian6InsertRight3").hide();
-            $("#update-jiaolian3SelectLeft3").hide();
-            $("#update-jiaolian3InsertLeft3").hide();
-            $("#update-jiaolian3SelectRight3").hide();
-            $("#update-jiaolian3InsertRight3").hide();
 
-            $("#update-jiaolian4SelectLeft3").hide();
-            $("#update-jiaolian4InsertLeft3").hide();
-            $("#update-jiaolian4SelectRight3").hide();
-            $("#update-jiaolian4InsertRight3").hide();
-
-            $("#update-jiaolian5SelectLeft3").hide();
-            $("#update-jiaolian5InsertLeft3").hide();
-            $("#update-jiaolian5SelectRight3").hide();
-            $("#update-jiaolian5InsertRight3").hide();
-
-            $("#update-jiaolian6SelectLeft3").hide();
-            $("#update-jiaolian6InsertLeft3").hide();
-            $("#update-jiaolian6SelectRight3").hide();
-            $("#update-jiaolian6InsertRight3").hide();
-            $("#l3sl").hide();
-            $("#l3il").hide();
-            $("#l3sr").hide();
-            $("#l3ir").hide();
-
-            $("#l4sl").hide();
-            $("#l4il").hide();
-            $("#l4sr").hide();
-            $("#l4ir").hide();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
         }
         if (selectedValue3 == '开三孔') {
+            $("#add-jiaolian3SelectLeft3").show();
+            $("#add-jiaolian3InsertLeft3").show();
+            $("#add-jiaolian3SelectRight3").show();
+            $("#add-jiaolian3InsertRight3").show();
+
             $("#add-jiaolian4SelectLeft3").hide();
             $("#add-jiaolian4InsertLeft3").hide();
             $("#add-jiaolian4SelectRight3").hide();
@@ -4982,37 +1802,18 @@ $(document).ready(function () {
             $("#add-jiaolian6InsertLeft3").hide();
             $("#add-jiaolian6SelectRight3").hide();
             $("#add-jiaolian6InsertRight3").hide();
-            $("#update-jiaolian4SelectLeft3").hide();
-            $("#update-jiaolian4InsertLeft3").hide();
-            $("#update-jiaolian4SelectRight3").hide();
-            $("#update-jiaolian4InsertRight3").hide();
-
-            $("#update-jiaolian5SelectLeft3").hide();
-            $("#update-jiaolian5InsertLeft3").hide();
-            $("#update-jiaolian5SelectRight3").hide();
-            $("#update-jiaolian5InsertRight3").hide();
-
-            $("#update-jiaolian6SelectLeft3").hide();
-            $("#update-jiaolian6InsertLeft3").hide();
-            $("#update-jiaolian6SelectRight3").hide();
-            $("#update-jiaolian6InsertRight3").hide();
-
-            $("#l4sl").hide();
-            $("#l4il").hide();
-            $("#l4sr").hide();
-            $("#l4ir").delete();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
         }
         if (selectedValue3 == '开四孔') {
+            $("#add-jiaolian3SelectLeft3").show();
+            $("#add-jiaolian3InsertLeft3").show();
+            $("#add-jiaolian3SelectRight3").show();
+            $("#add-jiaolian3InsertRight3").show();
+
+            $("#add-jiaolian4SelectLeft3").show();
+            $("#add-jiaolian4InsertLeft3").show();
+            $("#add-jiaolian4SelectRight3").show();
+            $("#add-jiaolian4InsertRight3").show();
+
             $("#add-jiaolian5SelectLeft3").hide();
             $("#add-jiaolian5InsertLeft3").hide();
             $("#add-jiaolian5SelectRight3").hide();
@@ -5022,39 +1823,48 @@ $(document).ready(function () {
             $("#add-jiaolian6InsertLeft3").hide();
             $("#add-jiaolian6SelectRight3").hide();
             $("#add-jiaolian6InsertRight3").hide();
-            $("#update-jiaolian5SelectLeft3").hide();
-            $("#update-jiaolian5InsertLeft3").hide();
-            $("#update-jiaolian5SelectRight3").hide();
-            $("#update-jiaolian5InsertRight3").hide();
-
-            $("#update-jiaolian6SelectLeft3").hide();
-            $("#update-jiaolian6InsertLeft3").hide();
-            $("#update-jiaolian6SelectRight3").hide();
-            $("#update-jiaolian6InsertRight3").hide();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
         }
         if (selectedValue3 == '开五孔') {
+            $("#add-jiaolian3SelectLeft3").show();
+            $("#add-jiaolian3InsertLeft3").show();
+            $("#add-jiaolian3SelectRight3").show();
+            $("#add-jiaolian3InsertRight3").show();
+
+            $("#add-jiaolian4SelectLeft3").show();
+            $("#add-jiaolian4InsertLeft3").show();
+            $("#add-jiaolian4SelectRight3").show();
+            $("#add-jiaolian4InsertRight3").show();
+
+            $("#add-jiaolian5SelectLeft3").show();
+            $("#add-jiaolian5InsertLeft3").show();
+            $("#add-jiaolian5SelectRight3").show();
+            $("#add-jiaolian5InsertRight3").show();
+
             $("#add-jiaolian6SelectLeft3").hide();
             $("#add-jiaolian6InsertLeft3").hide();
             $("#add-jiaolian6SelectRight3").hide();
             $("#add-jiaolian6InsertRight3").hide();
-            $("#update-jiaolian6SelectLeft3").hide();
-            $("#update-jiaolian6InsertLeft3").hide();
-            $("#update-jiaolian6SelectRight3").hide();
-            $("#update-jiaolian6InsertRight3").hide();
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
+        }
+        if (selectedValue3 == '开六孔') {
+            $("#add-jiaolian3SelectLeft3").show();
+            $("#add-jiaolian3InsertLeft3").show();
+            $("#add-jiaolian3SelectRight3").show();
+            $("#add-jiaolian3InsertRight3").show();
+
+            $("#add-jiaolian4SelectLeft3").show();
+            $("#add-jiaolian4InsertLeft3").show();
+            $("#add-jiaolian4SelectRight3").show();
+            $("#add-jiaolian4InsertRight3").show();
+
+            $("#add-jiaolian5SelectLeft3").show();
+            $("#add-jiaolian5InsertLeft3").show();
+            $("#add-jiaolian5SelectRight3").show();
+            $("#add-jiaolian5InsertRight3").show();
+
+            $("#add-jiaolian6SelectLeft3").show();
+            $("#add-jiaolian6InsertLeft3").show();
+            $("#add-jiaolian6SelectRight3").show();
+            $("#add-jiaolian6InsertRight3").show();
         }
     })
 
@@ -5080,47 +1890,14 @@ $(document).ready(function () {
             $("#add-jiaolian6InsertLeft4").hide();
             $("#add-jiaolian6SelectRight4").hide();
             $("#add-jiaolian6InsertRight4").hide();
-            $("#update-jiaolian3SelectLeft4").hide();
-            $("#update-jiaolian3InsertLeft4").hide();
-            $("#update-jiaolian3SelectRight4").hide();
-            $("#update-jiaolian3InsertRight4").hide();
 
-            $("#update-jiaolian4SelectLeft4").hide();
-            $("#update-jiaolian4InsertLeft4").hide();
-            $("#update-jiaolian4SelectRight4").hide();
-            $("#update-jiaolian4InsertRight4").hide();
-
-            $("#update-jiaolian5SelectLeft4").hide();
-            $("#update-jiaolian5InsertLeft4").hide();
-            $("#update-jiaolian5SelectRight4").hide();
-            $("#update-jiaolian5InsertRight4").hide();
-
-            $("#update-jiaolian6SelectLeft4").hide();
-            $("#update-jiaolian6InsertLeft4").hide();
-            $("#update-jiaolian6SelectRight4").hide();
-            $("#update-jiaolian6InsertRight4").hide();
-
-            $("#l3sl").hide();
-            $("#l3il").hide();
-            $("#l3sr").hide();
-            $("#l3ir").hide();
-
-            $("#l4sl").hide();
-            $("#l4il").hide();
-            $("#l4sr").hide();
-            $("#l4ir").hide();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
         }
         if (selectedValue4 == '开三孔') {
+            $("#add-jiaolian3SelectLeft4").show();
+            $("#add-jiaolian3InsertLeft4").show();
+            $("#add-jiaolian3SelectRight4").show();
+            $("#add-jiaolian3InsertRight4").show();
+
             $("#add-jiaolian4SelectLeft4").hide();
             $("#add-jiaolian4InsertLeft4").hide();
             $("#add-jiaolian4SelectRight4").hide();
@@ -5135,37 +1912,18 @@ $(document).ready(function () {
             $("#add-jiaolian6InsertLeft4").hide();
             $("#add-jiaolian6SelectRight4").hide();
             $("#add-jiaolian6InsertRight4").hide();
-            $("#update-jiaolian4SelectLeft4").hide();
-            $("#update-jiaolian4InsertLeft4").hide();
-            $("#update-jiaolian4SelectRight4").hide();
-            $("#update-jiaolian4InsertRight4").hide();
-
-            $("#update-jiaolian5SelectLeft4").hide();
-            $("#update-jiaolian5InsertLeft4").hide();
-            $("#update-jiaolian5SelectRight4").hide();
-            $("#update-jiaolian5InsertRight4").hide();
-
-            $("#update-jiaolian6SelectLeft4").hide();
-            $("#update-jiaolian6InsertLeft4").hide();
-            $("#update-jiaolian6SelectRight4").hide();
-            $("#update-jiaolian6InsertRight4").hide();
-
-            $("#l4sl").hide();
-            $("#l4il").hide();
-            $("#l4sr").hide();
-            $("#l4ir").delete();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
         }
         if (selectedValue4 == '开四孔') {
+            $("#add-jiaolian3SelectLeft4").show();
+            $("#add-jiaolian3InsertLeft4").show();
+            $("#add-jiaolian3SelectRight4").show();
+            $("#add-jiaolian3InsertRight4").show();
+
+            $("#add-jiaolian4SelectLeft4").show();
+            $("#add-jiaolian4InsertLeft4").show();
+            $("#add-jiaolian4SelectRight4").show();
+            $("#add-jiaolian4InsertRight4").show();
+
             $("#add-jiaolian5SelectLeft4").hide();
             $("#add-jiaolian5InsertLeft4").hide();
             $("#add-jiaolian5SelectRight4").hide();
@@ -5175,40 +1933,48 @@ $(document).ready(function () {
             $("#add-jiaolian6InsertLeft4").hide();
             $("#add-jiaolian6SelectRight4").hide();
             $("#add-jiaolian6InsertRight4").hide();
-            $("#update-jiaolian5SelectLeft4").hide();
-            $("#update-jiaolian5InsertLeft4").hide();
-            $("#update-jiaolian5SelectRight4").hide();
-            $("#update-jiaolian5InsertRight4").hide();
-
-            $("#update-jiaolian6SelectLeft4").hide();
-            $("#update-jiaolian6InsertLeft4").hide();
-            $("#update-jiaolian6SelectRight4").hide();
-            $("#update-jiaolian6InsertRight4").hide();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
         }
         if (selectedValue4 == '开五孔') {
+            $("#add-jiaolian3SelectLeft4").show();
+            $("#add-jiaolian3InsertLeft4").show();
+            $("#add-jiaolian3SelectRight4").show();
+            $("#add-jiaolian3InsertRight4").show();
+
+            $("#add-jiaolian4SelectLeft4").show();
+            $("#add-jiaolian4InsertLeft4").show();
+            $("#add-jiaolian4SelectRight4").show();
+            $("#add-jiaolian4InsertRight4").show();
+
+            $("#add-jiaolian5SelectLeft4").show();
+            $("#add-jiaolian5InsertLeft4").show();
+            $("#add-jiaolian5SelectRight4").show();
+            $("#add-jiaolian5InsertRight4").show();
+
             $("#add-jiaolian6SelectLeft4").hide();
             $("#add-jiaolian6InsertLeft4").hide();
             $("#add-jiaolian6SelectRight4").hide();
             $("#add-jiaolian6InsertRight4").hide();
-            $("#update-jiaolian6SelectLeft4").hide();
-            $("#update-jiaolian6InsertLeft4").hide();
-            $("#update-jiaolian6SelectRight4").hide();
-            $("#update-jiaolian6InsertRight4").hide();
+        }
+        if (selectedValue4 == '开六孔') {
+            $("#add-jiaolian3SelectLeft4").show();
+            $("#add-jiaolian3InsertLeft4").show();
+            $("#add-jiaolian3SelectRight4").show();
+            $("#add-jiaolian3InsertRight4").show();
 
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
+            $("#add-jiaolian4SelectLeft4").show();
+            $("#add-jiaolian4InsertLeft4").show();
+            $("#add-jiaolian4SelectRight4").show();
+            $("#add-jiaolian4InsertRight4").show();
+
+            $("#add-jiaolian5SelectLeft4").show();
+            $("#add-jiaolian5InsertLeft4").show();
+            $("#add-jiaolian5SelectRight4").show();
+            $("#add-jiaolian5InsertRight4").show();
+
+            $("#add-jiaolian6SelectLeft4").show();
+            $("#add-jiaolian6InsertLeft4").show();
+            $("#add-jiaolian6SelectRight4").show();
+            $("#add-jiaolian6InsertRight4").show();
         }
     })
 
@@ -5234,46 +2000,14 @@ $(document).ready(function () {
             $("#add-jiaolian6InsertLeft5").hide();
             $("#add-jiaolian6SelectRight5").hide();
             $("#add-jiaolian6InsertRight5").hide();
-            $("#update-jiaolian3SelectLeft5").hide();
-            $("#update-jiaolian3InsertLeft5").hide();
-            $("#update-jiaolian3SelectRight5").hide();
-            $("#update-jiaolian3InsertRight5").hide();
 
-            $("#update-jiaolian4SelectLeft5").hide();
-            $("#update-jiaolian4InsertLeft5").hide();
-            $("#update-jiaolian4SelectRight5").hide();
-            $("#update-jiaolian4InsertRight5").hide();
-
-            $("#update-jiaolian5SelectLeft5").hide();
-            $("#update-jiaolian5InsertLeft5").hide();
-            $("#update-jiaolian5SelectRight5").hide();
-            $("#update-jiaolian5InsertRight5").hide();
-
-            $("#update-jiaolian6SelectLeft5").hide();
-            $("#update-jiaolian6InsertLeft5").hide();
-            $("#update-jiaolian6SelectRight5").hide();
-            $("#update-jiaolian6InsertRight5").hide();
-            $("#l3sl").hide();
-            $("#l3il").hide();
-            $("#l3sr").hide();
-            $("#l3ir").hide();
-
-            $("#l4sl").hide();
-            $("#l4il").hide();
-            $("#l4sr").hide();
-            $("#l4ir").hide();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
         }
         if (selectedValue5 == '开三孔') {
+            $("#add-jiaolian3SelectLeft5").show();
+            $("#add-jiaolian3InsertLeft5").show();
+            $("#add-jiaolian3SelectRight5").show();
+            $("#add-jiaolian3InsertRight5").show();
+
             $("#add-jiaolian4SelectLeft5").hide();
             $("#add-jiaolian4InsertLeft5").hide();
             $("#add-jiaolian4SelectRight5").hide();
@@ -5288,70 +2022,69 @@ $(document).ready(function () {
             $("#add-jiaolian6InsertLeft5").hide();
             $("#add-jiaolian6SelectRight5").hide();
             $("#add-jiaolian6InsertRight5").hide();
-            $("#update-jiaolian4SelectLeft5").hide();
-            $("#update-jiaolian4InsertLeft5").hide();
-            $("#update-jiaolian4SelectRight5").hide();
-            $("#update-jiaolian4InsertRight5").hide();
-
-            $("#update-jiaolian5SelectLeft5").hide();
-            $("#update-jiaolian5InsertLeft5").hide();
-            $("#update-jiaolian5SelectRight5").hide();
-            $("#update-jiaolian5InsertRight5").hide();
-
-            $("#update-jiaolian6SelectLeft5").hide();
-            $("#update-jiaolian6InsertLeft5").hide();
-            $("#update-jiaolian6SelectRight5").hide();
-            $("#update-jiaolian6InsertRight5").hide();
-            $("#l4sl").hide();
-            $("#l4il").hide();
-            $("#l4sr").hide();
-            $("#l4ir").delete();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
         }
         if (selectedValue5 == '开四孔') {
-            $("#update-jiaolian5SelectLeft5").hide();
-            $("#update-jiaolian5InsertLeft5").hide();
-            $("#update-jiaolian5SelectRight5").hide();
-            $("#update-jiaolian5InsertRight5").hide();
+            $("#add-jiaolian3SelectLeft5").show();
+            $("#add-jiaolian3InsertLeft5").show();
+            $("#add-jiaolian3SelectRight5").show();
+            $("#add-jiaolian3InsertRight5").show();
 
-            $("#update-jiaolian6SelectLeft5").hide();
-            $("#update-jiaolian6InsertLeft5").hide();
-            $("#update-jiaolian6SelectRight5").hide();
-            $("#update-jiaolian6InsertRight5").hide();
+            $("#add-jiaolian4SelectLeft5").show();
+            $("#add-jiaolian4InsertLeft5").show();
+            $("#add-jiaolian4SelectRight5").show();
+            $("#add-jiaolian4InsertRight5").show();
 
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
+            $("#add-jiaolian5SelectLeft5").hide();
+            $("#add-jiaolian5InsertLeft5").hide();
+            $("#add-jiaolian5SelectRight5").hide();
+            $("#add-jiaolian5InsertRight5").hide();
 
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
-        }
-        if (selectedValue5 == '开五孔') {
             $("#add-jiaolian6SelectLeft5").hide();
             $("#add-jiaolian6InsertLeft5").hide();
             $("#add-jiaolian6SelectRight5").hide();
             $("#add-jiaolian6InsertRight5").hide();
-            $("#update-jiaolian6SelectLeft5").hide();
-            $("#update-jiaolian6InsertLeft5").hide();
-            $("#update-jiaolian6SelectRight5").hide();
-            $("#update-jiaolian6InsertRight5").hide();
+        }
+        if (selectedValue5 == '开五孔') {
+            $("#add-jiaolian3SelectLeft5").show();
+            $("#add-jiaolian3InsertLeft5").show();
+            $("#add-jiaolian3SelectRight5").show();
+            $("#add-jiaolian3InsertRight5").show();
 
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
+            $("#add-jiaolian4SelectLeft5").show();
+            $("#add-jiaolian4InsertLeft5").show();
+            $("#add-jiaolian4SelectRight5").show();
+            $("#add-jiaolian4InsertRight5").show();
+
+            $("#add-jiaolian5SelectLeft5").show();
+            $("#add-jiaolian5InsertLeft5").show();
+            $("#add-jiaolian5SelectRight5").show();
+            $("#add-jiaolian5InsertRight5").show();
+
+            $("#add-jiaolian6SelectLeft5").hide();
+            $("#add-jiaolian6InsertLeft5").hide();
+            $("#add-jiaolian6SelectRight5").hide();
+            $("#add-jiaolian6InsertRight5").hide();
+        }
+        if (selectedValue5 == '开六孔') {
+            $("#add-jiaolian3SelectLeft5").show();
+            $("#add-jiaolian3InsertLeft5").show();
+            $("#add-jiaolian3SelectRight5").show();
+            $("#add-jiaolian3InsertRight5").show();
+
+            $("#add-jiaolian4SelectLeft5").show();
+            $("#add-jiaolian4InsertLeft5").show();
+            $("#add-jiaolian4SelectRight5").show();
+            $("#add-jiaolian4InsertRight5").show();
+
+            $("#add-jiaolian5SelectLeft5").show();
+            $("#add-jiaolian5InsertLeft5").show();
+            $("#add-jiaolian5SelectRight5").show();
+            $("#add-jiaolian5InsertRight5").show();
+
+            $("#add-jiaolian6SelectLeft5").show();
+            $("#add-jiaolian6InsertLeft5").show();
+            $("#add-jiaolian6SelectRight5").show();
+            $("#add-jiaolian6InsertRight5").show();
         }
     })
 
@@ -5377,47 +2110,14 @@ $(document).ready(function () {
             $("#add-jiaolian6InsertLeft6").hide();
             $("#add-jiaolian6SelectRight6").hide();
             $("#add-jiaolian6InsertRight6").hide();
-            $("#update-jiaolian3SelectLeft6").hide();
-            $("#update-jiaolian3InsertLeft6").hide();
-            $("#update-jiaolian3SelectRight6").hide();
-            $("#update-jiaolian3InsertRight6").hide();
 
-            $("#update-jiaolian4SelectLeft6").hide();
-            $("#update-jiaolian4InsertLeft6").hide();
-            $("#update-jiaolian4SelectRight6").hide();
-            $("#update-jiaolian4InsertRight6").hide();
-
-            $("#update-jiaolian5SelectLeft6").hide();
-            $("#update-jiaolian5InsertLeft6").hide();
-            $("#update-jiaolian5SelectRight6").hide();
-            $("#update-jiaolian5InsertRight6").hide();
-
-            $("#update-jiaolian6SelectLeft6").hide();
-            $("#update-jiaolian6InsertLeft6").hide();
-            $("#update-jiaolian6SelectRight6").hide();
-            $("#update-jiaolian6InsertRight6").hide();
-
-            $("#l3sl").hide();
-            $("#l3il").hide();
-            $("#l3sr").hide();
-            $("#l3ir").hide();
-
-            $("#l4sl").hide();
-            $("#l4il").hide();
-            $("#l4sr").hide();
-            $("#l4ir").hide();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
         }
         if (selectedValue6 == '开三孔') {
+            $("#add-jiaolian3SelectLeft6").show();
+            $("#add-jiaolian3InsertLeft6").show();
+            $("#add-jiaolian3SelectRight6").show();
+            $("#add-jiaolian3InsertRight6").show();
+
             $("#add-jiaolian4SelectLeft6").hide();
             $("#add-jiaolian4InsertLeft6").hide();
             $("#add-jiaolian4SelectRight6").hide();
@@ -5432,37 +2132,18 @@ $(document).ready(function () {
             $("#add-jiaolian6InsertLeft6").hide();
             $("#add-jiaolian6SelectRight6").hide();
             $("#add-jiaolian6InsertRight6").hide();
-            $("#update-jiaolian4SelectLeft6").hide();
-            $("#update-jiaolian4InsertLeft6").hide();
-            $("#update-jiaolian4SelectRight6").hide();
-            $("#update-jiaolian4InsertRight6").hide();
-
-            $("#update-jiaolian5SelectLeft6").hide();
-            $("#update-jiaolian5InsertLeft6").hide();
-            $("#update-jiaolian5SelectRight6").hide();
-            $("#update-jiaolian5InsertRight6").hide();
-
-            $("#update-jiaolian6SelectLeft6").hide();
-            $("#update-jiaolian6InsertLeft6").hide();
-            $("#update-jiaolian6SelectRight6").hide();
-            $("#update-jiaolian6InsertRight6").hide();
-
-            $("#l4sl").hide();
-            $("#l4il").hide();
-            $("#l4sr").hide();
-            $("#l4ir").delete();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
         }
         if (selectedValue6 == '开四孔') {
+            $("#add-jiaolian3SelectLeft6").show();
+            $("#add-jiaolian3InsertLeft6").show();
+            $("#add-jiaolian3SelectRight6").show();
+            $("#add-jiaolian3InsertRight6").show();
+
+            $("#add-jiaolian4SelectLeft6").show();
+            $("#add-jiaolian4InsertLeft6").show();
+            $("#add-jiaolian4SelectRight6").show();
+            $("#add-jiaolian4InsertRight6").show();
+
             $("#add-jiaolian5SelectLeft6").hide();
             $("#add-jiaolian5InsertLeft6").hide();
             $("#add-jiaolian5SelectRight6").hide();
@@ -5472,39 +2153,48 @@ $(document).ready(function () {
             $("#add-jiaolian6InsertLeft6").hide();
             $("#add-jiaolian6SelectRight6").hide();
             $("#add-jiaolian6InsertRight6").hide();
-            $("#update-jiaolian5SelectLeft6").hide();
-            $("#update-jiaolian5InsertLeft6").hide();
-            $("#update-jiaolian5SelectRight6").hide();
-            $("#update-jiaolian5InsertRight6").hide();
-
-            $("#update-jiaolian6SelectLeft6").hide();
-            $("#update-jiaolian6InsertLeft6").hide();
-            $("#update-jiaolian6SelectRight6").hide();
-            $("#update-jiaolian6InsertRight6").hide();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
         }
         if (selectedValue6 == '开五孔') {
+            $("#add-jiaolian3SelectLeft6").show();
+            $("#add-jiaolian3InsertLeft6").show();
+            $("#add-jiaolian3SelectRight6").show();
+            $("#add-jiaolian3InsertRight6").show();
+
+            $("#add-jiaolian4SelectLeft6").show();
+            $("#add-jiaolian4InsertLeft6").show();
+            $("#add-jiaolian4SelectRight6").show();
+            $("#add-jiaolian4InsertRight6").show();
+
+            $("#add-jiaolian5SelectLeft6").show();
+            $("#add-jiaolian5InsertLeft6").show();
+            $("#add-jiaolian5SelectRight6").show();
+            $("#add-jiaolian5InsertRight6").show();
+
             $("#add-jiaolian6SelectLeft6").hide();
             $("#add-jiaolian6InsertLeft6").hide();
             $("#add-jiaolian6SelectRight6").hide();
             $("#add-jiaolian6InsertRight6").hide();
-            $("#update-jiaolian6SelectLeft6").hide();
-            $("#update-jiaolian6InsertLeft6").hide();
-            $("#update-jiaolian6SelectRight6").hide();
-            $("#update-jiaolian6InsertRight6").hide();
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
+        }
+        if (selectedValue6 == '开六孔') {
+            $("#add-jiaolian3SelectLeft6").show();
+            $("#add-jiaolian3InsertLeft6").show();
+            $("#add-jiaolian3SelectRight6").show();
+            $("#add-jiaolian3InsertRight6").show();
+
+            $("#add-jiaolian4SelectLeft6").show();
+            $("#add-jiaolian4InsertLeft6").show();
+            $("#add-jiaolian4SelectRight6").show();
+            $("#add-jiaolian4InsertRight6").show();
+
+            $("#add-jiaolian5SelectLeft6").show();
+            $("#add-jiaolian5InsertLeft6").show();
+            $("#add-jiaolian5SelectRight6").show();
+            $("#add-jiaolian5InsertRight6").show();
+
+            $("#add-jiaolian6SelectLeft6").show();
+            $("#add-jiaolian6InsertLeft6").show();
+            $("#add-jiaolian6SelectRight6").show();
+            $("#add-jiaolian6InsertRight6").show();
         }
     })
 
@@ -5530,46 +2220,14 @@ $(document).ready(function () {
             $("#add-jiaolian6InsertLeft7").hide();
             $("#add-jiaolian6SelectRight7").hide();
             $("#add-jiaolian6InsertRight7").hide();
-            $("#update-jiaolian3SelectLeft7").hide();
-            $("#update-jiaolian3InsertLeft7").hide();
-            $("#update-jiaolian3SelectRight7").hide();
-            $("#update-jiaolian3InsertRight7").hide();
 
-            $("#update-jiaolian4SelectLeft7").hide();
-            $("#update-jiaolian4InsertLeft7").hide();
-            $("#update-jiaolian4SelectRight7").hide();
-            $("#update-jiaolian4InsertRight7").hide();
-
-            $("#update-jiaolian5SelectLeft7").hide();
-            $("#update-jiaolian5InsertLeft7").hide();
-            $("#update-jiaolian5SelectRight7").hide();
-            $("#update-jiaolian5InsertRight7").hide();
-
-            $("#update-jiaolian6SelectLeft7").hide();
-            $("#update-jiaolian6InsertLeft7").hide();
-            $("#update-jiaolian6SelectRight7").hide();
-            $("#update-jiaolian6InsertRight7").hide();
-            $("#l3sl").hide();
-            $("#l3il").hide();
-            $("#l3sr").hide();
-            $("#l3ir").hide();
-
-            $("#l4sl").hide();
-            $("#l4il").hide();
-            $("#l4sr").hide();
-            $("#l4ir").hide();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
         }
         if (selectedValue7 == '开三孔') {
+            $("#add-jiaolian3SelectLeft7").show();
+            $("#add-jiaolian3InsertLeft7").show();
+            $("#add-jiaolian3SelectRight7").show();
+            $("#add-jiaolian3InsertRight7").show();
+
             $("#add-jiaolian4SelectLeft7").hide();
             $("#add-jiaolian4InsertLeft7").hide();
             $("#add-jiaolian4SelectRight7").hide();
@@ -5584,37 +2242,18 @@ $(document).ready(function () {
             $("#add-jiaolian6InsertLeft7").hide();
             $("#add-jiaolian6SelectRight7").hide();
             $("#add-jiaolian6InsertRight7").hide();
-            $("#update-jiaolian4SelectLeft7").hide();
-            $("#update-jiaolian4InsertLeft7").hide();
-            $("#update-jiaolian4SelectRight7").hide();
-            $("#update-jiaolian4InsertRight7").hide();
-
-            $("#update-jiaolian5SelectLeft7").hide();
-            $("#update-jiaolian5InsertLeft7").hide();
-            $("#update-jiaolian5SelectRight7").hide();
-            $("#update-jiaolian5InsertRight7").hide();
-
-            $("#update-jiaolian6SelectLeft7").hide();
-            $("#update-jiaolian6InsertLeft7").hide();
-            $("#update-jiaolian6SelectRight7").hide();
-            $("#update-jiaolian6InsertRight7").hide();
-
-            $("#l4sl").hide();
-            $("#l4il").hide();
-            $("#l4sr").hide();
-            $("#l4ir").delete();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
         }
         if (selectedValue7 == '开四孔') {
+            $("#add-jiaolian3SelectLeft7").show();
+            $("#add-jiaolian3InsertLeft7").show();
+            $("#add-jiaolian3SelectRight7").show();
+            $("#add-jiaolian3InsertRight7").show();
+
+            $("#add-jiaolian4SelectLeft7").show();
+            $("#add-jiaolian4InsertLeft7").show();
+            $("#add-jiaolian4SelectRight7").show();
+            $("#add-jiaolian4InsertRight7").show();
+
             $("#add-jiaolian5SelectLeft7").hide();
             $("#add-jiaolian5InsertLeft7").hide();
             $("#add-jiaolian5SelectRight7").hide();
@@ -5624,40 +2263,48 @@ $(document).ready(function () {
             $("#add-jiaolian6InsertLeft7").hide();
             $("#add-jiaolian6SelectRight7").hide();
             $("#add-jiaolian6InsertRight7").hide();
-            $("#update-jiaolian5SelectLeft7").hide();
-            $("#update-jiaolian5InsertLeft7").hide();
-            $("#update-jiaolian5SelectRight7").hide();
-            $("#update-jiaolian5InsertRight7").hide();
-
-            $("#update-jiaolian6SelectLeft7").hide();
-            $("#update-jiaolian6InsertLeft7").hide();
-            $("#update-jiaolian6SelectRight7").hide();
-            $("#update-jiaolian6InsertRight7").hide();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
         }
         if (selectedValue7 == '开五孔') {
+            $("#add-jiaolian3SelectLeft7").show();
+            $("#add-jiaolian3InsertLeft7").show();
+            $("#add-jiaolian3SelectRight7").show();
+            $("#add-jiaolian3InsertRight7").show();
+
+            $("#add-jiaolian4SelectLeft7").show();
+            $("#add-jiaolian4InsertLeft7").show();
+            $("#add-jiaolian4SelectRight7").show();
+            $("#add-jiaolian4InsertRight7").show();
+
+            $("#add-jiaolian5SelectLeft7").show();
+            $("#add-jiaolian5InsertLeft7").show();
+            $("#add-jiaolian5SelectRight7").show();
+            $("#add-jiaolian5InsertRight7").show();
+
             $("#add-jiaolian6SelectLeft7").hide();
             $("#add-jiaolian6InsertLeft7").hide();
             $("#add-jiaolian6SelectRight7").hide();
             $("#add-jiaolian6InsertRight7").hide();
-            $("#update-jiaolian6SelectLeft7").hide();
-            $("#update-jiaolian6InsertLeft7").hide();
-            $("#update-jiaolian6SelectRight7").hide();
-            $("#update-jiaolian6InsertRight7").hide();
+        }
+        if (selectedValue7 == '开六孔') {
+            $("#add-jiaolian3SelectLeft7").show();
+            $("#add-jiaolian3InsertLeft7").show();
+            $("#add-jiaolian3SelectRight7").show();
+            $("#add-jiaolian3InsertRight7").show();
 
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
+            $("#add-jiaolian4SelectLeft7").show();
+            $("#add-jiaolian4InsertLeft7").show();
+            $("#add-jiaolian4SelectRight7").show();
+            $("#add-jiaolian4InsertRight7").show();
+
+            $("#add-jiaolian5SelectLeft7").show();
+            $("#add-jiaolian5InsertLeft7").show();
+            $("#add-jiaolian5SelectRight7").show();
+            $("#add-jiaolian5InsertRight7").show();
+
+            $("#add-jiaolian6SelectLeft7").show();
+            $("#add-jiaolian6InsertLeft7").show();
+            $("#add-jiaolian6SelectRight7").show();
+            $("#add-jiaolian6InsertRight7").show();
         }
     })
 
@@ -5683,47 +2330,14 @@ $(document).ready(function () {
             $("#add-jiaolian6InsertLeft8").hide();
             $("#add-jiaolian6SelectRight8").hide();
             $("#add-jiaolian6InsertRight8").hide();
-            $("#update-jiaolian3SelectLeft8").hide();
-            $("#update-jiaolian3InsertLeft8").hide();
-            $("#update-jiaolian3SelectRight8").hide();
-            $("#update-jiaolian3InsertRight8").hide();
 
-            $("#update-jiaolian4SelectLeft8").hide();
-            $("#update-jiaolian4InsertLeft8").hide();
-            $("#update-jiaolian4SelectRight8").hide();
-            $("#update-jiaolian4InsertRight8").hide();
-
-            $("#update-jiaolian5SelectLeft8").hide();
-            $("#update-jiaolian5InsertLeft8").hide();
-            $("#update-jiaolian5SelectRight8").hide();
-            $("#update-jiaolian5InsertRight8").hide();
-
-            $("#update-jiaolian6SelectLeft8").hide();
-            $("#update-jiaolian6InsertLeft8").hide();
-            $("#update-jiaolian6SelectRight8").hide();
-            $("#update-jiaolian6InsertRight8").hide();
-
-            $("#l3sl").hide();
-            $("#l3il").hide();
-            $("#l3sr").hide();
-            $("#l3ir").hide();
-
-            $("#l4sl").hide();
-            $("#l4il").hide();
-            $("#l4sr").hide();
-            $("#l4ir").hide();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
         }
         if (selectedValue8 == '开三孔') {
+            $("#add-jiaolian3SelectLeft8").show();
+            $("#add-jiaolian3InsertLeft8").show();
+            $("#add-jiaolian3SelectRight8").show();
+            $("#add-jiaolian3InsertRight8").show();
+
             $("#add-jiaolian4SelectLeft8").hide();
             $("#add-jiaolian4InsertLeft8").hide();
             $("#add-jiaolian4SelectRight8").hide();
@@ -5738,37 +2352,18 @@ $(document).ready(function () {
             $("#add-jiaolian6InsertLeft8").hide();
             $("#add-jiaolian6SelectRight8").hide();
             $("#add-jiaolian6InsertRight8").hide();
-            $("#update-jiaolian4SelectLeft8").hide();
-            $("#update-jiaolian4InsertLeft8").hide();
-            $("#update-jiaolian4SelectRight8").hide();
-            $("#update-jiaolian4InsertRight8").hide();
-
-            $("#update-jiaolian5SelectLeft8").hide();
-            $("#update-jiaolian5InsertLeft8").hide();
-            $("#update-jiaolian5SelectRight8").hide();
-            $("#update-jiaolian5InsertRight8").hide();
-
-            $("#update-jiaolian6SelectLeft8").hide();
-            $("#update-jiaolian6InsertLeft8").hide();
-            $("#update-jiaolian6SelectRight8").hide();
-            $("#update-jiaolian6InsertRight8").hide();
-
-            $("#l4sl").hide();
-            $("#l4il").hide();
-            $("#l4sr").hide();
-            $("#l4ir").delete();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
         }
         if (selectedValue8 == '开四孔') {
+            $("#add-jiaolian3SelectLeft8").show();
+            $("#add-jiaolian3InsertLeft8").show();
+            $("#add-jiaolian3SelectRight8").show();
+            $("#add-jiaolian3InsertRight8").show();
+
+            $("#add-jiaolian4SelectLeft8").show();
+            $("#add-jiaolian4InsertLeft8").show();
+            $("#add-jiaolian4SelectRight8").show();
+            $("#add-jiaolian4InsertRight8").show();
+
             $("#add-jiaolian5SelectLeft8").hide();
             $("#add-jiaolian5InsertLeft8").hide();
             $("#add-jiaolian5SelectRight8").hide();
@@ -5778,40 +2373,48 @@ $(document).ready(function () {
             $("#add-jiaolian6InsertLeft8").hide();
             $("#add-jiaolian6SelectRight8").hide();
             $("#add-jiaolian6InsertRight8").hide();
-            $("#update-jiaolian5SelectLeft8").hide();
-            $("#update-jiaolian5InsertLeft8").hide();
-            $("#update-jiaolian5SelectRight8").hide();
-            $("#update-jiaolian5InsertRight8").hide();
-
-            $("#update-jiaolian6SelectLeft8").hide();
-            $("#update-jiaolian6InsertLeft8").hide();
-            $("#update-jiaolian6SelectRight8").hide();
-            $("#update-jiaolian6InsertRight8").hide();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
         }
         if (selectedValue8 == '开五孔') {
+            $("#add-jiaolian3SelectLeft8").show();
+            $("#add-jiaolian3InsertLeft8").show();
+            $("#add-jiaolian3SelectRight8").show();
+            $("#add-jiaolian3InsertRight8").show();
+
+            $("#add-jiaolian4SelectLeft8").show();
+            $("#add-jiaolian4InsertLeft8").show();
+            $("#add-jiaolian4SelectRight8").show();
+            $("#add-jiaolian4InsertRight8").show();
+
+            $("#add-jiaolian5SelectLeft8").show();
+            $("#add-jiaolian5InsertLeft8").show();
+            $("#add-jiaolian5SelectRight8").show();
+            $("#add-jiaolian5InsertRight8").show();
+
             $("#add-jiaolian6SelectLeft8").hide();
             $("#add-jiaolian6InsertLeft8").hide();
             $("#add-jiaolian6SelectRight8").hide();
             $("#add-jiaolian6InsertRight8").hide();
-            $("#update-jiaolian6SelectLeft8").hide();
-            $("#update-jiaolian6InsertLeft8").hide();
-            $("#update-jiaolian6SelectRight8").hide();
-            $("#update-jiaolian6InsertRight8").hide();
+        }
+        if (selectedValue8 == '开六孔') {
+            $("#add-jiaolian3SelectLeft8").show();
+            $("#add-jiaolian3InsertLeft8").show();
+            $("#add-jiaolian3SelectRight8").show();
+            $("#add-jiaolian3InsertRight8").show();
 
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
+            $("#add-jiaolian4SelectLeft8").show();
+            $("#add-jiaolian4InsertLeft8").show();
+            $("#add-jiaolian4SelectRight8").show();
+            $("#add-jiaolian4InsertRight8").show();
+
+            $("#add-jiaolian5SelectLeft8").show();
+            $("#add-jiaolian5InsertLeft8").show();
+            $("#add-jiaolian5SelectRight8").show();
+            $("#add-jiaolian5InsertRight8").show();
+
+            $("#add-jiaolian6SelectLeft8").show();
+            $("#add-jiaolian6InsertLeft8").show();
+            $("#add-jiaolian6SelectRight8").show();
+            $("#add-jiaolian6InsertRight8").show();
         }
     })
 
@@ -5837,48 +2440,14 @@ $(document).ready(function () {
             $("#add-jiaolian6InsertLeft9").hide();
             $("#add-jiaolian6SelectRight9").hide();
             $("#add-jiaolian6InsertRight9").hide();
-            $("#update-jiaolian3SelectLeft9").hide();
-            $("#update-jiaolian3InsertLeft9").hide();
-            $("#update-jiaolian3SelectRight9").hide();
-            $("#update-jiaolian3InsertRight9").hide();
 
-            $("#update-jiaolian4SelectLeft9").hide();
-            $("#update-jiaolian4InsertLeft9").hide();
-            $("#update-jiaolian4SelectRight9").hide();
-            $("#update-jiaolian4InsertRight9").hide();
-
-            $("#update-jiaolian5SelectLeft9").hide();
-            $("#update-jiaolian5InsertLeft9").hide();
-            $("#update-jiaolian5SelectRight9").hide();
-            $("#update-jiaolian5InsertRight9").hide();
-
-            $("#update-jiaolian6SelectLeft9").hide();
-            $("#update-jiaolian6InsertLeft9").hide();
-            $("#update-jiaolian6SelectRight9").hide();
-            $("#update-jiaolian6InsertRight9").hide();
-
-
-            $("#l3sl").hide();
-            $("#l3il").hide();
-            $("#l3sr").hide();
-            $("#l3ir").hide();
-
-            $("#l4sl").hide();
-            $("#l4il").hide();
-            $("#l4sr").hide();
-            $("#l4ir").hide();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
         }
         if (selectedValue9 == '开三孔') {
+            $("#add-jiaolian3SelectLeft9").show();
+            $("#add-jiaolian3InsertLeft9").show();
+            $("#add-jiaolian3SelectRight9").show();
+            $("#add-jiaolian3InsertRight9").show();
+
             $("#add-jiaolian4SelectLeft9").hide();
             $("#add-jiaolian4InsertLeft9").hide();
             $("#add-jiaolian4SelectRight9").hide();
@@ -5893,37 +2462,18 @@ $(document).ready(function () {
             $("#add-jiaolian6InsertLeft9").hide();
             $("#add-jiaolian6SelectRight9").hide();
             $("#add-jiaolian6InsertRight9").hide();
-            $("#update-jiaolian4SelectLeft9").hide();
-            $("#update-jiaolian4InsertLeft9").hide();
-            $("#update-jiaolian4SelectRight9").hide();
-            $("#update-jiaolian4InsertRight9").hide();
-
-            $("#update-jiaolian5SelectLeft9").hide();
-            $("#update-jiaolian5InsertLeft9").hide();
-            $("#update-jiaolian5SelectRight9").hide();
-            $("#update-jiaolian5InsertRight9").hide();
-
-            $("#update-jiaolian6SelectLeft9").hide();
-            $("#update-jiaolian6InsertLeft9").hide();
-            $("#update-jiaolian6SelectRight9").hide();
-            $("#update-jiaolian6InsertRight9").hide();
-
-            $("#l4sl").hide();
-            $("#l4il").hide();
-            $("#l4sr").hide();
-            $("#l4ir").delete();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
         }
         if (selectedValue9 == '开四孔') {
+            $("#add-jiaolian3SelectLeft9").show();
+            $("#add-jiaolian3InsertLeft9").show();
+            $("#add-jiaolian3SelectRight9").show();
+            $("#add-jiaolian3InsertRight9").show();
+
+            $("#add-jiaolian4SelectLeft9").show();
+            $("#add-jiaolian4InsertLeft9").show();
+            $("#add-jiaolian4SelectRight9").show();
+            $("#add-jiaolian4InsertRight9").show();
+
             $("#add-jiaolian5SelectLeft9").hide();
             $("#add-jiaolian5InsertLeft9").hide();
             $("#add-jiaolian5SelectRight9").hide();
@@ -5933,40 +2483,48 @@ $(document).ready(function () {
             $("#add-jiaolian6InsertLeft9").hide();
             $("#add-jiaolian6SelectRight9").hide();
             $("#add-jiaolian6InsertRight9").hide();
-            $("#update-jiaolian5SelectLeft9").hide();
-            $("#update-jiaolian5InsertLeft9").hide();
-            $("#update-jiaolian5SelectRight9").hide();
-            $("#update-jiaolian5InsertRight9").hide();
-
-            $("#update-jiaolian6SelectLeft9").hide();
-            $("#update-jiaolian6InsertLeft9").hide();
-            $("#update-jiaolian6SelectRight9").hide();
-            $("#update-jiaolian6InsertRight9").hide();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
         }
         if (selectedValue9 == '开五孔') {
+            $("#add-jiaolian3SelectLeft9").show();
+            $("#add-jiaolian3InsertLeft9").show();
+            $("#add-jiaolian3SelectRight9").show();
+            $("#add-jiaolian3InsertRight9").show();
+
+            $("#add-jiaolian4SelectLeft9").show();
+            $("#add-jiaolian4InsertLeft9").show();
+            $("#add-jiaolian4SelectRight9").show();
+            $("#add-jiaolian4InsertRight9").show();
+
+            $("#add-jiaolian5SelectLeft9").show();
+            $("#add-jiaolian5InsertLeft9").show();
+            $("#add-jiaolian5SelectRight9").show();
+            $("#add-jiaolian5InsertRight9").show();
+
             $("#add-jiaolian6SelectLeft9").hide();
             $("#add-jiaolian6InsertLeft9").hide();
             $("#add-jiaolian6SelectRight9").hide();
             $("#add-jiaolian6InsertRight9").hide();
-            $("#update-jiaolian6SelectLeft9").hide();
-            $("#update-jiaolian6InsertLeft9").hide();
-            $("#update-jiaolian6SelectRight9").hide();
-            $("#update-jiaolian6InsertRight9").hide();
+        }
+        if (selectedValue9 == '开六孔') {
+            $("#add-jiaolian3SelectLeft9").show();
+            $("#add-jiaolian3InsertLeft9").show();
+            $("#add-jiaolian3SelectRight9").show();
+            $("#add-jiaolian3InsertRight9").show();
 
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
+            $("#add-jiaolian4SelectLeft9").show();
+            $("#add-jiaolian4InsertLeft9").show();
+            $("#add-jiaolian4SelectRight9").show();
+            $("#add-jiaolian4InsertRight9").show();
+
+            $("#add-jiaolian5SelectLeft9").show();
+            $("#add-jiaolian5InsertLeft9").show();
+            $("#add-jiaolian5SelectRight9").show();
+            $("#add-jiaolian5InsertRight9").show();
+
+            $("#add-jiaolian6SelectLeft9").show();
+            $("#add-jiaolian6InsertLeft9").show();
+            $("#add-jiaolian6SelectRight9").show();
+            $("#add-jiaolian6InsertRight9").show();
         }
     })
 
@@ -5992,47 +2550,14 @@ $(document).ready(function () {
             $("#add-jiaolian6InsertLeft10").hide();
             $("#add-jiaolian6SelectRight10").hide();
             $("#add-jiaolian6InsertRight10").hide();
-            $("#update-jiaolian3SelectLeft10").hide();
-            $("#update-jiaolian3InsertLeft10").hide();
-            $("#update-jiaolian3SelectRight10").hide();
-            $("#update-jiaolian3InsertRight10").hide();
 
-            $("#update-jiaolian4SelectLeft10").hide();
-            $("#update-jiaolian4InsertLeft10").hide();
-            $("#update-jiaolian4SelectRight10").hide();
-            $("#update-jiaolian4InsertRight10").hide();
-
-            $("#update-jiaolian5SelectLeft10").hide();
-            $("#update-jiaolian5InsertLeft10").hide();
-            $("#update-jiaolian5SelectRight10").hide();
-            $("#update-jiaolian5InsertRight10").hide();
-
-            $("#update-jiaolian6SelectLeft10").hide();
-            $("#update-jiaolian6InsertLeft10").hide();
-            $("#update-jiaolian6SelectRight10").hide();
-            $("#update-jiaolian6InsertRight10").hide();
-
-            $("#l3sl").hide();
-            $("#l3il").hide();
-            $("#l3sr").hide();
-            $("#l3ir").hide();
-
-            $("#l4sl").hide();
-            $("#l4il").hide();
-            $("#l4sr").hide();
-            $("#l4ir").hide();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
         }
         if (selectedValue10 == '开三孔') {
+            $("#add-jiaolian3SelectLeft10").show();
+            $("#add-jiaolian3InsertLeft10").show();
+            $("#add-jiaolian3SelectRight10").show();
+            $("#add-jiaolian3InsertRight10").show();
+
             $("#add-jiaolian4SelectLeft10").hide();
             $("#add-jiaolian4InsertLeft10").hide();
             $("#add-jiaolian4SelectRight10").hide();
@@ -6047,71 +2572,69 @@ $(document).ready(function () {
             $("#add-jiaolian6InsertLeft10").hide();
             $("#add-jiaolian6SelectRight10").hide();
             $("#add-jiaolian6InsertRight10").hide();
-            $("#update-jiaolian4SelectLeft10").hide();
-            $("#update-jiaolian4InsertLeft10").hide();
-            $("#update-jiaolian4SelectRight10").hide();
-            $("#update-jiaolian4InsertRight10").hide();
-
-            $("#update-jiaolian5SelectLeft10").hide();
-            $("#update-jiaolian5InsertLeft10").hide();
-            $("#update-jiaolian5SelectRight10").hide();
-            $("#update-jiaolian5InsertRight10").hide();
-
-            $("#update-jiaolian6SelectLeft10").hide();
-            $("#update-jiaolian6InsertLeft10").hide();
-            $("#update-jiaolian6SelectRight10").hide();
-            $("#update-jiaolian6InsertRight10").hide();
-
-            $("#l4sl").hide();
-            $("#l4il").hide();
-            $("#l4sr").hide();
-            $("#l4ir").delete();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
         }
         if (selectedValue10 == '开四孔') {
-            $("#update-jiaolian5SelectLeft10").hide();
-            $("#update-jiaolian5InsertLeft10").hide();
-            $("#update-jiaolian5SelectRight10").hide();
-            $("#update-jiaolian5InsertRight10").hide();
+            $("#add-jiaolian3SelectLeft10").show();
+            $("#add-jiaolian3InsertLeft10").show();
+            $("#add-jiaolian3SelectRight10").show();
+            $("#add-jiaolian3InsertRight10").show();
 
-            $("#update-jiaolian6SelectLeft10").hide();
-            $("#update-jiaolian6InsertLeft10").hide();
-            $("#update-jiaolian6SelectRight10").hide();
-            $("#update-jiaolian6InsertRight10").hide();
+            $("#add-jiaolian4SelectLeft10").show();
+            $("#add-jiaolian4InsertLeft10").show();
+            $("#add-jiaolian4SelectRight10").show();
+            $("#add-jiaolian4InsertRight10").show();
 
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
+            $("#add-jiaolian5SelectLeft10").hide();
+            $("#add-jiaolian5InsertLeft10").hide();
+            $("#add-jiaolian5SelectRight10").hide();
+            $("#add-jiaolian5InsertRight10").hide();
 
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
-        }
-        if (selectedValue10 == '开五孔') {
             $("#add-jiaolian6SelectLeft10").hide();
             $("#add-jiaolian6InsertLeft10").hide();
             $("#add-jiaolian6SelectRight10").hide();
             $("#add-jiaolian6InsertRight10").hide();
-            $("#update-jiaolian6SelectLeft10").hide();
-            $("#update-jiaolian6InsertLeft10").hide();
-            $("#update-jiaolian6SelectRight10").hide();
-            $("#update-jiaolian6InsertRight10").hide();
+        }
+        if (selectedValue10 == '开五孔') {
+            $("#add-jiaolian3SelectLeft10").show();
+            $("#add-jiaolian3InsertLeft10").show();
+            $("#add-jiaolian3SelectRight10").show();
+            $("#add-jiaolian3InsertRight10").show();
 
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
+            $("#add-jiaolian4SelectLeft10").show();
+            $("#add-jiaolian4InsertLeft10").show();
+            $("#add-jiaolian4SelectRight10").show();
+            $("#add-jiaolian4InsertRight10").show();
+
+            $("#add-jiaolian5SelectLeft10").show();
+            $("#add-jiaolian5InsertLeft10").show();
+            $("#add-jiaolian5SelectRight10").show();
+            $("#add-jiaolian5InsertRight10").show();
+
+            $("#add-jiaolian6SelectLeft10").hide();
+            $("#add-jiaolian6InsertLeft10").hide();
+            $("#add-jiaolian6SelectRight10").hide();
+            $("#add-jiaolian6InsertRight10").hide();
+        }
+        if (selectedValue10 == '开六孔') {
+            $("#add-jiaolian3SelectLeft10").show();
+            $("#add-jiaolian3InsertLeft10").show();
+            $("#add-jiaolian3SelectRight10").show();
+            $("#add-jiaolian3InsertRight10").show();
+
+            $("#add-jiaolian4SelectLeft10").show();
+            $("#add-jiaolian4InsertLeft10").show();
+            $("#add-jiaolian4SelectRight10").show();
+            $("#add-jiaolian4InsertRight10").show();
+
+            $("#add-jiaolian5SelectLeft10").show();
+            $("#add-jiaolian5InsertLeft10").show();
+            $("#add-jiaolian5SelectRight10").show();
+            $("#add-jiaolian5InsertRight10").show();
+
+            $("#add-jiaolian6SelectLeft10").show();
+            $("#add-jiaolian6InsertLeft10").show();
+            $("#add-jiaolian6SelectRight10").show();
+            $("#add-jiaolian6InsertRight10").show();
         }
     })
 
@@ -6137,46 +2660,14 @@ $(document).ready(function () {
             $("#add-jiaolian6InsertLeft11").hide();
             $("#add-jiaolian6SelectRight11").hide();
             $("#add-jiaolian6InsertRight11").hide();
-            $("#update-jiaolian3SelectLeft11").hide();
-            $("#update-jiaolian3InsertLeft11").hide();
-            $("#update-jiaolian3SelectRight11").hide();
-            $("#update-jiaolian3InsertRight11").hide();
 
-            $("#update-jiaolian4SelectLeft11").hide();
-            $("#update-jiaolian4InsertLeft11").hide();
-            $("#update-jiaolian4SelectRight11").hide();
-            $("#update-jiaolian4InsertRight11").hide();
-
-            $("#update-jiaolian5SelectLeft11").hide();
-            $("#update-jiaolian5InsertLeft11").hide();
-            $("#update-jiaolian5SelectRight11").hide();
-            $("#update-jiaolian5InsertRight11").hide();
-
-            $("#update-jiaolian6SelectLeft11").hide();
-            $("#update-jiaolian6InsertLeft11").hide();
-            $("#update-jiaolian6SelectRight11").hide();
-            $("#update-jiaolian6InsertRight11").hide();
-            $("#l3sl").hide();
-            $("#l3il").hide();
-            $("#l3sr").hide();
-            $("#l3ir").hide();
-
-            $("#l4sl").hide();
-            $("#l4il").hide();
-            $("#l4sr").hide();
-            $("#l4ir").hide();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
         }
         if (selectedValue11 == '开三孔') {
+            $("#add-jiaolian3SelectLeft11").show();
+            $("#add-jiaolian3InsertLeft11").show();
+            $("#add-jiaolian3SelectRight11").show();
+            $("#add-jiaolian3InsertRight11").show();
+
             $("#add-jiaolian4SelectLeft11").hide();
             $("#add-jiaolian4InsertLeft11").hide();
             $("#add-jiaolian4SelectRight11").hide();
@@ -6191,67 +2682,69 @@ $(document).ready(function () {
             $("#add-jiaolian6InsertLeft11").hide();
             $("#add-jiaolian6SelectRight11").hide();
             $("#add-jiaolian6InsertRight11").hide();
-            $("#update-jiaolian4SelectLeft11").hide();
-            $("#update-jiaolian4InsertLeft11").hide();
-            $("#update-jiaolian4SelectRight11").hide();
-            $("#update-jiaolian4InsertRight11").hide();
-
-            $("#update-jiaolian5SelectLeft11").hide();
-            $("#update-jiaolian5InsertLeft11").hide();
-            $("#update-jiaolian5SelectRight11").hide();
-            $("#update-jiaolian5InsertRight11").hide();
-
-            $("#update-jiaolian6SelectLeft11").hide();
-            $("#update-jiaolian6InsertLeft11").hide();
-            $("#update-jiaolian6SelectRight11").hide();
-            $("#update-jiaolian6InsertRight11").hide();
-
-            $("#l4sl").hide();
-            $("#l4il").hide();
-            $("#l4sr").hide();
-            $("#l4ir").delete();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
         }
         if (selectedValue11 == '开四孔') {
-            $("#update-jiaolian5SelectLeft11").hide();
-            $("#update-jiaolian5InsertLeft11").hide();
-            $("#update-jiaolian5SelectRight11").hide();
-            $("#update-jiaolian5InsertRight11").hide();
+            $("#add-jiaolian3SelectLeft11").show();
+            $("#add-jiaolian3InsertLeft11").show();
+            $("#add-jiaolian3SelectRight11").show();
+            $("#add-jiaolian3InsertRight11").show();
 
-            $("#update-jiaolian6SelectLeft11").hide();
-            $("#update-jiaolian6InsertLeft11").hide();
-            $("#update-jiaolian6SelectRight11").hide();
-            $("#update-jiaolian6InsertRight11").hide();
+            $("#add-jiaolian4SelectLeft11").show();
+            $("#add-jiaolian4InsertLeft11").show();
+            $("#add-jiaolian4SelectRight11").show();
+            $("#add-jiaolian4InsertRight11").show();
 
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
+            $("#add-jiaolian5SelectLeft11").hide();
+            $("#add-jiaolian5InsertLeft11").hide();
+            $("#add-jiaolian5SelectRight11").hide();
+            $("#add-jiaolian5InsertRight11").hide();
 
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
+            $("#add-jiaolian6SelectLeft11").hide();
+            $("#add-jiaolian6InsertLeft11").hide();
+            $("#add-jiaolian6SelectRight11").hide();
+            $("#add-jiaolian6InsertRight11").hide();
         }
         if (selectedValue11 == '开五孔') {
-            $("#update-jiaolian6SelectLeft11").hide();
-            $("#update-jiaolian6InsertLeft11").hide();
-            $("#update-jiaolian6SelectRight11").hide();
-            $("#update-jiaolian6InsertRight11").hide();
+            $("#add-jiaolian3SelectLeft11").show();
+            $("#add-jiaolian3InsertLeft11").show();
+            $("#add-jiaolian3SelectRight11").show();
+            $("#add-jiaolian3InsertRight11").show();
 
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
+            $("#add-jiaolian4SelectLeft11").show();
+            $("#add-jiaolian4InsertLeft11").show();
+            $("#add-jiaolian4SelectRight11").show();
+            $("#add-jiaolian4InsertRight11").show();
+
+            $("#add-jiaolian5SelectLeft11").show();
+            $("#add-jiaolian5InsertLeft11").show();
+            $("#add-jiaolian5SelectRight11").show();
+            $("#add-jiaolian5InsertRight11").show();
+
+            $("#add-jiaolian6SelectLeft11").hide();
+            $("#add-jiaolian6InsertLeft11").hide();
+            $("#add-jiaolian6SelectRight11").hide();
+            $("#add-jiaolian6InsertRight11").hide();
+        }
+        if (selectedValue11 == '开六孔') {
+            $("#add-jiaolian3SelectLeft11").show();
+            $("#add-jiaolian3InsertLeft11").show();
+            $("#add-jiaolian3SelectRight11").show();
+            $("#add-jiaolian3InsertRight11").show();
+
+            $("#add-jiaolian4SelectLeft11").show();
+            $("#add-jiaolian4InsertLeft11").show();
+            $("#add-jiaolian4SelectRight11").show();
+            $("#add-jiaolian4InsertRight11").show();
+
+            $("#add-jiaolian5SelectLeft11").show();
+            $("#add-jiaolian5InsertLeft11").show();
+            $("#add-jiaolian5SelectRight11").show();
+            $("#add-jiaolian5InsertRight11").show();
+
+            $("#add-jiaolian6SelectLeft11").show();
+            $("#add-jiaolian6InsertLeft11").show();
+            $("#add-jiaolian6SelectRight11").show();
+            $("#add-jiaolian6InsertRight11").show();
         }
     })
 
@@ -6277,47 +2770,14 @@ $(document).ready(function () {
             $("#add-jiaolian6InsertLeft12").hide();
             $("#add-jiaolian6SelectRight12").hide();
             $("#add-jiaolian6InsertRight12").hide();
-            $("#update-jiaolian3SelectLeft12").hide();
-            $("#update-jiaolian3InsertLeft12").hide();
-            $("#update-jiaolian3SelectRight12").hide();
-            $("#update-jiaolian3InsertRight12").hide();
 
-            $("#update-jiaolian4SelectLeft12").hide();
-            $("#update-jiaolian4InsertLeft12").hide();
-            $("#update-jiaolian4SelectRight12").hide();
-            $("#update-jiaolian4InsertRight12").hide();
-
-            $("#update-jiaolian5SelectLeft12").hide();
-            $("#update-jiaolian5InsertLeft12").hide();
-            $("#update-jiaolian5SelectRight12").hide();
-            $("#update-jiaolian5InsertRight12").hide();
-
-            $("#update-jiaolian6SelectLeft12").hide();
-            $("#update-jiaolian6InsertLeft12").hide();
-            $("#update-jiaolian6SelectRight12").hide();
-            $("#update-jiaolian6InsertRight12").hide();
-
-            $("#l3sl").hide();
-            $("#l3il").hide();
-            $("#l3sr").hide();
-            $("#l3ir").hide();
-
-            $("#l4sl").hide();
-            $("#l4il").hide();
-            $("#l4sr").hide();
-            $("#l4ir").hide();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
         }
         if (selectedValue12 == '开三孔') {
+            $("#add-jiaolian3SelectLeft12").show();
+            $("#add-jiaolian3InsertLeft12").show();
+            $("#add-jiaolian3SelectRight12").show();
+            $("#add-jiaolian3InsertRight12").show();
+
             $("#add-jiaolian4SelectLeft12").hide();
             $("#add-jiaolian4InsertLeft12").hide();
             $("#add-jiaolian4SelectRight12").hide();
@@ -6332,37 +2792,18 @@ $(document).ready(function () {
             $("#add-jiaolian6InsertLeft12").hide();
             $("#add-jiaolian6SelectRight12").hide();
             $("#add-jiaolian6InsertRight12").hide();
-            $("#update-jiaolian4SelectLeft12").hide();
-            $("#update-jiaolian4InsertLeft12").hide();
-            $("#update-jiaolian4SelectRight12").hide();
-            $("#update-jiaolian4InsertRight12").hide();
-
-            $("#update-jiaolian5SelectLeft12").hide();
-            $("#update-jiaolian5InsertLeft12").hide();
-            $("#update-jiaolian5SelectRight12").hide();
-            $("#update-jiaolian5InsertRight12").hide();
-
-            $("#update-jiaolian6SelectLeft12").hide();
-            $("#update-jiaolian6InsertLeft12").hide();
-            $("#update-jiaolian6SelectRight12").hide();
-            $("#update-jiaolian6InsertRight12").hide();
-
-            $("#l4sl").hide();
-            $("#l4il").hide();
-            $("#l4sr").hide();
-            $("#l4ir").delete();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
         }
         if (selectedValue12 == '开四孔') {
+            $("#add-jiaolian3SelectLeft12").show();
+            $("#add-jiaolian3InsertLeft12").show();
+            $("#add-jiaolian3SelectRight12").show();
+            $("#add-jiaolian3InsertRight12").show();
+
+            $("#add-jiaolian4SelectLeft12").show();
+            $("#add-jiaolian4InsertLeft12").show();
+            $("#add-jiaolian4SelectRight12").show();
+            $("#add-jiaolian4InsertRight12").show();
+
             $("#add-jiaolian5SelectLeft12").hide();
             $("#add-jiaolian5InsertLeft12").hide();
             $("#add-jiaolian5SelectRight12").hide();
@@ -6372,41 +2813,48 @@ $(document).ready(function () {
             $("#add-jiaolian6InsertLeft12").hide();
             $("#add-jiaolian6SelectRight12").hide();
             $("#add-jiaolian6InsertRight12").hide();
-            $("#update-jiaolian5SelectLeft12").hide();
-            $("#update-jiaolian5InsertLeft12").hide();
-            $("#update-jiaolian5SelectRight12").hide();
-            $("#update-jiaolian5InsertRight12").hide();
-
-            $("#update-jiaolian6SelectLeft12").hide();
-            $("#update-jiaolian6InsertLeft12").hide();
-            $("#update-jiaolian6SelectRight12").hide();
-            $("#update-jiaolian6InsertRight12").hide();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
         }
         if (selectedValue12 == '开五孔') {
+            $("#add-jiaolian3SelectLeft12").show();
+            $("#add-jiaolian3InsertLeft12").show();
+            $("#add-jiaolian3SelectRight12").show();
+            $("#add-jiaolian3InsertRight12").show();
+
+            $("#add-jiaolian4SelectLeft12").show();
+            $("#add-jiaolian4InsertLeft12").show();
+            $("#add-jiaolian4SelectRight12").show();
+            $("#add-jiaolian4InsertRight12").show();
+
+            $("#add-jiaolian5SelectLeft12").show();
+            $("#add-jiaolian5InsertLeft12").show();
+            $("#add-jiaolian5SelectRight12").show();
+            $("#add-jiaolian5InsertRight12").show();
+
             $("#add-jiaolian6SelectLeft12").hide();
             $("#add-jiaolian6InsertLeft12").hide();
             $("#add-jiaolian6SelectRight12").hide();
             $("#add-jiaolian6InsertRight12").hide();
-            $("#update-jiaolian6SelectLeft12").hide();
-            $("#update-jiaolian6InsertLeft12").hide();
-            $("#update-jiaolian6SelectRight12").hide();
-            $("#update-jiaolian6InsertRight12").hide();
+        }
+        if (selectedValue12 == '开六孔') {
+            $("#add-jiaolian3SelectLeft12").show();
+            $("#add-jiaolian3InsertLeft12").show();
+            $("#add-jiaolian3SelectRight12").show();
+            $("#add-jiaolian3InsertRight12").show();
 
+            $("#add-jiaolian4SelectLeft12").show();
+            $("#add-jiaolian4InsertLeft12").show();
+            $("#add-jiaolian4SelectRight12").show();
+            $("#add-jiaolian4InsertRight12").show();
 
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
+            $("#add-jiaolian5SelectLeft12").show();
+            $("#add-jiaolian5InsertLeft12").show();
+            $("#add-jiaolian5SelectRight12").show();
+            $("#add-jiaolian5InsertRight12").show();
+
+            $("#add-jiaolian6SelectLeft12").show();
+            $("#add-jiaolian6InsertLeft12").show();
+            $("#add-jiaolian6SelectRight12").show();
+            $("#add-jiaolian6InsertRight12").show();
         }
     })
 
@@ -6432,47 +2880,14 @@ $(document).ready(function () {
             $("#add-jiaolian6InsertLeft13").hide();
             $("#add-jiaolian6SelectRight13").hide();
             $("#add-jiaolian6InsertRight13").hide();
-            $("#update-jiaolian3SelectLeft13").hide();
-            $("#update-jiaolian3InsertLeft13").hide();
-            $("#update-jiaolian3SelectRight13").hide();
-            $("#update-jiaolian3InsertRight13").hide();
 
-            $("#update-jiaolian4SelectLeft13").hide();
-            $("#update-jiaolian4InsertLeft13").hide();
-            $("#update-jiaolian4SelectRight13").hide();
-            $("#update-jiaolian4InsertRight13").hide();
-
-            $("#update-jiaolian5SelectLeft13").hide();
-            $("#update-jiaolian5InsertLeft13").hide();
-            $("#update-jiaolian5SelectRight13").hide();
-            $("#update-jiaolian5InsertRight13").hide();
-
-            $("#update-jiaolian6SelectLeft13").hide();
-            $("#update-jiaolian6InsertLeft13").hide();
-            $("#update-jiaolian6SelectRight13").hide();
-            $("#update-jiaolian6InsertRight13").hide();
-
-            $("#l3sl").hide();
-            $("#l3il").hide();
-            $("#l3sr").hide();
-            $("#l3ir").hide();
-
-            $("#l4sl").hide();
-            $("#l4il").hide();
-            $("#l4sr").hide();
-            $("#l4ir").hide();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
         }
         if (selectedValue13 == '开三孔') {
+            $("#add-jiaolian3SelectLeft13").show();
+            $("#add-jiaolian3InsertLeft13").show();
+            $("#add-jiaolian3SelectRight13").show();
+            $("#add-jiaolian3InsertRight13").show();
+
             $("#add-jiaolian4SelectLeft13").hide();
             $("#add-jiaolian4InsertLeft13").hide();
             $("#add-jiaolian4SelectRight13").hide();
@@ -6487,37 +2902,18 @@ $(document).ready(function () {
             $("#add-jiaolian6InsertLeft13").hide();
             $("#add-jiaolian6SelectRight13").hide();
             $("#add-jiaolian6InsertRight13").hide();
-            $("#update-jiaolian4SelectLeft13").hide();
-            $("#update-jiaolian4InsertLeft13").hide();
-            $("#update-jiaolian4SelectRight13").hide();
-            $("#update-jiaolian4InsertRight13").hide();
-
-            $("#update-jiaolian5SelectLeft13").hide();
-            $("#update-jiaolian5InsertLeft13").hide();
-            $("#update-jiaolian5SelectRight13").hide();
-            $("#update-jiaolian5InsertRight13").hide();
-
-            $("#update-jiaolian6SelectLeft13").hide();
-            $("#update-jiaolian6InsertLeft13").hide();
-            $("#update-jiaolian6SelectRight13").hide();
-            $("#update-jiaolian6InsertRight13").hide();
-
-            $("#l4sl").hide();
-            $("#l4il").hide();
-            $("#l4sr").hide();
-            $("#l4ir").delete();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
         }
         if (selectedValue13 == '开四孔') {
+            $("#add-jiaolian3SelectLeft13").show();
+            $("#add-jiaolian3InsertLeft13").show();
+            $("#add-jiaolian3SelectRight13").show();
+            $("#add-jiaolian3InsertRight13").show();
+
+            $("#add-jiaolian4SelectLeft13").show();
+            $("#add-jiaolian4InsertLeft13").show();
+            $("#add-jiaolian4SelectRight13").show();
+            $("#add-jiaolian4InsertRight13").show();
+
             $("#add-jiaolian5SelectLeft13").hide();
             $("#add-jiaolian5InsertLeft13").hide();
             $("#add-jiaolian5SelectRight13").hide();
@@ -6527,36 +2923,48 @@ $(document).ready(function () {
             $("#add-jiaolian6InsertLeft13").hide();
             $("#add-jiaolian6SelectRight13").hide();
             $("#add-jiaolian6InsertRight13").hide();
-            $("#update-jiaolian5SelectLeft13").hide();
-            $("#update-jiaolian5InsertLeft13").hide();
-            $("#update-jiaolian5SelectRight13").hide();
-            $("#update-jiaolian5InsertRight13").hide();
-
-            $("#update-jiaolian6SelectLeft13").hide();
-            $("#update-jiaolian6InsertLeft13").hide();
-            $("#update-jiaolian6SelectRight13").hide();
-            $("#update-jiaolian6InsertRight13").hide();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
         }
         if (selectedValue13 == '开五孔') {
-            $("#update-jiaolian6SelectLeft13").hide();
-            $("#update-jiaolian6InsertLeft13").hide();
-            $("#update-jiaolian6SelectRight13").hide();
-            $("#update-jiaolian6InsertRight13").hide();
+            $("#add-jiaolian3SelectLeft13").show();
+            $("#add-jiaolian3InsertLeft13").show();
+            $("#add-jiaolian3SelectRight13").show();
+            $("#add-jiaolian3InsertRight13").show();
 
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
+            $("#add-jiaolian4SelectLeft13").show();
+            $("#add-jiaolian4InsertLeft13").show();
+            $("#add-jiaolian4SelectRight13").show();
+            $("#add-jiaolian4InsertRight13").show();
+
+            $("#add-jiaolian5SelectLeft13").show();
+            $("#add-jiaolian5InsertLeft13").show();
+            $("#add-jiaolian5SelectRight13").show();
+            $("#add-jiaolian5InsertRight13").show();
+
+            $("#add-jiaolian6SelectLeft13").hide();
+            $("#add-jiaolian6InsertLeft13").hide();
+            $("#add-jiaolian6SelectRight13").hide();
+            $("#add-jiaolian6InsertRight13").hide();
+        }
+        if (selectedValue13 == '开六孔') {
+            $("#add-jiaolian3SelectLeft13").show();
+            $("#add-jiaolian3InsertLeft13").show();
+            $("#add-jiaolian3SelectRight13").show();
+            $("#add-jiaolian3InsertRight13").show();
+
+            $("#add-jiaolian4SelectLeft13").show();
+            $("#add-jiaolian4InsertLeft13").show();
+            $("#add-jiaolian4SelectRight13").show();
+            $("#add-jiaolian4InsertRight13").show();
+
+            $("#add-jiaolian5SelectLeft13").show();
+            $("#add-jiaolian5InsertLeft13").show();
+            $("#add-jiaolian5SelectRight13").show();
+            $("#add-jiaolian5InsertRight13").show();
+
+            $("#add-jiaolian6SelectLeft13").show();
+            $("#add-jiaolian6InsertLeft13").show();
+            $("#add-jiaolian6SelectRight13").show();
+            $("#add-jiaolian6InsertRight13").show();
         }
     })
 
@@ -6582,47 +2990,14 @@ $(document).ready(function () {
             $("#add-jiaolian6InsertLeft14").hide();
             $("#add-jiaolian6SelectRight14").hide();
             $("#add-jiaolian6InsertRight14").hide();
-            $("#update-jiaolian3SelectLeft14").hide();
-            $("#update-jiaolian3InsertLeft14").hide();
-            $("#update-jiaolian3SelectRight14").hide();
-            $("#update-jiaolian3InsertRight14").hide();
 
-            $("#update-jiaolian4SelectLeft14").hide();
-            $("#update-jiaolian4InsertLeft14").hide();
-            $("#update-jiaolian4SelectRight14").hide();
-            $("#update-jiaolian4InsertRight14").hide();
-
-            $("#update-jiaolian5SelectLeft14").hide();
-            $("#update-jiaolian5InsertLeft14").hide();
-            $("#update-jiaolian5SelectRight14").hide();
-            $("#update-jiaolian5InsertRight14").hide();
-
-            $("#update-jiaolian6SelectLeft14").hide();
-            $("#update-jiaolian6InsertLeft14").hide();
-            $("#update-jiaolian6SelectRight14").hide();
-            $("#update-jiaolian6InsertRight14").hide();
-
-            $("#l3sl").hide();
-            $("#l3il").hide();
-            $("#l3sr").hide();
-            $("#l3ir").hide();
-
-            $("#l4sl").hide();
-            $("#l4il").hide();
-            $("#l4sr").hide();
-            $("#l4ir").hide();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
         }
         if (selectedValue14 == '开三孔') {
+            $("#add-jiaolian3SelectLeft14").show();
+            $("#add-jiaolian3InsertLeft14").show();
+            $("#add-jiaolian3SelectRight14").show();
+            $("#add-jiaolian3InsertRight14").show();
+
             $("#add-jiaolian4SelectLeft14").hide();
             $("#add-jiaolian4InsertLeft14").hide();
             $("#add-jiaolian4SelectRight14").hide();
@@ -6637,38 +3012,18 @@ $(document).ready(function () {
             $("#add-jiaolian6InsertLeft14").hide();
             $("#add-jiaolian6SelectRight14").hide();
             $("#add-jiaolian6InsertRight14").hide();
-            $("#update-jiaolian4SelectLeft14").hide();
-            $("#update-jiaolian4InsertLeft14").hide();
-            $("#update-jiaolian4SelectRight14").hide();
-            $("#update-jiaolian4InsertRight14").hide();
-
-            $("#update-jiaolian5SelectLeft14").hide();
-            $("#update-jiaolian5InsertLeft14").hide();
-            $("#update-jiaolian5SelectRight14").hide();
-            $("#update-jiaolian5InsertRight14").hide();
-
-            $("#update-jiaolian6SelectLeft14").hide();
-            $("#update-jiaolian6InsertLeft14").hide();
-            $("#update-jiaolian6SelectRight14").hide();
-            $("#update-jiaolian6InsertRight14").hide();
-
-
-            $("#l4sl").hide();
-            $("#l4il").hide();
-            $("#l4sr").hide();
-            $("#l4ir").delete();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
         }
         if (selectedValue14 == '开四孔') {
+            $("#add-jiaolian3SelectLeft14").show();
+            $("#add-jiaolian3InsertLeft14").show();
+            $("#add-jiaolian3SelectRight14").show();
+            $("#add-jiaolian3InsertRight14").show();
+
+            $("#add-jiaolian4SelectLeft14").show();
+            $("#add-jiaolian4InsertLeft14").show();
+            $("#add-jiaolian4SelectRight14").show();
+            $("#add-jiaolian4InsertRight14").show();
+
             $("#add-jiaolian5SelectLeft14").hide();
             $("#add-jiaolian5InsertLeft14").hide();
             $("#add-jiaolian5SelectRight14").hide();
@@ -6678,40 +3033,48 @@ $(document).ready(function () {
             $("#add-jiaolian6InsertLeft14").hide();
             $("#add-jiaolian6SelectRight14").hide();
             $("#add-jiaolian6InsertRight14").hide();
-            $("#update-jiaolian5SelectLeft14").hide();
-            $("#update-jiaolian5InsertLeft14").hide();
-            $("#update-jiaolian5SelectRight14").hide();
-            $("#update-jiaolian5InsertRight14").hide();
-
-            $("#update-jiaolian6SelectLeft14").hide();
-            $("#update-jiaolian6InsertLeft14").hide();
-            $("#update-jiaolian6SelectRight14").hide();
-            $("#update-jiaolian6InsertRight14").hide();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
         }
         if (selectedValue14 == '开五孔') {
+            $("#add-jiaolian3SelectLeft14").show();
+            $("#add-jiaolian3InsertLeft14").show();
+            $("#add-jiaolian3SelectRight14").show();
+            $("#add-jiaolian3InsertRight14").show();
+
+            $("#add-jiaolian4SelectLeft14").show();
+            $("#add-jiaolian4InsertLeft14").show();
+            $("#add-jiaolian4SelectRight14").show();
+            $("#add-jiaolian4InsertRight14").show();
+
+            $("#add-jiaolian5SelectLeft14").show();
+            $("#add-jiaolian5InsertLeft14").show();
+            $("#add-jiaolian5SelectRight14").show();
+            $("#add-jiaolian5InsertRight14").show();
+
             $("#add-jiaolian6SelectLeft14").hide();
             $("#add-jiaolian6InsertLeft14").hide();
             $("#add-jiaolian6SelectRight14").hide();
             $("#add-jiaolian6InsertRight14").hide();
-            $("#update-jiaolian6SelectLeft14").hide();
-            $("#update-jiaolian6InsertLeft14").hide();
-            $("#update-jiaolian6SelectRight14").hide();
-            $("#update-jiaolian6InsertRight14").hide();
+        }
+        if (selectedValue14 == '开六孔') {
+            $("#add-jiaolian3SelectLeft14").show();
+            $("#add-jiaolian3InsertLeft14").show();
+            $("#add-jiaolian3SelectRight14").show();
+            $("#add-jiaolian3InsertRight14").show();
 
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
+            $("#add-jiaolian4SelectLeft14").show();
+            $("#add-jiaolian4InsertLeft14").show();
+            $("#add-jiaolian4SelectRight14").show();
+            $("#add-jiaolian4InsertRight14").show();
+
+            $("#add-jiaolian5SelectLeft14").show();
+            $("#add-jiaolian5InsertLeft14").show();
+            $("#add-jiaolian5SelectRight14").show();
+            $("#add-jiaolian5InsertRight14").show();
+
+            $("#add-jiaolian6SelectLeft14").show();
+            $("#add-jiaolian6InsertLeft14").show();
+            $("#add-jiaolian6SelectRight14").show();
+            $("#add-jiaolian6InsertRight14").show();
         }
     })
 
@@ -6737,47 +3100,14 @@ $(document).ready(function () {
             $("#add-jiaolian6InsertLeft15").hide();
             $("#add-jiaolian6SelectRight15").hide();
             $("#add-jiaolian6InsertRight15").hide();
-            $("#update-jiaolian3SelectLeft15").hide();
-            $("#update-jiaolian3InsertLeft15").hide();
-            $("#update-jiaolian3SelectRight15").hide();
-            $("#update-jiaolian3InsertRight15").hide();
 
-            $("#update-jiaolian4SelectLeft15").hide();
-            $("#update-jiaolian4InsertLeft15").hide();
-            $("#update-jiaolian4SelectRight15").hide();
-            $("#update-jiaolian4InsertRight15").hide();
-
-            $("#update-jiaolian5SelectLeft15").hide();
-            $("#update-jiaolian5InsertLeft15").hide();
-            $("#update-jiaolian5SelectRight15").hide();
-            $("#update-jiaolian5InsertRight15").hide();
-
-            $("#update-jiaolian6SelectLeft15").hide();
-            $("#update-jiaolian6InsertLeft15").hide();
-            $("#update-jiaolian6SelectRight15").hide();
-            $("#update-jiaolian6InsertRight15").hide();
-
-            $("#l3sl").hide();
-            $("#l3il").hide();
-            $("#l3sr").hide();
-            $("#l3ir").hide();
-
-            $("#l4sl").hide();
-            $("#l4il").hide();
-            $("#l4sr").hide();
-            $("#l4ir").hide();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
         }
         if (selectedValue15 == '开三孔') {
+            $("#add-jiaolian3SelectLeft15").show();
+            $("#add-jiaolian3InsertLeft15").show();
+            $("#add-jiaolian3SelectRight15").show();
+            $("#add-jiaolian3InsertRight15").show();
+
             $("#add-jiaolian4SelectLeft15").hide();
             $("#add-jiaolian4InsertLeft15").hide();
             $("#add-jiaolian4SelectRight15").hide();
@@ -6792,37 +3122,18 @@ $(document).ready(function () {
             $("#add-jiaolian6InsertLeft15").hide();
             $("#add-jiaolian6SelectRight15").hide();
             $("#add-jiaolian6InsertRight15").hide();
-            $("#update-jiaolian4SelectLeft15").hide();
-            $("#update-jiaolian4InsertLeft15").hide();
-            $("#update-jiaolian4SelectRight15").hide();
-            $("#update-jiaolian4InsertRight15").hide();
-
-            $("#update-jiaolian5SelectLeft15").hide();
-            $("#update-jiaolian5InsertLeft15").hide();
-            $("#update-jiaolian5SelectRight15").hide();
-            $("#update-jiaolian5InsertRight15").hide();
-
-            $("#update-jiaolian6SelectLeft15").hide();
-            $("#update-jiaolian6InsertLeft15").hide();
-            $("#update-jiaolian6SelectRight15").hide();
-            $("#update-jiaolian6InsertRight15").hide();
-
-            $("#l4sl").hide();
-            $("#l4il").hide();
-            $("#l4sr").hide();
-            $("#l4ir").delete();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
         }
         if (selectedValue15 == '开四孔') {
+            $("#add-jiaolian3SelectLeft15").show();
+            $("#add-jiaolian3InsertLeft15").show();
+            $("#add-jiaolian3SelectRight15").show();
+            $("#add-jiaolian3InsertRight15").show();
+
+            $("#add-jiaolian4SelectLeft15").show();
+            $("#add-jiaolian4InsertLeft15").show();
+            $("#add-jiaolian4SelectRight15").show();
+            $("#add-jiaolian4InsertRight15").show();
+
             $("#add-jiaolian5SelectLeft15").hide();
             $("#add-jiaolian5InsertLeft15").hide();
             $("#add-jiaolian5SelectRight15").hide();
@@ -6832,40 +3143,48 @@ $(document).ready(function () {
             $("#add-jiaolian6InsertLeft15").hide();
             $("#add-jiaolian6SelectRight15").hide();
             $("#add-jiaolian6InsertRight15").hide();
-            $("#update-jiaolian5SelectLeft15").hide();
-            $("#update-jiaolian5InsertLeft15").hide();
-            $("#update-jiaolian5SelectRight15").hide();
-            $("#update-jiaolian5InsertRight15").hide();
-
-            $("#update-jiaolian6SelectLeft15").hide();
-            $("#update-jiaolian6InsertLeft15").hide();
-            $("#update-jiaolian6SelectRight15").hide();
-            $("#update-jiaolian6InsertRight15").hide();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
         }
         if (selectedValue15 == '开五孔') {
+            $("#add-jiaolian3SelectLeft15").show();
+            $("#add-jiaolian3InsertLeft15").show();
+            $("#add-jiaolian3SelectRight15").show();
+            $("#add-jiaolian3InsertRight15").show();
+
+            $("#add-jiaolian4SelectLeft15").show();
+            $("#add-jiaolian4InsertLeft15").show();
+            $("#add-jiaolian4SelectRight15").show();
+            $("#add-jiaolian4InsertRight15").show();
+
+            $("#add-jiaolian5SelectLeft15").show();
+            $("#add-jiaolian5InsertLeft15").show();
+            $("#add-jiaolian5SelectRight15").show();
+            $("#add-jiaolian5InsertRight15").show();
+
             $("#add-jiaolian6SelectLeft15").hide();
             $("#add-jiaolian6InsertLeft15").hide();
             $("#add-jiaolian6SelectRight15").hide();
             $("#add-jiaolian6InsertRight15").hide();
-            $("#update-jiaolian6SelectLeft15").hide();
-            $("#update-jiaolian6InsertLeft15").hide();
-            $("#update-jiaolian6SelectRight15").hide();
-            $("#update-jiaolian6InsertRight15").hide();
+        }
+        if (selectedValue15 == '开六孔') {
+            $("#add-jiaolian3SelectLeft15").show();
+            $("#add-jiaolian3InsertLeft15").show();
+            $("#add-jiaolian3SelectRight15").show();
+            $("#add-jiaolian3InsertRight15").show();
 
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
+            $("#add-jiaolian4SelectLeft15").show();
+            $("#add-jiaolian4InsertLeft15").show();
+            $("#add-jiaolian4SelectRight15").show();
+            $("#add-jiaolian4InsertRight15").show();
+
+            $("#add-jiaolian5SelectLeft15").show();
+            $("#add-jiaolian5InsertLeft15").show();
+            $("#add-jiaolian5SelectRight15").show();
+            $("#add-jiaolian5InsertRight15").show();
+
+            $("#add-jiaolian6SelectLeft15").show();
+            $("#add-jiaolian6InsertLeft15").show();
+            $("#add-jiaolian6SelectRight15").show();
+            $("#add-jiaolian6InsertRight15").show();
         }
     })
 
@@ -6891,47 +3210,14 @@ $(document).ready(function () {
             $("#add-jiaolian6InsertLeft16").hide();
             $("#add-jiaolian6SelectRight16").hide();
             $("#add-jiaolian6InsertRight16").hide();
-            $("#update-jiaolian3SelectLeft16").hide();
-            $("#update-jiaolian3InsertLeft16").hide();
-            $("#update-jiaolian3SelectRight16").hide();
-            $("#update-jiaolian3InsertRight16").hide();
 
-            $("#update-jiaolian4SelectLeft16").hide();
-            $("#update-jiaolian4InsertLeft16").hide();
-            $("#update-jiaolian4SelectRight16").hide();
-            $("#update-jiaolian4InsertRight16").hide();
-
-            $("#update-jiaolian5SelectLeft16").hide();
-            $("#update-jiaolian5InsertLeft16").hide();
-            $("#update-jiaolian5SelectRight16").hide();
-            $("#update-jiaolian5InsertRight16").hide();
-
-            $("#update-jiaolian6SelectLeft16").hide();
-            $("#update-jiaolian6InsertLeft16").hide();
-            $("#update-jiaolian6SelectRight16").hide();
-            $("#update-jiaolian6InsertRight16").hide();
-
-            $("#l3sl").hide();
-            $("#l3il").hide();
-            $("#l3sr").hide();
-            $("#l3ir").hide();
-
-            $("#l4sl").hide();
-            $("#l4il").hide();
-            $("#l4sr").hide();
-            $("#l4ir").hide();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
         }
         if (selectedValue16 == '开三孔') {
+            $("#add-jiaolian3SelectLeft16").show();
+            $("#add-jiaolian3InsertLeft16").show();
+            $("#add-jiaolian3SelectRight16").show();
+            $("#add-jiaolian3InsertRight16").show();
+
             $("#add-jiaolian4SelectLeft16").hide();
             $("#add-jiaolian4InsertLeft16").hide();
             $("#add-jiaolian4SelectRight16").hide();
@@ -6946,37 +3232,18 @@ $(document).ready(function () {
             $("#add-jiaolian6InsertLeft16").hide();
             $("#add-jiaolian6SelectRight16").hide();
             $("#add-jiaolian6InsertRight16").hide();
-            $("#update-jiaolian4SelectLeft16").hide();
-            $("#update-jiaolian4InsertLeft16").hide();
-            $("#update-jiaolian4SelectRight16").hide();
-            $("#update-jiaolian4InsertRight16").hide();
-
-            $("#update-jiaolian5SelectLeft16").hide();
-            $("#update-jiaolian5InsertLeft16").hide();
-            $("#update-jiaolian5SelectRight16").hide();
-            $("#update-jiaolian5InsertRight16").hide();
-
-            $("#update-jiaolian6SelectLeft16").hide();
-            $("#update-jiaolian6InsertLeft16").hide();
-            $("#update-jiaolian6SelectRight16").hide();
-            $("#update-jiaolian6InsertRight16").hide();
-
-            $("#l4sl").hide();
-            $("#l4il").hide();
-            $("#l4sr").hide();
-            $("#l4ir").hide();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
         }
         if (selectedValue16 == '开四孔') {
+            $("#add-jiaolian3SelectLeft16").show();
+            $("#add-jiaolian3InsertLeft16").show();
+            $("#add-jiaolian3SelectRight16").show();
+            $("#add-jiaolian3InsertRight16").show();
+
+            $("#add-jiaolian4SelectLeft16").show();
+            $("#add-jiaolian4InsertLeft16").show();
+            $("#add-jiaolian4SelectRight16").show();
+            $("#add-jiaolian4InsertRight16").show();
+
             $("#add-jiaolian5SelectLeft16").hide();
             $("#add-jiaolian5InsertLeft16").hide();
             $("#add-jiaolian5SelectRight16").hide();
@@ -6986,36 +3253,48 @@ $(document).ready(function () {
             $("#add-jiaolian6InsertLeft16").hide();
             $("#add-jiaolian6SelectRight16").hide();
             $("#add-jiaolian6InsertRight16").hide();
-            $("#update-jiaolian5SelectLeft16").hide();
-            $("#update-jiaolian5InsertLeft16").hide();
-            $("#update-jiaolian5SelectRight16").hide();
-            $("#update-jiaolian5InsertRight16").hide();
-
-            $("#update-jiaolian6SelectLeft16").hide();
-            $("#update-jiaolian6InsertLeft16").hide();
-            $("#update-jiaolian6SelectRight16").hide();
-            $("#update-jiaolian6InsertRight16").hide();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
         }
         if (selectedValue16 == '开五孔') {
-            $("#update-jiaolian6SelectLeft16").hide();
-            $("#update-jiaolian6InsertLeft16").hide();
-            $("#update-jiaolian6SelectRight16").hide();
-            $("#update-jiaolian6InsertRight16").hide();
+            $("#add-jiaolian3SelectLeft16").show();
+            $("#add-jiaolian3InsertLeft16").show();
+            $("#add-jiaolian3SelectRight16").show();
+            $("#add-jiaolian3InsertRight16").show();
 
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
+            $("#add-jiaolian4SelectLeft16").show();
+            $("#add-jiaolian4InsertLeft16").show();
+            $("#add-jiaolian4SelectRight16").show();
+            $("#add-jiaolian4InsertRight16").show();
+
+            $("#add-jiaolian5SelectLeft16").show();
+            $("#add-jiaolian5InsertLeft16").show();
+            $("#add-jiaolian5SelectRight16").show();
+            $("#add-jiaolian5InsertRight16").show();
+
+            $("#add-jiaolian6SelectLeft16").hide();
+            $("#add-jiaolian6InsertLeft16").hide();
+            $("#add-jiaolian6SelectRight16").hide();
+            $("#add-jiaolian6InsertRight16").hide();
+        }
+        if (selectedValue16 == '开六孔') {
+            $("#add-jiaolian3SelectLeft16").show();
+            $("#add-jiaolian3InsertLeft16").show();
+            $("#add-jiaolian3SelectRight16").show();
+            $("#add-jiaolian3InsertRight16").show();
+
+            $("#add-jiaolian4SelectLeft16").show();
+            $("#add-jiaolian4InsertLeft16").show();
+            $("#add-jiaolian4SelectRight16").show();
+            $("#add-jiaolian4InsertRight16").show();
+
+            $("#add-jiaolian5SelectLeft16").show();
+            $("#add-jiaolian5InsertLeft16").show();
+            $("#add-jiaolian5SelectRight16").show();
+            $("#add-jiaolian5InsertRight16").show();
+
+            $("#add-jiaolian6SelectLeft16").show();
+            $("#add-jiaolian6InsertLeft16").show();
+            $("#add-jiaolian6SelectRight16").show();
+            $("#add-jiaolian6InsertRight16").show();
         }
     })
 
@@ -7041,47 +3320,14 @@ $(document).ready(function () {
             $("#add-jiaolian6InsertLeft17").hide();
             $("#add-jiaolian6SelectRight17").hide();
             $("#add-jiaolian6InsertRight17").hide();
-            $("#update-jiaolian3SelectLeft17").hide();
-            $("#update-jiaolian3InsertLeft17").hide();
-            $("#update-jiaolian3SelectRight17").hide();
-            $("#update-jiaolian3InsertRight17").hide();
 
-            $("#update-jiaolian4SelectLeft17").hide();
-            $("#update-jiaolian4InsertLeft17").hide();
-            $("#update-jiaolian4SelectRight17").hide();
-            $("#update-jiaolian4InsertRight17").hide();
-
-            $("#update-jiaolian5SelectLeft17").hide();
-            $("#update-jiaolian5InsertLeft17").hide();
-            $("#update-jiaolian5SelectRight17").hide();
-            $("#update-jiaolian5InsertRight17").hide();
-
-            $("#update-jiaolian6SelectLeft17").hide();
-            $("#update-jiaolian6InsertLeft17").hide();
-            $("#update-jiaolian6SelectRight17").hide();
-            $("#update-jiaolian6InsertRight17").hide();
-
-            $("#l3sl").hide();
-            $("#l3il").hide();
-            $("#l3sr").hide();
-            $("#l3ir").hide();
-
-            $("#l4sl").hide();
-            $("#l4il").hide();
-            $("#l4sr").hide();
-            $("#l4ir").hide();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
         }
         if (selectedValue17 == '开三孔') {
+            $("#add-jiaolian3SelectLeft17").show();
+            $("#add-jiaolian3InsertLeft17").show();
+            $("#add-jiaolian3SelectRight17").show();
+            $("#add-jiaolian3InsertRight17").show();
+
             $("#add-jiaolian4SelectLeft17").hide();
             $("#add-jiaolian4InsertLeft17").hide();
             $("#add-jiaolian4SelectRight17").hide();
@@ -7096,37 +3342,18 @@ $(document).ready(function () {
             $("#add-jiaolian6InsertLeft17").hide();
             $("#add-jiaolian6SelectRight17").hide();
             $("#add-jiaolian6InsertRight17").hide();
-            $("#update-jiaolian4SelectLeft17").hide();
-            $("#update-jiaolian4InsertLeft17").hide();
-            $("#update-jiaolian4SelectRight17").hide();
-            $("#update-jiaolian4InsertRight17").hide();
-
-            $("#update-jiaolian5SelectLeft17").hide();
-            $("#update-jiaolian5InsertLeft17").hide();
-            $("#update-jiaolian5SelectRight17").hide();
-            $("#update-jiaolian5InsertRight17").hide();
-
-            $("#update-jiaolian6SelectLeft17").hide();
-            $("#update-jiaolian6InsertLeft17").hide();
-            $("#update-jiaolian6SelectRight17").hide();
-            $("#update-jiaolian6InsertRight17").hide();
-
-            $("#l4sl").hide();
-            $("#l4il").hide();
-            $("#l4sr").hide();
-            $("#l4ir").hide();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
         }
         if (selectedValue17 == '开四孔') {
+            $("#add-jiaolian3SelectLeft17").show();
+            $("#add-jiaolian3InsertLeft17").show();
+            $("#add-jiaolian3SelectRight17").show();
+            $("#add-jiaolian3InsertRight17").show();
+
+            $("#add-jiaolian4SelectLeft17").show();
+            $("#add-jiaolian4InsertLeft17").show();
+            $("#add-jiaolian4SelectRight17").show();
+            $("#add-jiaolian4InsertRight17").show();
+
             $("#add-jiaolian5SelectLeft17").hide();
             $("#add-jiaolian5InsertLeft17").hide();
             $("#add-jiaolian5SelectRight17").hide();
@@ -7136,40 +3363,48 @@ $(document).ready(function () {
             $("#add-jiaolian6InsertLeft17").hide();
             $("#add-jiaolian6SelectRight17").hide();
             $("#add-jiaolian6InsertRight17").hide();
-            $("#update-jiaolian5SelectLeft17").hide();
-            $("#update-jiaolian5InsertLeft17").hide();
-            $("#update-jiaolian5SelectRight17").hide();
-            $("#update-jiaolian5InsertRight17").hide();
-
-            $("#update-jiaolian6SelectLeft17").hide();
-            $("#update-jiaolian6InsertLeft17").hide();
-            $("#update-jiaolian6SelectRight17").hide();
-            $("#update-jiaolian6InsertRight17").hide();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
         }
         if (selectedValue17 == '开五孔') {
+            $("#add-jiaolian3SelectLeft17").show();
+            $("#add-jiaolian3InsertLeft17").show();
+            $("#add-jiaolian3SelectRight17").show();
+            $("#add-jiaolian3InsertRight17").show();
+
+            $("#add-jiaolian4SelectLeft17").show();
+            $("#add-jiaolian4InsertLeft17").show();
+            $("#add-jiaolian4SelectRight17").show();
+            $("#add-jiaolian4InsertRight17").show();
+
+            $("#add-jiaolian5SelectLeft17").show();
+            $("#add-jiaolian5InsertLeft17").show();
+            $("#add-jiaolian5SelectRight17").show();
+            $("#add-jiaolian5InsertRight17").show();
+
             $("#add-jiaolian6SelectLeft17").hide();
             $("#add-jiaolian6InsertLeft17").hide();
             $("#add-jiaolian6SelectRight17").hide();
             $("#add-jiaolian6InsertRight17").hide();
-            $("#update-jiaolian6SelectLeft17").hide();
-            $("#update-jiaolian6InsertLeft17").hide();
-            $("#update-jiaolian6SelectRight17").hide();
-            $("#update-jiaolian6InsertRight17").hide();
+        }
+        if (selectedValue17 == '开六孔') {
+            $("#add-jiaolian3SelectLeft17").show();
+            $("#add-jiaolian3InsertLeft17").show();
+            $("#add-jiaolian3SelectRight17").show();
+            $("#add-jiaolian3InsertRight17").show();
 
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
+            $("#add-jiaolian4SelectLeft17").show();
+            $("#add-jiaolian4InsertLeft17").show();
+            $("#add-jiaolian4SelectRight17").show();
+            $("#add-jiaolian4InsertRight17").show();
+
+            $("#add-jiaolian5SelectLeft17").show();
+            $("#add-jiaolian5InsertLeft17").show();
+            $("#add-jiaolian5SelectRight17").show();
+            $("#add-jiaolian5InsertRight17").show();
+
+            $("#add-jiaolian6SelectLeft17").show();
+            $("#add-jiaolian6InsertLeft17").show();
+            $("#add-jiaolian6SelectRight17").show();
+            $("#add-jiaolian6InsertRight17").show();
         }
     })
 
@@ -7195,47 +3430,14 @@ $(document).ready(function () {
             $("#add-jiaolian6InsertLeft18").hide();
             $("#add-jiaolian6SelectRight18").hide();
             $("#add-jiaolian6InsertRight18").hide();
-            $("#update-jiaolian3SelectLeft18").hide();
-            $("#update-jiaolian3InsertLeft18").hide();
-            $("#update-jiaolian3SelectRight18").hide();
-            $("#update-jiaolian3InsertRight18").hide();
 
-            $("#update-jiaolian4SelectLeft18").hide();
-            $("#update-jiaolian4InsertLeft18").hide();
-            $("#update-jiaolian4SelectRight18").hide();
-            $("#update-jiaolian4InsertRight18").hide();
-
-            $("#update-jiaolian5SelectLeft18").hide();
-            $("#update-jiaolian5InsertLeft18").hide();
-            $("#update-jiaolian5SelectRight18").hide();
-            $("#update-jiaolian5InsertRight18").hide();
-
-            $("#update-jiaolian6SelectLeft18").hide();
-            $("#update-jiaolian6InsertLeft18").hide();
-            $("#update-jiaolian6SelectRight18").hide();
-            $("#update-jiaolian6InsertRight18").hide();
-
-            $("#l3sl").hide();
-            $("#l3il").hide();
-            $("#l3sr").hide();
-            $("#l3ir").hide();
-
-            $("#l4sl").hide();
-            $("#l4il").hide();
-            $("#l4sr").hide();
-            $("#l4ir").hide();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
         }
         if (selectedValue18 == '开三孔') {
+            $("#add-jiaolian3SelectLeft18").show();
+            $("#add-jiaolian3InsertLeft18").show();
+            $("#add-jiaolian3SelectRight18").show();
+            $("#add-jiaolian3InsertRight18").show();
+
             $("#add-jiaolian4SelectLeft18").hide();
             $("#add-jiaolian4InsertLeft18").hide();
             $("#add-jiaolian4SelectRight18").hide();
@@ -7250,39 +3452,18 @@ $(document).ready(function () {
             $("#add-jiaolian6InsertLeft18").hide();
             $("#add-jiaolian6SelectRight18").hide();
             $("#add-jiaolian6InsertRight18").hide();
-            $("#update-jiaolian4SelectLeft18").hide();
-            $("#update-jiaolian4InsertLeft18").hide();
-            $("#update-jiaolian4SelectRight18").hide();
-            $("#update-jiaolian4InsertRight18").hide();
-
-            $("#update-jiaolian5SelectLeft18").hide();
-            $("#update-jiaolian5InsertLeft18").hide();
-            $("#update-jiaolian5SelectRight18").hide();
-            $("#update-jiaolian5InsertRight18").hide();
-
-            $("#update-jiaolian6SelectLeft18").hide();
-            $("#update-jiaolian6InsertLeft18").hide();
-            $("#update-jiaolian6SelectRight18").hide();
-            $("#update-jiaolian6InsertRight18").hide();
-
-
-
-            $("#l4sl").hide();
-            $("#l4il").hide();
-            $("#l4sr").hide();
-            $("#l4ir").hide();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
         }
         if (selectedValue18 == '开四孔') {
+            $("#add-jiaolian3SelectLeft18").show();
+            $("#add-jiaolian3InsertLeft18").show();
+            $("#add-jiaolian3SelectRight18").show();
+            $("#add-jiaolian3InsertRight18").show();
+
+            $("#add-jiaolian4SelectLeft18").show();
+            $("#add-jiaolian4InsertLeft18").show();
+            $("#add-jiaolian4SelectRight18").show();
+            $("#add-jiaolian4InsertRight18").show();
+
             $("#add-jiaolian5SelectLeft18").hide();
             $("#add-jiaolian5InsertLeft18").hide();
             $("#add-jiaolian5SelectRight18").hide();
@@ -7292,40 +3473,48 @@ $(document).ready(function () {
             $("#add-jiaolian6InsertLeft18").hide();
             $("#add-jiaolian6SelectRight18").hide();
             $("#add-jiaolian6InsertRight18").hide();
-            $("#update-jiaolian5SelectLeft18").hide();
-            $("#update-jiaolian5InsertLeft18").hide();
-            $("#update-jiaolian5SelectRight18").hide();
-            $("#update-jiaolian5InsertRight18").hide();
-
-            $("#update-jiaolian6SelectLeft18").hide();
-            $("#update-jiaolian6InsertLeft18").hide();
-            $("#update-jiaolian6SelectRight18").hide();
-            $("#update-jiaolian6InsertRight18").hide();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
         }
         if (selectedValue18 == '开五孔') {
+            $("#add-jiaolian3SelectLeft18").show();
+            $("#add-jiaolian3InsertLeft18").show();
+            $("#add-jiaolian3SelectRight18").show();
+            $("#add-jiaolian3InsertRight18").show();
+
+            $("#add-jiaolian4SelectLeft18").show();
+            $("#add-jiaolian4InsertLeft18").show();
+            $("#add-jiaolian4SelectRight18").show();
+            $("#add-jiaolian4InsertRight18").show();
+
+            $("#add-jiaolian5SelectLeft18").show();
+            $("#add-jiaolian5InsertLeft18").show();
+            $("#add-jiaolian5SelectRight18").show();
+            $("#add-jiaolian5InsertRight18").show();
+
             $("#add-jiaolian6SelectLeft18").hide();
             $("#add-jiaolian6InsertLeft18").hide();
             $("#add-jiaolian6SelectRight18").hide();
             $("#add-jiaolian6InsertRight18").hide();
-            $("#update-jiaolian6SelectLeft18").hide();
-            $("#update-jiaolian6InsertLeft18").hide();
-            $("#update-jiaolian6SelectRight18").hide();
-            $("#update-jiaolian6InsertRight18").hide();
+        }
+        if (selectedValue18 == '开六孔') {
+            $("#add-jiaolian3SelectLeft18").show();
+            $("#add-jiaolian3InsertLeft18").show();
+            $("#add-jiaolian3SelectRight18").show();
+            $("#add-jiaolian3InsertRight18").show();
 
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
+            $("#add-jiaolian4SelectLeft18").show();
+            $("#add-jiaolian4InsertLeft18").show();
+            $("#add-jiaolian4SelectRight18").show();
+            $("#add-jiaolian4InsertRight18").show();
+
+            $("#add-jiaolian5SelectLeft18").show();
+            $("#add-jiaolian5InsertLeft18").show();
+            $("#add-jiaolian5SelectRight18").show();
+            $("#add-jiaolian5InsertRight18").show();
+
+            $("#add-jiaolian6SelectLeft18").show();
+            $("#add-jiaolian6InsertLeft18").show();
+            $("#add-jiaolian6SelectRight18").show();
+            $("#add-jiaolian6InsertRight18").show();
         }
     })
 
@@ -7351,6 +3540,2194 @@ $(document).ready(function () {
             $("#add-jiaolian6InsertLeft19").hide();
             $("#add-jiaolian6SelectRight19").hide();
             $("#add-jiaolian6InsertRight19").hide();
+           
+        }
+        if (selectedValue19 == '开三孔') {
+            $("#add-jiaolian3SelectLeft19").show();
+            $("#add-jiaolian3InsertLeft19").show();
+            $("#add-jiaolian3SelectRight19").show();
+            $("#add-jiaolian3InsertRight19").show();
+
+            $("#add-jiaolian4SelectLeft19").hide();
+            $("#add-jiaolian4InsertLeft19").hide();
+            $("#add-jiaolian4SelectRight19").hide();
+            $("#add-jiaolian4InsertRight19").hide();
+
+            $("#add-jiaolian5SelectLeft19").hide();
+            $("#add-jiaolian5InsertLeft19").hide();
+            $("#add-jiaolian5SelectRight19").hide();
+            $("#add-jiaolian5InsertRight19").hide();
+
+            $("#add-jiaolian6SelectLeft19").hide();
+            $("#add-jiaolian6InsertLeft19").hide();
+            $("#add-jiaolian6SelectRight19").hide();
+            $("#add-jiaolian6InsertRight19").hide();
+        }
+        if (selectedValue19 == '开四孔') {
+            $("#add-jiaolian3SelectLeft19").show();
+            $("#add-jiaolian3InsertLeft19").show();
+            $("#add-jiaolian3SelectRight19").show();
+            $("#add-jiaolian3InsertRight19").show();
+
+            $("#add-jiaolian4SelectLeft19").show();
+            $("#add-jiaolian4InsertLeft19").show();
+            $("#add-jiaolian4SelectRight19").show();
+            $("#add-jiaolian4InsertRight19").show();
+
+            $("#add-jiaolian5SelectLeft19").hide();
+            $("#add-jiaolian5InsertLeft19").hide();
+            $("#add-jiaolian5SelectRight19").hide();
+            $("#add-jiaolian5InsertRight19").hide();
+
+            $("#add-jiaolian6SelectLeft19").hide();
+            $("#add-jiaolian6InsertLeft19").hide();
+            $("#add-jiaolian6SelectRight19").hide();
+            $("#add-jiaolian6InsertRight19").hide();
+        }
+        if (selectedValue19 == '开五孔') {
+            $("#add-jiaolian3SelectLeft19").show();
+            $("#add-jiaolian3InsertLeft19").show();
+            $("#add-jiaolian3SelectRight19").show();
+            $("#add-jiaolian3InsertRight19").show();
+
+            $("#add-jiaolian4SelectLeft19").show();
+            $("#add-jiaolian4InsertLeft19").show();
+            $("#add-jiaolian4SelectRight19").show();
+            $("#add-jiaolian4InsertRight19").show();
+
+            $("#add-jiaolian5SelectLeft19").show();
+            $("#add-jiaolian5InsertLeft19").show();
+            $("#add-jiaolian5SelectRight19").show();
+            $("#add-jiaolian5InsertRight19").show();
+
+            $("#add-jiaolian6SelectLeft19").hide();
+            $("#add-jiaolian6InsertLeft19").hide();
+            $("#add-jiaolian6SelectRight19").hide();
+            $("#add-jiaolian6InsertRight19").hide();
+        }
+        if (selectedValue19 == '开六孔') {
+            $("#add-jiaolian3SelectLeft19").show();
+            $("#add-jiaolian3InsertLeft19").show();
+            $("#add-jiaolian3SelectRight19").show();
+            $("#add-jiaolian3InsertRight19").show();
+
+            $("#add-jiaolian4SelectLeft19").show();
+            $("#add-jiaolian4InsertLeft19").show();
+            $("#add-jiaolian4SelectRight19").show();
+            $("#add-jiaolian4InsertRight19").show();
+
+            $("#add-jiaolian5SelectLeft19").show();
+            $("#add-jiaolian5InsertLeft19").show();
+            $("#add-jiaolian5SelectRight19").show();
+            $("#add-jiaolian5InsertRight19").show();
+
+            $("#add-jiaolian6SelectLeft19").show();
+            $("#add-jiaolian6InsertLeft19").show();
+            $("#add-jiaolian6SelectRight19").show();
+            $("#add-jiaolian6InsertRight19").show();
+        }
+    })
+
+})
+$(document).ready(function () {
+    $('#update-kaijiaolian').on('change', function () {
+        var selectedValue = $(this).val();
+
+
+
+        if (selectedValue == '开二孔') {
+            $("#update-jiaolian3SelectLeft").hide();
+            $("#update-jiaolian3InsertLeft").hide();
+            $("#update-jiaolian3SelectRight").hide();
+            $("#update-jiaolian3InsertRight").hide();
+
+            $("#update-jiaolian4SelectLeft").hide();
+            $("#update-jiaolian4InsertLeft").hide();
+            $("#update-jiaolian4SelectRight").hide();
+            $("#update-jiaolian4InsertRight").hide();
+
+            $("#update-jiaolian5SelectLeft").hide();
+            $("#update-jiaolian5InsertLeft").hide();
+            $("#update-jiaolian5SelectRight").hide();
+            $("#update-jiaolian5InsertRight").hide();
+
+            $("#update-jiaolian6SelectLeft").hide();
+            $("#update-jiaolian6InsertLeft").hide();
+            $("#update-jiaolian6SelectRight").hide();
+            $("#update-jiaolian6InsertRight").hide();
+
+        }
+        if (selectedValue == '开三孔') {
+            $("#update-jiaolian3SelectLeft").show();
+            $("#update-jiaolian3InsertLeft").show();
+            $("#update-jiaolian3SelectRight").show();
+            $("#update-jiaolian3InsertRight").show();
+
+            $("#update-jiaolian4SelectLeft").hide();
+            $("#update-jiaolian4InsertLeft").hide();
+            $("#update-jiaolian4SelectRight").hide();
+            $("#update-jiaolian4InsertRight").hide();
+
+            $("#update-jiaolian5SelectLeft").hide();
+            $("#update-jiaolian5InsertLeft").hide();
+            $("#update-jiaolian5SelectRight").hide();
+            $("#update-jiaolian5InsertRight").hide();
+
+            $("#update-jiaolian6SelectLeft").hide();
+            $("#update-jiaolian6InsertLeft").hide();
+            $("#update-jiaolian6SelectRight").hide();
+            $("#update-jiaolian6InsertRight").hide();
+
+
+        }
+        if (selectedValue == '开四孔') {
+            $("#update-jiaolian3SelectLeft").show();
+            $("#update-jiaolian3InsertLeft").show();
+            $("#update-jiaolian3SelectRight").show();
+            $("#update-jiaolian3InsertRight").show();
+
+            $("#update-jiaolian4SelectLeft").show();
+            $("#update-jiaolian4InsertLeft").show();
+            $("#update-jiaolian4SelectRight").show();
+            $("#update-jiaolian4InsertRight").show();
+
+            $("#update-jiaolian5SelectLeft").hide();
+            $("#update-jiaolian5InsertLeft").hide();
+            $("#update-jiaolian5SelectRight").hide();
+            $("#update-jiaolian5InsertRight").hide();
+
+            $("#update-jiaolian6SelectLeft").hide();
+            $("#update-jiaolian6InsertLeft").hide();
+            $("#update-jiaolian6SelectRight").hide();
+            $("#update-jiaolian6InsertRight").hide();
+        }
+        if (selectedValue == '开五孔') {
+            $("#update-jiaolian3SelectLeft").show();
+            $("#update-jiaolian3InsertLeft").show();
+            $("#update-jiaolian3SelectRight").show();
+            $("#update-jiaolian3InsertRight").show();
+
+            $("#update-jiaolian4SelectLeft").show();
+            $("#update-jiaolian4InsertLeft").show();
+            $("#update-jiaolian4SelectRight").show();
+            $("#update-jiaolian4InsertRight").show();
+
+            $("#update-jiaolian5SelectLeft").show();
+            $("#update-jiaolian5InsertLeft").show();
+            $("#update-jiaolian5SelectRight").show();
+            $("#update-jiaolian5InsertRight").show();
+
+            $("#update-jiaolian6SelectLeft").hide();
+            $("#update-jiaolian6InsertLeft").hide();
+            $("#update-jiaolian6SelectRight").hide();
+            $("#update-jiaolian6InsertRight").hide();
+        }
+        if (selectedValue == '开六孔') {
+            $("#update-jiaolian3SelectLeft").show();
+            $("#update-jiaolian3InsertLeft").show();
+            $("#update-jiaolian3SelectRight").show();
+            $("#update-jiaolian3InsertRight").show();
+
+            $("#update-jiaolian4SelectLeft").show();
+            $("#update-jiaolian4InsertLeft").show();
+            $("#update-jiaolian4SelectRight").show();
+            $("#update-jiaolian4InsertRight").show();
+
+            $("#update-jiaolian5SelectLeft").show();
+            $("#update-jiaolian5InsertLeft").show();
+            $("#update-jiaolian5SelectRight").show();
+            $("#update-jiaolian5InsertRight").show();
+
+            $("#update-jiaolian6SelectLeft").show();
+            $("#update-jiaolian6InsertLeft").show();
+            $("#update-jiaolian6SelectRight").show();
+            $("#update-jiaolian6InsertRight").show();
+        }
+    })
+
+    $('#update-kaijiaolian1').on('change', function () {
+        var selectedValue1 = $(this).val();
+        if (selectedValue1 == '开二孔') {
+            $("#update-jiaolian3SelectLeft1").hide();
+            $("#update-jiaolian3InsertLeft1").hide();
+            $("#update-jiaolian3SelectRight1").hide();
+            $("#update-jiaolian3InsertRight1").hide();
+
+            $("#update-jiaolian4SelectLeft1").hide();
+            $("#update-jiaolian4InsertLeft1").hide();
+            $("#update-jiaolian4SelectRight1").hide();
+            $("#update-jiaolian4InsertRight1").hide();
+
+            $("#update-jiaolian5SelectLeft1").hide();
+            $("#update-jiaolian5InsertLeft1").hide();
+            $("#update-jiaolian5SelectRight1").hide();
+            $("#update-jiaolian5InsertRight1").hide();
+
+            $("#update-jiaolian6SelectLeft1").hide();
+            $("#update-jiaolian6InsertLeft1").hide();
+            $("#update-jiaolian6SelectRight1").hide();
+            $("#update-jiaolian6InsertRight1").hide();
+
+        }
+        if (selectedValue1 == '开三孔') {
+            $("#update-jiaolian3SelectLeft1").show();
+            $("#update-jiaolian3InsertLeft1").show();
+            $("#update-jiaolian3SelectRight1").show();
+            $("#update-jiaolian3InsertRight1").show();
+
+            $("#update-jiaolian4SelectLeft1").hide();
+            $("#update-jiaolian4InsertLeft1").hide();
+            $("#update-jiaolian4SelectRight1").hide();
+            $("#update-jiaolian4InsertRight1").hide();
+
+            $("#update-jiaolian5SelectLeft1").hide();
+            $("#update-jiaolian5InsertLeft1").hide();
+            $("#update-jiaolian5SelectRight1").hide();
+            $("#update-jiaolian5InsertRight1").hide();
+
+            $("#update-jiaolian6SelectLeft1").hide();
+            $("#update-jiaolian6InsertLeft1").hide();
+            $("#update-jiaolian6SelectRight1").hide();
+            $("#update-jiaolian6InsertRight1").hide();
+        }
+        if (selectedValue1 == '开四孔') {
+            $("#update-jiaolian3SelectLeft1").show();
+            $("#update-jiaolian3InsertLeft1").show();
+            $("#update-jiaolian3SelectRight1").show();
+            $("#update-jiaolian3InsertRight1").show();
+
+            $("#update-jiaolian4SelectLeft1").show();
+            $("#update-jiaolian4InsertLeft1").show();
+            $("#update-jiaolian4SelectRight1").show();
+            $("#update-jiaolian4InsertRight1").show();
+
+            $("#update-jiaolian5SelectLeft1").hide();
+            $("#update-jiaolian5InsertLeft1").hide();
+            $("#update-jiaolian5SelectRight1").hide();
+            $("#update-jiaolian5InsertRight1").hide();
+
+            $("#update-jiaolian6SelectLeft1").hide();
+            $("#update-jiaolian6InsertLeft1").hide();
+            $("#update-jiaolian6SelectRight1").hide();
+            $("#update-jiaolian6InsertRight1").hide();
+        }
+        if (selectedValue1 == '开五孔') {
+            $("#update-jiaolian3SelectLeft1").show();
+            $("#update-jiaolian3InsertLeft1").show();
+            $("#update-jiaolian3SelectRight1").show();
+            $("#update-jiaolian3InsertRight1").show();
+
+            $("#update-jiaolian4SelectLeft1").show();
+            $("#update-jiaolian4InsertLeft1").show();
+            $("#update-jiaolian4SelectRight1").show();
+            $("#update-jiaolian4InsertRight1").show();
+
+            $("#update-jiaolian5SelectLeft1").show();
+            $("#update-jiaolian5InsertLeft1").show();
+            $("#update-jiaolian5SelectRight1").show();
+            $("#update-jiaolian5InsertRight1").show();
+
+            $("#update-jiaolian6SelectLeft1").hide();
+            $("#update-jiaolian6InsertLeft1").hide();
+            $("#update-jiaolian6SelectRight1").hide();
+            $("#update-jiaolian6InsertRight1").hide();
+        }
+        if (selectedValue1 == '开六孔') {
+            $("#update-jiaolian3SelectLeft1").show();
+            $("#update-jiaolian3InsertLeft1").show();
+            $("#update-jiaolian3SelectRight1").show();
+            $("#update-jiaolian3InsertRight1").show();
+
+            $("#update-jiaolian4SelectLeft1").show();
+            $("#update-jiaolian4InsertLeft1").show();
+            $("#update-jiaolian4SelectRight1").show();
+            $("#update-jiaolian4InsertRight1").show();
+
+            $("#update-jiaolian5SelectLeft1").show();
+            $("#update-jiaolian5InsertLeft1").show();
+            $("#update-jiaolian5SelectRight1").show();
+            $("#update-jiaolian5InsertRight1").show();
+
+            $("#update-jiaolian6SelectLeft1").show();
+            $("#update-jiaolian6InsertLeft1").show();
+            $("#update-jiaolian6SelectRight1").show();
+            $("#update-jiaolian6InsertRight1").show();
+        }
+    })
+
+    $('#update-kaijiaolian2').on('change', function () {
+        var selectedValue2 = $(this).val();
+        if (selectedValue2 == '开二孔') {
+            $("#update-jiaolian3SelectLeft2").hide();
+            $("#update-jiaolian3InsertLeft2").hide();
+            $("#update-jiaolian3SelectRight2").hide();
+            $("#update-jiaolian3InsertRight2").hide();
+
+            $("#update-jiaolian4SelectLeft2").hide();
+            $("#update-jiaolian4InsertLeft2").hide();
+            $("#update-jiaolian4SelectRight2").hide();
+            $("#update-jiaolian4InsertRight2").hide();
+
+            $("#update-jiaolian5SelectLeft2").hide();
+            $("#update-jiaolian5InsertLeft2").hide();
+            $("#update-jiaolian5SelectRight2").hide();
+            $("#update-jiaolian5InsertRight2").hide();
+
+            $("#update-jiaolian6SelectLeft2").hide();
+            $("#update-jiaolian6InsertLeft2").hide();
+            $("#update-jiaolian6SelectRight2").hide();
+            $("#update-jiaolian6InsertRight2").hide();
+
+        }
+        if (selectedValue2 == '开三孔') {
+            $("#update-jiaolian3SelectLeft2").show();
+            $("#update-jiaolian3InsertLeft2").show();
+            $("#update-jiaolian3SelectRight2").show();
+            $("#update-jiaolian3InsertRight2").show();
+
+            $("#update-jiaolian4SelectLeft2").hide();
+            $("#update-jiaolian4InsertLeft2").hide();
+            $("#update-jiaolian4SelectRight2").hide();
+            $("#update-jiaolian4InsertRight2").hide();
+
+            $("#update-jiaolian5SelectLeft2").hide();
+            $("#update-jiaolian5InsertLeft2").hide();
+            $("#update-jiaolian5SelectRight2").hide();
+            $("#update-jiaolian5InsertRight2").hide();
+
+            $("#update-jiaolian6SelectLeft2").hide();
+            $("#update-jiaolian6InsertLeft2").hide();
+            $("#update-jiaolian6SelectRight2").hide();
+            $("#update-jiaolian6InsertRight2").hide();
+        }
+        if (selectedValue2 == '开四孔') {
+            $("#update-jiaolian3SelectLeft2").show();
+            $("#update-jiaolian3InsertLeft2").show();
+            $("#update-jiaolian3SelectRight2").show();
+            $("#update-jiaolian3InsertRight2").show();
+
+            $("#update-jiaolian4SelectLeft2").show();
+            $("#update-jiaolian4InsertLeft2").show();
+            $("#update-jiaolian4SelectRight2").show();
+            $("#update-jiaolian4InsertRight2").show();
+
+            $("#update-jiaolian5SelectLeft2").hide();
+            $("#update-jiaolian5InsertLeft2").hide();
+            $("#update-jiaolian5SelectRight2").hide();
+            $("#update-jiaolian5InsertRight2").hide();
+
+            $("#update-jiaolian6SelectLeft2").hide();
+            $("#update-jiaolian6InsertLeft2").hide();
+            $("#update-jiaolian6SelectRight2").hide();
+            $("#update-jiaolian6InsertRight2").hide();
+        }
+        if (selectedValue2 == '开五孔') {
+            $("#update-jiaolian3SelectLeft2").show();
+            $("#update-jiaolian3InsertLeft2").show();
+            $("#update-jiaolian3SelectRight2").show();
+            $("#update-jiaolian3InsertRight2").show();
+
+            $("#update-jiaolian4SelectLeft2").show();
+            $("#update-jiaolian4InsertLeft2").show();
+            $("#update-jiaolian4SelectRight2").show();
+            $("#update-jiaolian4InsertRight2").show();
+
+            $("#update-jiaolian5SelectLeft2").show();
+            $("#update-jiaolian5InsertLeft2").show();
+            $("#update-jiaolian5SelectRight2").show();
+            $("#update-jiaolian5InsertRight2").show();
+
+            $("#update-jiaolian6SelectLeft2").hide();
+            $("#update-jiaolian6InsertLeft2").hide();
+            $("#update-jiaolian6SelectRight2").hide();
+            $("#update-jiaolian6InsertRight2").hide();
+        }
+        if (selectedValue2 == '开六孔') {
+            $("#update-jiaolian3SelectLeft2").show();
+            $("#update-jiaolian3InsertLeft2").show();
+            $("#update-jiaolian3SelectRight2").show();
+            $("#update-jiaolian3InsertRight2").show();
+
+            $("#update-jiaolian4SelectLeft2").show();
+            $("#update-jiaolian4InsertLeft2").show();
+            $("#update-jiaolian4SelectRight2").show();
+            $("#update-jiaolian4InsertRight2").show();
+
+            $("#update-jiaolian5SelectLeft2").show();
+            $("#update-jiaolian5InsertLeft2").show();
+            $("#update-jiaolian5SelectRight2").show();
+            $("#update-jiaolian5InsertRight2").show();
+
+            $("#update-jiaolian6SelectLeft2").show();
+            $("#update-jiaolian6InsertLeft2").show();
+            $("#update-jiaolian6SelectRight2").show();
+            $("#update-jiaolian6InsertRight2").show();
+        }
+    })
+
+    $('#update-kaijiaolian3').on('change', function () {
+        var selectedValue3 = $(this).val();
+        if (selectedValue3 == '开二孔') {
+            $("#update-jiaolian3SelectLeft3").hide();
+            $("#update-jiaolian3InsertLeft3").hide();
+            $("#update-jiaolian3SelectRight3").hide();
+            $("#update-jiaolian3InsertRight3").hide();
+
+            $("#update-jiaolian4SelectLeft3").hide();
+            $("#update-jiaolian4InsertLeft3").hide();
+            $("#update-jiaolian4SelectRight3").hide();
+            $("#update-jiaolian4InsertRight3").hide();
+
+            $("#update-jiaolian5SelectLeft3").hide();
+            $("#update-jiaolian5InsertLeft3").hide();
+            $("#update-jiaolian5SelectRight3").hide();
+            $("#update-jiaolian5InsertRight3").hide();
+
+            $("#update-jiaolian6SelectLeft3").hide();
+            $("#update-jiaolian6InsertLeft3").hide();
+            $("#update-jiaolian6SelectRight3").hide();
+            $("#update-jiaolian6InsertRight3").hide();
+
+        }
+        if (selectedValue3 == '开三孔') {
+            $("#update-jiaolian3SelectLeft3").show();
+            $("#update-jiaolian3InsertLeft3").show();
+            $("#update-jiaolian3SelectRight3").show();
+            $("#update-jiaolian3InsertRight3").show();
+
+            $("#update-jiaolian4SelectLeft3").hide();
+            $("#update-jiaolian4InsertLeft3").hide();
+            $("#update-jiaolian4SelectRight3").hide();
+            $("#update-jiaolian4InsertRight3").hide();
+
+            $("#update-jiaolian5SelectLeft3").hide();
+            $("#update-jiaolian5InsertLeft3").hide();
+            $("#update-jiaolian5SelectRight3").hide();
+            $("#update-jiaolian5InsertRight3").hide();
+
+            $("#update-jiaolian6SelectLeft3").hide();
+            $("#update-jiaolian6InsertLeft3").hide();
+            $("#update-jiaolian6SelectRight3").hide();
+            $("#update-jiaolian6InsertRight3").hide();
+        }
+        if (selectedValue3 == '开四孔') {
+            $("#update-jiaolian3SelectLeft3").show();
+            $("#update-jiaolian3InsertLeft3").show();
+            $("#update-jiaolian3SelectRight3").show();
+            $("#update-jiaolian3InsertRight3").show();
+
+            $("#update-jiaolian4SelectLeft3").show();
+            $("#update-jiaolian4InsertLeft3").show();
+            $("#update-jiaolian4SelectRight3").show();
+            $("#update-jiaolian4InsertRight3").show();
+
+            $("#update-jiaolian5SelectLeft3").hide();
+            $("#update-jiaolian5InsertLeft3").hide();
+            $("#update-jiaolian5SelectRight3").hide();
+            $("#update-jiaolian5InsertRight3").hide();
+
+            $("#update-jiaolian6SelectLeft3").hide();
+            $("#update-jiaolian6InsertLeft3").hide();
+            $("#update-jiaolian6SelectRight3").hide();
+            $("#update-jiaolian6InsertRight3").hide();
+        }
+        if (selectedValue3 == '开五孔') {
+            $("#update-jiaolian3SelectLeft3").show();
+            $("#update-jiaolian3InsertLeft3").show();
+            $("#update-jiaolian3SelectRight3").show();
+            $("#update-jiaolian3InsertRight3").show();
+
+            $("#update-jiaolian4SelectLeft3").show();
+            $("#update-jiaolian4InsertLeft3").show();
+            $("#update-jiaolian4SelectRight3").show();
+            $("#update-jiaolian4InsertRight3").show();
+
+            $("#update-jiaolian5SelectLeft3").show();
+            $("#update-jiaolian5InsertLeft3").show();
+            $("#update-jiaolian5SelectRight3").show();
+            $("#update-jiaolian5InsertRight3").show();
+
+            $("#update-jiaolian6SelectLeft3").hide();
+            $("#update-jiaolian6InsertLeft3").hide();
+            $("#update-jiaolian6SelectRight3").hide();
+            $("#update-jiaolian6InsertRight3").hide();
+        }
+        if (selectedValue3 == '开六孔') {
+            $("#update-jiaolian3SelectLeft3").show();
+            $("#update-jiaolian3InsertLeft3").show();
+            $("#update-jiaolian3SelectRight3").show();
+            $("#update-jiaolian3InsertRight3").show();
+
+            $("#update-jiaolian4SelectLeft3").show();
+            $("#update-jiaolian4InsertLeft3").show();
+            $("#update-jiaolian4SelectRight3").show();
+            $("#update-jiaolian4InsertRight3").show();
+
+            $("#update-jiaolian5SelectLeft3").show();
+            $("#update-jiaolian5InsertLeft3").show();
+            $("#update-jiaolian5SelectRight3").show();
+            $("#update-jiaolian5InsertRight3").show();
+
+            $("#update-jiaolian6SelectLeft3").show();
+            $("#update-jiaolian6InsertLeft3").show();
+            $("#update-jiaolian6SelectRight3").show();
+            $("#update-jiaolian6InsertRight3").show();
+        }
+    })
+
+    $('#update-kaijiaolian4').on('change', function () {
+        var selectedValue4 = $(this).val();
+        if (selectedValue4 == '开二孔') {
+            $("#update-jiaolian3SelectLeft4").hide();
+            $("#update-jiaolian3InsertLeft4").hide();
+            $("#update-jiaolian3SelectRight4").hide();
+            $("#update-jiaolian3InsertRight4").hide();
+
+            $("#update-jiaolian4SelectLeft4").hide();
+            $("#update-jiaolian4InsertLeft4").hide();
+            $("#update-jiaolian4SelectRight4").hide();
+            $("#update-jiaolian4InsertRight4").hide();
+
+            $("#update-jiaolian5SelectLeft4").hide();
+            $("#update-jiaolian5InsertLeft4").hide();
+            $("#update-jiaolian5SelectRight4").hide();
+            $("#update-jiaolian5InsertRight4").hide();
+
+            $("#update-jiaolian6SelectLeft4").hide();
+            $("#update-jiaolian6InsertLeft4").hide();
+            $("#update-jiaolian6SelectRight4").hide();
+            $("#update-jiaolian6InsertRight4").hide();
+
+        }
+        if (selectedValue4 == '开三孔') {
+            $("#update-jiaolian3SelectLeft4").show();
+            $("#update-jiaolian3InsertLeft4").show();
+            $("#update-jiaolian3SelectRight4").show();
+            $("#update-jiaolian3InsertRight4").show();
+
+            $("#update-jiaolian4SelectLeft4").hide();
+            $("#update-jiaolian4InsertLeft4").hide();
+            $("#update-jiaolian4SelectRight4").hide();
+            $("#update-jiaolian4InsertRight4").hide();
+
+            $("#update-jiaolian5SelectLeft4").hide();
+            $("#update-jiaolian5InsertLeft4").hide();
+            $("#update-jiaolian5SelectRight4").hide();
+            $("#update-jiaolian5InsertRight4").hide();
+
+            $("#update-jiaolian6SelectLeft4").hide();
+            $("#update-jiaolian6InsertLeft4").hide();
+            $("#update-jiaolian6SelectRight4").hide();
+            $("#update-jiaolian6InsertRight4").hide();
+        }
+        if (selectedValue4 == '开四孔') {
+            $("#update-jiaolian3SelectLeft4").show();
+            $("#update-jiaolian3InsertLeft4").show();
+            $("#update-jiaolian3SelectRight4").show();
+            $("#update-jiaolian3InsertRight4").show();
+
+            $("#update-jiaolian4SelectLeft4").show();
+            $("#update-jiaolian4InsertLeft4").show();
+            $("#update-jiaolian4SelectRight4").show();
+            $("#update-jiaolian4InsertRight4").show();
+
+            $("#update-jiaolian5SelectLeft4").hide();
+            $("#update-jiaolian5InsertLeft4").hide();
+            $("#update-jiaolian5SelectRight4").hide();
+            $("#update-jiaolian5InsertRight4").hide();
+
+            $("#update-jiaolian6SelectLeft4").hide();
+            $("#update-jiaolian6InsertLeft4").hide();
+            $("#update-jiaolian6SelectRight4").hide();
+            $("#update-jiaolian6InsertRight4").hide();
+        }
+        if (selectedValue4 == '开五孔') {
+            $("#update-jiaolian3SelectLeft4").show();
+            $("#update-jiaolian3InsertLeft4").show();
+            $("#update-jiaolian3SelectRight4").show();
+            $("#update-jiaolian3InsertRight4").show();
+
+            $("#update-jiaolian4SelectLeft4").show();
+            $("#update-jiaolian4InsertLeft4").show();
+            $("#update-jiaolian4SelectRight4").show();
+            $("#update-jiaolian4InsertRight4").show();
+
+            $("#update-jiaolian5SelectLeft4").show();
+            $("#update-jiaolian5InsertLeft4").show();
+            $("#update-jiaolian5SelectRight4").show();
+            $("#update-jiaolian5InsertRight4").show();
+
+            $("#update-jiaolian6SelectLeft4").hide();
+            $("#update-jiaolian6InsertLeft4").hide();
+            $("#update-jiaolian6SelectRight4").hide();
+            $("#update-jiaolian6InsertRight4").hide();
+        }
+        if (selectedValue4 == '开六孔') {
+            $("#update-jiaolian3SelectLeft4").show();
+            $("#update-jiaolian3InsertLeft4").show();
+            $("#update-jiaolian3SelectRight4").show();
+            $("#update-jiaolian3InsertRight4").show();
+
+            $("#update-jiaolian4SelectLeft4").show();
+            $("#update-jiaolian4InsertLeft4").show();
+            $("#update-jiaolian4SelectRight4").show();
+            $("#update-jiaolian4InsertRight4").show();
+
+            $("#update-jiaolian5SelectLeft4").show();
+            $("#update-jiaolian5InsertLeft4").show();
+            $("#update-jiaolian5SelectRight4").show();
+            $("#update-jiaolian5InsertRight4").show();
+
+            $("#update-jiaolian6SelectLeft4").show();
+            $("#update-jiaolian6InsertLeft4").show();
+            $("#update-jiaolian6SelectRight4").show();
+            $("#update-jiaolian6InsertRight4").show();
+        }
+    })
+
+    $('#update-kaijiaolian5').on('change', function () {
+        var selectedValue5 = $(this).val();
+        if (selectedValue5 == '开二孔') {
+            $("#update-jiaolian3SelectLeft5").hide();
+            $("#update-jiaolian3InsertLeft5").hide();
+            $("#update-jiaolian3SelectRight5").hide();
+            $("#update-jiaolian3InsertRight5").hide();
+
+            $("#update-jiaolian4SelectLeft5").hide();
+            $("#update-jiaolian4InsertLeft5").hide();
+            $("#update-jiaolian4SelectRight5").hide();
+            $("#update-jiaolian4InsertRight5").hide();
+
+            $("#update-jiaolian5SelectLeft5").hide();
+            $("#update-jiaolian5InsertLeft5").hide();
+            $("#update-jiaolian5SelectRight5").hide();
+            $("#update-jiaolian5InsertRight5").hide();
+
+            $("#update-jiaolian6SelectLeft5").hide();
+            $("#update-jiaolian6InsertLeft5").hide();
+            $("#update-jiaolian6SelectRight5").hide();
+            $("#update-jiaolian6InsertRight5").hide();
+
+        }
+        if (selectedValue5 == '开三孔') {
+            $("#update-jiaolian3SelectLeft5").show();
+            $("#update-jiaolian3InsertLeft5").show();
+            $("#update-jiaolian3SelectRight5").show();
+            $("#update-jiaolian3InsertRight5").show();
+
+            $("#update-jiaolian4SelectLeft5").hide();
+            $("#update-jiaolian4InsertLeft5").hide();
+            $("#update-jiaolian4SelectRight5").hide();
+            $("#update-jiaolian4InsertRight5").hide();
+
+            $("#update-jiaolian5SelectLeft5").hide();
+            $("#update-jiaolian5InsertLeft5").hide();
+            $("#update-jiaolian5SelectRight5").hide();
+            $("#update-jiaolian5InsertRight5").hide();
+
+            $("#update-jiaolian6SelectLeft5").hide();
+            $("#update-jiaolian6InsertLeft5").hide();
+            $("#update-jiaolian6SelectRight5").hide();
+            $("#update-jiaolian6InsertRight5").hide();
+        }
+        if (selectedValue5 == '开四孔') {
+            $("#update-jiaolian3SelectLeft5").show();
+            $("#update-jiaolian3InsertLeft5").show();
+            $("#update-jiaolian3SelectRight5").show();
+            $("#update-jiaolian3InsertRight5").show();
+
+            $("#update-jiaolian4SelectLeft5").show();
+            $("#update-jiaolian4InsertLeft5").show();
+            $("#update-jiaolian4SelectRight5").show();
+            $("#update-jiaolian4InsertRight5").show();
+
+            $("#update-jiaolian5SelectLeft5").hide();
+            $("#update-jiaolian5InsertLeft5").hide();
+            $("#update-jiaolian5SelectRight5").hide();
+            $("#update-jiaolian5InsertRight5").hide();
+
+            $("#update-jiaolian6SelectLeft5").hide();
+            $("#update-jiaolian6InsertLeft5").hide();
+            $("#update-jiaolian6SelectRight5").hide();
+            $("#update-jiaolian6InsertRight5").hide();
+        }
+        if (selectedValue5 == '开五孔') {
+            $("#update-jiaolian3SelectLeft5").show();
+            $("#update-jiaolian3InsertLeft5").show();
+            $("#update-jiaolian3SelectRight5").show();
+            $("#update-jiaolian3InsertRight5").show();
+
+            $("#update-jiaolian4SelectLeft5").show();
+            $("#update-jiaolian4InsertLeft5").show();
+            $("#update-jiaolian4SelectRight5").show();
+            $("#update-jiaolian4InsertRight5").show();
+
+            $("#update-jiaolian5SelectLeft5").show();
+            $("#update-jiaolian5InsertLeft5").show();
+            $("#update-jiaolian5SelectRight5").show();
+            $("#update-jiaolian5InsertRight5").show();
+
+            $("#update-jiaolian6SelectLeft5").hide();
+            $("#update-jiaolian6InsertLeft5").hide();
+            $("#update-jiaolian6SelectRight5").hide();
+            $("#update-jiaolian6InsertRight5").hide();
+        }
+        if (selectedValue5 == '开六孔') {
+            $("#update-jiaolian3SelectLeft5").show();
+            $("#update-jiaolian3InsertLeft5").show();
+            $("#update-jiaolian3SelectRight5").show();
+            $("#update-jiaolian3InsertRight5").show();
+
+            $("#update-jiaolian4SelectLeft5").show();
+            $("#update-jiaolian4InsertLeft5").show();
+            $("#update-jiaolian4SelectRight5").show();
+            $("#update-jiaolian4InsertRight5").show();
+
+            $("#update-jiaolian5SelectLeft5").show();
+            $("#update-jiaolian5InsertLeft5").show();
+            $("#update-jiaolian5SelectRight5").show();
+            $("#update-jiaolian5InsertRight5").show();
+
+            $("#update-jiaolian6SelectLeft5").show();
+            $("#update-jiaolian6InsertLeft5").show();
+            $("#update-jiaolian6SelectRight5").show();
+            $("#update-jiaolian6InsertRight5").show();
+        }
+    })
+
+    $('#update-kaijiaolian6').on('change', function () {
+        var selectedValue6 = $(this).val();
+        if (selectedValue6 == '开二孔') {
+            $("#update-jiaolian3SelectLeft6").hide();
+            $("#update-jiaolian3InsertLeft6").hide();
+            $("#update-jiaolian3SelectRight6").hide();
+            $("#update-jiaolian3InsertRight6").hide();
+
+            $("#update-jiaolian4SelectLeft6").hide();
+            $("#update-jiaolian4InsertLeft6").hide();
+            $("#update-jiaolian4SelectRight6").hide();
+            $("#update-jiaolian4InsertRight6").hide();
+
+            $("#update-jiaolian5SelectLeft6").hide();
+            $("#update-jiaolian5InsertLeft6").hide();
+            $("#update-jiaolian5SelectRight6").hide();
+            $("#update-jiaolian5InsertRight6").hide();
+
+            $("#update-jiaolian6SelectLeft6").hide();
+            $("#update-jiaolian6InsertLeft6").hide();
+            $("#update-jiaolian6SelectRight6").hide();
+            $("#update-jiaolian6InsertRight6").hide();
+
+        }
+        if (selectedValue6 == '开三孔') {
+            $("#update-jiaolian3SelectLeft6").show();
+            $("#update-jiaolian3InsertLeft6").show();
+            $("#update-jiaolian3SelectRight6").show();
+            $("#update-jiaolian3InsertRight6").show();
+
+            $("#update-jiaolian4SelectLeft6").hide();
+            $("#update-jiaolian4InsertLeft6").hide();
+            $("#update-jiaolian4SelectRight6").hide();
+            $("#update-jiaolian4InsertRight6").hide();
+
+            $("#update-jiaolian5SelectLeft6").hide();
+            $("#update-jiaolian5InsertLeft6").hide();
+            $("#update-jiaolian5SelectRight6").hide();
+            $("#update-jiaolian5InsertRight6").hide();
+
+            $("#update-jiaolian6SelectLeft6").hide();
+            $("#update-jiaolian6InsertLeft6").hide();
+            $("#update-jiaolian6SelectRight6").hide();
+            $("#update-jiaolian6InsertRight6").hide();
+        }
+        if (selectedValue6 == '开四孔') {
+            $("#update-jiaolian3SelectLeft6").show();
+            $("#update-jiaolian3InsertLeft6").show();
+            $("#update-jiaolian3SelectRight6").show();
+            $("#update-jiaolian3InsertRight6").show();
+
+            $("#update-jiaolian4SelectLeft6").show();
+            $("#update-jiaolian4InsertLeft6").show();
+            $("#update-jiaolian4SelectRight6").show();
+            $("#update-jiaolian4InsertRight6").show();
+
+            $("#update-jiaolian5SelectLeft6").hide();
+            $("#update-jiaolian5InsertLeft6").hide();
+            $("#update-jiaolian5SelectRight6").hide();
+            $("#update-jiaolian5InsertRight6").hide();
+
+            $("#update-jiaolian6SelectLeft6").hide();
+            $("#update-jiaolian6InsertLeft6").hide();
+            $("#update-jiaolian6SelectRight6").hide();
+            $("#update-jiaolian6InsertRight6").hide();
+        }
+        if (selectedValue6 == '开五孔') {
+            $("#update-jiaolian3SelectLeft6").show();
+            $("#update-jiaolian3InsertLeft6").show();
+            $("#update-jiaolian3SelectRight6").show();
+            $("#update-jiaolian3InsertRight6").show();
+
+            $("#update-jiaolian4SelectLeft6").show();
+            $("#update-jiaolian4InsertLeft6").show();
+            $("#update-jiaolian4SelectRight6").show();
+            $("#update-jiaolian4InsertRight6").show();
+
+            $("#update-jiaolian5SelectLeft6").show();
+            $("#update-jiaolian5InsertLeft6").show();
+            $("#update-jiaolian5SelectRight6").show();
+            $("#update-jiaolian5InsertRight6").show();
+
+            $("#update-jiaolian6SelectLeft6").hide();
+            $("#update-jiaolian6InsertLeft6").hide();
+            $("#update-jiaolian6SelectRight6").hide();
+            $("#update-jiaolian6InsertRight6").hide();
+        }
+        if (selectedValue6 == '开六孔') {
+            $("#update-jiaolian3SelectLeft6").show();
+            $("#update-jiaolian3InsertLeft6").show();
+            $("#update-jiaolian3SelectRight6").show();
+            $("#update-jiaolian3InsertRight6").show();
+
+            $("#update-jiaolian4SelectLeft6").show();
+            $("#update-jiaolian4InsertLeft6").show();
+            $("#update-jiaolian4SelectRight6").show();
+            $("#update-jiaolian4InsertRight6").show();
+
+            $("#update-jiaolian5SelectLeft6").show();
+            $("#update-jiaolian5InsertLeft6").show();
+            $("#update-jiaolian5SelectRight6").show();
+            $("#update-jiaolian5InsertRight6").show();
+
+            $("#update-jiaolian6SelectLeft6").show();
+            $("#update-jiaolian6InsertLeft6").show();
+            $("#update-jiaolian6SelectRight6").show();
+            $("#update-jiaolian6InsertRight6").show();
+        }
+    })
+
+    $('#update-kaijiaolian7').on('change', function () {
+        var selectedValue7 = $(this).val();
+        if (selectedValue7 == '开二孔') {
+            $("#update-jiaolian3SelectLeft7").hide();
+            $("#update-jiaolian3InsertLeft7").hide();
+            $("#update-jiaolian3SelectRight7").hide();
+            $("#update-jiaolian3InsertRight7").hide();
+
+            $("#update-jiaolian4SelectLeft7").hide();
+            $("#update-jiaolian4InsertLeft7").hide();
+            $("#update-jiaolian4SelectRight7").hide();
+            $("#update-jiaolian4InsertRight7").hide();
+
+            $("#update-jiaolian5SelectLeft7").hide();
+            $("#update-jiaolian5InsertLeft7").hide();
+            $("#update-jiaolian5SelectRight7").hide();
+            $("#update-jiaolian5InsertRight7").hide();
+
+            $("#update-jiaolian6SelectLeft7").hide();
+            $("#update-jiaolian6InsertLeft7").hide();
+            $("#update-jiaolian6SelectRight7").hide();
+            $("#update-jiaolian6InsertRight7").hide();
+
+        }
+        if (selectedValue7 == '开三孔') {
+            $("#update-jiaolian3SelectLeft7").show();
+            $("#update-jiaolian3InsertLeft7").show();
+            $("#update-jiaolian3SelectRight7").show();
+            $("#update-jiaolian3InsertRight7").show();
+
+            $("#update-jiaolian4SelectLeft7").hide();
+            $("#update-jiaolian4InsertLeft7").hide();
+            $("#update-jiaolian4SelectRight7").hide();
+            $("#update-jiaolian4InsertRight7").hide();
+
+            $("#update-jiaolian5SelectLeft7").hide();
+            $("#update-jiaolian5InsertLeft7").hide();
+            $("#update-jiaolian5SelectRight7").hide();
+            $("#update-jiaolian5InsertRight7").hide();
+
+            $("#update-jiaolian6SelectLeft7").hide();
+            $("#update-jiaolian6InsertLeft7").hide();
+            $("#update-jiaolian6SelectRight7").hide();
+            $("#update-jiaolian6InsertRight7").hide();
+        }
+        if (selectedValue7 == '开四孔') {
+            $("#update-jiaolian3SelectLeft7").show();
+            $("#update-jiaolian3InsertLeft7").show();
+            $("#update-jiaolian3SelectRight7").show();
+            $("#update-jiaolian3InsertRight7").show();
+
+            $("#update-jiaolian4SelectLeft7").show();
+            $("#update-jiaolian4InsertLeft7").show();
+            $("#update-jiaolian4SelectRight7").show();
+            $("#update-jiaolian4InsertRight7").show();
+
+            $("#update-jiaolian5SelectLeft7").hide();
+            $("#update-jiaolian5InsertLeft7").hide();
+            $("#update-jiaolian5SelectRight7").hide();
+            $("#update-jiaolian5InsertRight7").hide();
+
+            $("#update-jiaolian6SelectLeft7").hide();
+            $("#update-jiaolian6InsertLeft7").hide();
+            $("#update-jiaolian6SelectRight7").hide();
+            $("#update-jiaolian6InsertRight7").hide();
+        }
+        if (selectedValue7 == '开五孔') {
+            $("#update-jiaolian3SelectLeft7").show();
+            $("#update-jiaolian3InsertLeft7").show();
+            $("#update-jiaolian3SelectRight7").show();
+            $("#update-jiaolian3InsertRight7").show();
+
+            $("#update-jiaolian4SelectLeft7").show();
+            $("#update-jiaolian4InsertLeft7").show();
+            $("#update-jiaolian4SelectRight7").show();
+            $("#update-jiaolian4InsertRight7").show();
+
+            $("#update-jiaolian5SelectLeft7").show();
+            $("#update-jiaolian5InsertLeft7").show();
+            $("#update-jiaolian5SelectRight7").show();
+            $("#update-jiaolian5InsertRight7").show();
+
+            $("#update-jiaolian6SelectLeft7").hide();
+            $("#update-jiaolian6InsertLeft7").hide();
+            $("#update-jiaolian6SelectRight7").hide();
+            $("#update-jiaolian6InsertRight7").hide();
+        }
+        if (selectedValue7 == '开六孔') {
+            $("#update-jiaolian3SelectLeft7").show();
+            $("#update-jiaolian3InsertLeft7").show();
+            $("#update-jiaolian3SelectRight7").show();
+            $("#update-jiaolian3InsertRight7").show();
+
+            $("#update-jiaolian4SelectLeft7").show();
+            $("#update-jiaolian4InsertLeft7").show();
+            $("#update-jiaolian4SelectRight7").show();
+            $("#update-jiaolian4InsertRight7").show();
+
+            $("#update-jiaolian5SelectLeft7").show();
+            $("#update-jiaolian5InsertLeft7").show();
+            $("#update-jiaolian5SelectRight7").show();
+            $("#update-jiaolian5InsertRight7").show();
+
+            $("#update-jiaolian6SelectLeft7").show();
+            $("#update-jiaolian6InsertLeft7").show();
+            $("#update-jiaolian6SelectRight7").show();
+            $("#update-jiaolian6InsertRight7").show();
+        }
+    })
+
+    $('#update-kaijiaolian8').on('change', function () {
+        var selectedValue8 = $(this).val();
+        if (selectedValue8 == '开二孔') {
+            $("#update-jiaolian3SelectLeft8").hide();
+            $("#update-jiaolian3InsertLeft8").hide();
+            $("#update-jiaolian3SelectRight8").hide();
+            $("#update-jiaolian3InsertRight8").hide();
+
+            $("#update-jiaolian4SelectLeft8").hide();
+            $("#update-jiaolian4InsertLeft8").hide();
+            $("#update-jiaolian4SelectRight8").hide();
+            $("#update-jiaolian4InsertRight8").hide();
+
+            $("#update-jiaolian5SelectLeft8").hide();
+            $("#update-jiaolian5InsertLeft8").hide();
+            $("#update-jiaolian5SelectRight8").hide();
+            $("#update-jiaolian5InsertRight8").hide();
+
+            $("#update-jiaolian6SelectLeft8").hide();
+            $("#update-jiaolian6InsertLeft8").hide();
+            $("#update-jiaolian6SelectRight8").hide();
+            $("#update-jiaolian6InsertRight8").hide();
+
+        }
+        if (selectedValue8 == '开三孔') {
+            $("#update-jiaolian3SelectLeft8").show();
+            $("#update-jiaolian3InsertLeft8").show();
+            $("#update-jiaolian3SelectRight8").show();
+            $("#update-jiaolian3InsertRight8").show();
+
+            $("#update-jiaolian4SelectLeft8").hide();
+            $("#update-jiaolian4InsertLeft8").hide();
+            $("#update-jiaolian4SelectRight8").hide();
+            $("#update-jiaolian4InsertRight8").hide();
+
+            $("#update-jiaolian5SelectLeft8").hide();
+            $("#update-jiaolian5InsertLeft8").hide();
+            $("#update-jiaolian5SelectRight8").hide();
+            $("#update-jiaolian5InsertRight8").hide();
+
+            $("#update-jiaolian6SelectLeft8").hide();
+            $("#update-jiaolian6InsertLeft8").hide();
+            $("#update-jiaolian6SelectRight8").hide();
+            $("#update-jiaolian6InsertRight8").hide();
+        }
+        if (selectedValue8 == '开四孔') {
+            $("#update-jiaolian3SelectLeft8").show();
+            $("#update-jiaolian3InsertLeft8").show();
+            $("#update-jiaolian3SelectRight8").show();
+            $("#update-jiaolian3InsertRight8").show();
+
+            $("#update-jiaolian4SelectLeft8").show();
+            $("#update-jiaolian4InsertLeft8").show();
+            $("#update-jiaolian4SelectRight8").show();
+            $("#update-jiaolian4InsertRight8").show();
+
+            $("#update-jiaolian5SelectLeft8").hide();
+            $("#update-jiaolian5InsertLeft8").hide();
+            $("#update-jiaolian5SelectRight8").hide();
+            $("#update-jiaolian5InsertRight8").hide();
+
+            $("#update-jiaolian6SelectLeft8").hide();
+            $("#update-jiaolian6InsertLeft8").hide();
+            $("#update-jiaolian6SelectRight8").hide();
+            $("#update-jiaolian6InsertRight8").hide();
+        }
+        if (selectedValue8 == '开五孔') {
+            $("#update-jiaolian3SelectLeft8").show();
+            $("#update-jiaolian3InsertLeft8").show();
+            $("#update-jiaolian3SelectRight8").show();
+            $("#update-jiaolian3InsertRight8").show();
+
+            $("#update-jiaolian4SelectLeft8").show();
+            $("#update-jiaolian4InsertLeft8").show();
+            $("#update-jiaolian4SelectRight8").show();
+            $("#update-jiaolian4InsertRight8").show();
+
+            $("#update-jiaolian5SelectLeft8").show();
+            $("#update-jiaolian5InsertLeft8").show();
+            $("#update-jiaolian5SelectRight8").show();
+            $("#update-jiaolian5InsertRight8").show();
+
+            $("#update-jiaolian6SelectLeft8").hide();
+            $("#update-jiaolian6InsertLeft8").hide();
+            $("#update-jiaolian6SelectRight8").hide();
+            $("#update-jiaolian6InsertRight8").hide();
+        }
+        if (selectedValue8 == '开六孔') {
+            $("#update-jiaolian3SelectLeft8").show();
+            $("#update-jiaolian3InsertLeft8").show();
+            $("#update-jiaolian3SelectRight8").show();
+            $("#update-jiaolian3InsertRight8").show();
+
+            $("#update-jiaolian4SelectLeft8").show();
+            $("#update-jiaolian4InsertLeft8").show();
+            $("#update-jiaolian4SelectRight8").show();
+            $("#update-jiaolian4InsertRight8").show();
+
+            $("#update-jiaolian5SelectLeft8").show();
+            $("#update-jiaolian5InsertLeft8").show();
+            $("#update-jiaolian5SelectRight8").show();
+            $("#update-jiaolian5InsertRight8").show();
+
+            $("#update-jiaolian6SelectLeft8").show();
+            $("#update-jiaolian6InsertLeft8").show();
+            $("#update-jiaolian6SelectRight8").show();
+            $("#update-jiaolian6InsertRight8").show();
+        }
+    })
+
+    $('#update-kaijiaolian9').on('change', function () {
+        var selectedValue9 = $(this).val();
+        if (selectedValue9 == '开二孔') {
+            $("#update-jiaolian3SelectLeft9").hide();
+            $("#update-jiaolian3InsertLeft9").hide();
+            $("#update-jiaolian3SelectRight9").hide();
+            $("#update-jiaolian3InsertRight9").hide();
+
+            $("#update-jiaolian4SelectLeft9").hide();
+            $("#update-jiaolian4InsertLeft9").hide();
+            $("#update-jiaolian4SelectRight9").hide();
+            $("#update-jiaolian4InsertRight9").hide();
+
+            $("#update-jiaolian5SelectLeft9").hide();
+            $("#update-jiaolian5InsertLeft9").hide();
+            $("#update-jiaolian5SelectRight9").hide();
+            $("#update-jiaolian5InsertRight9").hide();
+
+            $("#update-jiaolian6SelectLeft9").hide();
+            $("#update-jiaolian6InsertLeft9").hide();
+            $("#update-jiaolian6SelectRight9").hide();
+            $("#update-jiaolian6InsertRight9").hide();
+
+        }
+        if (selectedValue9 == '开三孔') {
+            $("#update-jiaolian3SelectLeft9").show();
+            $("#update-jiaolian3InsertLeft9").show();
+            $("#update-jiaolian3SelectRight9").show();
+            $("#update-jiaolian3InsertRight9").show();
+
+            $("#update-jiaolian4SelectLeft9").hide();
+            $("#update-jiaolian4InsertLeft9").hide();
+            $("#update-jiaolian4SelectRight9").hide();
+            $("#update-jiaolian4InsertRight9").hide();
+
+            $("#update-jiaolian5SelectLeft9").hide();
+            $("#update-jiaolian5InsertLeft9").hide();
+            $("#update-jiaolian5SelectRight9").hide();
+            $("#update-jiaolian5InsertRight9").hide();
+
+            $("#update-jiaolian6SelectLeft9").hide();
+            $("#update-jiaolian6InsertLeft9").hide();
+            $("#update-jiaolian6SelectRight9").hide();
+            $("#update-jiaolian6InsertRight9").hide();
+        }
+        if (selectedValue9 == '开四孔') {
+            $("#update-jiaolian3SelectLeft9").show();
+            $("#update-jiaolian3InsertLeft9").show();
+            $("#update-jiaolian3SelectRight9").show();
+            $("#update-jiaolian3InsertRight9").show();
+
+            $("#update-jiaolian4SelectLeft9").show();
+            $("#update-jiaolian4InsertLeft9").show();
+            $("#update-jiaolian4SelectRight9").show();
+            $("#update-jiaolian4InsertRight9").show();
+
+            $("#update-jiaolian5SelectLeft9").hide();
+            $("#update-jiaolian5InsertLeft9").hide();
+            $("#update-jiaolian5SelectRight9").hide();
+            $("#update-jiaolian5InsertRight9").hide();
+
+            $("#update-jiaolian6SelectLeft9").hide();
+            $("#update-jiaolian6InsertLeft9").hide();
+            $("#update-jiaolian6SelectRight9").hide();
+            $("#update-jiaolian6InsertRight9").hide();
+        }
+        if (selectedValue9 == '开五孔') {
+            $("#update-jiaolian3SelectLeft9").show();
+            $("#update-jiaolian3InsertLeft9").show();
+            $("#update-jiaolian3SelectRight9").show();
+            $("#update-jiaolian3InsertRight9").show();
+
+            $("#update-jiaolian4SelectLeft9").show();
+            $("#update-jiaolian4InsertLeft9").show();
+            $("#update-jiaolian4SelectRight9").show();
+            $("#update-jiaolian4InsertRight9").show();
+
+            $("#update-jiaolian5SelectLeft9").show();
+            $("#update-jiaolian5InsertLeft9").show();
+            $("#update-jiaolian5SelectRight9").show();
+            $("#update-jiaolian5InsertRight9").show();
+
+            $("#update-jiaolian6SelectLeft9").hide();
+            $("#update-jiaolian6InsertLeft9").hide();
+            $("#update-jiaolian6SelectRight9").hide();
+            $("#update-jiaolian6InsertRight9").hide();
+        }
+        if (selectedValue9 == '开六孔') {
+            $("#update-jiaolian3SelectLeft9").show();
+            $("#update-jiaolian3InsertLeft9").show();
+            $("#update-jiaolian3SelectRight9").show();
+            $("#update-jiaolian3InsertRight9").show();
+
+            $("#update-jiaolian4SelectLeft9").show();
+            $("#update-jiaolian4InsertLeft9").show();
+            $("#update-jiaolian4SelectRight9").show();
+            $("#update-jiaolian4InsertRight9").show();
+
+            $("#update-jiaolian5SelectLeft9").show();
+            $("#update-jiaolian5InsertLeft9").show();
+            $("#update-jiaolian5SelectRight9").show();
+            $("#update-jiaolian5InsertRight9").show();
+
+            $("#update-jiaolian6SelectLeft9").show();
+            $("#update-jiaolian6InsertLeft9").show();
+            $("#update-jiaolian6SelectRight9").show();
+            $("#update-jiaolian6InsertRight9").show();
+        }
+    })
+
+    $('#update-kaijiaolian10').on('change', function () {
+        var selectedValue10 = $(this).val();
+        if (selectedValue10 == '开二孔') {
+            $("#update-jiaolian3SelectLeft10").hide();
+            $("#update-jiaolian3InsertLeft10").hide();
+            $("#update-jiaolian3SelectRight10").hide();
+            $("#update-jiaolian3InsertRight10").hide();
+
+            $("#update-jiaolian4SelectLeft10").hide();
+            $("#update-jiaolian4InsertLeft10").hide();
+            $("#update-jiaolian4SelectRight10").hide();
+            $("#update-jiaolian4InsertRight10").hide();
+
+            $("#update-jiaolian5SelectLeft10").hide();
+            $("#update-jiaolian5InsertLeft10").hide();
+            $("#update-jiaolian5SelectRight10").hide();
+            $("#update-jiaolian5InsertRight10").hide();
+
+            $("#update-jiaolian6SelectLeft10").hide();
+            $("#update-jiaolian6InsertLeft10").hide();
+            $("#update-jiaolian6SelectRight10").hide();
+            $("#update-jiaolian6InsertRight10").hide();
+
+        }
+        if (selectedValue10 == '开三孔') {
+            $("#update-jiaolian3SelectLeft10").show();
+            $("#update-jiaolian3InsertLeft10").show();
+            $("#update-jiaolian3SelectRight10").show();
+            $("#update-jiaolian3InsertRight10").show();
+
+            $("#update-jiaolian4SelectLeft10").hide();
+            $("#update-jiaolian4InsertLeft10").hide();
+            $("#update-jiaolian4SelectRight10").hide();
+            $("#update-jiaolian4InsertRight10").hide();
+
+            $("#update-jiaolian5SelectLeft10").hide();
+            $("#update-jiaolian5InsertLeft10").hide();
+            $("#update-jiaolian5SelectRight10").hide();
+            $("#update-jiaolian5InsertRight10").hide();
+
+            $("#update-jiaolian6SelectLeft10").hide();
+            $("#update-jiaolian6InsertLeft10").hide();
+            $("#update-jiaolian6SelectRight10").hide();
+            $("#update-jiaolian6InsertRight10").hide();
+        }
+        if (selectedValue10 == '开四孔') {
+            $("#update-jiaolian3SelectLeft10").show();
+            $("#update-jiaolian3InsertLeft10").show();
+            $("#update-jiaolian3SelectRight10").show();
+            $("#update-jiaolian3InsertRight10").show();
+
+            $("#update-jiaolian4SelectLeft10").show();
+            $("#update-jiaolian4InsertLeft10").show();
+            $("#update-jiaolian4SelectRight10").show();
+            $("#update-jiaolian4InsertRight10").show();
+
+            $("#update-jiaolian5SelectLeft10").hide();
+            $("#update-jiaolian5InsertLeft10").hide();
+            $("#update-jiaolian5SelectRight10").hide();
+            $("#update-jiaolian5InsertRight10").hide();
+
+            $("#update-jiaolian6SelectLeft10").hide();
+            $("#update-jiaolian6InsertLeft10").hide();
+            $("#update-jiaolian6SelectRight10").hide();
+            $("#update-jiaolian6InsertRight10").hide();
+        }
+        if (selectedValue10 == '开五孔') {
+            $("#update-jiaolian3SelectLeft10").show();
+            $("#update-jiaolian3InsertLeft10").show();
+            $("#update-jiaolian3SelectRight10").show();
+            $("#update-jiaolian3InsertRight10").show();
+
+            $("#update-jiaolian4SelectLeft10").show();
+            $("#update-jiaolian4InsertLeft10").show();
+            $("#update-jiaolian4SelectRight10").show();
+            $("#update-jiaolian4InsertRight10").show();
+
+            $("#update-jiaolian5SelectLeft10").show();
+            $("#update-jiaolian5InsertLeft10").show();
+            $("#update-jiaolian5SelectRight10").show();
+            $("#update-jiaolian5InsertRight10").show();
+
+            $("#update-jiaolian6SelectLeft10").hide();
+            $("#update-jiaolian6InsertLeft10").hide();
+            $("#update-jiaolian6SelectRight10").hide();
+            $("#update-jiaolian6InsertRight10").hide();
+        }
+        if (selectedValue10 == '开六孔') {
+            $("#update-jiaolian3SelectLeft10").show();
+            $("#update-jiaolian3InsertLeft10").show();
+            $("#update-jiaolian3SelectRight10").show();
+            $("#update-jiaolian3InsertRight10").show();
+
+            $("#update-jiaolian4SelectLeft10").show();
+            $("#update-jiaolian4InsertLeft10").show();
+            $("#update-jiaolian4SelectRight10").show();
+            $("#update-jiaolian4InsertRight10").show();
+
+            $("#update-jiaolian5SelectLeft10").show();
+            $("#update-jiaolian5InsertLeft10").show();
+            $("#update-jiaolian5SelectRight10").show();
+            $("#update-jiaolian5InsertRight10").show();
+
+            $("#update-jiaolian6SelectLeft10").show();
+            $("#update-jiaolian6InsertLeft10").show();
+            $("#update-jiaolian6SelectRight10").show();
+            $("#update-jiaolian6InsertRight10").show();
+        }
+    })
+
+    $('#update-kaijiaolian11').on('change', function () {
+        var selectedValue11 = $(this).val();
+        if (selectedValue11 == '开二孔') {
+            $("#update-jiaolian3SelectLeft11").hide();
+            $("#update-jiaolian3InsertLeft11").hide();
+            $("#update-jiaolian3SelectRight11").hide();
+            $("#update-jiaolian3InsertRight11").hide();
+
+            $("#update-jiaolian4SelectLeft11").hide();
+            $("#update-jiaolian4InsertLeft11").hide();
+            $("#update-jiaolian4SelectRight11").hide();
+            $("#update-jiaolian4InsertRight11").hide();
+
+            $("#update-jiaolian5SelectLeft11").hide();
+            $("#update-jiaolian5InsertLeft11").hide();
+            $("#update-jiaolian5SelectRight11").hide();
+            $("#update-jiaolian5InsertRight11").hide();
+
+            $("#update-jiaolian6SelectLeft11").hide();
+            $("#update-jiaolian6InsertLeft11").hide();
+            $("#update-jiaolian6SelectRight11").hide();
+            $("#update-jiaolian6InsertRight11").hide();
+
+        }
+        if (selectedValue11 == '开三孔') {
+            $("#update-jiaolian3SelectLeft11").show();
+            $("#update-jiaolian3InsertLeft11").show();
+            $("#update-jiaolian3SelectRight11").show();
+            $("#update-jiaolian3InsertRight11").show();
+
+            $("#update-jiaolian4SelectLeft11").hide();
+            $("#update-jiaolian4InsertLeft11").hide();
+            $("#update-jiaolian4SelectRight11").hide();
+            $("#update-jiaolian4InsertRight11").hide();
+
+            $("#update-jiaolian5SelectLeft11").hide();
+            $("#update-jiaolian5InsertLeft11").hide();
+            $("#update-jiaolian5SelectRight11").hide();
+            $("#update-jiaolian5InsertRight11").hide();
+
+            $("#update-jiaolian6SelectLeft11").hide();
+            $("#update-jiaolian6InsertLeft11").hide();
+            $("#update-jiaolian6SelectRight11").hide();
+            $("#update-jiaolian6InsertRight11").hide();
+        }
+        if (selectedValue11 == '开四孔') {
+            $("#update-jiaolian3SelectLeft11").show();
+            $("#update-jiaolian3InsertLeft11").show();
+            $("#update-jiaolian3SelectRight11").show();
+            $("#update-jiaolian3InsertRight11").show();
+
+            $("#update-jiaolian4SelectLeft11").show();
+            $("#update-jiaolian4InsertLeft11").show();
+            $("#update-jiaolian4SelectRight11").show();
+            $("#update-jiaolian4InsertRight11").show();
+
+            $("#update-jiaolian5SelectLeft11").hide();
+            $("#update-jiaolian5InsertLeft11").hide();
+            $("#update-jiaolian5SelectRight11").hide();
+            $("#update-jiaolian5InsertRight11").hide();
+
+            $("#update-jiaolian6SelectLeft11").hide();
+            $("#update-jiaolian6InsertLeft11").hide();
+            $("#update-jiaolian6SelectRight11").hide();
+            $("#update-jiaolian6InsertRight11").hide();
+        }
+        if (selectedValue11 == '开五孔') {
+            $("#update-jiaolian3SelectLeft11").show();
+            $("#update-jiaolian3InsertLeft11").show();
+            $("#update-jiaolian3SelectRight11").show();
+            $("#update-jiaolian3InsertRight11").show();
+
+            $("#update-jiaolian4SelectLeft11").show();
+            $("#update-jiaolian4InsertLeft11").show();
+            $("#update-jiaolian4SelectRight11").show();
+            $("#update-jiaolian4InsertRight11").show();
+
+            $("#update-jiaolian5SelectLeft11").show();
+            $("#update-jiaolian5InsertLeft11").show();
+            $("#update-jiaolian5SelectRight11").show();
+            $("#update-jiaolian5InsertRight11").show();
+
+            $("#update-jiaolian6SelectLeft11").hide();
+            $("#update-jiaolian6InsertLeft11").hide();
+            $("#update-jiaolian6SelectRight11").hide();
+            $("#update-jiaolian6InsertRight11").hide();
+        }
+        if (selectedValue11 == '开六孔') {
+            $("#update-jiaolian3SelectLeft11").show();
+            $("#update-jiaolian3InsertLeft11").show();
+            $("#update-jiaolian3SelectRight11").show();
+            $("#update-jiaolian3InsertRight11").show();
+
+            $("#update-jiaolian4SelectLeft11").show();
+            $("#update-jiaolian4InsertLeft11").show();
+            $("#update-jiaolian4SelectRight11").show();
+            $("#update-jiaolian4InsertRight11").show();
+
+            $("#update-jiaolian5SelectLeft11").show();
+            $("#update-jiaolian5InsertLeft11").show();
+            $("#update-jiaolian5SelectRight11").show();
+            $("#update-jiaolian5InsertRight11").show();
+
+            $("#update-jiaolian6SelectLeft11").show();
+            $("#update-jiaolian6InsertLeft11").show();
+            $("#update-jiaolian6SelectRight11").show();
+            $("#update-jiaolian6InsertRight11").show();
+        }
+    })
+
+    $('#update-kaijiaolian12').on('change', function () {
+        var selectedValue12 = $(this).val();
+        if (selectedValue12 == '开二孔') {
+            $("#update-jiaolian3SelectLeft12").hide();
+            $("#update-jiaolian3InsertLeft12").hide();
+            $("#update-jiaolian3SelectRight12").hide();
+            $("#update-jiaolian3InsertRight12").hide();
+
+            $("#update-jiaolian4SelectLeft12").hide();
+            $("#update-jiaolian4InsertLeft12").hide();
+            $("#update-jiaolian4SelectRight12").hide();
+            $("#update-jiaolian4InsertRight12").hide();
+
+            $("#update-jiaolian5SelectLeft12").hide();
+            $("#update-jiaolian5InsertLeft12").hide();
+            $("#update-jiaolian5SelectRight12").hide();
+            $("#update-jiaolian5InsertRight12").hide();
+
+            $("#update-jiaolian6SelectLeft12").hide();
+            $("#update-jiaolian6InsertLeft12").hide();
+            $("#update-jiaolian6SelectRight12").hide();
+            $("#update-jiaolian6InsertRight12").hide();
+
+        }
+        if (selectedValue12 == '开三孔') {
+            $("#update-jiaolian3SelectLeft12").show();
+            $("#update-jiaolian3InsertLeft12").show();
+            $("#update-jiaolian3SelectRight12").show();
+            $("#update-jiaolian3InsertRight12").show();
+
+            $("#update-jiaolian4SelectLeft12").hide();
+            $("#update-jiaolian4InsertLeft12").hide();
+            $("#update-jiaolian4SelectRight12").hide();
+            $("#update-jiaolian4InsertRight12").hide();
+
+            $("#update-jiaolian5SelectLeft12").hide();
+            $("#update-jiaolian5InsertLeft12").hide();
+            $("#update-jiaolian5SelectRight12").hide();
+            $("#update-jiaolian5InsertRight12").hide();
+
+            $("#update-jiaolian6SelectLeft12").hide();
+            $("#update-jiaolian6InsertLeft12").hide();
+            $("#update-jiaolian6SelectRight12").hide();
+            $("#update-jiaolian6InsertRight12").hide();
+        }
+        if (selectedValue12 == '开四孔') {
+            $("#update-jiaolian3SelectLeft12").show();
+            $("#update-jiaolian3InsertLeft12").show();
+            $("#update-jiaolian3SelectRight12").show();
+            $("#update-jiaolian3InsertRight12").show();
+
+            $("#update-jiaolian4SelectLeft12").show();
+            $("#update-jiaolian4InsertLeft12").show();
+            $("#update-jiaolian4SelectRight12").show();
+            $("#update-jiaolian4InsertRight12").show();
+
+            $("#update-jiaolian5SelectLeft12").hide();
+            $("#update-jiaolian5InsertLeft12").hide();
+            $("#update-jiaolian5SelectRight12").hide();
+            $("#update-jiaolian5InsertRight12").hide();
+
+            $("#update-jiaolian6SelectLeft12").hide();
+            $("#update-jiaolian6InsertLeft12").hide();
+            $("#update-jiaolian6SelectRight12").hide();
+            $("#update-jiaolian6InsertRight12").hide();
+        }
+        if (selectedValue12 == '开五孔') {
+            $("#update-jiaolian3SelectLeft12").show();
+            $("#update-jiaolian3InsertLeft12").show();
+            $("#update-jiaolian3SelectRight12").show();
+            $("#update-jiaolian3InsertRight12").show();
+
+            $("#update-jiaolian4SelectLeft12").show();
+            $("#update-jiaolian4InsertLeft12").show();
+            $("#update-jiaolian4SelectRight12").show();
+            $("#update-jiaolian4InsertRight12").show();
+
+            $("#update-jiaolian5SelectLeft12").show();
+            $("#update-jiaolian5InsertLeft12").show();
+            $("#update-jiaolian5SelectRight12").show();
+            $("#update-jiaolian5InsertRight12").show();
+
+            $("#update-jiaolian6SelectLeft12").hide();
+            $("#update-jiaolian6InsertLeft12").hide();
+            $("#update-jiaolian6SelectRight12").hide();
+            $("#update-jiaolian6InsertRight12").hide();
+        }
+        if (selectedValue12 == '开六孔') {
+            $("#update-jiaolian3SelectLeft12").show();
+            $("#update-jiaolian3InsertLeft12").show();
+            $("#update-jiaolian3SelectRight12").show();
+            $("#update-jiaolian3InsertRight12").show();
+
+            $("#update-jiaolian4SelectLeft12").show();
+            $("#update-jiaolian4InsertLeft12").show();
+            $("#update-jiaolian4SelectRight12").show();
+            $("#update-jiaolian4InsertRight12").show();
+
+            $("#update-jiaolian5SelectLeft12").show();
+            $("#update-jiaolian5InsertLeft12").show();
+            $("#update-jiaolian5SelectRight12").show();
+            $("#update-jiaolian5InsertRight12").show();
+
+            $("#update-jiaolian6SelectLeft12").show();
+            $("#update-jiaolian6InsertLeft12").show();
+            $("#update-jiaolian6SelectRight12").show();
+            $("#update-jiaolian6InsertRight12").show();
+        }
+    })
+
+    $('#update-kaijiaolian13').on('change', function () {
+        var selectedValue13 = $(this).val();
+        if (selectedValue13 == '开二孔') {
+            $("#update-jiaolian3SelectLeft13").hide();
+            $("#update-jiaolian3InsertLeft13").hide();
+            $("#update-jiaolian3SelectRight13").hide();
+            $("#update-jiaolian3InsertRight13").hide();
+
+            $("#update-jiaolian4SelectLeft13").hide();
+            $("#update-jiaolian4InsertLeft13").hide();
+            $("#update-jiaolian4SelectRight13").hide();
+            $("#update-jiaolian4InsertRight13").hide();
+
+            $("#update-jiaolian5SelectLeft13").hide();
+            $("#update-jiaolian5InsertLeft13").hide();
+            $("#update-jiaolian5SelectRight13").hide();
+            $("#update-jiaolian5InsertRight13").hide();
+
+            $("#update-jiaolian6SelectLeft13").hide();
+            $("#update-jiaolian6InsertLeft13").hide();
+            $("#update-jiaolian6SelectRight13").hide();
+            $("#update-jiaolian6InsertRight13").hide();
+
+        }
+        if (selectedValue13 == '开三孔') {
+            $("#update-jiaolian3SelectLeft13").show();
+            $("#update-jiaolian3InsertLeft13").show();
+            $("#update-jiaolian3SelectRight13").show();
+            $("#update-jiaolian3InsertRight13").show();
+
+            $("#update-jiaolian4SelectLeft13").hide();
+            $("#update-jiaolian4InsertLeft13").hide();
+            $("#update-jiaolian4SelectRight13").hide();
+            $("#update-jiaolian4InsertRight13").hide();
+
+            $("#update-jiaolian5SelectLeft13").hide();
+            $("#update-jiaolian5InsertLeft13").hide();
+            $("#update-jiaolian5SelectRight13").hide();
+            $("#update-jiaolian5InsertRight13").hide();
+
+            $("#update-jiaolian6SelectLeft13").hide();
+            $("#update-jiaolian6InsertLeft13").hide();
+            $("#update-jiaolian6SelectRight13").hide();
+            $("#update-jiaolian6InsertRight13").hide();
+        }
+        if (selectedValue13 == '开四孔') {
+            $("#update-jiaolian3SelectLeft13").show();
+            $("#update-jiaolian3InsertLeft13").show();
+            $("#update-jiaolian3SelectRight13").show();
+            $("#update-jiaolian3InsertRight13").show();
+
+            $("#update-jiaolian4SelectLeft13").show();
+            $("#update-jiaolian4InsertLeft13").show();
+            $("#update-jiaolian4SelectRight13").show();
+            $("#update-jiaolian4InsertRight13").show();
+
+            $("#update-jiaolian5SelectLeft13").hide();
+            $("#update-jiaolian5InsertLeft13").hide();
+            $("#update-jiaolian5SelectRight13").hide();
+            $("#update-jiaolian5InsertRight13").hide();
+
+            $("#update-jiaolian6SelectLeft13").hide();
+            $("#update-jiaolian6InsertLeft13").hide();
+            $("#update-jiaolian6SelectRight13").hide();
+            $("#update-jiaolian6InsertRight13").hide();
+        }
+        if (selectedValue13 == '开五孔') {
+            $("#update-jiaolian3SelectLeft13").show();
+            $("#update-jiaolian3InsertLeft13").show();
+            $("#update-jiaolian3SelectRight13").show();
+            $("#update-jiaolian3InsertRight13").show();
+
+            $("#update-jiaolian4SelectLeft13").show();
+            $("#update-jiaolian4InsertLeft13").show();
+            $("#update-jiaolian4SelectRight13").show();
+            $("#update-jiaolian4InsertRight13").show();
+
+            $("#update-jiaolian5SelectLeft13").show();
+            $("#update-jiaolian5InsertLeft13").show();
+            $("#update-jiaolian5SelectRight13").show();
+            $("#update-jiaolian5InsertRight13").show();
+
+            $("#update-jiaolian6SelectLeft13").hide();
+            $("#update-jiaolian6InsertLeft13").hide();
+            $("#update-jiaolian6SelectRight13").hide();
+            $("#update-jiaolian6InsertRight13").hide();
+        }
+        if (selectedValue13 == '开六孔') {
+            $("#update-jiaolian3SelectLeft13").show();
+            $("#update-jiaolian3InsertLeft13").show();
+            $("#update-jiaolian3SelectRight13").show();
+            $("#update-jiaolian3InsertRight13").show();
+
+            $("#update-jiaolian4SelectLeft13").show();
+            $("#update-jiaolian4InsertLeft13").show();
+            $("#update-jiaolian4SelectRight13").show();
+            $("#update-jiaolian4InsertRight13").show();
+
+            $("#update-jiaolian5SelectLeft13").show();
+            $("#update-jiaolian5InsertLeft13").show();
+            $("#update-jiaolian5SelectRight13").show();
+            $("#update-jiaolian5InsertRight13").show();
+
+            $("#update-jiaolian6SelectLeft13").show();
+            $("#update-jiaolian6InsertLeft13").show();
+            $("#update-jiaolian6SelectRight13").show();
+            $("#update-jiaolian6InsertRight13").show();
+        }
+    })
+
+    $('#update-kaijiaolian14').on('change', function () {
+        var selectedValue14 = $(this).val();
+        if (selectedValue14 == '开二孔') {
+            $("#update-jiaolian3SelectLeft14").hide();
+            $("#update-jiaolian3InsertLeft14").hide();
+            $("#update-jiaolian3SelectRight14").hide();
+            $("#update-jiaolian3InsertRight14").hide();
+
+            $("#update-jiaolian4SelectLeft14").hide();
+            $("#update-jiaolian4InsertLeft14").hide();
+            $("#update-jiaolian4SelectRight14").hide();
+            $("#update-jiaolian4InsertRight14").hide();
+
+            $("#update-jiaolian5SelectLeft14").hide();
+            $("#update-jiaolian5InsertLeft14").hide();
+            $("#update-jiaolian5SelectRight14").hide();
+            $("#update-jiaolian5InsertRight14").hide();
+
+            $("#update-jiaolian6SelectLeft14").hide();
+            $("#update-jiaolian6InsertLeft14").hide();
+            $("#update-jiaolian6SelectRight14").hide();
+            $("#update-jiaolian6InsertRight14").hide();
+
+        }
+        if (selectedValue14 == '开三孔') {
+            $("#update-jiaolian3SelectLeft14").show();
+            $("#update-jiaolian3InsertLeft14").show();
+            $("#update-jiaolian3SelectRight14").show();
+            $("#update-jiaolian3InsertRight14").show();
+
+            $("#update-jiaolian4SelectLeft14").hide();
+            $("#update-jiaolian4InsertLeft14").hide();
+            $("#update-jiaolian4SelectRight14").hide();
+            $("#update-jiaolian4InsertRight14").hide();
+
+            $("#update-jiaolian5SelectLeft14").hide();
+            $("#update-jiaolian5InsertLeft14").hide();
+            $("#update-jiaolian5SelectRight14").hide();
+            $("#update-jiaolian5InsertRight14").hide();
+
+            $("#update-jiaolian6SelectLeft14").hide();
+            $("#update-jiaolian6InsertLeft14").hide();
+            $("#update-jiaolian6SelectRight14").hide();
+            $("#update-jiaolian6InsertRight14").hide();
+        }
+        if (selectedValue14 == '开四孔') {
+            $("#update-jiaolian3SelectLeft14").show();
+            $("#update-jiaolian3InsertLeft14").show();
+            $("#update-jiaolian3SelectRight14").show();
+            $("#update-jiaolian3InsertRight14").show();
+
+            $("#update-jiaolian4SelectLeft14").show();
+            $("#update-jiaolian4InsertLeft14").show();
+            $("#update-jiaolian4SelectRight14").show();
+            $("#update-jiaolian4InsertRight14").show();
+
+            $("#update-jiaolian5SelectLeft14").hide();
+            $("#update-jiaolian5InsertLeft14").hide();
+            $("#update-jiaolian5SelectRight14").hide();
+            $("#update-jiaolian5InsertRight14").hide();
+
+            $("#update-jiaolian6SelectLeft14").hide();
+            $("#update-jiaolian6InsertLeft14").hide();
+            $("#update-jiaolian6SelectRight14").hide();
+            $("#update-jiaolian6InsertRight14").hide();
+        }
+        if (selectedValue14 == '开五孔') {
+            $("#update-jiaolian3SelectLeft14").show();
+            $("#update-jiaolian3InsertLeft14").show();
+            $("#update-jiaolian3SelectRight14").show();
+            $("#update-jiaolian3InsertRight14").show();
+
+            $("#update-jiaolian4SelectLeft14").show();
+            $("#update-jiaolian4InsertLeft14").show();
+            $("#update-jiaolian4SelectRight14").show();
+            $("#update-jiaolian4InsertRight14").show();
+
+            $("#update-jiaolian5SelectLeft14").show();
+            $("#update-jiaolian5InsertLeft14").show();
+            $("#update-jiaolian5SelectRight14").show();
+            $("#update-jiaolian5InsertRight14").show();
+
+            $("#update-jiaolian6SelectLeft14").hide();
+            $("#update-jiaolian6InsertLeft14").hide();
+            $("#update-jiaolian6SelectRight14").hide();
+            $("#update-jiaolian6InsertRight14").hide();
+        }
+        if (selectedValue14 == '开六孔') {
+            $("#update-jiaolian3SelectLeft14").show();
+            $("#update-jiaolian3InsertLeft14").show();
+            $("#update-jiaolian3SelectRight14").show();
+            $("#update-jiaolian3InsertRight14").show();
+
+            $("#update-jiaolian4SelectLeft14").show();
+            $("#update-jiaolian4InsertLeft14").show();
+            $("#update-jiaolian4SelectRight14").show();
+            $("#update-jiaolian4InsertRight14").show();
+
+            $("#update-jiaolian5SelectLeft14").show();
+            $("#update-jiaolian5InsertLeft14").show();
+            $("#update-jiaolian5SelectRight14").show();
+            $("#update-jiaolian5InsertRight14").show();
+
+            $("#update-jiaolian6SelectLeft14").show();
+            $("#update-jiaolian6InsertLeft14").show();
+            $("#update-jiaolian6SelectRight14").show();
+            $("#update-jiaolian6InsertRight14").show();
+        }
+    })
+
+    $('#update-kaijiaolian15').on('change', function () {
+        var selectedValue15 = $(this).val();
+        if (selectedValue15 == '开二孔') {
+            $("#update-jiaolian3SelectLeft15").hide();
+            $("#update-jiaolian3InsertLeft15").hide();
+            $("#update-jiaolian3SelectRight15").hide();
+            $("#update-jiaolian3InsertRight15").hide();
+
+            $("#update-jiaolian4SelectLeft15").hide();
+            $("#update-jiaolian4InsertLeft15").hide();
+            $("#update-jiaolian4SelectRight15").hide();
+            $("#update-jiaolian4InsertRight15").hide();
+
+            $("#update-jiaolian5SelectLeft15").hide();
+            $("#update-jiaolian5InsertLeft15").hide();
+            $("#update-jiaolian5SelectRight15").hide();
+            $("#update-jiaolian5InsertRight15").hide();
+
+            $("#update-jiaolian6SelectLeft15").hide();
+            $("#update-jiaolian6InsertLeft15").hide();
+            $("#update-jiaolian6SelectRight15").hide();
+            $("#update-jiaolian6InsertRight15").hide();
+
+        }
+        if (selectedValue15 == '开三孔') {
+            $("#update-jiaolian3SelectLeft15").show();
+            $("#update-jiaolian3InsertLeft15").show();
+            $("#update-jiaolian3SelectRight15").show();
+            $("#update-jiaolian3InsertRight15").show();
+
+            $("#update-jiaolian4SelectLeft15").hide();
+            $("#update-jiaolian4InsertLeft15").hide();
+            $("#update-jiaolian4SelectRight15").hide();
+            $("#update-jiaolian4InsertRight15").hide();
+
+            $("#update-jiaolian5SelectLeft15").hide();
+            $("#update-jiaolian5InsertLeft15").hide();
+            $("#update-jiaolian5SelectRight15").hide();
+            $("#update-jiaolian5InsertRight15").hide();
+
+            $("#update-jiaolian6SelectLeft15").hide();
+            $("#update-jiaolian6InsertLeft15").hide();
+            $("#update-jiaolian6SelectRight15").hide();
+            $("#update-jiaolian6InsertRight15").hide();
+        }
+        if (selectedValue15 == '开四孔') {
+            $("#update-jiaolian3SelectLeft15").show();
+            $("#update-jiaolian3InsertLeft15").show();
+            $("#update-jiaolian3SelectRight15").show();
+            $("#update-jiaolian3InsertRight15").show();
+
+            $("#update-jiaolian4SelectLeft15").show();
+            $("#update-jiaolian4InsertLeft15").show();
+            $("#update-jiaolian4SelectRight15").show();
+            $("#update-jiaolian4InsertRight15").show();
+
+            $("#update-jiaolian5SelectLeft15").hide();
+            $("#update-jiaolian5InsertLeft15").hide();
+            $("#update-jiaolian5SelectRight15").hide();
+            $("#update-jiaolian5InsertRight15").hide();
+
+            $("#update-jiaolian6SelectLeft15").hide();
+            $("#update-jiaolian6InsertLeft15").hide();
+            $("#update-jiaolian6SelectRight15").hide();
+            $("#update-jiaolian6InsertRight15").hide();
+        }
+        if (selectedValue15 == '开五孔') {
+            $("#update-jiaolian3SelectLeft15").show();
+            $("#update-jiaolian3InsertLeft15").show();
+            $("#update-jiaolian3SelectRight15").show();
+            $("#update-jiaolian3InsertRight15").show();
+
+            $("#update-jiaolian4SelectLeft15").show();
+            $("#update-jiaolian4InsertLeft15").show();
+            $("#update-jiaolian4SelectRight15").show();
+            $("#update-jiaolian4InsertRight15").show();
+
+            $("#update-jiaolian5SelectLeft15").show();
+            $("#update-jiaolian5InsertLeft15").show();
+            $("#update-jiaolian5SelectRight15").show();
+            $("#update-jiaolian5InsertRight15").show();
+
+            $("#update-jiaolian6SelectLeft15").hide();
+            $("#update-jiaolian6InsertLeft15").hide();
+            $("#update-jiaolian6SelectRight15").hide();
+            $("#update-jiaolian6InsertRight15").hide();
+        }
+        if (selectedValue15 == '开六孔') {
+            $("#update-jiaolian3SelectLeft15").show();
+            $("#update-jiaolian3InsertLeft15").show();
+            $("#update-jiaolian3SelectRight15").show();
+            $("#update-jiaolian3InsertRight15").show();
+
+            $("#update-jiaolian4SelectLeft15").show();
+            $("#update-jiaolian4InsertLeft15").show();
+            $("#update-jiaolian4SelectRight15").show();
+            $("#update-jiaolian4InsertRight15").show();
+
+            $("#update-jiaolian5SelectLeft15").show();
+            $("#update-jiaolian5InsertLeft15").show();
+            $("#update-jiaolian5SelectRight15").show();
+            $("#update-jiaolian5InsertRight15").show();
+
+            $("#update-jiaolian6SelectLeft15").show();
+            $("#update-jiaolian6InsertLeft15").show();
+            $("#update-jiaolian6SelectRight15").show();
+            $("#update-jiaolian6InsertRight15").show();
+        }
+    })
+
+    $('#update-kaijiaolian16').on('change', function () {
+        var selectedValue16 = $(this).val();
+        if (selectedValue16 == '开二孔') {
+            $("#update-jiaolian3SelectLeft16").hide();
+            $("#update-jiaolian3InsertLeft16").hide();
+            $("#update-jiaolian3SelectRight16").hide();
+            $("#update-jiaolian3InsertRight16").hide();
+
+            $("#update-jiaolian4SelectLeft16").hide();
+            $("#update-jiaolian4InsertLeft16").hide();
+            $("#update-jiaolian4SelectRight16").hide();
+            $("#update-jiaolian4InsertRight16").hide();
+
+            $("#update-jiaolian5SelectLeft16").hide();
+            $("#update-jiaolian5InsertLeft16").hide();
+            $("#update-jiaolian5SelectRight16").hide();
+            $("#update-jiaolian5InsertRight16").hide();
+
+            $("#update-jiaolian6SelectLeft16").hide();
+            $("#update-jiaolian6InsertLeft16").hide();
+            $("#update-jiaolian6SelectRight16").hide();
+            $("#update-jiaolian6InsertRight16").hide();
+
+        }
+        if (selectedValue16 == '开三孔') {
+            $("#update-jiaolian3SelectLeft16").show();
+            $("#update-jiaolian3InsertLeft16").show();
+            $("#update-jiaolian3SelectRight16").show();
+            $("#update-jiaolian3InsertRight16").show();
+
+            $("#update-jiaolian4SelectLeft16").hide();
+            $("#update-jiaolian4InsertLeft16").hide();
+            $("#update-jiaolian4SelectRight16").hide();
+            $("#update-jiaolian4InsertRight16").hide();
+
+            $("#update-jiaolian5SelectLeft16").hide();
+            $("#update-jiaolian5InsertLeft16").hide();
+            $("#update-jiaolian5SelectRight16").hide();
+            $("#update-jiaolian5InsertRight16").hide();
+
+            $("#update-jiaolian6SelectLeft16").hide();
+            $("#update-jiaolian6InsertLeft16").hide();
+            $("#update-jiaolian6SelectRight16").hide();
+            $("#update-jiaolian6InsertRight16").hide();
+        }
+        if (selectedValue16 == '开四孔') {
+            $("#update-jiaolian3SelectLeft16").show();
+            $("#update-jiaolian3InsertLeft16").show();
+            $("#update-jiaolian3SelectRight16").show();
+            $("#update-jiaolian3InsertRight16").show();
+
+            $("#update-jiaolian4SelectLeft16").show();
+            $("#update-jiaolian4InsertLeft16").show();
+            $("#update-jiaolian4SelectRight16").show();
+            $("#update-jiaolian4InsertRight16").show();
+
+            $("#update-jiaolian5SelectLeft16").hide();
+            $("#update-jiaolian5InsertLeft16").hide();
+            $("#update-jiaolian5SelectRight16").hide();
+            $("#update-jiaolian5InsertRight16").hide();
+
+            $("#update-jiaolian6SelectLeft16").hide();
+            $("#update-jiaolian6InsertLeft16").hide();
+            $("#update-jiaolian6SelectRight16").hide();
+            $("#update-jiaolian6InsertRight16").hide();
+        }
+        if (selectedValue16 == '开五孔') {
+            $("#update-jiaolian3SelectLeft16").show();
+            $("#update-jiaolian3InsertLeft16").show();
+            $("#update-jiaolian3SelectRight16").show();
+            $("#update-jiaolian3InsertRight16").show();
+
+            $("#update-jiaolian4SelectLeft16").show();
+            $("#update-jiaolian4InsertLeft16").show();
+            $("#update-jiaolian4SelectRight16").show();
+            $("#update-jiaolian4InsertRight16").show();
+
+            $("#update-jiaolian5SelectLeft16").show();
+            $("#update-jiaolian5InsertLeft16").show();
+            $("#update-jiaolian5SelectRight16").show();
+            $("#update-jiaolian5InsertRight16").show();
+
+            $("#update-jiaolian6SelectLeft16").hide();
+            $("#update-jiaolian6InsertLeft16").hide();
+            $("#update-jiaolian6SelectRight16").hide();
+            $("#update-jiaolian6InsertRight16").hide();
+        }
+        if (selectedValue16 == '开六孔') {
+            $("#update-jiaolian3SelectLeft16").show();
+            $("#update-jiaolian3InsertLeft16").show();
+            $("#update-jiaolian3SelectRight16").show();
+            $("#update-jiaolian3InsertRight16").show();
+
+            $("#update-jiaolian4SelectLeft16").show();
+            $("#update-jiaolian4InsertLeft16").show();
+            $("#update-jiaolian4SelectRight16").show();
+            $("#update-jiaolian4InsertRight16").show();
+
+            $("#update-jiaolian5SelectLeft16").show();
+            $("#update-jiaolian5InsertLeft16").show();
+            $("#update-jiaolian5SelectRight16").show();
+            $("#update-jiaolian5InsertRight16").show();
+
+            $("#update-jiaolian6SelectLeft16").show();
+            $("#update-jiaolian6InsertLeft16").show();
+            $("#update-jiaolian6SelectRight16").show();
+            $("#update-jiaolian6InsertRight16").show();
+        }
+    })
+
+    $('#update-kaijiaolian17').on('change', function () {
+        var selectedValue17 = $(this).val();
+        if (selectedValue17 == '开二孔') {
+            $("#update-jiaolian3SelectLeft17").hide();
+            $("#update-jiaolian3InsertLeft17").hide();
+            $("#update-jiaolian3SelectRight17").hide();
+            $("#update-jiaolian3InsertRight17").hide();
+
+            $("#update-jiaolian4SelectLeft17").hide();
+            $("#update-jiaolian4InsertLeft17").hide();
+            $("#update-jiaolian4SelectRight17").hide();
+            $("#update-jiaolian4InsertRight17").hide();
+
+            $("#update-jiaolian5SelectLeft17").hide();
+            $("#update-jiaolian5InsertLeft17").hide();
+            $("#update-jiaolian5SelectRight17").hide();
+            $("#update-jiaolian5InsertRight17").hide();
+
+            $("#update-jiaolian6SelectLeft17").hide();
+            $("#update-jiaolian6InsertLeft17").hide();
+            $("#update-jiaolian6SelectRight17").hide();
+            $("#update-jiaolian6InsertRight17").hide();
+
+        }
+        if (selectedValue17 == '开三孔') {
+            $("#update-jiaolian3SelectLeft17").show();
+            $("#update-jiaolian3InsertLeft17").show();
+            $("#update-jiaolian3SelectRight17").show();
+            $("#update-jiaolian3InsertRight17").show();
+
+            $("#update-jiaolian4SelectLeft17").hide();
+            $("#update-jiaolian4InsertLeft17").hide();
+            $("#update-jiaolian4SelectRight17").hide();
+            $("#update-jiaolian4InsertRight17").hide();
+
+            $("#update-jiaolian5SelectLeft17").hide();
+            $("#update-jiaolian5InsertLeft17").hide();
+            $("#update-jiaolian5SelectRight17").hide();
+            $("#update-jiaolian5InsertRight17").hide();
+
+            $("#update-jiaolian6SelectLeft17").hide();
+            $("#update-jiaolian6InsertLeft17").hide();
+            $("#update-jiaolian6SelectRight17").hide();
+            $("#update-jiaolian6InsertRight17").hide();
+        }
+        if (selectedValue17 == '开四孔') {
+            $("#update-jiaolian3SelectLeft17").show();
+            $("#update-jiaolian3InsertLeft17").show();
+            $("#update-jiaolian3SelectRight17").show();
+            $("#update-jiaolian3InsertRight17").show();
+
+            $("#update-jiaolian4SelectLeft17").show();
+            $("#update-jiaolian4InsertLeft17").show();
+            $("#update-jiaolian4SelectRight17").show();
+            $("#update-jiaolian4InsertRight17").show();
+
+            $("#update-jiaolian5SelectLeft17").hide();
+            $("#update-jiaolian5InsertLeft17").hide();
+            $("#update-jiaolian5SelectRight17").hide();
+            $("#update-jiaolian5InsertRight17").hide();
+
+            $("#update-jiaolian6SelectLeft17").hide();
+            $("#update-jiaolian6InsertLeft17").hide();
+            $("#update-jiaolian6SelectRight17").hide();
+            $("#update-jiaolian6InsertRight17").hide();
+        }
+        if (selectedValue17 == '开五孔') {
+            $("#update-jiaolian3SelectLeft17").show();
+            $("#update-jiaolian3InsertLeft17").show();
+            $("#update-jiaolian3SelectRight17").show();
+            $("#update-jiaolian3InsertRight17").show();
+
+            $("#update-jiaolian4SelectLeft17").show();
+            $("#update-jiaolian4InsertLeft17").show();
+            $("#update-jiaolian4SelectRight17").show();
+            $("#update-jiaolian4InsertRight17").show();
+
+            $("#update-jiaolian5SelectLeft17").show();
+            $("#update-jiaolian5InsertLeft17").show();
+            $("#update-jiaolian5SelectRight17").show();
+            $("#update-jiaolian5InsertRight17").show();
+
+            $("#update-jiaolian6SelectLeft17").hide();
+            $("#update-jiaolian6InsertLeft17").hide();
+            $("#update-jiaolian6SelectRight17").hide();
+            $("#update-jiaolian6InsertRight17").hide();
+        }
+        if (selectedValue17 == '开六孔') {
+            $("#update-jiaolian3SelectLeft17").show();
+            $("#update-jiaolian3InsertLeft17").show();
+            $("#update-jiaolian3SelectRight17").show();
+            $("#update-jiaolian3InsertRight17").show();
+
+            $("#update-jiaolian4SelectLeft17").show();
+            $("#update-jiaolian4InsertLeft17").show();
+            $("#update-jiaolian4SelectRight17").show();
+            $("#update-jiaolian4InsertRight17").show();
+
+            $("#update-jiaolian5SelectLeft17").show();
+            $("#update-jiaolian5InsertLeft17").show();
+            $("#update-jiaolian5SelectRight17").show();
+            $("#update-jiaolian5InsertRight17").show();
+
+            $("#update-jiaolian6SelectLeft17").show();
+            $("#update-jiaolian6InsertLeft17").show();
+            $("#update-jiaolian6SelectRight17").show();
+            $("#update-jiaolian6InsertRight17").show();
+        }
+    })
+
+    $('#update-kaijiaolian18').on('change', function () {
+        var selectedValue18 = $(this).val();
+        if (selectedValue18 == '开二孔') {
+            $("#update-jiaolian3SelectLeft18").hide();
+            $("#update-jiaolian3InsertLeft18").hide();
+            $("#update-jiaolian3SelectRight18").hide();
+            $("#update-jiaolian3InsertRight18").hide();
+
+            $("#update-jiaolian4SelectLeft18").hide();
+            $("#update-jiaolian4InsertLeft18").hide();
+            $("#update-jiaolian4SelectRight18").hide();
+            $("#update-jiaolian4InsertRight18").hide();
+
+            $("#update-jiaolian5SelectLeft18").hide();
+            $("#update-jiaolian5InsertLeft18").hide();
+            $("#update-jiaolian5SelectRight18").hide();
+            $("#update-jiaolian5InsertRight18").hide();
+
+            $("#update-jiaolian6SelectLeft18").hide();
+            $("#update-jiaolian6InsertLeft18").hide();
+            $("#update-jiaolian6SelectRight18").hide();
+            $("#update-jiaolian6InsertRight18").hide();
+
+        }
+        if (selectedValue18 == '开三孔') {
+            $("#update-jiaolian3SelectLeft18").show();
+            $("#update-jiaolian3InsertLeft18").show();
+            $("#update-jiaolian3SelectRight18").show();
+            $("#update-jiaolian3InsertRight18").show();
+
+            $("#update-jiaolian4SelectLeft18").hide();
+            $("#update-jiaolian4InsertLeft18").hide();
+            $("#update-jiaolian4SelectRight18").hide();
+            $("#update-jiaolian4InsertRight18").hide();
+
+            $("#update-jiaolian5SelectLeft18").hide();
+            $("#update-jiaolian5InsertLeft18").hide();
+            $("#update-jiaolian5SelectRight18").hide();
+            $("#update-jiaolian5InsertRight18").hide();
+
+            $("#update-jiaolian6SelectLeft18").hide();
+            $("#update-jiaolian6InsertLeft18").hide();
+            $("#update-jiaolian6SelectRight18").hide();
+            $("#update-jiaolian6InsertRight18").hide();
+        }
+        if (selectedValue18 == '开四孔') {
+            $("#update-jiaolian3SelectLeft18").show();
+            $("#update-jiaolian3InsertLeft18").show();
+            $("#update-jiaolian3SelectRight18").show();
+            $("#update-jiaolian3InsertRight18").show();
+
+            $("#update-jiaolian4SelectLeft18").show();
+            $("#update-jiaolian4InsertLeft18").show();
+            $("#update-jiaolian4SelectRight18").show();
+            $("#update-jiaolian4InsertRight18").show();
+
+            $("#update-jiaolian5SelectLeft18").hide();
+            $("#update-jiaolian5InsertLeft18").hide();
+            $("#update-jiaolian5SelectRight18").hide();
+            $("#update-jiaolian5InsertRight18").hide();
+
+            $("#update-jiaolian6SelectLeft18").hide();
+            $("#update-jiaolian6InsertLeft18").hide();
+            $("#update-jiaolian6SelectRight18").hide();
+            $("#update-jiaolian6InsertRight18").hide();
+        }
+        if (selectedValue18 == '开五孔') {
+            $("#update-jiaolian3SelectLeft18").show();
+            $("#update-jiaolian3InsertLeft18").show();
+            $("#update-jiaolian3SelectRight18").show();
+            $("#update-jiaolian3InsertRight18").show();
+
+            $("#update-jiaolian4SelectLeft18").show();
+            $("#update-jiaolian4InsertLeft18").show();
+            $("#update-jiaolian4SelectRight18").show();
+            $("#update-jiaolian4InsertRight18").show();
+
+            $("#update-jiaolian5SelectLeft18").show();
+            $("#update-jiaolian5InsertLeft18").show();
+            $("#update-jiaolian5SelectRight18").show();
+            $("#update-jiaolian5InsertRight18").show();
+
+            $("#update-jiaolian6SelectLeft18").hide();
+            $("#update-jiaolian6InsertLeft18").hide();
+            $("#update-jiaolian6SelectRight18").hide();
+            $("#update-jiaolian6InsertRight18").hide();
+        }
+        if (selectedValue18 == '开六孔') {
+            $("#update-jiaolian3SelectLeft18").show();
+            $("#update-jiaolian3InsertLeft18").show();
+            $("#update-jiaolian3SelectRight18").show();
+            $("#update-jiaolian3InsertRight18").show();
+
+            $("#update-jiaolian4SelectLeft18").show();
+            $("#update-jiaolian4InsertLeft18").show();
+            $("#update-jiaolian4SelectRight18").show();
+            $("#update-jiaolian4InsertRight18").show();
+
+            $("#update-jiaolian5SelectLeft18").show();
+            $("#update-jiaolian5InsertLeft18").show();
+            $("#update-jiaolian5SelectRight18").show();
+            $("#update-jiaolian5InsertRight18").show();
+
+            $("#update-jiaolian6SelectLeft18").show();
+            $("#update-jiaolian6InsertLeft18").show();
+            $("#update-jiaolian6SelectRight18").show();
+            $("#update-jiaolian6InsertRight18").show();
+        }
+    })
+
+    $('#update-kaijiaolian19').on('change', function () {
+        var selectedValue19 = $(this).val();
+        if (selectedValue19 == '开二孔') {
             $("#update-jiaolian3SelectLeft19").hide();
             $("#update-jiaolian3InsertLeft19").hide();
             $("#update-jiaolian3SelectRight19").hide();
@@ -7371,41 +5748,13 @@ $(document).ready(function () {
             $("#update-jiaolian6SelectRight19").hide();
             $("#update-jiaolian6InsertRight19").hide();
 
-            $("#l3sl").hide();
-            $("#l3il").hide();
-            $("#l3sr").hide();
-            $("#l3ir").hide();
-
-            $("#l4sl").hide();
-            $("#l4il").hide();
-            $("#l4sr").hide();
-            $("#l4ir").hide();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
         }
         if (selectedValue19 == '开三孔') {
-            $("#add-jiaolian4SelectLeft19").hide();
-            $("#add-jiaolian4InsertLeft19").hide();
-            $("#add-jiaolian4SelectRight19").hide();
-            $("#add-jiaolian4InsertRight19").hide();
+            $("#update-jiaolian3SelectLeft19").show();
+            $("#update-jiaolian3InsertLeft19").show();
+            $("#update-jiaolian3SelectRight19").show();
+            $("#update-jiaolian3InsertRight19").show();
 
-            $("#add-jiaolian5SelectLeft19").hide();
-            $("#add-jiaolian5InsertLeft19").hide();
-            $("#add-jiaolian5SelectRight19").hide();
-            $("#add-jiaolian5InsertRight19").hide();
-
-            $("#add-jiaolian6SelectLeft19").hide();
-            $("#add-jiaolian6InsertLeft19").hide();
-            $("#add-jiaolian6SelectRight19").hide();
-            $("#add-jiaolian6InsertRight19").hide();
             $("#update-jiaolian4SelectLeft19").hide();
             $("#update-jiaolian4InsertLeft19").hide();
             $("#update-jiaolian4SelectRight19").hide();
@@ -7420,32 +5769,18 @@ $(document).ready(function () {
             $("#update-jiaolian6InsertLeft19").hide();
             $("#update-jiaolian6SelectRight19").hide();
             $("#update-jiaolian6InsertRight19").hide();
-
-            $("#l4sl").hide();
-            $("#l4il").hide();
-            $("#l4sr").hide();
-            $("#l4ir").hide();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
         }
         if (selectedValue19 == '开四孔') {
-            $("#add-jiaolian5SelectLeft19").hide();
-            $("#add-jiaolian5InsertLeft19").hide();
-            $("#add-jiaolian5SelectRight19").hide();
-            $("#add-jiaolian5InsertRight19").hide();
+            $("#update-jiaolian3SelectLeft19").show();
+            $("#update-jiaolian3InsertLeft19").show();
+            $("#update-jiaolian3SelectRight19").show();
+            $("#update-jiaolian3InsertRight19").show();
 
-            $("#add-jiaolian6SelectLeft19").hide();
-            $("#add-jiaolian6InsertLeft19").hide();
-            $("#add-jiaolian6SelectRight19").hide();
-            $("#add-jiaolian6InsertRight19").hide();
+            $("#update-jiaolian4SelectLeft19").show();
+            $("#update-jiaolian4InsertLeft19").show();
+            $("#update-jiaolian4SelectRight19").show();
+            $("#update-jiaolian4InsertRight19").show();
+
             $("#update-jiaolian5SelectLeft19").hide();
             $("#update-jiaolian5InsertLeft19").hide();
             $("#update-jiaolian5SelectRight19").hide();
@@ -7455,27 +5790,48 @@ $(document).ready(function () {
             $("#update-jiaolian6InsertLeft19").hide();
             $("#update-jiaolian6SelectRight19").hide();
             $("#update-jiaolian6InsertRight19").hide();
-
-            $("#l5sl").hide();
-            $("#l5il").hide();
-            $("#l5sr").hide();
-            $("#l5ir").hide();
-
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
         }
         if (selectedValue19 == '开五孔') {
+            $("#update-jiaolian3SelectLeft19").show();
+            $("#update-jiaolian3InsertLeft19").show();
+            $("#update-jiaolian3SelectRight19").show();
+            $("#update-jiaolian3InsertRight19").show();
+
+            $("#update-jiaolian4SelectLeft19").show();
+            $("#update-jiaolian4InsertLeft19").show();
+            $("#update-jiaolian4SelectRight19").show();
+            $("#update-jiaolian4InsertRight19").show();
+
+            $("#update-jiaolian5SelectLeft19").show();
+            $("#update-jiaolian5InsertLeft19").show();
+            $("#update-jiaolian5SelectRight19").show();
+            $("#update-jiaolian5InsertRight19").show();
+
             $("#update-jiaolian6SelectLeft19").hide();
             $("#update-jiaolian6InsertLeft19").hide();
             $("#update-jiaolian6SelectRight19").hide();
             $("#update-jiaolian6InsertRight19").hide();
+        }
+        if (selectedValue19 == '开六孔') {
+            $("#update-jiaolian3SelectLeft19").show();
+            $("#update-jiaolian3InsertLeft19").show();
+            $("#update-jiaolian3SelectRight19").show();
+            $("#update-jiaolian3InsertRight19").show();
 
-            $("#l6sl").hide();
-            $("#l6il").hide();
-            $("#l6sr").hide();
-            $("#l6ir").hide();
+            $("#update-jiaolian4SelectLeft19").show();
+            $("#update-jiaolian4InsertLeft19").show();
+            $("#update-jiaolian4SelectRight19").show();
+            $("#update-jiaolian4InsertRight19").show();
+
+            $("#update-jiaolian5SelectLeft19").show();
+            $("#update-jiaolian5InsertLeft19").show();
+            $("#update-jiaolian5SelectRight19").show();
+            $("#update-jiaolian5InsertRight19").show();
+
+            $("#update-jiaolian6SelectLeft19").show();
+            $("#update-jiaolian6InsertLeft19").show();
+            $("#update-jiaolian6SelectRight19").show();
+            $("#update-jiaolian6InsertRight19").show();
         }
     })
 
@@ -8908,6 +7264,10 @@ function getUpdZcje() {
     document.getElementById("update-sumJine2").value = sum_je2
 }
 function getList() {
+    var tdElements = document.getElementsByTagName("td");
+    for (var i = 0; i < tdElements.length; i++) {
+        tdElements[i].style.padding = "15px";
+    }
     $('#ksinsertDate').val("");
     $('#jsinsertDate').val("");
     $('#customerNumber').val("");
@@ -8983,12 +7343,15 @@ function getList() {
                 textBox.class = 'form-control';
                 textBox.autocomplete = 'off';
                 div.appendChild(textBox);
+                document.getElementById("add-customerName").disabled=true
+                document.getElementById("update-customerName").disabled=true
                 $ajax({
                     type: 'post',
-                    url: '/psd/getloginname',
+                    url: '/psd/getloginname1',
                 }, false, '', function (res) {
                     if (res.code == 200) {
                         var this_name = res.data;
+
                         document.getElementById("add-customerName").value = this_name;
                         document.getElementById("customerName").value = this_name;
                     }
@@ -17815,7 +16178,12 @@ $(function () {
 
     //点击新增按钮显示弹窗
     $("#add-btn").click(function () {
+        var tdElements = document.getElementsByTagName("td");
+        for (var i = 0; i < tdElements.length; i++) {
+            tdElements[i].style.padding = "0";
+        }
         $('#add-modal').modal('show');
+
         getPfsl();
         getPfje();
         getZcsl();
@@ -18584,7 +16952,10 @@ $(function () {
 
     //点击修改按钮显示弹窗
     $('#update-btn').click(function () {
-        $('#loading-overlay').show();
+        var tdElements = document.getElementsByTagName("td");
+        for (var i = 0; i < tdElements.length; i++) {
+            tdElements[i].style.padding = "0";
+        }
         getPfsl();
         getPfje();
         getZcsl();
@@ -18596,6 +16967,7 @@ $(function () {
             swal('请选择一条数据修改!');
             return;
         }
+        $('#loading-overlay').show();
         var orderNumber = rows[0].data.orderNumber
 
         $ajax({
@@ -19621,6 +17993,7 @@ function getToken() {
     $ajax({
         type: 'post',
         url: '/user/getToken',
+
     }, false, '', function (res) {
         console.log(res.data.token)
         if (res.code == 200) {
@@ -19641,7 +18014,7 @@ function getToken() {
             var wancheng = "";
             $ajax({
                 type: 'post',
-                url: '/lkxd/queryList',
+                url: '/lkxd/queryList1',
                 data: {
                     customerNumber: customerNumber,
                     customerName: customerName,

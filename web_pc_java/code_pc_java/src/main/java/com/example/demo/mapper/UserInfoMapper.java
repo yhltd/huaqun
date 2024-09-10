@@ -28,11 +28,16 @@ public interface UserInfoMapper extends BaseMapper<UserInfo> {
     @Insert("insert into userInfo(username,password,company,name,pinyin,power,quyu,address_name,money,shendan,pay,kailiao,zuzhuang,baozhuang) values(#{username},#{password},#{company},#{name},#{pinyin},#{power},#{quyu},#{addressName},#{money},#{shendan},#{pay},#{kailiao},#{zuzhuang},#{baozhuang})")
     boolean add(String username,String password,String name,String pinyin,String power,String quyu,String addressName,String money,String shendan,String pay,String kailiao,String zuzhuang,String baozhuang);
 
-    @Select("select company from userInfo where power = '客户' ")
-    List<UserInfo> hqxlKhmc();
+//    @Select("select company from userInfo where power = '客户' ")
+//    List<UserInfo> hqxlKhmc();
+@Select("select distinct company from userInfo where power = '客户' ")
+List<UserInfo> hqxlKhmc();
 
-    @Select("select company from userInfo where power = '客户' and name=#{name}")
-    List<UserInfo> hqxlKhmc1(String name);
+//    @Select("select company from userInfo where power = '客户' and name=#{name}")
+//    List<UserInfo> hqxlKhmc1(String name);
+@Select("select distinct company from userInfo where power = '客户' and name=#{name}")
+List<UserInfo> hqxlKhmc1(String name);
+
 
     @Select("select name from userInfo where username = #{username}")
     List<UserInfo> getNameByUsername(String username);

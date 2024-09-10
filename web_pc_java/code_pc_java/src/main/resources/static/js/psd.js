@@ -1,20 +1,2291 @@
+// var idd;
+// var num;
+// var select_quyu = [];
+// var newFile;
+// function getList() {
+//     $('#orderNumber').val("");
+//     $('#customerName').val("");
+//     $('#songhuoAddress').val("");
+//     $('#anzhuangAddress').val("");
+//     $('#customerOrder').val("");
+//     $('#songhuoDanhao').val("");
+//
+//
+//     $ajax({
+//         type: 'post',
+//         url: '/user/getPower',
+//         async:false,
+//     }, false, '', function (res) {
+//         if (res.code == 200) {
+//             var power = res.data;
+//             if (power == "客户" || power == "操作员") {
+//                 document.getElementById("update-customerNeedText").disabled = true;
+//                 document.getElementById("update-customerNeedText1").disabled = true;
+//
+//             }
+//         }
+//     })
+//
+//
+//
+//     $ajax({
+//         type: 'post',
+//         url: '/user/getPower',
+//         async:false,
+//     }, false, '', function (res) {
+//         if (res.code == 200) {
+//             var power = res.data;
+//             if (power == "客户") {
+//                 document.getElementById("update-wancheng").disabled = true;
+//                 document.getElementById("update-shoukuan").disabled = true;
+//                 document.getElementById("update-kucun").hidden = true;
+//                 document.getElementById("add-shoukuan").disabled = true;
+//
+//                 document.getElementById("add-wancheng").disabled = true;
+//                 document.getElementById("customerName").disabled = true;
+//                 document.getElementById("ukc").hidden = true;
+//                 document.getElementById("a-psi1").hidden = true;
+//                 document.getElementById("a-phi2").hidden = true;
+//                 document.getElementById("a-phi1").hidden = true;
+//                 document.getElementById("a-cnt2").hidden = true;
+//
+//                 document.getElementById("add-peihuoImg5").hidden = true;
+//                 document.getElementById("add-peisongImg1").hidden = true;
+//                 document.getElementById("add-peisongImg2").hidden = true;
+//                 document.getElementById("add-peisongImg3").hidden = true;
+//
+//                 document.getElementById("add-peihuoImg5Renyuan").hidden = true;
+//                 document.getElementById("add-peihuoImg5Riqi").hidden = true;
+//                 document.getElementById("add-peisongImg1Renyuan").hidden = true;
+//                 document.getElementById("add-peisongImg1Riqi").hidden = true;
+//                 document.getElementById("add-peisongImg2Renyuan").hidden = true;
+//                 document.getElementById("add-peisongImg2Riqi").hidden = true;
+//                 document.getElementById("add-peisongImg3Renyuan").hidden = true;
+//                 document.getElementById("add-peisongImg3Riqi").hidden = true;
+//                 document.getElementById("ac1").hidden = true;
+//                 document.getElementById("ac2").hidden = true;
+//                 document.getElementById("ac3").hidden = true;
+//                 document.getElementById("ac4").hidden = true;
+//                 document.getElementById("ac5").hidden = true;
+//                 document.getElementById("ac6").hidden = true;
+//                 document.getElementById("ac7").hidden = true;
+//                 document.getElementById("ac8").hidden = true;
+//                 document.getElementById("uc1").hidden = true;
+//                 document.getElementById("uc2").hidden = true;
+//                 document.getElementById("uc3").hidden = true;
+//                 document.getElementById("uc4").hidden = true;
+//                 document.getElementById("u-psi1").hidden = true;
+//                 document.getElementById("u-phi2").hidden = true;
+//                 document.getElementById("u-phi1").hidden = true;
+//                 document.getElementById("u-cnt2").hidden = true;
+//
+//                 document.getElementById("update-peihuoImg5").hidden = true;
+//                 document.getElementById("update-peisongImg1").hidden = true;
+//                 document.getElementById("update-peisongImg2").hidden = true;
+//                 document.getElementById("update-peisongImg3").hidden = true;
+//                 // document.getElementById("update-customerNeedText2").hidden = true;
+//
+//                 document.getElementById("update-peihuoImg5Renyuan").hidden = true;
+//                 document.getElementById("update-peihuoImg5Riqi").hidden = true;
+//                 document.getElementById("update-peisongImg1Renyuan").hidden = true;
+//                 document.getElementById("update-peisongImg1Riqi").hidden = true;
+//                 document.getElementById("update-peisongImg2Renyuan").hidden = true;
+//                 document.getElementById("update-peisongImg2Riqi").hidden = true;
+//                 document.getElementById("update-peisongImg3Renyuan").hidden = true;
+//                 document.getElementById("update-peisongImg3Riqi").hidden = true;
+//
+//                 document.getElementById("kc").hidden = true;
+//                 document.getElementById("kclry").hidden = true;
+//                 document.getElementById("kcwcsj").hidden = true;
+//                 document.getElementById("add-kucun").hidden = true;
+//                 document.getElementById("add-kucunTextRenyuan").hidden = true;
+//                 document.getElementById("add-kucunTextRiqi").hidden = true;
+//                 document.getElementById("customerName").disabled=true;
+//                 document.getElementById("add-customerName").remove();
+//                 var div = document.getElementById('d-customerName');
+//                 var textBox = document.createElement('input');
+//                 textBox.id = 'add-customerName';
+//                 textBox.type = 'text';
+//                 textBox.name = 'customerName';
+//                 textBox.class = 'form-control';
+//                 textBox.autocomplete = 'off';
+//                 div.appendChild(textBox);
+//                 $ajax({
+//                     type: 'post',
+//                     url: '/psd/getloginname',
+//                     async:false,
+//                 }, false, '', function (res) {
+//                     if (res.code == 200) {
+//                         var this_name = res.data;
+//                         document.getElementById("add-customerName").value = this_name;
+//                         document.getElementById("add-customerNameRenyuan").value = this_name;
+//                         document.getElementById("customerName").value=this_name;
+//                     }
+//                 })
+//             }
+//         }
+//     })
+//
+//
+//     $ajax({
+//         type: 'post',
+//         url: '/psd/getList',
+//
+//     }, false, '', function (res) {
+//         if (res.code == 200) {
+//             setTable(res.data);
+//             for (n = 0; n < res.data.length; n++) {
+//                 document.getElementById("wancheng" + n).value = res.data[n].wancheng;
+//                 document.getElementById("money"+n).value = res.data[n].money;
+//                 document.getElementById("shoukuan"+n).value = res.data[n].shoukuan;
+//                 document.getElementById("quyu"+n).value = res.data[n].quyu;
+//             }
+//             $("#psdTable").colResizable({
+//                 liveDrag: true,
+//                 gripInnerHtml: "<div class='grip'></div>",
+//                 draggingClass: "dragging",
+//                 resizeMode: 'fit'
+//             });
+//             for (i = 0; i <= res.data.id; i++) {
+//                 idd = i;
+//             }
+//         }
+//     })
+// }
+//
+// // function getriqi(){
+// //     const now = new Date();
+// //     const year = now.getFullYear();
+// //     const month = (now.getMonth() + 1).toString().padStart(2, '0');
+// //     const day = now.getDate().toString().padStart(2, '0');
+// //     const hours = now.getHours().toString().padStart(2, '0');
+// //     const minutes = now.getMinutes().toString().padStart(2, '0');
+// //     const seconds = now.getSeconds().toString().padStart(2, '0');
+// // }
+// function getKhmc() {
+//     $ajax({
+//         type: 'post',
+//         url: '/user/hqxlKhmc',
+//     }, false, '', function (res) {
+//         if (res.code == 200) {
+//             for (var i = 0; i < res.data.length; i++) {
+//                 $("#add-customerName").append("<option>" + res.data[i].company + "</option>");
+//                 $("#update-customerName").append("<option>" + res.data[i].company + "</option>");
+//                 $("#customerName").append("<option>" + res.data[i].company + "</option>")
+//             }
+//         }
+//     })
+// }
+//
+// // function getName() {
+// //     $ajax({
+// //         type: 'post',
+// //         url: '/psd/getloginname',
+// //     }, false, '', function (res) {
+// //         if (res.code == 200) {
+// //             var this_name = res.data;
+// //             document.getElementById("add-customerNameRenyuan").value = this_name;
+// //
+// //             // $("#update-customerName").append("<option>" + res.data[i].company + "</option>");
+// //
+// //         }
+// //     })
+// // }
+//
+// $(function () {
+//
+//     var textarea = document.getElementById('add-customerNeedText');
+//     textarea.addEventListener('blur', function () {
+//         var this_textarea = $('#add-customerNeedText').val();
+//         document.getElementById('add-customerNeedText1').value = this_textarea;
+//
+//     });
+//
+//     // var inp1 = document.getElementById('add-songhuoAddress');
+//     // var yuanvalue1 = $('#add-songhuoAddress').val();
+//     // inp1.addEventListener('blur', function () {
+//     //     var invalue1 = $('#add-songhuoAddress').val();
+//     //     if (invalue1 != yuanvalue1) {
+//     //         var date = new Date();
+//     //         var day = ("0" + date.getDate()).slice(-2);
+//     //         var month = ("0" + (date.getMonth() + 1)).slice(-2);
+//     //         var hh = date.getHours();
+//     //         var mm = date.getMinutes();
+//     //         var ss = date.getSeconds();
+//     //         var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+//     //
+//     //         $ajax({
+//     //             type: 'post',
+//     //             url: '/psd/getloginname',
+//     //         }, false, '', function (res) {
+//     //             var this_name = res.data
+//     //             document.getElementById('add-songhuoAddressRenyuan').value = this_name;
+//     //         })
+//     //         document.getElementById('add-songhuoAddressRiqi').value = dqrq;
+//     //         document.getElementById("add-songhuoAddressRiqi").disabled = true;
+//     //     }
+//     // });
+//     //
+//     // var inp2 = document.getElementById('add-hqquyu');
+//     // var yuanvalue2 = $('#add-hqquyu').val();
+//     // inp2.addEventListener('blur', function () {
+//     //     var invalue2 = $('#add-hqquyu').val();
+//     //     if (invalue2 != yuanvalue2) {
+//     //         var date = new Date();
+//     //         var day = ("0" + date.getDate()).slice(-2);
+//     //         var month = ("0" + (date.getMonth() + 1)).slice(-2);
+//     //         var hh = date.getHours();
+//     //         var mm = date.getMinutes();
+//     //         var ss = date.getSeconds();
+//     //         var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+//     //
+//     //         $ajax({
+//     //             type: 'post',
+//     //             url: '/psd/getloginname',
+//     //         }, false, '', function (res) {
+//     //             var this_name = res.data
+//     //             document.getElementById('add-quyuRenyuan').value = this_name;
+//     //         })
+//     //         document.getElementById('add-quyuRiqi').value = dqrq;
+//     //         document.getElementById("add-quyuRiqi").disabled = true;
+//     //     }
+//     // });
+//     //
+//     // var inp3 = document.getElementById('add-anzhuangAddress');
+//     // var yuanvalue3 = $('#add-anzhuangAddress').val();
+//     // inp3.addEventListener('blur', function () {
+//     //     var invalue3 = $('#add-anzhuangAddress').val();
+//     //     if (invalue3 != yuanvalue3) {
+//     //         var date = new Date();
+//     //         var day = ("0" + date.getDate()).slice(-2);
+//     //         var month = ("0" + (date.getMonth() + 1)).slice(-2);
+//     //         var hh = date.getHours();
+//     //         var mm = date.getMinutes();
+//     //         var ss = date.getSeconds();
+//     //         var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+//     //
+//     //         $ajax({
+//     //             type: 'post',
+//     //             url: '/psd/getloginname',
+//     //         }, false, '', function (res) {
+//     //             var this_name = res.data
+//     //             document.getElementById('add-anzhuangAddressRenyuan').value = this_name;
+//     //         })
+//     //         document.getElementById('add-anzhuangAddressRiqi').value = dqrq;
+//     //         document.getElementById("add-anzhuangAddressRiqi").disabled = true;
+//     //     }
+//     // });
+//     //
+//     // var inp4 = document.getElementById('add-phone');
+//     // var yuanvalue4 = $('#add-phone').val();
+//     // inp4.addEventListener('blur', function () {
+//     //     var invalue4 = $('#add-phone').val();
+//     //     if (invalue4 != yuanvalue4) {
+//     //         var date = new Date();
+//     //         var day = ("0" + date.getDate()).slice(-2);
+//     //         var month = ("0" + (date.getMonth() + 1)).slice(-2);
+//     //         var hh = date.getHours();
+//     //         var mm = date.getMinutes();
+//     //         var ss = date.getSeconds();
+//     //         var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+//     //
+//     //         $ajax({
+//     //             type: 'post',
+//     //             url: '/psd/getloginname',
+//     //         }, false, '', function (res) {
+//     //             var this_name = res.data
+//     //             document.getElementById('add-phoneRenyuan').value = this_name;
+//     //         })
+//     //         document.getElementById('add-phoneRiqi').value = dqrq;
+//     //         document.getElementById("add-phoneRiqi").disabled = true;
+//     //     }
+//     // });
+//     //
+//     // var inp5 = document.getElementById('add-customerOrder');
+//     // var yuanvalue5 = $('#add-customerOrder').val();
+//     // inp5.addEventListener('blur', function () {
+//     //     var invalue5 = $('#add-customerOrder').val();
+//     //     if (invalue5 != yuanvalue5) {
+//     //         var date = new Date();
+//     //         var day = ("0" + date.getDate()).slice(-2);
+//     //         var month = ("0" + (date.getMonth() + 1)).slice(-2);
+//     //         var hh = date.getHours();
+//     //         var mm = date.getMinutes();
+//     //         var ss = date.getSeconds();
+//     //         var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+//     //
+//     //         $ajax({
+//     //             type: 'post',
+//     //             url: '/psd/getloginname',
+//     //         }, false, '', function (res) {
+//     //             var this_name = res.data
+//     //             document.getElementById('add-customerOrderRenyuan').value = this_name;
+//     //         })
+//     //         document.getElementById('add-customerOrderRiqi').value = dqrq;
+//     //         document.getElementById("add-customerOrderRiqi").disabled = true;
+//     //     }
+//     // });
+//     //
+//     // var inp6 = document.getElementById('add-customerNeedText');
+//     // var yuanvalue6 = $('#add-customerNeedText').val();
+//     // inp6.addEventListener('blur', function () {
+//     //     var invalue6 = $('#add-customerNeedText').val();
+//     //     if (invalue6 != yuanvalue6) {
+//     //         var date = new Date();
+//     //         var day = ("0" + date.getDate()).slice(-2);
+//     //         var month = ("0" + (date.getMonth() + 1)).slice(-2);
+//     //         var hh = date.getHours();
+//     //         var mm = date.getMinutes();
+//     //         var ss = date.getSeconds();
+//     //         var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+//     //
+//     //         $ajax({
+//     //             type: 'post',
+//     //             url: '/psd/getloginname',
+//     //         }, false, '', function (res) {
+//     //             var this_name = res.data
+//     //             document.getElementById('add-customerNeedTextRenyuan').value = this_name;
+//     //             document.getElementById('add-customerNeedText1Renyuan').value = this_name;
+//     //         })
+//     //         document.getElementById('add-customerNeedTextRiqi').value = dqrq;
+//     //         document.getElementById("add-customerNeedTextRiqi").disabled = true;
+//     //         document.getElementById('add-customerNeedText1Riqi').value = dqrq;
+//     //         document.getElementById("add-customerNeedText1Riqi").disabled = true;
+//     //     }
+//     // });
+//     //
+//     // // var inp7 = document.getElementById('add-customerNeedText1');
+//     // // var yuanvalue7 = $('#add-customerNeedText1').val();
+//     // // inp7.addEventListener('blur', function() {
+//     // //     var invalue7 = $('#add-customerNeedText1').val();
+//     // //     if (invalue7 !== yuanvalue7) {
+//     // //         var date = new Date();
+//     // //         var day = ("0" + date.getDate()).slice(-2);
+//     // //         var month = ("0" + (date.getMonth() + 1)).slice(-2);
+//     // //         var hh = date.getHours();
+//     // //         var mm = date.getMinutes();
+//     // //         var ss = date.getSeconds();
+//     // //         var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+//     // //
+//     // //         $ajax({
+//     // //             type: 'post',
+//     // //             url: '/psd/getloginname',
+//     // //         }, false, '', function (res) {
+//     // //             var this_name = res.data
+//     // //             document.getElementById('add-customerNeedText1Renyuan').value = this_name;
+//     // //         })
+//     // //         document.getElementById('add-customerNeedText1Riqi').value = dqrq;
+//     // //         document.getElementById("add-customerNeedText1Riqi").disabled = true;
+//     // //     }
+//     // // });
+//     //
+//     // var inp8 = document.getElementById('add-money');
+//     // var yuanvalue8 = $('#add-money').val();
+//     // inp8.addEventListener('blur', function () {
+//     //     var invalue8 = $('#add-money').val();
+//     //     if (invalue8 != yuanvalue8) {
+//     //         var date = new Date();
+//     //         var day = ("0" + date.getDate()).slice(-2);
+//     //         var month = ("0" + (date.getMonth() + 1)).slice(-2);
+//     //         var hh = date.getHours();
+//     //         var mm = date.getMinutes();
+//     //         var ss = date.getSeconds();
+//     //         var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+//     //
+//     //         $ajax({
+//     //             type: 'post',
+//     //             url: '/psd/getloginname',
+//     //         }, false, '', function (res) {
+//     //             var this_name = res.data
+//     //             document.getElementById('add-moneyRenyuan').value = this_name;
+//     //         })
+//     //         document.getElementById('add-moneyRiqi').value = dqrq;
+//     //         document.getElementById("add-moneyRiqi").disabled = true;
+//     //     }
+//     // });
+//     //
+//     // var inp9 = document.getElementById('add-shoukuan');
+//     // var yuanvalue9 = $('#add-shoukuan').val();
+//     // inp9.addEventListener('blur', function () {
+//     //     var invalue9 = $('#add-shoukuan').val();
+//     //     if (invalue9 != yuanvalue9) {
+//     //         var date = new Date();
+//     //         var day = ("0" + date.getDate()).slice(-2);
+//     //         var month = ("0" + (date.getMonth() + 1)).slice(-2);
+//     //         var hh = date.getHours();
+//     //         var mm = date.getMinutes();
+//     //         var ss = date.getSeconds();
+//     //         var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+//     //
+//     //         $ajax({
+//     //             type: 'post',
+//     //             url: '/psd/getloginname',
+//     //         }, false, '', function (res) {
+//     //             var this_name = res.data
+//     //             document.getElementById('add-shoukuanRenyuan').value = this_name;
+//     //         })
+//     //         document.getElementById('add-shoukuanRiqi').value = dqrq;
+//     //         document.getElementById("add-shoukuanRiqi").disabled = true;
+//     //     }
+//     // });
+//     //
+//     // var inp10 = document.getElementById('add-wancheng');
+//     // var yuanvalue10 = $('#add-wancheng').val();
+//     // inp10.addEventListener('blur', function () {
+//     //     var invalue10 = $('#add-wancheng').val();
+//     //     if (invalue10 != yuanvalue10) {
+//     //         var date = new Date();
+//     //         var day = ("0" + date.getDate()).slice(-2);
+//     //         var month = ("0" + (date.getMonth() + 1)).slice(-2);
+//     //         var hh = date.getHours();
+//     //         var mm = date.getMinutes();
+//     //         var ss = date.getSeconds();
+//     //         var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+//     //
+//     //         $ajax({
+//     //             type: 'post',
+//     //             url: '/psd/getloginname',
+//     //         }, false, '', function (res) {
+//     //             var this_name = res.data
+//     //             document.getElementById('add-wanchengRenyuan').value = this_name;
+//     //         })
+//     //         document.getElementById('add-wanchengRiqi').value = dqrq;
+//     //         document.getElementById("add-wanchengRiqi").disabled = true;
+//     //     }
+//     // });
+//     //
+//     // var inp11 = document.getElementById('fileInput1');
+//     // var yuanvalue11 = $('#fileInput1').val();
+//     // inp11.addEventListener('blur', function () {
+//     //     var invalue11 = $('#fileInput1').val();
+//     //     if (invalue11 != yuanvalue11) {
+//     //         var date = new Date();
+//     //         var day = ("0" + date.getDate()).slice(-2);
+//     //         var month = ("0" + (date.getMonth() + 1)).slice(-2);
+//     //         var hh = date.getHours();
+//     //         var mm = date.getMinutes();
+//     //         var ss = date.getSeconds();
+//     //         var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+//     //
+//     //         $ajax({
+//     //             type: 'post',
+//     //             url: '/psd/getloginname',
+//     //         }, false, '', function (res) {
+//     //             var this_name = res.data
+//     //             document.getElementById('add-peisongImg1Renyuan').value = this_name;
+//     //         })
+//     //         document.getElementById('add-peisongImg1Riqi').value = dqrq;
+//     //         document.getElementById("add-peisongImg1Riqi").disabled = true;
+//     //     }
+//     // });
+//     //
+//     // var inp12 = document.getElementById('add-kucun');
+//     // var yuanvalue12 = $('#add-kucun').val();
+//     // inp12.addEventListener('blur', function () {
+//     //     var invalue12 = $('#add-kucun').val();
+//     //     if (invalue12 != yuanvalue12) {
+//     //         var date = new Date();
+//     //         var day = ("0" + date.getDate()).slice(-2);
+//     //         var month = ("0" + (date.getMonth() + 1)).slice(-2);
+//     //         var hh = date.getHours();
+//     //         var mm = date.getMinutes();
+//     //         var ss = date.getSeconds();
+//     //         var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+//     //
+//     //         $ajax({
+//     //             type: 'post',
+//     //             url: '/psd/getloginname',
+//     //         }, false, '', function (res) {
+//     //             var this_name = res.data
+//     //             document.getElementById('add-kucunTextRenyuan').value = this_name;
+//     //         })
+//     //         document.getElementById('add-kucunTextRiqi').value = dqrq;
+//     //         document.getElementById("add-kucunTextRiqi").disabled = true;
+//     //     }
+//     // });
+//     //
+//     //
+//     // var inupd1 = document.getElementById('update-songhuoAddress');
+//     // var yuanvalue1 = $('#add-songhuoAddress').val();
+//     // inupd1.addEventListener('blur', function () {
+//     //     var invalue1 = $('#add-songhuoAddress').val();
+//     //     if (invalue1 != yuanvalue1) {
+//     //         var date = new Date();
+//     //         var day = ("0" + date.getDate()).slice(-2);
+//     //         var month = ("0" + (date.getMonth() + 1)).slice(-2);
+//     //         var hh = date.getHours();
+//     //         var mm = date.getMinutes();
+//     //         var ss = date.getSeconds();
+//     //         var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+//     //
+//     //         $ajax({
+//     //             type: 'post',
+//     //             url: '/psd/getloginname',
+//     //         }, false, '', function (res) {
+//     //             var this_name = res.data
+//     //             document.getElementById('update-songhuoAddressRenyuan').value = this_name;
+//     //         })
+//     //         document.getElementById('update-songhuoAddressRiqi').value = dqrq;
+//     //         document.getElementById("update-songhuoAddressRiqi").disabled = true;
+//     //     }
+//     // });
+//     //
+//     // var inupd2 = document.getElementById('update-hqquyu');
+//     // var yuanvalue2 = $('#update-hqquyu').val();
+//     // inupd2.addEventListener('blur', function () {
+//     //     var invalue2 = $('#update-hqquyu').val();
+//     //     if (invalue2 != yuanvalue2) {
+//     //         var date = new Date();
+//     //         var day = ("0" + date.getDate()).slice(-2);
+//     //         var month = ("0" + (date.getMonth() + 1)).slice(-2);
+//     //         var hh = date.getHours();
+//     //         var mm = date.getMinutes();
+//     //         var ss = date.getSeconds();
+//     //         var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+//     //
+//     //         $ajax({
+//     //             type: 'post',
+//     //             url: '/psd/getloginname',
+//     //         }, false, '', function (res) {
+//     //             var this_name = res.data
+//     //             document.getElementById('update-quyuRenyuan').value = this_name;
+//     //         })
+//     //         document.getElementById('update-quyuRiqi').value = dqrq;
+//     //         document.getElementById("update-quyuRiqi").disabled = true;
+//     //     }
+//     // });
+//     //
+//     // var inupd3 = document.getElementById('update-anzhuangAddress');
+//     // var yuanvalue3 = $('#update-anzhuangAddress').val();
+//     // inupd3.addEventListener('blur', function () {
+//     //     var invalue3 = $('#update-anzhuangAddress').val();
+//     //     if (invalue3 != yuanvalue3) {
+//     //         var date = new Date();
+//     //         var day = ("0" + date.getDate()).slice(-2);
+//     //         var month = ("0" + (date.getMonth() + 1)).slice(-2);
+//     //         var hh = date.getHours();
+//     //         var mm = date.getMinutes();
+//     //         var ss = date.getSeconds();
+//     //         var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+//     //
+//     //         $ajax({
+//     //             type: 'post',
+//     //             url: '/psd/getloginname',
+//     //         }, false, '', function (res) {
+//     //             var this_name = res.data
+//     //             document.getElementById('update-anzhuangAddressRenyuan').value = this_name;
+//     //         })
+//     //         document.getElementById('update-anzhuangAddressRiqi').value = dqrq;
+//     //         document.getElementById("update-anzhuangAddressRiqi").disabled = true;
+//     //     }
+//     // });
+//     //
+//     // var inupd4 = document.getElementById('update-phone');
+//     // var yuanvalue4 = $('#update-phone').val();
+//     // inupd4.addEventListener('blur', function () {
+//     //     var invalue4 = $('#update-phone').val();
+//     //     if (invalue4 != yuanvalue4) {
+//     //         var date = new Date();
+//     //         var day = ("0" + date.getDate()).slice(-2);
+//     //         var month = ("0" + (date.getMonth() + 1)).slice(-2);
+//     //         var hh = date.getHours();
+//     //         var mm = date.getMinutes();
+//     //         var ss = date.getSeconds();
+//     //         var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+//     //
+//     //         $ajax({
+//     //             type: 'post',
+//     //             url: '/psd/getloginname',
+//     //         }, false, '', function (res) {
+//     //             var this_name = res.data
+//     //             document.getElementById('update-phoneRenyuan').value = this_name;
+//     //         })
+//     //         document.getElementById('update-phoneRiqi').value = dqrq;
+//     //         document.getElementById("update-phoneRiqi").disabled = true;
+//     //     }
+//     // });
+//     //
+//     // var inupd5 = document.getElementById('update-customerOrder');
+//     // var yuanvalue5 = $('#update-customerOrder').val();
+//     // inupd5.addEventListener('blur', function () {
+//     //     var invalue5 = $('#update-customerOrder').val();
+//     //     if (invalue5 != yuanvalue5) {
+//     //         var date = new Date();
+//     //         var day = ("0" + date.getDate()).slice(-2);
+//     //         var month = ("0" + (date.getMonth() + 1)).slice(-2);
+//     //         var hh = date.getHours();
+//     //         var mm = date.getMinutes();
+//     //         var ss = date.getSeconds();
+//     //         var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+//     //
+//     //         $ajax({
+//     //             type: 'post',
+//     //             url: '/psd/getloginname',
+//     //         }, false, '', function (res) {
+//     //             var this_name = res.data
+//     //             document.getElementById('update-customerOrderRenyuan').value = this_name;
+//     //         })
+//     //         document.getElementById('update-customerOrderRiqi').value = dqrq;
+//     //         document.getElementById("update-customerOrderRiqi").disabled = true;
+//     //     }
+//     // });
+//     //
+//     // var inupd6 = document.getElementById('update-customerNeedText');
+//     // var yuanvalue6 = $('#update-customerNeedText').val();
+//     // inupd6.addEventListener('blur', function () {
+//     //     var invalue6 = $('#update-customerNeedText').val();
+//     //     if (invalue6 != yuanvalue6) {
+//     //         var date = new Date();
+//     //         var day = ("0" + date.getDate()).slice(-2);
+//     //         var month = ("0" + (date.getMonth() + 1)).slice(-2);
+//     //         var hh = date.getHours();
+//     //         var mm = date.getMinutes();
+//     //         var ss = date.getSeconds();
+//     //         var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+//     //
+//     //         $ajax({
+//     //             type: 'post',
+//     //             url: '/psd/getloginname',
+//     //         }, false, '', function (res) {
+//     //             var this_name = res.data
+//     //             document.getElementById('update-customerNeedTextRenyuan').value = this_name;
+//     //         })
+//     //         document.getElementById('update-customerNeedTextRiqi').value = dqrq;
+//     //         document.getElementById("update-customerNeedTextRiqi").disabled = true;
+//     //     }
+//     // });
+//     //
+//     // var inupd7 = document.getElementById('update-customerNeedText1');
+//     // var yuanvalue7 = $('#update-customerNeedText1').val();
+//     // inupd7.addEventListener('blur', function () {
+//     //     var invalue7 = $('#update-customerNeedText1').val();
+//     //     if (invalue7 != yuanvalue7) {
+//     //         var date = new Date();
+//     //         var day = ("0" + date.getDate()).slice(-2);
+//     //         var month = ("0" + (date.getMonth() + 1)).slice(-2);
+//     //         var hh = date.getHours();
+//     //         var mm = date.getMinutes();
+//     //         var ss = date.getSeconds();
+//     //         var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+//     //
+//     //         $ajax({
+//     //             type: 'post',
+//     //             url: '/psd/getloginname',
+//     //         }, false, '', function (res) {
+//     //             var this_name = res.data
+//     //             document.getElementById('update-customerNeedText1Renyuan').value = this_name;
+//     //         })
+//     //         document.getElementById('update-customerNeedText1Riqi').value = dqrq;
+//     //         document.getElementById("update-customerNeedText1Riqi").disabled = true;
+//     //     }
+//     // });
+//     //
+//     // var inupd8 = document.getElementById('update-money');
+//     // var yuanvalue8 = $('#update-money').val();
+//     // inupd8.addEventListener('blur', function () {
+//     //     var invalue8 = $('#update-money').val();
+//     //     if (invalue8 != yuanvalue8) {
+//     //         var date = new Date();
+//     //         var day = ("0" + date.getDate()).slice(-2);
+//     //         var month = ("0" + (date.getMonth() + 1)).slice(-2);
+//     //         var hh = date.getHours();
+//     //         var mm = date.getMinutes();
+//     //         var ss = date.getSeconds();
+//     //         var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+//     //
+//     //         $ajax({
+//     //             type: 'post',
+//     //             url: '/psd/getloginname',
+//     //         }, false, '', function (res) {
+//     //             var this_name = res.data
+//     //             document.getElementById('update-moneyRenyuan').value = this_name;
+//     //         })
+//     //         document.getElementById('update-moneyRiqi').value = dqrq;
+//     //         document.getElementById("update-moneyRiqi").disabled = true;
+//     //     }
+//     // });
+//     //
+//     // var inupd9 = document.getElementById('update-shoukuan');
+//     // var yuanvalue9 = $('#update-shoukuan').val();
+//     // inupd9.addEventListener('blur', function () {
+//     //     var invalue9 = $('#update-shoukuan').val();
+//     //     if (invalue9 != yuanvalue9) {
+//     //         var date = new Date();
+//     //         var day = ("0" + date.getDate()).slice(-2);
+//     //         var month = ("0" + (date.getMonth() + 1)).slice(-2);
+//     //         var hh = date.getHours();
+//     //         var mm = date.getMinutes();
+//     //         var ss = date.getSeconds();
+//     //         var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+//     //
+//     //         $ajax({
+//     //             type: 'post',
+//     //             url: '/psd/getloginname',
+//     //         }, false, '', function (res) {
+//     //             var this_name = res.data
+//     //             document.getElementById('update-shoukuanRenyuan').value = this_name;
+//     //         })
+//     //         document.getElementById('update-shoukuanRiqi').value = dqrq;
+//     //         document.getElementById("update-shoukuanRiqi").disabled = true;
+//     //     }
+//     // });
+//     //
+//     // var inupd10 = document.getElementById('update-wancheng');
+//     // var yuanvalue10 = $('#update-wancheng').val();
+//     // inupd10.addEventListener('blur', function () {
+//     //     var invalue10 = $('#update-wancheng').val();
+//     //     if (invalue10 != yuanvalue10) {
+//     //         var date = new Date();
+//     //         var day = ("0" + date.getDate()).slice(-2);
+//     //         var month = ("0" + (date.getMonth() + 1)).slice(-2);
+//     //         var hh = date.getHours();
+//     //         var mm = date.getMinutes();
+//     //         var ss = date.getSeconds();
+//     //         var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+//     //
+//     //         $ajax({
+//     //             type: 'post',
+//     //             url: '/psd/getloginname',
+//     //         }, false, '', function (res) {
+//     //             var this_name = res.data
+//     //             document.getElementById('update-wanchengRenyuan').value = this_name;
+//     //         })
+//     //         document.getElementById('update-wanchengRiqi').value = dqrq;
+//     //         document.getElementById("update-wanchengRiqi").disabled = true;
+//     //     }
+//     // });
+//     //
+//     var inp1 = document.getElementById('add-songhuoAddress');
+//     var yuanvalue1 = $('#add-songhuoAddress').val();
+//     inp1.addEventListener('blur', function() {
+//         var invalue1 = $('#add-songhuoAddress').val();
+//         if (invalue1 != yuanvalue1) {
+//             var date = new Date();
+//             var day = ("0" + date.getDate()).slice(-2);
+//             var month = ("0" + (date.getMonth() + 1)).slice(-2);
+//             var hh = date.getHours();
+//             var mm = date.getMinutes();
+//             var ss = date.getSeconds();
+//             var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+//
+//             $ajax({
+//                 type: 'post',
+//                 url: '/psd/getloginname',
+//             }, false, '', function (res) {
+//                 var this_name = res.data
+//                 document.getElementById('add-songhuoAddressRenyuan').value = this_name;
+//             })
+//             document.getElementById('add-songhuoAddressRiqi').value = dqrq;
+//             document.getElementById("add-songhuoAddressRiqi").disabled = true;
+//         }
+//     });
+//
+//     var inp1 = document.getElementById('update-songhuoAddress');
+//     var yuanvalue1 = $('#update-songhuoAddress').val();
+//     inp1.addEventListener('blur', function() {
+//         var invalue1 = $('#update-songhuoAddress').val();
+//         if (invalue1 != yuanvalue1) {
+//             var date = new Date();
+//             var day = ("0" + date.getDate()).slice(-2);
+//             var month = ("0" + (date.getMonth() + 1)).slice(-2);
+//             var hh = date.getHours();
+//             var mm = date.getMinutes();
+//             var ss = date.getSeconds();
+//             var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+//
+//             $ajax({
+//                 type: 'post',
+//                 url: '/psd/getloginname',
+//             }, false, '', function (res) {
+//                 var this_name = res.data
+//                 document.getElementById('update-songhuoAddressRenyuan').value = this_name;
+//             })
+//             document.getElementById('update-songhuoAddressRiqi').value = dqrq;
+//             document.getElementById("update-songhuoAddressRiqi").disabled = true;
+//         }
+//     });
+//
+//     var inp2 = document.getElementById('add-hqquyu');
+//     var yuanvalue2 = $('#add-hqquyu').val();
+//     inp2.addEventListener('blur', function() {
+//         var invalue2 = $('#add-hqquyu').val();
+//         if (invalue2 != yuanvalue2) {
+//             var date = new Date();
+//             var day = ("0" + date.getDate()).slice(-2);
+//             var month = ("0" + (date.getMonth() + 1)).slice(-2);
+//             var hh = date.getHours();
+//             var mm = date.getMinutes();
+//             var ss = date.getSeconds();
+//             var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+//
+//             $ajax({
+//                 type: 'post',
+//                 url: '/psd/getloginname',
+//             }, false, '', function (res) {
+//                 var this_name = res.data
+//                 document.getElementById('add-quyuRenyuan').value = this_name;
+//             })
+//             document.getElementById('add-quyuRiqi').value = dqrq;
+//             document.getElementById("add-quyuRiqi").disabled = true;
+//         }
+//     });
+//
+//     var inp2 = document.getElementById('update-hqquyu');
+//     var yuanvalue2 = $('#update-hqquyu').val();
+//     inp2.addEventListener('blur', function() {
+//         var invalue2 = $('#update-hqquyu').val();
+//         if (invalue2 != yuanvalue2) {
+//             var date = new Date();
+//             var day = ("0" + date.getDate()).slice(-2);
+//             var month = ("0" + (date.getMonth() + 1)).slice(-2);
+//             var hh = date.getHours();
+//             var mm = date.getMinutes();
+//             var ss = date.getSeconds();
+//             var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+//
+//             $ajax({
+//                 type: 'post',
+//                 url: '/psd/getloginname',
+//             }, false, '', function (res) {
+//                 var this_name = res.data
+//                 document.getElementById('update-quyuRenyuan').value = this_name;
+//             })
+//             document.getElementById('update-quyuRiqi').value = dqrq;
+//             document.getElementById("update-quyuRiqi").disabled = true;
+//         }
+//     });
+//
+//     var inp3 = document.getElementById('add-anzhuangAddress');
+//     var yuanvalue3 = $('#add-anzhuangAddress').val();
+//     inp3.addEventListener('blur', function() {
+//         var invalue3 = $('#add-anzhuangAddress').val();
+//         if (invalue3 != yuanvalue3) {
+//             var date = new Date();
+//             var day = ("0" + date.getDate()).slice(-2);
+//             var month = ("0" + (date.getMonth() + 1)).slice(-2);
+//             var hh = date.getHours();
+//             var mm = date.getMinutes();
+//             var ss = date.getSeconds();
+//             var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+//
+//             $ajax({
+//                 type: 'post',
+//                 url: '/psd/getloginname',
+//             }, false, '', function (res) {
+//                 var this_name = res.data
+//                 document.getElementById('add-anzhuangAddressRenyuan').value = this_name;
+//             })
+//             document.getElementById('add-anzhuangAddressRiqi').value = dqrq;
+//             document.getElementById("add-anzhuangAddressRiqi").disabled = true;
+//         }
+//     });
+//
+//     var inp3 = document.getElementById('update-anzhuangAddress');
+//     var yuanvalue3 = $('#update-anzhuangAddress').val();
+//     inp3.addEventListener('blur', function() {
+//         var invalue3 = $('#update-anzhuangAddress').val();
+//         if (invalue3 != yuanvalue3) {
+//             var date = new Date();
+//             var day = ("0" + date.getDate()).slice(-2);
+//             var month = ("0" + (date.getMonth() + 1)).slice(-2);
+//             var hh = date.getHours();
+//             var mm = date.getMinutes();
+//             var ss = date.getSeconds();
+//             var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+//
+//             $ajax({
+//                 type: 'post',
+//                 url: '/psd/getloginname',
+//             }, false, '', function (res) {
+//                 var this_name = res.data
+//                 document.getElementById('update-anzhuangAddressRenyuan').value = this_name;
+//             })
+//             document.getElementById('update-anzhuangAddressRiqi').value = dqrq;
+//             document.getElementById("update-anzhuangAddressRiqi").disabled = true;
+//         }
+//     });
+//
+//     var inp4 = document.getElementById('add-phone');
+//     var yuanvalue4 = $('#add-phone').val();
+//     inp4.addEventListener('blur', function() {
+//         var invalue4 = $('#add-phone').val();
+//         if (invalue4 != yuanvalue4) {
+//             var date = new Date();
+//             var day = ("0" + date.getDate()).slice(-2);
+//             var month = ("0" + (date.getMonth() + 1)).slice(-2);
+//             var hh = date.getHours();
+//             var mm = date.getMinutes();
+//             var ss = date.getSeconds();
+//             var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+//
+//             $ajax({
+//                 type: 'post',
+//                 url: '/psd/getloginname',
+//             }, false, '', function (res) {
+//                 var this_name = res.data
+//                 document.getElementById('add-phoneRenyuan').value = this_name;
+//             })
+//             document.getElementById('add-phoneRiqi').value = dqrq;
+//             document.getElementById("add-phoneRiqi").disabled = true;
+//         }
+//     });
+//
+//     var inp4 = document.getElementById('update-phone');
+//     var yuanvalue4 = $('#update-phone').val();
+//     inp4.addEventListener('blur', function() {
+//         var invalue4 = $('#update-phone').val();
+//         if (invalue4 != yuanvalue4) {
+//             var date = new Date();
+//             var day = ("0" + date.getDate()).slice(-2);
+//             var month = ("0" + (date.getMonth() + 1)).slice(-2);
+//             var hh = date.getHours();
+//             var mm = date.getMinutes();
+//             var ss = date.getSeconds();
+//             var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+//
+//             $ajax({
+//                 type: 'post',
+//                 url: '/psd/getloginname',
+//             }, false, '', function (res) {
+//                 var this_name = res.data
+//                 document.getElementById('update-phoneRenyuan').value = this_name;
+//             })
+//             document.getElementById('update-phoneRiqi').value = dqrq;
+//             document.getElementById("update-phoneRiqi").disabled = true;
+//         }
+//     });
+//
+//     var inp5 = document.getElementById('add-customerOrder');
+//     var yuanvalue5 = $('#add-customerOrder').val();
+//     inp5.addEventListener('blur', function() {
+//         var invalue5 = $('#add-customerOrder').val();
+//         if (invalue5 != yuanvalue5) {
+//             var date = new Date();
+//             var day = ("0" + date.getDate()).slice(-2);
+//             var month = ("0" + (date.getMonth() + 1)).slice(-2);
+//             var hh = date.getHours();
+//             var mm = date.getMinutes();
+//             var ss = date.getSeconds();
+//             var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+//
+//             $ajax({
+//                 type: 'post',
+//                 url: '/psd/getloginname',
+//             }, false, '', function (res) {
+//                 var this_name = res.data
+//                 document.getElementById('add-customerOrderRenyuan').value = this_name;
+//             })
+//             document.getElementById('add-customerOrderRiqi').value = dqrq;
+//             document.getElementById("add-customerOrderRiqi").disabled = true;
+//         }
+//     });
+//
+//     var inp5 = document.getElementById('update-customerOrder');
+//     var yuanvalue5 = $('#update-customerOrder').val();
+//     inp5.addEventListener('blur', function() {
+//         var invalue5 = $('#update-customerOrder').val();
+//         if (invalue5 != yuanvalue5) {
+//             var date = new Date();
+//             var day = ("0" + date.getDate()).slice(-2);
+//             var month = ("0" + (date.getMonth() + 1)).slice(-2);
+//             var hh = date.getHours();
+//             var mm = date.getMinutes();
+//             var ss = date.getSeconds();
+//             var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+//
+//             $ajax({
+//                 type: 'post',
+//                 url: '/psd/getloginname',
+//             }, false, '', function (res) {
+//                 var this_name = res.data
+//                 document.getElementById('update-customerOrderRenyuan').value = this_name;
+//             })
+//             document.getElementById('update-customerOrderRiqi').value = dqrq;
+//             document.getElementById("update-customerOrderRiqi").disabled = true;
+//         }
+//     });
+//
+//     var inp6 = document.getElementById('add-customerNeedText');
+//     var yuanvalue6 = $('#add-customerNeedText').val();
+//     inp6.addEventListener('blur', function() {
+//         var invalue6 = $('#add-customerNeedText').val();
+//         if (invalue6 != yuanvalue6) {
+//             var date = new Date();
+//             var day = ("0" + date.getDate()).slice(-2);
+//             var month = ("0" + (date.getMonth() + 1)).slice(-2);
+//             var hh = date.getHours();
+//             var mm = date.getMinutes();
+//             var ss = date.getSeconds();
+//             var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+//
+//             $ajax({
+//                 type: 'post',
+//                 url: '/psd/getloginname',
+//             }, false, '', function (res) {
+//                 var this_name = res.data
+//                 document.getElementById('add-customerNeedTextRenyuan').value = this_name;
+//                 document.getElementById('add-customerNeedText1Renyuan').value = this_name;
+//             })
+//             document.getElementById('add-customerNeedTextRiqi').value = dqrq;
+//             document.getElementById("add-customerNeedTextRiqi").disabled = true;
+//             document.getElementById('add-customerNeedText1Riqi').value = dqrq;
+//             document.getElementById("add-customerNeedText1Riqi").disabled = true;
+//         }
+//     });
+//
+//     var inp6 = document.getElementById('update-customerNeedText');
+//     var yuanvalue6 = $('#update-customerNeedText').val();
+//     inp6.addEventListener('blur', function() {
+//         var invalue6 = $('#update-customerNeedText').val();
+//         if (invalue6 != yuanvalue6) {
+//             var date = new Date();
+//             var day = ("0" + date.getDate()).slice(-2);
+//             var month = ("0" + (date.getMonth() + 1)).slice(-2);
+//             var hh = date.getHours();
+//             var mm = date.getMinutes();
+//             var ss = date.getSeconds();
+//             var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+//
+//             $ajax({
+//                 type: 'post',
+//                 url: '/psd/getloginname',
+//             }, false, '', function (res) {
+//                 var this_name = res.data
+//                 document.getElementById('update-customerNeedTextRenyuan').value = this_name;
+//                 document.getElementById('update-customerNeedText1Renyuan').value = this_name;
+//             })
+//             document.getElementById('update-customerNeedTextRiqi').value = dqrq;
+//             document.getElementById("update-customerNeedTextRiqi").disabled = true;
+//             document.getElementById('update-customerNeedText1Riqi').value = dqrq;
+//             document.getElementById("update-customerNeedText1Riqi").disabled = true;
+//         }
+//     });
+//
+//     var inp8 = document.getElementById('add-money');
+//     var yuanvalue8 = $('#add-money').val();
+//     inp8.addEventListener('blur', function() {
+//         var invalue8 = $('#add-money').val();
+//         if (invalue8 != yuanvalue8) {
+//             var date = new Date();
+//             var day = ("0" + date.getDate()).slice(-2);
+//             var month = ("0" + (date.getMonth() + 1)).slice(-2);
+//             var hh = date.getHours();
+//             var mm = date.getMinutes();
+//             var ss = date.getSeconds();
+//             var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+//
+//             $ajax({
+//                 type: 'post',
+//                 url: '/psd/getloginname',
+//             }, false, '', function (res) {
+//                 var this_name = res.data
+//                 document.getElementById('add-moneyRenyuan').value = this_name;
+//             })
+//             document.getElementById('add-moneyRiqi').value = dqrq;
+//             document.getElementById("add-moneyRiqi").disabled = true;
+//         }
+//     });
+//
+//     var inp8 = document.getElementById('update-money');
+//     var yuanvalue8 = $('#update-money').val();
+//     inp8.addEventListener('blur', function() {
+//         var invalue8 = $('#update-money').val();
+//         if (invalue8 != yuanvalue8) {
+//             var date = new Date();
+//             var day = ("0" + date.getDate()).slice(-2);
+//             var month = ("0" + (date.getMonth() + 1)).slice(-2);
+//             var hh = date.getHours();
+//             var mm = date.getMinutes();
+//             var ss = date.getSeconds();
+//             var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+//
+//             $ajax({
+//                 type: 'post',
+//                 url: '/psd/getloginname',
+//             }, false, '', function (res) {
+//                 var this_name = res.data
+//                 document.getElementById('update-moneyRenyuan').value = this_name;
+//             })
+//             document.getElementById('update-moneyRiqi').value = dqrq;
+//             document.getElementById("update-moneyRiqi").disabled = true;
+//         }
+//     });
+//
+//     var inp9 = document.getElementById('add-shoukuan');
+//     var yuanvalue9 = $('#add-shoukuan').val();
+//     inp9.addEventListener('blur', function() {
+//         var invalue9 = $('#add-shoukuan').val();
+//         if (invalue9 != yuanvalue9) {
+//             var date = new Date();
+//             var day = ("0" + date.getDate()).slice(-2);
+//             var month = ("0" + (date.getMonth() + 1)).slice(-2);
+//             var hh = date.getHours();
+//             var mm = date.getMinutes();
+//             var ss = date.getSeconds();
+//             var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+//
+//             $ajax({
+//                 type: 'post',
+//                 url: '/psd/getloginname',
+//             }, false, '', function (res) {
+//                 var this_name = res.data
+//                 document.getElementById('add-shoukuanRenyuan').value = this_name;
+//             })
+//             document.getElementById('add-shoukuanRiqi').value = dqrq;
+//             document.getElementById("add-shoukuanRiqi").disabled = true;
+//         }
+//     });
+//
+//     var inp9 = document.getElementById('update-shoukuan');
+//     var yuanvalue9 = $('#update-shoukuan').val();
+//     inp9.addEventListener('blur', function() {
+//         var invalue9 = $('#update-shoukuan').val();
+//         if (invalue9 != yuanvalue9) {
+//             var date = new Date();
+//             var day = ("0" + date.getDate()).slice(-2);
+//             var month = ("0" + (date.getMonth() + 1)).slice(-2);
+//             var hh = date.getHours();
+//             var mm = date.getMinutes();
+//             var ss = date.getSeconds();
+//             var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+//
+//             $ajax({
+//                 type: 'post',
+//                 url: '/psd/getloginname',
+//             }, false, '', function (res) {
+//                 var this_name = res.data
+//                 document.getElementById('update-shoukuanRenyuan').value = this_name;
+//             })
+//             document.getElementById('update-shoukuanRiqi').value = dqrq;
+//             document.getElementById("update-shoukuanRiqi").disabled = true;
+//         }
+//     });
+//
+//     var inp10 = document.getElementById('add-wancheng');
+//     var yuanvalue10 = $('#add-wancheng').val();
+//     inp10.addEventListener('blur', function() {
+//         var invalue10 = $('#add-wancheng').val();
+//         if (invalue10 != yuanvalue10) {
+//             var date = new Date();
+//             var day = ("0" + date.getDate()).slice(-2);
+//             var month = ("0" + (date.getMonth() + 1)).slice(-2);
+//             var hh = date.getHours();
+//             var mm = date.getMinutes();
+//             var ss = date.getSeconds();
+//             var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+//
+//             $ajax({
+//                 type: 'post',
+//                 url: '/psd/getloginname',
+//             }, false, '', function (res) {
+//                 var this_name = res.data
+//                 document.getElementById('add-wanchengRenyuan').value = this_name;
+//             })
+//             document.getElementById('add-wanchengRiqi').value = dqrq;
+//             document.getElementById("add-wanchengRiqi").disabled = true;
+//         }
+//     });
+//
+//     var inp10 = document.getElementById('update-wancheng');
+//     var yuanvalue10 = $('#update-wancheng').val();
+//     inp10.addEventListener('blur', function() {
+//         var invalue10 = $('#update-wancheng').val();
+//         if (invalue10 != yuanvalue10) {
+//             var date = new Date();
+//             var day = ("0" + date.getDate()).slice(-2);
+//             var month = ("0" + (date.getMonth() + 1)).slice(-2);
+//             var hh = date.getHours();
+//             var mm = date.getMinutes();
+//             var ss = date.getSeconds();
+//             var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+//
+//             $ajax({
+//                 type: 'post',
+//                 url: '/psd/getloginname',
+//             }, false, '', function (res) {
+//                 var this_name = res.data
+//                 document.getElementById('update-wanchengRenyuan').value = this_name;
+//             })
+//             document.getElementById('update-wanchengRiqi').value = dqrq;
+//             document.getElementById("update-wanchengRiqi").disabled = true;
+//         }
+//     });
+//
+//     var inp12 = document.getElementById('add-kucun');
+//     var yuanvalue12 = $('#add-kucun').val();
+//     inp12.addEventListener('blur', function() {
+//         var invalue12 = $('#add-kucun').val();
+//         if (invalue12 != yuanvalue12) {
+//             var date = new Date();
+//             var day = ("0" + date.getDate()).slice(-2);
+//             var month = ("0" + (date.getMonth() + 1)).slice(-2);
+//             var hh = date.getHours();
+//             var mm = date.getMinutes();
+//             var ss = date.getSeconds();
+//             var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+//
+//             $ajax({
+//                 type: 'post',
+//                 url: '/psd/getloginname',
+//             }, false, '', function (res) {
+//                 var this_name = res.data
+//                 document.getElementById('add-kucunTextRenyuan').value = this_name;
+//             })
+//             document.getElementById('add-kucunTextRiqi').value = dqrq;
+//             document.getElementById("add-kucunTextRiqi").disabled = true;
+//         }
+//     });
+//
+//     var inp12 = document.getElementById('update-kucun');
+//     var yuanvalue12 = $('#update-kucun').val();
+//     inp12.addEventListener('blur', function() {
+//         var invalue12 = $('#update-kucun').val();
+//         if (invalue12 != yuanvalue12) {
+//             var date = new Date();
+//             var day = ("0" + date.getDate()).slice(-2);
+//             var month = ("0" + (date.getMonth() + 1)).slice(-2);
+//             var hh = date.getHours();
+//             var mm = date.getMinutes();
+//             var ss = date.getSeconds();
+//             var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+//
+//             $ajax({
+//                 type: 'post',
+//                 url: '/psd/getloginname',
+//             }, false, '', function (res) {
+//                 var this_name = res.data
+//                 document.getElementById('update-kucunTextRenyuan').value = this_name;
+//             })
+//             document.getElementById('update-kucunTextRiqi').value = dqrq;
+//             document.getElementById("update-kucunTextRiqi").disabled = true;
+//         }
+//     });
+//
+//     var inupd1 = document.getElementById('update-songhuoAddress');
+//     var yuanvalue1 = $('#add-songhuoAddress').val();
+//     inupd1.addEventListener('blur', function() {
+//         var invalue1 = $('#add-songhuoAddress').val();
+//         if (invalue1 != yuanvalue1) {
+//             var date = new Date();
+//             var day = ("0" + date.getDate()).slice(-2);
+//             var month = ("0" + (date.getMonth() + 1)).slice(-2);
+//             var hh = date.getHours();
+//             var mm = date.getMinutes();
+//             var ss = date.getSeconds();
+//             var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+//
+//             $ajax({
+//                 type: 'post',
+//                 url: '/psd/getloginname',
+//             }, false, '', function (res) {
+//                 var this_name = res.data
+//                 document.getElementById('update-songhuoAddressRenyuan').value = this_name;
+//             })
+//             document.getElementById('update-songhuoAddressRiqi').value = dqrq;
+//             document.getElementById("update-songhuoAddressRiqi").disabled = true;
+//         }
+//     });
+//
+//     var inupd2 = document.getElementById('update-hqquyu');
+//     var yuanvalue2 = $('#update-hqquyu').val();
+//     inupd2.addEventListener('blur', function() {
+//         var invalue2 = $('#update-hqquyu').val();
+//         if (invalue2 != yuanvalue2) {
+//             var date = new Date();
+//             var day = ("0" + date.getDate()).slice(-2);
+//             var month = ("0" + (date.getMonth() + 1)).slice(-2);
+//             var hh = date.getHours();
+//             var mm = date.getMinutes();
+//             var ss = date.getSeconds();
+//             var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+//
+//             $ajax({
+//                 type: 'post',
+//                 url: '/psd/getloginname',
+//             }, false, '', function (res) {
+//                 var this_name = res.data
+//                 document.getElementById('update-quyuRenyuan').value = this_name;
+//             })
+//             document.getElementById('update-quyuRiqi').value = dqrq;
+//             document.getElementById("update-quyuRiqi").disabled = true;
+//         }
+//     });
+//
+//     var inupd3 = document.getElementById('update-anzhuangAddress');
+//     var yuanvalue3 = $('#update-anzhuangAddress').val();
+//     inupd3.addEventListener('blur', function() {
+//         var invalue3 = $('#update-anzhuangAddress').val();
+//         if (invalue3 != yuanvalue3) {
+//             var date = new Date();
+//             var day = ("0" + date.getDate()).slice(-2);
+//             var month = ("0" + (date.getMonth() + 1)).slice(-2);
+//             var hh = date.getHours();
+//             var mm = date.getMinutes();
+//             var ss = date.getSeconds();
+//             var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+//
+//             $ajax({
+//                 type: 'post',
+//                 url: '/psd/getloginname',
+//             }, false, '', function (res) {
+//                 var this_name = res.data
+//                 document.getElementById('update-anzhuangAddressRenyuan').value = this_name;
+//             })
+//             document.getElementById('update-anzhuangAddressRiqi').value = dqrq;
+//             document.getElementById("update-anzhuangAddressRiqi").disabled = true;
+//         }
+//     });
+//
+//     var inupd4 = document.getElementById('update-phone');
+//     var yuanvalue4 = $('#update-phone').val();
+//     inupd4.addEventListener('blur', function() {
+//         var invalue4 = $('#update-phone').val();
+//         if (invalue4 != yuanvalue4) {
+//             var date = new Date();
+//             var day = ("0" + date.getDate()).slice(-2);
+//             var month = ("0" + (date.getMonth() + 1)).slice(-2);
+//             var hh = date.getHours();
+//             var mm = date.getMinutes();
+//             var ss = date.getSeconds();
+//             var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+//
+//             $ajax({
+//                 type: 'post',
+//                 url: '/psd/getloginname',
+//             }, false, '', function (res) {
+//                 var this_name = res.data
+//                 document.getElementById('update-phoneRenyuan').value = this_name;
+//             })
+//             document.getElementById('update-phoneRiqi').value = dqrq;
+//             document.getElementById("update-phoneRiqi").disabled = true;
+//         }
+//     });
+//
+//     var inupd5 = document.getElementById('update-customerOrder');
+//     var yuanvalue5 = $('#update-customerOrder').val();
+//     inupd5.addEventListener('blur', function() {
+//         var invalue5 = $('#update-customerOrder').val();
+//         if (invalue5 != yuanvalue5) {
+//             var date = new Date();
+//             var day = ("0" + date.getDate()).slice(-2);
+//             var month = ("0" + (date.getMonth() + 1)).slice(-2);
+//             var hh = date.getHours();
+//             var mm = date.getMinutes();
+//             var ss = date.getSeconds();
+//             var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+//
+//             $ajax({
+//                 type: 'post',
+//                 url: '/psd/getloginname',
+//             }, false, '', function (res) {
+//                 var this_name = res.data
+//                 document.getElementById('update-customerOrderRenyuan').value = this_name;
+//             })
+//             document.getElementById('update-customerOrderRiqi').value = dqrq;
+//             document.getElementById("update-customerOrderRiqi").disabled = true;
+//         }
+//     });
+//
+//     var inupd6 = document.getElementById('update-customerNeedText');
+//     var yuanvalue6 = $('#update-customerNeedText').val();
+//     inupd6.addEventListener('blur', function() {
+//         var invalue6 = $('#update-customerNeedText').val();
+//         if (invalue6 != yuanvalue6) {
+//             var date = new Date();
+//             var day = ("0" + date.getDate()).slice(-2);
+//             var month = ("0" + (date.getMonth() + 1)).slice(-2);
+//             var hh = date.getHours();
+//             var mm = date.getMinutes();
+//             var ss = date.getSeconds();
+//             var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+//
+//             $ajax({
+//                 type: 'post',
+//                 url: '/psd/getloginname',
+//             }, false, '', function (res) {
+//                 var this_name = res.data
+//                 document.getElementById('update-customerNeedTextRenyuan').value = this_name;
+//             })
+//             document.getElementById('update-customerNeedTextRiqi').value = dqrq;
+//             document.getElementById("update-customerNeedTextRiqi").disabled = true;
+//         }
+//     });
+//
+//     var inupd7 = document.getElementById('update-customerNeedText1');
+//     var yuanvalue7 = $('#update-customerNeedText1').val();
+//     inupd7.addEventListener('blur', function() {
+//         var invalue7 = $('#update-customerNeedText1').val();
+//         if (invalue7 != yuanvalue7) {
+//             var date = new Date();
+//             var day = ("0" + date.getDate()).slice(-2);
+//             var month = ("0" + (date.getMonth() + 1)).slice(-2);
+//             var hh = date.getHours();
+//             var mm = date.getMinutes();
+//             var ss = date.getSeconds();
+//             var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+//
+//             $ajax({
+//                 type: 'post',
+//                 url: '/psd/getloginname',
+//             }, false, '', function (res) {
+//                 var this_name = res.data
+//                 document.getElementById('update-customerNeedText1Renyuan').value = this_name;
+//             })
+//             document.getElementById('update-customerNeedText1Riqi').value = dqrq;
+//             document.getElementById("update-customerNeedText1Riqi").disabled = true;
+//         }
+//     });
+//
+//     var inupd8 = document.getElementById('update-money');
+//     var yuanvalue8 = $('#update-money').val();
+//     inupd8.addEventListener('blur', function() {
+//         var invalue8 = $('#update-money').val();
+//         if (invalue8 != yuanvalue8) {
+//             var date = new Date();
+//             var day = ("0" + date.getDate()).slice(-2);
+//             var month = ("0" + (date.getMonth() + 1)).slice(-2);
+//             var hh = date.getHours();
+//             var mm = date.getMinutes();
+//             var ss = date.getSeconds();
+//             var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+//
+//             $ajax({
+//                 type: 'post',
+//                 url: '/psd/getloginname',
+//             }, false, '', function (res) {
+//                 var this_name = res.data
+//                 document.getElementById('update-moneyRenyuan').value = this_name;
+//             })
+//             document.getElementById('update-moneyRiqi').value = dqrq;
+//             document.getElementById("update-moneyRiqi").disabled = true;
+//         }
+//     });
+//
+//     var inupd9 = document.getElementById('update-shoukuan');
+//     var yuanvalue9 = $('#update-shoukuan').val();
+//     inupd9.addEventListener('blur', function() {
+//         var invalue9 = $('#update-shoukuan').val();
+//         if (invalue9 != yuanvalue9) {
+//             var date = new Date();
+//             var day = ("0" + date.getDate()).slice(-2);
+//             var month = ("0" + (date.getMonth() + 1)).slice(-2);
+//             var hh = date.getHours();
+//             var mm = date.getMinutes();
+//             var ss = date.getSeconds();
+//             var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+//
+//             $ajax({
+//                 type: 'post',
+//                 url: '/psd/getloginname',
+//             }, false, '', function (res) {
+//                 var this_name = res.data
+//                 document.getElementById('update-shoukuanRenyuan').value = this_name;
+//             })
+//             document.getElementById('update-shoukuanRiqi').value = dqrq;
+//             document.getElementById("update-shoukuanRiqi").disabled = true;
+//         }
+//     });
+//
+//     var inupd10 = document.getElementById('update-wancheng');
+//     var yuanvalue10 = $('#update-wancheng').val();
+//     inupd10.addEventListener('blur', function() {
+//         var invalue10 = $('#update-wancheng').val();
+//         if (invalue10 != yuanvalue10) {
+//             var date = new Date();
+//             var day = ("0" + date.getDate()).slice(-2);
+//             var month = ("0" + (date.getMonth() + 1)).slice(-2);
+//             var hh = date.getHours();
+//             var mm = date.getMinutes();
+//             var ss = date.getSeconds();
+//             var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+//
+//             $ajax({
+//                 type: 'post',
+//                 url: '/psd/getloginname',
+//             }, false, '', function (res) {
+//                 var this_name = res.data
+//                 document.getElementById('update-wanchengRenyuan').value = this_name;
+//             })
+//             document.getElementById('update-wanchengRiqi').value = dqrq;
+//             document.getElementById("update-wanchengRiqi").disabled = true;
+//         }
+//     });
+//
+//     var inupd11 = document.getElementById('fileInput1');
+//     var yuanvalue11 = $('#fileInput1').val();
+//     inupd11.addEventListener('blur', function() {
+//         var invalue11 = $('#fileInput1').val();
+//         if (invalue11 != yuanvalue11) {
+//             var date = new Date();
+//             var day = ("0" + date.getDate()).slice(-2);
+//             var month = ("0" + (date.getMonth() + 1)).slice(-2);
+//             var hh = date.getHours();
+//             var mm = date.getMinutes();
+//             var ss = date.getSeconds();
+//             var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+//
+//             $ajax({
+//                 type: 'post',
+//                 url: '/psd/getloginname',
+//             }, false, '', function (res) {
+//                 var this_name = res.data
+//                 document.getElementById('add-peihuoImg1Renyuan').value = this_name;
+//             })
+//             document.getElementById('add-peihuoImg1Riqi').value = dqrq;
+//             document.getElementById("add-peihuoImg1Riqi").disabled = true;
+//         }
+//     });
+//
+//     var inupd11 = document.getElementById('fileInput2');
+//     var yuanvalue11 = $('#fileInput2').val();
+//     inupd11.addEventListener('blur', function() {
+//         var invalue11 = $('#fileInput2').val();
+//         if (invalue11 != yuanvalue11) {
+//             var date = new Date();
+//             var day = ("0" + date.getDate()).slice(-2);
+//             var month = ("0" + (date.getMonth() + 1)).slice(-2);
+//             var hh = date.getHours();
+//             var mm = date.getMinutes();
+//             var ss = date.getSeconds();
+//             var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+//
+//             $ajax({
+//                 type: 'post',
+//                 url: '/psd/getloginname',
+//             }, false, '', function (res) {
+//                 var this_name = res.data
+//                 document.getElementById('add-peihuoImg2Renyuan').value = this_name;
+//             })
+//             document.getElementById('add-peihuoImg2Riqi').value = dqrq;
+//             document.getElementById("add-peihuoImg2Riqi").disabled = true;
+//         }
+//     });
+//
+//     var inupd11 = document.getElementById('fileInput3');
+//     var yuanvalue11 = $('#fileInput3').val();
+//     inupd11.addEventListener('blur', function() {
+//         var invalue11 = $('#fileInput3').val();
+//         if (invalue11 != yuanvalue11) {
+//             var date = new Date();
+//             var day = ("0" + date.getDate()).slice(-2);
+//             var month = ("0" + (date.getMonth() + 1)).slice(-2);
+//             var hh = date.getHours();
+//             var mm = date.getMinutes();
+//             var ss = date.getSeconds();
+//             var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+//
+//             $ajax({
+//                 type: 'post',
+//                 url: '/psd/getloginname',
+//             }, false, '', function (res) {
+//                 var this_name = res.data
+//                 document.getElementById('add-peihuoImg3Renyuan').value = this_name;
+//             })
+//             document.getElementById('add-peihuoImg3Riqi').value = dqrq;
+//             document.getElementById("add-peihuoImg3Riqi").disabled = true;
+//         }
+//     });
+//
+//     var inupd11 = document.getElementById('fileInput4');
+//     var yuanvalue11 = $('#fileInput4').val();
+//     inupd11.addEventListener('blur', function() {
+//         var invalue11 = $('#fileInput4').val();
+//         if (invalue11 != yuanvalue11) {
+//             var date = new Date();
+//             var day = ("0" + date.getDate()).slice(-2);
+//             var month = ("0" + (date.getMonth() + 1)).slice(-2);
+//             var hh = date.getHours();
+//             var mm = date.getMinutes();
+//             var ss = date.getSeconds();
+//             var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+//
+//             $ajax({
+//                 type: 'post',
+//                 url: '/psd/getloginname',
+//             }, false, '', function (res) {
+//                 var this_name = res.data
+//                 document.getElementById('add-peihuoImg4Renyuan').value = this_name;
+//             })
+//             document.getElementById('add-peihuoImg4Riqi').value = dqrq;
+//             document.getElementById("add-peihuoImg4Riqi").disabled = true;
+//         }
+//     });
+//
+//     var inupd11 = document.getElementById('fileInput5');
+//     var yuanvalue11 = $('#fileInput5').val();
+//     inupd11.addEventListener('blur', function() {
+//         var invalue11 = $('#fileInput5').val();
+//         if (invalue11 != yuanvalue11) {
+//             var date = new Date();
+//             var day = ("0" + date.getDate()).slice(-2);
+//             var month = ("0" + (date.getMonth() + 1)).slice(-2);
+//             var hh = date.getHours();
+//             var mm = date.getMinutes();
+//             var ss = date.getSeconds();
+//             var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+//
+//             $ajax({
+//                 type: 'post',
+//                 url: '/psd/getloginname',
+//             }, false, '', function (res) {
+//                 var this_name = res.data
+//                 document.getElementById('add-peihuoImg5Renyuan').value = this_name;
+//             })
+//             document.getElementById('add-peihuoImg5Riqi').value = dqrq;
+//             document.getElementById("add-peihuoImg5Riqi").disabled = true;
+//         }
+//     });
+//
+//     var inupd11 = document.getElementById('fileInput6');
+//     var yuanvalue11 = $('#fileInput6').val();
+//     inupd11.addEventListener('blur', function() {
+//         var invalue11 = $('#fileInput6').val();
+//         if (invalue11 != yuanvalue11) {
+//             var date = new Date();
+//             var day = ("0" + date.getDate()).slice(-2);
+//             var month = ("0" + (date.getMonth() + 1)).slice(-2);
+//             var hh = date.getHours();
+//             var mm = date.getMinutes();
+//             var ss = date.getSeconds();
+//             var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+//
+//             $ajax({
+//                 type: 'post',
+//                 url: '/psd/getloginname',
+//             }, false, '', function (res) {
+//                 var this_name = res.data
+//                 document.getElementById('add-peisongImg1Renyuan').value = this_name;
+//             })
+//             document.getElementById('add-peisongImg1Riqi').value = dqrq;
+//             document.getElementById("add-peisongImg1Riqi").disabled = true;
+//         }
+//     });
+//
+//     var inupd11 = document.getElementById('fileInput7');
+//     var yuanvalue11 = $('#fileInput7').val();
+//     inupd11.addEventListener('blur', function() {
+//         var invalue11 = $('#fileInput7').val();
+//         if (invalue11 != yuanvalue11) {
+//             var date = new Date();
+//             var day = ("0" + date.getDate()).slice(-2);
+//             var month = ("0" + (date.getMonth() + 1)).slice(-2);
+//             var hh = date.getHours();
+//             var mm = date.getMinutes();
+//             var ss = date.getSeconds();
+//             var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+//
+//             $ajax({
+//                 type: 'post',
+//                 url: '/psd/getloginname',
+//             }, false, '', function (res) {
+//                 var this_name = res.data
+//                 document.getElementById('add-peisongImg2Renyuan').value = this_name;
+//             })
+//             document.getElementById('add-peisongImg2Riqi').value = dqrq;
+//             document.getElementById("add-peisongImg2Riqi").disabled = true;
+//         }
+//     });
+//
+//     var inupd11 = document.getElementById('fileInput8');
+//     var yuanvalue11 = $('#fileInput8').val();
+//     inupd11.addEventListener('blur', function() {
+//         var invalue11 = $('#fileInput8').val();
+//         if (invalue11 != yuanvalue11) {
+//             var date = new Date();
+//             var day = ("0" + date.getDate()).slice(-2);
+//             var month = ("0" + (date.getMonth() + 1)).slice(-2);
+//             var hh = date.getHours();
+//             var mm = date.getMinutes();
+//             var ss = date.getSeconds();
+//             var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+//
+//             $ajax({
+//                 type: 'post',
+//                 url: '/psd/getloginname',
+//             }, false, '', function (res) {
+//                 var this_name = res.data
+//                 document.getElementById('add-peisongImg3Renyuan').value = this_name;
+//             })
+//             document.getElementById('add-peisongImg3Riqi').value = dqrq;
+//             document.getElementById("add-peisongImg3Riqi").disabled = true;
+//         }
+//     });
+//
+//     // --------------编辑
+//     var upd = document.getElementById('update-customerName');
+//     var yuanupdvalue = $('#update-customerName').val();
+//     upd.addEventListener('blur', function() {
+//         var updvalue = $('#update-customerName').val();
+//         if (updvalue != yuanupdvalue) {
+//             var date = new Date();
+//             var day = ("0" + date.getDate()).slice(-2);
+//             var month = ("0" + (date.getMonth() + 1)).slice(-2);
+//             var hh = date.getHours();
+//             var mm = date.getMinutes();
+//             var ss = date.getSeconds();
+//             var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+//
+//             $ajax({
+//                 type: 'post',
+//                 url: '/psd/getloginname',
+//             }, false, '', function (res) {
+//                 var this_name = res.data
+//                 document.getElementById('update-customerNameRenyuan').value = this_name;
+//             })
+//             document.getElementById('update-customerNameRiqi').value = dqrq;
+//             document.getElementById('update-customerNameRiqi').disabled = true;
+//         }
+//     });
+//
+//     var upd = document.getElementById('update-customerNeedText');
+//     var yuanupdvalue = $('#update-customerNeedText').val();
+//     upd.addEventListener('blur', function() {
+//         var updvalue = $('#update-customerNeedText').val();
+//         if (updvalue != yuanupdvalue) {
+//             var date = new Date();
+//             var day = ("0" + date.getDate()).slice(-2);
+//             var month = ("0" + (date.getMonth() + 1)).slice(-2);
+//             var hh = date.getHours();
+//             var mm = date.getMinutes();
+//             var ss = date.getSeconds();
+//             var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+//
+//             $ajax({
+//                 type: 'post',
+//                 url: '/psd/getloginname',
+//             }, false, '', function (res) {
+//                 var this_name = res.data
+//                 document.getElementById('update-customerNeedTextRenyuan').value = this_name;
+//             })
+//             document.getElementById('update-customerNeedTextRiqi').value = dqrq;
+//             document.getElementById('update-customerNeedTextRiqi').disabled = true;
+//         }
+//     });
+//
+//     var upd = document.getElementById('update-customerNeedText1');
+//     var yuanupdvalue = $('#update-customerNeedText1').val();
+//     upd.addEventListener('blur', function() {
+//         var updvalue = $('#update-customerNeedText1').val();
+//         if (updvalue != yuanupdvalue) {
+//             var date = new Date();
+//             var day = ("0" + date.getDate()).slice(-2);
+//             var month = ("0" + (date.getMonth() + 1)).slice(-2);
+//             var hh = date.getHours();
+//             var mm = date.getMinutes();
+//             var ss = date.getSeconds();
+//             var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+//
+//             $ajax({
+//                 type: 'post',
+//                 url: '/psd/getloginname',
+//             }, false, '', function (res) {
+//                 var this_name = res.data
+//                 // document.getElementById('update-customerNeedTextRenyuan').value = this_name;
+//             })
+//             document.getElementById('update-customerNeedText1Riqi').value = dqrq;
+//             document.getElementById('update-customerNeedText1Riqi').disabled = true;
+//         }
+//     });
+//
+//     var upd = document.getElementById('update-songhuoAddress');
+//     var yuanupdvalue = $('#update-songhuoAddress').val();
+//     upd.addEventListener('blur', function() {
+//         var updvalue = $('#update-songhuoAddress').val();
+//         if (updvalue != yuanupdvalue) {
+//             var date = new Date();
+//             var day = ("0" + date.getDate()).slice(-2);
+//             var month = ("0" + (date.getMonth() + 1)).slice(-2);
+//             var hh = date.getHours();
+//             var mm = date.getMinutes();
+//             var ss = date.getSeconds();
+//             var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+//
+//             $ajax({
+//                 type: 'post',
+//                 url: '/psd/getloginname',
+//             }, false, '', function (res) {
+//                 var this_name = res.data
+//                 document.getElementById('update-songhuoAddressRenyuan').value = this_name;
+//             })
+//             document.getElementById('update-songhuoAddressRiqi').value = dqrq;
+//             document.getElementById('update-songhuoAddressRiqi').disabled = true;
+//         }
+//     });
+//
+//     var upd = document.getElementById('update-anzhuangAddress');
+//     var yuanupdvalue = $('#update-anzhuangAddress').val();
+//     upd.addEventListener('blur', function() {
+//         var updvalue = $('#update-anzhuangAddress').val();
+//         if (updvalue != yuanupdvalue) {
+//             var date = new Date();
+//             var day = ("0" + date.getDate()).slice(-2);
+//             var month = ("0" + (date.getMonth() + 1)).slice(-2);
+//             var hh = date.getHours();
+//             var mm = date.getMinutes();
+//             var ss = date.getSeconds();
+//             var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+//
+//             $ajax({
+//                 type: 'post',
+//                 url: '/psd/getloginname',
+//             }, false, '', function (res) {
+//                 var this_name = res.data
+//                 document.getElementById('update-anzhuangAddressRenyuan').value = this_name;
+//             })
+//             document.getElementById('update-anzhuangAddressRiqi').value = dqrq;
+//             document.getElementById('update-anzhuangAddressRiqi').disabled = true;
+//         }
+//     });
+//
+//     var upd = document.getElementById('update-phone');
+//     var yuanupdvalue = $('#update-phone').val();
+//     upd.addEventListener('blur', function() {
+//         var updvalue = $('#update-phone').val();
+//         if (updvalue != yuanupdvalue) {
+//             var date = new Date();
+//             var day = ("0" + date.getDate()).slice(-2);
+//             var month = ("0" + (date.getMonth() + 1)).slice(-2);
+//             var hh = date.getHours();
+//             var mm = date.getMinutes();
+//             var ss = date.getSeconds();
+//             var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+//
+//             $ajax({
+//                 type: 'post',
+//                 url: '/psd/getloginname',
+//             }, false, '', function (res) {
+//                 var this_name = res.data
+//                 document.getElementById('update-phoneRenyuan').value = this_name;
+//             })
+//             document.getElementById('update-phoneRiqi').value = dqrq;
+//             document.getElementById('update-phoneRiqi').disabled = true;
+//         }
+//     });
+//
+//     var upd = document.getElementById('update-customerOrder');
+//     var yuanupdvalue = $('#update-customerOrder').val();
+//     upd.addEventListener('blur', function() {
+//         var updvalue = $('#update-customerOrder').val();
+//         if (updvalue != yuanupdvalue) {
+//             var date = new Date();
+//             var day = ("0" + date.getDate()).slice(-2);
+//             var month = ("0" + (date.getMonth() + 1)).slice(-2);
+//             var hh = date.getHours();
+//             var mm = date.getMinutes();
+//             var ss = date.getSeconds();
+//             var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+//
+//             $ajax({
+//                 type: 'post',
+//                 url: '/psd/getloginname',
+//             }, false, '', function (res) {
+//                 var this_name = res.data
+//                 document.getElementById('update-customerOrderRenyuan').value = this_name;
+//             })
+//             document.getElementById('update-customerOrderRiqi').value = dqrq;
+//             document.getElementById('update-customerOrderRiqi').disabled = true;
+//         }
+//     });
+//
+//     // var upd = document.getElementById('update-songhuoDanhao');
+//     // var yuanupdvalue = $('#update-songhuoDanhao').val();
+//     // upd.addEventListener('blur', function() {
+//     //     var updvalue = $('#update-songhuoDanhao').val();
+//     //     if (updvalue != yuanupdvalue) {
+//     //         var date = new Date();
+//     //         var day = ("0" + date.getDate()).slice(-2);
+//     //         var month = ("0" + (date.getMonth() + 1)).slice(-2);
+//     //         var hh = date.getHours();
+//     //         var mm = date.getMinutes();
+//     //         var ss = date.getSeconds();
+//     //         var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+//     //
+//     //         $ajax({
+//     //             type: 'post',
+//     //             url: '/psd/getloginname',
+//     //         }, false, '', function (res) {
+//     //             var this_name = res.data
+//     //             document.getElementById('update-songhuoDanhaoRenyuan').value = this_name;
+//     //         })
+//     //         document.getElementById('update-songhuoDanhaoRiqi').value = dqrq;
+//     //         document.getElementById('update-songhuoDanhaoRiqi').disabled = true;
+//     //     }
+//     // });
+//
+//     var upd = document.getElementById('update-wancheng');
+//     var yuanupdvalue = $('#update-wancheng').val();
+//     upd.addEventListener('blur', function() {
+//         var updvalue = $('#update-wancheng').val();
+//         if (updvalue != yuanupdvalue) {
+//             var date = new Date();
+//             var day = ("0" + date.getDate()).slice(-2);
+//             var month = ("0" + (date.getMonth() + 1)).slice(-2);
+//             var hh = date.getHours();
+//             var mm = date.getMinutes();
+//             var ss = date.getSeconds();
+//             var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+//
+//             $ajax({
+//                 type: 'post',
+//                 url: '/psd/getloginname',
+//             }, false, '', function (res) {
+//                 var this_name = res.data
+//                 document.getElementById('update-wanchengRenyuan').value = this_name;
+//             })
+//             document.getElementById('update-wanchengRiqi').value = dqrq;
+//             document.getElementById('update-wanchengRiqi').disabled = true;
+//         }
+//     });
+//
+//     var upd = document.getElementById('update-money');
+//     var yuanupdvalue = $('#update-money').val();
+//     upd.addEventListener('blur', function() {
+//         var updvalue = $('#update-money').val();
+//         if (updvalue != yuanupdvalue) {
+//             var date = new Date();
+//             var day = ("0" + date.getDate()).slice(-2);
+//             var month = ("0" + (date.getMonth() + 1)).slice(-2);
+//             var hh = date.getHours();
+//             var mm = date.getMinutes();
+//             var ss = date.getSeconds();
+//             var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+//
+//             $ajax({
+//                 type: 'post',
+//                 url: '/psd/getloginname',
+//             }, false, '', function (res) {
+//                 var this_name = res.data
+//                 document.getElementById('update-moneyRenyuan').value = this_name;
+//             })
+//             document.getElementById('update-moneyRiqi').value = dqrq;
+//             document.getElementById('update-moneyRiqi').disabled = true;
+//         }
+//     });
+//
+//     var upd = document.getElementById('update-shoukuan');
+//     var yuanupdvalue = $('#update-shoukuan').val();
+//     upd.addEventListener('blur', function() {
+//         var updvalue = $('#update-shoukuan').val();
+//         if (updvalue != yuanupdvalue) {
+//             var date = new Date();
+//             var day = ("0" + date.getDate()).slice(-2);
+//             var month = ("0" + (date.getMonth() + 1)).slice(-2);
+//             var hh = date.getHours();
+//             var mm = date.getMinutes();
+//             var ss = date.getSeconds();
+//             var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+//
+//             $ajax({
+//                 type: 'post',
+//                 url: '/psd/getloginname',
+//             }, false, '', function (res) {
+//                 var this_name = res.data
+//                 document.getElementById('update-shoukuanRenyuan').value = this_name;
+//             })
+//             document.getElementById('update-shoukuanRiqi').value = dqrq;
+//             document.getElementById('update-shoukuanRiqi').disabled = true;
+//         }
+//     });
+//
+//     var upd = document.getElementById('update-kucun');
+//     var yuanupdvalue = $('#update-kucun').val();
+//     upd.addEventListener('blur', function() {
+//         var updvalue = $('#update-kucun').val();
+//         if (updvalue != yuanupdvalue) {
+//             var date = new Date();
+//             var day = ("0" + date.getDate()).slice(-2);
+//             var month = ("0" + (date.getMonth() + 1)).slice(-2);
+//             var hh = date.getHours();
+//             var mm = date.getMinutes();
+//             var ss = date.getSeconds();
+//             var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+//
+//             $ajax({
+//                 type: 'post',
+//                 url: '/psd/getloginname',
+//             }, false, '', function (res) {
+//                 var this_name = res.data
+//                 document.getElementById('update-kucunTextRenyuan').value = this_name;
+//             })
+//             document.getElementById('update-kucunTextRiqi').value = dqrq;
+//             document.getElementById('update-kucunTextRiqi').disabled = true;
+//         }
+//     });
+//
+//     var upd = document.getElementById('update-hqquyu');
+//     var yuanupdvalue = $('#update-hqquyu').val();
+//     upd.addEventListener('blur', function() {
+//         var updvalue = $('#update-hqquyu').val();
+//         if (updvalue != yuanupdvalue) {
+//             var date = new Date();
+//             var day = ("0" + date.getDate()).slice(-2);
+//             var month = ("0" + (date.getMonth() + 1)).slice(-2);
+//             var hh = date.getHours();
+//             var mm = date.getMinutes();
+//             var ss = date.getSeconds();
+//             var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+//
+//             $ajax({
+//                 type: 'post',
+//                 url: '/psd/getloginname',
+//             }, false, '', function (res) {
+//                 var this_name = res.data
+//                 document.getElementById('update-quyuRenyuan').value = this_name;
+//             })
+//             document.getElementById('update-quyuRiqi').value = dqrq;
+//             document.getElementById('update-quyuRiqi').disabled = true;
+//         }
+//     });
+//
+//     var upd = document.getElementById('fileInput9');
+//     var yuanupdvalue = $('#fileInput9').val();
+//     upd.addEventListener('blur', function() {
+//         var updvalue = $('#fileInput9').val();
+//         if (updvalue != yuanupdvalue) {
+//             var date = new Date();
+//             var day = ("0" + date.getDate()).slice(-2);
+//             var month = ("0" + (date.getMonth() + 1)).slice(-2);
+//             var hh = date.getHours();
+//             var mm = date.getMinutes();
+//             var ss = date.getSeconds();
+//             var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+//
+//             $ajax({
+//                 type: 'post',
+//                 url: '/psd/getloginname',
+//             }, false, '', function (res) {
+//                 var this_name = res.data
+//                 document.getElementById('update-peihuoImg1Renyuan').value = this_name;
+//             })
+//             document.getElementById('update-peihuoImg1Riqi').value = dqrq;
+//             document.getElementById('update-peihuoImg1Riqi').disabled = true;
+//         }
+//     });
+//
+//     var upd = document.getElementById('fileInput10');
+//     var yuanupdvalue = $('#fileInput10').val();
+//     upd.addEventListener('blur', function() {
+//         var updvalue = $('#fileInput10').val();
+//         if (updvalue != yuanupdvalue) {
+//             var date = new Date();
+//             var day = ("0" + date.getDate()).slice(-2);
+//             var month = ("0" + (date.getMonth() + 1)).slice(-2);
+//             var hh = date.getHours();
+//             var mm = date.getMinutes();
+//             var ss = date.getSeconds();
+//             var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+//
+//             $ajax({
+//                 type: 'post',
+//                 url: '/psd/getloginname',
+//             }, false, '', function (res) {
+//                 var this_name = res.data
+//                 document.getElementById('update-peihuoImg2Renyuan').value = this_name;
+//             })
+//             document.getElementById('update-peihuoImg2Riqi').value = dqrq;
+//             document.getElementById('update-peihuoImg2Riqi').disabled = true;
+//         }
+//     });
+//
+//     var upd = document.getElementById('fileInput11');
+//     var yuanupdvalue = $('#fileInput11').val();
+//     upd.addEventListener('blur', function() {
+//         var updvalue = $('#fileInput11').val();
+//         if (updvalue != yuanupdvalue) {
+//             var date = new Date();
+//             var day = ("0" + date.getDate()).slice(-2);
+//             var month = ("0" + (date.getMonth() + 1)).slice(-2);
+//             var hh = date.getHours();
+//             var mm = date.getMinutes();
+//             var ss = date.getSeconds();
+//             var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+//
+//             $ajax({
+//                 type: 'post',
+//                 url: '/psd/getloginname',
+//             }, false, '', function (res) {
+//                 var this_name = res.data
+//                 document.getElementById('update-peihuoImg3Renyuan').value = this_name;
+//             })
+//             document.getElementById('update-peihuoImg3Riqi').value = dqrq;
+//             document.getElementById('update-peihuoImg3Riqi').disabled = true;
+//         }
+//     });
+//
+//     var upd = document.getElementById('fileInput12');
+//     var yuanupdvalue = $('#fileInput12').val();
+//     upd.addEventListener('blur', function() {
+//         var updvalue = $('#fileInput12').val();
+//         if (updvalue != yuanupdvalue) {
+//             var date = new Date();
+//             var day = ("0" + date.getDate()).slice(-2);
+//             var month = ("0" + (date.getMonth() + 1)).slice(-2);
+//             var hh = date.getHours();
+//             var mm = date.getMinutes();
+//             var ss = date.getSeconds();
+//             var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+//
+//             $ajax({
+//                 type: 'post',
+//                 url: '/psd/getloginname',
+//             }, false, '', function (res) {
+//                 var this_name = res.data
+//                 document.getElementById('update-peihuoImg4Renyuan').value = this_name;
+//             })
+//             document.getElementById('update-peihuoImg4Riqi').value = dqrq;
+//             document.getElementById('update-peihuoImg4Riqi').disabled = true;
+//         }
+//     });
+//
+//     var upd = document.getElementById('fileInput13');
+//     var yuanupdvalue = $('#fileInput13').val();
+//     upd.addEventListener('blur', function() {
+//         var updvalue = $('#fileInput13').val();
+//         if (updvalue != yuanupdvalue) {
+//             var date = new Date();
+//             var day = ("0" + date.getDate()).slice(-2);
+//             var month = ("0" + (date.getMonth() + 1)).slice(-2);
+//             var hh = date.getHours();
+//             var mm = date.getMinutes();
+//             var ss = date.getSeconds();
+//             var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+//
+//             $ajax({
+//                 type: 'post',
+//                 url: '/psd/getloginname',
+//             }, false, '', function (res) {
+//                 var this_name = res.data
+//                 document.getElementById('update-peihuoImg5Renyuan').value = this_name;
+//             })
+//             document.getElementById('update-peihuoImg5Riqi').value = dqrq;
+//             document.getElementById('update-peihuoImg5Riqi').disabled = true;
+//         }
+//     });
+//
+//     var upd = document.getElementById('fileInput14');
+//     var yuanupdvalue = $('#fileInput14').val();
+//     upd.addEventListener('blur', function() {
+//         var updvalue = $('#fileInput14').val();
+//         if (updvalue != yuanupdvalue) {
+//             var date = new Date();
+//             var day = ("0" + date.getDate()).slice(-2);
+//             var month = ("0" + (date.getMonth() + 1)).slice(-2);
+//             var hh = date.getHours();
+//             var mm = date.getMinutes();
+//             var ss = date.getSeconds();
+//             var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+//
+//             $ajax({
+//                 type: 'post',
+//                 url: '/psd/getloginname',
+//             }, false, '', function (res) {
+//                 var this_name = res.data
+//                 document.getElementById('update-peisongImg1Renyuan').value = this_name;
+//             })
+//             document.getElementById('update-peisongImg1Riqi').value = dqrq;
+//             document.getElementById('update-peisongImg1Riqi').disabled = true;
+//         }
+//     });
+//
+//     var upd = document.getElementById('fileInput26');
+//     var yuanupdvalue = $('#fileInput26').val();
+//     upd.addEventListener('blur', function() {
+//         var updvalue = $('#fileInput26').val();
+//         if (updvalue != yuanupdvalue) {
+//             var date = new Date();
+//             var day = ("0" + date.getDate()).slice(-2);
+//             var month = ("0" + (date.getMonth() + 1)).slice(-2);
+//             var hh = date.getHours();
+//             var mm = date.getMinutes();
+//             var ss = date.getSeconds();
+//             var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+//
+//             $ajax({
+//                 type: 'post',
+//                 url: '/psd/getloginname',
+//             }, false, '', function (res) {
+//                 var this_name = res.data
+//                 document.getElementById('update-peisongImg2Renyuan').value = this_name;
+//             })
+//             document.getElementById('update-peisongImg2Riqi').value = dqrq;
+//             document.getElementById('update-peisongImg2Riqi').disabled = true;
+//         }
+//     });
+//
+//     var upd = document.getElementById('fileInput15');
+//     var yuanupdvalue = $('#fileInput15').val();
+//     upd.addEventListener('blur', function() {
+//         var updvalue = $('#fileInput15').val();
+//         if (updvalue != yuanupdvalue) {
+//             var date = new Date();
+//             var day = ("0" + date.getDate()).slice(-2);
+//             var month = ("0" + (date.getMonth() + 1)).slice(-2);
+//             var hh = date.getHours();
+//             var mm = date.getMinutes();
+//             var ss = date.getSeconds();
+//             var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+//
+//             $ajax({
+//                 type: 'post',
+//                 url: '/psd/getloginname',
+//             }, false, '', function (res) {
+//                 var this_name = res.data
+//                 document.getElementById('update-peisongImg3Renyuan').value = this_name;
+//             })
+//             document.getElementById('update-peisongImg3Riqi').value = dqrq;
+//             document.getElementById('update-peisongImg3Riqi').disabled = true;
+//         }
+//     });
+//     // var inupd11 = document.getElementById('fileInput43');
+//     // var yuanvalue11 = $('#fileInput43').val();
+//     // inupd11.addEventListener('blur', function () {
+//     //     var invalue11 = $('#fileInput43').val();
+//     //     if (invalue11 != yuanvalue11) {
+//     //         var date = new Date();
+//     //         var day = ("0" + date.getDate()).slice(-2);
+//     //         var month = ("0" + (date.getMonth() + 1)).slice(-2);
+//     //         var hh = date.getHours();
+//     //         var mm = date.getMinutes();
+//     //         var ss = date.getSeconds();
+//     //         var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+//     //
+//     //         $ajax({
+//     //             type: 'post',
+//     //             url: '/psd/getloginname',
+//     //         }, false, '', function (res) {
+//     //             var this_name = res.data
+//     //             document.getElementById('update-peisongImg1Renyuan').value = this_name;
+//     //         })
+//     //         document.getElementById('update-peisongImg1Riqi').value = dqrq;
+//     //         document.getElementById("update-peisongImg1Riqi").disabled = true;
+//     //     }
+//     // });
+//
+//
+//     $ajax({
+//         type: 'post',
+//         url: '/user/getUserName',
+//     }, false, '', function (res) {
+//         var this_username = res.data
+//         document.getElementById("dlm").innerText = this_username;
+//     })
+//
+//     getList();
+//     getKhmc();
+//     // getName();
+//     // getriqi();
+//     setTable();
+//     // getkucun();
+//     getquyuxl();
 var idd;
 var num;
-var select_quyu = [];
+var select_qy = [];
 var newFile;
-function getList() {
-    $('#orderNumber').val("");
-    $('#customerName').val("");
-    $('#songhuoAddress').val("");
-    $('#anzhuangAddress').val("");
-    $('#customerOrder').val("");
-    $('#songhuoDanhao').val("");
 
-
+function getPower() {
     $ajax({
         type: 'post',
         url: '/user/getPower',
-        async:false,
     }, false, '', function (res) {
         if (res.code == 200) {
             var power = res.data;
@@ -25,13 +2296,12 @@ function getList() {
             }
         }
     })
+}
 
-
-
+function getPowerKehu() {
     $ajax({
         type: 'post',
         url: '/user/getPower',
-        async:false,
     }, false, '', function (res) {
         if (res.code == 200) {
             var power = res.data;
@@ -39,10 +2309,10 @@ function getList() {
                 document.getElementById("update-wancheng").disabled = true;
                 document.getElementById("update-shoukuan").disabled = true;
                 document.getElementById("update-kucun").hidden = true;
-                document.getElementById("add-shoukuan").disabled = true;
-
-                document.getElementById("add-wancheng").disabled = true;
-                document.getElementById("customerName").disabled = true;
+                document.getElementById("add-shoukuan").hidden = true;
+                document.getElementById("add-customerName").disabled = true;
+                document.getElementById("add-wancheng").hidden = true;
+                // document.getElementById("customerName").disabled = true;
                 document.getElementById("ukc").hidden = true;
                 document.getElementById("a-psi1").hidden = true;
                 document.getElementById("a-phi2").hidden = true;
@@ -100,7 +2370,7 @@ function getList() {
                 document.getElementById("add-kucun").hidden = true;
                 document.getElementById("add-kucunTextRenyuan").hidden = true;
                 document.getElementById("add-kucunTextRiqi").hidden = true;
-                document.getElementById("customerName").disabled=true;
+                // document.getElementById("customerName").disabled=true;
                 document.getElementById("add-customerName").remove();
                 var div = document.getElementById('d-customerName');
                 var textBox = document.createElement('input');
@@ -110,32 +2380,71 @@ function getList() {
                 textBox.class = 'form-control';
                 textBox.autocomplete = 'off';
                 div.appendChild(textBox);
+
+                document.getElementById("customerName").remove();
+                var div = document.getElementById('cusName');
+                var textBox = document.createElement('input');
+                textBox.id = 'customerName';
+                textBox.type = 'text';
+                textBox.name = 'customerName';
+                textBox.class = 'form-control';
+                textBox.autocomplete = 'off';
+                div.appendChild(textBox);
+                document.getElementById("customerName").disabled = true;
+
                 $ajax({
                     type: 'post',
-                    url: '/psd/getloginname',
-                    async:false,
+                    url: '/psd/getloginname1',
                 }, false, '', function (res) {
                     if (res.code == 200) {
                         var this_name = res.data;
                         document.getElementById("add-customerName").value = this_name;
-                        document.getElementById("add-customerNameRenyuan").value = this_name;
-                        document.getElementById("customerName").value=this_name;
+                        // document.getElementById("add-customerNameRenyuan").value = this_name;
+                        document.getElementById("customerName").value = this_name;
+                    }
+                })
+            }
+        }
+    })
+}
+
+function getList() {
+    $('#orderNumber').val("");
+    $('#customerName').val("");
+    $('#songhuoAddress').val("");
+    $('#anzhuangAddress').val("");
+    $('#customerOrder').val("");
+    $('#songhuoDanhao').val("");
+
+    $ajax({
+        type: 'post',
+        url: '/user/getPower',
+        async: false,
+    }, false, '', function (res) {
+        if (res.code == 200) {
+            var power = res.data;
+            if (power == "客户") {
+                $ajax({
+                    type: 'post',
+                    url: '/psd/getloginname1',
+                }, false, '', function (res) {
+                    if (res.code == 200) {
+                        var this_name = res.data;
+                        document.getElementById("customerName").value = this_name;
                     }
                 })
             }
         }
     })
 
-
     $ajax({
         type: 'post',
         url: '/psd/getList',
-
     }, false, '', function (res) {
         if (res.code == 200) {
             setTable(res.data);
             for (n = 0; n < res.data.length; n++) {
-                document.getElementById("wancheng" + n).value = res.data[n].wancheng;
+                document.getElementById("wancheng"+n).value = res.data[n].wancheng;
                 document.getElementById("money"+n).value = res.data[n].money;
                 document.getElementById("shoukuan"+n).value = res.data[n].shoukuan;
                 document.getElementById("quyu"+n).value = res.data[n].quyu;
@@ -153,15 +2462,6 @@ function getList() {
     })
 }
 
-// function getriqi(){
-//     const now = new Date();
-//     const year = now.getFullYear();
-//     const month = (now.getMonth() + 1).toString().padStart(2, '0');
-//     const day = now.getDate().toString().padStart(2, '0');
-//     const hours = now.getHours().toString().padStart(2, '0');
-//     const minutes = now.getMinutes().toString().padStart(2, '0');
-//     const seconds = now.getSeconds().toString().padStart(2, '0');
-// }
 function getKhmc() {
     $ajax({
         type: 'post',
@@ -177,20 +2477,6 @@ function getKhmc() {
     })
 }
 
-// function getName() {
-//     $ajax({
-//         type: 'post',
-//         url: '/psd/getloginname',
-//     }, false, '', function (res) {
-//         if (res.code == 200) {
-//             var this_name = res.data;
-//             document.getElementById("add-customerNameRenyuan").value = this_name;
-//
-//             // $("#update-customerName").append("<option>" + res.data[i].company + "</option>");
-//
-//         }
-//     })
-// }
 
 $(function () {
 
@@ -201,560 +2487,6 @@ $(function () {
 
     });
 
-    // var inp1 = document.getElementById('add-songhuoAddress');
-    // var yuanvalue1 = $('#add-songhuoAddress').val();
-    // inp1.addEventListener('blur', function () {
-    //     var invalue1 = $('#add-songhuoAddress').val();
-    //     if (invalue1 != yuanvalue1) {
-    //         var date = new Date();
-    //         var day = ("0" + date.getDate()).slice(-2);
-    //         var month = ("0" + (date.getMonth() + 1)).slice(-2);
-    //         var hh = date.getHours();
-    //         var mm = date.getMinutes();
-    //         var ss = date.getSeconds();
-    //         var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
-    //
-    //         $ajax({
-    //             type: 'post',
-    //             url: '/psd/getloginname',
-    //         }, false, '', function (res) {
-    //             var this_name = res.data
-    //             document.getElementById('add-songhuoAddressRenyuan').value = this_name;
-    //         })
-    //         document.getElementById('add-songhuoAddressRiqi').value = dqrq;
-    //         document.getElementById("add-songhuoAddressRiqi").disabled = true;
-    //     }
-    // });
-    //
-    // var inp2 = document.getElementById('add-hqquyu');
-    // var yuanvalue2 = $('#add-hqquyu').val();
-    // inp2.addEventListener('blur', function () {
-    //     var invalue2 = $('#add-hqquyu').val();
-    //     if (invalue2 != yuanvalue2) {
-    //         var date = new Date();
-    //         var day = ("0" + date.getDate()).slice(-2);
-    //         var month = ("0" + (date.getMonth() + 1)).slice(-2);
-    //         var hh = date.getHours();
-    //         var mm = date.getMinutes();
-    //         var ss = date.getSeconds();
-    //         var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
-    //
-    //         $ajax({
-    //             type: 'post',
-    //             url: '/psd/getloginname',
-    //         }, false, '', function (res) {
-    //             var this_name = res.data
-    //             document.getElementById('add-quyuRenyuan').value = this_name;
-    //         })
-    //         document.getElementById('add-quyuRiqi').value = dqrq;
-    //         document.getElementById("add-quyuRiqi").disabled = true;
-    //     }
-    // });
-    //
-    // var inp3 = document.getElementById('add-anzhuangAddress');
-    // var yuanvalue3 = $('#add-anzhuangAddress').val();
-    // inp3.addEventListener('blur', function () {
-    //     var invalue3 = $('#add-anzhuangAddress').val();
-    //     if (invalue3 != yuanvalue3) {
-    //         var date = new Date();
-    //         var day = ("0" + date.getDate()).slice(-2);
-    //         var month = ("0" + (date.getMonth() + 1)).slice(-2);
-    //         var hh = date.getHours();
-    //         var mm = date.getMinutes();
-    //         var ss = date.getSeconds();
-    //         var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
-    //
-    //         $ajax({
-    //             type: 'post',
-    //             url: '/psd/getloginname',
-    //         }, false, '', function (res) {
-    //             var this_name = res.data
-    //             document.getElementById('add-anzhuangAddressRenyuan').value = this_name;
-    //         })
-    //         document.getElementById('add-anzhuangAddressRiqi').value = dqrq;
-    //         document.getElementById("add-anzhuangAddressRiqi").disabled = true;
-    //     }
-    // });
-    //
-    // var inp4 = document.getElementById('add-phone');
-    // var yuanvalue4 = $('#add-phone').val();
-    // inp4.addEventListener('blur', function () {
-    //     var invalue4 = $('#add-phone').val();
-    //     if (invalue4 != yuanvalue4) {
-    //         var date = new Date();
-    //         var day = ("0" + date.getDate()).slice(-2);
-    //         var month = ("0" + (date.getMonth() + 1)).slice(-2);
-    //         var hh = date.getHours();
-    //         var mm = date.getMinutes();
-    //         var ss = date.getSeconds();
-    //         var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
-    //
-    //         $ajax({
-    //             type: 'post',
-    //             url: '/psd/getloginname',
-    //         }, false, '', function (res) {
-    //             var this_name = res.data
-    //             document.getElementById('add-phoneRenyuan').value = this_name;
-    //         })
-    //         document.getElementById('add-phoneRiqi').value = dqrq;
-    //         document.getElementById("add-phoneRiqi").disabled = true;
-    //     }
-    // });
-    //
-    // var inp5 = document.getElementById('add-customerOrder');
-    // var yuanvalue5 = $('#add-customerOrder').val();
-    // inp5.addEventListener('blur', function () {
-    //     var invalue5 = $('#add-customerOrder').val();
-    //     if (invalue5 != yuanvalue5) {
-    //         var date = new Date();
-    //         var day = ("0" + date.getDate()).slice(-2);
-    //         var month = ("0" + (date.getMonth() + 1)).slice(-2);
-    //         var hh = date.getHours();
-    //         var mm = date.getMinutes();
-    //         var ss = date.getSeconds();
-    //         var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
-    //
-    //         $ajax({
-    //             type: 'post',
-    //             url: '/psd/getloginname',
-    //         }, false, '', function (res) {
-    //             var this_name = res.data
-    //             document.getElementById('add-customerOrderRenyuan').value = this_name;
-    //         })
-    //         document.getElementById('add-customerOrderRiqi').value = dqrq;
-    //         document.getElementById("add-customerOrderRiqi").disabled = true;
-    //     }
-    // });
-    //
-    // var inp6 = document.getElementById('add-customerNeedText');
-    // var yuanvalue6 = $('#add-customerNeedText').val();
-    // inp6.addEventListener('blur', function () {
-    //     var invalue6 = $('#add-customerNeedText').val();
-    //     if (invalue6 != yuanvalue6) {
-    //         var date = new Date();
-    //         var day = ("0" + date.getDate()).slice(-2);
-    //         var month = ("0" + (date.getMonth() + 1)).slice(-2);
-    //         var hh = date.getHours();
-    //         var mm = date.getMinutes();
-    //         var ss = date.getSeconds();
-    //         var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
-    //
-    //         $ajax({
-    //             type: 'post',
-    //             url: '/psd/getloginname',
-    //         }, false, '', function (res) {
-    //             var this_name = res.data
-    //             document.getElementById('add-customerNeedTextRenyuan').value = this_name;
-    //             document.getElementById('add-customerNeedText1Renyuan').value = this_name;
-    //         })
-    //         document.getElementById('add-customerNeedTextRiqi').value = dqrq;
-    //         document.getElementById("add-customerNeedTextRiqi").disabled = true;
-    //         document.getElementById('add-customerNeedText1Riqi').value = dqrq;
-    //         document.getElementById("add-customerNeedText1Riqi").disabled = true;
-    //     }
-    // });
-    //
-    // // var inp7 = document.getElementById('add-customerNeedText1');
-    // // var yuanvalue7 = $('#add-customerNeedText1').val();
-    // // inp7.addEventListener('blur', function() {
-    // //     var invalue7 = $('#add-customerNeedText1').val();
-    // //     if (invalue7 !== yuanvalue7) {
-    // //         var date = new Date();
-    // //         var day = ("0" + date.getDate()).slice(-2);
-    // //         var month = ("0" + (date.getMonth() + 1)).slice(-2);
-    // //         var hh = date.getHours();
-    // //         var mm = date.getMinutes();
-    // //         var ss = date.getSeconds();
-    // //         var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
-    // //
-    // //         $ajax({
-    // //             type: 'post',
-    // //             url: '/psd/getloginname',
-    // //         }, false, '', function (res) {
-    // //             var this_name = res.data
-    // //             document.getElementById('add-customerNeedText1Renyuan').value = this_name;
-    // //         })
-    // //         document.getElementById('add-customerNeedText1Riqi').value = dqrq;
-    // //         document.getElementById("add-customerNeedText1Riqi").disabled = true;
-    // //     }
-    // // });
-    //
-    // var inp8 = document.getElementById('add-money');
-    // var yuanvalue8 = $('#add-money').val();
-    // inp8.addEventListener('blur', function () {
-    //     var invalue8 = $('#add-money').val();
-    //     if (invalue8 != yuanvalue8) {
-    //         var date = new Date();
-    //         var day = ("0" + date.getDate()).slice(-2);
-    //         var month = ("0" + (date.getMonth() + 1)).slice(-2);
-    //         var hh = date.getHours();
-    //         var mm = date.getMinutes();
-    //         var ss = date.getSeconds();
-    //         var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
-    //
-    //         $ajax({
-    //             type: 'post',
-    //             url: '/psd/getloginname',
-    //         }, false, '', function (res) {
-    //             var this_name = res.data
-    //             document.getElementById('add-moneyRenyuan').value = this_name;
-    //         })
-    //         document.getElementById('add-moneyRiqi').value = dqrq;
-    //         document.getElementById("add-moneyRiqi").disabled = true;
-    //     }
-    // });
-    //
-    // var inp9 = document.getElementById('add-shoukuan');
-    // var yuanvalue9 = $('#add-shoukuan').val();
-    // inp9.addEventListener('blur', function () {
-    //     var invalue9 = $('#add-shoukuan').val();
-    //     if (invalue9 != yuanvalue9) {
-    //         var date = new Date();
-    //         var day = ("0" + date.getDate()).slice(-2);
-    //         var month = ("0" + (date.getMonth() + 1)).slice(-2);
-    //         var hh = date.getHours();
-    //         var mm = date.getMinutes();
-    //         var ss = date.getSeconds();
-    //         var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
-    //
-    //         $ajax({
-    //             type: 'post',
-    //             url: '/psd/getloginname',
-    //         }, false, '', function (res) {
-    //             var this_name = res.data
-    //             document.getElementById('add-shoukuanRenyuan').value = this_name;
-    //         })
-    //         document.getElementById('add-shoukuanRiqi').value = dqrq;
-    //         document.getElementById("add-shoukuanRiqi").disabled = true;
-    //     }
-    // });
-    //
-    // var inp10 = document.getElementById('add-wancheng');
-    // var yuanvalue10 = $('#add-wancheng').val();
-    // inp10.addEventListener('blur', function () {
-    //     var invalue10 = $('#add-wancheng').val();
-    //     if (invalue10 != yuanvalue10) {
-    //         var date = new Date();
-    //         var day = ("0" + date.getDate()).slice(-2);
-    //         var month = ("0" + (date.getMonth() + 1)).slice(-2);
-    //         var hh = date.getHours();
-    //         var mm = date.getMinutes();
-    //         var ss = date.getSeconds();
-    //         var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
-    //
-    //         $ajax({
-    //             type: 'post',
-    //             url: '/psd/getloginname',
-    //         }, false, '', function (res) {
-    //             var this_name = res.data
-    //             document.getElementById('add-wanchengRenyuan').value = this_name;
-    //         })
-    //         document.getElementById('add-wanchengRiqi').value = dqrq;
-    //         document.getElementById("add-wanchengRiqi").disabled = true;
-    //     }
-    // });
-    //
-    // var inp11 = document.getElementById('fileInput1');
-    // var yuanvalue11 = $('#fileInput1').val();
-    // inp11.addEventListener('blur', function () {
-    //     var invalue11 = $('#fileInput1').val();
-    //     if (invalue11 != yuanvalue11) {
-    //         var date = new Date();
-    //         var day = ("0" + date.getDate()).slice(-2);
-    //         var month = ("0" + (date.getMonth() + 1)).slice(-2);
-    //         var hh = date.getHours();
-    //         var mm = date.getMinutes();
-    //         var ss = date.getSeconds();
-    //         var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
-    //
-    //         $ajax({
-    //             type: 'post',
-    //             url: '/psd/getloginname',
-    //         }, false, '', function (res) {
-    //             var this_name = res.data
-    //             document.getElementById('add-peisongImg1Renyuan').value = this_name;
-    //         })
-    //         document.getElementById('add-peisongImg1Riqi').value = dqrq;
-    //         document.getElementById("add-peisongImg1Riqi").disabled = true;
-    //     }
-    // });
-    //
-    // var inp12 = document.getElementById('add-kucun');
-    // var yuanvalue12 = $('#add-kucun').val();
-    // inp12.addEventListener('blur', function () {
-    //     var invalue12 = $('#add-kucun').val();
-    //     if (invalue12 != yuanvalue12) {
-    //         var date = new Date();
-    //         var day = ("0" + date.getDate()).slice(-2);
-    //         var month = ("0" + (date.getMonth() + 1)).slice(-2);
-    //         var hh = date.getHours();
-    //         var mm = date.getMinutes();
-    //         var ss = date.getSeconds();
-    //         var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
-    //
-    //         $ajax({
-    //             type: 'post',
-    //             url: '/psd/getloginname',
-    //         }, false, '', function (res) {
-    //             var this_name = res.data
-    //             document.getElementById('add-kucunTextRenyuan').value = this_name;
-    //         })
-    //         document.getElementById('add-kucunTextRiqi').value = dqrq;
-    //         document.getElementById("add-kucunTextRiqi").disabled = true;
-    //     }
-    // });
-    //
-    //
-    // var inupd1 = document.getElementById('update-songhuoAddress');
-    // var yuanvalue1 = $('#add-songhuoAddress').val();
-    // inupd1.addEventListener('blur', function () {
-    //     var invalue1 = $('#add-songhuoAddress').val();
-    //     if (invalue1 != yuanvalue1) {
-    //         var date = new Date();
-    //         var day = ("0" + date.getDate()).slice(-2);
-    //         var month = ("0" + (date.getMonth() + 1)).slice(-2);
-    //         var hh = date.getHours();
-    //         var mm = date.getMinutes();
-    //         var ss = date.getSeconds();
-    //         var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
-    //
-    //         $ajax({
-    //             type: 'post',
-    //             url: '/psd/getloginname',
-    //         }, false, '', function (res) {
-    //             var this_name = res.data
-    //             document.getElementById('update-songhuoAddressRenyuan').value = this_name;
-    //         })
-    //         document.getElementById('update-songhuoAddressRiqi').value = dqrq;
-    //         document.getElementById("update-songhuoAddressRiqi").disabled = true;
-    //     }
-    // });
-    //
-    // var inupd2 = document.getElementById('update-hqquyu');
-    // var yuanvalue2 = $('#update-hqquyu').val();
-    // inupd2.addEventListener('blur', function () {
-    //     var invalue2 = $('#update-hqquyu').val();
-    //     if (invalue2 != yuanvalue2) {
-    //         var date = new Date();
-    //         var day = ("0" + date.getDate()).slice(-2);
-    //         var month = ("0" + (date.getMonth() + 1)).slice(-2);
-    //         var hh = date.getHours();
-    //         var mm = date.getMinutes();
-    //         var ss = date.getSeconds();
-    //         var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
-    //
-    //         $ajax({
-    //             type: 'post',
-    //             url: '/psd/getloginname',
-    //         }, false, '', function (res) {
-    //             var this_name = res.data
-    //             document.getElementById('update-quyuRenyuan').value = this_name;
-    //         })
-    //         document.getElementById('update-quyuRiqi').value = dqrq;
-    //         document.getElementById("update-quyuRiqi").disabled = true;
-    //     }
-    // });
-    //
-    // var inupd3 = document.getElementById('update-anzhuangAddress');
-    // var yuanvalue3 = $('#update-anzhuangAddress').val();
-    // inupd3.addEventListener('blur', function () {
-    //     var invalue3 = $('#update-anzhuangAddress').val();
-    //     if (invalue3 != yuanvalue3) {
-    //         var date = new Date();
-    //         var day = ("0" + date.getDate()).slice(-2);
-    //         var month = ("0" + (date.getMonth() + 1)).slice(-2);
-    //         var hh = date.getHours();
-    //         var mm = date.getMinutes();
-    //         var ss = date.getSeconds();
-    //         var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
-    //
-    //         $ajax({
-    //             type: 'post',
-    //             url: '/psd/getloginname',
-    //         }, false, '', function (res) {
-    //             var this_name = res.data
-    //             document.getElementById('update-anzhuangAddressRenyuan').value = this_name;
-    //         })
-    //         document.getElementById('update-anzhuangAddressRiqi').value = dqrq;
-    //         document.getElementById("update-anzhuangAddressRiqi").disabled = true;
-    //     }
-    // });
-    //
-    // var inupd4 = document.getElementById('update-phone');
-    // var yuanvalue4 = $('#update-phone').val();
-    // inupd4.addEventListener('blur', function () {
-    //     var invalue4 = $('#update-phone').val();
-    //     if (invalue4 != yuanvalue4) {
-    //         var date = new Date();
-    //         var day = ("0" + date.getDate()).slice(-2);
-    //         var month = ("0" + (date.getMonth() + 1)).slice(-2);
-    //         var hh = date.getHours();
-    //         var mm = date.getMinutes();
-    //         var ss = date.getSeconds();
-    //         var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
-    //
-    //         $ajax({
-    //             type: 'post',
-    //             url: '/psd/getloginname',
-    //         }, false, '', function (res) {
-    //             var this_name = res.data
-    //             document.getElementById('update-phoneRenyuan').value = this_name;
-    //         })
-    //         document.getElementById('update-phoneRiqi').value = dqrq;
-    //         document.getElementById("update-phoneRiqi").disabled = true;
-    //     }
-    // });
-    //
-    // var inupd5 = document.getElementById('update-customerOrder');
-    // var yuanvalue5 = $('#update-customerOrder').val();
-    // inupd5.addEventListener('blur', function () {
-    //     var invalue5 = $('#update-customerOrder').val();
-    //     if (invalue5 != yuanvalue5) {
-    //         var date = new Date();
-    //         var day = ("0" + date.getDate()).slice(-2);
-    //         var month = ("0" + (date.getMonth() + 1)).slice(-2);
-    //         var hh = date.getHours();
-    //         var mm = date.getMinutes();
-    //         var ss = date.getSeconds();
-    //         var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
-    //
-    //         $ajax({
-    //             type: 'post',
-    //             url: '/psd/getloginname',
-    //         }, false, '', function (res) {
-    //             var this_name = res.data
-    //             document.getElementById('update-customerOrderRenyuan').value = this_name;
-    //         })
-    //         document.getElementById('update-customerOrderRiqi').value = dqrq;
-    //         document.getElementById("update-customerOrderRiqi").disabled = true;
-    //     }
-    // });
-    //
-    // var inupd6 = document.getElementById('update-customerNeedText');
-    // var yuanvalue6 = $('#update-customerNeedText').val();
-    // inupd6.addEventListener('blur', function () {
-    //     var invalue6 = $('#update-customerNeedText').val();
-    //     if (invalue6 != yuanvalue6) {
-    //         var date = new Date();
-    //         var day = ("0" + date.getDate()).slice(-2);
-    //         var month = ("0" + (date.getMonth() + 1)).slice(-2);
-    //         var hh = date.getHours();
-    //         var mm = date.getMinutes();
-    //         var ss = date.getSeconds();
-    //         var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
-    //
-    //         $ajax({
-    //             type: 'post',
-    //             url: '/psd/getloginname',
-    //         }, false, '', function (res) {
-    //             var this_name = res.data
-    //             document.getElementById('update-customerNeedTextRenyuan').value = this_name;
-    //         })
-    //         document.getElementById('update-customerNeedTextRiqi').value = dqrq;
-    //         document.getElementById("update-customerNeedTextRiqi").disabled = true;
-    //     }
-    // });
-    //
-    // var inupd7 = document.getElementById('update-customerNeedText1');
-    // var yuanvalue7 = $('#update-customerNeedText1').val();
-    // inupd7.addEventListener('blur', function () {
-    //     var invalue7 = $('#update-customerNeedText1').val();
-    //     if (invalue7 != yuanvalue7) {
-    //         var date = new Date();
-    //         var day = ("0" + date.getDate()).slice(-2);
-    //         var month = ("0" + (date.getMonth() + 1)).slice(-2);
-    //         var hh = date.getHours();
-    //         var mm = date.getMinutes();
-    //         var ss = date.getSeconds();
-    //         var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
-    //
-    //         $ajax({
-    //             type: 'post',
-    //             url: '/psd/getloginname',
-    //         }, false, '', function (res) {
-    //             var this_name = res.data
-    //             document.getElementById('update-customerNeedText1Renyuan').value = this_name;
-    //         })
-    //         document.getElementById('update-customerNeedText1Riqi').value = dqrq;
-    //         document.getElementById("update-customerNeedText1Riqi").disabled = true;
-    //     }
-    // });
-    //
-    // var inupd8 = document.getElementById('update-money');
-    // var yuanvalue8 = $('#update-money').val();
-    // inupd8.addEventListener('blur', function () {
-    //     var invalue8 = $('#update-money').val();
-    //     if (invalue8 != yuanvalue8) {
-    //         var date = new Date();
-    //         var day = ("0" + date.getDate()).slice(-2);
-    //         var month = ("0" + (date.getMonth() + 1)).slice(-2);
-    //         var hh = date.getHours();
-    //         var mm = date.getMinutes();
-    //         var ss = date.getSeconds();
-    //         var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
-    //
-    //         $ajax({
-    //             type: 'post',
-    //             url: '/psd/getloginname',
-    //         }, false, '', function (res) {
-    //             var this_name = res.data
-    //             document.getElementById('update-moneyRenyuan').value = this_name;
-    //         })
-    //         document.getElementById('update-moneyRiqi').value = dqrq;
-    //         document.getElementById("update-moneyRiqi").disabled = true;
-    //     }
-    // });
-    //
-    // var inupd9 = document.getElementById('update-shoukuan');
-    // var yuanvalue9 = $('#update-shoukuan').val();
-    // inupd9.addEventListener('blur', function () {
-    //     var invalue9 = $('#update-shoukuan').val();
-    //     if (invalue9 != yuanvalue9) {
-    //         var date = new Date();
-    //         var day = ("0" + date.getDate()).slice(-2);
-    //         var month = ("0" + (date.getMonth() + 1)).slice(-2);
-    //         var hh = date.getHours();
-    //         var mm = date.getMinutes();
-    //         var ss = date.getSeconds();
-    //         var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
-    //
-    //         $ajax({
-    //             type: 'post',
-    //             url: '/psd/getloginname',
-    //         }, false, '', function (res) {
-    //             var this_name = res.data
-    //             document.getElementById('update-shoukuanRenyuan').value = this_name;
-    //         })
-    //         document.getElementById('update-shoukuanRiqi').value = dqrq;
-    //         document.getElementById("update-shoukuanRiqi").disabled = true;
-    //     }
-    // });
-    //
-    // var inupd10 = document.getElementById('update-wancheng');
-    // var yuanvalue10 = $('#update-wancheng').val();
-    // inupd10.addEventListener('blur', function () {
-    //     var invalue10 = $('#update-wancheng').val();
-    //     if (invalue10 != yuanvalue10) {
-    //         var date = new Date();
-    //         var day = ("0" + date.getDate()).slice(-2);
-    //         var month = ("0" + (date.getMonth() + 1)).slice(-2);
-    //         var hh = date.getHours();
-    //         var mm = date.getMinutes();
-    //         var ss = date.getSeconds();
-    //         var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
-    //
-    //         $ajax({
-    //             type: 'post',
-    //             url: '/psd/getloginname',
-    //         }, false, '', function (res) {
-    //             var this_name = res.data
-    //             document.getElementById('update-wanchengRenyuan').value = this_name;
-    //         })
-    //         document.getElementById('update-wanchengRiqi').value = dqrq;
-    //         document.getElementById("update-wanchengRiqi").disabled = true;
-    //     }
-    // });
-    //
     var inp1 = document.getElementById('add-songhuoAddress');
     var yuanvalue1 = $('#add-songhuoAddress').val();
     inp1.addEventListener('blur', function() {
@@ -774,9 +2506,10 @@ $(function () {
             }, false, '', function (res) {
                 var this_name = res.data
                 document.getElementById('add-songhuoAddressRenyuan').value = this_name;
+                document.getElementById('add-customerNameRenyuan').value = this_name;
             })
             document.getElementById('add-songhuoAddressRiqi').value = dqrq;
-            document.getElementById("add-songhuoAddressRiqi").disabled = true;
+            // document.getElementById("add-songhuoAddressRiqi").disabled = true;
         }
     });
 
@@ -801,7 +2534,56 @@ $(function () {
                 document.getElementById('update-songhuoAddressRenyuan').value = this_name;
             })
             document.getElementById('update-songhuoAddressRiqi').value = dqrq;
-            document.getElementById("update-songhuoAddressRiqi").disabled = true;
+            // document.getElementById("update-songhuoAddressRiqi").disabled = true;
+        }
+    });
+    var inp1 = document.getElementById('add-songhuoDanhao');
+    var yuanvalue1 = $('#add-songhuoDanhao').val();
+    inp1.addEventListener('blur', function() {
+        var invalue1 = $('#add-songhuoDanhao').val();
+        if (invalue1 != yuanvalue1) {
+            var date = new Date();
+            var day = ("0" + date.getDate()).slice(-2);
+            var month = ("0" + (date.getMonth() + 1)).slice(-2);
+            var hh = date.getHours();
+            var mm = date.getMinutes();
+            var ss = date.getSeconds();
+            var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+
+            $ajax({
+                type: 'post',
+                url: '/psd/getloginname',
+            }, false, '', function (res) {
+                var this_name = res.data
+                document.getElementById('add-songhuoDanhaoRenyuan').value = this_name;
+            })
+            document.getElementById('add-songhuoDanhaoRiqi').value = dqrq;
+            // document.getElementById("add-songhuoAddressRiqi").disabled = true;
+        }
+    });
+
+    var inp1 = document.getElementById('update-songhuoDanhao');
+    var yuanvalue1 = $('#update-songhuoDanhao').val();
+    inp1.addEventListener('blur', function() {
+        var invalue1 = $('#update-songhuoDanhao').val();
+        if (invalue1 != yuanvalue1) {
+            var date = new Date();
+            var day = ("0" + date.getDate()).slice(-2);
+            var month = ("0" + (date.getMonth() + 1)).slice(-2);
+            var hh = date.getHours();
+            var mm = date.getMinutes();
+            var ss = date.getSeconds();
+            var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+
+            $ajax({
+                type: 'post',
+                url: '/psd/getloginname',
+            }, false, '', function (res) {
+                var this_name = res.data
+                document.getElementById('update-songhuoDanhaoRenyuan').value = this_name;
+            })
+            document.getElementById('update-songhuoDanhaoRiqi').value = dqrq;
+            // document.getElementById("add-songhuoAddressRiqi").disabled = true;
         }
     });
 
@@ -826,34 +2608,34 @@ $(function () {
                 document.getElementById('add-quyuRenyuan').value = this_name;
             })
             document.getElementById('add-quyuRiqi').value = dqrq;
-            document.getElementById("add-quyuRiqi").disabled = true;
+            // document.getElementById("add-quyuRiqi").disabled = true;
         }
     });
 
-    var inp2 = document.getElementById('update-hqquyu');
-    var yuanvalue2 = $('#update-hqquyu').val();
-    inp2.addEventListener('blur', function() {
-        var invalue2 = $('#update-hqquyu').val();
-        if (invalue2 != yuanvalue2) {
-            var date = new Date();
-            var day = ("0" + date.getDate()).slice(-2);
-            var month = ("0" + (date.getMonth() + 1)).slice(-2);
-            var hh = date.getHours();
-            var mm = date.getMinutes();
-            var ss = date.getSeconds();
-            var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
-
-            $ajax({
-                type: 'post',
-                url: '/psd/getloginname',
-            }, false, '', function (res) {
-                var this_name = res.data
-                document.getElementById('update-quyuRenyuan').value = this_name;
-            })
-            document.getElementById('update-quyuRiqi').value = dqrq;
-            document.getElementById("update-quyuRiqi").disabled = true;
-        }
-    });
+    // var inp2 = document.getElementById('update-hqquyu');
+    // var yuanvalue2 = $('#update-hqquyu').val();
+    // inp2.addEventListener('blur', function() {
+    //     var invalue2 = $('#update-hqquyu').val();
+    //     if (invalue2 != yuanvalue2) {
+    //         var date = new Date();
+    //         var day = ("0" + date.getDate()).slice(-2);
+    //         var month = ("0" + (date.getMonth() + 1)).slice(-2);
+    //         var hh = date.getHours();
+    //         var mm = date.getMinutes();
+    //         var ss = date.getSeconds();
+    //         var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+    //
+    //         $ajax({
+    //             type: 'post',
+    //             url: '/psd/getloginname',
+    //         }, false, '', function (res) {
+    //             var this_name = res.data
+    //             document.getElementById('update-quyuRenyuan').value = this_name;
+    //         })
+    //         document.getElementById('update-quyuRiqi').value = dqrq;
+    //         // document.getElementById("update-quyuRiqi").disabled = true;
+    //     }
+    // });
 
     var inp3 = document.getElementById('add-anzhuangAddress');
     var yuanvalue3 = $('#add-anzhuangAddress').val();
@@ -876,7 +2658,7 @@ $(function () {
                 document.getElementById('add-anzhuangAddressRenyuan').value = this_name;
             })
             document.getElementById('add-anzhuangAddressRiqi').value = dqrq;
-            document.getElementById("add-anzhuangAddressRiqi").disabled = true;
+            // document.getElementById("add-anzhuangAddressRiqi").disabled = true;
         }
     });
 
@@ -901,7 +2683,7 @@ $(function () {
                 document.getElementById('update-anzhuangAddressRenyuan').value = this_name;
             })
             document.getElementById('update-anzhuangAddressRiqi').value = dqrq;
-            document.getElementById("update-anzhuangAddressRiqi").disabled = true;
+            // document.getElementById("update-anzhuangAddressRiqi").disabled = true;
         }
     });
 
@@ -926,7 +2708,7 @@ $(function () {
                 document.getElementById('add-phoneRenyuan').value = this_name;
             })
             document.getElementById('add-phoneRiqi').value = dqrq;
-            document.getElementById("add-phoneRiqi").disabled = true;
+            // document.getElementById("add-phoneRiqi").disabled = true;
         }
     });
 
@@ -951,7 +2733,7 @@ $(function () {
                 document.getElementById('update-phoneRenyuan').value = this_name;
             })
             document.getElementById('update-phoneRiqi').value = dqrq;
-            document.getElementById("update-phoneRiqi").disabled = true;
+            // document.getElementById("update-phoneRiqi").disabled = true;
         }
     });
 
@@ -976,7 +2758,7 @@ $(function () {
                 document.getElementById('add-customerOrderRenyuan').value = this_name;
             })
             document.getElementById('add-customerOrderRiqi').value = dqrq;
-            document.getElementById("add-customerOrderRiqi").disabled = true;
+            // document.getElementById("add-customerOrderRiqi").disabled = true;
         }
     });
 
@@ -1001,7 +2783,7 @@ $(function () {
                 document.getElementById('update-customerOrderRenyuan').value = this_name;
             })
             document.getElementById('update-customerOrderRiqi').value = dqrq;
-            document.getElementById("update-customerOrderRiqi").disabled = true;
+            // document.getElementById("update-customerOrderRiqi").disabled = true;
         }
     });
 
@@ -1027,9 +2809,9 @@ $(function () {
                 document.getElementById('add-customerNeedText1Renyuan').value = this_name;
             })
             document.getElementById('add-customerNeedTextRiqi').value = dqrq;
-            document.getElementById("add-customerNeedTextRiqi").disabled = true;
+            // document.getElementById('add-customerNeedTextRiqi').disabled = true;
             document.getElementById('add-customerNeedText1Riqi').value = dqrq;
-            document.getElementById("add-customerNeedText1Riqi").disabled = true;
+            // document.getElementById('add-customerNeedText1Riqi').disabled = true;
         }
     });
 
@@ -1055,9 +2837,9 @@ $(function () {
                 document.getElementById('update-customerNeedText1Renyuan').value = this_name;
             })
             document.getElementById('update-customerNeedTextRiqi').value = dqrq;
-            document.getElementById("update-customerNeedTextRiqi").disabled = true;
+            // document.getElementById("update-customerNeedTextRiqi").disabled = true;
             document.getElementById('update-customerNeedText1Riqi').value = dqrq;
-            document.getElementById("update-customerNeedText1Riqi").disabled = true;
+            // document.getElementById("update-customerNeedText1Riqi").disabled = true;
         }
     });
 
@@ -1082,7 +2864,7 @@ $(function () {
                 document.getElementById('add-moneyRenyuan').value = this_name;
             })
             document.getElementById('add-moneyRiqi').value = dqrq;
-            document.getElementById("add-moneyRiqi").disabled = true;
+            // document.getElementById("add-moneyRiqi").disabled = true;
         }
     });
 
@@ -1107,7 +2889,7 @@ $(function () {
                 document.getElementById('update-moneyRenyuan').value = this_name;
             })
             document.getElementById('update-moneyRiqi').value = dqrq;
-            document.getElementById("update-moneyRiqi").disabled = true;
+            // document.getElementById("update-moneyRiqi").disabled = true;
         }
     });
 
@@ -1132,7 +2914,7 @@ $(function () {
                 document.getElementById('add-shoukuanRenyuan').value = this_name;
             })
             document.getElementById('add-shoukuanRiqi').value = dqrq;
-            document.getElementById("add-shoukuanRiqi").disabled = true;
+            // document.getElementById("add-shoukuanRiqi").disabled = true;
         }
     });
 
@@ -1157,7 +2939,7 @@ $(function () {
                 document.getElementById('update-shoukuanRenyuan').value = this_name;
             })
             document.getElementById('update-shoukuanRiqi').value = dqrq;
-            document.getElementById("update-shoukuanRiqi").disabled = true;
+            // document.getElementById("update-shoukuanRiqi").disabled = true;
         }
     });
 
@@ -1182,7 +2964,7 @@ $(function () {
                 document.getElementById('add-wanchengRenyuan').value = this_name;
             })
             document.getElementById('add-wanchengRiqi').value = dqrq;
-            document.getElementById("add-wanchengRiqi").disabled = true;
+            // document.getElementById("add-wanchengRiqi").disabled = true;
         }
     });
 
@@ -1207,7 +2989,7 @@ $(function () {
                 document.getElementById('update-wanchengRenyuan').value = this_name;
             })
             document.getElementById('update-wanchengRiqi').value = dqrq;
-            document.getElementById("update-wanchengRiqi").disabled = true;
+            // document.getElementById("update-wanchengRiqi").disabled = true;
         }
     });
 
@@ -1232,7 +3014,7 @@ $(function () {
                 document.getElementById('add-kucunTextRenyuan').value = this_name;
             })
             document.getElementById('add-kucunTextRiqi').value = dqrq;
-            document.getElementById("add-kucunTextRiqi").disabled = true;
+            // document.getElementById("add-kucunTextRiqi").disabled = true;
         }
     });
 
@@ -1257,7 +3039,7 @@ $(function () {
                 document.getElementById('update-kucunTextRenyuan').value = this_name;
             })
             document.getElementById('update-kucunTextRiqi').value = dqrq;
-            document.getElementById("update-kucunTextRiqi").disabled = true;
+            // document.getElementById("update-kucunTextRiqi").disabled = true;
         }
     });
 
@@ -1282,34 +3064,34 @@ $(function () {
                 document.getElementById('update-songhuoAddressRenyuan').value = this_name;
             })
             document.getElementById('update-songhuoAddressRiqi').value = dqrq;
-            document.getElementById("update-songhuoAddressRiqi").disabled = true;
+            // document.getElementById("update-songhuoAddressRiqi").disabled = true;
         }
     });
 
-    var inupd2 = document.getElementById('update-hqquyu');
-    var yuanvalue2 = $('#update-hqquyu').val();
-    inupd2.addEventListener('blur', function() {
-        var invalue2 = $('#update-hqquyu').val();
-        if (invalue2 != yuanvalue2) {
-            var date = new Date();
-            var day = ("0" + date.getDate()).slice(-2);
-            var month = ("0" + (date.getMonth() + 1)).slice(-2);
-            var hh = date.getHours();
-            var mm = date.getMinutes();
-            var ss = date.getSeconds();
-            var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
-
-            $ajax({
-                type: 'post',
-                url: '/psd/getloginname',
-            }, false, '', function (res) {
-                var this_name = res.data
-                document.getElementById('update-quyuRenyuan').value = this_name;
-            })
-            document.getElementById('update-quyuRiqi').value = dqrq;
-            document.getElementById("update-quyuRiqi").disabled = true;
-        }
-    });
+    // var inupd2 = document.getElementById('update-hqquyu');
+    // var yuanvalue2 = $('#update-hqquyu').val();
+    // inupd2.addEventListener('blur', function() {
+    //     var invalue2 = $('#update-hqquyu').val();
+    //     if (invalue2 != yuanvalue2) {
+    //         var date = new Date();
+    //         var day = ("0" + date.getDate()).slice(-2);
+    //         var month = ("0" + (date.getMonth() + 1)).slice(-2);
+    //         var hh = date.getHours();
+    //         var mm = date.getMinutes();
+    //         var ss = date.getSeconds();
+    //         var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+    //
+    //         $ajax({
+    //             type: 'post',
+    //             url: '/psd/getloginname',
+    //         }, false, '', function (res) {
+    //             var this_name = res.data
+    //             document.getElementById('update-quyuRenyuan').value = this_name;
+    //         })
+    //         document.getElementById('update-quyuRiqi').value = dqrq;
+    //         // document.getElementById("update-quyuRiqi").disabled = true;
+    //     }
+    // });
 
     var inupd3 = document.getElementById('update-anzhuangAddress');
     var yuanvalue3 = $('#update-anzhuangAddress').val();
@@ -1332,7 +3114,7 @@ $(function () {
                 document.getElementById('update-anzhuangAddressRenyuan').value = this_name;
             })
             document.getElementById('update-anzhuangAddressRiqi').value = dqrq;
-            document.getElementById("update-anzhuangAddressRiqi").disabled = true;
+            // document.getElementById("update-anzhuangAddressRiqi").disabled = true;
         }
     });
 
@@ -1357,7 +3139,7 @@ $(function () {
                 document.getElementById('update-phoneRenyuan').value = this_name;
             })
             document.getElementById('update-phoneRiqi').value = dqrq;
-            document.getElementById("update-phoneRiqi").disabled = true;
+            // document.getElementById("update-phoneRiqi").disabled = true;
         }
     });
 
@@ -1382,7 +3164,7 @@ $(function () {
                 document.getElementById('update-customerOrderRenyuan').value = this_name;
             })
             document.getElementById('update-customerOrderRiqi').value = dqrq;
-            document.getElementById("update-customerOrderRiqi").disabled = true;
+            // document.getElementById("update-customerOrderRiqi").disabled = true;
         }
     });
 
@@ -1407,7 +3189,7 @@ $(function () {
                 document.getElementById('update-customerNeedTextRenyuan').value = this_name;
             })
             document.getElementById('update-customerNeedTextRiqi').value = dqrq;
-            document.getElementById("update-customerNeedTextRiqi").disabled = true;
+            // document.getElementById("update-customerNeedTextRiqi").disabled = true;
         }
     });
 
@@ -1432,7 +3214,7 @@ $(function () {
                 document.getElementById('update-customerNeedText1Renyuan').value = this_name;
             })
             document.getElementById('update-customerNeedText1Riqi').value = dqrq;
-            document.getElementById("update-customerNeedText1Riqi").disabled = true;
+            // document.getElementById("update-customerNeedText1Riqi").disabled = true;
         }
     });
 
@@ -1457,7 +3239,7 @@ $(function () {
                 document.getElementById('update-moneyRenyuan').value = this_name;
             })
             document.getElementById('update-moneyRiqi').value = dqrq;
-            document.getElementById("update-moneyRiqi").disabled = true;
+            // document.getElementById("update-moneyRiqi").disabled = true;
         }
     });
 
@@ -1482,7 +3264,7 @@ $(function () {
                 document.getElementById('update-shoukuanRenyuan').value = this_name;
             })
             document.getElementById('update-shoukuanRiqi').value = dqrq;
-            document.getElementById("update-shoukuanRiqi").disabled = true;
+            // document.getElementById("update-shoukuanRiqi").disabled = true;
         }
     });
 
@@ -1507,7 +3289,7 @@ $(function () {
                 document.getElementById('update-wanchengRenyuan').value = this_name;
             })
             document.getElementById('update-wanchengRiqi').value = dqrq;
-            document.getElementById("update-wanchengRiqi").disabled = true;
+            // document.getElementById("update-wanchengRiqi").disabled = true;
         }
     });
 
@@ -1532,7 +3314,7 @@ $(function () {
                 document.getElementById('add-peihuoImg1Renyuan').value = this_name;
             })
             document.getElementById('add-peihuoImg1Riqi').value = dqrq;
-            document.getElementById("add-peihuoImg1Riqi").disabled = true;
+            // document.getElementById("add-peihuoImg1Riqi").disabled = true;
         }
     });
 
@@ -1557,7 +3339,7 @@ $(function () {
                 document.getElementById('add-peihuoImg2Renyuan').value = this_name;
             })
             document.getElementById('add-peihuoImg2Riqi').value = dqrq;
-            document.getElementById("add-peihuoImg2Riqi").disabled = true;
+            // document.getElementById("add-peihuoImg2Riqi").disabled = true;
         }
     });
 
@@ -1582,7 +3364,7 @@ $(function () {
                 document.getElementById('add-peihuoImg3Renyuan').value = this_name;
             })
             document.getElementById('add-peihuoImg3Riqi').value = dqrq;
-            document.getElementById("add-peihuoImg3Riqi").disabled = true;
+            // document.getElementById("add-peihuoImg3Riqi").disabled = true;
         }
     });
 
@@ -1607,7 +3389,7 @@ $(function () {
                 document.getElementById('add-peihuoImg4Renyuan').value = this_name;
             })
             document.getElementById('add-peihuoImg4Riqi').value = dqrq;
-            document.getElementById("add-peihuoImg4Riqi").disabled = true;
+            // document.getElementById("add-peihuoImg4Riqi").disabled = true;
         }
     });
 
@@ -1632,7 +3414,7 @@ $(function () {
                 document.getElementById('add-peihuoImg5Renyuan').value = this_name;
             })
             document.getElementById('add-peihuoImg5Riqi').value = dqrq;
-            document.getElementById("add-peihuoImg5Riqi").disabled = true;
+            // document.getElementById("add-peihuoImg5Riqi").disabled = true;
         }
     });
 
@@ -1657,7 +3439,7 @@ $(function () {
                 document.getElementById('add-peisongImg1Renyuan').value = this_name;
             })
             document.getElementById('add-peisongImg1Riqi').value = dqrq;
-            document.getElementById("add-peisongImg1Riqi").disabled = true;
+            // document.getElementById("add-peisongImg1Riqi").disabled = true;
         }
     });
 
@@ -1682,7 +3464,7 @@ $(function () {
                 document.getElementById('add-peisongImg2Renyuan').value = this_name;
             })
             document.getElementById('add-peisongImg2Riqi').value = dqrq;
-            document.getElementById("add-peisongImg2Riqi").disabled = true;
+            // document.getElementById("add-peisongImg2Riqi").disabled = true;
         }
     });
 
@@ -1707,7 +3489,7 @@ $(function () {
                 document.getElementById('add-peisongImg3Renyuan').value = this_name;
             })
             document.getElementById('add-peisongImg3Riqi').value = dqrq;
-            document.getElementById("add-peisongImg3Riqi").disabled = true;
+            // document.getElementById("add-peisongImg3Riqi").disabled = true;
         }
     });
 
@@ -1733,7 +3515,7 @@ $(function () {
                 document.getElementById('update-customerNameRenyuan').value = this_name;
             })
             document.getElementById('update-customerNameRiqi').value = dqrq;
-            document.getElementById('update-customerNameRiqi').disabled = true;
+            // document.getElementById('update-customerNameRiqi').disabled = true;
         }
     });
 
@@ -1758,7 +3540,7 @@ $(function () {
                 document.getElementById('update-customerNeedTextRenyuan').value = this_name;
             })
             document.getElementById('update-customerNeedTextRiqi').value = dqrq;
-            document.getElementById('update-customerNeedTextRiqi').disabled = true;
+            // document.getElementById('update-customerNeedTextRiqi').disabled = true;
         }
     });
 
@@ -1783,7 +3565,7 @@ $(function () {
                 // document.getElementById('update-customerNeedTextRenyuan').value = this_name;
             })
             document.getElementById('update-customerNeedText1Riqi').value = dqrq;
-            document.getElementById('update-customerNeedText1Riqi').disabled = true;
+            // document.getElementById('update-customerNeedText1Riqi').disabled = true;
         }
     });
 
@@ -1808,7 +3590,7 @@ $(function () {
                 document.getElementById('update-songhuoAddressRenyuan').value = this_name;
             })
             document.getElementById('update-songhuoAddressRiqi').value = dqrq;
-            document.getElementById('update-songhuoAddressRiqi').disabled = true;
+            // document.getElementById('update-songhuoAddressRiqi').disabled = true;
         }
     });
 
@@ -1833,7 +3615,7 @@ $(function () {
                 document.getElementById('update-anzhuangAddressRenyuan').value = this_name;
             })
             document.getElementById('update-anzhuangAddressRiqi').value = dqrq;
-            document.getElementById('update-anzhuangAddressRiqi').disabled = true;
+            // document.getElementById('update-anzhuangAddressRiqi').disabled = true;
         }
     });
 
@@ -1858,7 +3640,7 @@ $(function () {
                 document.getElementById('update-phoneRenyuan').value = this_name;
             })
             document.getElementById('update-phoneRiqi').value = dqrq;
-            document.getElementById('update-phoneRiqi').disabled = true;
+            // document.getElementById('update-phoneRiqi').disabled = true;
         }
     });
 
@@ -1883,7 +3665,7 @@ $(function () {
                 document.getElementById('update-customerOrderRenyuan').value = this_name;
             })
             document.getElementById('update-customerOrderRiqi').value = dqrq;
-            document.getElementById('update-customerOrderRiqi').disabled = true;
+            // document.getElementById('update-customerOrderRiqi').disabled = true;
         }
     });
 
@@ -1933,7 +3715,7 @@ $(function () {
                 document.getElementById('update-wanchengRenyuan').value = this_name;
             })
             document.getElementById('update-wanchengRiqi').value = dqrq;
-            document.getElementById('update-wanchengRiqi').disabled = true;
+            // document.getElementById('update-wanchengRiqi').disabled = true;
         }
     });
 
@@ -1958,7 +3740,7 @@ $(function () {
                 document.getElementById('update-moneyRenyuan').value = this_name;
             })
             document.getElementById('update-moneyRiqi').value = dqrq;
-            document.getElementById('update-moneyRiqi').disabled = true;
+            // document.getElementById('update-moneyRiqi').disabled = true;
         }
     });
 
@@ -1983,7 +3765,7 @@ $(function () {
                 document.getElementById('update-shoukuanRenyuan').value = this_name;
             })
             document.getElementById('update-shoukuanRiqi').value = dqrq;
-            document.getElementById('update-shoukuanRiqi').disabled = true;
+            // document.getElementById('update-shoukuanRiqi').disabled = true;
         }
     });
 
@@ -2008,34 +3790,34 @@ $(function () {
                 document.getElementById('update-kucunTextRenyuan').value = this_name;
             })
             document.getElementById('update-kucunTextRiqi').value = dqrq;
-            document.getElementById('update-kucunTextRiqi').disabled = true;
+            // document.getElementById('update-kucunTextRiqi').disabled = true;
         }
     });
 
-    var upd = document.getElementById('update-hqquyu');
-    var yuanupdvalue = $('#update-hqquyu').val();
-    upd.addEventListener('blur', function() {
-        var updvalue = $('#update-hqquyu').val();
-        if (updvalue != yuanupdvalue) {
-            var date = new Date();
-            var day = ("0" + date.getDate()).slice(-2);
-            var month = ("0" + (date.getMonth() + 1)).slice(-2);
-            var hh = date.getHours();
-            var mm = date.getMinutes();
-            var ss = date.getSeconds();
-            var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
-
-            $ajax({
-                type: 'post',
-                url: '/psd/getloginname',
-            }, false, '', function (res) {
-                var this_name = res.data
-                document.getElementById('update-quyuRenyuan').value = this_name;
-            })
-            document.getElementById('update-quyuRiqi').value = dqrq;
-            document.getElementById('update-quyuRiqi').disabled = true;
-        }
-    });
+    // var upd = document.getElementById('update-hqquyu');
+    // var yuanupdvalue = $('#update-hqquyu').val();
+    // upd.addEventListener('blur', function() {
+    //     var updvalue = $('#update-hqquyu').val();
+    //     if (updvalue != yuanupdvalue) {
+    //         var date = new Date();
+    //         var day = ("0" + date.getDate()).slice(-2);
+    //         var month = ("0" + (date.getMonth() + 1)).slice(-2);
+    //         var hh = date.getHours();
+    //         var mm = date.getMinutes();
+    //         var ss = date.getSeconds();
+    //         var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
+    //
+    //         $ajax({
+    //             type: 'post',
+    //             url: '/psd/getloginname',
+    //         }, false, '', function (res) {
+    //             var this_name = res.data
+    //             document.getElementById('update-quyuRenyuan').value = this_name;
+    //         })
+    //         document.getElementById('update-quyuRiqi').value = dqrq;
+    //         // document.getElementById('update-quyuRiqi').disabled = true;
+    //     }
+    // });
 
     var upd = document.getElementById('fileInput9');
     var yuanupdvalue = $('#fileInput9').val();
@@ -2058,7 +3840,7 @@ $(function () {
                 document.getElementById('update-peihuoImg1Renyuan').value = this_name;
             })
             document.getElementById('update-peihuoImg1Riqi').value = dqrq;
-            document.getElementById('update-peihuoImg1Riqi').disabled = true;
+            // document.getElementById('update-peihuoImg1Riqi').disabled = true;
         }
     });
 
@@ -2083,7 +3865,7 @@ $(function () {
                 document.getElementById('update-peihuoImg2Renyuan').value = this_name;
             })
             document.getElementById('update-peihuoImg2Riqi').value = dqrq;
-            document.getElementById('update-peihuoImg2Riqi').disabled = true;
+            // document.getElementById('update-peihuoImg2Riqi').disabled = true;
         }
     });
 
@@ -2108,7 +3890,7 @@ $(function () {
                 document.getElementById('update-peihuoImg3Renyuan').value = this_name;
             })
             document.getElementById('update-peihuoImg3Riqi').value = dqrq;
-            document.getElementById('update-peihuoImg3Riqi').disabled = true;
+            // document.getElementById('update-peihuoImg3Riqi').disabled = true;
         }
     });
 
@@ -2133,7 +3915,7 @@ $(function () {
                 document.getElementById('update-peihuoImg4Renyuan').value = this_name;
             })
             document.getElementById('update-peihuoImg4Riqi').value = dqrq;
-            document.getElementById('update-peihuoImg4Riqi').disabled = true;
+            // document.getElementById('update-peihuoImg4Riqi').disabled = true;
         }
     });
 
@@ -2158,7 +3940,7 @@ $(function () {
                 document.getElementById('update-peihuoImg5Renyuan').value = this_name;
             })
             document.getElementById('update-peihuoImg5Riqi').value = dqrq;
-            document.getElementById('update-peihuoImg5Riqi').disabled = true;
+            // document.getElementById('update-peihuoImg5Riqi').disabled = true;
         }
     });
 
@@ -2183,7 +3965,7 @@ $(function () {
                 document.getElementById('update-peisongImg1Renyuan').value = this_name;
             })
             document.getElementById('update-peisongImg1Riqi').value = dqrq;
-            document.getElementById('update-peisongImg1Riqi').disabled = true;
+            // document.getElementById('update-peisongImg1Riqi').disabled = true;
         }
     });
 
@@ -2208,7 +3990,7 @@ $(function () {
                 document.getElementById('update-peisongImg2Renyuan').value = this_name;
             })
             document.getElementById('update-peisongImg2Riqi').value = dqrq;
-            document.getElementById('update-peisongImg2Riqi').disabled = true;
+            // document.getElementById('update-peisongImg2Riqi').disabled = true;
         }
     });
 
@@ -2233,34 +4015,9 @@ $(function () {
                 document.getElementById('update-peisongImg3Renyuan').value = this_name;
             })
             document.getElementById('update-peisongImg3Riqi').value = dqrq;
-            document.getElementById('update-peisongImg3Riqi').disabled = true;
+            // document.getElementById('update-peisongImg3Riqi').disabled = true;
         }
     });
-    // var inupd11 = document.getElementById('fileInput43');
-    // var yuanvalue11 = $('#fileInput43').val();
-    // inupd11.addEventListener('blur', function () {
-    //     var invalue11 = $('#fileInput43').val();
-    //     if (invalue11 != yuanvalue11) {
-    //         var date = new Date();
-    //         var day = ("0" + date.getDate()).slice(-2);
-    //         var month = ("0" + (date.getMonth() + 1)).slice(-2);
-    //         var hh = date.getHours();
-    //         var mm = date.getMinutes();
-    //         var ss = date.getSeconds();
-    //         var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
-    //
-    //         $ajax({
-    //             type: 'post',
-    //             url: '/psd/getloginname',
-    //         }, false, '', function (res) {
-    //             var this_name = res.data
-    //             document.getElementById('update-peisongImg1Renyuan').value = this_name;
-    //         })
-    //         document.getElementById('update-peisongImg1Riqi').value = dqrq;
-    //         document.getElementById("update-peisongImg1Riqi").disabled = true;
-    //     }
-    // });
-
 
     $ajax({
         type: 'post',
@@ -2270,13 +4027,12 @@ $(function () {
         document.getElementById("dlm").innerText = this_username;
     })
 
-    getList();
-    getKhmc();
-    // getName();
-    // getriqi();
-    setTable();
-    // getkucun();
     getquyuxl();
+    getList();
+    getPower();
+    getPowerKehu();
+    getKhmc();
+    setTable();
     // initFileInput("fileInput1");
     // initFileInput("fileInput2");
     // initFileInput("fileInput3");
@@ -2464,6 +4220,38 @@ $(function () {
         }, false, '', function (res) {
             if (res.code == 200) {
                 swal("", res.msg, "success");
+               document.getElementById("fileInput1").value=""
+                document.getElementById("fileInput2").value=""
+                document.getElementById("fileInput3").value=""
+                document.getElementById("fileInput4").value=""
+                document.getElementById("fileInput5").value=""
+                document.getElementById("fileInput6").value=""
+                document.getElementById("fileInput7").value=""
+                document.getElementById("fileInput8").value=""
+                //录入员的value也""
+                document.getElementById('add-peihuoImg1Renyuan').value=""
+                document.getElementById('add-peihuoImg2Renyuan').value=""
+                document.getElementById('add-peihuoImg3Renyuan').value=""
+                document.getElementById('add-peihuoImg4Renyuan').value=""
+                document.getElementById('add-peihuoImg5Renyuan').value=""
+                //录入员的value也""
+                document.getElementById('add-peihuoImg1Riqi').value=""
+                document.getElementById('add-peihuoImg2Riqi').value=""
+                document.getElementById('add-peihuoImg3Riqi').value=""
+                document.getElementById('add-peihuoImg4Riqi').value=""
+                document.getElementById('add-peihuoImg5Riqi').value=""
+                document.getElementById('add-peisongImg1Renyuan').value=""
+                document.getElementById('add-peisongImg2Renyuan').value=""
+                document.getElementById('add-peisongImg3Renyuan').value=""
+
+                //录入员的value也""
+                document.getElementById('add-peisongImg1Riqi').value=""
+                document.getElementById('add-peisongImg2Riqi').value=""
+                document.getElementById('add-peisongImg3Riqi').value=""
+                document.getElementById('add-kucun').value=""
+                document.getElementById('add-kucunTextRenyuan').value=""
+                document.getElementById('add-kucunTextRiqi').value=""
+
                 $('#add-form')[0].reset();
                 getList();
                 $('#add-close-btn').click();
@@ -2501,6 +4289,9 @@ $(function () {
         $('#update-songhuoAddress').val(rows[0].data.songhuoAddress);
         $('#update-songhuoAddressRenyuan').val(rows[0].data.songhuoAddressRenyuan);
         $('#update-songhuoAddressRiqi').val(rows[0].data.songhuoAddressRiqi);
+        $('#update-songhuoDanhao').val(rows[0].data.songhuoDanhao);
+        $('#update-songhuoDanhaoRenyuan').val(rows[0].data.songhuoDanhaoRenyuan);
+        $('#update-songhuoDanhaoRiqi').val(rows[0].data.songhuoDanhaoRiqi);
         $('#update-anzhuangAddress').val(rows[0].data.anzhuangAddress);
         $('#update-anzhuangAddressRenyuan').val(rows[0].data.anzhuangAddressRenyuan);
         $('#update-anzhuangAddressRiqi').val(rows[0].data.anzhuangAddressRiqi);
@@ -2543,7 +4334,7 @@ $(function () {
         $('#update-beizhu').val(rows[0].data.beizhu);
         $('#update-beizhuRenyuan').val(rows[0].data.beizhuRenyuan);
         $('#update-beizhuRiqi').val(rows[0].data.beizhuRiqi);
-        $('#update-kucunText').val(rows[0].data.kucunText);
+        $('#update-kucun').val(rows[0].data.kucun);
         $('#update-kucunTextRenyuan').val(rows[0].data.kucunTextRenyuan);
         $('#update-kucunTextRiqi').val(rows[0].data.kucunTextRiqi);
         $('#update-kucunImg1').val(rows[0].data.kucunImg1);
@@ -2591,6 +4382,18 @@ $(function () {
         $('#update-wenjianImg8').val(rows[0].data.wenjianImg8);
         $('#update-wenjianImg1Renyuan').val(rows[0].data.wenjianImg1Renyuan);
         $('#update-wenjianImg1Riqi').val(rows[0].data.wenjianImg1Riqi);
+
+
+
+        document.getElementById("tp1").src = rows[0].data.peihuoImg1;
+        document.getElementById("tp2").src=rows[0].data.peihuoImg2;
+        document.getElementById("tp3").src=rows[0].data.peihuoImg3;
+        document.getElementById("tp4").src=rows[0].data.peihuoImg4;
+        document.getElementById("tp5").src=rows[0].data.peihuoImg5;
+        document.getElementById("tp6").src=rows[0].data.peisongImg1;
+        document.getElementById("tp7").src=rows[0].data.peisongImg2;
+        document.getElementById("tp8").src=rows[0].data.peisongImg3;
+
     });
 
     //修改弹窗点击关闭按钮
@@ -2623,6 +4426,36 @@ $(function () {
                         resizeMode: 'fit',
                     })
                     swal("", res.msg, "success");
+                    document.getElementById("fileInput9").value=""
+                    document.getElementById("fileInput10").value=""
+                    document.getElementById("fileInput11").value=""
+                    document.getElementById("fileInput12").value=""
+                    document.getElementById("fileInput13").value=""
+                    document.getElementById("fileInput14").value=""
+                    document.getElementById("fileInput26").value=""
+                    document.getElementById("fileInput15").value=""
+                    document.getElementById('update-peihuoImg1Renyuan').value=""
+                    document.getElementById('update-peihuoImg2Renyuan').value=""
+                    document.getElementById('update-peihuoImg3Renyuan').value=""
+                    document.getElementById('update-peihuoImg4Renyuan').value=""
+                    document.getElementById('update-peihuoImg5Renyuan').value=""
+                    //录入员的value也""
+                    document.getElementById('update-peihuoImg1Riqi').value=""
+                    document.getElementById('update-peihuoImg2Riqi').value=""
+                    document.getElementById('update-peihuoImg3Riqi').value=""
+                    document.getElementById('update-peihuoImg4Riqi').value=""
+                    document.getElementById('update-peihuoImg5Riqi').value=""
+                    document.getElementById('update-peisongImg1Renyuan').value=""
+                    document.getElementById('update-peisongImg2Renyuan').value=""
+                    document.getElementById('update-peisongImg3Renyuan').value=""
+
+                    //录入员的value也""
+                    document.getElementById('update-peisongImg1Riqi').value=""
+                    document.getElementById('update-peisongImg2Riqi').value=""
+                    document.getElementById('update-peisongImg3Riqi').value=""
+                    document.getElementById('update-kucun').value=""
+                    document.getElementById('update-kucunTextRenyuan').value=""
+                    document.getElementById('update-kucunTextRiqi').value=""
                     $('#update-close-btn').click();
                     $('#update-modal').modal('hide');
                     getList();
@@ -3093,6 +4926,351 @@ $(function () {
         })
     }
 
+    // function initFileInput9(ctrlName) {
+    //     var control = $('#' + ctrlName);
+    //     control.fileinput({
+    //         language: 'zh',
+    //         uploadUrl: "https://huaqunwechar.com:9076/file/upload",
+    //         // uploadUrl: "https://localhost:9076/file/upload",
+    //         allowedFileExtensions: ['jpg', 'gif', 'png'],
+    //         uploadAsync: false,
+    //         showUpload: true,
+    //         showRemove: true,
+    //         showPreview: true,
+    //         showCaption: false,
+    //         browseClass: "btn btn-primary",
+    //         maxFileCount: 1,
+    //         enctype: 'multipart/form-data',
+    //         validateInialCount: true,
+    //         msgFilesTooMany: "选择上传的文件数量({n}) 超过允许的最大数值{m}!",
+    //         layoutTelates: {},
+    //         uploadExtraData: function () {
+    //             var file = $("#add-orderNumber").val() + "-10.jpg"
+    //             var name = file
+    //             var path = "/huaqun_erqi/"
+    //             var kongjian = 3
+    //             var formData = {
+    //                 file: file,
+    //                 name: name,
+    //                 path: path,
+    //                 kongjian: kongjian,
+    //             };
+    //             return formData;
+    //         }
+    //     }).on("filebatchuploadsuccess", function (event, data, previewId, index) {
+    //         console.log('正在上传');
+    //     }).on("filebatchuploadsuccess", function (event, data, previewId, index) {
+    //         var form = data.form, files = data.files, extra = data.extra,
+    //             response = data.response, reader = data.reader;
+    //         console.log(response);
+    //         console.log(response.status);
+    //     }).on("filebatchuploaderror", function (event, data, msg) {
+    //         console.log('上传失败!' + data.status);
+    //     })
+    // }
+    //
+    // function initFileInput10(ctrlName) {
+    //     var control = $('#' + ctrlName);
+    //     control.fileinput({
+    //         language: 'zh',
+    //         uploadUrl: "https://huaqunwechar.com:9076/file/upload",
+    //         // uploadUrl: "https://localhost:9076/file/upload",
+    //         allowedFileExtensions: ['jpg', 'gif', 'png'],
+    //         uploadAsync: false,
+    //         showUpload: true,
+    //         showRemove: true,
+    //         showPreview: true,
+    //         showCaption: false,
+    //         browseClass: "btn btn-primary",
+    //         maxFileCount: 1,
+    //         enctype: 'multipart/form-data',
+    //         validateInialCount: true,
+    //         msgFilesTooMany: "选择上传的文件数量({n}) 超过允许的最大数值{m}!",
+    //         layoutTelates: {},
+    //         uploadExtraData: function () {
+    //             var file = $("#add-orderNumber").val() + "-11.jpg"
+    //             var name = file
+    //             var path = "/huaqun_erqi/"
+    //             var kongjian = 3
+    //             var formData = {
+    //                 file: file,
+    //                 name: name,
+    //                 path: path,
+    //                 kongjian: kongjian,
+    //             };
+    //             return formData;
+    //         }
+    //     }).on("filebatchuploadsuccess", function (event, data, previewId, index) {
+    //         console.log('正在上传');
+    //     }).on("filebatchuploadsuccess", function (event, data, previewId, index) {
+    //         var form = data.form, files = data.files, extra = data.extra,
+    //             response = data.response, reader = data.reader;
+    //         console.log(response);
+    //         console.log(response.status);
+    //     }).on("filebatchuploaderror", function (event, data, msg) {
+    //         console.log('上传失败!' + data.status);
+    //     })
+    // }
+    //
+    // function initFileInput11(ctrlName) {
+    //     var control = $('#' + ctrlName);
+    //     control.fileinput({
+    //         language: 'zh',
+    //         uploadUrl: "https://huaqunwechar.com:9076/file/upload",
+    //         // uploadUrl: "https://localhost:9076/file/upload",
+    //         allowedFileExtensions: ['jpg', 'gif', 'png'],
+    //         uploadAsync: false,
+    //         showUpload: true,
+    //         showRemove: true,
+    //         showPreview: true,
+    //         showCaption: false,
+    //         browseClass: "btn btn-primary",
+    //         maxFileCount: 1,
+    //         enctype: 'multipart/form-data',
+    //         validateInialCount: true,
+    //         msgFilesTooMany: "选择上传的文件数量({n}) 超过允许的最大数值{m}!",
+    //         layoutTelates: {},
+    //         uploadExtraData: function () {
+    //             var file = $("#add-orderNumber").val() + "-12.jpg"
+    //             var name = file
+    //             var path = "/huaqun_erqi/"
+    //             var kongjian = 3
+    //             var formData = {
+    //                 file: file,
+    //                 name: name,
+    //                 path: path,
+    //                 kongjian: kongjian,
+    //             };
+    //             return formData;
+    //         }
+    //     }).on("filebatchuploadsuccess", function (event, data, previewId, index) {
+    //         console.log('正在上传');
+    //     }).on("filebatchuploadsuccess", function (event, data, previewId, index) {
+    //         var form = data.form, files = data.files, extra = data.extra,
+    //             response = data.response, reader = data.reader;
+    //         console.log(response);
+    //         console.log(response.status);
+    //     }).on("filebatchuploaderror", function (event, data, msg) {
+    //         console.log('上传失败!' + data.status);
+    //     })
+    // }
+    //
+    // function initFileInput12(ctrlName) {
+    //     var control = $('#' + ctrlName);
+    //     control.fileinput({
+    //         language: 'zh',
+    //         uploadUrl: "https://huaqunwechar.com:9076/file/upload",
+    //         // uploadUrl: "https://localhost:9076/file/upload",
+    //         allowedFileExtensions: ['jpg', 'gif', 'png'],
+    //         uploadAsync: false,
+    //         showUpload: true,
+    //         showRemove: true,
+    //         showPreview: true,
+    //         showCaption: false,
+    //         browseClass: "btn btn-primary",
+    //         maxFileCount: 1,
+    //         enctype: 'multipart/form-data',
+    //         validateInialCount: true,
+    //         msgFilesTooMany: "选择上传的文件数量({n}) 超过允许的最大数值{m}!",
+    //         layoutTelates: {},
+    //         uploadExtraData: function () {
+    //             var file = $("#add-orderNumber").val() + "-13.jpg"
+    //             var name = file
+    //             var path = "/huaqun_erqi/"
+    //             var kongjian = 3
+    //             var formData = {
+    //                 file: file,
+    //                 name: name,
+    //                 path: path,
+    //                 kongjian: kongjian,
+    //             };
+    //             return formData;
+    //         }
+    //     }).on("filebatchuploadsuccess", function (event, data, previewId, index) {
+    //         console.log('正在上传');
+    //     }).on("filebatchuploadsuccess", function (event, data, previewId, index) {
+    //         var form = data.form, files = data.files, extra = data.extra,
+    //             response = data.response, reader = data.reader;
+    //         console.log(response);
+    //         console.log(response.status);
+    //     }).on("filebatchuploaderror", function (event, data, msg) {
+    //         console.log('上传失败!' + data.status);
+    //     })
+    // }
+    //
+    // function initFileInput13(ctrlName) {
+    //     var control = $('#' + ctrlName);
+    //     control.fileinput({
+    //         language: 'zh',
+    //         uploadUrl: "https://huaqunwechar.com:9076/file/upload",
+    //         // uploadUrl: "https://localhost:9076/file/upload",
+    //         allowedFileExtensions: ['jpg', 'gif', 'png'],
+    //         uploadAsync: false,
+    //         showUpload: true,
+    //         showRemove: true,
+    //         showPreview: true,
+    //         showCaption: false,
+    //         browseClass: "btn btn-primary",
+    //         maxFileCount: 1,
+    //         enctype: 'multipart/form-data',
+    //         validateInialCount: true,
+    //         msgFilesTooMany: "选择上传的文件数量({n}) 超过允许的最大数值{m}!",
+    //         layoutTelates: {},
+    //         uploadExtraData: function () {
+    //             var file = $("#add-orderNumber").val() + "-14.jpg"
+    //             var name = file
+    //             var path = "/huaqun_erqi/"
+    //             var kongjian = 3
+    //             var formData = {
+    //                 file: file,
+    //                 name: name,
+    //                 path: path,
+    //                 kongjian: kongjian,
+    //             };
+    //             return formData;
+    //         }
+    //     }).on("filebatchuploadsuccess", function (event, data, previewId, index) {
+    //         console.log('正在上传');
+    //     }).on("filebatchuploadsuccess", function (event, data, previewId, index) {
+    //         var form = data.form, files = data.files, extra = data.extra,
+    //             response = data.response, reader = data.reader;
+    //         console.log(response);
+    //         console.log(response.status);
+    //     }).on("filebatchuploaderror", function (event, data, msg) {
+    //         console.log('上传失败!' + data.status);
+    //     })
+    // }
+    //
+    // function initFileInput14(ctrlName) {
+    //     var control = $('#' + ctrlName);
+    //     control.fileinput({
+    //         language: 'zh',
+    //         uploadUrl: "https://huaqunwechar.com:9076/file/upload",
+    //         // uploadUrl: "https://localhost:9076/file/upload",
+    //         allowedFileExtensions: ['jpg', 'gif', 'png'],
+    //         uploadAsync: false,
+    //         showUpload: true,
+    //         showRemove: true,
+    //         showPreview: true,
+    //         showCaption: false,
+    //         browseClass: "btn btn-primary",
+    //         maxFileCount: 1,
+    //         enctype: 'multipart/form-data',
+    //         validateInialCount: true,
+    //         msgFilesTooMany: "选择上传的文件数量({n}) 超过允许的最大数值{m}!",
+    //         layoutTelates: {},
+    //         uploadExtraData: function () {
+    //             var file = $("#add-orderNumber").val() + "-18.jpg"
+    //             var name = file
+    //             var path = "/huaqun_erqi/"
+    //             var kongjian = 3
+    //             var formData = {
+    //                 file: file,
+    //                 name: name,
+    //                 path: path,
+    //                 kongjian: kongjian,
+    //             };
+    //             return formData;
+    //         }
+    //     }).on("filebatchuploadsuccess", function (event, data, previewId, index) {
+    //         console.log('正在上传');
+    //     }).on("filebatchuploadsuccess", function (event, data, previewId, index) {
+    //         var form = data.form, files = data.files, extra = data.extra,
+    //             response = data.response, reader = data.reader;
+    //         console.log(response);
+    //         console.log(response.status);
+    //     }).on("filebatchuploaderror", function (event, data, msg) {
+    //         console.log('上传失败!' + data.status);
+    //     })
+    // }
+    //
+    // function initFileInput26(ctrlName) {
+    //     var control = $('#' + ctrlName);
+    //     control.fileinput({
+    //         language: 'zh',
+    //         uploadUrl: "https://huaqunwechar.com:9076/file/upload",
+    //         // uploadUrl: "https://localhost:9076/file/upload",
+    //         allowedFileExtensions: ['jpg', 'gif', 'png'],
+    //         uploadAsync: false,
+    //         showUpload: true,
+    //         showRemove: true,
+    //         showPreview: true,
+    //         showCaption: false,
+    //         browseClass: "btn btn-primary",
+    //         maxFileCount: 1,
+    //         enctype: 'multipart/form-data',
+    //         validateInialCount: true,
+    //         msgFilesTooMany: "选择上传的文件数量({n}) 超过允许的最大数值{m}!",
+    //         layoutTelates: {},
+    //         uploadExtraData: function () {
+    //             var file = $("#add-orderNumber").val() + "-19.jpg"
+    //             var name = file
+    //             var path = "/huaqun_erqi/"
+    //             var kongjian = 3
+    //             var formData = {
+    //                 file: file,
+    //                 name: name,
+    //                 path: path,
+    //                 kongjian: kongjian,
+    //             };
+    //             return formData;
+    //         }
+    //     }).on("filebatchuploadsuccess", function (event, data, previewId, index) {
+    //         console.log('正在上传');
+    //     }).on("filebatchuploadsuccess", function (event, data, previewId, index) {
+    //         var form = data.form, files = data.files, extra = data.extra,
+    //             response = data.response, reader = data.reader;
+    //         console.log(response);
+    //         console.log(response.status);
+    //     }).on("filebatchuploaderror", function (event, data, msg) {
+    //         console.log('上传失败!' + data.status);
+    //     })
+    // }
+
+//     function initFileInput15(ctrlName) {
+//         var control = $('#' + ctrlName);
+//         control.fileinput({
+//             language: 'zh',
+//             uploadUrl: "https://huaqunwechar.com:9076/file/upload",
+//             // uploadUrl: "https://localhost:9076/file/upload",
+//             allowedFileExtensions: ['jpg', 'gif', 'png'],
+//             uploadAsync: false,
+//             showUpload: true,
+//             showRemove: true,
+//             showPreview: true,
+//             showCaption: false,
+//             browseClass: "btn btn-primary",
+//             maxFileCount: 1,
+//             enctype: 'multipart/form-data',
+//             validateInialCount: true,
+//             msgFilesTooMany: "选择上传的文件数量({n}) 超过允许的最大数值{m}!",
+//             layoutTelates: {},
+//             uploadExtraData: function () {
+//                 var file = $("#add-orderNumber").val() + "-20.jpg"
+//                 var name = file
+//                 var path = "/huaqun_erqi/"
+//                 var kongjian = 3
+//                 var formData = {
+//                     file: file,
+//                     name: name,
+//                     path: path,
+//                     kongjian: kongjian,
+//                 };
+//                 return formData;
+//             }
+//         }).on("filebatchuploadsuccess", function (event, data, previewId, index) {
+//             console.log('正在上传');
+//         }).on("filebatchuploadsuccess", function (event, data, previewId, index) {
+//             var form = data.form, files = data.files, extra = data.extra,
+//                 response = data.response, reader = data.reader;
+//             console.log(response);
+//             console.log(response.status);
+//         }).on("filebatchuploaderror", function (event, data, msg) {
+//             console.log('上传失败!' + data.status);
+//         })
+//     }
+//
+// });
     function initFileInput9(ctrlName) {
         var control = $('#' + ctrlName);
         control.fileinput({
@@ -3112,7 +5290,7 @@ $(function () {
             msgFilesTooMany: "选择上传的文件数量({n}) 超过允许的最大数值{m}!",
             layoutTelates: {},
             uploadExtraData: function () {
-                var file = $("#add-orderNumber").val() + "-10.jpg"
+                var file = $("#update-orderNumber").val() + "-10.jpg"
                 var name = file
                 var path = "/huaqun_erqi/"
                 var kongjian = 3
@@ -3155,7 +5333,7 @@ $(function () {
             msgFilesTooMany: "选择上传的文件数量({n}) 超过允许的最大数值{m}!",
             layoutTelates: {},
             uploadExtraData: function () {
-                var file = $("#add-orderNumber").val() + "-11.jpg"
+                var file = $("#update-orderNumber").val() + "-11.jpg"
                 var name = file
                 var path = "/huaqun_erqi/"
                 var kongjian = 3
@@ -3198,7 +5376,7 @@ $(function () {
             msgFilesTooMany: "选择上传的文件数量({n}) 超过允许的最大数值{m}!",
             layoutTelates: {},
             uploadExtraData: function () {
-                var file = $("#add-orderNumber").val() + "-12.jpg"
+                var file = $("#update-orderNumber").val() + "-12.jpg"
                 var name = file
                 var path = "/huaqun_erqi/"
                 var kongjian = 3
@@ -3241,7 +5419,7 @@ $(function () {
             msgFilesTooMany: "选择上传的文件数量({n}) 超过允许的最大数值{m}!",
             layoutTelates: {},
             uploadExtraData: function () {
-                var file = $("#add-orderNumber").val() + "-13.jpg"
+                var file = $("#update-orderNumber").val() + "-13.jpg"
                 var name = file
                 var path = "/huaqun_erqi/"
                 var kongjian = 3
@@ -3284,7 +5462,7 @@ $(function () {
             msgFilesTooMany: "选择上传的文件数量({n}) 超过允许的最大数值{m}!",
             layoutTelates: {},
             uploadExtraData: function () {
-                var file = $("#add-orderNumber").val() + "-14.jpg"
+                var file = $("#update-orderNumber").val() + "-14.jpg"
                 var name = file
                 var path = "/huaqun_erqi/"
                 var kongjian = 3
@@ -3327,7 +5505,7 @@ $(function () {
             msgFilesTooMany: "选择上传的文件数量({n}) 超过允许的最大数值{m}!",
             layoutTelates: {},
             uploadExtraData: function () {
-                var file = $("#add-orderNumber").val() + "-18.jpg"
+                var file = $("#update-orderNumber").val() + "-18.jpg"
                 var name = file
                 var path = "/huaqun_erqi/"
                 var kongjian = 3
@@ -3370,7 +5548,7 @@ $(function () {
             msgFilesTooMany: "选择上传的文件数量({n}) 超过允许的最大数值{m}!",
             layoutTelates: {},
             uploadExtraData: function () {
-                var file = $("#add-orderNumber").val() + "-19.jpg"
+                var file = $("#update-orderNumber").val() + "-19.jpg"
                 var name = file
                 var path = "/huaqun_erqi/"
                 var kongjian = 3
@@ -3413,7 +5591,7 @@ $(function () {
             msgFilesTooMany: "选择上传的文件数量({n}) 超过允许的最大数值{m}!",
             layoutTelates: {},
             uploadExtraData: function () {
-                var file = $("#add-orderNumber").val() + "-20.jpg"
+                var file = $("#update-orderNumber").val() + "-20.jpg"
                 var name = file
                 var path = "/huaqun_erqi/"
                 var kongjian = 3
@@ -3438,7 +5616,6 @@ $(function () {
     }
 
 });
-
 
 
 //         control.fileinput({
@@ -3785,14 +5962,15 @@ function setTable(data) {
                 align: 'center',
                 sortable: true,
                 width: 200,
-            }, {
-                field: 'kucun',
-                title: '商品库存(文字)',
-                align: 'center',
-                sortable: true,
-                width: 200,
-                height: 400,
             }
+            // , {
+            //     field: 'kucun',
+            //     title: '商品库存(文字)',
+            //     align: 'center',
+            //     sortable: true,
+            //     width: 200,
+            //     height: 400,
+            // }
 
 //             , {
 //                 field: 'customerNeedImg1',
@@ -4073,10 +6251,14 @@ function getNumbern() {
         console.log(djbh)
     })
     console.log(djbh)
+    // $('#add-orderNumber').val(djbh);
+    // $('#add-insertDate').val(xdrq);
+    // $('#update-insertDate').val(xdrq);
+    // $('#add-customerNameRiqi').val(xdrq);
     $('#add-orderNumber').val(djbh);
-    $('#add-insertDate').val(xdrq);
-    $('#update-insertDate').val(xdrq);
-    $('#add-customerNameRiqi').val(xdrq);
+    $('#add-insertDate').val(xdrq.toString());
+    $('#update-insertDate').val(xdrq.toString());
+    $('#add-customerNameRiqi').val(xdrq.toString());
 
 }
 

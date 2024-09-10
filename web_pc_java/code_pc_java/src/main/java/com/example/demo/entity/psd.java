@@ -262,9 +262,9 @@ public class psd {
      */
     private String beizhuRiqi;
     /**
-     * 商品库存(文字)
+     * 库存
      */
-    private String kucunText;
+    private String kucun;
     /**
      * 录入员
      */
@@ -273,6 +273,10 @@ public class psd {
      * 完成时间
      */
     private String kucunTextRiqi;
+    /**
+     * 商品库存(文字)
+     */
+    private String kucunText;
     /**
      * 商品库存(图片)
      */
@@ -462,5 +466,5 @@ public class psd {
      */
     private String quyu;
 
-
 }
+

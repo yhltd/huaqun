@@ -60,4 +60,6 @@ public interface LkxdService extends IService<lkxd> {
     boolean deletedh(String orderNumber);
     List<lkxd> getListON(String orderNumber);
     String getListbyon(String orderNumber);
+    List<lkxd> queryList1(String customerNumber, String customerName,String installAddress,String wancheng,String ksinsertDate,
+                         String jsinsertDateg);
 }

@@ -3,8 +3,15 @@ table {
     border-radius: 10px; /* 圆角 */
     border: 2px solid black; /* 白色边框线 */
 }
+
 th, td {
     border: 1px solid black;
     text-align: center;
 }
+
+table td {
+    width: auto;
+    height: auto;
+}
+/*把table中的所有input和select都铺满单元格*/
 

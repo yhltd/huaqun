@@ -332,5 +332,28 @@ public class LkxdController {
             return ResultInfo.error("删除失败");
         }
     }
+    /**
+     * 根据姓名和部门查询
+     *
+     * @return ResultInfo
+     */
+    @RequestMapping("/queryList1")
+    public ResultInfo queryList1(String customerNumber, String customerName,String installAddress,String wancheng, String ksinsertDate,
+                                String jsinsertDate
+            , HttpSession session) {
+        UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
+        if(userInfo.getPower().equals("玻璃厂")){
+            return ResultInfo.error(401, "无权限");
+        }
+        try {
+            List<lkxd> list = lkxdService.queryList1(customerNumber, customerName, installAddress, wancheng, ksinsertDate,jsinsertDate);
+            return ResultInfo.success("获取成功", list);
+        } catch (Exception e) {
+            e.printStackTrace();
+            log.error("获取失败：{}", e.getMessage());
+            return ResultInfo.error("错误!");
+        }
+    }
+
 
 }

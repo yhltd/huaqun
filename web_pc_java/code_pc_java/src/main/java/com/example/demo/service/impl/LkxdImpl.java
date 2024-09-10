@@ -105,5 +105,11 @@ public class LkxdImpl extends ServiceImpl<LkxdMapper, lkxd> implements LkxdServi
     public String getListbyon(String orderNumber) {
         return lkxdMapper.getListbyon(orderNumber);
     }
+    @Override
+    public List<lkxd> queryList1(String customerNumber, String customerName, String installAddress, String wancheng, String ksinsertDate,
+                                String jsinsertDate) {
+        return lkxdMapper.queryList1(customerNumber, customerName, installAddress, wancheng, ksinsertDate,
+                jsinsertDate);
+    }
 
 }

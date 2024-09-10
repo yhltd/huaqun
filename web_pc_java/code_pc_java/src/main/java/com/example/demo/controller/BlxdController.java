@@ -164,7 +164,7 @@ public class BlxdController {
     @RequestMapping(value = "/updatesc", method = RequestMethod.POST)
     public ResultInfo updatesc(HttpSession session,String shengchan ,String orderNumber) {
         UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
-        if(userInfo.getPower().equals("玻璃厂") || userInfo.getPower().equals("客户")){
+        if(userInfo.getPower().equals("客户")){
             return ResultInfo.error(401, "无权限");
         }
 
