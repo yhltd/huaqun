@@ -387,6 +387,40 @@ public ResultInfo update1(HttpSession session,String khmc,String xdrq,String djb
 //        if (userInfo.getPower().equals("客户") && userInfo.getPower().equals("玻璃厂") || wancheng1.equals("已审验") && wancheng1.equals("完成")) {
 //            return ResultInfo.error(401, "无权限");
 //        }
+    if(fj.equals("铝型材")){
+        float gonglv =Float.parseFloat(ddcd)  / 1000 * Float.parseFloat(sl) * 12;
+        gl= String.format("%.2f",gonglv);
+       float c= Float.parseFloat(ddcd)/ 1000 * Float.parseFloat(sl) * Float.parseFloat(dj);
+        je=String.format("%.2f",c);
+        System.out.println(je);
+        String cs = ddklczService.getchicun(gh);
+        if(cs!=null){
+            float d = Float.parseFloat(ddcd)-Float.parseFloat(cs);
+            chicun= String.format("%.2f",d);
+        }else{
+            chicun="";
+        }
+
+    }else if(fj.equals("电源")){
+        float e=Float.parseFloat(sl) * Float.parseFloat(dj);
+        je=String.format("%.2f",e);
+        chicun="";
+        gl="";
+        chicun="";
+    }else if(fj.equals("开关")){
+        float f=Float.parseFloat(sl) * Float.parseFloat(dj);
+        je=String.format("%.2f",f);
+        chicun="";
+        gl="";
+        chicun="";
+    }else if(fj.equals("配件")){
+        float g=Float.parseFloat(sl) * Float.parseFloat(dj);
+        je=String.format("%.2f",g);
+        chicun="";
+        gl="";
+
+    }
+
     try {
         if(id11==1){
             ddxdService.update1(khmc,xdrq,djbh,shouhuo,lxdh,shfs,azdz,ddh,luruyuan,fj, gh, ddcd, sl, cxdk, lcys, gy, gl, bz, dj, je, chicun, cxdkRight, summoney, wcsj, id);

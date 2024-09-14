@@ -2280,7 +2280,7 @@
 var idd;
 var num;
 var select_qy = [];
-var newFile;
+var name="";
 
 function getPower() {
     $ajax({
@@ -2289,19 +2289,25 @@ function getPower() {
     }, false, '', function (res) {
         if (res.code == 200) {
             var power = res.data;
-            if (power == "客户" || power == "操作员") {
-                document.getElementById("update-customerNeedText").disabled = true;
-                document.getElementById("update-customerNeedText1").disabled = true;
-
-            }
+            // if (power == "客户" || power == "操作员") {
+            //     document.getElementById("update-customerNeedText").disabled = true;
+            //     document.getElementById("update-customerNeedText1").disabled = true;
+            //
+            // }
         }
     })
 }
+function clearFileValue(input) {
+    input.outerHTML = input.outerHTML;
+}
+
+
 
 function getPowerKehu() {
     $ajax({
         type: 'post',
         url: '/user/getPower',
+
     }, false, '', function (res) {
         if (res.code == 200) {
             var power = res.data;
@@ -2380,6 +2386,7 @@ function getPowerKehu() {
                 textBox.class = 'form-control';
                 textBox.autocomplete = 'off';
                 div.appendChild(textBox);
+                document.getElementById("add-customerName").value=customerName;
 
                 document.getElementById("customerName").remove();
                 var div = document.getElementById('cusName');
@@ -2391,7 +2398,7 @@ function getPowerKehu() {
                 textBox.autocomplete = 'off';
                 div.appendChild(textBox);
                 document.getElementById("customerName").disabled = true;
-
+                document.getElementById("add-customerName").readOnly =true;
                 $ajax({
                     type: 'post',
                     url: '/psd/getloginname1',
@@ -2401,13 +2408,18 @@ function getPowerKehu() {
                         document.getElementById("add-customerName").value = this_name;
                         // document.getElementById("add-customerNameRenyuan").value = this_name;
                         document.getElementById("customerName").value = this_name;
+                        name=this_name;
                     }
                 })
             }
         }
     })
 }
-
+function reloadPage() {
+    setTimeout(function() {
+        location.reload();
+    }, 2000); // 延迟5秒后重新加载页面
+}
 function getList() {
     $('#orderNumber').val("");
     $('#customerName').val("");
@@ -2834,15 +2846,38 @@ $(function () {
             }, false, '', function (res) {
                 var this_name = res.data
                 document.getElementById('update-customerNeedTextRenyuan').value = this_name;
-                document.getElementById('update-customerNeedText1Renyuan').value = this_name;
+
             })
             document.getElementById('update-customerNeedTextRiqi').value = dqrq;
             // document.getElementById("update-customerNeedTextRiqi").disabled = true;
-            document.getElementById('update-customerNeedText1Riqi').value = dqrq;
-            // document.getElementById("update-customerNeedText1Riqi").disabled = true;
+
         }
     });
+    var inp6 = document.getElementById('update-customerNeedText');
+    var yuanvalue6 = $('#update-customerNeedText1').val();
+    inp6.addEventListener('blur', function() {
+        var invalue6 = $('#update-customerNeedText1').val();
+        if (invalue6 != yuanvalue6) {
+            var date = new Date();
+            var day = ("0" + date.getDate()).slice(-2);
+            var month = ("0" + (date.getMonth() + 1)).slice(-2);
+            var hh = date.getHours();
+            var mm = date.getMinutes();
+            var ss = date.getSeconds();
+            var dqrq = date.getFullYear() + "/" + (month) + "/" + (day) + " " + (hh) + ":" + (mm) + ":" + (ss);
 
+            $ajax({
+                type: 'post',
+                url: '/psd/getloginname',
+            }, false, '', function (res) {
+                var this_name = res.data
+                document.getElementById('update-customerNeedText1Renyuan').value = this_name;
+
+            })
+            document.getElementById('update-customerNeedText1Riqi').value = dqrq;
+
+        }
+    });
     var inp8 = document.getElementById('add-money');
     var yuanvalue8 = $('#add-money').val();
     inp8.addEventListener('blur', function() {
@@ -4186,6 +4221,7 @@ $(function () {
     //点击新增按钮显示弹窗
     $("#add-btn").click(function () {
         $('#add-modal').modal('show');
+        document.getElementById("add-customerName").value = name;
         var acnt = document.getElementById("add-customerNeedText");
         var acnt1 = document.getElementById("add-customerNeedText1");
         acnt1.addEventListener('input', function () {
@@ -4220,14 +4256,7 @@ $(function () {
         }, false, '', function (res) {
             if (res.code == 200) {
                 swal("", res.msg, "success");
-               document.getElementById("fileInput1").value=""
-                document.getElementById("fileInput2").value=""
-                document.getElementById("fileInput3").value=""
-                document.getElementById("fileInput4").value=""
-                document.getElementById("fileInput5").value=""
-                document.getElementById("fileInput6").value=""
-                document.getElementById("fileInput7").value=""
-                document.getElementById("fileInput8").value=""
+
                 //录入员的value也""
                 document.getElementById('add-peihuoImg1Renyuan').value=""
                 document.getElementById('add-peihuoImg2Renyuan').value=""
@@ -4255,6 +4284,7 @@ $(function () {
                 $('#add-form')[0].reset();
                 getList();
                 $('#add-close-btn').click();
+                reloadPage()
             }
         })
         // }

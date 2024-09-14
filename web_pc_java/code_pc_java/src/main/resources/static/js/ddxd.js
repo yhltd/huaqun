@@ -2615,6 +2615,9 @@ let select8="";
 var power1;
 var cishu;
 var id11;
+var cname="";
+
+
 function getKhmc() {
     $ajax({
         type: 'post',
@@ -2637,7 +2640,31 @@ function getShfs() {
     }, false, '', function (res) {
         if (res.code == 200) {
             var item = "";
-            select_shfs = res.data
+            var arr = {
+                blsjg:null,
+                blys:null,
+                cxdk:null,
+                dy:null,
+                fjpz:null,
+                ghxl:null,
+                gy:null,
+                id:null,
+                jlkw:null,
+                jlpp:null,
+                kg:null,
+                kjlk:null,
+                lcys:null,
+                lcysLk:null,
+                lsw:null,
+                lsxh:null,
+                lxc:null,
+                lxcLk:null,
+                pj:null,
+                quyu:null,
+                shfs:""};
+            var arr1 = res.data.concat(arr)
+            select_shfs = arr1;
+
             for (var i = 0; i < res.data.length; i++) {
 
                 $("#add-shfs").append("<option>" + res.data[i].shfs + "</option>");
@@ -2655,7 +2682,31 @@ function getLxc() {
     }, false, '', function (res) {
         if (res.code == 200) {
             var item = "";
-            select_lxc = res.data;
+            var arr = {
+                blsjg:null,
+                blys:null,
+                cxdk:null,
+                dy:null,
+                fjpz:null,
+                ghxl:null,
+                gy:null,
+                id:null,
+                jlkw:null,
+                jlpp:null,
+                kg:null,
+                kjlk:null,
+                lcys:null,
+                lcysLk:null,
+                lsw:null,
+                lsxh:null,
+                lxc:"",
+                lxcLk:null,
+                pj:null,
+                quyu:null,
+                shfs:null};
+            var arr1 = res.data.concat(arr)
+            select_lxc = arr1;
+
             r=res.data.length;
             for (var i = 0; i < res.data.length; i++) {
                 // $("#add-gh").append("<option>" + res.data[i].lxc + "</option>");
@@ -2689,7 +2740,31 @@ function getDy() {
     }, false, '', function (res) {
         if (res.code == 200) {
             var item = "";
-            select_dy = res.data
+            var arr = {
+                blsjg:null,
+                blys:null,
+                cxdk:null,
+                dy:"",
+                fjpz:null,
+                ghxl:null,
+                gy:null,
+                id:null,
+                jlkw:null,
+                jlpp:null,
+                kg:null,
+                kjlk:null,
+                lcys:null,
+                lcysLk:null,
+                lsw:null,
+                lsxh:null,
+                lxc:null,
+                lxcLk:null,
+                pj:null,
+                quyu:null,
+                shfs:null};
+            var arr1 = res.data.concat(arr)
+            select_dy = arr1;
+
             for (var i = 0; i < res.data.length; i++) {
                 // $("#add-gh").append("<option>" + res.data[i].dy + "</option>");
                 $("#update-gh").append("<option>" + res.data[i].dy + "</option>");
@@ -2709,7 +2784,31 @@ function getKg() {
     }, false, '', function (res) {
         if (res.code == 200) {
             var item = "";
-            select_kg = res.data
+            var arr = {
+                blsjg:null,
+                blys:null,
+                cxdk:null,
+                dy:null,
+                fjpz:null,
+                ghxl:null,
+                gy:null,
+                id:null,
+                jlkw:null,
+                jlpp:null,
+                kg:"",
+                kjlk:null,
+                lcys:null,
+                lcysLk:null,
+                lsw:null,
+                lsxh:null,
+                lxc:null,
+                lxcLk:null,
+                pj:null,
+                quyu:null,
+                shfs:null};
+            var arr1 = res.data.concat(arr)
+            select_kg = arr1;
+
             for (var i = 0; i < res.data.length; i++) {
                 // $("#add-gh").append("<option>" + res.data[i].kg + "</option>");
                 $("#update-gh").append("<option>" + res.data[i].kg + "</option>");
@@ -2726,7 +2825,31 @@ function getPj() {
     }, false, '', function (res) {
         if (res.code == 200) {
             var item = "";
-            select_pj = res.data
+            var arr = {
+                blsjg:null,
+                blys:null,
+                cxdk:null,
+                dy:null,
+                fjpz:null,
+                ghxl:null,
+                gy:null,
+                id:null,
+                jlkw:null,
+                jlpp:null,
+                kg:null,
+                kjlk:null,
+                lcys:null,
+                lcysLk:null,
+                lsw:null,
+                lsxh:null,
+                lxc:null,
+                lxcLk:null,
+                pj:"",
+                quyu:null,
+                shfs:null};
+            var arr1 = res.data.concat(arr)
+            select_pj = arr1;
+
             for (var i = 0; i < res.data.length; i++) {
                 // $("#add-gh").append("<option>" + res.data[i].pj + "</option>");
                 $("#update-gh").append("<option>" + res.data[i].pj + "</option>");
@@ -2787,7 +2910,31 @@ function hqxlGy() {
     }, false, '', function (res) {
         if (res.code == 200) {
             var item = "";
-            select_gy = res.data;
+            var arr = {
+                blsjg:null,
+                blys:null,
+                cxdk:null,
+                dy:null,
+                fjpz:null,
+                ghxl:null,
+                gy:"",
+                id:null,
+                jlkw:null,
+                jlpp:null,
+                kg:null,
+                kjlk:null,
+                lcys:null,
+                lcysLk:null,
+                lsw:null,
+                lsxh:null,
+                lxc:null,
+                lxcLk:null,
+                pj:null,
+                quyu:null,
+                shfs:null};
+            var arr1 = res.data.concat(arr)
+            select_gy = arr1;
+
             for (var i = 0; i < res.data.length; i++) {
                 // $("#add-gy").append("<option>" + res.data[i].gy + "</option>");
                 // $("#update-gy").append("<option>" + res.data[i].gy + "</option>");
@@ -3060,6 +3207,7 @@ function getList() {
                         var this_name = res.data;
                         document.getElementById("add-khmc").value = this_name;
                         document.getElementById("khmc").value = this_name;
+                        cname= this_name;
                     }
                 })
             }
@@ -3218,6 +3366,11 @@ $(function () {
             let c = parseFloat($('#id1').val()) + i
             var q = c.toString();
             var fj = $('#fj' + q).val();
+            if(fj==null||fj==undefined||fj==""){
+                id11=q
+            }else{
+                id11="1"
+            }
             if($('#gh' + q).val()==null || $('#gh' + q).val()==""){
                 var gh=$('#gh1' + q).val()
             }else {
@@ -3235,15 +3388,9 @@ $(function () {
             var bz = $('#bz' + q).val();
             var dj = $('#dj' + q).val();
             var j = d * 1 / 1000 * s;
-            var je = j.toString();
-            if(je==null||je==undefined||je==""||isNaN(je)){
-                id11=q
-            }else{
-                id11="1"
-            }
-            var chicun = $('#chicun' + q).val();
+
             var cxdkRight = $('#cxdkRight' + q).val();
-            var sumMoney = $('#sumMoney' + q).val();
+
             var wcsj = $('#wcsj' + q).val();
 
             var khmc =$('#add-khmc').val();
@@ -3278,10 +3425,9 @@ $(function () {
                     gl: gl,
                     bz: bz,
                     dj: dj,
-                    je: je,
-                    chicun: chicun,
+
                     cxdkRight: cxdkRight,
-                    sumMoney: sumMoney,
+
                     wcsj: wcsj,
                     luruyuan: luruyuan,
                     id: q,
@@ -3293,6 +3439,26 @@ $(function () {
                 // $('#update-form').reset();
                 // document.getElementById('add-shouhuo').value = "";
                 // document.getElementById('add-lxdh').value = "";
+                if(cname=="客户"){
+                    document.getElementById("add-khmc").disabled = true
+                }else {
+                    document.getElementById("add-khmc").disabled = false
+                }
+                document.getElementById("add-shouhuo").disabled = false
+                document.getElementById("add-lxdh").disabled = false
+                document.getElementById("add-shfs").disabled = false
+                document.getElementById("add-azdz").disabled = false
+                document.getElementById("add-ddh").disabled = false
+                document.getElementById("add-luruyuan").value = false
+                if(cname!="客户") {
+                    document.getElementById("add-khmc").value = ""
+                }
+                document.getElementById("add-shouhuo").value = ""
+                document.getElementById("add-lxdh").value = ""
+                document.getElementById("add-shfs").value = ""
+                document.getElementById("add-azdz").value = ""
+                document.getElementById("add-ddh").value = ""
+                document.getElementById("add-luruyuan").value = ""
                 $('#add-modal').modal('hide');
 
             })
@@ -3311,6 +3477,7 @@ $(function () {
     //点击新增按钮显示弹窗
     $("#add-btn").click(function () {
         $('#add-modal').modal('show');
+        document.getElementById("add-khmc").value=cname
         $ajax({
             type: 'post',
             url: '/ddxd/getListdjbh',
@@ -3338,6 +3505,26 @@ $(function () {
 
     //新增弹窗里点击关闭按钮
     $('#add-close-btn').click(function () {
+        if (cname == "客户") {
+            document.getElementById("add-khmc").disabled = true
+        } else {
+            document.getElementById("add-khmc").disabled = false
+        }
+        document.getElementById("add-shouhuo").disabled = false
+        document.getElementById("add-lxdh").disabled = false
+        document.getElementById("add-shfs").disabled = false
+        document.getElementById("add-azdz").disabled = false
+        document.getElementById("add-ddh").disabled = false
+        document.getElementById("add-luruyuan").value = false
+        if (cname != "客户") {
+            document.getElementById("add-khmc").value = ""
+        }
+        document.getElementById("add-shouhuo").value = ""
+        document.getElementById("add-lxdh").value = ""
+        document.getElementById("add-shfs").value = ""
+        document.getElementById("add-azdz").value = ""
+        document.getElementById("add-ddh").value = ""
+        document.getElementById("add-luruyuan").value = ""
 
         $('#add-form')[0].reset();
         $('#add-modal').modal('hide');
@@ -3641,20 +3828,17 @@ $(function () {
             }
             var ddcd = $('#ddcd' + q).val();
             var sl = $('#sl' + q).val();
-            var d = parseFloat(ddcd);
-            var s = parseFloat(sl);
+
             var cxdk = $('#cxdk' + q).val();
             var lcys = $('#lcys' + q).val();
             var gy = $('#gy' + q).val();
-            var g = Math.ceil(d / 1000 * s * 12);
-            var gl = g.toString();
+
             var bz = $('#bz' + q).val();
             var dj = $('#dj' + q).val();
-            var j = d * 1 / 1000 * s;
-            var je = j.toString();
-            var chicun = $('#chicun' + q).val();
+
+
             var cxdkRight = $('#cxdkRight' + q).val();
-            var sumMoney = $('#sumMoney' + q).val();
+
             var wcsj = $('#wcsj' + q).val();
 
             var khmc =$('#add-khmc').val();
@@ -3690,10 +3874,9 @@ $(function () {
                     gl: gl,
                     bz: bz,
                     dj: dj,
-                    je: je,
-                    chicun: chicun,
+
                     cxdkRight: cxdkRight,
-                    sumMoney: sumMoney,
+
                     wcsj: wcsj,
                     luruyuan: luruyuan,
                     // wancheng: wancheng,
@@ -4130,6 +4313,7 @@ function setTable2(data) {
         // pageSize: 15,//单页记录数
         clickToSelect: true,
         locale: 'zh-CN',
+        fixedColumns:true,
         toolbarAlign: 'left',
         theadClasses: "thead-light",//这里设置表头样式
         style: 'table-layout:fixed',
@@ -4139,7 +4323,8 @@ function setTable2(data) {
                 field: '',
                 title: '序号',
                 align: 'center',
-                width: 100,
+                width: 50,
+                fixed: 'left',
                 formatter: function (value, row, index) {
                     return index + 1;
                 }
@@ -4148,7 +4333,8 @@ function setTable2(data) {
                 title: '项目类别',
                 align: 'center',
                 sortable: true,
-                width: 200,
+                width: 150,
+                size: 13,
                 formatter: function (value, row, index) {
                     if (value == null) {
                         value = '';
@@ -4159,78 +4345,157 @@ function setTable2(data) {
 
                             var $select8 = $('#gh'+row.id);
                             $select8.empty();
-                            if(selectedValue=='铝型材'){
+                            if(selectedValue=='铝型材') {
+                                $("#gh1" + row.id).hide();
+                                $("#gh" + row.id).show();
+                                $("#lcys" + row.id).show();
+                                $("#ddcd" + row.id).show();
+                                $("#sl" + row.id).show();
+                                $("#cxdk" + row.id).show();
+                                $("#cxdkRight" + row.id).show();
+                                $("#gy" + row.id).show();
+                                $("#dj" + row.id).show();
+                                $("#bz" + row.id).show();
                                 var this_lxc = ""
-                                var this_gy=""
+                                var this_gy = ""
                                 var select4 = ""
                                 var select9 = ""
+                                // for (var i = 0; i < r; i++) {
+                                //     this_lxc = this_lxc + "<option value=\"" + select_lxc[i].lxc + "\" >" + select_lxc[i].lxc + "</option>"
+                                //
+                                //
+                                //     select4 = "<select id='lxc" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"lxc\"" + ")' placeholder='铝材颜色' type='text' class='form-control'  value='" + value + "'>"
+                                //     select4 = select4 + this_lxc;
+                                //     select4 = select4 + "<select/>"
+                                //
+                                //     $("#gh" + row.id).append("<option>" + select_lxc[i].lxc + "</option>")
+                                // }
+                                //
+                                //
+                                //
+                                // for (var i = 0; i < r; i++) {
+                                //     this_gy = this_gy + "<option value=\"" + select_gy[i].gy + "\" >" + select_gy[i].gy + "</option>"
+                                //
+                                //     // this_lxc = this_lxc + "<option value=\"\" selected>请选择</option>";
+                                //     select9 = "<select id='gy" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"gy\"" + ")' placeholder='光源' type='text' class='form-control'  value='" + value + "'>"
+                                //
+                                //
+                                //     select9 = select9 + this_gy;
+                                //     select9 = select9 + "<select/>"
+                                //     $("#gy" + row.id).append("<option>" + select_gy[i].gy + "</option>")
+                                //
+                                //
+                                //     return select4;
+                                // }
                                 for (var i = 0; i < r; i++) {
-                                    this_lxc = this_lxc + "<option value=\"" + select_lxc[i].lxc + "\" selected=\"selected\">" + select_lxc[i].lxc + "</option>"
-                                    select4 = "<select id='lxc" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"lxc\"" + ")' placeholder='铝材颜色' type='text' class='form-control'  value='" + value + "'>"
+
+                                    this_lxc = this_lxc + "<option value=\"" + select_lxc[i].lxc + "\" >" + select_lxc[i].lxc + "</option>";
+
+                                    select4 = "<select id='lxc" + row.id + "' 'columnUpd(" + row.id + "," + "\"lxc\"" + ")' placeholder='铝材颜色' type='text' class='form-control'  value=''>";
                                     select4 = select4 + this_lxc;
-                                    select4 = select4 + "<select/>"
+                                    select4 = select4 + "<select/>";
 
-                                    $("#gh"+row.id).append("<option>" + select_lxc[i].lxc + "</option>")
 
                                 }
-                                for(var i = 0; i < r; i++) {
-                                    this_gy = this_gy + "<option value=\"" + select_gy[i].gy + "\" selected=\"selected\">" + select_gy[i].gy + "</option>"
-                                    select9 = "<select id='gy" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"gy\"" + ")' placeholder='光源' type='text' class='form-control'  value='" + value + "'>"
+                                this_lxc = this_lxc + "<option value=\"\" selected>请选择</option>";
+                                $("#gh" + row.id).append("<option selected>" + this_lxc + "</option>");
+                                for (var i = 0; i < r; i++) {
+
+                                    this_gy = this_gy + "<option value=\"" + select_gy[i].gy + "\" >" + select_gy[i].gy + "</option>";
+
+                                    select9 = "<select id='gy" + row.id + "' 'columnUpd(" + row.id + "," + "\"gy\"" + ")' placeholder='光源' type='text' class='form-control'  value=''>";
                                     select9 = select9 + this_gy;
-                                    select9 = select9 + "<select/>"
-                                    $("#gy"+row.id).append("<option>" + select_gy[i].gy + "</option>")
+                                    select9 = select9 + "<select/>";
+
+
+                                    return select4;
                                 }
-                                $("#gh1"+row.id).hide();
-                                $("#gh"+row.id).show();
-                                return select4;
+                                this_gy = this_gy + "<option value=\"\" selected>请选择</option>";
+                                $("#gy" + row.id).append("<option>" + select_gy[i].gy + "</option>");
                             }
                             else if(selectedValue=='房间柜号'){
                                 // $("#gh"+row.id).remove();
-                                $("#gy"+row.id).remove();
+
                                 $("#gh"+row.id).value="";
                                 $("#gh"+row.id).hide();
                                 $("#gh1"+row.id).show();
+                                $("#lcys"+row.id).hide();
+                                $("#ddcd"+row.id).hide();
+                                $("#sl"+row.id).hide();
+                                $("#cxdk"+row.id).hide();
+                                $("#cxdkRight"+row.id).hide();
+                                $("#gy"+row.id).hide();
+                                $("#dj"+row.id).hide();
+                                $("#bz"+row.id).hide();
 
                             }else if(selectedValue=='电源'){
+                                $("#gh"+row.id).show();
+                                $("#gh1"+row.id).hide();
+                                $("#lcys"+row.id).hide();
+                                $("#ddcd"+row.id).hide();
+                                $("#sl"+row.id).show();
+                                $("#cxdk"+row.id).hide();
+                                $("#cxdkRight"+row.id).hide();
+                                $("#gy"+row.id).hide();
+                                $("#dj"+row.id).show();
+                                $("#bz"+row.id).hide();
                                 var this_dy = ""
                                 var select5 = ""
                                 for (var i = 0; i < select_dy.length; i++) {
-                                    this_dy = this_dy + "<option value=\"" + select_dy[i].dy + "\" selected=\"selected\">" + select_dy[i].dy + "</option>"
+                                    this_dy = this_dy + "<option value=\"" + select_dy[i].dy + "\" >" + select_dy[i].dy + "</option>"
                                     select5 = "<select id='dy" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"dy\"" + ")' placeholder='电源' type='text' class='form-control'  value='" + value + "'>"
                                     select5 = select5 + this_dy;
                                     select5 = select5 + "<select/>"
-                                    $("#gh"+row.id).append("<option>" + select_dy[i].dy + "</option>")
-                                    $("#gy"+row.id).remove();
-                                    $("#gh1"+row.id).hide();
-                                    $("#gh"+row.id).show();
+
+
                                 }
+                                this_dy = this_dy + "<option value=\"\" selected>请选择</option>";
+                                $("#gh"+row.id).append("<option>" + this_dy+ "</option>")
                                 return select5;
                             }else if(selectedValue=='开关'){
+                                $("#gh"+row.id).show();
+                                $("#gh1"+row.id).hide();
+                                $("#lcys"+row.id).hide();
+                                $("#ddcd"+row.id).hide();
+                                $("#sl"+row.id).show();
+                                $("#cxdk"+row.id).hide();
+                                $("#cxdkRight"+row.id).hide();
+                                $("#gy"+row.id).hide();
+                                $("#dj"+row.id).show();
+                                $("#bz"+row.id).hide();
                                 var this_kg = ""
                                 var select6 = ""
                                 for (var i = 0; i < select_kg.length; i++) {
-                                    this_kg = this_kg + "<option value=\"" + select_kg[i].kg + "\" selected=\"selected\">" + select_kg[i].kg + "</option>"
+                                    this_kg = this_kg + "<option value=\"" + select_kg[i].kg + "\" >" + select_kg[i].kg + "</option>"
                                     select6 = "<select id='kg" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"kg\"" + ")' placeholder='开关' type='text' class='form-control'  value='" + value + "'>"
                                     select6 = select6 + this_kg;
                                     select6 = select6 + "<select/>"
                                     $("#gh"+row.id).append("<option>" + select_kg[i].kg + "</option>")
-                                    $("#gy"+row.id).remove();
-                                    $("#gh1"+row.id).hide();
-                                    $("#gh"+row.id).show();
+
                                 }
+                                this_kg = this_kg + "<option value=\"\" selected>请选择</option>";
+                                $("#gh"+row.id).append("<option>" + this_kg + "</option>")
                                 return select6;
                             }else if(selectedValue=='配件'){
+                                ("#gh"+row.id).show();
+                                $("#gh1"+row.id).hide();
+                                $("#lcys"+row.id).hide();
+                                $("#ddcd"+row.id).hide();
+                                $("#sl"+row.id).show();
+                                $("#cxdk"+row.id).hide();
+                                $("#cxdkRight"+row.id).hide();
+                                $("#gy"+row.id).hide();
+                                $("#dj"+row.id).show();
+                                $("#bz"+row.id).hide();
                                 var this_pj = ""
                                 var select7 = ""
                                 for (var i = 0; i < select_kg.length; i++) {
-                                    this_pj = this_pj + "<option value=\"" + select_pj[i].pj + "\" selected=\"selected\">" + select_pj[i].pj + "</option>"
-                                    select7 = "<select id='pj" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"pj\"" + ")' placeholder='开关' type='text' class='form-control'  value='" + value + "'>"
+                                    this_pj = this_pj + "<option value=\"" + select_pj[i].pj + "\" >" + select_pj[i].pj + "</option>"
+                                    select7 = "<select id='pj" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"pj\"" + ")' placeholder='"+index+"' type='text' class='form-control'  value='" + value + "'>"
                                     select7 = select7 + this_pj;
                                     select7 = select7 + "<select/>"
                                     $("#gh"+row.id).append("<option>" + select_pj[i].pj  + "</option>")
-                                    $("#gy"+row.id).remove();
-                                    $("#gh1"+row.id).hide();
-                                    $("#gh"+row.id).show();
+                                    $
                                 }
                                 return select7;
                             }
@@ -4250,13 +4515,14 @@ function setTable2(data) {
                 title: '项目名称',
                 align: 'center',
                 sortable: true,
-                width: 200,
+                width: 150,
+                size: 13,
                 formatter: function (value, row, index) {
                     if (value == null) {
                         value = '';
                     }
 
-                    return "<select id='gh" + row.id + "' 'columnUpd(" + row.id + "," + "\"gh\" " + ")' placeholder='项目名称' type='text' class='form-control'  value='" + value + "'>"+
+                    return "<select id='gh" + row.id + "' 'columnUpd(" + row.id + "," + "\"gh\" " + ")' placeholder='"+index+1+"' type='text' class='form-control'  value='" + value + "'>"+
                         "</select>"
                 }
 
@@ -4269,20 +4535,22 @@ function setTable2(data) {
                 title: '房间柜号',
                 align: 'center',
                 sortable: true,
-                width: 200,
+                width: 100,
+                size: 13,
                 formatter: function (value, row, index) {
                     if (value == null) {
                         value = '';
                     }
 
-                    return "<input id='gh1" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"gh\" " + ")' placeholder='房间柜号' type='text' class='form-control'  value='" + value + "'>"
+                    return "<input id='gh1" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"gh\" " + ")' placeholder='"+index+1+"' type='text' class='form-control'  value='" + value + "'>"
                 }
             }, {
                 field: 'lcys',
                 title: '铝型材颜色',
                 align: 'center',
                 sortable: true,
-                width: 200,
+                width: 100,
+                size: 13,
                 formatter: function (value, row, index) {
                     if (value == null) {
                         value = '';
@@ -4292,7 +4560,7 @@ function setTable2(data) {
 
                     for (var i = 0; i < select_lcys.length; i++) {
                         this_lcys = this_lcys + "<option value=\"" + select_lcys[i].lcys + "\" selected=\"selected\">" + select_lcys[i].lcys + "</option>"
-                        select2 = "<select id='lcys" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"lcys\"" + ")' placeholder='铝材颜色' type='text' class='form-control'  value='" + value + "'>"
+                        select2 = "<select id='lcys" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"lcys\"" + ")' placeholder='"+index+1+"' type='text' class='form-control'  value='" + value + "'>"
                         select2 = select2 + this_lcys;
                         select2 = select2 + "<select/>"
                     }
@@ -4304,136 +4572,151 @@ function setTable2(data) {
                 title: '灯带长度mm',
                 align: 'center',
                 sortable: true,
-                width: 200,
+                width: 100,
+                size: 13,
                 formatter: function (value, row, index) {
                     if (value == null) {
                         value = '';
                     }
 
-                    return "<input id='ddcd" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"ddcd\" " + ")' placeholder='灯带长度' type='text' class='form-control'  value='" + value + "'>"
+                    return "<input id='ddcd" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"ddcd\" " + ")' placeholder='"+index+1+"' type='text' class='form-control'  value='" + value + "'>"
                 }
             }, {
                 field: 'sl',
                 title: '数量(支)',
                 align: 'center',
                 sortable: true,
-                width: 200,
+                width: 80,
+                size: 13,
                 formatter: function (value, row, index) {
                     if (value == null) {
                         value = '';
                     }
 
-                    return "<input id='sl" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"sl\" " + ")' placeholder='数量' type='text' class='form-control'  value='" + value + "'>"
+                    return "<input id='sl" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"sl\" " + ")' placeholder='"+index+1+"' type='text' class='form-control'  value='" + value + "'>"
                 }
             }, {
                 field: 'cxdk',
                 title: '出线端口左出线',
                 align: 'center',
                 sortable: true,
-                width: 200,
+                width: 80,
+                size: 13,
                 formatter: function (value, row, index) {
                     if (value == null) {
                         value = '';
                     }
 
-                    return "<input id='cxdk" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"cxdk\" " + ")' placeholder='出线端口左出线' type='text' class='form-control'  value='" + value + "'>"
+                    return "<input id='cxdk" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"cxdk\" " + ")' placeholder='"+index+1+"' type='text' class='form-control'  value='" + value + "'>"
                 }
             }, {
                 field: 'cxdk_right',
                 title: '出线端口右出线',
                 align: 'center',
                 sortable: true,
-                width: 200,
+                width: 80,
+                size: 13,
                 formatter: function (value, row, index) {
                     if (value == null) {
                         value = '';
                     }
-                    return "<input id='cxdkRight" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"cxdkRight\" " + ")' placeholder='出线端口右出线' type='text' class='form-control'  value='" + value + "'>"
+                    return "<input id='cxdkRight" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"cxdkRight\" " + ")' placeholder='"+index+1+"' type='text' class='form-control'  value='" + value + "'>"
                 }
             }, {
                 field: 'gy',
                 title: '光源',
                 align: 'center',
                 sortable: true,
-                width: 150,
+                width: 120,
+                size: 13,
                 formatter: function (value, row, index) {
                     if (value == null) {
                         value = '';
                     }
-                    // var this_gy = ""
-                    // var select3 = ""
-                    // for (var i = 0; i < select_gy.length; i++) {
-                    //     this_gy = this_gy + "<option value=\"" + select_gy[i].gy + "\" selected=\"selected\">" + select_gy[i].gy + "</option>"
-                    //     select3 = "<select id='gy" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"lcys\"" + ")' placeholder='光源' type='text' class='form-control'  value='" + value + "'>"
-                    //     select3 = select3 + this_gy;
-                    //     select3 = select3 + "<select/>"
-                    //
-                    // }
-                    // return select3;
-                    return "<select id='gy" + row.id + "' 'columnUpd(" + row.id + "," + "\"gy\" " + ")' placeholder='光源' type='text' class='form-control'  value='" + value + "'>"+
-                        "</select>"
-                }
-            }, {
-                field: 'gl',
-                title: '功率W',
-                align: 'center',
-                sortable: true,
-                width: 150,
-                formatter: function (value, row, index) {
-                    if (value == null) {
-                        value = '';
+                    var this_gy = ""
+                    var select3 = ""
+                    for (var i = 0; i < select_gy.length; i++) {
+                        this_gy = this_gy + "<option value=\"" + select_gy[i].gy + "\"selected=\"selected\" >" + select_gy[i].gy + "</option>"
+                        select3 = "<select id='gy" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"lcys\"" + ")' placeholder='光源' type='text' class='form-control'  value='" + value + "'>"
+                        select3 = select3 + this_gy;
+                        select3 = select3 + "<select/>"
+
                     }
-                    return "<input id='gl" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"gl\" " + ")' placeholder='功率' type='text' class='form-control'  value='" + value + "'>"
+
+                  return select3
+
+                    // return "<select id='gy" + row.id + "' 'columnUpd(" + row.id + "," + "\"gy\" " + ")' placeholder='"+index+1+"' type='text' class='form-control'  value='" + value + "'>"+
+                    //     "</select>"
+
                 }
-            }, {
+
+            }
+            // , {
+            //     field: 'gl',
+            //     title: '功率W',
+            //     align: 'center',
+            //     sortable: true,
+            //     width: 150,
+            //     formatter: function (value, row, index) {
+            //         if (value == null) {
+            //             value = '';
+            //         }
+            //         return "<input id='gl" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"gl\" " + ")' placeholder='功率' type='text' class='form-control'  value='" + value + "'>"
+            //     }
+            // }
+            , {
                 field: 'bz',
                 title: '备注',
                 align: 'center',
                 sortable: true,
-                width: 150,
+                width: 90,
+                size: 13,
                 formatter: function (value, row, index) {
                     if (value == null) {
                         value = '';
                     }
-                    return "<input id='bz" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"bz\" " + ")' placeholder='备注' type='text' class='form-control'  value='" + value + "'>"
+                    return "<input id='bz" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"bz\" " + ")' placeholder='"+index+1+"' type='text' class='form-control'  value='" + value + "'>"
                 }
             }, {
                 field: 'dj',
                 title: '单价',
                 align: 'center',
                 sortable: true,
-                width: 150,
+                width: 80,
+                size: 13,
                 formatter: function (value, row, index) {
                     if (value == null) {
                         value = '';
                     }
-                    return "<input id='dj" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"dj\" " + ")' placeholder='单价' type='text' class='form-control'  value='" + value + "'>"
-                }
-            }, {
-                field: 'je',
-                title: '金额',
-                align: 'center',
-                sortable: true,
-                width: 150,
-                formatter: function (value, row, index) {
-                    if (value == null) {
-                        value = '';
-                    }
-                    return "<input id='je" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"je\" " + ")' placeholder='金额' type='text' class='form-control'  value='" + value + "'>"
-                }
-            }, {
-                field: 'chicun',
-                title: '开料尺寸',
-                align: 'center',
-                sortable: true,
-                width: 200,
-                formatter: function (value, row, index) {
-                    if (value == null) {
-                        value = '';
-                    }
-                    return "<input id='chicun" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"chicun\" " + ")' placeholder='尺寸' type='text' class='form-control'  value='" + value + "'>"
+                    return "<input id='dj" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"dj\" " + ")' placeholder='"+index+"' type='text' class='form-control'  value='" + value + "'>"
                 }
             }
+            // {
+            //     field: 'je',
+            //     title: '金额',
+            //     align: 'center',
+            //     sortable: true,
+            //     width: 150,
+            //     formatter: function (value, row, index) {
+            //         if (value == null) {
+            //             value = '';
+            //         }
+            //         return "<input id='je" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"je\" " + ")' placeholder='金额' type='text' class='form-control'  value='" + value + "'>"
+            //     }
+            // },
+            // {
+            //     field: 'chicun',
+            //     title: '开料尺寸',
+            //     align: 'center',
+            //     sortable: true,
+            //     width: 200,
+            //     formatter: function (value, row, index) {
+            //         if (value == null) {
+            //             value = '';
+            //         }
+            //         return "<input id='chicun" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"chicun\" " + ")' placeholder='尺寸' type='text' class='form-control'  value='" + value + "'>"
+            //     }
+            // }
             // {
             //     field: 'shouhuo',
             //     title: '送货地址',
@@ -4503,7 +4786,7 @@ function setTable2(data) {
                 title: 'id',
                 align: 'center',
                 sortable: true,
-                hidden:true,
+
                 width: 1,
                 formatter: function (value, row, index) {
                     if (value == null) {
@@ -4589,6 +4872,16 @@ function setTable3(data) {
                             var $select8 = $('#gh'+row.id);
                             $select8.empty();
                             if(selectedValue=='铝型材'){
+                                $("#gh1"+row.id).hide();
+                                $("#gh"+row.id).show();
+                                $("#lcys"+row.id).show();
+                                $("#ddcd"+row.id).show();
+                                $("#sl"+row.id).show();
+                                $("#cxdk"+row.id).show();
+                                $("#cxdkRight"+row.id).show();
+                                $("#gy"+row.id).show();
+                                $("#dj"+row.id).show();
+                                $("#bz"+row.id).show();
                                 var this_lxc = ""
                                 var this_gy=""
                                 var select4 = ""
@@ -4609,19 +4902,34 @@ function setTable3(data) {
                                     select9 = select9 + "<select/>"
                                     $("#gy"+row.id).append("<option>" + select_gy[i].gy + "</option>")
                                 }
-                                $("#gh1"+row.id).value="";
-                                $("#gh1"+row.id).hide();
-                                $("#gh"+row.id).show();
+
                                 return select4;
                             }
                             else if(selectedValue=='房间柜号'){
                                 // $("#gh"+row.id).remove();
-                                $("#gy"+row.id).remove();
                                 $("#gh"+row.id).value="";
                                 $("#gh"+row.id).hide();
                                 $("#gh1"+row.id).show();
+                                $("#lcys"+row.id).hide();
+                                $("#ddcd"+row.id).hide();
+                                $("#sl"+row.id).hide();
+                                $("#cxdk"+row.id).hide();
+                                $("#cxdkRight"+row.id).hide();
+                                $("#gy"+row.id).hide();
+                                $("#dj"+row.id).hide();
+                                $("#bz"+row.id).hide();
 
                             }else if(selectedValue=='电源'){
+                                $("#gh"+row.id).show();
+                                $("#gh1"+row.id).hide();
+                                $("#lcys"+row.id).hide();
+                                $("#ddcd"+row.id).hide();
+                                $("#sl"+row.id).show();
+                                $("#cxdk"+row.id).hide();
+                                $("#cxdkRight"+row.id).hide();
+                                $("#gy"+row.id).hide();
+                                $("#dj"+row.id).show();
+                                $("#bz"+row.id).show();
                                 var this_dy = ""
                                 var select5 = ""
                                 for (var i = 0; i < select_dy.length; i++) {
@@ -4630,14 +4938,21 @@ function setTable3(data) {
                                     select5 = select5 + this_dy;
                                     select5 = select5 + "<select/>"
                                     $("#gh"+row.id).append("<option>" + select_dy[i].dy + "</option>")
-                                    $("#gy"+row.id).remove();
-                                    $("#gh1"+row.id).hide();
-                                    $("#gh"+row.id).show();
-                                    $("#gh1"+row.id).value="";
+
                                 }
 
                                 return select5;
                             }else if(selectedValue=='开关'){
+                                ("#gh"+row.id).show();
+                                $("#gh1"+row.id).hide();
+                                $("#lcys"+row.id).hide();
+                                $("#ddcd"+row.id).hide();
+                                $("#sl"+row.id).show();
+                                $("#cxdk"+row.id).hide();
+                                $("#cxdkRight"+row.id).hide();
+                                $("#gy"+row.id).hide();
+                                $("#dj"+row.id).show();
+                                $("#bz"+row.id).show();
                                 var this_kg = ""
                                 var select6 = ""
                                 for (var i = 0; i < select_kg.length; i++) {
@@ -4646,14 +4961,21 @@ function setTable3(data) {
                                     select6 = select6 + this_kg;
                                     select6 = select6 + "<select/>"
                                     $("#gh"+row.id).append("<option>" + select_kg[i].kg + "</option>")
-                                    $("#gy"+row.id).remove();
-                                    $("#gh1"+row.id).hide();
-                                    $("#gh"+row.id).show();
-                                    $("#gh1"+row.id).value="";
+
                                 }
 
                                 return select6;
                             }else if(selectedValue=='配件'){
+                                ("#gh"+row.id).show();
+                                $("#gh1"+row.id).hide();
+                                $("#lcys"+row.id).hide();
+                                $("#ddcd"+row.id).hide();
+                                $("#sl"+row.id).show();
+                                $("#cxdk"+row.id).hide();
+                                $("#cxdkRight"+row.id).hide();
+                                $("#gy"+row.id).hide();
+                                $("#dj"+row.id).show();
+                                $("#bz"+row.id).show();
                                 var this_pj = ""
                                 var select7 = ""
                                 for (var i = 0; i < select_kg.length; i++) {
@@ -4662,10 +4984,7 @@ function setTable3(data) {
                                     select7 = select7 + this_pj;
                                     select7 = select7 + "<select/>"
                                     $("#gh"+row.id).append("<option>" + select_pj[i].pj  + "</option>")
-                                    $("#gy"+row.id).remove();
-                                    $("#gh1"+row.id).hide();
-                                    $("#gh"+row.id).show();
-                                    $("#gh1"+row.id).value="";
+
                                 }
                                 return select7;
                             }
@@ -4686,7 +5005,7 @@ function setTable3(data) {
                 title: '项目名称',
                 align: 'center',
                 sortable: true,
-                width: 200,
+                width: 100,
                 formatter: function (value, row, index) {
                     if (value == null) {
                         value = '';
@@ -4702,7 +5021,7 @@ function setTable3(data) {
                     //
                     // }
                     // return select4;
-                    return "<select id='gh" + row.id + "' 'columnUpd(" + row.id + "," + "\"gh\" " + ")' placeholder='项目名称' type='text' class='form-control'  value='" + value + "'>" +
+                    return "<select id='gh" + row.id + "' 'columnUpd(" + row.id + "," + "\"gh\" " + ")' placeholder='"+index+"' type='text' class='form-control'  value='" + value + "'>" +
                         "</select>"
                 }
 
@@ -4714,20 +5033,20 @@ function setTable3(data) {
                 title: '房间柜号',
                 align: 'center',
                 sortable: true,
-                width: 160,
+                width: 100,
                 formatter: function (value, row, index) {
                     if (value == null) {
                         value = '';
                     }
 
-                    return "<input id='gh1" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"gh\" " + ")' placeholder='房间柜号' type='text' class='form-control'  value='" + value + "'>"
+                    return "<input id='gh1" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"gh\" " + ")' placeholder='"+index+"' type='text' class='form-control'  value='" + value + "'>"
                 }
             }, {
                 field: 'lcys',
                 title: '铝型材颜色',
                 align: 'center',
                 sortable: true,
-                width: 160,
+                width: 100,
                 formatter: function (value, row, index) {
                     if (value == null) {
                         value = '';
@@ -4749,58 +5068,58 @@ function setTable3(data) {
                 title: '灯带长度mm',
                 align: 'center',
                 sortable: true,
-                width: 160,
+                width: 80,
                 formatter: function (value, row, index) {
                     if (value == null) {
                         value = '';
                     }
 
-                    return "<input id='ddcd" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"ddcd\" " + ")' placeholder='灯带长度' type='text' class='form-control'  value='" + value + "'>"
+                    return "<input id='ddcd" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"ddcd\" " + ")' placeholder='"+index+"' type='text' class='form-control'  value='" + value + "'>"
                 }
             }, {
                 field: 'sl',
                 title: '数量(支)',
                 align: 'center',
                 sortable: true,
-                width: 160,
+                width: 80,
                 formatter: function (value, row, index) {
                     if (value == null) {
                         value = '';
                     }
 
-                    return "<input id='sl" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"sl\" " + ")' placeholder='数量' type='text' class='form-control'  value='" + value + "'>"
+                    return "<input id='sl" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"sl\" " + ")' placeholder='"+index+"' type='text' class='form-control'  value='" + value + "'>"
                 }
             }, {
                 field: 'cxdk',
                 title: '出线端口左出线',
                 align: 'center',
                 sortable: true,
-                width: 160,
+                width: 80,
                 formatter: function (value, row, index) {
                     if (value == null) {
                         value = '';
                     }
 
-                    return "<input id='cxdk" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"cxdk\" " + ")' placeholder='出线端口左出线' type='text' class='form-control'  value='" + value + "'>"
+                    return "<input id='cxdk" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"cxdk\" " + ")' placeholder='"+index+"' type='text' class='form-control'  value='" + value + "'>"
                 }
             }, {
                 field: 'cxdkRight',
                 title: '出线端口右出线',
                 align: 'center',
                 sortable: true,
-                width: 160,
+                width: 80,
                 formatter: function (value, row, index) {
                     if (value == null) {
                         value = '';
                     }
-                    return "<input id='cxdkRight" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"cxdkRight\" " + ")' placeholder='出线端口右出线' type='text' class='form-control'  value='" + value + "'>"
+                    return "<input id='cxdkRight" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"cxdkRight\" " + ")' placeholder='"+index+"' type='text' class='form-control'  value='" + value + "'>"
                 }
             }, {
                 field: 'gy',
                 title: '光源',
                 align: 'center',
                 sortable: true,
-                width: 150,
+                width: 100,
                 formatter: function (value, row, index) {
                     if (value == null) {
                         value = '';
@@ -4816,7 +5135,8 @@ function setTable3(data) {
                     }
                     return select3;
                 }
-            }, {
+            }
+            , {
                 field: 'gl',
                 title: '功率W',
                 align: 'center',
@@ -4826,33 +5146,35 @@ function setTable3(data) {
                     if (value == null) {
                         value = '';
                     }
-                    return "<input id='gl" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"gl\" " + ")' placeholder='功率' type='text' class='form-control'  value='" + value + "'>"
+                    return "<input id='gl" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"gl\" " + ")' placeholder='"+index+"' type='text' class='form-control'  value='" + value + "' readonly>"
                 }
-            }, {
+            }
+            , {
                 field: 'bz',
                 title: '备注',
                 align: 'center',
                 sortable: true,
-                width: 150,
+                width: 80,
                 formatter: function (value, row, index) {
                     if (value == null) {
                         value = '';
                     }
-                    return "<input id='bz" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"bz\" " + ")' placeholder='备注' type='text' class='form-control'  value='" + value + "'>"
+                    return "<input id='bz" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"bz\" " + ")' placeholder='"+index+"' type='text' class='form-control'  value='" + value + "'>"
                 }
             }, {
                 field: 'dj',
                 title: '单价',
                 align: 'center',
                 sortable: true,
-                width: 150,
+                width: 50,
                 formatter: function (value, row, index) {
                     if (value == null) {
                         value = '';
                     }
-                    return "<input id='dj" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"dj\" " + ")' placeholder='单价' type='text' class='form-control'  value='" + value + "'>"
+                    return "<input id='dj" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"dj\" " + ")' placeholder='"+index+"' type='text' class='form-control'  value='" + value + "'>"
                 }
-            }, {
+            }
+            , {
                 field: 'je',
                 title: '金额',
                 align: 'center',
@@ -4862,7 +5184,7 @@ function setTable3(data) {
                     if (value == null) {
                         value = '';
                     }
-                    return "<input id='je" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"je\" " + ")' placeholder='金额' type='text' class='form-control'  value='" + value + "'>"
+                    return "<input id='je" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"je\" " + ")' placeholder='"+index+"' type='text' class='form-control'  value='" + value + "' readonly>"
                 }
             }, {
                 field: 'chicun',
@@ -4874,7 +5196,7 @@ function setTable3(data) {
                     if (value == null) {
                         value = '';
                     }
-                    return "<input id='chicun" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"chicun\" " + ")' placeholder='尺寸' type='text' class='form-control'  value='" + value + "'>"
+                    return "<input id='chicun" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"chicun\" " + ")' placeholder='"+index+"' type='text' class='form-control'  value='" + value + "' readonly>"
                 }
             }
             // , {
