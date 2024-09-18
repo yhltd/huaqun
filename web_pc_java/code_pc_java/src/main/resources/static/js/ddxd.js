@@ -4535,14 +4535,14 @@ function setTable2(data) {
                 title: '房间柜号',
                 align: 'center',
                 sortable: true,
-                width: 100,
+                width: 70,
                 size: 13,
                 formatter: function (value, row, index) {
                     if (value == null) {
                         value = '';
                     }
 
-                    return "<input id='gh1" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"gh\" " + ")' placeholder='"+index+1+"' type='text' class='form-control'  value='" + value + "'>"
+                    return "<input id='gh1" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"gh\" " + ")' placeholder='房间柜号' type='text' class='form-control'  value='" + value + "'>"
                 }
             }, {
                 field: 'lcys',
@@ -4579,7 +4579,7 @@ function setTable2(data) {
                         value = '';
                     }
 
-                    return "<input id='ddcd" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"ddcd\" " + ")' placeholder='"+index+1+"' type='text' class='form-control'  value='" + value + "'>"
+                    return "<input id='ddcd" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"ddcd\" " + ")' placeholder='灯带长度' type='text' class='form-control'  value='" + value + "'>"
                 }
             }, {
                 field: 'sl',
@@ -4593,7 +4593,7 @@ function setTable2(data) {
                         value = '';
                     }
 
-                    return "<input id='sl" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"sl\" " + ")' placeholder='"+index+1+"' type='text' class='form-control'  value='" + value + "'>"
+                    return "<input id='sl" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"sl\" " + ")' placeholder='数量(支)' type='text' class='form-control'  value='" + value + "'>"
                 }
             }, {
                 field: 'cxdk',
@@ -4607,7 +4607,7 @@ function setTable2(data) {
                         value = '';
                     }
 
-                    return "<input id='cxdk" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"cxdk\" " + ")' placeholder='"+index+1+"' type='text' class='form-control'  value='" + value + "'>"
+                    return "<input id='cxdk" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"cxdk\" " + ")' placeholder='出线端口左出线' type='text' class='form-control'  value='" + value + "'>"
                 }
             }, {
                 field: 'cxdk_right',
@@ -4620,7 +4620,7 @@ function setTable2(data) {
                     if (value == null) {
                         value = '';
                     }
-                    return "<input id='cxdkRight" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"cxdkRight\" " + ")' placeholder='"+index+1+"' type='text' class='form-control'  value='" + value + "'>"
+                    return "<input id='cxdkRight" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"cxdkRight\" " + ")' placeholder='出线端口右出线' type='text' class='form-control'  value='" + value + "'>"
                 }
             }, {
                 field: 'gy',
@@ -4675,7 +4675,7 @@ function setTable2(data) {
                     if (value == null) {
                         value = '';
                     }
-                    return "<input id='bz" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"bz\" " + ")' placeholder='"+index+1+"' type='text' class='form-control'  value='" + value + "'>"
+                    return "<input id='bz" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"bz\" " + ")' placeholder='备注' type='text' class='form-control'  value='" + value + "'>"
                 }
             }, {
                 field: 'dj',
@@ -4688,7 +4688,7 @@ function setTable2(data) {
                     if (value == null) {
                         value = '';
                     }
-                    return "<input id='dj" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"dj\" " + ")' placeholder='"+index+"' type='text' class='form-control'  value='" + value + "'>"
+                    return "<input id='dj" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"dj\" " + ")' placeholder='单价' type='text' class='form-control'  value='" + value + "'>"
                 }
             }
             // {
@@ -4887,7 +4887,7 @@ function setTable3(data) {
                                 var select4 = ""
                                 var select9 = ""
                                 for (var i = 0; i < r; i++) {
-                                    this_lxc = this_lxc + "<option value=\"" + select_lxc[i].lxc + "\" selected=\"selected\">" + select_lxc[i].lxc + "</option>"
+                                    this_lxc = this_lxc + "<option value=\"" + select_lxc[i].lxc + "\" >" + select_lxc[i].lxc + "</option>"
                                     select4 = "<select id='lxc" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"lxc\"" + ")' placeholder='铝材颜色' type='text' class='form-control'  value='" + value + "'>"
                                     select4 = select4 + this_lxc;
                                     select4 = select4 + "<select/>"
@@ -4896,7 +4896,7 @@ function setTable3(data) {
 
                                 }
                                 for(var i = 0; i < r; i++) {
-                                    this_gy = this_gy + "<option value=\"" + select_gy[i].gy + "\" selected=\"selected\">" + select_gy[i].gy + "</option>"
+                                    this_gy = this_gy + "<option value=\"" + select_gy[i].gy + "\" >" + select_gy[i].gy + "</option>"
                                     select9 = "<select id='gy" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"gy\"" + ")' placeholder='光源' type='text' class='form-control'  value='" + value + "'>"
                                     select9 = select9 + this_gy;
                                     select9 = select9 + "<select/>"
@@ -4933,7 +4933,7 @@ function setTable3(data) {
                                 var this_dy = ""
                                 var select5 = ""
                                 for (var i = 0; i < select_dy.length; i++) {
-                                    this_dy = this_dy + "<option value=\"" + select_dy[i].dy + "\" selected=\"selected\">" + select_dy[i].dy + "</option>"
+                                    this_dy = this_dy + "<option value=\"" + select_dy[i].dy + "\" >" + select_dy[i].dy + "</option>"
                                     select5 = "<select id='dy" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"dy\"" + ")' placeholder='电源' type='text' class='form-control'  value='" + value + "'>"
                                     select5 = select5 + this_dy;
                                     select5 = select5 + "<select/>"
@@ -4956,7 +4956,7 @@ function setTable3(data) {
                                 var this_kg = ""
                                 var select6 = ""
                                 for (var i = 0; i < select_kg.length; i++) {
-                                    this_kg = this_kg + "<option value=\"" + select_kg[i].kg + "\" selected=\"selected\">" + select_kg[i].kg + "</option>"
+                                    this_kg = this_kg + "<option value=\"" + select_kg[i].kg + "\" >" + select_kg[i].kg + "</option>"
                                     select6 = "<select id='kg" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"kg\"" + ")' placeholder='开关' type='text' class='form-control'  value='" + value + "'>"
                                     select6 = select6 + this_kg;
                                     select6 = select6 + "<select/>"
@@ -4979,7 +4979,7 @@ function setTable3(data) {
                                 var this_pj = ""
                                 var select7 = ""
                                 for (var i = 0; i < select_kg.length; i++) {
-                                    this_pj = this_pj + "<option value=\"" + select_pj[i].pj + "\" selected=\"selected\">" + select_pj[i].pj + "</option>"
+                                    this_pj = this_pj + "<option value=\"" + select_pj[i].pj + "\" >" + select_pj[i].pj + "</option>"
                                     select7 = "<select id='pj" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"pj\"" + ")' placeholder='开关' type='text' class='form-control'  value='" + value + "'>"
                                     select7 = select7 + this_pj;
                                     select7 = select7 + "<select/>"
@@ -5005,7 +5005,7 @@ function setTable3(data) {
                 title: '项目名称',
                 align: 'center',
                 sortable: true,
-                width: 100,
+                width:100,
                 formatter: function (value, row, index) {
                     if (value == null) {
                         value = '';
@@ -5014,7 +5014,7 @@ function setTable3(data) {
                     // var this_gh = ""
                     // var select4 = ""
                     // for (var i = 0; i < select_lcys.length; i++) {
-                    //     this_gh = this_gh + "<option value=\"" + select_gh[i].ghxl + "\" selected=\"selected\">" + select_gh[i].ghxl + "</option>"
+                    //     this_gh = this_gh + "<option value=\"" + select_gh[i].ghxl + "\" >" + select_gh[i].ghxl + "</option>"
                     //     select4 = "<select id='gh" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"gh\"" + ")' placeholder='项目名称' type='text' class='form-control'  value='" + value + "'>"
                     //     select4 = select4 + this_gh;
                     //     select4 = select4 + "<select/>"
@@ -5033,13 +5033,13 @@ function setTable3(data) {
                 title: '房间柜号',
                 align: 'center',
                 sortable: true,
-                width: 100,
+                width: 80,
                 formatter: function (value, row, index) {
                     if (value == null) {
                         value = '';
                     }
 
-                    return "<input id='gh1" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"gh\" " + ")' placeholder='"+index+"' type='text' class='form-control'  value='" + value + "'>"
+                    return "<input id='gh1" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"gh\" " + ")' placeholder='房间柜号' type='text' class='form-control'  value='" + value + "'>"
                 }
             }, {
                 field: 'lcys',
@@ -5054,7 +5054,7 @@ function setTable3(data) {
                     var this_lcys = ""
                     var select2 = ""
                     for (var i = 0; i < select_lcys.length; i++) {
-                        this_lcys = this_lcys + "<option value=\"" + select_lcys[i].lcys + "\" selected=\"selected\">" + select_lcys[i].lcys + "</option>"
+                        this_lcys = this_lcys + "<option value=\"" + select_lcys[i].lcys + "\" >" + select_lcys[i].lcys + "</option>"
                         select2 = "<select id='lcys" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"lcys\"" + ")' placeholder='铝材颜色' type='text' class='form-control'  value='" + value + "'>"
                         select2 = select2 + this_lcys;
                         select2 = select2 + "<select/>"
@@ -5074,7 +5074,7 @@ function setTable3(data) {
                         value = '';
                     }
 
-                    return "<input id='ddcd" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"ddcd\" " + ")' placeholder='"+index+"' type='text' class='form-control'  value='" + value + "'>"
+                    return "<input id='ddcd" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"ddcd\" " + ")' placeholder='灯带长度' type='text' class='form-control'  value='" + value + "'>"
                 }
             }, {
                 field: 'sl',
@@ -5087,7 +5087,7 @@ function setTable3(data) {
                         value = '';
                     }
 
-                    return "<input id='sl" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"sl\" " + ")' placeholder='"+index+"' type='text' class='form-control'  value='" + value + "'>"
+                    return "<input id='sl" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"sl\" " + ")' placeholder='数量' type='text' class='form-control'  value='" + value + "'>"
                 }
             }, {
                 field: 'cxdk',
@@ -5100,7 +5100,7 @@ function setTable3(data) {
                         value = '';
                     }
 
-                    return "<input id='cxdk" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"cxdk\" " + ")' placeholder='"+index+"' type='text' class='form-control'  value='" + value + "'>"
+                    return "<input id='cxdk" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"cxdk\" " + ")' placeholder='出线端口左出线' type='text' class='form-control'  value='" + value + "'>"
                 }
             }, {
                 field: 'cxdkRight',
@@ -5112,7 +5112,7 @@ function setTable3(data) {
                     if (value == null) {
                         value = '';
                     }
-                    return "<input id='cxdkRight" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"cxdkRight\" " + ")' placeholder='"+index+"' type='text' class='form-control'  value='" + value + "'>"
+                    return "<input id='cxdkRight" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"cxdkRight\" " + ")' placeholder='出线端口右出线' type='text' class='form-control'  value='" + value + "'>"
                 }
             }, {
                 field: 'gy',
@@ -5127,7 +5127,7 @@ function setTable3(data) {
                     var this_gy = ""
                     var select3 = ""
                     for (var i = 0; i < select_gy.length; i++) {
-                        this_gy = this_gy + "<option value=\"" + select_gy[i].gy + "\" selected=\"selected\">" + select_gy[i].gy + "</option>"
+                        this_gy = this_gy + "<option value=\"" + select_gy[i].gy + "\" >" + select_gy[i].gy + "</option>"
                         select3 = "<select id='gy" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"lcys\"" + ")' placeholder='光源' type='text' class='form-control'  value='" + value + "'>"
                         select3 = select3 + this_gy;
                         select3 = select3 + "<select/>"
@@ -5146,7 +5146,7 @@ function setTable3(data) {
                     if (value == null) {
                         value = '';
                     }
-                    return "<input id='gl" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"gl\" " + ")' placeholder='"+index+"' type='text' class='form-control'  value='" + value + "' readonly>"
+                    return "<input id='gl" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"gl\" " + ")' placeholder='功率W' type='text' class='form-control'  value='" + value + "' readonly>"
                 }
             }
             , {
@@ -5159,7 +5159,7 @@ function setTable3(data) {
                     if (value == null) {
                         value = '';
                     }
-                    return "<input id='bz" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"bz\" " + ")' placeholder='"+index+"' type='text' class='form-control'  value='" + value + "'>"
+                    return "<input id='bz" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"bz\" " + ")' placeholder='备注' type='text' class='form-control'  value='" + value + "'>"
                 }
             }, {
                 field: 'dj',
@@ -5171,7 +5171,7 @@ function setTable3(data) {
                     if (value == null) {
                         value = '';
                     }
-                    return "<input id='dj" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"dj\" " + ")' placeholder='"+index+"' type='text' class='form-control'  value='" + value + "'>"
+                    return "<input id='dj" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"dj\" " + ")' placeholder='单价' type='text' class='form-control'  value='" + value + "'>"
                 }
             }
             , {
@@ -5184,7 +5184,7 @@ function setTable3(data) {
                     if (value == null) {
                         value = '';
                     }
-                    return "<input id='je" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"je\" " + ")' placeholder='"+index+"' type='text' class='form-control'  value='" + value + "' readonly>"
+                    return "<input id='je" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"je\" " + ")' placeholder='金额' type='text' class='form-control'  value='" + value + "' readonly>"
                 }
             }, {
                 field: 'chicun',
@@ -5196,7 +5196,7 @@ function setTable3(data) {
                     if (value == null) {
                         value = '';
                     }
-                    return "<input id='chicun" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"chicun\" " + ")' placeholder='"+index+"' type='text' class='form-control'  value='" + value + "' readonly>"
+                    return "<input id='chicun" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"chicun\" " + ")' placeholder='开料尺寸' type='text' class='form-control'  value='" + value + "' readonly>"
                 }
             }
             // , {

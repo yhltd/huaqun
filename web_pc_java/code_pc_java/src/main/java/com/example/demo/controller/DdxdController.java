@@ -404,13 +404,13 @@ public ResultInfo update1(HttpSession session,String khmc,String xdrq,String djb
     }else if(fj.equals("电源")){
         float e=Float.parseFloat(sl) * Float.parseFloat(dj);
         je=String.format("%.2f",e);
-        chicun="";
+
         gl="";
         chicun="";
     }else if(fj.equals("开关")){
         float f=Float.parseFloat(sl) * Float.parseFloat(dj);
         je=String.format("%.2f",f);
-        chicun="";
+
         gl="";
         chicun="";
     }else if(fj.equals("配件")){
@@ -419,6 +419,10 @@ public ResultInfo update1(HttpSession session,String khmc,String xdrq,String djb
         chicun="";
         gl="";
 
+    }else if(fj.equals("房间柜号")) {
+        je ="";
+        gl="";
+        chicun="";
     }
 
     try {
