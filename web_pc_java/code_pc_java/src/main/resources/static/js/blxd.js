@@ -416,7 +416,7 @@ function setTable(data) {
                     var select2 = ""
                     // this_gys1 = this_gys1 + "\"<option value=''>--请选择供应商--</option>\" +"
                     for (var i = 0; i < select_gys.length; i++) {
-                        this_gys = this_gys + "<option value=\"" + select_gys[i].company + "\" selected=\"selected\">" + select_gys[i].company + "</option>"
+                        this_gys = this_gys + "<option value=\"" + select_gys[i].company + "\">" + select_gys[i].company + "</option>"
 
                         select2 = "<select id='gongyingshang" + index + "' oninput='javascript:columnUpd(" + index + "," + "\"gongyingshang\"" + ")' placeholder='供应商' type='text' class='form-control'  value='" + value + "'>"
                         select2 = select2 + this_gys;
@@ -424,6 +424,8 @@ function setTable(data) {
                         select2 = select2 + "<select/>"
 
                     }
+                    this_gys="<option value=\"\" selected>请选择</option>" + this_gys;
+                    $("#gongyingshang" + index).append("<option selected>" + this_gys + "</option>");
                     return select2;
 
                 }
