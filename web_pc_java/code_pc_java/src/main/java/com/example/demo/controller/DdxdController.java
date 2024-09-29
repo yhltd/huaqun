@@ -700,7 +700,9 @@ public class DdxdController {
     public ResultInfo update1(HttpSession session,String khmc,String xdrq,String djbh,String shouhuo,String lxdh,String shfs,String azdz,String ddh,String luruyuan,String fj, String gh, String ddcd, String sl, String cxdk, String lcys, String gy
             , String gl, String bz, String dj, String je, String chicun, String cxdkRight, String summoney, String wcsj, int id11, int id) {
         UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
-
+        System.out.println("------------------------------------");
+        System.out.println(fj);
+        System.out.println("------------------------------------");
         if(fj.equals("铝型材")){
 
             String cs = ddklczService.getchicun(gh);
@@ -723,6 +725,8 @@ public class DdxdController {
 
         }else if(fj.equals("房间柜号")) {
 
+            chicun="";
+        }else{
             chicun="";
         }
 

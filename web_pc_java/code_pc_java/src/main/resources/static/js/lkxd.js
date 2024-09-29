@@ -35517,7 +35517,10 @@ function setTable(data) {
     if ($('#lkxdTable').html != '') {
         $('#lkxdTable').bootstrapTable('load', data);
     }
-
+    $('#lkxdTable').on('sort.bs.table', function (e, sortName, sortOrder) {
+        // 在这里处理你的代码
+        getList();
+    });
     $('#lkxdTable').bootstrapTable({
         data: data,
         sortStable: true,

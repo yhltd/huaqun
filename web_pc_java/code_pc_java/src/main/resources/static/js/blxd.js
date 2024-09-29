@@ -299,7 +299,10 @@ function setTable(data) {
     if ($('#blxdTable').html != '') {
         $('#blxdTable').bootstrapTable('load', data);
     }
-
+    $('#blxdTable').on('sort.bs.table', function (e, sortName, sortOrder) {
+        // 在这里处理你的代码
+        getList();
+    });
     $('#blxdTable').bootstrapTable({
         data: data,
         sortStable: true,

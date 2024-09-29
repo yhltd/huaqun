@@ -5580,7 +5580,8 @@ var id11;
 var cname="";
 let hjgl=0;
 let hjje=0;
-
+var pan;
+var duan;
 function getKhmc() {
     $ajax({
         type: 'post',
@@ -6149,6 +6150,8 @@ function getList() {
     })
     hjgl = 0;
     hjje = 0;
+    pan="";
+    duan="";
 }
 
 // function getList2() {
@@ -6633,9 +6636,10 @@ $(function () {
                             }, false, '', function (res) {
 
                                 setTable2(res.data)
-                                addcishu();
+                                // addcishu();
                                 // getList();
-
+                                hjgl=0;
+                                hjje=0;
                             })
 
                         }
@@ -6755,7 +6759,7 @@ $(function () {
     $('#update-submit-btn').click(function () {
         var table = document.getElementById("ddxddjbhTable1")
         var tbl = table.rows.length;
-        for (i = 0; i < tbl; i = i + 1) {
+        for (i = 0; i < tbl-1; i = i + 1) {
             let c = parseFloat($('#id2').val()) + i
             var q = c.toString();
             var fj = $('#fj' + q).val();
@@ -6779,15 +6783,15 @@ $(function () {
 
             var wcsj = $('#wcsj' + q).val();
 
-            var khmc =$('#add-khmc').val();
-            var xdrq =$('#add-xdrq').val();
-            var djbh =$('#add-djbh').val();
-            var shouhuo =$('#add-shouhuo').val();
-            var lxdh =$('#add-lxdh').val();
-            var shfs =$('#add-shfs').val();
-            var azdz =$('#add-azdz').val();
-            var ddh =$('#add-ddh').val();
-            var luruyuan = $('#add-luruyuan').val();
+            var khmc =$('#update-khmc').val();
+            var xdrq =$('#update-xdrq').val();
+            var djbh =$('#update-djbh').val();
+            var shouhuo =$('#update-shouhuo').val();
+            var lxdh =$('#update-lxdh').val();
+            var shfs =$('#update-shfs').val();
+            var azdz =$('#update-azdz').val();
+            var ddh =$('#update-ddh').val();
+            var luruyuan = $('#update-luruyuan').val();
 
             $ajax({
                 type: 'post',
@@ -6899,7 +6903,10 @@ function setTable(data) {
     if ($('#ddxdTable').html != '') {
         $('#ddxdTable').bootstrapTable('load', data);
     }
-
+    $('#ddxdTable').on('sort.bs.table', function (e, sortName, sortOrder) {
+        // 在这里处理你的代码
+        getList();
+    });
     $('#ddxdTable').bootstrapTable({
         data: data,
         sortStable: true,
@@ -7279,6 +7286,8 @@ function setTable2(data) {
                     }
                     $(document).ready(function() {
                         $('#fj'+row.id).change(function() {
+                            pan="";
+                            duan="";
                             var selectedValue = $(this).val();
 
                             var $select8 = $('#gh'+row.id);
@@ -7533,8 +7542,14 @@ function setTable2(data) {
                     // 20240923 开始
                     $(document).ready(function() {
                         $('#sl'+row.id).change(function() {
+
                             var selectedValue1 = $(this).val();
-                            if (selectedValue1 != '' || selectedValue1 != null){
+                            var op = Number(row.id)-1;
+                            var fj1 = document.getElementById('fj' + op).value
+                            if (fj1 == '房间柜号' && selectedValue1!=pan){
+                                hjgl=0;
+                            }
+                            if (selectedValue1 != '' && selectedValue1 != null && selectedValue1 != undefined && selectedValue1!=pan){
                                 var ddl = document.getElementById('ddcd' + row.id).value
                                 gonglv = ddl / 1000 * selectedValue1 * 12
                                 gl = gonglv.toFixed(2);
@@ -7542,6 +7557,7 @@ function setTable2(data) {
                                 // document.getElementById('gl'+row.id).value = gl
                                 hjgl = Number(hjgl) + Number(gl);
                                 document.getElementById('gl' + row.id).value = hjgl;
+                                 pan = selectedValue1;
                             }
                         })
                     })
@@ -7615,6 +7631,8 @@ function setTable2(data) {
                     if (value == null) {
                         value = '';
                     }
+
+                    if('#fj'+row.id)
                     return "<input id='gl" + row.id + "' oninput='javascript:columnUpd(" + row.id + "," + "\"gl\" " + ")' placeholder='功率' type='text' class='form-control' readonly='readonly' value='" + value + "'>"
                 }
             }
@@ -7648,12 +7666,13 @@ function setTable2(data) {
                     $(document).ready(function() {
                         $('#dj' + row.id).change(function () {
                             var selectedValue2 = $(this).val();
-                            if (selectedValue2 != '' || selectedValue2 != null) {
+                            if (selectedValue2 != '' && selectedValue2 != null && selectedValue2 !=undefined && selectedValue2!=duan) {
                                 var sl = document.getElementById('sl'+row.id).value
                                 jine = sl * selectedValue2
                                 je = jine.toFixed(2);
                                 hjje = Number(hjje) + Number(je);
                                 document.getElementById('je'+row.id).value = hjje;
+                                duan = selectedValue2;
                             }
                         })
                     })
@@ -7837,6 +7856,8 @@ function setTable3(data) {
                     }
                     $(document).ready(function() {
                         $('#fj'+row.id).change(function() {
+                            pan="";
+                            duan="";
                             var selectedValue = $(this).val();
 
                             var $select8 = $('#gh'+row.id);
@@ -8061,7 +8082,7 @@ function setTable3(data) {
                     $(document).ready(function() {
                         $('#sl'+row.id).change(function() {
                             var selectedValue1 = $(this).val();
-                            if (selectedValue1 != '' || selectedValue1 != null){
+                            if (selectedValue1 != '' && selectedValue1 != null && selectedValue1 != undefined && selectedValue1 != pan){
                                 var ddl = document.getElementById('ddcd' + row.id).value
                                 gonglv = ddl / 1000 * selectedValue1 * 12
                                 gl = gonglv.toFixed(2);
@@ -8069,6 +8090,7 @@ function setTable3(data) {
                                 // document.getElementById('gl'+row.id).value = gl
                                 hjgl = Number(hjgl) + Number(gl);
                                 document.getElementById('gl' + row.id).value = hjgl;
+                                pan= selectedValue1;
                             }
                         })
                     })
@@ -8163,12 +8185,13 @@ function setTable3(data) {
                     $(document).ready(function() {
                         $('#dj' + row.id).change(function () {
                             var selectedValue2 = $(this).val();
-                            if (selectedValue2 != '' || selectedValue2 != null) {
+                            if (selectedValue2 != '' && selectedValue2 != null && selectedValue2 != undefined && selectedValue2 != duan) {
                                 var sl = document.getElementById('sl'+row.id).value
                                 jine = sl * selectedValue2
                                 je = jine.toFixed(2);
                                 hjje = Number(hjje) + Number(je);
                                 document.getElementById('je'+row.id).value = hjje;
+                                duan = selectedValue2;
                             }
                         })
                     })

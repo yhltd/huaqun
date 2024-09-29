@@ -12072,7 +12072,10 @@ function setTable(data) {
     if ($('#psdTable').html != '') {
         $('#psdTable').bootstrapTable('load', data);
     }
-
+    $('#psdTable').on('sort.bs.table', function (e, sortName, sortOrder) {
+        // 在这里处理你的代码
+        getList();
+    });
     $('#psdTable').bootstrapTable({
         // url: "http://本机ip:后台端口/Journalism/getList",
         data: data,
