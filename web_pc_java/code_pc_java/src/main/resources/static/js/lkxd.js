@@ -18075,6 +18075,7 @@ var y = "";
 var u = "";
 var l = "";
 var power1;
+var arrcanshu=[];
 function getKhmc() {
     $ajax({
         type: 'post',
@@ -34816,22 +34817,22 @@ $(function () {
                             width: width,
                             guanlian: guanlian,
                         }
-                        $ajax({
-                            type: 'post',
-                            url: '/blxd/add',
-                            data: JSON.stringify({
-                                addInfo: arrbl
-                            }),
-                            dataType: 'json',
-                            contentType: 'application/json;charset=utf-8'
-                        }, false, '', function (res) {
-                            if (res.code == 200) {
-                                swal("", res.msg, "success");
-                                $('#add-form')[0].reset();
-                                getList();
-                                $('#add-close-btn').click();
-                            }
-                        })
+                        // $ajax({
+                        //     type: 'post',
+                        //     url: '/blxd/add',
+                        //     data: JSON.stringify({
+                        //         addInfo: arrbl
+                        //     }),
+                        //     dataType: 'json',
+                        //     contentType: 'application/json;charset=utf-8'
+                        // }, false, '', function (res) {
+                        //     if (res.code == 200) {
+                        //         swal("", res.msg, "success");
+                        //         $('#add-form')[0].reset();
+                        //         getList();
+                        //         $('#add-close-btn').click();
+                        //     }
+                        // })
                     }
                 } else {
                     customerName = $("#add-customerName").val();
@@ -35007,6 +35008,7 @@ $(function () {
                             $('#add-form')[0].reset();
                             getList();
                             $('#add-close-btn').click();
+
                         }
                     })
                 }
@@ -35576,63 +35578,145 @@ function setTable(data) {
                             $.each(rows, function (index, row) {
                                 num = row.data.orderNumber;
                                 a1 = row.data.pinyin;
-                                a2 = row.data.boliYanse;
-                                a3 = row.data.boliShenjiagong;
-                                a4 = row.data.num;
-                                a5 = row.data.height;
-                                a6 = row.data.width;
-                                a7 = row.data.guanlian;
-
                             })
-                            var arrbl = {
-                                orderNumber: num,
-                                pinyin: a1,
-                                boliYanse: a2,
-                                boliShenjiagong: a3,
-                                num: a4,
-                                height: a5,
-                                width: a6,
-                                guanlian: a7,
-                            }
                             if (selectedValue == "已审验") {
                                 $ajax({
                                     type: 'post',
-                                    url: '/blxd/add',
-                                    data: JSON.stringify({
-                                        addInfo: arrbl
-                                    }),
-                                    dataType: 'json',
-                                    contentType: 'application/json;charset=utf-8'
+                                    url: '/lkxd/geton',
+                                    data: {
+                                        orderNumber: num
+                                    },
+                                    async:false,
                                 }, false, '', function (res) {
-                                    if (res.code == 200) {
-                                        swal("", res.msg, "success");
-                                        $('#add-form')[0].reset();
-                                        getList();
-                                        $('#add-close-btn').click();
+                                    for (i = 0; i < res.data.length ||i == res.data.length; i++) {
+                                        if (i == 0) {
+                                            $('#update-height').val(res.data[0].height);
+                                            $('#update-width').val(res.data[0].width);
+                                            $('#update-num').val(res.data[0].num);
+                                            $('#update-lvxingcai').val(res.data[0].lvxingcai);
+                                            $('#update-lvcaiYanse').val(res.data[0].lvcaiYanse);
+                                            $('#update-boliShenjiagong').val(res.data[0].boliShenjiagong);
+                                            $('#update-boliYanse').val(res.data[0].boliYanse);
+
+
+                                            a2 = document.getElementById("update-boliYanse").value;
+                                            a3 = document.getElementById("update-boliShenjiagong").value;
+                                            a4 = document.getElementById("update-num").value;
+                                            a5 = document.getElementById("update-height").value;
+                                            a6 = document.getElementById("update-width").value;
+                                            a7 = num;
+                                            a8 = document.getElementById("update-lvxingcai").value;
+                                            a9 = document.getElementById("update-lvcaiYanse").value;
+                                            var arrbl = {
+                                                orderNumber: num,
+                                                pinyin: a1,
+                                                boliYanse: a2,
+                                                boliShenjiagong: a3,
+                                                num: a4,
+                                                height: a5,
+                                                width: a6,
+                                                guanlian:a7,
+                                                lxc:a8,
+                                                yanse:a9
+
+                                            }
+                                            $ajax({
+                                                type: 'post',
+                                                url: '/blxd/add',
+                                                data: JSON.stringify({
+                                                    addInfo: arrbl
+                                                }),
+                                                // async:false,
+                                                dataType: 'json',
+                                                contentType: 'application/json;charset=utf-8'
+
+                                            }, false, '', function (res) {
+                                                if (res.code == 200) {
+                                                    swal("", res.msg, "success");
+                                                }
+                                            })
+                                        } else {
+                                            $('#update-height' + i).val(res.data[i].height);
+                                            $('#update-width' + i).val(res.data[i].width);
+                                            $('#update-num' + i).val(res.data[i].num);
+                                            $('#update-lvxingcai' + i).val(res.data[i].lvxingcai);
+                                            $('#update-lvcaiYanse' + i).val(res.data[i].lvcaiYanse);
+                                            $('#update-boliShenjiagong' + i).val(res.data[i].boliShenjiagong);
+                                            $('#update-boliYanse' + i).val(res.data[i].boliYanse);
+
+
+                                            a2 = document.getElementById("update-boliYanse" + i).value;
+                                            a3 = document.getElementById("update-boliShenjiagong" + i).value;
+                                            a4 = document.getElementById("update-num" + i).value;
+                                            a5 = document.getElementById("update-height" + i).value;
+                                            a6 = document.getElementById("update-width" + i).value;
+                                            a7 = num;
+                                            a8 = document.getElementById("update-lvxingcai"+i).value;
+                                            a9 = document.getElementById("update-lvcaiYanse"+i).value;
+                                            var arrbl = {
+                                                orderNumber: num,
+                                                pinyin: a1,
+                                                boliYanse: a2,
+                                                boliShenjiagong: a3,
+                                                num: a4,
+                                                height: a5,
+                                                width: a6,
+                                                guanlian:a7,
+                                                lxc:a8,
+                                                yanse:a9
+                                            }
+                                            $ajax({
+                                                type: 'post',
+                                                url: '/blxd/add',
+                                                data: JSON.stringify({
+                                                    addInfo: arrbl
+                                                }),
+
+
+                                                dataType: 'json',
+                                                contentType: 'application/json;charset=utf-8'
+                                            }, false, '', function (res) {
+                                                if (res.code == 200) {
+                                                    swal("", res.msg, "success");
+
+                                                }
+                                            })
+                                        }
+                                    }
+                                })
+                                $ajax({
+                                    type: 'post',
+                                    url: '/lkxd/updatewc',
+                                    data: {
+                                        wancheng: selectedValue,
+                                        orderNumber: num
+                                    }
+                                })
+
+                            }else{
+                                $ajax({
+                                    type: 'post',
+                                    url: '/lkxd/updatewc',
+                                    data: {
+                                        wancheng: selectedValue,
+                                        orderNumber: num
                                     }
                                 })
                             }
-                            $ajax({
-                                type: 'post',
-                                url: '/lkxd/updatewc',
-                                data: {
-                                    wancheng: selectedValue,
-                                    orderNumber: num
-                                }
-                            })
 
                         })
                     })
-                    return "<select id='wancheng" + index + "' oninput='javascript:columnUpd(" + index + "," + "\"wancheng\"" + ")' placeholder='完成状态' type='text' class='form-control'  value='" + value + "'>" +
-                        "<option value=''>--请选择完成状态--</option>" +
-                        "<option value='已审验'>已审验</option>" +
-                        "<option value='未审验'>未审验</option>" +
-                        "<option value='优先处理'>优先处理</option>" +
-                        "<option value='加工完成'>加工完成</option>" +
-                        "<option value='正在加工'>正在加工</option>" +
-                        "<option value='完成'>完成</option>" +
-                        "</select>"
-                    document.getElementById("wancheng" + index).value = res.data[0].wancheng
+                        return "<select id='wancheng" + index + "' oninput='javascript:columnUpd(" + index + "," + "\"wancheng\"" + ")' placeholder='完成状态' type='text' class='form-control'  value='" + value + "'>" +
+                            "<option value=''>--请选择完成状态--</option>" +
+                            "<option value='已审验'>已审验</option>" +
+                            "<option value='未审验'>未审验</option>" +
+                            "<option value='优先处理'>优先处理</option>" +
+                            "<option value='加工完成'>加工完成</option>" +
+                            "<option value='正在加工'>正在加工</option>" +
+                            "<option value='完成'>完成</option>" +
+                            "</select>"
+                        document.getElementById("wancheng" + index).value = res.data[0].wancheng
+
                 }
             }
             , {
@@ -36090,7 +36174,7 @@ function getToken() {
                     jsinsertDate: jsinsertDate,
                     wancheng: wancheng,
                 },
-                async: false,
+                    async:false,
             }, false, '', function (res) {
                 var length;
 
@@ -36110,6 +36194,7 @@ function getToken() {
                 console.log(length)
                 djbh = "LK" + date.getFullYear() + (month) + (day) + length;
                 console.log(djbh)
+
             })
             console.log(djbh)
             setForm(res.data, '#add-form');
@@ -36117,8 +36202,9 @@ function getToken() {
                 document.getElementById("wancheng" + n).value = res.data[n].wancheng;
             }
             $('#add-customerNameRenyuan').val(res.data.name);
-            $('#add-insertDate').val(xdrq);
+
             $('#add-orderNumber').val(djbh);
+            $('#add-insertDate').val(xdrq);
 
         }
     })

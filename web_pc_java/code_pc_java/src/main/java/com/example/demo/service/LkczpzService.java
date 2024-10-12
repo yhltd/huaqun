@@ -38,4 +38,8 @@ public interface LkczpzService extends IService<lkcz> {
      */
     lkcz add(lkcz lkcz);
 
+
+     String getList1(String lkxh, String yanse);
+    String getList2(String lkxh,String yanse);
+
 }

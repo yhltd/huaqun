@@ -56,5 +56,5 @@ public List<blxd> getListByBoli(String gongyingshang) { return blxdMapper.getLis
         return blxdMapper.updategys(gongyingshang,orderNumber);
     }
     @Override
-    public blxd add(blxd blxd) { return save(blxd) ? blxd : null; }
+    public boolean add(String orderNumber,String pinyin,String boliYanse,String boliShenjiagong,String num,String height,String width,String shengchan,String beizhu,String shuoming1,String shuoming2,String gongyingshang,String guanlian) { return blxdMapper.add(orderNumber,pinyin,boliYanse,boliShenjiagong,num,height,width,shengchan,beizhu,shuoming1,shuoming2,gongyingshang,guanlian); }
 }

@@ -75,5 +75,6 @@ public class blxd {
      * 关联
      */
     private String guanlian;
-
+    private String lxc;
+    private String yanse;
 }

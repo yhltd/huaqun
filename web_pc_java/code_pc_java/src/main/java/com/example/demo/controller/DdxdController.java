@@ -703,6 +703,10 @@ public class DdxdController {
         System.out.println("------------------------------------");
         System.out.println(fj);
         System.out.println("------------------------------------");
+        if(fj==null){
+            //结束方法
+            return ResultInfo.error("ok");
+        }
         if(fj.equals("铝型材")){
 
             String cs = ddklczService.getchicun(gh);

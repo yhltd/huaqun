@@ -8088,6 +8088,10 @@ function setTable3(data) {
                                 gl = gonglv.toFixed(2);
                                 // document.getElementById('gl'+row.id).value = ddl / 1000 * selectedValue1 * 12
                                 // document.getElementById('gl'+row.id).value = gl
+                                dj=document.getElementById('dj'+row.id).value
+                                jine = selectedValue1 * dj
+                                je = jine.toFixed(2);
+                                document.getElementById('je'+row.id).value = je;
                                 hjgl = Number(hjgl) + Number(gl);
                                 document.getElementById('gl' + row.id).value = hjgl;
                                 pan= selectedValue1;

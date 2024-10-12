@@ -2,7 +2,9 @@ package com.example.demo.controller;
 
 import com.example.demo.entity.UserInfo;
 import com.example.demo.entity.blxd;
+import com.example.demo.entity.lkcz;
 import com.example.demo.service.BlxdService;
+import com.example.demo.service.LkczpzService;
 import com.example.demo.service.UserInfoService;
 import com.example.demo.util.*;
 import lombok.extern.slf4j.Slf4j;
@@ -24,6 +26,8 @@ public class BlxdController {
     private UserInfoService userInfoService;
     @Autowired
     private BlxdService blxdService;
+    @Autowired
+    private LkczpzService lkczpzService;
     /**
      * 查询所有
      *
@@ -198,16 +202,59 @@ public class BlxdController {
     }
 
     @RequestMapping("/add")
-    public ResultInfo add(@RequestBody HashMap map, HttpSession session) {
+    public ResultInfo add(@RequestBody HashMap map, HttpSession session,String lkxh,String yanse) {
         UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
         GsonUtil gsonUtil = new GsonUtil(GsonUtil.toJson(map));
         try {
 //            lkxd lkxd = GsonUtil.toEntity(gsonUtil.get("addInfo"), lkxd.class);
             blxd blxd = GsonUtil.toEntity(gsonUtil.get("addInfo"), blxd.class);
 //            lkxd = lkxdService.add(lkxd);
-            blxd = blxdService.add(blxd);
-            if (StringUtils.isNotNull(blxd)) {
-                return ResultInfo.success("添加成功", blxd);
+
+            System.out.println("--------------------------------");
+            System.out.println(lkxh);
+            lkxh = blxd.getLxc();
+            yanse = blxd.getYanse();
+            System.out.println(yanse);
+           String chang1 = lkczpzService.getList1(lkxh,yanse);
+           String kuan1 = lkczpzService.getList2(lkxh,yanse);
+            System.out.println("--------------------------------");
+            System.out.println(chang1);
+            System.out.println(kuan1);
+            if (chang1 != null && kuan1 != null) {
+                Integer chang = Integer.parseInt(chang1);
+                Integer kuan = Integer.parseInt(kuan1);
+                Integer Width = Integer.parseInt(blxd.getWidth()) - kuan;
+                String width = Width.toString();
+                Integer Height = Integer.parseInt(blxd.getHeight()) - chang;
+                String height = Height.toString();
+                blxd.setHeight(height);
+                blxd.setWidth(width);
+            }
+            String orderNumber =blxd.getOrderNumber();
+            String pinyin = blxd.getPinyin();
+            String boliYanse = blxd.getBoliYanse();
+            String boliShenjiagong = blxd.getBoliShenjiagong();
+            String num=blxd.getNum();
+            String height=blxd.getHeight();
+            String width = blxd.getWidth();
+            String shengchan="";
+            String beizhu="";
+            String shuoming1=blxd.getShuoming1();
+            if (shuoming1==null){
+                shuoming1="";
+            }
+
+            String shuoming2=blxd.getShuoming2();
+            if (shuoming2==null){
+                shuoming2="";
+            }
+            String gongyingshang="";
+            String guanlian=blxd.getGuanlian();
+
+            boolean a ;
+            a = blxdService.add(orderNumber,pinyin,boliYanse,boliShenjiagong,num,height,width,shengchan,beizhu,shuoming1,shuoming2,gongyingshang,guanlian);
+            if (StringUtils.isNotNull(a)) {
+                return ResultInfo.success("添加成功", a);
             } else {
                 return ResultInfo.success("添加失败", null);
             }

@@ -36,4 +36,14 @@ public class LkczImpl extends ServiceImpl<LkczMapper, lkcz> implements LkczpzSer
         return save(lkcz) ? lkcz : null;
     }
 
+    @Override
+    public String getList1(String lkxh, String yanse) {
+        return lkczMapper.getList1(lkxh,yanse);
+    }
+
+    @Override
+    public String getList2(String lkxh, String yanse) {
+        return lkczMapper.getList2(lkxh,yanse);
+    }
+
 }

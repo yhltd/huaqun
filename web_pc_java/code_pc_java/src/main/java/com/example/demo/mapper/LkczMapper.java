@@ -25,5 +25,9 @@ public interface LkczMapper extends BaseMapper<lkcz> {
     @Insert("insert into refertable(lkxh,yanse,chang,kuan) values(#{lkxh},#{yanse},#{chang},#{kuan})")
     boolean add(String lkxh,String yanse,String chang,String kuan);
 
+    @Select("select chang from refertable where lkxh = #{lkxh} and yanse = #{yanse}")
+    String getList1(String lkxh,String yanse);
+    @Select("select kuan from refertable where lkxh = #{lkxh} and yanse = #{yanse}")
+    String getList2(String lkxh,String yanse);
 
 }
