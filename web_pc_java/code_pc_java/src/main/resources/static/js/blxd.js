@@ -361,14 +361,14 @@ function setTable(data) {
                             var selectedValue = $(this).val();
                             let rows = getTableSelection("#blxdTable");
                             $.each(rows, function (index, row) {
-                                num = row.data.orderNumber
+                                num = row.data.id
                             })
                             $ajax({
                                 type: 'post',
                                 url: '/blxd/updatesc',
                                 data: {
                                     shengchan: selectedValue,
-                                    orderNumber: num
+                                    id: num
                                 }
                             })
 
@@ -493,6 +493,13 @@ function setTable(data) {
                 align: 'center',
                 sortable: true,
                 width: 100,
+            }
+            , {
+                field: 'id',
+                title: 'id123',
+                align: 'center',
+                sortable: true,
+                width: 2,
             }
         ],
         onClickRow: function (row, el) {

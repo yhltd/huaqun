@@ -47,8 +47,8 @@ public List<blxd> getListByBoli(String gongyingshang) { return blxdMapper.getLis
     public boolean update(blxd blxd) { return updateById(blxd);}
 
     @Override
-    public boolean updatesc(String shengchan, String orderNumber) {
-        return blxdMapper.updatesc(shengchan,orderNumber);
+    public boolean updatesc(String shengchan, int id) {
+        return blxdMapper.updatesc(shengchan,id);
     }
 
     @Override

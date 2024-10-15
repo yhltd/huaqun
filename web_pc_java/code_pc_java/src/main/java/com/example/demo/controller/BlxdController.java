@@ -166,14 +166,14 @@ public class BlxdController {
         }
     }
     @RequestMapping(value = "/updatesc", method = RequestMethod.POST)
-    public ResultInfo updatesc(HttpSession session,String shengchan ,String orderNumber) {
+    public ResultInfo updatesc(HttpSession session,String shengchan ,int id) {
         UserInfo userInfo = GsonUtil.toEntity(SessionUtil.getToken(session), UserInfo.class);
         if(userInfo.getPower().equals("客户")){
             return ResultInfo.error(401, "无权限");
         }
 
         try {
-            blxdService.updatesc(shengchan,orderNumber);
+            blxdService.updatesc(shengchan,id);
             return ResultInfo.success("修改成功",null);
         } catch (Exception e) {
             e.printStackTrace();

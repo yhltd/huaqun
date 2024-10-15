@@ -37,7 +37,7 @@ public interface BlxdService extends IService<blxd> {
      */
     boolean update(blxd blxd);
 
-    boolean updatesc(String shengchan,String orderNumber);
+    boolean updatesc(String shengchan,int id);
     boolean updategys(String gongyingshang,String orderNumber);
     boolean add(String orderNumber,String pinyin,String boliYanse,String boliShenjiagong,String num,String height,String width,String shengchan,String beizhu,String shuoming1,String shuoming2,String gongyingshang,String guanlian);
     List<blxd> queryByBoli(String pinyin, String shengchan,String ksxdrq,String jsxdrq,String gongyingshang);
