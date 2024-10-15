@@ -12232,7 +12232,7 @@ function setTable(data) {
                     return "<select id='shoukuan" + index + "' oninput='javascript:columnUpd(" + index + "," + "\"shoukuan\"" + ")' placeholder='收款情况' type='text' class='form-control'  value='" + value + "'>" +
                         "<option value=''>--请选择完成状态--</option>" +
                         "<option value='已收款'>已收款</option>" +
-                        "<option value='配货收款'>配货收款</option>" +
+                        "<option value='送货收款'>送货收款</option>" +
                         "</select>"
                     document.getElementById("shoukuan" + index).value = res.data[0].shoukuan
                 }
