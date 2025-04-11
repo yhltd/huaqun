@@ -1,0 +1,92 @@
+<scroll-view class="sv_list" scroll-x="true" scroll-y="true" style="height:85%">
+  <view class="table">
+    <view class='table_header'>
+      <block class="title" wx:for="{{title}}">
+        <view class="title_text" style="width:{{item.width}};{{item.text==''?'position:sticky;left:0;z-index:5':''}}">{{item.text}}</view>
+      </block>
+    </view>
+    <block class="list_row" wx:for="{{list}}" wx:for-item="list_item" wx:for-index="i" wx:key="id">
+      <view class="table_main">
+        <view wx:for="{{title}}" 
+              wx:for-item="item" 
+              wx:key="item" 
+              class="{{list[i].shengchan=='加工完成'?'list_view5':list[i].shengchan=='配送少数'?'list_view2':list[i].shengchan=='完成'?'list_view3':list[i].type=='4'?'list_view4':'list_view'}}" 
+              style="width:{{item.width}}" data-index="{{i}}" 
+              data-column="{{item.columnName}}" 
+              data-value="{{list_item[item.columnName]}}" 
+              data-input_type="{{item.type}}"
+              data-isupd="{{item.isupd}}"
+              bindtap="clickView"
+              bindlongpress="del1">
+          <view class="list_text">{{item.columnName == 'rownum' ? i+1 : list_item[item.columnName]}}</view>
+        </view>
+      </view>
+    </block>
+  </view>
+</scroll-view>
+
+<!------------------------->
+<!---------下方按钮--------->
+<!------------------------->
+<view class="bottom_view">
+	<button class="bt_bottom" bindtap="back" >返回</button>
+  <button class="bt_bottom" bindtap="entering" >查询</button>
+  <button class="bt_bottom" bindtap="out_put" >玻璃下单表</button>
+</view>
+<view class="bottom_view">
+	<button class="bt_bottom" bindtap="out_put2" >开拉手孔表</button>
+  <button class="bt_bottom" bindtap="out_put3" >开锁孔表</button>
+  <!-- <button class="bt_bottom" bindtap="out_put4" >铝材开料表</button> -->
+</view>
+<!------------------------->
+<!---------查询弹窗--------->
+<!------------------------->
+<van-popup bind:click-overlay="qxShow" show="{{ cxShow }}" position="bottom" custom-style="height: 35%;" >
+  <view class="lables">开始日期</view>
+    <picker class="pick" mode="date" value="{{date}}" data-column_name="start_date" bindchange="choiceDate">
+      <input bindinput="onInput" data-column="start_date" class="input_text_form" value="{{start_date}}" type="text" name="start_date" disabled="disabled"></input>
+    </picker>
+    <view class="lables">结束日期</view>
+    <picker class="pick" mode="date" value="{{date}}" data-column_name="stop_date" bindchange="choiceDate">
+      <input bindinput="onInput" data-column="stop_date" class="input_text_form" value="{{stop_date}}" type="text" name="stop_date" disabled="disabled"></input>
+    </picker>
+    <view class="lables">简码</view>
+    <input bindinput="onInput" data-column="pinyin" class="input_text_form"  value="{{pinyin}}" type="text" name="pinyin"></input>
+    <view class="lables">生产状态</view>
+    <picker bindchange="bindPickerChange" value="{{index}}" data-list_name="shengchan_list" data-column_name="shengchan" range="{{shengchan_list}}" hidden="{{userInfo.power == '客户'}}">
+      <input bindinput="onInput" data-column="shengchan" class="input_text_form" value="{{shengchan}}" type="text" name="shengchan" disabled="disabled" hidden="{{userInfo.power == '客户'}}"></input>
+    </picker>
+  <view class="bottom_view" style="height:10%">
+    <button class="bt_bottom" hover-class="bt_bottom_hover" bindtap="qxShow">取消</button>
+    <button class="bt_bottom" hover-class="bt_bottom_hover" bindtap="sel1">查询</button>
+  </view>
+</van-popup>
+
+<!------------------------->
+<!---------修改弹窗--------->
+<!------------------------->
+<van-popup bind:click-overlay="qxShow" show="{{ xgShow }}" position="bottom" custom-style="height: 20%;" >
+  <view class="bottom_view" style="height:10%;margin-top: 8%;">
+    <button class="bt_bottom" hover-class="bt_bottom_hover" bindtap="yes_click">{{yes_click}}</button>
+    <button class="bt_bottom" hover-class="bt_bottom_hover" bindtap="yes_click2">{{yes_click2}}</button>
+    <button class="bt_bottom" hover-class="bt_bottom_hover" bindtap="no_click">{{no_click}}</button>
+  </view>
+  <view class="bottom_view" style="height:10%;margin-top: 8%;">
+    <button class="bt_bottom" hover-class="bt_bottom_hover" bindtap="over_click">{{over_click}}</button>
+  </view>
+</van-popup>
+
+
+<!------------------------->
+<!---------修改弹窗--------->
+<!------------------------->
+<van-popup bind:click-overlay="qxShow" show="{{ xgShow2 }}" position="bottom" custom-style="height: 25%;" >
+  <picker bindchange="bindPickerChange1" value="{{index}}" range="{{gongyingshang_list}}" disabled="{{ this_column == 'gongyingshang'?false:true}}">
+    <input bindinput="onInput" style="margin-top:10%" data-index="this_index" data-column="this_value" class="input_text_form" value="{{this_value}}" type="text" name="this_value" disabled="{{ this_column == 'gongyingshang'?true:false}}"></input>
+  </picker>
+  <view class="bottom_view" style="height:10%;margin-top: 50rpx;">
+    <button class="bt_bottom" hover-class="bt_bottom_hover" bindtap="qxShow">取消</button>
+    <!-- <button class="bt_bottom" hover-class="bt_bottom_hover" bindtap="del1">删除</button> -->
+    <button class="bt_bottom" hover-class="bt_bottom_hover" bindtap="upd1">修改</button>
+  </view>
+</van-popup>

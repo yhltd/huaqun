@@ -1,28 +1,37 @@
+// miniprogram/components/cloudTipModal/index.js
+const { isMac } = require('../../envList.js');
+
 Component({
 
   /**
    * 页面的初始数据
    */
   data: {
-    showTip: false,
+    showUploadTip: false,
+    tipText: isMac ? 'sh ./uploadCloudFunction.sh' : './uploadCloudFunction.bat'
   },
   properties: {
-    showTipProps: Boolean,
-    title:String,
-    content:String
+    showUploadTipProps: Boolean
   },
   observers: {
-    showTipProps: function(showTipProps) {
+    showUploadTipProps: function(showUploadTipProps) {
       this.setData({
-        showTip: showTipProps
+        showUploadTip: showUploadTipProps
       });
     }
   },
   methods: {
-    onClose(){
+    onChangeShowUploadTip() {
       this.setData({
-        showTip: !this.data.showTip
+        showUploadTip: !this.data.showUploadTip
+      });
+    },
+
+    copyShell() {
+      wx.setClipboardData({
+        data: this.data.tipText,
       });
     },
   }
+
 });

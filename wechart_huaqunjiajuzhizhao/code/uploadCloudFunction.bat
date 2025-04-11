@@ -1,1 +1,1 @@
-"C:\Program Files (x86)\Tencent\微信web开发者工具\cli.bat" cloud functions deploy --e cloudbase-3g31dnx5fad46235 --n quickstartFunctions --r --project "F:\git_version\huaqun\wechart_huaqunjiajuzhizhao\code" --report_first --report
+${installPath} cloud functions deploy --e ${envId} --n quickstartFunctions --r --project ${projectPath}

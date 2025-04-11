@@ -1,0 +1,74 @@
+{
+  "pages": [
+    "pages/login/login"
+  ],
+  "requiredPrivateInfos":[
+    "getLocation",
+    "onLocationChange",
+    "startLocationUpdate"
+  ],
+  "subpackages": [
+    {
+      "root": "package_huaqun",
+      "name": "HuaQunJiaJuCaiLiao",
+      "pages": [
+        "page/shows/shows",
+        "page/canzhao/canzhao",
+        "page/qtpeizhi/qtpeizhi",
+        "page/xlpeizhi/xlpeizhi",
+        "page/zhguanli/zhguanli",
+        "page/ddxiadan/ddxiadan",
+        "page/ddchakan/ddchakan",
+        "page/ddchakanxiangqing/ddchakanxiangqing",
+        "page/lvkuang_xiadan/lvkuang_xiadan",
+        "page/lvkuang_mingxi/lvkuang_mingxi",
+        "page/lvkuang_biaodan/lvkuang_biaodan",
+        "page/boli_mingxi/boli_mingxi",
+        "page/shows2/shows2",
+        "page/dengdai_kailiao/dengdai_kailiao",
+        "page/shoufei_biaozhun/shoufei_biaozhun",
+        "page/dddayin_peizhi/dddayin_peizhi",
+        "page/lkdayin_peizhi/lkdayin_peizhi",
+        "page/lkdayin_peizhi2/lkdayin_peizhi2"
+      ]
+    },
+    {
+      "root": "package_huaqun_erqi",
+      "name": "HuaQunJiaJuCaiLiaoErQi",
+      "pages": [
+        "page/shows/shows",
+        "page/userInfo/userInfo",
+        "page/peisong/peisong",
+        "page/peisong_mingxi/peisong_mingxi",
+        "page/dayin/dayin",
+        "page/map/map",
+        "page/dingwei/dingwei",
+        "page/peisong_jihua/peisong_jihua",
+        "page/peisong_jihua_xiangqing/peisong_jihua_xiangqing",
+        "page/dddayin/dddayin",
+        "page/lkdayin/lkdayin",
+        "page/lkdayin2/lkdayin2",
+        "page/lashou_peizhi/lashou_peizhi"
+      ]
+    }
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#1E90FF",
+    "navigationBarTitleText": "华群家具材料",
+    "navigationBarTextStyle": "white"
+  },"sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents",
+  "plugins": {
+    "chooseLocation": {
+      "version": "1.0.10",
+      "provider": "wx76a9a06e5b4e693e"
+    }
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序定位"
+    }
+  }
+}
